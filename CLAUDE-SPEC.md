@@ -1,4 +1,4 @@
-# exam-wiki-RC — 規格與驗證層（Spec）
+# exam-wiki-SM — 規格與驗證層（Spec）
 
 > **用途：** 所有格式規範、命名規則、完成標準的唯一依據。
 > **適用對象：** Cowork（SOLVE 解題時參照）、Claude Code（ingest/compile 時參照）、使用者（補圖截圖時參照）
@@ -29,12 +29,12 @@
 ## 1　題目編號（moduleId）
 
 ```
-RC-YYYY-N
+SM-YYYY-N
 ```
 
 | 欄位 | 說明 | 規則 |
 |------|------|------|
-| `RC` | 科目代碼（Reinforced Concrete） | 固定，大寫 |
+| `SM` | 科目代碼（Soil Mechanics & Foundation Design） | 固定，大寫 |
 | `YYYY` | 西元年 | 4 位數，如 `2015` |
 | `N` | 該年第幾題 | 阿拉伯數字，無前導零，如 `1`、`2`、`3`、`4`、`5` |
 
@@ -42,11 +42,11 @@ RC-YYYY-N
 
 | moduleId | 說明 |
 |----------|------|
-| `RC-2015-1` | 2015 年第 1 題 |
-| `RC-2006-5` | 2006 年第 5 題 |
-| `RC-2025-4` | 2025 年第 4 題 |
+| `SM-2015-1` | 2015 年第 1 題 |
+| `SM-2006-5` | 2006 年第 5 題 |
+| `SM-2025-4` | 2025 年第 4 題 |
 
-> 年份用西元（不用民國）。題號從 `1` 起算，無前導零（不可寫成 `RC-2015-01`）。
+> 年份用西元（不用民國）。題號從 `1` 起算，無前導零（不可寫成 `SM-2015-01`）。
 
 ---
 
@@ -54,23 +54,23 @@ RC-YYYY-N
 ## 2　考卷 PDF 命名（`raw/exams/`）
 
 ```
-RC-YYYY_鋼筋混凝土設計與預力.pdf
+SM-YYYY_土壤力學與基礎設計.pdf
 ```
 
 | 欄位 | 說明 |
 |------|------|
-| `RC-YYYY` | 科目代碼 + 西元年，底線 `_` 隔開後半 |
-| `鋼筋混凝土設計與預力` | 固定字串，科目全名 |
+| `SM-YYYY` | 科目代碼 + 西元年，底線 `_` 隔開後半 |
+| `土壤力學與基礎設計` | 固定字串，科目全名 |
 | `.pdf` | 副檔名，小寫 |
 
 **範例：**
 ```
-RC-2015_鋼筋混凝土設計與預力.pdf
-RC-2024_鋼筋混凝土設計與預力.pdf
+SM-2015_土壤力學與基礎設計.pdf
+SM-2024_土壤力學與基礎設計.pdf
 命題大綱.pdf              ← 命題大綱（不含年份）
 ```
 
-> 檔名開頭必須是 `RC-YYYY`，Cowork 的 SOLVE 指令依此定位考卷。
+> 檔名開頭必須是 `SM-YYYY`，Cowork 的 SOLVE 指令依此定位考卷。
 
 ---
 
@@ -78,19 +78,19 @@ RC-2024_鋼筋混凝土設計與預力.pdf
 ## 3　解析資料夾（`raw/solutions/`）
 
 ```
-raw/solutions/RC-YYYY-N/
+raw/solutions/SM-YYYY-N/
 ```
 
 每道題目一個資料夾，名稱即 moduleId。資料夾內允許的檔案類型：
 
 | 類型 | 命名格式 | 說明 | 誰負責 |
 |------|---------|------|:------:|
-| 解析主檔 | `RC-YYYY-N.md` | 解題文字內容（唯一必要） | Cowork |
-| 題目附圖 | `RC-YYYY-N-fig-N.png` | 題目原始圖 | 使用者 |
-| 設計圖表 | `RC-YYYY-N-chart-N.png` | P-M 互制圖等 | 使用者 |
-| 參考公式 | `RC-YYYY-N-eqn-N.png` | 題目給的公式截圖 | 使用者 |
-| 手寫補充 | `RC-YYYY-N-hand-N.png` | 手寫推導截圖 | 使用者 |
-| 互動圖 | `RC-YYYY-N-[內容碼]-viz.html` | 互動計算圖 | Cowork |
+| 解析主檔 | `SM-YYYY-N.md` | 解題文字內容（唯一必要） | Cowork |
+| 題目附圖 | `SM-YYYY-N-fig-N.png` | 題目原始圖（土層剖面、鑽探柱狀圖等） | 使用者 |
+| 設計圖表 | `SM-YYYY-N-chart-N.png` | 承載力包絡圖、邊坡滑動面圖等 | 使用者 |
+| 參考公式 | `SM-YYYY-N-eqn-N.png` | 題目給的公式截圖 | 使用者 |
+| 手寫補充 | `SM-YYYY-N-hand-N.png` | 手寫推導截圖 | 使用者 |
+| 互動圖 | `SM-YYYY-N-[內容碼]-viz.html` | 互動計算圖 | Cowork |
 | 補充筆記 | `*.pdf`（任意檔名） | 補充講義、手寫筆記掃描等 | 使用者 |
 
 > **補充筆記 PDF：** 使用者可將任意 `.pdf` 放入此資料夾，命名無強制規範。Cowork 執行 `更新儀表板資料`（REFRESH-DASHBOARD）時會掃描並將檔名寫入 `dashboard-data.js`（q.pdf 欄位）；`index.html` 題庫瀏覽頁依此資料直接顯示「📎 補充筆記 PDF」按鈕。線上環境點擊將直接開啟 PDF；本機環境下則會要求資料夾讀取授權。新增或移除 PDF 後須重新執行 `更新儀表板資料` 才會反映。
@@ -109,37 +109,37 @@ raw/solutions/methods/[method-id]/
 ### 4.1 開頭標籤區塊（每份解析必須包含）
 
 ```markdown
-### 考題編號：RC-YYYY-N
+### 考題編號：SM-YYYY-N
 
-**主分類：** `RC-X` 分類名稱
-**副分類：** `RC-X` 分類名稱（無副分類則省略）
-**設計法：** USD強度設計法 / WSD工作應力法 / 概念題 / 混合
+**主分類：** `SM-X` 分類名稱
+**副分類：** `SM-X` 分類名稱（無副分類則省略）
+**分析法：** 總應力法 / 有效應力法 / 概念題 / 混合
 **標籤：** `標籤1` `標籤2` `標籤3` ...
 ```
 
 ### 4.2 數學公式（強制 LaTeX）
 
-- 行內：`` $f'_c = 280 \text{ kgf/cm}^2$ ``
-- 獨立：`$$M_u = 1.2M_D + 1.6M_L$$`
-- **禁止純文字公式**（不可寫 fc'=280 kgf/cm²）
+- 行內：`` $\phi' = 30°$ ``
+- 獨立：`$$q_u = c'N_c + q N_q + 0.5\gamma B N_\gamma$$`
+- **禁止純文字公式**（不可寫 qu=c'Nc+qNq+0.5γBNγ）
 
 ### 4.3 圖片引用規範（雙重保險原則）
 
 每張圖片在 .md 中必須包含 **alt text + 圖說** 兩部分：
 
 ```markdown
-![精確描述圖片工程內容的 alt text](RC-YYYY-N-fig-1.png)
+![精確描述圖片工程內容的 alt text](SM-YYYY-N-fig-1.png)
 
 *圖說：關鍵數值、條件、結論的完整文字化說明。*
 ```
 
 | 圖片類型 | Alt Text 要求 | 圖說要求 |
 |---------|-------------|---------|
-| `fig`（題目附圖） | 結構型式、斷面尺寸、載重位置、配筋資訊 | 關鍵幾何數值、支撐條件、f'c/fy 值 |
-| `chart`（設計圖表） | 圖表類型、座標軸範圍 | P-M 互制圖控制點座標、設計結論 |
+| `fig`（題目附圖） | 土層剖面型式、分層深度、地下水位、載重位置 | 關鍵幾何數值、土層參數（c、φ、γ、e0等） |
+| `chart`（設計圖表） | 圖表類型、座標軸範圍 | 承載力/土壓力/邊坡安全係數控制點座標、設計結論 |
 | `eqn`（參考公式） | 公式類型與數量 | **所有公式完整以 LaTeX 文字化**（最重要） |
 | `hand`（手寫補充） | 方法名稱與推導目標 | 步驟摘要、關鍵中間結果、最終公式 |
-| `section`（斷面圖） | 斷面型式、主要尺寸、配筋位置 | 鋼筋號數、間距、保護層厚度 |
+| `profile`（土層剖面圖） | 分層數、土層代號、地下水位位置 | 各層厚度、土壤分類、參數表 |
 
 <a id="4-4-vha"></a>
 ### 4.4 變數層次分析（Variable Hierarchy Analysis）
@@ -156,15 +156,15 @@ raw/solutions/methods/[method-id]/
 > 複習提示：第一次解題後，在每個卡住的知識點旁標記 `⚠`；第二次複習時只看有 `⚠` 的項目。
 
 ### 最終目標
-`[最終求解目標，如：計算最大正彎矩強度 φMn → 驗算 φMn ≥ Mu]`
+`[最終求解目標，如：計算容許承載力 qa → 驗算 qa ≥ 設計壓力]`
 
 ### 本題關鍵公式（依計算順序）
 
 > $\boxed{\cdot}$ = 需由前步驟推導，非題目直接給定的變數
 
-$$\text{Step 1: } a = \frac{A_s f_y}{0.85 f'_c b}$$
+$$\text{Step 1: } \sigma_v' = \gamma \cdot D_f - u$$
 
-$$\text{Step 2: } \phi M_n = \phi A_s f_y \!\left(d - \frac{\boxed{a}}{2}\right) \geq M_u$$
+$$\text{Step 2: } q_u = cN_c + \boxed{\sigma_v'} N_q + 0.5\gamma B N_\gamma$$
 
 `[依題型替換為實際公式鏈，保留 \boxed{} 標記推導變數]`
 
@@ -173,8 +173,8 @@ _看到題目就能讀出的數字，不需要任何公式。_
 
 | 符號 | 數值 | 說明 |
 |------|------|------|
-| $f'_c$ | 280 kgf/cm² | 混凝土抗壓強度 |
-| $f_y$ | 4200 kgf/cm² | 鋼筋降伏強度 |
+| $c'$ | 15 kPa | 有效凝聚力 |
+| $\phi'$ | 28° | 有效摩擦角 |
 | ... | ... | ... |
 
 ### L2：需知識點推導
@@ -184,23 +184,23 @@ _需要知道公式名稱與適用條件，套入 L1 即可算出。_
 
 | 符號 | 公式/來源 | 卡關? |
 |------|----------|:-----:|
-| $\beta_1$ | $f'_c \leq 280$ → $\beta_1=0.85$；每增加 70 減 0.05 | |
-| $\rho_b$ | $0.85\beta_1 f'_c/f_y \cdot 6120/(6120+f_y)$ | |
+| $N_q$ | 依 Terzaghi 承載力表，$\phi'$ 查得 | |
+| $\sigma_v'$ | $\gamma D_f - u$ | |
 
 **Step 2：[步驟名稱]**
 
 | 符號 | 公式/來源 | 卡關? |
 |------|----------|:-----:|
-| $a$ | $A_s f_y / (0.85 f'_c b)$ | |
-| $M_n$ | $A_s f_y (d - a/2)$ | |
+| $q_u$ | $cN_c + \sigma_v' N_q + 0.5\gamma BN_\gamma$ | |
+| $q_a$ | $q_u/FS$ | |
 
 ### L3：深層知識（不懂就卡住）
 _L2 中某些公式本身需要背景概念才能正確應用的知識點。_
 
 | 知識點 | 說明 | 卡關? |
 |--------|------|:-----:|
-| β1 隨 f'c 變化規則 | 為何 f'c > 280 時 β1 需折減？ | |
-| 延性破壞條件 | 為何 ρmax = 0.75ρb 才能保證延性？ | |
+| 有效應力原理 | 為何用 $\sigma_v'$ 而非總應力 $\sigma_v$ 計算承載力？ | |
+| 地下水位對 $N_\gamma$ 項的修正 | 水位在基礎面以上時為何 γ 需改用 γ'？ | |
 ```
 
 #### 層次定義
@@ -219,18 +219,18 @@ _L2 中某些公式本身需要背景概念才能正確應用的知識點。_
 ### 格式
 
 ```
-RC-YYYY-N-[類型碼]-[序號].png
+SM-YYYY-N-[類型碼]-[序號].png
 ```
 
 ### 類型碼對照表
 
 | 類型碼 | 內容 | 誰負責 | 範例 |
 |--------|------|:------:|------|
-| `fig` | 題目附圖（結構示意、幾何圖、配筋圖） | 使用者 | `RC-2015-1-fig-1.png` |
-| `chart` | 設計圖表（P-M 互制圖截圖、應力分布圖） | 使用者 | `RC-2015-1-chart-1.png` |
-| `eqn` | 題目提供的參考公式截圖 | 使用者 | `RC-2015-1-eqn-1.png` |
-| `hand` | 手寫補充推導 | 使用者 | `RC-2015-1-hand-1.png` |
-| `section` | 斷面示意圖（幾何與配筋） | 使用者 | `RC-2015-1-section-1.png` |
+| `fig` | 題目附圖（土層剖面、鑽探柱狀圖、幾何圖） | 使用者 | `SM-2015-1-fig-1.png` |
+| `chart` | 設計圖表（承載力包絡圖、土壓力分布圖截圖） | 使用者 | `SM-2015-1-chart-1.png` |
+| `eqn` | 題目提供的參考公式截圖 | 使用者 | `SM-2015-1-eqn-1.png` |
+| `hand` | 手寫補充推導 | 使用者 | `SM-2015-1-hand-1.png` |
+| `profile` | 土層剖面示意圖（分層與參數） | 使用者 | `SM-2015-1-profile-1.png` |
 
 ### 命名規則
 
@@ -248,19 +248,19 @@ RC-YYYY-N-[類型碼]-[序號].png
 ### 格式
 
 ```
-RC-YYYY-N-[內容碼]-viz.html
+SM-YYYY-N-[內容碼]-viz.html
 ```
 
 ### 內容碼對照表
 
 | 內容碼 | 說明 | 觸發條件 | 範例 |
 |--------|------|---------|------|
-| `pm` | P-M 互制圖 | 柱設計題目（RC-U1-2, RC-U1-4） | `RC-2015-1-pm-viz.html` |
-| `sfd-bmd` | 剪力圖 + 彎矩圖 | 題目要求繪製剪力/彎矩圖 | `RC-2015-2-sfd-bmd-viz.html` |
-| `stress-strain` | 混凝土應力-應變曲線 | 材料行為相關題目 | `RC-2020-1-stress-strain-viz.html` |
-| `section` | 斷面幾何示意（互動版） | 組合斷面計算題目 | `RC-2015-3-section-viz.html` |
-| `prestress` | 預力分布圖（沿跨度） | 預力混凝土題目（RC-U4） | `RC-2018-2-prestress-viz.html` |
-| `loss` | 預力損失疊加圖 | 預力損失計算題目（RC-U4-3） | `RC-2019-1-loss-viz.html` |
+| `bearing` | 承載力破壞包絡圖 / Nc-Nq-Nγ 對照 | 淺基礎承載力題目（SM-U2-1） | `SM-2015-1-bearing-viz.html` |
+| `pressure` | 側向土壓力分布圖 | 土壓力/擋土結構題目（SM-U3-1, SM-U3-2） | `SM-2015-2-pressure-viz.html` |
+| `slope` | 邊坡滑動面與安全係數圖 | 坡地工程題目（SM-U3-3） | `SM-2015-3-slope-viz.html` |
+| `consolidation` | e-log p′ 曲線 / 沉陷-時間曲線 | 壓密沉陷題目（SM-U1-3） | `SM-2020-1-consolidation-viz.html` |
+| `seepage` | 滲流網圖 | 滲透/開挖穩定題目（SM-U1-2, SM-U2-3） | `SM-2018-2-seepage-viz.html` |
+| `pile` | 樁基承載力沿深度分布圖 | 深基礎題目（SM-U2-2） | `SM-2019-1-pile-viz.html` |
 
 ### HTML 規格要求
 
@@ -276,16 +276,16 @@ RC-YYYY-N-[內容碼]-viz.html
 <a id="7-wiki-templates"></a>
 ## 7　Wiki 頁面格式模板
 
-### 7.1 題目頁：`wiki/problems/RC-YYYY-N.md`
+### 7.1 題目頁：`wiki/problems/SM-YYYY-N.md`
 
 ```markdown
-# RC-YYYY-N — [一行核心摘要]
+# SM-YYYY-N — [一行核心摘要]
 
-**來源：** 結構工程技師高考 · 鋼筋混凝土設計與預力 · 第N題
+**來源：** 結構工程技師高考 · 土壤力學與基礎設計 · 第N題
 **考年：** [year]（民國[year-1911]年）
 **主分類：** [[topicId]] [topicName]
 **副分類：** [[secondaryTopicId]]（無則省略）
-**設計法：** USD強度設計法 / WSD工作應力法 / 概念題
+**分析法：** 總應力法 / 有效應力法 / 概念題
 **標籤：** `標籤1` `標籤2` `標籤3`
 **驗證狀態：** ✅ verified
 
@@ -303,14 +303,14 @@ RC-YYYY-N-[內容碼]-viz.html
 
 ### 7.2 概念頁：`wiki/concepts/[CONCEPT-ID].md`
 
-概念 ID 規則：全大寫英文 + 連字號分隔（如 `BALANCED-REINFORCEMENT-RATIO`）
+概念 ID 規則：全大寫英文 + 連字號分隔（如 `EFFECTIVE-STRESS-PRINCIPLE`）
 
 ```markdown
 # [概念名稱]
 
 **概念 ID：** [id]
-**知識分類：** [RC-X]
-**規範來源：** [ACI 318 chapter / CNS 1480]
+**知識分類：** [SM-X]
+**規範來源：** [建築物基礎構造設計規範章節 / 大地工程手冊]
 
 ## 定義
 ## 前置概念
@@ -324,12 +324,12 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 目錄 | 命名格式 | 範例 |
 |------|---------|------|
-| `wiki/problems/` | `RC-YYYY-N.md` | `RC-2015-1.md` |
-| `wiki/concepts/` | `全大寫-連字號.md` | `BALANCED-REINFORCEMENT-RATIO.md` |
-| `wiki/traps/` | `全大寫-連字號.md` | `T-BEAM-EFFECTIVE-WIDTH.md` |
-| `wiki/methods/` | `全小寫-連字號.md` | `pm-interaction-diagram.md` |
-| `wiki/queries/` | `主題-YYYY-MM-DD.md` | `預力損失陷阱-2026-05-29.md` |
-| `wiki/philosophy/` | `全小寫-連字號.md` | `usd-beam-flexure.md` |
+| `wiki/problems/` | `SM-YYYY-N.md` | `SM-2015-1.md` |
+| `wiki/concepts/` | `全大寫-連字號.md` | `EFFECTIVE-STRESS-PRINCIPLE.md` |
+| `wiki/traps/` | `全大寫-連字號.md` | `WATER-TABLE-UNIT-WEIGHT-TRAP.md` |
+| `wiki/methods/` | `全小寫-連字號.md` | `bishop-simplified-method.md` |
+| `wiki/queries/` | `主題-YYYY-MM-DD.md` | `壓密沉陷陷阱-2026-07-11.md` |
+| `wiki/philosophy/` | `全小寫-連字號.md` | `total-vs-effective-stress.md` |
 
 ---
 
@@ -340,32 +340,35 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 欄位 | 說明 | 範例 |
 |------|------|------|
-| `primaryTopicId` | 命題大綱主分類（唯一） | `"RC-U2-2"` |
-| `primaryTopicName` | 主分類名稱（直接引用命題大綱子項名稱） | `"RC 扭力強度設計"` |
-| `secondaryTopicIds` | 命題大綱副分類（跨子項時用） | `["RC-U2-1"]` |
-| `designMethod` | 設計法 | `"USD"` / `"WSD"` / `"概念題"` / `"混合"` |
-| `tags` | 自由標籤（核心考點，3–8 個） | `["扭矩強度","Aoh","閉合箍筋"]` |
+| `primaryTopicId` | 命題大綱主分類（唯一） | `"SM-U2-1"` |
+| `primaryTopicName` | 主分類名稱（直接引用命題大綱子項名稱） | `"淺基礎之支承力與沉陷量"` |
+| `secondaryTopicIds` | 命題大綱副分類（跨子項時用） | `["SM-U1-5"]` |
+| `designMethod` | 分析法 | `"總應力法"` / `"有效應力法"` / `"概念題"` / `"混合"` |
+| `tags` | 自由標籤（核心考點，3–8 個） | `["Terzaghi承載力公式","Nq承載力因數","地下水位修正"]` |
 
 ### 命題大綱分類對照
 
-> **最新鮮的官方考點分類，請直接查閱：`raw/json/syllabus_taxonomy.json` 中 `id: "RC"` 的段落。**
+> **最新鮮的官方考點分類，請直接查閱：`raw/json/syllabus_taxonomy.json` 中 `id: "SM"` 的段落。**
 > 所有 `primaryTopicId` 與主分類名稱，一律以該檔案為唯一準則。
-> topicId 格式：`RC-UN-n`（U=單元號，n=子項號）
+> topicId 格式：`SM-UN-n`（U=單元號，n=子項號）
 
 ### 標準標籤詞彙
 
 | 類別 | 標準標籤 |
 |------|---------|
-| **設計法** | USD強度設計法、WSD工作應力法、概念題 |
-| **梁彎曲** | 單筋矩形梁、雙筋梁、T形梁、有效翼板寬、Whitney應力塊、延性破壞、平衡鋼筋比、最大鋼筋比、最小鋼筋比 |
-| **梁剪力** | 臨界斷面、Vc混凝土剪力強度、Vs腹筋剪力強度、最大間距限制、最小腹筋量 |
-| **撓度裂縫** | 有效慣性矩、開裂彎矩Mcr、長期撓度修正、允許撓度、裂縫寬度控制 |
-| **柱** | 短柱、長柱效應、P-M互制圖、放大彎矩法、無側移構架、有側移構架、螺旋柱、箍筋柱 |
-| **板** | 單向版、雙向版、直接設計法、等效框架法、柱帶、中間帶、衝剪 |
-| **基礎** | 獨立基腳、聯合基腳、彎矩設計、衝剪驗算、單向剪力 |
-| **預力** | 先拉法、後拉法、彈性縮短損失、摩擦損失、錨定滑動損失、潛變損失、收縮損失、鬆弛損失、有效預力、使用性驗算 |
-| **耐震** | 韌性構架、特殊矩形梁、特殊矩形柱、強柱弱梁、圍束箍筋、密箍區、接頭設計 |
-| **材料** | 混凝土抗壓強度、鋼筋降伏強度、彈性模數、潛變係數、收縮應變、β1係數 |
+| **分析法** | 總應力法、有效應力法、概念題、混合 |
+| **土壤性質** | 三相關係、孔隙比、飽和度、Atterberg限度、塑性指數、USCS分類、級配 |
+| **滲透** | Darcy定律、滲透係數、變水頭試驗、流網、臨界水力坡降、砂湧 |
+| **夯實壓密** | 夯實曲線、最佳含水量、Terzaghi壓密理論、e-log p'曲線、正常壓密、過壓密、OCR、壓密係數Cv、次壓縮 |
+| **土體應力** | 有效應力原理、總應力、孔隙水壓、Boussinesq理論、應力增量、水中單位重 |
+| **強度特性** | Mohr-Coulomb破壞準則、直接剪力試驗、三軸試驗、UU試驗、CU試驗、CD試驗、不排水剪力強度 |
+| **淺基礎** | Terzaghi承載力公式、Meyerhof承載力公式、承載力因數、形狀深度修正係數、容許承載力、瞬時沉陷、壓密沉陷 |
+| **深基礎** | 樁基承載力、端點承載力、摩擦力、α法、β法、群樁效應、負摩擦力 |
+| **開挖** | 開挖穩定性、基盤隆起、砂湧、管湧、板樁、連續壁、支撐系統 |
+| **地層改良** | 預壓法、排水井、灌漿、置換、深層攪拌法 |
+| **土壓力** | 靜止土壓力、Rankine主動土壓力、Rankine被動土壓力、Coulomb土壓力、張力裂縫 |
+| **擋土結構** | 抗滑動、抗傾覆、承載力檢核、偏心距、整體穩定、加勁擋土結構 |
+| **邊坡工程** | 無限邊坡分析、瑞典圓弧法、Fellenius法、Bishop簡化法、安全係數、臨界滑動面、生態工法 |
 
 ---
 
@@ -376,13 +379,13 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 欄位 | 允許值 | 說明 |
 |------|--------|------|
-| `moduleId` | `RC-YYYY-N` | 題目唯一識別碼 |
+| `moduleId` | `SM-YYYY-N` | 題目唯一識別碼 |
 | `year` | 整數（西元年，如 `2015`） | 西元年 |
 | `rocYear` | 整數（民國年，如 `104`） | 民國年 |
 | `primaryTopicId` | `raw/json/syllabus_taxonomy.json` 中的 `id` | 命題大綱主分類，唯一 |
 | `primaryTopicName` | `raw/json/syllabus_taxonomy.json` 中的 `name` | 主分類名稱（直接引用命題大綱子項） |
-| `secondaryTopicIds` | `[]` 或 `["RC-UN-n"]` | 跨子項時填入，可多個 |
-| `designMethod` | `USD` / `WSD` / `概念題` / `混合` | 設計方法 |
+| `secondaryTopicIds` | `[]` 或 `["SM-UN-n"]` | 跨子項時填入，可多個 |
+| `designMethod` | `總應力法` / `有效應力法` / `概念題` / `混合` | 分析方法 |
 | `verificationStatus` | `verified` / `unverified` / `needs-review` | 驗證狀態 |
 | `hasSolution` | `true` / `false` | 是否已有解析 `.md` |
 | `hasViz` | `true` / `false` | 是否有互動圖 |
@@ -405,8 +408,8 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 項目 | 檢查方式 |
 |------|---------|
-| `raw/solutions/RC-YYYY-N/RC-YYYY-N.md` 存在 | 檔案系統確認 |
-| 開頭標籤區塊完整（編號、主分類、設計法、標籤） | 讀取 .md 前 20 行 |
+| `raw/solutions/SM-YYYY-N/SM-YYYY-N.md` 存在 | 檔案系統確認 |
+| 開頭標籤區塊完整（編號、主分類、分析法、標籤） | 讀取 .md 前 20 行 |
 | 所有獨立公式使用 LaTeX `$$...$$` | grep `\$\$` |
 | 每張 PNG 圖片有對應 `*圖說：*` | grep `圖說：` |
 | `question_index.json` 中 `hasSolution: true` | JSON 確認 |
@@ -416,7 +419,7 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 項目 | 檢查方式 |
 |------|---------|
-| `wiki/problems/RC-YYYY-N.md` 存在且有完整標籤 | 檔案系統確認 |
+| `wiki/problems/SM-YYYY-N.md` 存在且有完整標籤 | 檔案系統確認 |
 | `wiki/index.md` 在對應分類下有此題連結 | grep moduleId |
 | `wiki/by-year.md` 在對應年份有此題 | grep moduleId |
 | `wiki/log.md` 有 ingest 紀錄 | grep moduleId |
@@ -428,15 +431,15 @@ RC-YYYY-N-[內容碼]-viz.html
 
 | 類別 | ❌ 錯誤 | ✅ 正確 | 原因 |
 |------|--------|--------|------|
-| moduleId | `RC-104-1` | `RC-2015-1` | 年份用民國而非西元 |
-| moduleId | `RC-2015-01` | `RC-2015-1` | 題號有前導零 |
-| moduleId | `rc-2015-1` | `RC-2015-1` | 科目代碼小寫 |
-| 考卷 PDF | `RC-2015鋼筋混凝土設計與預力.pdf` | `RC-2015_鋼筋混凝土設計與預力.pdf` | 年份後缺底線 |
-| PNG | `RC-2015-1-fig1.png` | `RC-2015-1-fig-1.png` | 類型碼與序號間缺連字號 |
-| PNG | `RC-2015-1-eqn.png` | `RC-2015-1-eqn-1.png` | 缺序號（單張也要寫 `-1`） |
-| viz HTML | `RC-2015-1-pm.html` | `RC-2015-1-pm-viz.html` | 缺 `-viz` 後綴 |
-| designMethod | `usd` | `USD` | 設計法值大寫 |
-| tags | `T梁` | `T形梁` | 標籤應含完整中文說明 |
-| 公式 | `fc'=280 kgf/cm²` | `$f'_c = 280 \text{ kgf/cm}^2$` | 禁止純文字公式 |
+| moduleId | `SM-104-1` | `SM-2015-1` | 年份用民國而非西元 |
+| moduleId | `SM-2015-01` | `SM-2015-1` | 題號有前導零 |
+| moduleId | `sm-2015-1` | `SM-2015-1` | 科目代碼小寫 |
+| 考卷 PDF | `SM-2015土壤力學與基礎設計.pdf` | `SM-2015_土壤力學與基礎設計.pdf` | 年份後缺底線 |
+| PNG | `SM-2015-1-fig1.png` | `SM-2015-1-fig-1.png` | 類型碼與序號間缺連字號 |
+| PNG | `SM-2015-1-eqn.png` | `SM-2015-1-eqn-1.png` | 缺序號（單張也要寫 `-1`） |
+| viz HTML | `SM-2015-1-bearing.html` | `SM-2015-1-bearing-viz.html` | 缺 `-viz` 後綴 |
+| designMethod | `usd` | `總應力法` | 分析法值需用中文標準詞彙，非借用 RC 科目的 USD/WSD |
+| tags | `土壓` | `側向土壓力` | 標籤應含完整中文說明 |
+| 公式 | `qu=cNc+qNq+0.5rBNr` | `$q_u = c N_c + q N_q + 0.5\gamma B N_\gamma$` | 禁止純文字公式 |
 | verificationStatus | `Verified` | `verified` | 狀態值全小寫 |
 

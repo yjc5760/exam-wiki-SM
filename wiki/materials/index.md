@@ -1,8 +1,17 @@
-# 材料行為層（RC）
+# 材料行為（Layer 6）
 
-| 頁面 | 內容 |
-|------|------|
-| [混凝土應力-應變](concrete-stress-strain.md) | 峰值應力、極限應變、Whitney 應力塊、圍束混凝土 |
-| [鋼筋降伏行為](steel-yielding.md) | SD280/420/550、彈塑性假設、高強度鋼筋 |
-| [潛變與收縮](creep-shrinkage.md) | 潛變係數、收縮應變、對預力損失與撓度的影響 |
-| [預力鋼絞線](prestress-strand.md) | 7 線絞線規格、雙線性模型、fps 計算公式、鬆弛 |
+> 土壤作為工程材料的基本行為特性，是所有計算方法的物理基礎。
+> 由 Cowork 直接維護。
+
+---
+
+## 四大主題
+
+| 主題 | 頁面 | 說明 |
+|------|------|------|
+| 土壤分類特性 | [soil-classification-properties.md](soil-classification-properties.md) | 三相關係、Atterberg限度、USCS分類、級配特性 |
+| 滲透特性 | [permeability-properties.md](permeability-properties.md) | 滲透係數量級、各類土壤滲透性比較、影響因素 |
+| 壓密特性 | [consolidation-properties.md](consolidation-properties.md) | Cc/Cr/Cv 典型值、正常壓密/過壓密行為差異、次壓縮 |
+| 剪力強度特性 | [shear-strength-properties.md](shear-strength-properties.md) | 砂土 vs 黏土強度行為差異、排水/不排水條件下的強度變化 |
+
+> 四大主題已建立初版內容，後續可依實際解題累積持續補充案例與細節。

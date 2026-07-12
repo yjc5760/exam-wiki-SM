@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-U1-3 土壤夯實及壓密 讀書筆記</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+<style>
+:root{--navy:#1e3a5f;--teal:#0e7490;--amber:#b45309;--green:#166534;--red:#b91c1c;--bg:#f8fafc;--line:#e2e8f0;--muted:#64748b;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans TC','PingFang TC',-apple-system,sans-serif;background:var(--bg);color:#1e293b;line-height:1.6;}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 80px;}
+header.top{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;padding:28px 20px;border-radius:0 0 16px 16px;margin-bottom:20px;}
+header.top h1{margin:0 0 6px;font-size:1.5rem;}
+header.top p{margin:0;opacity:.9;font-size:.92rem;}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:20px;}
+section h2{margin:0 0 14px;font-size:1.15rem;color:var(--navy);border-left:4px solid var(--teal);padding-left:10px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px;}
+.kpi{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+.kpi .n{font-size:1.6rem;font-weight:700;color:var(--teal);}
+.kpi .l{font-size:.78rem;color:var(--muted);margin-top:2px;}
+.subtopic-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{padding:6px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.82rem;transition:.15s;}
+.chip.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+canvas{max-width:100%;}
+.qlist{display:flex;flex-direction:column;gap:8px;}
+.qcard{border:1px solid var(--line);border-radius:8px;padding:10px 14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.86rem;}
+.qcard .qid{font-weight:700;color:var(--navy);min-width:92px;}
+.qcard .badge{padding:2px 8px;border-radius:12px;font-size:.72rem;background:var(--bg);border:1px solid var(--line);}
+.qcard .tags{display:flex;flex-wrap:wrap;gap:4px;flex:1;}
+.qcard .tag{background:#eef2ff;color:#3730a3;padding:1px 8px;border-radius:10px;font-size:.72rem;}
+.qcard a.openlink{margin-left:auto;font-size:.78rem;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:3px 10px;border-radius:6px;white-space:nowrap;}
+.qcard a.openlink:hover{background:var(--teal);color:#fff;}
+.formula-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.fcard{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;}
+.fcard h3{margin:0 0 8px;font-size:.95rem;color:var(--teal);}
+.fcard .eq{overflow-x:auto;padding:4px 0;}
+.fcard p{font-size:.82rem;color:var(--muted);margin:6px 0 0;}
+.trap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;}
+.trap{border-left:4px solid var(--amber);background:#fffbeb;border-radius:0 8px 8px 0;padding:10px 14px;font-size:.84rem;}
+.trap .src{font-size:.72rem;color:var(--amber);font-weight:700;margin-bottom:4px;}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:700px){.calc{grid-template-columns:1fr;}}
+.calc label{display:block;font-size:.8rem;color:var(--muted);margin:8px 0 3px;}
+.calc input,.calc select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font-size:.88rem;}
+.calc button{margin-top:14px;background:var(--teal);color:#fff;border:none;padding:9px 18px;border-radius:8px;cursor:pointer;font-size:.88rem;}
+.calc button:hover{background:var(--navy);}
+.result-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.88rem;}
+.result-box .big{font-size:1.3rem;font-weight:700;color:var(--teal);}
+.svgwrap{text-align:center;background:var(--bg);border-radius:10px;padding:10px;}
+.note{font-size:.78rem;color:var(--muted);margin-top:8px;}
+footer.pagefoot{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px;}
+</style>
+</head>
+<body>
+<div class='wrap'>
+<header class="top"><h1>SM-U1-3　土壤夯實及壓密</h1><p>SM 土壤力學與基礎設計 · 命題大綱第一單元 · 複習導覽頁</p></header>
+<section><h2>① 總覽</h2><div class="kpi-grid"><div class="kpi"><div class="n">23 題</div><div class="l">歷屆題數</div></div><div class="kpi"><div class="n">24%</div><div class="l">佔全科比例</div></div><div class="kpi"><div class="n">第 1 名（最高頻子項）</div><div class="l">命題排名</div></div><div class="kpi"><div class="n">4/6 年</div><div class="l">近6年出題率</div></div></div>
+<div class="subtopic-chips">
+  <div class="chip active" onclick="filterSub(null,this)">全部 (23)</div>
+  <div class="chip" onclick="filterSub('consolidation',this)">壓密沉陷 (13)</div>
+  <div class="chip" onclick="filterSub('compaction',this)">夯實 (10)</div>
+</div>
+<canvas id="yearChart"></canvas>
+<div class="note">高頻標籤：壓密沉陷量(9)、最佳含水量(6)、時間因數(5)、壓密度(4)、相對夯實度(4)、夯實試驗(3)、最大乾單位重(3)、夯實曲線(3)</div>
+</section>
+<section><h2>② 剖面圖解</h2><div class="svgwrap">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="13">
+  <rect x="0" y="0" width="640" height="300" fill="#f8fafc"/>
+  <text x="320" y="22" text-anchor="middle" font-weight="700" fill="#1e3a5f">典型壓密沉陷剖面（雙向排水情境）</text>
+  <line x1="60" y1="40" x2="580" y2="40" stroke="#334155" stroke-width="2"/>
+  <text x="30" y="44" font-size="11" fill="#334155">地表</text>
+  <rect x="200" y="20" width="120" height="14" fill="#94a3b8"/>
+  <text x="260" y="16" text-anchor="middle" font-size="11">均佈載重 q</text>
+  <rect x="60" y="40" width="520" height="50" fill="#fde68a" stroke="#ca8a04"/>
+  <text x="320" y="70" text-anchor="middle" fill="#78350f">上層砂土（透水層，排水邊界）</text>
+  <rect x="60" y="90" width="520" height="120" fill="#bbf7d0" stroke="#166534"/>
+  <text x="320" y="130" text-anchor="middle" fill="#14532d" font-weight="700">飽和黏土層　H</text>
+  <text x="320" y="150" text-anchor="middle" fill="#14532d" font-size="11">Cc, Cr, e0, Cv（一維壓密）</text>
+  <line x1="90" y1="150" x2="90" y2="90" stroke="#0e7490" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="90" y1="150" x2="90" y2="210" stroke="#0e7490" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="100" y="153" font-size="10" fill="#0e7490">雙向排水 Hdr = H/2</text>
+  <rect x="60" y="210" width="520" height="50" fill="#fde68a" stroke="#ca8a04"/>
+  <text x="320" y="240" text-anchor="middle" fill="#78350f">下層砂土（透水層，排水邊界）</text>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0e7490"/></marker></defs>
+  <text x="320" y="285" text-anchor="middle" font-size="11" fill="#64748b">若底部為不透水岩盤，則改為單向排水，Hdr = H（沉陷時間差 4 倍）</text>
+</svg>
+</div></section><section><h2>③ 解題流程圖</h2><div class="svgwrap">
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="12.5">
+  <rect x="0" y="0" width="640" height="340" fill="#f8fafc"/>
+  <rect x="220" y="10" width="200" height="36" rx="6" fill="#1e3a5f"/><text x="320" y="33" fill="#fff" text-anchor="middle">題目問的是「沉陷量」還是「時間」？</text>
+  <line x1="270" y1="46" x2="150" y2="80" stroke="#334155"/><text x="180" y="66" fill="#334155">沉陷量</text>
+  <line x1="370" y1="46" x2="490" y2="80" stroke="#334155"/><text x="440" y="66" fill="#334155">時間/壓密度</text>
+
+  <rect x="40" y="80" width="220" height="40" rx="6" fill="#0e7490"/><text x="150" y="104" fill="#fff" text-anchor="middle">判斷 OCR：p0'+Δp 與 pc' 關係</text>
+  <line x1="90" y1="120" x2="90" y2="150" stroke="#334155"/>
+  <rect x="10" y="150" width="160" height="46" rx="6" fill="#166534"/><text x="90" y="169" fill="#fff" text-anchor="middle" font-size="11">正常壓密</text><text x="90" y="184" fill="#fff" text-anchor="middle" font-size="11">全段用 Cc</text>
+  <line x1="200" y1="120" x2="200" y2="150" stroke="#334155"/>
+  <rect x="180" y="150" width="170" height="60" rx="6" fill="#b45309"/><text x="265" y="167" fill="#fff" text-anchor="middle" font-size="11">過壓密</text><text x="265" y="182" fill="#fff" text-anchor="middle" font-size="10">未超過pc'：全段Cr</text><text x="265" y="196" fill="#fff" text-anchor="middle" font-size="10">超過pc'：分段Cr+Cc</text>
+
+  <rect x="380" y="80" width="220" height="40" rx="6" fill="#0e7490"/><text x="490" y="104" fill="#fff" text-anchor="middle">U &lt; 60% 或 ≥ 60%？</text>
+  <line x1="440" y1="120" x2="440" y2="150" stroke="#334155"/>
+  <rect x="380" y="150" width="120" height="46" rx="6" fill="#166534"/><text x="440" y="169" fill="#fff" text-anchor="middle" font-size="11">U&lt;60%</text><text x="440" y="184" fill="#fff" text-anchor="middle" font-size="10">Tv=(π/4)U²</text>
+  <line x1="540" y1="120" x2="540" y2="150" stroke="#334155"/>
+  <rect x="500" y="150" width="130" height="46" rx="6" fill="#b45309"/><text x="565" y="169" fill="#fff" text-anchor="middle" font-size="11">U≥60%</text><text x="565" y="184" fill="#fff" text-anchor="middle" font-size="9">Tv=1.781-0.933log(100-U)</text>
+
+  <rect x="180" y="230" width="330" height="40" rx="6" fill="#334155"/>
+  <text x="345" y="254" fill="#fff" text-anchor="middle" font-size="11">別忘了先判斷排水路徑 Hdr（單向 H／雙向 H/2）再代入 Tv=Cv·t/Hdr²</text>
+  <line x1="90" y1="196" x2="130" y2="250" stroke="#94a3b8" stroke-dasharray="3,3"/>
+  <line x1="565" y1="196" x2="450" y2="250" stroke="#94a3b8" stroke-dasharray="3,3"/>
+</svg>
+</div></section><section><h2>④ 核心公式速查</h2>
+<div class="formula-grid">
+  <div class="fcard"><h3>夯實曲線 / 零氣孔曲線</h3><div class="eq">$$\gamma_{zav} = \dfrac{G_s \gamma_w}{1+wG_s}$$</div><p>乾密度-含水量鐘形曲線峰值即 wopt 與 γd,max；零氣孔曲線為理論上限（S=100%）</p></div>
+  <div class="fcard"><h3>正常壓密沉陷</h3><div class="eq">$$S_c=\dfrac{C_c H}{1+e_0}\log\dfrac{p_0'+\Delta p}{p_0'}$$</div><p>OCR=1 時全段使用 Cc</p></div>
+  <div class="fcard"><h3>過壓密沉陷（跨越 pc'）</h3><div class="eq">$$S_c=\dfrac{C_r H}{1+e_0}\log\dfrac{p_c'}{p_0'}+\dfrac{C_c H}{1+e_0}\log\dfrac{p_0'+\Delta p}{p_c'}$$</div><p>OCR&gt;1 且 p0'+Δp 超過 pc' 時分段計算</p></div>
+  <div class="fcard"><h3>時间因数与壓密度</h3><div class="eq">$$T_v=\dfrac{C_v t}{H_{dr}^2}$$</div><p>U&lt;60%：$T_v=\frac{\pi}{4}U^2$；U≥60%：$T_v=1.781-0.933\log_{10}(100-U)$</p></div>
+  <div class="fcard"><h3>過壓密比</h3><div class="eq">$$OCR=\dfrac{p_c'}{p_0'}$$</div><p>由 Casagrande 作圖法於 e-log p′ 曲線求 pc′</p></div>
+  <div class="fcard"><h3>相對夯實度 vs 相對密度</h3><div class="eq">$$R_c=\dfrac{\gamma_d}{\gamma_{d,max}}\quad D_r=\dfrac{e_{max}-e}{e_{max}-e_{min}}$$</div><p>兩者定義基礎不同（乾單位重 vs 孔隙比），常見混淆陷阱</p></div>
+</div>
+</section><section><h2>⑤ 考題清單</h2><div style="margin-bottom:10px;font-size:.85rem;color:#64748b">共 <b id="qcount">23</b> 題</div><div id="qlist" class="qlist"></div></section><section><h2>⑥ 高頻陷阱</h2><div class="trap-grid"><div class="trap"><div class="src">📌 排水路徑判斷（最高頻陷阱）</div>黏土層上下皆為砂土（透水層）時屬雙面排水，Hdr=H/2；若底部為不透水岩盤則為單面排水 Hdr=H。判斷錯誤會使壓密時間相差整整 4 倍。<div class="note">相關題目：SM-2025-1 / SM-2021-2 / SM-2019-2 / SM-2016-1 / SM-2015-1 / SM-2014-4</div></div><div class="trap"><div class="src">📌 U≥60% 對數公式誤用</div>壓密度超過 60% 後須切換為對數近似公式 Tv=1.781-0.933log(100-U)，若繼續套用拋物線公式 Tv=(π/4)U² 會嚴重低估所需時間。<div class="note">相關題目：SM-2018-1</div></div><div class="trap"><div class="src">📌 正常壓密與過壓密段落誤用同一 Cc</div>若 p0'+Δp 已超過 pc'，須分兩段計算（Cr 段 + Cc 段），全段用 Cc 會高估沉陷、全段用 Cr 會低估沉陷。<div class="note">相關題目：SM-2016-1 / SM-2002-1</div></div><div class="trap"><div class="src">📌 相對密度 vs 相對夯實度混淆</div>相對密度基於孔隙比定義，相對夯實度基於乾單位重定義，兩者公式與適用情境不同，混用會導致整題錯誤。<div class="note">相關題目：SM-2019-3</div></div><div class="trap"><div class="src">📌 2:1 應力傳佈深度基準點</div>計算附加應力 Δσ 的深度 z 必須由「基礎底面」起算，不可從地表起算，這是常見的深度基準誤植陷阱。<div class="note">相關題目：SM-2011-3 / SM-2003-2</div></div><div class="trap"><div class="src">📌 單位換算（g/cm³ vs kN/m³）</div>夯實試驗常混用 g、kgf、cm³、kN、m³ 等單位，需統一換算並取 g=9.81 m/s²，否則量級錯誤難以自查。<div class="note">相關題目：SM-2022-1 / SM-2016-2</div></div><div class="trap"><div class="src">📌 忽略乾單位重與飽和單位重的推算關係</div>題目常不直接給乾單位重，需用 γd=γsat/(1+w) 等三相關係反推，忽略此關係將無法接續計算應力。<div class="note">相關題目：SM-2024-3</div></div><div class="trap"><div class="src">📌 取樣擾動對 pc' 的低估</div>試體擾動會使 e-log p′ 曲線圓弧段不明顯，Casagrande作圖法求出的 pc′ 偏低，可能誤判為正常壓密而高估沉陷。<div class="note">相關題目：SM-2012-2 / SM-2002-1</div></div></div></section><section><h2>⑦ 互動計算器</h2>
+<div class="calc">
+  <div>
+    <h3 style="margin-top:0;color:#0e3a5f">① 壓密沉陷量計算</h3>
+    <label>土層厚度 H (m)</label><input type="number" id="c_H" value="6" step="0.1">
+    <label>初始孔隙比 e0</label><input type="number" id="c_e0" value="0.9" step="0.01">
+    <label>初始有效應力 p0' (kPa)</label><input type="number" id="c_p0" value="100" step="1">
+    <label>附加應力 Δp (kPa)</label><input type="number" id="c_dp" value="80" step="1">
+    <label>過壓密應力 pc' (kPa，若為正常壓密請填等於 p0')</label><input type="number" id="c_pc" value="100" step="1">
+    <label>壓縮指數 Cc</label><input type="number" id="c_cc" value="0.3" step="0.01">
+    <label>回脹指數 Cr</label><input type="number" id="c_cr" value="0.05" step="0.01">
+    <button onclick="calcSettlement()">計算沉陷量 Sc</button>
+  </div>
+  <div>
+    <h3 style="margin-top:0;color:#0e3a5f">② 壓密度與所需時間</h3>
+    <label>壓密係數 Cv (m²/year)</label><input type="number" id="t_cv" value="2.0" step="0.1">
+    <label>排水條件</label>
+    <select id="t_drain"><option value="2">雙向排水 (Hdr=H/2)</option><option value="1">單向排水 (Hdr=H)</option></select>
+    <label>目標壓密度 U (%)</label><input type="number" id="t_U" value="90" step="1">
+    <button onclick="calcTime()">計算所需時間 t</button>
+  </div>
+</div>
+<div id="calcResult" class="result-box" style="margin-top:16px;">請輸入參數並點擊計算按鈕</div>
+<script>
+function calcSettlement(){
+  const H=+document.getElementById('c_H').value, e0=+document.getElementById('c_e0').value;
+  const p0=+document.getElementById('c_p0').value, dp=+document.getElementById('c_dp').value;
+  const pc=+document.getElementById('c_pc').value, Cc=+document.getElementById('c_cc').value, Cr=+document.getElementById('c_cr').value;
+  const pf = p0+dp;
+  let Sc, detail;
+  if(pc<=p0+1e-9){
+    Sc = Cc*H/(1+e0)*Math.log10(pf/p0);
+    detail = `正常壓密（pc'≈p0'）：Sc = Cc·H/(1+e0)·log(pf'/p0') = ${Cc}×${H}/(1+${e0})×log(${pf.toFixed(1)}/${p0}) = ${Sc.toFixed(4)} m`;
+  } else if(pf<=pc){
+    Sc = Cr*H/(1+e0)*Math.log10(pf/p0);
+    detail = `過壓密（未超過pc'）：Sc = Cr·H/(1+e0)·log(pf'/p0') = ${Sc.toFixed(4)} m`;
+  } else {
+    const S1 = Cr*H/(1+e0)*Math.log10(pc/p0);
+    const S2 = Cc*H/(1+e0)*Math.log10(pf/pc);
+    Sc = S1+S2;
+    detail = `過壓密（跨越pc'）：Sc = Cr段(${S1.toFixed(4)}) + Cc段(${S2.toFixed(4)}) = ${Sc.toFixed(4)} m`;
+  }
+  document.getElementById('calcResult').innerHTML = `<div class="big">Sc ≈ ${(Sc*100).toFixed(2)} cm</div><div>${detail}</div>`;
+}
+function calcTime(){
+  const Cv=+document.getElementById('t_cv').value, drain=+document.getElementById('t_drain').value;
+  const U=+document.getElementById('t_U').value;
+  const Hdr = drain===2 ? (+document.getElementById('c_H').value)/2 : (+document.getElementById('c_H').value);
+  let Tv;
+  if(U<60){ Tv = (Math.PI/4)*(U/100)**2; } else { Tv = 1.781-0.933*Math.log10(100-U); }
+  const t = Tv*Hdr*Hdr/Cv;
+  document.getElementById('calcResult').innerHTML = `<div class="big">t ≈ ${t.toFixed(2)} 年（Tv=${Tv.toFixed(4)}, Hdr=${Hdr.toFixed(2)}m）</div><div>公式依 U${U<60?'<60%（拋物線式）':'≥60%（對數式）'}選用</div>`;
+}
+</script>
+</section><footer class='pagefoot'>exam-wiki-SM · study 指令輸出 · 資料來源：raw/json/question_index.json + raw/solutions/</footer></div>
+<script>const QUESTIONS = [{"id": "SM-2025-1", "year": 2025, "method": "有效應力法", "tags": ["一維壓密", "壓密度", "排水路徑", "時間因素"], "subtype": "consolidation"}, {"id": "SM-2024-3", "year": 2024, "method": "有效應力法", "tags": ["地下水位下降", "有效應力", "正常壓密", "過壓密", "壓密沉陷"], "subtype": "consolidation"}, {"id": "SM-2022-1", "year": 2022, "method": "混合", "tags": ["夯實試驗", "最佳含水量", "最大乾單位重", "夯實能量", "夯實曲線"], "subtype": "compaction"}, {"id": "SM-2021-2", "year": 2021, "method": "有效應力法", "tags": ["正常壓密黏土", "壓密沉陷量", "時間因數", "表面載重", "壓密度"], "subtype": "consolidation"}, {"id": "SM-2019-2", "year": 2019, "method": "有效應力法", "tags": ["主要壓密沉陷量", "時間因數", "預壓工法", "正常壓密黏土"], "subtype": "consolidation"}, {"id": "SM-2019-3", "year": 2019, "method": "混合", "tags": ["相對夯實度", "相對密度", "乾土單位重", "最大孔隙比", "沉陷量"], "subtype": "compaction"}, {"id": "SM-2018-1", "year": 2018, "method": "有效應力法", "tags": ["壓密沉陷量", "時間因數", "壓密係數", "總壓密沉陷", "沉陷預估"], "subtype": "consolidation"}, {"id": "SM-2017-1", "year": 2017, "method": "概念題", "tags": ["夯實規範", "夯實曲線", "工地密度", "自癒性", "最佳含水量"], "subtype": "compaction"}, {"id": "SM-2017-2", "year": 2017, "method": "混合", "tags": ["CBR", "夯實曲線", "最大乾土單位重", "最佳含水量", "工地密度百分比"], "subtype": "compaction"}, {"id": "SM-2016-1", "year": 2016, "method": "有效應力法", "tags": ["過壓密比", "孔隙比", "壓密沉陷量", "超額孔隙水壓", "壓密度"], "subtype": "consolidation"}, {"id": "SM-2016-2", "year": 2016, "method": "混合", "tags": ["現地密度試驗", "四分法", "比重", "乾土單位重", "最佳含水量"], "subtype": "compaction"}, {"id": "SM-2015-1", "year": 2015, "method": "有效應力法", "tags": ["預載重", "壓密沉陷量", "時間因數", "雙向排水", "壓縮指數"], "subtype": "consolidation"}, {"id": "SM-2014-4", "year": 2014, "method": "有效應力法", "tags": ["壓密沉陷量", "均佈載重", "壓密度", "時間因數", "孔隙比"], "subtype": "consolidation"}, {"id": "SM-2013-2", "year": 2013, "method": "混合", "tags": ["標準夯實試驗", "曲線族法", "最大乾單位重", "相對夯實度", "混合土"], "subtype": "compaction"}, {"id": "SM-2012-2", "year": 2012, "method": "概念題", "tags": ["單向度壓密試驗", "預壓密應力", "Casagrande作圖法", "壓密沉陷量", "試體擾動"], "subtype": "consolidation"}, {"id": "SM-2011-3", "year": 2011, "method": "混合", "tags": ["壓密沉陷量", "2:1應力傳佈", "過壓密", "部分飽和", "回脹指數"], "subtype": "consolidation"}, {"id": "SM-2009-1", "year": 2009, "method": "概念題", "tags": ["夯實試驗", "夯實能量", "最佳含水量", "最大乾單位重", "透水性", "土壤結構"], "subtype": "compaction"}, {"id": "SM-2008-1", "year": 2008, "method": "混合", "tags": ["借土區", "體積比", "混合土壤", "夯實", "加水量", "乾單位重"], "subtype": "compaction"}, {"id": "SM-2006-4", "year": 2006, "method": "概念題", "tags": ["夯實作業", "最佳含水量", "現地密度試驗", "相對夯實度", "品質檢驗"], "subtype": "compaction"}, {"id": "SM-2005-3", "year": 2005, "method": "有效應力法", "tags": ["體積變化係數", "壓縮指數", "長期沉陷量", "有效應力", "回填土"], "subtype": "consolidation"}, {"id": "SM-2003-2", "year": 2003, "method": "有效應力法", "tags": ["壓密沉陷量", "2:1應力傳佈", "過壓密黏土", "預壓密應力", "壓縮指數", "回脹指數"], "subtype": "consolidation"}, {"id": "SM-2002-1", "year": 2002, "method": "概念題", "tags": ["壓密沉陷量", "孔隙比", "取樣擾動", "e-logP曲線", "Schmertmann修正法"], "subtype": "consolidation"}, {"id": "SM-2002-3", "year": 2002, "method": "概念題", "tags": ["填方", "夯實試驗", "滾壓控制", "相對夯實度", "沉陷量"], "subtype": "compaction"}];</script>
+<script>
+function renderQuestions(filterType){
+  const box = document.getElementById('qlist');
+  const items = QUESTIONS.filter(q => !filterType || q.subtype === filterType);
+  box.innerHTML = items.map(q => `
+    <div class="qcard">
+      <span class="qid">${q.id}</span>
+      <span class="badge">${q.year}年</span>
+      <span class="badge">${q.method}</span>
+      <span class="tags">${q.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span>
+      <a class="openlink" href="../raw/solutions/${q.id}/${q.id}.md" target="_blank">查看解析 →</a>
+    </div>`).join('');
+  document.getElementById('qcount').textContent = items.length;
+}
+</script>
+<script>renderQuestions(null); 
+(function(){
+  const cvs = document.getElementById('yearChart');
+  const ctx = cvs.getContext('2d');
+  const years = [...new Set(QUESTIONS.map(q=>q.year))].sort((a,b)=>a-b);
+  const counts = years.map(y => QUESTIONS.filter(q=>q.year===y).length);
+  const W = cvs.width = cvs.parentElement.clientWidth;
+  const H = cvs.height = 180;
+  ctx.clearRect(0,0,W,H);
+  const maxC = Math.max(...counts, 1);
+  const bw = W / years.length;
+  ctx.font = '10px sans-serif';
+  years.forEach((y, i) => {
+    const h = (counts[i] / maxC) * (H - 40);
+    const x = i * bw + bw*0.15;
+    const w = bw * 0.7;
+    ctx.fillStyle = '#0e7490';
+    ctx.fillRect(x, H - 24 - h, w, h);
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    if(counts[i] > 0) ctx.fillText(counts[i], x + w/2, H - 28 - h);
+    ctx.save();
+    ctx.translate(x + w/2, H - 8);
+    ctx.rotate(-Math.PI/3);
+    ctx.textAlign='right';
+    ctx.fillText(String(y).slice(2), 0, 0);
+    ctx.restore();
+  });
+})();
+</script>
+<script>
+function filterSub(type, el){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderQuestions(type);
+}
+window.addEventListener('resize', ()=>{});
+</script></body></html>

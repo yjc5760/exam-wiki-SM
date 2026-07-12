@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-U2-2 深基礎之支承力與沉陷量 讀書筆記</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+<style>
+:root{--navy:#1e3a5f;--teal:#0e7490;--amber:#b45309;--green:#166534;--red:#b91c1c;--bg:#f8fafc;--line:#e2e8f0;--muted:#64748b;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans TC','PingFang TC',-apple-system,sans-serif;background:var(--bg);color:#1e293b;line-height:1.6;}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 80px;}
+header.top{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;padding:28px 20px;border-radius:0 0 16px 16px;margin-bottom:20px;}
+header.top h1{margin:0 0 6px;font-size:1.5rem;}
+header.top p{margin:0;opacity:.9;font-size:.92rem;}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:20px;}
+section h2{margin:0 0 14px;font-size:1.15rem;color:var(--navy);border-left:4px solid var(--teal);padding-left:10px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px;}
+.kpi{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+.kpi .n{font-size:1.6rem;font-weight:700;color:var(--teal);}
+.kpi .l{font-size:.78rem;color:var(--muted);margin-top:2px;}
+.subtopic-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{padding:6px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.82rem;transition:.15s;}
+.chip.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+canvas{max-width:100%;}
+.qlist{display:flex;flex-direction:column;gap:8px;}
+.qcard{border:1px solid var(--line);border-radius:8px;padding:10px 14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.86rem;}
+.qcard .qid{font-weight:700;color:var(--navy);min-width:92px;}
+.qcard .badge{padding:2px 8px;border-radius:12px;font-size:.72rem;background:var(--bg);border:1px solid var(--line);}
+.qcard .tags{display:flex;flex-wrap:wrap;gap:4px;flex:1;}
+.qcard .tag{background:#eef2ff;color:#3730a3;padding:1px 8px;border-radius:10px;font-size:.72rem;}
+.qcard a.openlink{margin-left:auto;font-size:.78rem;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:3px 10px;border-radius:6px;white-space:nowrap;}
+.qcard a.openlink:hover{background:var(--teal);color:#fff;}
+.formula-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.fcard{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;}
+.fcard h3{margin:0 0 8px;font-size:.95rem;color:var(--teal);}
+.fcard .eq{overflow-x:auto;padding:4px 0;}
+.fcard p{font-size:.82rem;color:var(--muted);margin:6px 0 0;}
+.trap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;}
+.trap{border-left:4px solid var(--amber);background:#fffbeb;border-radius:0 8px 8px 0;padding:10px 14px;font-size:.84rem;}
+.trap .src{font-size:.72rem;color:var(--amber);font-weight:700;margin-bottom:4px;}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:700px){.calc{grid-template-columns:1fr;}}
+.calc label{display:block;font-size:.8rem;color:var(--muted);margin:8px 0 3px;}
+.calc input,.calc select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font-size:.88rem;}
+.calc button{margin-top:14px;background:var(--teal);color:#fff;border:none;padding:9px 18px;border-radius:8px;cursor:pointer;font-size:.88rem;}
+.calc button:hover{background:var(--navy);}
+.result-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.88rem;}
+.result-box .big{font-size:1.3rem;font-weight:700;color:var(--teal);}
+.svgwrap{text-align:center;background:var(--bg);border-radius:10px;padding:10px;}
+.note{font-size:.78rem;color:var(--muted);margin-top:8px;}
+footer.pagefoot{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px;}
+</style>
+</head>
+<body>
+<div class='wrap'>
+<header class="top"><h1>SM-U2-2　深基礎之支承力與沉陷量</h1><p>SM 土壤力學與基礎設計 · 命題大綱第二單元 · 複習導覽頁</p></header>
+<section><h2>① 總覽</h2><div class="kpi-grid"><div class="kpi"><div class="n">10 題</div><div class="l">歷屆題數</div></div><div class="kpi"><div class="n">10%</div><div class="l">佔全科比例</div></div><div class="kpi"><div class="n">8/10</div><div class="l">樁基題佔比</div></div><div class="kpi"><div class="n">3/6 年</div><div class="l">近6年出題率</div></div></div>
+<div class="subtopic-chips">
+  <div class="chip active" onclick="filterSub(null,this)">全部 (10)</div>
+  <div class="chip" onclick="filterSub('pile',this)">樁基承載力 (8)</div>
+  <div class="chip" onclick="filterSub('ground_improve',this)">液化/地層改良 (2)</div>
+</div>
+<canvas id="yearChart"></canvas>
+<div class="note">高頻標籤：基樁(2)、臨界深度(2)、樁身摩擦力(2)、預鑄基樁(2)、摩擦樁(2)、單樁承載力(1)、樁身長度(1)、極限阻抗(1)</div>
+</section>
+<section><h2>② 剖面圖解</h2><div class="svgwrap">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="13">
+  <rect x="0" y="0" width="640" height="300" fill="#f8fafc"/>
+  <text x="320" y="22" text-anchor="middle" font-weight="700" fill="#1e3a5f">單樁承載力組成示意圖</text>
+  <rect x="270" y="40" width="16" height="10" fill="#94a3b8"/>
+  <rect x="278" y="50" width="14" height="200" fill="#78716c"/>
+  <line x1="40" y1="50" x2="600" y2="50" stroke="#0e7490" stroke-dasharray="4,3"/><text x="45" y="44" fill="#0e7490" font-size="11">地表面 GL</text>
+  <line x1="40" y1="130" x2="600" y2="130" stroke="#0e7490" stroke-dasharray="2,2" opacity="0.5"/><text x="600" y="126" text-anchor="end" font-size="10" fill="#0e7490">地下水位 GWT</text>
+  <path d="M285,50 L285,250" stroke="#f59e0b" stroke-width="10" opacity="0.5"/>
+  <text x="330" y="150" font-size="11" fill="#b45309">Qs = 樁身摩擦力（Σfs·As，α或β法）</text>
+  <ellipse cx="285" cy="250" rx="30" ry="8" fill="#16a34a" opacity="0.6"/>
+  <text x="330" y="255" font-size="11" fill="#166534">Qp = 樁底點承載力（qp·Ap）</text>
+  <line x1="230" y1="10" x2="230" y2="45" stroke="#334155" marker-end="url(#arr)"/>
+  <text x="230" y="8" text-anchor="middle" font-size="11">Q（工作載重）</text>
+  <text x="330" y="280" font-size="12" font-weight="700" fill="#1e3a5f">Qu = Qs + Qp　　Qa = Qu / FS</text>
+</svg>
+</div></section><section><h2>③ 解題流程圖</h2><div class="svgwrap">
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="12.5">
+  <rect x="0" y="0" width="640" height="280" fill="#f8fafc"/>
+  <rect x="220" y="10" width="220" height="36" rx="6" fill="#1e3a5f"/><text x="330" y="33" fill="#fff" text-anchor="middle">土層排水/強度特性？</text>
+  <line x1="280" y1="46" x2="150" y2="80" stroke="#334155"/><text x="160" y="66">飽和黏土(短期)</text>
+  <line x1="380" y1="46" x2="500" y2="80" stroke="#334155"/><text x="430" y="66">砂土/長期</text>
+
+  <rect x="30" y="80" width="240" height="40" rx="6" fill="#0e7490"/><text x="150" y="104" fill="#fff" text-anchor="middle">α 法（總應力法）</text>
+  <line x1="150" y1="120" x2="150" y2="150" stroke="#334155"/>
+  <rect x="30" y="150" width="240" height="46" rx="6" fill="#166534"/><text x="150" y="169" fill="#fff" text-anchor="middle" font-size="11">fs=α·Su　　Qp=9·Su·Ap</text><text x="150" y="184" fill="#fff" text-anchor="middle" font-size="9">α 依 Su 查表，Su 隨深度變化需分層</text>
+
+  <rect x="380" y="80" width="240" height="40" rx="6" fill="#0e7490"/><text x="500" y="104" fill="#fff" text-anchor="middle">β 法（有效應力法）</text>
+  <line x1="500" y1="120" x2="500" y2="150" stroke="#334155"/>
+  <rect x="380" y="150" width="240" height="46" rx="6" fill="#b45309"/><text x="500" y="169" fill="#fff" text-anchor="middle" font-size="11">fs=β·σ'v　　注意臨界深度</text><text x="500" y="184" fill="#fff" text-anchor="middle" font-size="9">超過臨界深度後 σ'v 不再增加(視為定值)</text>
+
+  <rect x="140" y="220" width="360" height="40" rx="6" fill="#334155"/>
+  <text x="320" y="244" fill="#fff" text-anchor="middle" font-size="11">抗拔力：僅計摩擦力（不計端points承載力），常需另乘拉拔折減係數</text>
+</svg>
+</div></section><section><h2>④ 核心公式速查</h2>
+<div class="formula-grid">
+  <div class="fcard"><h3>單樁極限承載力</h3><div class="eq">$$Q_u = Q_s + Q_p = \sum f_s A_s + q_p A_p$$</div><p>Qa = Qu / FS（FS 常取 2.5~3）</p></div>
+  <div class="fcard"><h3>α 法（總應力，飽和黏土短期）</h3><div class="eq">$$f_s = \alpha S_u,\quad q_p = 9S_u$$</div><p>α 為附著係數，依 Su 大小查表（Su 越大 α 越小）</p></div>
+  <div class="fcard"><h3>β 法（有效應力，長期/排水）</h3><div class="eq">$$f_s = \beta\sigma_v',\quad \beta = K\tan\delta$$</div><p>需注意臨界深度 zc，超過後 σ'v 視為定值不再增加</p></div>
+  <div class="fcard"><h3>樁抗拔力</h3><div class="eq">$$Q_{ult,uplift} = \sum f_s A_s \times \text{(折減係數)}$$</div><p>抗拔力不含樁底承載力，且摩擦力常需折減（約0.7~0.9）</p></div>
+  <div class="fcard"><h3>群樁效率</h3><div class="eq">$$\eta = \dfrac{Q_{u,group}}{n \times Q_{u,single}}$$</div><p>群樁間距過小時 η&lt;1（重疊破壞面），需檢核區塊破壞(block failure)</p></div>
+  <div class="fcard"><h3>摩擦樁彈性沉陷（近似）</h3><div class="eq">$$S = \dfrac{Q_wL}{A_pE_p} + \text{(樁尖/樁側土壤壓縮量)}$$</div><p>樁身彈性壓縮 + 樁尖土壤壓縮 + 樁側土壤壓縮三部分疊加</p></div>
+</div>
+</section><section><h2>⑤ 考題清單</h2><div style="margin-bottom:10px;font-size:.85rem;color:#64748b">共 <b id="qcount">10</b> 題</div><div id="qlist" class="qlist"></div></section><section><h2>⑥ 高頻陷阱</h2><div class="trap-grid"><div class="trap"><div class="src">📌 α 值不可跨圖表外插</div>α 附著係數依 Su 查經驗圖表，Su 超出圖表範圍時不可線性外插，需採用保守值或其他經驗式。<div class="note">相關題目：SM-2012-3</div></div><div class="trap"><div class="src">📌 臨界深度後 σ'v 視為定值</div>β 法中樁身摩擦力隨深度增加至臨界深度 zc 後不再增加，超過 zc 部分仍以 zc 處的 σ'v 計算，這是常見的計算陷阱。<div class="note">相關題目：SM-2023-3 / SM-2007-3</div></div><div class="trap"><div class="src">📌 雙層土壤分層計算摩擦力</div>樁身穿越多層土壤時，各層 fs、As 需分層計算後加總，不可用單一土層參數貫穿全樁長。<div class="note">相關題目：SM-2012-3</div></div><div class="trap"><div class="src">📌 抗拔力不含樁底承載力</div>抗拔力計算僅考慮樁身摩擦力（且常需乘以折減係數），樁底端承角承載力在拉拔情況下不提供抵抗力。<div class="note">相關題目：SM-2021-3 / SM-2012-3</div></div><div class="trap"><div class="src">📌 總應力法 vs 有效應力法選用時機</div>短期（施工期/地震）用總應力法（α法，Su不排水強度）；長期（使用階段）用有效應力法（β法，c',φ'）。混淆會導致公式選錯。<div class="note">相關題目：SM-2024-4 / SM-2021-3</div></div><div class="trap"><div class="src">📌 彈性理論法的邊界條件</div>半無限長樁與有限長樁的樁頭勁度公式不同，需先判斷樁長與土層勁度的相對關係（特徵長度）以選用正確邊界條件。<div class="note">相關題目：SM-2006-2</div></div><div class="trap"><div class="src">📌 應變相容性（墩基）</div>墩基摩擦力與端承力並非同時達到極限值，需依應變相容性分析判斷實際發揮比例，不可逕行相加兩者的極限值。<div class="note">相關題目：SM-2005-4</div></div><div class="trap"><div class="src">📌 液化評估與基礎型式選擇需連動</div>土壤液化潛能高的場址，基礎型式選擇（淺基礎/樁基/地層改良）需一併評估，不可僅由承載力觀點決定基礎型式。<div class="note">相關題目：SM-2013-4 / SM-2002-2</div></div></div></section><section><h2>⑦ 互動計算器</h2>
+<div class="calc">
+  <div>
+    <h3 style="margin-top:0;color:#0e3a5f">① α 法（總應力，飽和黏土）</h3>
+    <label>不排水剪力強度 Su (kPa)</label><input type="number" id="a_su" value="50">
+    <label>附著係數 α（依 Su 查表自行輸入，Su=50時約0.9）</label><input type="number" id="a_alpha" value="0.9" step="0.05">
+    <label>樁周長 × 樁長 As (m²)</label><input type="number" id="a_As" value="15">
+    <label>樁底面積 Ap (m²)</label><input type="number" id="a_Ap" value="0.28">
+    <label>安全係數 FS</label><input type="number" id="a_FS" value="2.5">
+    <button onclick="calcAlpha()">計算 Qu、Qa（α法）</button>
+  </div>
+  <div>
+    <h3 style="margin-top:0;color:#0e3a5f">② β 法（有效應力，長期）</h3>
+    <label>K·tanδ（β值）</label><input type="number" id="b_beta" value="0.3" step="0.01">
+    <label>樁長範圍平均有效應力 σ'v (kPa，已考慮臨界深度截止)</label><input type="number" id="b_sv" value="80">
+    <label>樁周長 × 樁長 As (m²)</label><input type="number" id="b_As" value="15">
+    <label>端承力 qp (kPa)</label><input type="number" id="b_qp" value="900">
+    <label>樁底面積 Ap (m²)</label><input type="number" id="b_Ap" value="0.28">
+    <label>安全係數 FS</label><input type="number" id="b_FS" value="2.5">
+    <button onclick="calcBeta()">計算 Qu、Qa（β法）</button>
+  </div>
+</div>
+<div id="calcResult" class="result-box" style="margin-top:16px;">請輸入參數並點擊計算按鈕</div>
+<script>
+function calcAlpha(){
+  const su=+document.getElementById('a_su').value, alpha=+document.getElementById('a_alpha').value;
+  const As=+document.getElementById('a_As').value, Ap=+document.getElementById('a_Ap').value, FS=+document.getElementById('a_FS').value;
+  const Qs = alpha*su*As;
+  const Qp = 9*su*Ap;
+  const Qu = Qs+Qp;
+  const Qa = Qu/FS;
+  document.getElementById('calcResult').innerHTML = `<div class="big">Qu ≈ ${Qu.toFixed(1)} kN　Qa ≈ ${Qa.toFixed(1)} kN</div>
+  <div>Qs(摩擦)=${Qs.toFixed(1)} kN，Qp(端承)=${Qp.toFixed(1)} kN（α法，總應力）</div>`;
+}
+function calcBeta(){
+  const beta=+document.getElementById('b_beta').value, sv=+document.getElementById('b_sv').value;
+  const As=+document.getElementById('b_As').value, qp=+document.getElementById('b_qp').value;
+  const Ap=+document.getElementById('b_Ap').value, FS=+document.getElementById('b_FS').value;
+  const Qs = beta*sv*As;
+  const Qp = qp*Ap;
+  const Qu = Qs+Qp;
+  const Qa = Qu/FS;
+  document.getElementById('calcResult').innerHTML = `<div class="big">Qu ≈ ${Qu.toFixed(1)} kN　Qa ≈ ${Qa.toFixed(1)} kN</div>
+  <div>Qs(摩擦)=${Qs.toFixed(1)} kN，Qp(端承)=${Qp.toFixed(1)} kN（β法，有效應力）</div>`;
+}
+</script>
+</section><footer class='pagefoot'>exam-wiki-SM · study 指令輸出 · 資料來源：raw/json/question_index.json + raw/solutions/</footer></div>
+<script>const QUESTIONS = [{"id": "SM-2024-4", "year": 2024, "method": "混合", "tags": ["基樁", "單樁承載力", "樁身長度", "極限阻抗", "安全係數"], "subtype": "pile"}, {"id": "SM-2023-3", "year": 2023, "method": "有效應力法", "tags": ["打入樁", "臨界深度", "樁身摩擦力", "樁底承載力", "有效應力"], "subtype": "pile"}, {"id": "SM-2021-3", "year": 2021, "method": "混合", "tags": ["預鑄基樁", "垂直支承力", "拉拔力", "摩擦角", "承載力因數"], "subtype": "pile"}, {"id": "SM-2014-2", "year": 2014, "method": "有效應力法", "tags": ["摩擦樁", "彈性沉陷", "點承載力", "側向摩擦力", "楊氏模數"], "subtype": "pile"}, {"id": "SM-2013-4", "year": 2013, "method": "概念題", "tags": ["土壤液化", "基礎型式選擇", "地層改良", "振動浮沖工法", "動力夯實法"], "subtype": "ground_improve"}, {"id": "SM-2012-3", "year": 2012, "method": "總應力法", "tags": ["基樁", "抗拔力", "附著因數", "表面摩擦力", "貫入深度", "雙層土"], "subtype": "pile"}, {"id": "SM-2007-3", "year": 2007, "method": "有效應力法", "tags": ["預鑄基樁", "臨界深度", "極限支承力", "樁身摩擦力", "容許載重"], "subtype": "pile"}, {"id": "SM-2006-2", "year": 2006, "method": "彈性理論", "tags": ["摩擦樁", "樁頭勁度", "微分方程", "彈簧係數", "半無限長樁"], "subtype": "pile"}, {"id": "SM-2005-4", "year": 2005, "method": "混合", "tags": ["墩基", "極限載重", "工作荷重", "應變相容性", "位移限制"], "subtype": "pile"}, {"id": "SM-2002-2", "year": 2002, "method": "概念題", "tags": ["液化", "震動揚實法", "地盤改良", "相對密度", "細砂"], "subtype": "ground_improve"}];</script>
+<script>
+function renderQuestions(filterType){
+  const box = document.getElementById('qlist');
+  const items = QUESTIONS.filter(q => !filterType || q.subtype === filterType);
+  box.innerHTML = items.map(q => `
+    <div class="qcard">
+      <span class="qid">${q.id}</span>
+      <span class="badge">${q.year}年</span>
+      <span class="badge">${q.method}</span>
+      <span class="tags">${q.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span>
+      <a class="openlink" href="../raw/solutions/${q.id}/${q.id}.md" target="_blank">查看解析 →</a>
+    </div>`).join('');
+  document.getElementById('qcount').textContent = items.length;
+}
+</script>
+<script>renderQuestions(null); 
+(function(){
+  const cvs = document.getElementById('yearChart');
+  const ctx = cvs.getContext('2d');
+  const years = [...new Set(QUESTIONS.map(q=>q.year))].sort((a,b)=>a-b);
+  const counts = years.map(y => QUESTIONS.filter(q=>q.year===y).length);
+  const W = cvs.width = cvs.parentElement.clientWidth;
+  const H = cvs.height = 180;
+  ctx.clearRect(0,0,W,H);
+  const maxC = Math.max(...counts, 1);
+  const bw = W / years.length;
+  ctx.font = '10px sans-serif';
+  years.forEach((y, i) => {
+    const h = (counts[i] / maxC) * (H - 40);
+    const x = i * bw + bw*0.15;
+    const w = bw * 0.7;
+    ctx.fillStyle = '#0e7490';
+    ctx.fillRect(x, H - 24 - h, w, h);
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    if(counts[i] > 0) ctx.fillText(counts[i], x + w/2, H - 28 - h);
+    ctx.save();
+    ctx.translate(x + w/2, H - 8);
+    ctx.rotate(-Math.PI/3);
+    ctx.textAlign='right';
+    ctx.fillText(String(y).slice(2), 0, 0);
+    ctx.restore();
+  });
+})();
+</script>
+<script>
+function filterSub(type, el){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderQuestions(type);
+}
+</script></body></html>

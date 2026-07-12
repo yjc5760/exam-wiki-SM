@@ -1,23 +1,16 @@
-# 設計哲學層（Layer 2）
+# 設計哲學（Layer 2）
 
-> **用途：** 每頁回答一個「為什麼」，而非「怎麼算」。公式與步驟見 [CLAUDE-SOLVE.md](../../CLAUDE-SOLVE.md)。
-> **格式說明：** 每頁包含核心問題、測驗能力、歷屆典型考題連結。
-
----
-
-## 頁面索引
-
-| 頁面 | 核心問題（一句） |
-|------|----------------|
-| [USD 梁彎曲](usd-beam-flexure.md) | φ 值為何不固定，而要看 εt 決定？ |
-| [T 形梁設計](t-beam-design.md) | 有效翼板寬為何不是全寬？ |
-| [RC 剪力設計](usd-shear.md) | 臨界斷面為何是距支承面 d 處，而非支承面？ |
-| [柱 P-M 互制](usd-column-pm.md) | 壓力控制區加軸力為何反而讓彎矩容量增加？ |
-| [長柱效應](slender-column.md) | 短柱用 Pu、Mu 直接設計，長柱為何要放大彎矩？ |
-| [使用性驗算（撓度/裂縫）](deflection-crack.md) | 滿足強度後，為何還要驗算撓度和裂縫？ |
-| [預力混凝土](prestress-philosophy.md) | 預力的本質是「把混凝土弱點變優點」——如何理解？ |
-| [耐震設計（能力設計法）](seismic-philosophy.md) | 為何不直接計算地震力，而是「設計結構在哪裡壞」？ |
+> 解題邏輯背後的「為什麼」，彙整自題目解析與核心觀念。
 
 ---
 
-> **提示：** 這層不重複 CLAUDE-SOLVE.md 的公式，而是補充「考官想測驗什麼能力」以及「這個哲學在歷屆考題中如何出現」。備考時可先讀這層定位考點，再去 problems/ 練題。
+## 現有頁面
+
+| 主題 | 頁面 | 說明 |
+|------|------|------|
+| 總應力法 vs 有效應力法 | [total-vs-effective-stress.md](total-vs-effective-stress.md) | 何時用不排水（φ=0）分析、何時用有效應力參數分析 |
+| 容許應力設計 vs 極限狀態設計 | [allowable-vs-ultimate-design.md](allowable-vs-ultimate-design.md) | 承載力、樁基設計的安全係數哲學 |
+| 安全係數選取哲學 | [factor-of-safety-philosophy.md](factor-of-safety-philosophy.md) | 承載力/滑動/傾覆/邊坡各項檢核安全係數取值邏輯與依據 |
+| 排水條件對設計的影響 | [drainage-condition-philosophy.md](drainage-condition-philosophy.md) | 施工期（短期不排水）vs 長期（排水）分析邏輯切換 |
+
+> 這四篇為初版種子內容，後續解題累積更多題量後可持續擴充或修訂。

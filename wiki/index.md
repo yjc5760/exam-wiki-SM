@@ -1,8 +1,8 @@
-# RC 鋼筋混凝土設計與預力 知識庫
+# SM 土壤力學與基礎設計 知識庫
 
-> **科目：** RC（結構工程技師高考第三科）
-> **題庫：** 100 題（2002–2025 年）
-> **格式：** RC-YYYY-N（例：RC-2015-1）
+> **科目：** SM（結構工程技師高考）
+> **題庫：** 96 題已驗證 ingest（96 題已解析，2002–2025 年考卷已就位）
+> **格式：** SM-YYYY-N（例：SM-2015-1）
 > **操作指令：** 見 CLAUDE-CODE.md　｜　**解題規範：** 見 CLAUDE-SOLVE.md
 
 ---
@@ -14,223 +14,102 @@
 | 層 | 目錄 | 維護者 | 說明 |
 |----|------|:------:|------|
 | Layer 1 | [concepts/](concepts/) · [problems/](problems/) | Cowork (ingest/compile) | 核心概念定義 + 題目解析 |
-| Layer 2 | [philosophy/](philosophy/) | Cowork (compile-all) | 設計哲學（強度折減／韌性／耐震） |
-| Layer 3 | [methods/](methods/) | Cowork (compile-all) | 解題方法論（P-M 互制／等效側力／損失計算） |
+| Layer 2 | [philosophy/](philosophy/) | Cowork (compile-all) | 設計哲學（總應力法／有效應力法／安全係數哲學） |
+| Layer 3 | [methods/](methods/) | Cowork (compile-all) | 解題方法論（承載力公式／土壓力理論／邊坡穩定法） |
 | Layer 4 | [diagnosis/](diagnosis/) | Cowork (直接存入) | 題型診斷決策樹 |
-| Layer 5 | [failure-modes/](failure-modes/) | Cowork (直接存入) | 失敗模式（彎曲／剪力／壓碎／撓度／裂縫） |
-| Layer 6 | [materials/](materials/) | Cowork (直接存入) | 材料行為（混凝土應力應變／鋼筋降伏／潛變收縮） |
-| Layer 7 | [code-ref/](code-ref/) | Cowork (直接存入) | 規範條文對應（ACI 318／CNS 1480／耐震規範） |
+| Layer 5 | [failure-modes/](failure-modes/) | Cowork (直接存入) | 失敗模式（承載力破壞／過大沉陷／滲流破壞／邊坡滑動／擋土結構失穩） |
+| Layer 6 | [materials/](materials/) | Cowork (直接存入) | 材料行為（土壤分類特性／滲透特性／壓密特性／剪力強度特性） |
+| Layer 7 | [code-ref/](code-ref/) | Cowork (直接存入) | 規範條文對應（建築物基礎構造設計規範等） |
 
 ---
 
-## 概念頁快速導覽（24 個核心概念）
+## 概念頁快速導覽（24 個核心種子概念）
 
-### 第一單元（RC-U1）：梁 / 柱設計
+### 第一單元（SM-U1）：土壤基本性質、滲透、夯實壓密、應力、強度
 
 | 概念 ID | 概念名稱 | 分類 |
 |---------|---------|------|
-| [BALANCED-REINFORCEMENT-RATIO](concepts/BALANCED-REINFORCEMENT-RATIO.md) | 平衡鋼筋比 ρb | RC-U1-1 |
-| [WHITNEY-STRESS-BLOCK](concepts/WHITNEY-STRESS-BLOCK.md) | Whitney 等值矩形應力塊 | RC-U1-1 |
-| [BETA1-FACTOR](concepts/BETA1-FACTOR.md) | β1 係數（應力塊深度折減） | RC-U1-1 |
-| [DUCTILE-FAILURE](concepts/DUCTILE-FAILURE.md) | 延性破壞（拉力控制破壞） | RC-U1-1 |
-| [PM-INTERACTION-DIAGRAM](concepts/PM-INTERACTION-DIAGRAM.md) | P-M 互制圖 | RC-U1-2 |
-| [BALANCED-POINT](concepts/BALANCED-POINT.md) | 平衡點（柱 P-M 圖） | RC-U1-2 |
-| [LONG-COLUMN-MOMENT-MAGNIFIER](concepts/LONG-COLUMN-MOMENT-MAGNIFIER.md) | 長柱彎矩放大法（δns） | RC-U1-3 |
+| [PHASE-RELATIONSHIP](concepts/PHASE-RELATIONSHIP.md) | 土壤三相關係 | SM-U1-1 |
+| [ATTERBERG-LIMITS](concepts/ATTERBERG-LIMITS.md) | 阿太堡限度 | SM-U1-1 |
+| [USCS-CLASSIFICATION](concepts/USCS-CLASSIFICATION.md) | 統一土壤分類系統 | SM-U1-1 |
+| [DARCYS-LAW](concepts/DARCYS-LAW.md) | 達西定律 | SM-U1-2 |
+| [FLOW-NET](concepts/FLOW-NET.md) | 流網分析 | SM-U1-2 |
+| [COMPACTION-CURVE](concepts/COMPACTION-CURVE.md) | 夯實曲線 | SM-U1-3 |
+| [CONSOLIDATION-THEORY](concepts/CONSOLIDATION-THEORY.md) | Terzaghi 一維壓密理論 | SM-U1-3 |
+| [PRECONSOLIDATION-PRESSURE](concepts/PRECONSOLIDATION-PRESSURE.md) | 過壓密應力與超壓密比 | SM-U1-3 |
+| [COEFFICIENT-OF-CONSOLIDATION](concepts/COEFFICIENT-OF-CONSOLIDATION.md) | 壓密係數與時間因數 | SM-U1-3 |
+| [EFFECTIVE-STRESS-PRINCIPLE](concepts/EFFECTIVE-STRESS-PRINCIPLE.md) | 有效應力原理 | SM-U1-4 |
+| [BOUSSINESQ-STRESS-INCREASE](concepts/BOUSSINESQ-STRESS-INCREASE.md) | Boussinesq 應力增量理論 | SM-U1-4 |
+| [MOHR-COULOMB-FAILURE-CRITERION](concepts/MOHR-COULOMB-FAILURE-CRITERION.md) | Mohr-Coulomb 破壞準則 | SM-U1-5 |
+| [UNDRAINED-SHEAR-STRENGTH](concepts/UNDRAINED-SHEAR-STRENGTH.md) | 不排水剪力強度 | SM-U1-5 |
+| [TRIAXIAL-TEST-TYPES](concepts/TRIAXIAL-TEST-TYPES.md) | 三軸試驗分類 | SM-U1-5 |
 
-### 第二單元（RC-U2）：剪力 / 扭力 / 錨定
-
-| 概念 ID | 概念名稱 | 分類 |
-|---------|---------|------|
-| [SHEAR-STRENGTH](concepts/SHEAR-STRENGTH.md) | RC 剪力強度 Vc + Vs | RC-U2-1 |
-| [STIRRUP-DESIGN](concepts/STIRRUP-DESIGN.md) | 箍筋設計（剪力筋） | RC-U2-1 |
-| [TORSION-DESIGN](concepts/TORSION-DESIGN.md) | RC 扭力強度設計（空間桁架類比） | RC-U2-2 |
-| [DEVELOPMENT-LENGTH](concepts/DEVELOPMENT-LENGTH.md) | 鋼筋錨定長度 ld | RC-U2-3 |
-
-### 第三單元（RC-U3）：工作性 / 版基 / 耐震
+### 第二單元（SM-U2）：淺基礎、深基礎、開挖、基礎型式、地層改良
 
 | 概念 ID | 概念名稱 | 分類 |
 |---------|---------|------|
-| [EFFECTIVE-MOMENT-OF-INERTIA](concepts/EFFECTIVE-MOMENT-OF-INERTIA.md) | 有效慣性矩 Ie（ACI 方法） | RC-U3-1 |
-| [CRACKING-MOMENT](concepts/CRACKING-MOMENT.md) | 開裂彎矩 Mcr | RC-U3-1 |
-| [LONG-TERM-DEFLECTION](concepts/LONG-TERM-DEFLECTION.md) | 長期撓度（潛變收縮修正） | RC-U3-1 |
-| [CREEP-SHRINKAGE](concepts/CREEP-SHRINKAGE.md) | 潛變與收縮 | RC-U3-1 |
-| [DEFLECTION-CONTROL](concepts/DEFLECTION-CONTROL.md) | 撓度控制（容許撓度） | RC-U3-1 |
-| [CRACK-WIDTH](concepts/CRACK-WIDTH.md) | 裂縫寬度控制 | RC-U3-1 |
-| [PUNCHING-SHEAR](concepts/PUNCHING-SHEAR.md) | 衝剪（雙向剪力） | RC-U3-2 |
-| [SEISMIC-DESIGN](concepts/SEISMIC-DESIGN.md) | 耐震設計（能力設計法） | RC-U3-3 |
-| [STRONG-COLUMN-WEAK-BEAM](concepts/STRONG-COLUMN-WEAK-BEAM.md) | 強柱弱梁 | RC-U3-3 |
-| [SPECIAL-MOMENT-FRAME-BEAM](concepts/SPECIAL-MOMENT-FRAME-BEAM.md) | 特殊矩形框架梁（耐震梁） | RC-U3-3 |
-| [SPECIAL-MOMENT-FRAME-COLUMN](concepts/SPECIAL-MOMENT-FRAME-COLUMN.md) | 特殊矩形框架柱（耐震柱） | RC-U3-3 |
+| [BEARING-CAPACITY-THEORY](concepts/BEARING-CAPACITY-THEORY.md) | 淺基礎承載力理論 | SM-U2-1 |
+| [SETTLEMENT-COMPONENTS](concepts/SETTLEMENT-COMPONENTS.md) | 瞬時沉陷與壓密沉陷 | SM-U2-1 |
+| [PILE-CAPACITY-COMPONENTS](concepts/PILE-CAPACITY-COMPONENTS.md) | 樁基承載力組成 | SM-U2-2 |
+| [PILE-GROUP-EFFICIENCY](concepts/PILE-GROUP-EFFICIENCY.md) | 群樁效應 | SM-U2-2 |
+| [EXCAVATION-STABILITY](concepts/EXCAVATION-STABILITY.md) | 開挖穩定性 | SM-U2-3 |
+| [GROUND-IMPROVEMENT-METHODS](concepts/GROUND-IMPROVEMENT-METHODS.md) | 地層改良方法 | SM-U2-5 |
 
-### 第四單元（RC-U4）：預力
+### 第三單元（SM-U3）：側向土壓力、擋土結構、坡地工程、生態工法
 
 | 概念 ID | 概念名稱 | 分類 |
 |---------|---------|------|
-| [EFFECTIVE-PRESTRESS](concepts/EFFECTIVE-PRESTRESS.md) | 有效預力 Pe | RC-U4-1 |
-| [PRESTRESS-LOSS](concepts/PRESTRESS-LOSS.md) | 預力損失 | RC-U4-3 |
+| [RANKINE-EARTH-PRESSURE](concepts/RANKINE-EARTH-PRESSURE.md) | Rankine 土壓力理論 | SM-U3-1 |
+| [COULOMB-EARTH-PRESSURE](concepts/COULOMB-EARTH-PRESSURE.md) | Coulomb 土壓力理論 | SM-U3-1 |
+| [RETAINING-WALL-STABILITY](concepts/RETAINING-WALL-STABILITY.md) | 擋土結構穩定分析 | SM-U3-2 |
+| [SLOPE-STABILITY-ANALYSIS](concepts/SLOPE-STABILITY-ANALYSIS.md) | 邊坡穩定分析 | SM-U3-3 |
 
 ---
 
-## 題目依年份導覽
+## 題目頁（依命題大綱分類）
 
-見 [by-year.md](by-year.md) — 完整 100 題依考年分類（2002–2025）。
+### 第一單元（SM-U1）
 
----
+| topicId | 子項 | 題目 |
+|---------|------|------|
+| SM-U1-1 | 土壤基本性質 | [[SM-2023-1]] 名詞解釋<br>[[SM-2020-3]] 相對密度<br>[[SM-2019-1]] 名詞解釋<br>[[SM-2011-1]] 名詞解釋<br>[[SM-2007-1]] 三相圖<br>[[SM-2006-1]] 極限平衡<br>[[SM-2005-2]] 工地密度試驗<br>[[SM-2004-1]] 三相圖 |
+| SM-U1-2 | 土壤滲透 | [[SM-2004-4]] 軟弱地盤（副） |
+| SM-U1-3 | 土壤夯實及壓密 | [[SM-2025-1]] 一維壓密<br>[[SM-2024-3]] 地下水位下降<br>[[SM-2022-1]] 夯實試驗<br>[[SM-2021-2]] 正常壓密黏土<br>[[SM-2019-2]] 主要壓密沉陷量<br>[[SM-2019-3]] 相對夯實度<br>[[SM-2018-1]] 壓密沉陷量<br>[[SM-2017-1]] 夯實規範<br>[[SM-2017-2]] CBR<br>[[SM-2016-1]] 過壓密比<br>[[SM-2016-2]] 現地密度試驗<br>[[SM-2015-1]] 預載重<br>[[SM-2014-4]] 壓密沉陷量<br>[[SM-2013-2]] 標準夯實試驗<br>[[SM-2012-2]] 單向度壓密試驗<br>[[SM-2011-3]] 壓密沉陷量<br>[[SM-2009-1]] 夯實試驗<br>[[SM-2008-1]] 借土區<br>[[SM-2006-4]] 夯實作業<br>[[SM-2005-3]] 體積變化係數<br>[[SM-2003-2]] 壓密沉陷量<br>[[SM-2002-1]] 壓密沉陷量<br>[[SM-2002-3]] 填方<br>[[SM-2006-1]] 極限平衡（副）<br>[[SM-2004-4]] 軟弱地盤（副） |
+| SM-U1-4 | 土體內應力 | [[SM-2025-4]] 垂直應力增量<br>[[SM-2020-1]] 垂直總應力<br>[[SM-2009-3]] 有效應力<br>[[SM-2004-2]] 應力狀態 |
+| SM-U1-5 | 土壤強度特性與變形性 | [[SM-2025-2]] 三軸試驗<br>[[SM-2024-1]] 三軸試驗<br>[[SM-2018-2]] CU三軸試驗<br>[[SM-2013-3]] K0壓密<br>[[SM-2012-1]] 三軸試驗<br>[[SM-2010-1]] 三軸試驗<br>[[SM-2008-2]] 應力增量<br>[[SM-2007-2]] 流砂<br>[[SM-2003-4]] 正常壓密黏土<br>[[SM-2002-4]] 正常壓密黏土<br>[[SM-2006-1]] 極限平衡（副）<br>[[SM-2003-1]] 土壤探勘（副） |
 
-## 第一單元（RC-U1）：梁/柱設計
+### 第二單元（SM-U2）
 
-### RC-U1-1 RC 梁彎矩強度分析與設計
+| topicId | 子項 | 題目 |
+|---------|------|------|
+| SM-U2-1 | 淺基礎之支承力與沉陷量 | [[SM-2022-3]] 滲透係數<br>[[SM-2021-1]] 總應力<br>[[SM-2020-4]] 淺基礎<br>[[SM-2018-3]] 流線網<br>[[SM-2017-3]] 平鈑載重試驗<br>[[SM-2015-4]] 抽水降階<br>[[SM-2011-2]] 圍堰<br>[[SM-2010-3]] 深開挖<br>[[SM-2010-4]] 淺基礎<br>[[SM-2009-2]] 筏式基礎<br>[[SM-2007-2]] 流砂（副）<br>[[SM-2006-1]] 極限平衡（副）<br>[[SM-2004-4]] 軟弱地盤（副） |
+| SM-U2-2 | 深基礎之支承力與沉陷量 | [[SM-2024-4]] 基樁<br>[[SM-2023-3]] 打入樁<br>[[SM-2021-3]] 預鑄基樁<br>[[SM-2014-2]] 摩擦樁<br>[[SM-2013-4]] 土壤液化<br>[[SM-2012-3]] 基樁<br>[[SM-2007-3]] 預鑄基樁<br>[[SM-2006-2]] 摩擦樁<br>[[SM-2005-4]] 墩基<br>[[SM-2002-2]] 液化<br>[[SM-2007-2]] 流砂（副） |
+| SM-U2-3 | 開挖之穩定性分析 | [[SM-2003-1]] 土壤探勘 |
+| SM-U2-4 | 基礎型式之選擇與評估 | [[SM-2004-4]] 軟弱地盤 |
+| SM-U2-5 | 地層改良方法 | [[SM-2002-2]] 液化（副） |
 
-* [RC-2002-4](problems/RC-2002-4.md) — 雙筋梁壓力筋恰好降伏邊界 β₁=0.80
-* [RC-2004-2](problems/RC-2004-2.md) — 外伸梁 D 點跨中彎矩
-* [RC-2005-2](problems/RC-2005-2.md) — T形梁最大拉力筋量 0.75ρb
-* [RC-2007-1](problems/RC-2007-1.md) — T形梁設計有效翼板寬
-* [RC-2011-2](problems/RC-2011-2.md) — T形梁平衡鋼筋量 NA 在腹板
-* [RC-2014-1](problems/RC-2014-1.md) — 單筋矩形梁過筋梁應變相容
-* [RC-2014-2](problems/RC-2014-2.md) — 彎矩曲率分析三階段
-* [RC-2015-2](problems/RC-2015-2.md) — 雙筋梁曲率韌性 εt=0.004 限制
-* [RC-2015-3](problems/RC-2015-3.md) — T型梁負彎矩雙筋梁腹板矩形等效
-* [RC-2016-1](problems/RC-2016-1.md) — 兩端固定梁地震彎矩組合
-* [RC-2019-1](problems/RC-2019-1.md) — 單筋梁過渡區 φ 值 Whitney 應力塊
-* [RC-2020-1](problems/RC-2020-1.md) — T形梁有效翼板寬中性軸在翼板
-* [RC-2021-1](problems/RC-2021-1.md) — T形梁最小撓曲鋼筋剪力設計
-* [RC-2022-1](problems/RC-2022-1.md) — 雙筋梁壓力筋未降伏有效深度
-* [RC-2022-2](problems/RC-2022-2.md) — 梁設計最經濟材料四組合比較
-* [RC-2023-1](problems/RC-2023-1.md) — 曲率延展比降伏曲率極限曲率
-* [RC-2023-2](problems/RC-2023-2.md) — T形梁雙筋梁壓力鋼筋未降伏
-* [RC-2024-1](problems/RC-2024-1.md) — T形梁最大最小鋼筋量高強度鋼筋
-* [RC-2024-2](problems/RC-2024-2.md) — 雙筋梁壓力鋼筋未降伏懸臂梁
+### 第三單元（SM-U3）
 
-### RC-U1-2 RC 柱強度分析與設計
+| topicId | 子項 | 題目 |
+|---------|------|------|
+| SM-U3-1 | 側向土壓力理論 | _尚無_ |
+| SM-U3-2 | 擋土結構物穩定分析 | [[SM-2025-3]] 重力式擋土牆<br>[[SM-2022-2]] 加勁擋土牆<br>[[SM-2019-4]] 庫倫法<br>[[SM-2016-3]] 加勁擋土牆<br>[[SM-2016-4]] 重力式擋土牆<br>[[SM-2010-2]] Rankine土壓力<br>[[SM-2009-4]] 重力式擋土牆<br>[[SM-2004-3]] 重力式擋土牆 |
+| SM-U3-3 | 坡地工程 | [[SM-2023-4]] 深開挖<br>[[SM-2022-4]] 懸臂板樁<br>[[SM-2020-2]] 懸臂式版樁<br>[[SM-2018-4]] 懸臂擋土牆<br>[[SM-2017-4]] 深開挖<br>[[SM-2015-2]] 雙層土<br>[[SM-2015-3]] 深開挖<br>[[SM-2014-3]] 開挖<br>[[SM-2012-4]] 深開挖<br>[[SM-2011-4]] 深開挖<br>[[SM-2008-3]] 深開挖<br>[[SM-2007-4]] 錨定式版樁<br>[[SM-2006-3]] 島式開挖<br>[[SM-2005-1]] 錨定式版樁<br>[[SM-2003-3]] 深開挖 |
+| SM-U3-4 | 生態工法在邊坡工程之應用 | [[SM-2024-2]] 無限邊坡<br>[[SM-2023-2]] 平面滑動<br>[[SM-2021-4]] 邊坡穩定<br>[[SM-2014-1]] 無限邊坡<br>[[SM-2013-1]] 邊坡穩定<br>[[SM-2008-4]] 岩石邊坡 |
 
-* [RC-2002-2](problems/RC-2002-2.md) — 偏心受壓 P-M 互制 6-#9
-* [RC-2004-4](problems/RC-2004-4.md) — 雙軸彎矩細長柱彎矩放大法
-* [RC-2005-1](problems/RC-2005-1.md) — 矩形柱 P-M 互制曲率延展比
-* [RC-2008-2](problems/RC-2008-2.md) — 方形柱 P-M 互制拉力鋼筋應變為零
-* [RC-2010-1](problems/RC-2010-1.md) — 圓形螺旋柱降伏軸力極限軸力
-* [RC-2011-1](problems/RC-2011-1.md) — P-M 互制圖求算步驟平衡點
-* [RC-2011-3](problems/RC-2011-3.md) — 矩形柱 P-M 互制三排配筋
-* [RC-2015-1](problems/RC-2015-1.md) — 方形柱 P-M 互制平衡點最大彎矩
-* [RC-2017-1](problems/RC-2017-1.md) — 加大柱組合截面雙折線應力應變
-* [RC-2019-2](problems/RC-2019-2.md) — 矩形柱 P-M 互制壓力控制斷面
-* [RC-2021-2](problems/RC-2021-2.md) — 偏心距求解 P-M 互制中性軸已知逆推
-* [RC-2024-3](problems/RC-2024-3.md) — 方形柱 P-M 互制拉力鋼筋應變為零
-
-### RC-U1-3 細長柱
-
-* [RC-2006-2](problems/RC-2006-2.md) — 無側移柱彎矩放大法 Cm 係數
-* [RC-2016-3](problems/RC-2016-3.md) — 無側移構架放大彎矩法雙曲度
-
-### RC-U1-4 柱設計圖之應用
-
-*(相關內容見 RC-U1-2 柱設計題)*
+> 每次 `ingest SM-XXXX-N` 後，Cowork 會在對應子項下方加入題目連結（格式：`[[SM-YYYY-N]] — 核心考點`）。此表由 `compile-all` 依 `question_index.json` 自動生成。
 
 ---
 
-## 第二單元（RC-U2）：剪力/扭力/錨定
+## 其他導航
 
-### RC-U2-1 RC 剪力強度分析與設計
-
-* [RC-2006-1](problems/RC-2006-1.md) — 懸臂梁雙筋梁壓力鋼筋未降伏剪力設計
-* [RC-2009-3](problems/RC-2009-3.md) — 壓拉桿模式 STM 深梁
-* [RC-2010-3](problems/RC-2010-3.md) — 軸力影響剪力開裂強度三種軸力比較
-* [RC-2014-3](problems/RC-2014-3.md) — 臨界斷面 Vc 最大軸力影響等效彎矩 Mm
-* [RC-2017-2](problems/RC-2017-2.md) — 加大柱介面剪力摩擦剪力法
-* [RC-2020-2](problems/RC-2020-2.md) — 倒 T 型梁臨界斷面 d 偏移規則
-* [RC-2023-3](problems/RC-2023-3.md) — 懸臂梁臨界斷面扭力忽略門檻
-
-### RC-U2-2 RC 扭力強度設計
-
-* [RC-2002-3](problems/RC-2002-3.md) — 扭力忽略門檻偏心均佈載重最大偏心量 e
-* [RC-2008-3](problems/RC-2008-3.md) — 矩形梁純扭矩斷面適當性空間桁架類比
-* [RC-2011-4](problems/RC-2011-4.md) — 矩形梁開裂扭矩扭矩剪力組合
-* [RC-2013-3](problems/RC-2013-3.md) — 扭矩強度閉合箍筋空間桁架類比
-* [RC-2018-1](problems/RC-2018-1.md) — 矩形梁扭矩剪力組合空間桁架類比
-* [RC-2025-3](problems/RC-2025-3.md) — 扭矩強度縱向鋼筋驗核
-
-### RC-U2-3 鋼筋錨定長度與斷點計算
-
-* [RC-2003-2](problems/RC-2003-2.md) — 耐震柱搭接長度詳細計算法 Class B 搭接
-* [RC-2010-2](problems/RC-2010-2.md) — 耐震柱縱向搭接 Class B 搭接拉力搭接
-
----
-
-## 第三單元（RC-U3）：工作性/版基/耐震
-
-### RC-U3-1 梁工作性要求（含撓度、裂縫）
-
-* [RC-2005-4](problems/RC-2005-4.md) — 潛變潛變係數 Cc 長期變形
-* [RC-2006-3](problems/RC-2006-3.md) — 簡支梁即時撓度增量有效慣性矩 Ie
-* [RC-2007-2](problems/RC-2007-2.md) — 雙筋梁即時撓度長期撓度 λ 長期修正係數
-* [RC-2008-1](problems/RC-2008-1.md) — 懸臂梁雙筋梁長期撓度有效慣性矩 Ie
-* [RC-2009-2](problems/RC-2009-2.md) — 懸臂梁即時撓度降伏彎矩裂縫斷面慣性矩 Icr
-* [RC-2018-3](problems/RC-2018-3.md) — T形梁負彎矩裂縫控制側面縱向表層鋼筋
-
-### RC-U3-2 樓版與基腳設計
-
-* [RC-2002-1](problems/RC-2002-1.md) — 雙向版角隅配筋邊梁角隅翹起效應
-* [RC-2007-3](problems/RC-2007-3.md) — 獨立基腳正方形基腳因數化土壓
-* [RC-2013-1](problems/RC-2013-1.md) — 單向版多跨連續版最小版厚 ACI 彎矩係數法
-* [RC-2017-3](problems/RC-2017-3.md) — 方形基腳底版鋼筋設計穿孔剪力
-* [RC-2020-3](problems/RC-2020-3.md) — 無梁版穿孔剪力雙向剪力內柱
-* [RC-2021-3](problems/RC-2021-3.md) — 樁帽設計偏心載重基樁軸力雙向剪力
-* [RC-2025-1](problems/RC-2025-1.md) — 獨立基腳穿孔剪力彎矩強度雙向剪力
-
-### RC-U3-3 韌性要求與耐震設計
-
-* [RC-2003-3](problems/RC-2003-3.md) — 梁柱接頭內部接頭水平剪力 Vjh
-* [RC-2003-4](problems/RC-2003-4.md) — 剪力牆邊界構材水平垂直剪力筋
-* [RC-2004-1](problems/RC-2004-1.md) — 混凝土品質判定耐震搭接 Class B 搭接
-* [RC-2004-3](problems/RC-2004-3.md) — 耐震柱 Ash 公式圍束箍筋密箍區間距
-* [RC-2005-3](problems/RC-2005-3.md) — 角柱接頭接頭剪力梁柱外接頭 Vjh
-* [RC-2009-1](problems/RC-2009-1.md) — 耐震柱橫向鋼筋密箍區 lo 圍束箍筋
-* [RC-2010-2](problems/RC-2010-2.md) — 耐震柱縱向搭接 Class B 搭接拉力搭接
-* [RC-2012-2](problems/RC-2012-2.md) — 耐震梁特殊矩形框架梁可能彎矩強度 Mpr
-* [RC-2012-3](problems/RC-2012-3.md) — 強柱弱梁塑鉸機構柱地震設計剪力
-* [RC-2012-4](problems/RC-2012-4.md) — 梁柱外接頭接頭剪力角隅邊柱 Vjh
-* [RC-2013-2](problems/RC-2013-2.md) — 特殊矩形柱耐震圍束箍筋密箍區 Ash 公式
-* [RC-2016-2](problems/RC-2016-2.md) — 特殊矩形框架梁塑性鉸區可能彎矩強度 Mpr
-* [RC-2018-2](problems/RC-2018-2.md) — 角柱接頭接頭剪力梁柱接頭 γ 係數
-* [RC-2019-3](problems/RC-2019-3.md) — 橫膈版地震剪力抗剪鋼筋雙向版
-* [RC-2022-4](problems/RC-2022-4.md) — 曲率韌性轉角韌性位移韌性塑鉸長度 Lp
-* [RC-2025-2](problems/RC-2025-2.md) — 耐震梁特殊矩形框架梁可能彎矩強度 Mpr
-
----
-
-## 第四單元（RC-U4）：預力
-
-### RC-U4-1 預力梁斷面應力分析
-
-* [RC-2003-1](problems/RC-2003-1.md) — 部分預力梁應變相容法非預力鋼絞線
-* [RC-2004-5](problems/RC-2004-5.md) — 先拉法有黏結腱開裂彎矩 Mcr fps 公式
-* [RC-2006-4](problems/RC-2006-4.md) — 後拉法組合 T 型斷面兩階段應力疊加
-* [RC-2007-4](problems/RC-2007-4.md) — I 形橋梁組合 T 型斷面底纖維拉力控制
-* [RC-2008-4](problems/RC-2008-4.md) — 後拉法組合 T 型斷面非組合梁承受 DL
-* [RC-2009-4](problems/RC-2009-4.md) — 預力 RC 拉力桿混合斷面裂縫寬度 wmax
-* [RC-2011-5](problems/RC-2011-5.md) — 後拉法有黏結腱合成斷面三斷面分析
-* [RC-2012-1](problems/RC-2012-1.md) — 先拉法有黏結腱懸臂梁偏心方向判斷
-* [RC-2013-4](problems/RC-2013-4.md) — 先拉法有黏結腱開裂彎矩 fps 公式
-* [RC-2014-4](problems/RC-2014-4.md) — 預力梁斷面應力兩階段分析施加預力階段
-* [RC-2018-4](problems/RC-2018-4.md) — 後拉法有黏結腱開裂彎矩極限彎矩
-* [RC-2021-4](problems/RC-2021-4.md) — 預力 T 型梁組合斷面有效翼板寬最大活載重
-* [RC-2023-4](problems/RC-2023-4.md) — 後拉法無握裹鋼絞線 fps 公式 L/dp 比值
-
-### RC-U4-2 預力量與偏心量設計
-
-* [RC-2010-4](problems/RC-2010-4.md) — 簡支預力梁偏心距限制四控制條件
-* [RC-2015-4](problems/RC-2015-4.md) — 後拉法拋物線腱端部無偏心四控制條件
-* [RC-2020-4](problems/RC-2020-4.md) — 預力連續梁一致腱二次彎矩等效載重法
-* [RC-2024-4](problems/RC-2024-4.md) — 等效載重法拋物線腱次彎矩 C 線
-* [RC-2025-4](problems/RC-2025-4.md) — 偏心距限制傳遞階段使用階段核心距
-
-### RC-U4-3 預力損失
-
-* [RC-2002-5](problems/RC-2002-5.md) — 後拉法摩擦損失連續梁兩端張拉
-* [RC-2005-5](problems/RC-2005-5.md) — 直線型曲線型鋼腱等效載重法載重能力比較
-* [RC-2016-4](problems/RC-2016-4.md) — 先拉法彈性縮短損失初施預力斷面應力分析
-* [RC-2017-4](problems/RC-2017-4.md) — 論述題先拉法後拉法即時損失時間相關損失
-* [RC-2019-4](problems/RC-2019-4.md) — 後拉法摩擦損失拋物線腱雙腱施拉
-
-### RC-U4-4 預力梁剪力分析與設計
-
-* [RC-2022-3](problems/RC-2022-3.md) — 預力梁腹剪裂縫 Vcw PCI 形梁垂直地震力
+- [by-year.md](by-year.md) — 依考年瀏覽
+- [log.md](log.md) — 操作紀錄（append only）
+- [diagnosis/index.md](diagnosis/index.md) — 題型診斷決策樹
+- [failure-modes/index.md](failure-modes/index.md) — 失敗模式分類
+- [materials/index.md](materials/index.md) — 材料行為
+- [code-ref/index.md](code-ref/index.md) — 規範條文對應
+- [methods/index.md](methods/index.md) — 解題方法論
+- [traps/index.md](traps/index.md) — 陷阱頁（補充目錄）
+- [queries/index.md](queries/index.md) — 查詢結果存檔
+- [philosophy/index.md](philosophy/index.md) — 設計哲學頁

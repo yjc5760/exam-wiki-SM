@@ -1,258 +1,197 @@
 {
-  "description": "RC 科目核心概念定義。供 compile-all 生成 wiki/concepts/ 頁面。",
+  "description": "SM 科目核心概念定義。供 compile-all 生成 wiki/concepts/ 頁面。以下 24 個為建庫時預先建立的種子概念，涵蓋三單元核心知識；後續可用 add concept 指令持續擴充。",
   "concepts": [
     {
-      "concept_id": "BALANCED-REINFORCEMENT-RATIO",
-      "concept_name": "平衡鋼筋比 ρb",
-      "classification": "RC-U1-1",
-      "related_concept_ids": [
-        "WHITNEY-STRESS-BLOCK",
-        "DUCTILE-FAILURE"
-      ],
-      "key_formula": "ρb = 0.85·β1·f'c/fy · 6120/(6120+fy)",
-      "description": "使混凝土壓碎與鋼筋降伏同時發生的鋼筋比，為延性設計的關鍵參考值"
+      "concept_id": "PHASE-RELATIONSHIP",
+      "concept_name": "土壤三相關係",
+      "classification": "SM-U1-1",
+      "related_concept_ids": ["USCS-CLASSIFICATION", "EFFECTIVE-STRESS-PRINCIPLE"],
+      "key_formula": "e = Vv/Vs；n = e/(1+e)；γ = (Gs+Se)/(1+e)·γw",
+      "description": "以土粒-水-空氣三相圖描述孔隙比、孔隙率、含水量、飽和度、單位重之間的相互換算關係，是所有土力計算的基礎"
     },
     {
-      "concept_id": "WHITNEY-STRESS-BLOCK",
-      "concept_name": "Whitney 等值矩形應力塊",
-      "classification": "RC-U1-1",
-      "related_concept_ids": [
-        "BALANCED-REINFORCEMENT-RATIO",
-        "BETA1-FACTOR"
-      ],
-      "key_formula": "a = As·fy/(0.85·f'c·b)；Mn = As·fy·(d - a/2)",
-      "description": "以等效矩形應力分布取代混凝土非線性應力分布，是 USD 法的基礎工具"
+      "concept_id": "ATTERBERG-LIMITS",
+      "concept_name": "阿太堡限度",
+      "classification": "SM-U1-1",
+      "related_concept_ids": ["USCS-CLASSIFICATION"],
+      "key_formula": "PI = LL - PL；LI = (w-PL)/PI",
+      "description": "液性限度LL、塑性限度PL界定細粒土由固態轉塑態、塑態轉液態的含水量門檻，塑性指數PI與液性指數LI用以判斷土壤稠度與分類"
     },
     {
-      "concept_id": "BETA1-FACTOR",
-      "concept_name": "β1 係數（應力塊深度折減）",
-      "classification": "RC-U1-1",
-      "related_concept_ids": [
-        "WHITNEY-STRESS-BLOCK"
-      ],
-      "key_formula": "f'c≤280 → β1=0.85；每增加70 kgf/cm² 減0.05，最小0.65",
-      "description": "將等值矩形應力塊深度 a 與中性軸深度 c 聯繫的折減係數"
+      "concept_id": "USCS-CLASSIFICATION",
+      "concept_name": "統一土壤分類系統",
+      "classification": "SM-U1-1",
+      "related_concept_ids": ["ATTERBERG-LIMITS", "PHASE-RELATIONSHIP"],
+      "key_formula": "Cu = D60/D10；Cc = D30²/(D10·D60)",
+      "description": "依過篩#200比例區分粗粒土（礫石G/砂S）與細粒土（粉土M/黏土C），粗粒土依級配係數判斷良好級配與否，細粒土依塑性圖（A-line）分類"
     },
     {
-      "concept_id": "PM-INTERACTION-DIAGRAM",
-      "concept_name": "P-M 互制圖",
-      "classification": "RC-U1-2",
-      "related_concept_ids": [
-        "BALANCED-POINT",
-        "LONG-COLUMN-MOMENT-MAGNIFIER"
-      ],
-      "key_formula": "各控制點（純壓/平衡點/純彎）連線構成互制曲線",
-      "description": "柱設計核心工具，顯示軸力與彎矩的組合容量，判斷設計點是否在安全範圍內"
+      "concept_id": "DARCYS-LAW",
+      "concept_name": "達西定律",
+      "classification": "SM-U1-2",
+      "related_concept_ids": ["FLOW-NET"],
+      "key_formula": "v = ki；q = kiA",
+      "description": "描述水在飽和土壤中層流滲透時，滲流速度與水力坡降成正比的基本定律，是所有滲透計算的出發點"
     },
     {
-      "concept_id": "BALANCED-POINT",
-      "concept_name": "平衡點（柱 P-M 圖）",
-      "classification": "RC-U1-2",
-      "related_concept_ids": [
-        "PM-INTERACTION-DIAGRAM",
-        "BALANCED-REINFORCEMENT-RATIO"
-      ],
-      "key_formula": "cb = 6120/(6120+fy)·d；Pb = 0.85f'c·β1·cb·b + Cs - T",
-      "description": "P-M 互制圖上拉力鋼筋恰好達到降伏應變的點，是壓力/拉力控制區域的分界"
+      "concept_id": "FLOW-NET",
+      "concept_name": "流網分析",
+      "classification": "SM-U1-2",
+      "related_concept_ids": ["DARCYS-LAW", "EXCAVATION-STABILITY"],
+      "key_formula": "q = k·H·(Nf/Nd)；icr = (Gs-1)/(1+e)",
+      "description": "由流線與等勢線構成的正方形網格，用以求算二維滲流量與任一點孔隙水壓；臨界水力坡降用於判斷砂湧（boiling）風險"
     },
     {
-      "concept_id": "EFFECTIVE-MOMENT-OF-INERTIA",
-      "concept_name": "有效慣性矩 Ie（ACI 方法）",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "CRACKING-MOMENT",
-        "LONG-TERM-DEFLECTION"
-      ],
-      "key_formula": "Ie = (Mcr/Ma)³·Ig + [1-(Mcr/Ma)³]·Icr ≤ Ig",
-      "description": "考慮混凝土開裂後剛度折減的等效慣性矩，用於計算服務載重下的撓度"
+      "concept_id": "COMPACTION-CURVE",
+      "concept_name": "夯實曲線",
+      "classification": "SM-U1-3",
+      "related_concept_ids": ["PHASE-RELATIONSHIP"],
+      "key_formula": "γzav = Gs·γw/(1+w·Gs)",
+      "description": "夯實功固定下，乾密度與含水量呈鐘形曲線關係，峰值即最佳含水量wopt與最大乾密度γd,max，零氣孔曲線為理論上限"
     },
     {
-      "concept_id": "CRACKING-MOMENT",
-      "concept_name": "開裂彎矩 Mcr",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "EFFECTIVE-MOMENT-OF-INERTIA"
-      ],
-      "key_formula": "Mcr = fr·Ig/yt；fr = 2√f'c（kgf/cm²）",
-      "description": "混凝土拉力區開始開裂的彎矩值，低於此值可視為未開裂斷面"
+      "concept_id": "CONSOLIDATION-THEORY",
+      "concept_name": "Terzaghi 一維壓密理論",
+      "classification": "SM-U1-3",
+      "related_concept_ids": ["COEFFICIENT-OF-CONSOLIDATION", "PRECONSOLIDATION-PRESSURE", "EFFECTIVE-STRESS-PRINCIPLE"],
+      "key_formula": "Sc = Cc·H/(1+e0)·log[(p0'+Δp)/p0']",
+      "description": "描述飽和黏土在附加應力下，孔隙水隨時間排出、有效應力隨之增加而產生沉陷的過程，是計算長期沉陷量的核心理論"
     },
     {
-      "concept_id": "PRESTRESS-LOSS",
-      "concept_name": "預力損失",
-      "classification": "RC-U4-3",
-      "related_concept_ids": [
-        "EFFECTIVE-PRESTRESS",
-        "CREEP-SHRINKAGE"
-      ],
-      "key_formula": "總損失 = 彈性縮短 + 摩擦 + 錨定滑動 + 潛變 + 收縮 + 鬆弛",
-      "description": "預力混凝土中從初始預力到有效預力之間的損失，分立即損失與長期損失兩類"
+      "concept_id": "PRECONSOLIDATION-PRESSURE",
+      "concept_name": "過壓密應力與超壓密比",
+      "classification": "SM-U1-3",
+      "related_concept_ids": ["CONSOLIDATION-THEORY"],
+      "key_formula": "OCR = pc'/p0'",
+      "description": "土層歷史上曾承受過的最大有效應力稱為過壓密應力pc'，OCR>1者為過壓密土，沉陷計算須分段使用Cr與Cc"
     },
     {
-      "concept_id": "EFFECTIVE-PRESTRESS",
-      "concept_name": "有效預力 Pe",
-      "classification": "RC-U4-1",
-      "related_concept_ids": [
-        "PRESTRESS-LOSS"
-      ],
-      "key_formula": "Pe = Pi × (1 - 損失率)；使用性驗算以 Pe 計算斷面應力",
-      "description": "扣除所有損失後的實際預力，是預力混凝土使用性驗算的關鍵參數"
+      "concept_id": "COEFFICIENT-OF-CONSOLIDATION",
+      "concept_name": "壓密係數與時間因數",
+      "classification": "SM-U1-3",
+      "related_concept_ids": ["CONSOLIDATION-THEORY"],
+      "key_formula": "Tv = Cv·t/Hdr²",
+      "description": "壓密係數Cv反映壓密速率，配合排水路徑長Hdr與時間因數Tv可推算任一時刻的平均壓密度與所需時間"
     },
     {
-      "concept_id": "STRONG-COLUMN-WEAK-BEAM",
-      "concept_name": "強柱弱梁",
-      "classification": "RC-U3-3",
-      "related_concept_ids": [
-        "SPECIAL-MOMENT-FRAME-BEAM",
-        "SPECIAL-MOMENT-FRAME-COLUMN"
-      ],
-      "key_formula": "ΣMnc ≥ (6/5)·ΣMnb（節點處柱/梁彎矩強度比）",
-      "description": "耐震設計哲學：確保塑鉸發生在梁端而非柱端，防止層崩塌機構"
+      "concept_id": "EFFECTIVE-STRESS-PRINCIPLE",
+      "concept_name": "有效應力原理",
+      "classification": "SM-U1-4",
+      "related_concept_ids": ["BOUSSINESQ-STRESS-INCREASE", "MOHR-COULOMB-FAILURE-CRITERION", "BEARING-CAPACITY-THEORY"],
+      "key_formula": "σ' = σ - u",
+      "description": "土壤的強度與壓縮性由骨架承擔的有效應力控制而非總應力，是貫穿土壤力學所有分析（承載力、土壓力、邊坡穩定、壓密）的根本原理"
     },
     {
-      "concept_id": "SHEAR-STRENGTH",
-      "concept_name": "RC 剪力強度 Vc + Vs",
-      "classification": "RC-U2-1",
-      "related_concept_ids": [
-        "STIRRUP-DESIGN"
-      ],
-      "key_formula": "Vc = (1/6)√f'c·bw·d；Vs = Av·fyt·d/s；φVn = φ(Vc+Vs) ≥ Vu",
-      "description": "RC 梁剪力強度由混凝土貢獻 Vc 與箍筋貢獻 Vs 組成，是剪力設計的核心公式"
+      "concept_id": "BOUSSINESQ-STRESS-INCREASE",
+      "concept_name": "Boussinesq 應力增量理論",
+      "classification": "SM-U1-4",
+      "related_concept_ids": ["EFFECTIVE-STRESS-PRINCIPLE", "SETTLEMENT-COMPONENTS"],
+      "key_formula": "Δσz = 3Q/(2πz²)·[1/(1+(r/z)²)]^(5/2)",
+      "description": "彈性半無限體理論下，點載重、條形載重、矩形載重在土體內任一深度造成的垂直應力增量，用以推估附加應力分布與沉陷量"
     },
     {
-      "concept_id": "TORSION-DESIGN",
-      "concept_name": "RC 扭力強度設計（空間桁架類比）",
-      "classification": "RC-U2-2",
-      "related_concept_ids": [
-        "SHEAR-STRENGTH"
-      ],
-      "key_formula": "At/s = Tu/(2φAo·fyt)；Al = (At/s)·poh·cot²θ",
-      "description": "以空間桁架模型（塑性理念）設計扭力箍筋與縱向鋼筋，Ao ≈ 0.85Aoh"
+      "concept_id": "MOHR-COULOMB-FAILURE-CRITERION",
+      "concept_name": "Mohr-Coulomb 破壞準則",
+      "classification": "SM-U1-5",
+      "related_concept_ids": ["EFFECTIVE-STRESS-PRINCIPLE", "TRIAXIAL-TEST-TYPES", "UNDRAINED-SHEAR-STRENGTH"],
+      "key_formula": "τf = c' + σ'·tanφ'",
+      "description": "土壤剪力強度隨作用面法向有效應力線性增加的破壞準則，破壞面與大主應力面夾角為45°+φ/2，是所有強度分析的基礎"
     },
     {
-      "concept_id": "PUNCHING-SHEAR",
-      "concept_name": "衝剪（雙向剪力）",
-      "classification": "RC-U3-2",
-      "related_concept_ids": [
-        "SHEAR-STRENGTH"
-      ],
-      "key_formula": "φVc = min(φ·(1/6)(1+2/βc)√f'c·bo·d, φ·(1/3)√f'c·bo·d)",
-      "description": "板柱接合處的雙向剪力破壞，臨界截面位於柱面外 d/2 處，是樓版設計的控制項目"
+      "concept_id": "UNDRAINED-SHEAR-STRENGTH",
+      "concept_name": "不排水剪力強度",
+      "classification": "SM-U1-5",
+      "related_concept_ids": ["MOHR-COULOMB-FAILURE-CRITERION", "TRIAXIAL-TEST-TYPES"],
+      "key_formula": "Su = qu/2（無圍壓縮試驗）",
+      "description": "飽和黏土在快速施工（不排水）條件下以φ=0分析，強度僅取決於Su，適用短期施工穩定性分析（如開挖基盤隆起、快速填築邊坡）"
     },
     {
-      "concept_id": "SEISMIC-DESIGN",
-      "concept_name": "耐震設計（能力設計法）",
-      "classification": "RC-U3-3",
-      "related_concept_ids": [
-        "STRONG-COLUMN-WEAK-BEAM",
-        "SPECIAL-MOMENT-FRAME-BEAM",
-        "SPECIAL-MOMENT-FRAME-COLUMN"
-      ],
-      "key_formula": "Ve = (Mpr,l + Mpr,r)/ln ± wu·ln/2；Mpr 以 1.25fy 計算",
-      "description": "以可能彎矩強度 Mpr 計算梁/柱的設計剪力，確保剪力破壞不先於彎曲破壞（能力設計原則）"
+      "concept_id": "TRIAXIAL-TEST-TYPES",
+      "concept_name": "三軸試驗分類",
+      "classification": "SM-U1-5",
+      "related_concept_ids": ["MOHR-COULOMB-FAILURE-CRITERION", "UNDRAINED-SHEAR-STRENGTH"],
+      "key_formula": "UU（總應力法φ=0）／CU（有效應力c'φ'）／CD（有效應力c'φ'）",
+      "description": "依壓密與排水條件分為UU、CU、CD三種試驗，對應不同的工程分析情境（施工期不排水 vs 長期排水穩定）"
     },
     {
-      "concept_id": "DEVELOPMENT-LENGTH",
-      "concept_name": "鋼筋錨定長度 ld",
-      "classification": "RC-U2-3",
-      "related_concept_ids": [],
-      "key_formula": "ld = (fy·ψt·ψe·ψs)/(1.1·λ·√f'c·(cb+Ktr)/db)·db",
-      "description": "確保鋼筋充分錨定於混凝土中，在達到降伏強度前不發生拔出破壞"
+      "concept_id": "BEARING-CAPACITY-THEORY",
+      "concept_name": "淺基礎承載力理論",
+      "classification": "SM-U2-1",
+      "related_concept_ids": ["EFFECTIVE-STRESS-PRINCIPLE", "SETTLEMENT-COMPONENTS", "MOHR-COULOMB-FAILURE-CRITERION"],
+      "key_formula": "qu = cNc + qNq + 0.5γBNγ",
+      "description": "Terzaghi/Meyerhof承載力公式以凝聚力項、上覆應力項、土重項疊加求極限承載力，再除以安全係數得容許承載力，是淺基礎設計的核心方法"
     },
     {
-      "concept_id": "DEFLECTION-CONTROL",
-      "concept_name": "撓度控制（容許撓度）",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "EFFECTIVE-MOMENT-OF-INERTIA",
-        "LONG-TERM-DEFLECTION"
-      ],
-      "key_formula": "δ_allow = L/360（活載重）或 L/480（長期+活載重，有脆性非結構物）",
-      "description": "ACI 318 規定的撓度上限，以避免對非結構構件（隔間牆、玻璃）造成損壞"
+      "concept_id": "SETTLEMENT-COMPONENTS",
+      "concept_name": "瞬時沉陷與壓密沉陷",
+      "classification": "SM-U2-1",
+      "related_concept_ids": ["CONSOLIDATION-THEORY", "BOUSSINESQ-STRESS-INCREASE", "BEARING-CAPACITY-THEORY"],
+      "key_formula": "S = Si + Sc + Ss",
+      "description": "基礎總沉陷量由瞬時沉陷（彈性變形）、壓密沉陷（孔隙水排出）、次壓縮沉陷（壓密完成後持續蠕變）組成，需分別估算並檢核差異沉陷"
     },
     {
-      "concept_id": "CRACK-WIDTH",
-      "concept_name": "裂縫寬度控制",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "EFFECTIVE-MOMENT-OF-INERTIA"
-      ],
-      "key_formula": "s ≤ min(380(280/fs) - 2.5cc, 300(280/fs))；fs ≈ (2/3)fy",
-      "description": "ACI 318 以主筋最大間距 s 間接控制裂縫寬度，避免過寬裂縫影響耐久性"
+      "concept_id": "PILE-CAPACITY-COMPONENTS",
+      "concept_name": "樁基承載力組成",
+      "classification": "SM-U2-2",
+      "related_concept_ids": ["BEARING-CAPACITY-THEORY", "PILE-GROUP-EFFICIENCY"],
+      "key_formula": "Qu = Qp + Qs",
+      "description": "樁基極限承載力由樁端承載力Qp與樁身摩擦力Qs組成，黏土摩擦力常用α法、砂土常用β法估算，是深基礎設計的核心觀念"
     },
     {
-      "concept_id": "STIRRUP-DESIGN",
-      "concept_name": "箍筋設計（剪力筋）",
-      "classification": "RC-U2-1",
-      "related_concept_ids": [
-        "SHEAR-STRENGTH"
-      ],
-      "key_formula": "s = Av·fyt·d/Vs；smax = min(d/2, 600mm)（Vs ≤ (1/3)√f'c·bw·d 時）",
-      "description": "RC 梁剪力筋配置設計，包含需要量、最大間距限制與最小配筋量，確保 Vu ≤ φ(Vc+Vs)"
+      "concept_id": "PILE-GROUP-EFFICIENCY",
+      "concept_name": "群樁效應",
+      "classification": "SM-U2-2",
+      "related_concept_ids": ["PILE-CAPACITY-COMPONENTS"],
+      "key_formula": "Eg = Qg(group)/(n·Qu(single))",
+      "description": "群樁因應力重疊使承載力與沉陷行為不同於單樁簡單疊加，黏土群樁常需檢核塊體破壞模式與遠大於單樁的群樁沉陷"
     },
     {
-      "concept_id": "DUCTILE-FAILURE",
-      "concept_name": "延性破壞（拉力控制破壞）",
-      "classification": "RC-U1-1",
-      "related_concept_ids": [
-        "BALANCED-REINFORCEMENT-RATIO",
-        "WHITNEY-STRESS-BLOCK"
-      ],
-      "key_formula": "延性條件：εt ≥ 0.004（ACI 318-02+）；舊版：ρ ≤ 0.75ρb",
-      "description": "拉力鋼筋先達降伏應變，混凝土壓碎前鋼筋已有足夠變形的破壞模式，是 RC 設計的基本要求"
+      "concept_id": "EXCAVATION-STABILITY",
+      "concept_name": "開挖穩定性",
+      "classification": "SM-U2-3",
+      "related_concept_ids": ["FLOW-NET", "UNDRAINED-SHEAR-STRENGTH", "RANKINE-EARTH-PRESSURE"],
+      "key_formula": "FS(basal heave) = Nc·Su/(γH)；FS(boiling) = icr/iexit",
+      "description": "深開挖須同時檢核擋土結構本身強度、基盤隆起（軟弱黏土常見破壞模式）與滲流引致的砂湧、管湧風險"
     },
     {
-      "concept_id": "LONG-COLUMN-MOMENT-MAGNIFIER",
-      "concept_name": "長柱彎矩放大法（δns）",
-      "classification": "RC-U1-3",
-      "related_concept_ids": [
-        "PM-INTERACTION-DIAGRAM"
-      ],
-      "key_formula": "δns = Cm / (1 - Pu/(0.75Pc)) ≥ 1.0；Pc = π²EI/(klu)²",
-      "description": "無側移構架中細長柱因二次效應（P-Δ）需放大設計彎矩，Cm 為等效均勻彎矩修正係數"
+      "concept_id": "GROUND-IMPROVEMENT-METHODS",
+      "concept_name": "地層改良方法",
+      "classification": "SM-U2-5",
+      "related_concept_ids": ["CONSOLIDATION-THEORY"],
+      "key_formula": "—（依方法分類，非單一公式）",
+      "description": "依改良目的分為夯實類（動力夯實）、排水固結類（預壓+砂井）、灌漿類、置換類、化學攪拌類，用於改善原地層強度、壓縮性或滲透性"
     },
     {
-      "concept_id": "LONG-TERM-DEFLECTION",
-      "concept_name": "長期撓度（潛變收縮修正）",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "EFFECTIVE-MOMENT-OF-INERTIA",
-        "CREEP-SHRINKAGE"
-      ],
-      "key_formula": "δlong = λΔ · δi(sustained)；λΔ = ξ/(1+50ρ')；ξ(5年) = 2.0",
-      "description": "持續載重下因潛變與收縮引起的長期撓度增量，以即時撓度乘長期修正係數 λΔ 估算"
+      "concept_id": "RANKINE-EARTH-PRESSURE",
+      "concept_name": "Rankine 土壓力理論",
+      "classification": "SM-U3-1",
+      "related_concept_ids": ["COULOMB-EARTH-PRESSURE", "RETAINING-WALL-STABILITY", "EFFECTIVE-STRESS-PRINCIPLE"],
+      "key_formula": "Ka = tan²(45°-φ/2)；Kp = tan²(45°+φ/2)",
+      "description": "假設牆背垂直光滑、填土水平的極限平衡理論，用以計算主動與被動側向土壓力係數及其分布，是最基本的側向土壓力計算方法"
     },
     {
-      "concept_id": "CREEP-SHRINKAGE",
-      "concept_name": "潛變與收縮",
-      "classification": "RC-U3-1",
-      "related_concept_ids": [
-        "PRESTRESS-LOSS",
-        "LONG-TERM-DEFLECTION"
-      ],
-      "key_formula": "潛變：εcr = Cc·εi；收縮：εsh（終極值約 300–800×10⁻⁶）",
-      "description": "混凝土時間相依變形：潛變為持續載重下應變持續增長，收縮為水分蒸發引起的體積縮小，均影響長期撓度與預力損失"
+      "concept_id": "COULOMB-EARTH-PRESSURE",
+      "concept_name": "Coulomb 土壓力理論",
+      "classification": "SM-U3-1",
+      "related_concept_ids": ["RANKINE-EARTH-PRESSURE"],
+      "key_formula": "Ka、Kp 依牆背傾角、填土坡度、牆土摩擦角δ之三角函數式求得",
+      "description": "較Rankine理論更一般化，可考慮牆背傾斜、填土坡度與牆土摩擦角，適用實際擋土結構的土壓力計算"
     },
     {
-      "concept_id": "SPECIAL-MOMENT-FRAME-BEAM",
-      "concept_name": "特殊矩形框架梁（耐震梁）",
-      "classification": "RC-U3-3",
-      "related_concept_ids": [
-        "SEISMIC-DESIGN",
-        "STRONG-COLUMN-WEAK-BEAM"
-      ],
-      "key_formula": "Ve = (Mpr,l + Mpr,r)/ln ± wu·ln/2；Mpr 以 1.25fy 計算；Vc=0（Nu<0.05Agf'c）",
-      "description": "耐震特殊矩形框架梁的設計要求：可能彎矩強度 Mpr 控制設計剪力、密箍區配置（ln/4）、Vc=0 條件"
+      "concept_id": "RETAINING-WALL-STABILITY",
+      "concept_name": "擋土結構穩定分析",
+      "classification": "SM-U3-2",
+      "related_concept_ids": ["RANKINE-EARTH-PRESSURE", "BEARING-CAPACITY-THEORY", "SLOPE-STABILITY-ANALYSIS"],
+      "key_formula": "FSsliding、FSoverturning、e≤B/6、FSglobal 四項獨立檢核",
+      "description": "擋土牆設計須同時通過抗滑動、抗傾覆、承載力（偏心距）、整體穩定四項檢核，缺一不可"
     },
     {
-      "concept_id": "SPECIAL-MOMENT-FRAME-COLUMN",
-      "concept_name": "特殊矩形框架柱（耐震柱）",
-      "classification": "RC-U3-3",
-      "related_concept_ids": [
-        "SEISMIC-DESIGN",
-        "STRONG-COLUMN-WEAK-BEAM"
-      ],
-      "key_formula": "Ash ≥ max(0.3·s·hc·f'c/fyt·(Ag/Ach-1), 0.09·s·hc·f'c/fyt)；lo ≥ max(h, ln/6, 45cm)",
-      "description": "耐震特殊矩形框架柱的設計要求：圍束箍筋 Ash 計算確保混凝土圍束、密箍區長度 lo、強柱弱梁驗核"
+      "concept_id": "SLOPE-STABILITY-ANALYSIS",
+      "concept_name": "邊坡穩定分析",
+      "classification": "SM-U3-3",
+      "related_concept_ids": ["MOHR-COULOMB-FAILURE-CRITERION", "UNDRAINED-SHEAR-STRENGTH", "RETAINING-WALL-STABILITY"],
+      "key_formula": "FS = Σ抵抗力矩/Σ驅動力矩（Fellenius 法、Bishop 簡化法）",
+      "description": "以瑞典圓弧法或Bishop簡化法沿假設滑動面計算安全係數，需搜尋臨界滑動面（FS最小者），是坡地工程設計的核心方法"
     }
   ]
 }
