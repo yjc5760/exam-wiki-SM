@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-U1-3 土壤夯實及壓密 — 觀念講義</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--ac2:#e3f2fd;--tension:#2e7d32;--tension2:#e8f5e9;
+--comp:#c62828;--comp2:#ffebee;--warn:#ef6c00;--warn2:#fff3e0;
+--key:#6a1b9a;--key2:#f3e5f5;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:34px 26px}
+header h1{margin:0 0 8px;font-size:1.6em}header .sub{opacity:.9;font-size:.93em;margin:0}
+header .meta{margin-top:12px;font-size:.82em;opacity:.8}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:2px solid var(--bd);
+padding:9px 14px;display:flex;flex-wrap:wrap;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+nav a{text-decoration:none;color:var(--ac);font-size:.85em;padding:4px 11px;border-radius:14px;background:var(--ac2)}
+nav a:hover{background:var(--ac);color:#fff}
+main{max-width:980px;margin:0 auto;padding:24px 18px 80px}
+section{margin-bottom:46px}
+h2{font-size:1.32em;border-left:6px solid var(--ac);padding-left:12px;margin:44px 0 18px;line-height:1.4}
+h3{font-size:1.08em;margin:30px 0 10px;color:#0d47a1}
+h4{font-size:.99em;margin:20px 0 8px;color:#37474f}
+.lead{font-size:1.03em;background:#fff;border:1px solid var(--bd);border-left:5px solid var(--ac);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:11px;padding:16px 18px;margin:16px 0}
+.why{background:var(--key2);border:1px solid #ce93d8;border-left:5px solid var(--key);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.why b:first-child{color:var(--key)}
+.trap{background:var(--warn2);border:1px solid #ffcc80;border-left:5px solid var(--warn);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.trap b:first-child{color:#e65100}
+.tens{background:var(--tension2);border:1px solid #a5d6a7;border-left:5px solid var(--tension);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.comp{background:var(--comp2);border:1px solid #ef9a9a;border-left:5px solid var(--comp);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.fig{background:#fff;border:1px solid var(--bd);border-radius:11px;padding:16px 14px 10px;margin:20px 0;overflow-x:auto}
+.fig svg{display:block;margin:0 auto;max-width:100%;height:auto}
+.fig .cap{font-size:.85em;color:var(--mut);text-align:center;margin-top:10px;line-height:1.6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9em;background:#fff}
+th,td{border:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600}
+tbody tr:nth-child(even){background:#fafcfd}
+ul,ol{margin:10px 0 10px 4px;padding-left:22px}li{margin:5px 0}
+.pill{display:inline-block;font-size:.76em;padding:2px 8px;border-radius:10px;margin-right:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+details{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px 14px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;color:var(--ac)}
+details p{border-left:3px solid #e0e0e0;padding-left:12px;margin:8px 0;color:#37474f}
+.qlink{color:#1565c0;text-decoration:none;border-bottom:1px dotted #90caf9;font-weight:600}
+.katex-display{margin:14px 0!important;overflow-x:auto;overflow-y:hidden}
+.chain{background:#0d47a1;color:#fff;border-radius:9px;padding:12px 16px;margin:14px 0;font-size:.93em;line-height:1.9}
+.chain b{color:#ffd54f}
+footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-top:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<header>
+<h1>SM-U1-3　土壤夯實及壓密 — 觀念講義</h1>
+<p class="sub">練題之前用來建立物理直覺的講義。每條公式都追溯到「它在怕什麼」，每個常數都交代出處。</p>
+<p class="meta">土壤力學與基礎設計（SM）｜命題大綱第一單元第 3 子項｜主分類 23 題 + 副分類 2 題（2002–2025）｜全科最高頻子項</p>
+</header>
+<nav>
+<a href="#s0">§0 全景</a>
+<a href="#s1">§1 夯實</a>
+<a href="#s2">§2 夯實品管</a>
+<a href="#s3">§3 應力歷史</a>
+<a href="#s4">§4 沉陷量</a>
+<a href="#s5">§5 沉陷速率</a>
+<a href="#s6">§6 預壓工法</a>
+<a href="#s7">§7 決策流程</a>
+<a href="#s8">§8 歷屆對照</a>
+<a href="#s9">§9 陷阱總表</a>
+<a href="#s10">§10 自我檢測</a>
+<a href="#s11">★ 精選 5 題</a>
+<span style="flex:1"></span>
+<a href="study-SM-U1-3.html" style="background:#eceff1;color:#455a64">📊 速查頁</a>
+<a href="SM-U1-3_土壤夯實及壓密.pdf" target="_blank" style="background:#eceff1;color:#455a64">📄 Keynote</a>
+<a href="lecture-SM-U1-3.pdf" target="_blank" style="background:#eceff1;color:#455a64">🖨️ 本頁 PDF</a>
+</nav>
+<main>
+<section id="s0">
+<h2>§0　全景：這個單元只有一個對立</h2>
+
+<div class="lead">
+<b>夯實是把「空氣」趕出去，你出力就有；壓密是把「水」擠出去，你只能等。</b><br>
+兩者的物理目標完全相同 —— 都是減少孔隙體積、提高土的密實度。差別只在<b>孔隙裡塞的是什麼</b>：
+空氣可壓縮、可瞬間逸散，所以夯實是<b>能量問題</b>；水不可壓縮、必須沿孔隙滲流出去，所以壓密是<b>滲流問題</b>，而滲流要時間。
+本單元 25 題所有公式的形態差異，全部由這一句話派生。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="920" height="430" fill="#ffffff"/>
+  <line x1="460" y1="20" x2="460" y2="410" stroke="#b0bec5" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- LEFT: compaction -->
+  <rect x="18" y="20" width="424" height="38" rx="8" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="230" y="45" font-size="17" font-weight="bold" fill="#c62828" text-anchor="middle">夯實 Compaction</text>
+  <text x="230" y="80" font-size="14" fill="#37474f" text-anchor="middle">非飽和土 · 排出空氣 · 幾秒鐘 · 人為施加能量</text>
+
+  <!-- before element -->
+  <text x="98" y="110" font-size="13" fill="#607d8b" text-anchor="middle">夯實前</text>
+  <rect x="48" y="118" width="100" height="34" fill="#e0e0e0" stroke="#78909c"/>
+  <text x="98" y="140" font-size="13" fill="#37474f" text-anchor="middle">空氣</text>
+  <rect x="48" y="152" width="100" height="26" fill="#bbdefb" stroke="#78909c"/>
+  <text x="98" y="171" font-size="13" fill="#0d47a1" text-anchor="middle">水</text>
+  <rect x="48" y="178" width="100" height="62" fill="#a1887f" stroke="#5d4037"/>
+  <text x="98" y="215" font-size="13" fill="#ffffff" text-anchor="middle">固體顆粒</text>
+
+  <!-- arrow -->
+  <path d="M164 178 L212 178" stroke="#c62828" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="188" y="168" font-size="13" fill="#c62828" text-anchor="middle">夯擊</text>
+  <text x="188" y="200" font-size="12" fill="#c62828" text-anchor="middle">能量 E</text>
+
+  <!-- after element -->
+  <text x="278" y="110" font-size="13" fill="#607d8b" text-anchor="middle">夯實後</text>
+  <rect x="228" y="140" width="100" height="12" fill="#e0e0e0" stroke="#78909c"/>
+  <text x="352" y="150" font-size="12" fill="#c62828">空氣少了</text>
+  <rect x="228" y="152" width="100" height="26" fill="#bbdefb" stroke="#78909c"/>
+  <text x="352" y="171" font-size="12" fill="#0d47a1">水沒變</text>
+  <rect x="228" y="178" width="100" height="62" fill="#a1887f" stroke="#5d4037"/>
+  <text x="352" y="215" font-size="12" fill="#5d4037">顆粒沒變</text>
+
+  <rect x="18" y="256" width="424" height="154" rx="8" fill="#fff5f5" stroke="#ef9a9a"/>
+  <text x="34" y="280" font-size="13.5" fill="#37474f">・控制變數：含水量 w、夯實能量 E</text>
+  <text x="34" y="304" font-size="13.5" fill="#37474f">・關鍵曲線：夯實曲線（鐘形），峰值 = wopt</text>
+  <text x="34" y="328" font-size="13.5" fill="#37474f">・上限：零空氣孔隙曲線 ZAVC（S=100%）</text>
+  <text x="34" y="352" font-size="13.5" fill="#37474f">・時間尺度：施工當下（滾壓遍數）</text>
+  <text x="34" y="376" font-size="13.5" fill="#37474f">・工程角色：主動創造好土（回填、路堤）</text>
+  <text x="34" y="400" font-size="13.5" font-weight="bold" fill="#c62828">・品管指標：相對夯實度 RC</text>
+
+  <!-- RIGHT: consolidation -->
+  <rect x="478" y="20" width="424" height="38" rx="8" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="690" y="45" font-size="17" font-weight="bold" fill="#1565c0" text-anchor="middle">壓密 Consolidation</text>
+  <text x="690" y="80" font-size="14" fill="#37474f" text-anchor="middle">飽和土 · 排出水 · 數月到數十年 · 只能等待</text>
+
+  <text x="558" y="110" font-size="13" fill="#607d8b" text-anchor="middle">加載瞬間</text>
+  <rect x="508" y="130" width="100" height="48" fill="#bbdefb" stroke="#78909c"/>
+  <text x="558" y="159" font-size="13" fill="#0d47a1" text-anchor="middle">水</text>
+  <rect x="508" y="178" width="100" height="62" fill="#a1887f" stroke="#5d4037"/>
+  <text x="558" y="215" font-size="13" fill="#ffffff" text-anchor="middle">固體顆粒</text>
+  <text x="558" y="258" font-size="12" fill="#c62828" text-anchor="middle">水承擔全部：u = 增量</text>
+
+  <path d="M624 178 L672 178" stroke="#1565c0" stroke-width="3" marker-end="url(#ab)"/>
+  <text x="648" y="168" font-size="13" fill="#1565c0" text-anchor="middle">排水</text>
+  <text x="648" y="200" font-size="12" fill="#1565c0" text-anchor="middle">要時間</text>
+
+  <text x="738" y="110" font-size="13" fill="#607d8b" text-anchor="middle">壓密完成</text>
+  <rect x="688" y="153" width="100" height="25" fill="#bbdefb" stroke="#78909c"/>
+  <text x="812" y="171" font-size="12" fill="#0d47a1">水排掉了</text>
+  <rect x="688" y="178" width="100" height="62" fill="#a1887f" stroke="#5d4037"/>
+  <text x="812" y="215" font-size="12" fill="#5d4037">顆粒沒變</text>
+  <text x="738" y="258" font-size="12" fill="#2e7d32" text-anchor="middle">顆粒接手：有效應力增加</text>
+
+  <rect x="478" y="272" width="424" height="138" rx="8" fill="#f4f9ff" stroke="#90caf9"/>
+  <text x="494" y="296" font-size="13.5" fill="#37474f">・控制變數：有效應力歷史、滲透性 k</text>
+  <text x="494" y="320" font-size="13.5" fill="#37474f">・關鍵曲線：e–log σ′ 曲線，轉折 = pc′</text>
+  <text x="494" y="344" font-size="13.5" fill="#37474f">・速率參數：壓密係數 Cv、排水路徑 Hdr</text>
+  <text x="494" y="368" font-size="13.5" fill="#37474f">・工程角色：被動預測災害（沉陷、傾斜）</text>
+  <text x="494" y="392" font-size="13.5" font-weight="bold" fill="#1565c0">・加速手段：縮短 Hdr（排水砂樁）或預壓</text>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#c62828"/></marker>
+    <marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#1565c0"/></marker>
+  </defs>
+</svg>
+<div class="cap">兩邊的三相元素都在「變矮」，但矮掉的那一塊不一樣：左邊少的是空氣層，右邊少的是水層。<br>
+固體顆粒體積在兩邊都不變 —— 這就是為什麼所有沉陷公式都寫成 <span style="font-family:monospace">Δe/(1+e₀)</span> 的形式。</div>
+</div>
+
+<h3>為什麼「固體體積不變」是本單元的萬用鑰匙</h3>
+
+<div class="why">
+<b>物理直覺 ▸</b> 土壤變形的過程中，石英顆粒本身根本不會被壓縮（顆粒的體積模數比土體大好幾個數量級）。
+所以體積變化 <b>100% 來自孔隙</b>。把單位固體體積 \(V_s=1\) 固定住，孔隙體積就等於 \(e\)，總體積等於 \(1+e\)。
+一維（側向受限）條件下應變就是
+$$\varepsilon_v = \frac{\Delta H}{H} = \frac{\Delta V}{V} = \frac{\Delta e}{1+e_0}$$
+這一條式子同時是夯實沉陷（<a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a>）與壓密沉陷（<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a>）的共同起點。
+分母一定是 <b>初始</b>狀態的 \(1+e_0\)，因為分子是「相對於初始體積」的變化。
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 分母寫成 \(1+e_f\)（最終孔隙比）是常見誤答。極限檢查：若土被壓到 \(e_f=0\)（完全無孔隙），
+正確式給 \(\varepsilon_v = e_0/(1+e_0) < 1\)，合理；錯誤式給 \(\varepsilon_v = e_0\)，當 \(e_0>1\)（軟黏土常見）
+就會算出應變超過 100%，土層厚度變負數 —— 一眼就知道錯。
+</div>
+
+<h3>本單元的六個考點群（依標籤頻次）</h3>
+
+<table>
+<thead><tr><th>群</th><th>核心問題</th><th>權重（標籤次數）</th><th>對應章節</th></tr></thead>
+<tbody>
+<tr><td>夯實原理與夯實曲線</td><td>含水量與能量怎麼影響密實度？</td><td>最佳含水量 6、夯實曲線 3、夯實試驗 3、夯實能量 2</td><td>§1</td></tr>
+<tr><td>夯實品管與土方</td><td>工地達標了沒？要挖多少土、加多少水？</td><td>相對夯實度 4、最大乾單位重 3、現地密度試驗 2、乾土單位重 2</td><td>§2</td></tr>
+<tr><td>應力歷史</td><td>這土以前被壓過嗎？pc′ 在哪？</td><td>預壓密應力 2、過壓密比 2、過壓密 2</td><td>§3</td></tr>
+<tr><td>壓密沉陷量</td><td>最終會沉多少？</td><td>壓密沉陷量 9、壓縮指數 3、回脹指數 2、2:1 應力傳佈 2</td><td>§4</td></tr>
+<tr><td>壓密速率</td><td>什麼時候沉完？現在沉了多少？</td><td>時間因數 5、壓密度 4</td><td>§5</td></tr>
+<tr><td>加速壓密</td><td>等不起怎麼辦？</td><td>預壓工法 2、監測項目</td><td>§6</td></tr>
+</tbody>
+</table>
+
+<p style="font-size:.92em;color:#546e7a">
+本單元是 SM 全科命題頻率<b>第一名</b>的子項（23/97 題，約 24%），近六年（2019–2025）有五年出題。
+其中「壓密沉陷量」單一標籤出現 9 次 —— 如果只剩一小時，先讀 §4 與 §5。
+</p>
+</section>
+<section id="s1">
+<h2>§1　夯實：一場「水太少不行、水太多也不行」的拉鋸</h2>
+
+<div class="lead">
+夯實在怕的是：<b>鬆散回填土日後自己沉下去</b>。<br>
+一個鬆填的 20 m 路堤，光靠自重就能在幾年內沉下數十公分（<a class="qlink" href="problems-view/SM-2002-3.html" target="_blank">SM-2002-3</a> 問的就是這件事）。
+夯實把未來會自己發生的體積減少，提前在施工期用機械能量做完 —— 順便得到更高的強度、更低的滲透性、更低的液化潛能。
+</div>
+
+<h3>1.1　為什麼夯實曲線是鐘形的？</h3>
+
+<div class="why">
+<b>物理直覺 ▸</b> 夯實要讓顆粒<b>滑動、重新排列</b>到更緊密的位置。水在這件事上同時扮演兩個相反的角色：
+<ul>
+<li><b>潤滑劑（水少時佔上風）</b>：水膜包覆顆粒、降低顆粒間摩擦與毛細吸力，讓顆粒滑得動。水太少，顆粒卡死在原位，敲也敲不動 → 乾密度低。</li>
+<li><b>阻擋物（水多時佔上風）</b>：水不可壓縮，且夯擊只有幾毫秒，孔隙水根本來不及排出。水佔掉的體積等於顆粒進不去的空間（俗稱「水墊效應」）→ 乾密度反而下降。</li>
+</ul>
+兩個角色的交叉點就是<b>最佳含水量 \(w_{opt}\)</b>。所以峰值不是經驗巧合，是兩種機制交會的必然結果。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 880 445" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="445" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="90" y1="380" x2="820" y2="380" stroke="#455a64" stroke-width="2"/>
+  <line x1="90" y1="380" x2="90" y2="40" stroke="#455a64" stroke-width="2"/>
+  <text x="740" y="418" font-size="14" fill="#37474f" text-anchor="middle">含水量 w (%)</text>
+  <text x="28" y="215" font-size="14" fill="#37474f" text-anchor="middle" transform="rotate(-90 28 215)">乾單位重 γd (kN/m³)</text>
+  <!-- x ticks -->
+  <line x1="90" y1="380" x2="90" y2="386" stroke="#455a64"/><text x="90" y="400" font-size="12" fill="#607d8b" text-anchor="middle">4</text>
+  <line x1="267" y1="380" x2="267" y2="386" stroke="#455a64"/><text x="267" y="400" font-size="12" fill="#607d8b" text-anchor="middle">8</text>
+  <line x1="445" y1="380" x2="445" y2="386" stroke="#455a64"/><text x="445" y="400" font-size="12" fill="#607d8b" text-anchor="middle">12</text>
+  <line x1="622" y1="380" x2="622" y2="386" stroke="#455a64"/><text x="622" y="400" font-size="12" fill="#607d8b" text-anchor="middle">16</text>
+  <line x1="800" y1="380" x2="800" y2="386" stroke="#455a64"/><text x="800" y="400" font-size="12" fill="#607d8b" text-anchor="middle">20</text>
+  <!-- y ticks -->
+  <line x1="84" y1="380" x2="90" y2="380" stroke="#455a64"/><text x="76" y="385" font-size="12" fill="#607d8b" text-anchor="end">15</text>
+  <line x1="84" y1="270" x2="90" y2="270" stroke="#455a64"/><text x="76" y="275" font-size="12" fill="#607d8b" text-anchor="end">17</text>
+  <line x1="84" y1="160" x2="90" y2="160" stroke="#455a64"/><text x="76" y="165" font-size="12" fill="#607d8b" text-anchor="end">19</text>
+  <line x1="84" y1="50" x2="90" y2="50" stroke="#455a64"/><text x="76" y="55" font-size="12" fill="#607d8b" text-anchor="end">21</text>
+
+  <!-- ZAVC -->
+  <path d="M356 58 Q400 80 445 104 T534 148 T622 188 T711 225 L800 259"
+        fill="none" stroke="#6a1b9a" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="806" y="252" font-size="13" font-weight="bold" fill="#6a1b9a">ZAVC</text>
+  <text x="806" y="270" font-size="11.5" fill="#6a1b9a">S=100%</text>
+
+  <!-- modified (high energy) -->
+  <path d="M179 226 Q222 182 267 149 Q312 118 356 110 Q400 114 445 127 Q489 146 534 168 L622 210"
+        fill="none" stroke="#c62828" stroke-width="3"/>
+  <circle cx="356" cy="110" r="5" fill="#c62828"/>
+
+  <!-- standard (low energy) -->
+  <path d="M267 292 Q312 258 356 232 Q400 210 423 196 Q456 183 489 182 Q522 186 556 193 Q589 207 622 223 L711 276"
+        fill="none" stroke="#1565c0" stroke-width="3"/>
+  <circle cx="489" cy="182" r="5" fill="#1565c0"/>
+
+  <!-- legend (bottom-left empty area) -->
+  <rect x="106" y="266" width="238" height="98" rx="8" fill="#fafafa" stroke="#cfd8dc"/>
+  <line x1="118" y1="290" x2="152" y2="290" stroke="#c62828" stroke-width="3"/>
+  <text x="160" y="295" font-size="12" fill="#c62828">改良夯實　E ≈ 2700 kJ/m³</text>
+  <line x1="118" y1="318" x2="152" y2="318" stroke="#1565c0" stroke-width="3"/>
+  <text x="160" y="323" font-size="12" fill="#1565c0">標準夯實　E ≈ 600 kJ/m³</text>
+  <line x1="118" y1="346" x2="152" y2="346" stroke="#6a1b9a" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="160" y="351" font-size="12" fill="#6a1b9a">ZAVC　S = 100%（幾何上限）</text>
+
+  <!-- peak guide lines -->
+  <line x1="356" y1="110" x2="356" y2="380" stroke="#c62828" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="90" y1="110" x2="356" y2="110" stroke="#c62828" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="489" y1="182" x2="489" y2="380" stroke="#1565c0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="90" y1="182" x2="489" y2="182" stroke="#1565c0" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="352" y="418" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">wopt(改良)</text>
+  <text x="491" y="418" font-size="12" font-weight="bold" fill="#1565c0" text-anchor="middle">wopt(標準)</text>
+  <path d="M356 434 L487 434" stroke="#37474f" stroke-width="1.5" marker-end="url(#a1)" marker-start="url(#a1b)"/>
+  <text x="500" y="438" font-size="12" fill="#37474f">能量增加 → wopt 左移</text>
+
+  <!-- zones -->
+  <rect x="267" y="46" width="222" height="18" fill="#e8f5e9" opacity="0.85"/>
+  <text x="378" y="60" font-size="12" fill="#2e7d32" text-anchor="middle">乾側 Dry of optimum：絮狀結構、k 大</text>
+  <rect x="489" y="330" width="290" height="18" fill="#fff3e0" opacity="0.9"/>
+  <text x="634" y="344" font-size="12" fill="#e65100" text-anchor="middle">濕側 Wet of optimum：分散結構、k 小</text>
+
+  <!-- energy arrow -->
+  <path d="M489 200 L370 128" stroke="#455a64" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#a1)"/>
+  <text x="415" y="240" font-size="12.5" font-weight="bold" fill="#455a64" text-anchor="middle">整條曲線往左上移</text>
+
+  <defs><marker id="a1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#37474f"/></marker>
+    <marker id="a1b" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto">
+    <path d="M9 0 L0 4.5 L9 9 z" fill="#37474f"/></marker></defs>
+</svg>
+<div class="cap">兩條夯實曲線與零空氣孔隙曲線（ZAVC）。<b>三件事要從這張圖讀出來</b>：
+① 能量增加 → 峰值往左上移（γd,max 升、wopt 降）；② 濕側兩條曲線都貼向 ZAVC 但永遠碰不到；
+③ 同一個含水量在不同能量下，可能一邊是乾側、一邊是濕側 —— 這就是 <a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a> 整題的機關。</div>
+</div>
+
+<h3>1.2　ZAVC：為什麼有一條線永遠碰不到</h3>
+
+<p>零空氣孔隙曲線（Zero Air Void Curve）不是實驗曲線，而是<b>純幾何上限</b>：假設空氣被排到一滴不剩（\(S=100\%\)）。</p>
+
+<div class="box">
+<b>三行推導（值得自己重推一次）</b>
+<p>飽和度定義 \(S = \dfrac{V_w}{V_v}\)。取 \(V_s=1\)，則 \(V_v=e\)，\(V_w = w G_s\)（因為 \(w=\frac{W_w}{W_s}=\frac{V_w\gamma_w}{G_s\gamma_w}\)）。</p>
+$$S=1 \;\Rightarrow\; e = wG_s$$
+代回 \(\gamma_d = \dfrac{G_s\gamma_w}{1+e}\)：
+$$\boxed{\;\gamma_{zav} = \frac{G_s\gamma_w}{1+wG_s}\;}$$
+</div>
+
+<div class="why">
+<b>為什麼碰不到 ▸</b> 夯擊是<b>瞬間</b>作用，最後那幾個孤立的封閉氣泡沒有連通路徑可以逸散。
+細粒土的夯實曲線峰值大約落在 \(S = 80\%\sim90\%\)（粗粒／砂質材料可低到 60%~70%）。<br>
+更好用的量化關係是：
+$$\frac{\gamma_d}{\gamma_{zav}} = \frac{1+wG_s}{1+e} = 1 - V_a\quad(V_a = \text{空氣體積／總體積})$$
+夯實土典型 \(V_a\) 約 5%~12%，所以峰值的 \(\gamma_d/\gamma_{zav}\) 應落在 0.88~0.95 之間 —— 這是比背飽和度更直接的檢查。<br>
+<b>ZAVC 在考場上的用途有兩個</b>：① 檢查自己算出的夯實曲線有沒有畫錯（若某點跑到 ZAVC 上方，一定是算錯或 \(G_s\) 用錯）；
+② 解釋為什麼濕側各種土壤的夯實曲線會擠在一起 —— 因為它們都被同一條 ZAVC 壓著（這正是
+<a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a> 曲線族法要求「單點試驗必須落在乾側」的理由）。
+</div>
+
+<h3>1.3　夯實能量：四個參數，一個公式</h3>
+
+$$E = \frac{W \cdot h \cdot N \cdot L}{V}$$
+
+<table>
+<thead><tr><th>符號</th><th>意義</th><th>標準夯實 (Standard Proctor)</th><th>改良夯實 (Modified Proctor)</th></tr></thead>
+<tbody>
+<tr><td>\(W\)</td><td>夯錘重</td><td>2.5 kgf（24.5 N）</td><td>4.54 kgf（44.5 N）</td></tr>
+<tr><td>\(h\)</td><td>落距</td><td>30.5 cm</td><td>45.7 cm</td></tr>
+<tr><td>\(N\)</td><td>每層夯擊數</td><td>25</td><td>25</td></tr>
+<tr><td>\(L\)</td><td>層數</td><td>3</td><td>5</td></tr>
+<tr><td>\(V\)</td><td>模具體積</td><td>944 cm³</td><td>944 cm³</td></tr>
+<tr><td colspan="2"><b>單位體積能量 \(E\)</b></td><td><b>≈ 594 kJ/m³</b></td><td><b>≈ 2695 kJ/m³</b>（約 4.5 倍）</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>怎麼選 ▸</b> 標準／改良的選擇不是背的，而是問「這層土未來要承受多大應力」。
+20 m 高填方的底層、機場跑道、重載道路基層 → 改良夯實（<a class="qlink" href="problems-view/SM-2002-3.html" target="_blank">SM-2002-3</a>、<a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a>）；
+一般整地、需保留黏著性或透水性的材料 → 標準夯實。
+<b>能量大不一定好</b> —— 這是 §1.4 的重點。
+</div>
+
+<h3>1.4　乾側 vs 濕側：同樣的密度，完全不同的土</h3>
+
+<p>細粒土在乾側與濕側夯實出來的成品，即使 \(\gamma_d\) 相同，工程性質也天差地遠。原因在<b>黏土顆粒的排列方式</b>。</p>
+
+<div class="fig">
+<svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="330" fill="#ffffff"/>
+
+  <!-- panel 1 -->
+  <rect x="20" y="20" width="270" height="30" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="155" y="41" font-size="14.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">乾側（w &lt; wopt）</text>
+  <rect x="20" y="58" width="270" height="120" fill="#fafafa" stroke="#cfd8dc"/>
+  <g stroke="#5d4037" stroke-width="3" stroke-linecap="round">
+    <line x1="46" y1="76" x2="86" y2="96"/><line x1="86" y1="96" x2="82" y2="140"/>
+    <line x1="96" y1="72" x2="132" y2="100"/><line x1="132" y1="100" x2="170" y2="82"/>
+    <line x1="140" y1="112" x2="126" y2="152"/><line x1="180" y1="98" x2="216" y2="122"/>
+    <line x1="216" y1="122" x2="206" y2="160"/><line x1="234" y1="80" x2="262" y2="108"/>
+    <line x1="56" y1="152" x2="98" y2="164"/><line x1="176" y1="146" x2="212" y2="166"/>
+  </g>
+  <circle cx="112" cy="126" r="13" fill="#eceff1" opacity="0.75"/>
+  <circle cx="188" cy="126" r="11" fill="#eceff1" opacity="0.75"/>
+  <text x="155" y="196" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">絮狀結構 Flocculated</text>
+  <text x="30" y="220" font-size="12.5" fill="#37474f">邊對面接觸，架橋成骨架</text>
+  <text x="30" y="242" font-size="12.5" fill="#37474f">→ 大孔隙多、水路通暢：<tspan font-weight="bold">k 大</tspan></text>
+  <text x="30" y="264" font-size="12.5" fill="#37474f">→ 骨架剛硬：<tspan font-weight="bold">強度／承載力高</tspan></text>
+  <text x="30" y="286" font-size="12.5" fill="#37474f">→ 缺水，遇水易<tspan font-weight="bold">膨脹、崩解</tspan></text>
+  <text x="30" y="308" font-size="12.5" fill="#c62828">→ 無自癒性（水少於 PL，非塑性）</text>
+
+  <!-- panel 2 -->
+  <rect x="315" y="20" width="270" height="30" rx="6" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="450" y="41" font-size="14.5" font-weight="bold" fill="#1565c0" text-anchor="middle">最佳含水量 wopt</text>
+  <rect x="315" y="58" width="270" height="120" fill="#fafafa" stroke="#cfd8dc"/>
+  <g stroke="#5d4037" stroke-width="3" stroke-linecap="round">
+    <line x1="340" y1="82" x2="382" y2="90"/><line x1="392" y1="78" x2="428" y2="94"/>
+    <line x1="438" y1="80" x2="480" y2="88"/><line x1="490" y1="84" x2="528" y2="96"/>
+    <line x1="344" y1="112" x2="388" y2="118"/><line x1="398" y1="110" x2="442" y2="120"/>
+    <line x1="452" y1="114" x2="494" y2="120"/><line x1="504" y1="112" x2="546" y2="122"/>
+    <line x1="338" y1="144" x2="384" y2="148"/><line x1="396" y1="142" x2="440" y2="152"/>
+    <line x1="452" y1="146" x2="498" y2="150"/><line x1="508" y1="144" x2="550" y2="154"/>
+  </g>
+  <text x="450" y="196" font-size="13" font-weight="bold" fill="#1565c0" text-anchor="middle">部分定向、密度最大</text>
+  <text x="325" y="220" font-size="12.5" fill="#37474f">水剛好夠潤滑，又還沒</text>
+  <text x="325" y="242" font-size="12.5" fill="#37474f">佔掉顆粒要進去的空間</text>
+  <text x="325" y="264" font-size="12.5" font-weight="bold" fill="#1565c0">→ γd,max 出現在這裡</text>
+  <text x="325" y="286" font-size="12.5" fill="#37474f">→ 沉陷量最小，但不代表</text>
+  <text x="325" y="308" font-size="12.5" fill="#37474f">　 其他性質也最好</text>
+
+  <!-- panel 3 -->
+  <rect x="610" y="20" width="270" height="30" rx="6" fill="#fff3e0" stroke="#ffcc80"/>
+  <text x="745" y="41" font-size="14.5" font-weight="bold" fill="#e65100" text-anchor="middle">濕側（w &gt; wopt）</text>
+  <rect x="610" y="58" width="270" height="120" fill="#fafafa" stroke="#cfd8dc"/>
+  <rect x="610" y="58" width="270" height="120" fill="#bbdefb" opacity="0.3"/>
+  <g stroke="#5d4037" stroke-width="3" stroke-linecap="round">
+    <line x1="632" y1="80" x2="700" y2="82"/><line x1="712" y1="80" x2="780" y2="82"/>
+    <line x1="792" y1="80" x2="858" y2="82"/>
+    <line x1="632" y1="104" x2="700" y2="106"/><line x1="712" y1="104" x2="780" y2="106"/>
+    <line x1="792" y1="104" x2="858" y2="106"/>
+    <line x1="632" y1="128" x2="700" y2="130"/><line x1="712" y1="128" x2="780" y2="130"/>
+    <line x1="792" y1="128" x2="858" y2="130"/>
+    <line x1="632" y1="152" x2="700" y2="154"/><line x1="712" y1="152" x2="780" y2="154"/>
+    <line x1="792" y1="152" x2="858" y2="154"/>
+  </g>
+  <text x="745" y="196" font-size="13" font-weight="bold" fill="#e65100" text-anchor="middle">分散結構 Dispersed</text>
+  <text x="620" y="220" font-size="12.5" fill="#37474f">水膜厚、斥力大，剪力下</text>
+  <text x="620" y="242" font-size="12.5" fill="#37474f">滑成面對面平行排列</text>
+  <text x="620" y="264" font-size="12.5" fill="#37474f">→ 孔隙細小均勻：<tspan font-weight="bold">k 小</tspan></text>
+  <text x="620" y="286" font-size="12.5" fill="#37474f">→ 韌性大、變形能力好</text>
+  <text x="620" y="308" font-size="12.5" fill="#2e7d32">→ <tspan font-weight="bold">有自癒性</tspan>（PL≤w≤LL）</text>
+</svg>
+<div class="cap">同一種黏土、同樣的 γd，乾側是「一堆架橋的碎片」，濕側是「一疊平放的撲克牌」。
+撲克牌之間沒有大通道 → k 小；碎片架橋之間有大孔隙 → k 大。
+記憶捷徑：<b>要排水就往乾側，要防水就往濕側。</b></div>
+</div>
+
+<div class="box">
+<b>考卷自己給的總結表（<a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a> 的表 1-1，值得整張背下來）</b>
+<p style="margin:8px 0 0">這張表是 2017 年考卷<b>直接印在題目上</b>的給定資料 —— 換句話說，出題者認為這是本節的標準答案格式。
+七列全部可以由 §1.4 的「碎片架橋 vs 撲克牌」意象推出來，不必硬記：</p>
+<table>
+<thead><tr><th>工程特性</th><th>乾側夯實（\(\omega_1 \sim \omega_{opt}\)）</th><th>濕側夯實（\(\omega_{opt} \sim \omega_2\)）</th><th>怎麼推出來</th></tr></thead>
+<tbody>
+<tr><td>孔隙比 \(e\)</td><td>大</td><td>小</td><td>絮狀骨架架橋撐出大孔隙</td></tr>
+<tr><td>透水性 \(k\)</td><td><b>大</b></td><td><b>小</b></td><td>大孔隙形成連續水路</td></tr>
+<tr><td>壓縮性 \(\Delta H\)</td><td>小</td><td>大</td><td>絮狀骨架剛硬、撲克牌易滑動重排</td></tr>
+<tr><td>自癒性</td><td><b>無</b></td><td><b>有</b></td><td>須在 \(PL \le w \le LL\) 的塑性狀態才癒合得起來</td></tr>
+<tr><td>應力－應變 \((\sigma\text{-}\varepsilon)\)</td><td><b>脆性</b>：達尖峰後下降，出現明顯剪破面</td><td><b>塑性</b>：緩升無尖峰，試體鼓脹變形</td><td>剛硬骨架破壞集中成面；分散結構均勻塑流</td></tr>
+<tr><td>浸水後強度</td><td>損失大</td><td>損失小</td><td>乾側缺水，遇水絮狀鍵結崩解</td></tr>
+<tr><td>吸水後</td><td>乾縮量小</td><td>乾縮量大</td><td>濕側含水多，失水時收縮空間大</td></tr>
+</tbody>
+</table>
+<div class="trap" style="margin:12px 0 0">
+<b>最容易記反的一列 ▸</b> 乾側「孔隙比大」但「壓縮性小」看起來矛盾 —— 其實不矛盾。
+孔隙<b>多</b>不代表容易被壓扁；絮狀骨架是靠顆粒邊對面架橋撐住的<b>剛硬</b>結構，在一般應力範圍內反而不易變形。
+（要注意的是：這張簡表描述的是常用應力範圍；應力若拉到很高，乾側結構一旦被壓垮，壓縮量會反超濕側。）
+</div>
+</div>
+
+<div class="box">
+<b>§1.4 的規範應用（<a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a> 要作答的表 1-2）</b>
+<table>
+<thead><tr><th>工程需求</th><th>夯實能量</th><th>含水量位置</th><th>物理理由</th></tr></thead>
+<tbody>
+<tr><td>要求強度／承載力（機場跑道、道路基層）</td><td>改良型（高）</td><td>乾側</td><td>高 γd + 絮狀剛硬骨架</td></tr>
+<tr><td>要求排水（濾層砂、牆背填土）</td><td>標準型（低）</td><td>乾側</td><td>絮狀大孔隙保 k；高能量會把孔隙壓掉</td></tr>
+<tr><td>要求黏土自癒性（土石壩心層）</td><td>標準型（低）</td><td>濕側</td><td>須在 \(PL \le w \le LL\) 的塑性狀態才癒合得起來</td></tr>
+<tr><td>怕過度夯實失去黏著力（一般整地）</td><td>標準型（低）</td><td>—</td><td>高能量在黏土中會造成剪力破壞面</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 「乾側／濕側」是<b>相對於當下這條曲線的峰值</b>，不是一個絕對含水量。
+<a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a> 的設計就是：工地機具能量比實驗室高 → 工地曲線的 \(w_{opt}\) 往左移 →
+原本照實驗室曲線訂的「乾側」控制含水量，相對於工地曲線已經變成<b>濕側</b>。
+結果密度驗收合格（甚至超標），但透水性徹底毀掉。
+<b>看到「工地能量與實驗室不同」就要立刻警覺乾濕側可能換邊。</b>
+</div>
+
+<h3>1.5　手算範例：從夯實試驗數據到 \(w_{opt}\)（<a class="qlink" href="problems-view/SM-2022-1.html" target="_blank">SM-2022-1</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：標準夯實模具 \(V = 1000\) cm³，六組數據如下。求 \(\gamma_{d,max}\) 與 \(w_{opt}\)。</p>
+
+<p><b>Step 1　把濕質量換成乾單位重</b>（唯一要用的兩條式子）</p>
+$$\rho_t = \frac{M_t}{V},\qquad \rho_d = \frac{\rho_t}{1+w},\qquad \gamma_d = \rho_d \cdot g$$
+<div class="why" style="margin:10px 0">
+<b>為什麼分母是 \(1+w\) ▸</b> \(M_t = M_s + M_w = M_s(1+w)\)，所以 \(\rho_d = M_s/V = \rho_t/(1+w)\)。
+極限檢查：\(w=0 \Rightarrow \rho_d=\rho_t\)（乾土的濕密度就是乾密度），合理。
+</div>
+
+<table>
+<thead><tr><th>試驗點</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+<tbody>
+<tr><td>\(w\) (%)</td><td>5.3</td><td>7.8</td><td>9.7</td><td>12.9</td><td>13.8</td><td>17.0</td></tr>
+<tr><td>\(M_t\) (g)</td><td>1669</td><td>1891</td><td>2013</td><td>2046</td><td>2021</td><td>1977</td></tr>
+<tr><td>\(\rho_t\) (g/cm³)</td><td>1.669</td><td>1.891</td><td>2.013</td><td>2.046</td><td>2.021</td><td>1.977</td></tr>
+<tr><td>\(\rho_d\) (g/cm³)</td><td>1.585</td><td>1.754</td><td>1.835</td><td>1.812</td><td>1.776</td><td>1.690</td></tr>
+<tr><td>\(\gamma_d\) (kN/m³)</td><td>15.55</td><td>17.21</td><td><b>18.00</b></td><td>17.78</td><td>17.42</td><td>16.58</td></tr>
+</tbody>
+</table>
+
+<p><b>Step 2　峰值不在數據點上，要內插</b></p>
+<p>最大實測值是第 3 點（\(w=9.7\%,\ \gamma_d=18.00\)），但左右鄰點（17.21 與 17.78）並不對稱 —— 右邊掉得比左邊慢，
+說明真正的峰值在 9.7% 的<b>右側</b>。取第 2~5 點作二次拋物線最小平方擬合：</p>
+$$\gamma_d = -0.0916\,w^2 + 2.011\,w + 7.100 \;\Rightarrow\; w_{opt} = \frac{2.011}{2\times0.0916} \approx 11.0\%$$
+$$\gamma_{d,max} \approx 18.1\ \text{kN/m}^3$$
+<p style="margin-top:10px">考場上不必真的做最小平方 —— 手繪一條平滑曲線，把頂點畫在 10.5%~11.0% 之間、略高於 18.00，就是滿分答案。</p>
+
+<p><b>Step 3　自我檢查（一定要做）</b></p>
+<ul>
+<li><b>ZAVC 檢查</b>：取 \(G_s \approx 2.70\)，在 \(w=11\%\) 時 \(\gamma_{zav} = \dfrac{2.70\times9.81}{1+0.11\times2.70} = \dfrac{26.49}{1.297} = 20.4\) kN/m³。
+我們的 18.1 落在它下方 → 合理。若算出的峰值超過 ZAVC，數據或計算必有錯。</li>
+<li><b>空氣孔隙檢查</b>：\(\gamma_{d,max}/\gamma_{zav} = 18.1/20.4 = 0.887\)，依 §1.2 的關係式對應空氣體積 \(V_a \approx 11\%\) —— 落在夯實土常見的 5%~12% 內 → 合理。</li>
+<li><b>飽和度檢查（順手算，別記錯關係）</b>：\(e = \dfrac{G_s\gamma_w}{\gamma_d}-1 = \dfrac{26.49}{18.1}-1 = 0.463\)，
+\(S = \dfrac{wG_s}{e} = \dfrac{0.297}{0.463} = 64\%\)。<b>注意 \(\gamma_d/\gamma_{zav}\) 等於 \((1-V_a)\)，不等於 \(S\)</b> —— 這兩者常被混為一談。
+本題 \(S\) 只有 64%，配上「\(w_{opt}\) 偏低（11%）而 \(\gamma_{d,max}\) 偏高（18.1）」，判斷這是<b>偏粗粒的砂質／粉土質材料</b>而非高塑性黏土，
+與後續小題談「夯實能量影響」的方向一致。</li>
+<li><b>單位量級檢查</b>：一般土的 \(\gamma_d\) 在 14~21 kN/m³（或 1.4~2.1 g/cm³）。算出 180 或 1.8 都要立刻回頭看有沒有漏乘 \(g\)。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§1 因果鏈（要能用嘴巴講出來）</b><br>
+夯實怕鬆填土日後自沉 <b>→</b> 用機械能量提前把空氣趕走 <b>→</b> 水同時是潤滑劑與阻擋物，故有峰值 \(w_{opt}\)
+<b>→</b> 能量增加使潤滑需求下降、克服摩擦能力上升，曲線左上移 <b>→</b> 但濕側受 ZAVC（\(S=1\) 幾何上限）壓制，永遠碰不到
+<b>→</b> 乾側絮狀（k 大、強度高）、濕側分散（k 小、有自癒性）<b>→</b> 所以規範同時管「能量」與「含水量落在哪一側」，不是只管密度。
+</div>
+</section>
+<section id="s2">
+<h2>§2　夯實品管：實驗室訂標準，工地驗收貨</h2>
+
+<div class="lead">
+夯實品管在怕的是：<b>驗收數字漂亮，實際性質不合格</b>。<br>
+這一節的所有題目（<a class="qlink" href="problems-view/SM-2006-4.html" target="_blank">SM-2006-4</a>、<a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a>、<a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a>、<a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a>、<a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a>）
+都在同一條軸線上：實驗室訂出 \(\gamma_{d,max}\) 與 \(w_{opt}\) → 工地量出 \(\gamma_{d,field}\) → 比出一個百分比 → 判合格與否。
+題目變化只出在「分母怎麼來」和「怎麼量」。
+</div>
+
+<h3>2.1　兩個相對指標，為什麼要分家</h3>
+
+<table>
+<thead><tr><th></th><th>相對夯實度 \(RC\)（Relative Compaction）</th><th>相對密度 \(D_r\)（Relative Density）</th></tr></thead>
+<tbody>
+<tr><th>定義</th><td>$$RC=\frac{\gamma_{d,field}}{\gamma_{d,max}}\times100\%$$</td><td>$$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}\times100\%$$</td></tr>
+<tr><th>基準來自</th><td>Proctor 夯實試驗的<b>峰值</b></td><td>最鬆／最密試驗的<b>兩個極值</b></td></tr>
+<tr><th>適用土</th><td>所有土，尤其<b>細粒土</b>（有清楚峰值）</td><td>僅<b>粗粒土／砂</b>（夯實曲線常無明顯峰值）</td></tr>
+<tr><th>刻度起點</th><td>最鬆狀態約 <b>80%</b>（不是 0%）</td><td>最鬆狀態 = <b>0%</b></td></tr>
+<tr><th>典型規範值</th><td>90%～95%（重要結構可要求 98%）</td><td>砂土通常要求 \(D_r \ge 70\%\)</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>為什麼砂土不好用 RC ▸</b> 純砂沒有黏土礦物，含水量對它的潤滑效果不明顯，夯實曲線常常平坦、甚至出現雙峰（乾砂與飽和砂都可能夯得比中等含水量更密）。
+峰值定不出來，分母就不可靠。反過來說，砂的 \(e_{max}\) 與 \(e_{min}\) 可以用標準化的最鬆／最密試驗穩定量出，所以改用孔隙比為基準。<br>
+<b>為什麼細粒土不好用 \(D_r\) ▸</b> 黏土的 \(e_{max}\)、\(e_{min}\) 沒有明確物理界限（隨擾動、含水量變化），量不出穩定值。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="300" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffebee"/><stop offset="0.5" stop-color="#fff3e0"/>
+      <stop offset="1" stop-color="#e8f5e9"/></linearGradient>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker>
+  </defs>
+
+  <text x="440" y="26" font-size="15" font-weight="bold" fill="#37474f" text-anchor="middle">同一個砂土狀態，兩把尺讀出來的數字差很多</text>
+
+  <!-- RC scale (top) -->
+  <text x="76" y="76" font-size="13" font-weight="bold" fill="#c62828" text-anchor="end">RC (%)</text>
+  <line x1="90" y1="88" x2="790" y2="88" stroke="#c62828" stroke-width="2"/>
+  <g font-size="12" fill="#c62828" text-anchor="middle">
+    <line x1="90" y1="82" x2="90" y2="88" stroke="#c62828"/><text x="90" y="74">80</text>
+    <line x1="265" y1="82" x2="265" y2="88" stroke="#c62828"/><text x="265" y="74">85</text>
+    <line x1="440" y1="82" x2="440" y2="88" stroke="#c62828"/><text x="440" y="74">90</text>
+    <line x1="615" y1="82" x2="615" y2="88" stroke="#c62828"/><text x="615" y="74">95</text>
+    <line x1="790" y1="82" x2="790" y2="88" stroke="#c62828"/><text x="790" y="74">100</text>
+  </g>
+
+  <!-- bar -->
+  <rect x="90" y="100" width="700" height="46" fill="url(#g1)" stroke="#90a4ae"/>
+  <text x="150" y="128" font-size="13" fill="#c62828">最鬆</text>
+  <text x="740" y="128" font-size="13" fill="#2e7d32">最密</text>
+
+  <!-- Dr scale (bottom) -->
+  <line x1="90" y1="158" x2="790" y2="158" stroke="#1565c0" stroke-width="2"/>
+  <text x="76" y="172" font-size="13" font-weight="bold" fill="#1565c0" text-anchor="end">Dr (%)</text>
+  <g font-size="12" fill="#1565c0" text-anchor="middle">
+    <line x1="90" y1="158" x2="90" y2="164" stroke="#1565c0"/><text x="90" y="180">0</text>
+    <line x1="265" y1="158" x2="265" y2="164" stroke="#1565c0"/><text x="265" y="180">25</text>
+    <line x1="440" y1="158" x2="440" y2="164" stroke="#1565c0"/><text x="440" y="180">50</text>
+    <line x1="615" y1="158" x2="615" y2="164" stroke="#1565c0"/><text x="615" y="180">75</text>
+    <line x1="790" y1="158" x2="790" y2="164" stroke="#1565c0"/><text x="790" y="180">100</text>
+  </g>
+
+  <!-- callouts -->
+  <line x1="440" y1="88" x2="440" y2="200" stroke="#455a64" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="615" y1="88" x2="615" y2="240" stroke="#455a64" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="330" y="202" width="222" height="30" rx="6" fill="#fff3e0" stroke="#ffcc80"/>
+  <text x="441" y="222" font-size="12.5" fill="#e65100" text-anchor="middle">RC = 90% 其實只是 Dr = 50%</text>
+  <rect x="504" y="242" width="222" height="30" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="615" y="262" font-size="12.5" fill="#2e7d32" text-anchor="middle">RC = 95% 才是 Dr = 75%</text>
+
+  <text x="90" y="292" font-size="12" fill="#607d8b">經驗對應式（Lee &amp; Singh, 1971）：RC ≈ 80 + 0.2 Dr　— 用來理解刻度，不用來取代試驗</text>
+</svg>
+<div class="cap">RC 這把尺的<b>零點被墊高了</b>：最鬆狀態就已經是 80%，所以整支尺只有 20 個百分點的有效行程。
+這解釋了為什麼「規範要求 95%」聽起來寬鬆、實際上相當嚴格；也解釋了為什麼把 RC 和 Dr 的數字混用會錯得很離譜。</div>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> <a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a> 在同一題裡同時給 \(D_r\)（夯實前狀態）與 \(RC\)（夯實後要求），
+就是要看你會不會混。判斷口訣：<b>看到 \(e_{max}, e_{min}\) 就是 \(D_r\)；看到 \(\gamma_{d,max}\) 就是 \(RC\)。</b>
+兩者之間唯一的橋樑是 \(\gamma_d = \dfrac{G_s\gamma_w}{1+e}\)，必須經過孔隙比換算，不能直接對接百分比。
+</div>
+
+<h3>2.2　現地密度試驗：三種方法，同一個原理</h3>
+
+<p>工地要量 \(\gamma_{d,field}\)，就得知道「一塊土的重量」與「它原來佔的體積」。重量好量（挖出來秤），麻煩的是<b>不規則孔洞的體積</b>。三種方法就是三種量體積的招數：</p>
+
+<table>
+<thead><tr><th>方法</th><th>怎麼量體積</th><th>優／限制</th></tr></thead>
+<tbody>
+<tr><td><b>砂錐法</b> Sand Cone</td><td>用已知密度的標準砂回填孔洞，由砂重回推體積</td><td>最普及、成本低；孔壁不可崩塌，含大礫石時誤差大</td></tr>
+<tr><td><b>橡皮膜（氣球）法</b></td><td>用水壓脹橡皮膜填滿孔洞，讀水位變化得體積</td><td>快、可重複；孔洞內有尖礫會刺破膜</td></tr>
+<tr><td><b>核子密度儀</b></td><td>不挖孔。用伽馬射線散射測濕密度、中子測含水量</td><td>秒級、非破壞、可大量抽測；需輻射證照與定期校正</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>為什麼細節值得記 ▸</b> <a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a>、<a class="qlink" href="problems-view/SM-2006-4.html" target="_blank">SM-2006-4</a>
+問的都是「試驗要做哪些、為什麼要做」。答題結構固定為三段：
+<b>施工前</b>（室內：粒徑分析 + 阿太堡限度 → 分類；比重；夯實試驗 → \(\gamma_{d,max}, w_{opt}\)；必要時 CBR）→
+<b>施工中</b>（控制鋪層厚度、滾壓遍數、含水量、機具選擇：粗粒用震動滾壓、細粒用羊足滾）→
+<b>施工後</b>（現地密度試驗 + 含水量 → 算 RC → 對照規範）。
+把「控制」和「檢驗」分開寫是拿分關鍵，這兩件事目的相關但做法完全不同。
+</div>
+
+<h3>2.3　土方平衡與加水量：唯一守恆量是「乾土重」</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="300" fill="#ffffff"/>
+  <text x="450" y="26" font-size="15" font-weight="bold" fill="#37474f" text-anchor="middle">借土區 → 運送 → 夯實：三個狀態，同一批乾土顆粒</text>
+
+  <!-- state 1 -->
+  <text x="130" y="58" font-size="13.5" font-weight="bold" fill="#607d8b" text-anchor="middle">① 借土區（原狀）</text>
+  <rect x="60" y="68" width="140" height="46" fill="#e0e0e0" stroke="#78909c"/>
+  <text x="130" y="97" font-size="12.5" fill="#546e7a" text-anchor="middle">空氣</text>
+  <rect x="60" y="114" width="140" height="26" fill="#bbdefb" stroke="#78909c"/>
+  <text x="130" y="133" font-size="12.5" fill="#0d47a1" text-anchor="middle">水 (w₁)</text>
+  <rect x="60" y="140" width="140" height="70" fill="#a1887f" stroke="#5d4037"/>
+  <text x="130" y="181" font-size="12.5" fill="#ffffff" text-anchor="middle">乾土 Ws</text>
+  <text x="130" y="234" font-size="12" fill="#37474f" text-anchor="middle">γt₁ , w₁ 已知</text>
+  <text x="130" y="254" font-size="12" fill="#37474f" text-anchor="middle">→ γd₁ = γt₁/(1+w₁)</text>
+  <text x="130" y="276" font-size="12" fill="#c62828" text-anchor="middle">要挖多少體積 V₁ ?</text>
+
+  <path d="M215 150 L280 150" stroke="#455a64" stroke-width="2.5" marker-end="url(#a3)"/>
+  <text x="248" y="140" font-size="12" fill="#455a64" text-anchor="middle">運送</text>
+
+  <!-- state 2 -->
+  <text x="365" y="58" font-size="13.5" font-weight="bold" fill="#607d8b" text-anchor="middle">② 鋪設前（未夯）</text>
+  <rect x="295" y="80" width="140" height="34" fill="#e0e0e0" stroke="#78909c"/>
+  <text x="365" y="103" font-size="12.5" fill="#546e7a" text-anchor="middle">空氣</text>
+  <rect x="295" y="114" width="140" height="26" fill="#bbdefb" stroke="#78909c"/>
+  <text x="365" y="133" font-size="12.5" fill="#0d47a1" text-anchor="middle">水 (w₁)</text>
+  <rect x="295" y="140" width="140" height="70" fill="#a1887f" stroke="#5d4037"/>
+  <text x="365" y="181" font-size="12.5" fill="#ffffff" text-anchor="middle">乾土 Ws（不變）</text>
+  <text x="365" y="240" font-size="12" fill="#2e7d32" text-anchor="middle">乾土重完全沒變</text>
+  <text x="365" y="262" font-size="12" fill="#c62828" text-anchor="middle">要加多少水？</text>
+
+  <path d="M450 150 L515 150" stroke="#1565c0" stroke-width="2.5" marker-end="url(#a3b)"/>
+  <text x="482" y="140" font-size="12" fill="#1565c0" text-anchor="middle">加水</text>
+  <text x="482" y="166" font-size="12" fill="#1565c0" text-anchor="middle">＋滾壓</text>
+
+  <!-- state 3 -->
+  <text x="600" y="58" font-size="13.5" font-weight="bold" fill="#607d8b" text-anchor="middle">③ 夯實完成</text>
+  <rect x="530" y="108" width="140" height="10" fill="#e0e0e0" stroke="#78909c"/>
+  <rect x="530" y="118" width="140" height="32" fill="#bbdefb" stroke="#78909c"/>
+  <text x="600" y="141" font-size="12.5" fill="#0d47a1" text-anchor="middle">水 (wopt)</text>
+  <rect x="530" y="150" width="140" height="70" fill="#a1887f" stroke="#5d4037"/>
+  <text x="600" y="191" font-size="12.5" fill="#ffffff" text-anchor="middle">乾土 Ws（不變）</text>
+  <text x="600" y="246" font-size="12" fill="#37474f" text-anchor="middle">γd = RC × γd,max</text>
+  <text x="600" y="268" font-size="12" fill="#37474f" text-anchor="middle">V₃ 為題目給定填方體積</text>
+
+  <!-- master equation -->
+  <rect x="690" y="80" width="196" height="150" rx="9" fill="#f3e5f5" stroke="#ce93d8"/>
+  <text x="788" y="106" font-size="13.5" font-weight="bold" fill="#6a1b9a" text-anchor="middle">解題主軸</text>
+  <text x="702" y="132" font-size="12.5" fill="#37474f">1. 由 ③ 算總乾土重</text>
+  <text x="712" y="150" font-size="12.5" fill="#37474f">Ws = γd × V₃</text>
+  <text x="702" y="174" font-size="12.5" fill="#37474f">2. 由 ① 回推挖方體積</text>
+  <text x="712" y="192" font-size="12.5" fill="#37474f">V₁ = Ws / γd₁</text>
+  <text x="702" y="216" font-size="12.5" fill="#37474f">3. 加水 = Ws(wopt − w₁)</text>
+
+  <defs><marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker>
+    <marker id="a3b" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#1565c0"/></marker></defs>
+</svg>
+<div class="cap">三個狀態裡只有一個量從頭到尾不變：<b>乾土重 Ws</b>。土方題（<a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a>、<a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a>）
+一律以 Ws 建立方程式，絕不要用濕重或體積去對接不同狀態。
+加水量的分母永遠是 Ws，因為含水量的定義是 \(w = W_w/W_s\)。</div>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> <a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a> 給了「甲乙以 <b>4:1 體積比</b>混合」與兩區的 \(G_s\)。
+兩個坑：① 體積比指的是<b>借土區原狀體積</b>之比，不是乾體積或夯實後體積之比；
+② 題目給的 \(G_s\) 在求體積、重量、加水量時<b>完全用不到</b> —— 這是刻意的干擾資訊。
+看到用不上的參數不要硬找地方塞，先確認方程式是否已經封閉。
+</div>
+
+<h3>2.4　曲線族法：借土混合料的快速品管（<a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a>）</h3>
+
+<div class="why">
+<b>它在解什麼問題 ▸</b> 大型土方工程料源比例每一車都在變，不可能每車都做完整 5 點夯實試驗（一次要一整天）。
+曲線族法（ASTM D5080 一類）的想法是：<b>用一個點定位，用既有曲線族推峰值。</b>
+先建立甲、乙兩種基礎土壤的完整夯實曲線；對混合料只做<b>單點</b>夯實，把該點落在兩曲線之間的<b>相對位置比例</b>算出來，再用同一個比例去內插兩者的峰值。
+</div>
+
+<div class="box">
+<b>四步做完（<a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a> 實算）</b>
+<p>單點試驗：\(\gamma_m = 19.9\) kN/m³，\(w = 11\%\)。圖上讀取 \(w=11\%\) 時甲、乙曲線為 19.4、16.6；峰值為 19.6、18.0。現地 \(\gamma_{d,field}=15.8\)。</p>
+<p>① 單點乾單位重：\(\gamma_d = \dfrac{19.9}{1.11} = 17.93\) kN/m³</p>
+<p>② 相對位置：\(r = \dfrac{19.4-17.93}{19.4-16.6} = \dfrac{1.47}{2.80} = 0.525\)（幾乎正中間）</p>
+<p>③ 內插峰值：\(\gamma_{d,max} = 19.6 - 0.525\times(19.6-18.0) = 18.76\) kN/m³</p>
+<p>④ \(RC = \dfrac{15.8}{18.76} = 84.2\%\) → <b>不合格</b>（規範一般要求 ≥ 90~95%）</p>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 三個坑，每個都會失分：
+<ul>
+<li>把單點的 17.93 直接當成 \(\gamma_{d,max}\)。單點只用來<b>定位</b>，不是峰頂。</li>
+<li>單點試驗的含水量必須在<b>乾側</b>。濕側各土壤曲線都貼向同一條 ZAVC 而互相重疊（見 §1.2），定位比例會完全失效。</li>
+<li>單點試驗與建立曲線族的<b>夯實能量必須一致</b>（都用標準或都用改良），否則幾何內插關係不成立。</li>
+</ul>
+</div>
+
+<h3>2.5　手算範例：\(D_r\) → \(RC\) → 夯實沉陷量（<a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：回填 2 m 厚砂土，夯實前 \(D_{r0}=50\%\)；\(e_{max}=0.95\)、\(e_{min}=0.55\)、\(G_s=2.65\)、\(\gamma_w=9.81\) kN/m³。
+規範要求 \(RC = 95\%\)。求夯實前後乾單位重，及高度減少量。</p>
+
+<p><b>Step 1　\(D_r\) → \(e_0\)</b>（走孔隙比這條路）</p>
+$$e_0 = e_{max}-D_{r0}(e_{max}-e_{min}) = 0.95-0.5(0.40) = 0.75$$
+$$\gamma_{d0} = \frac{G_s\gamma_w}{1+e_0} = \frac{2.65\times9.81}{1.75} = \boxed{14.86\ \text{kN/m}^3}$$
+
+<p><b>Step 2　\(e_{min}\) → \(\gamma_{d,max}\) → 目標 \(\gamma_{df}\)</b></p>
+<div class="why" style="margin:10px 0">
+<b>為什麼 \(\gamma_{d,max}\) 對應 \(e_{min}\) ▸</b> \(\gamma_d\) 與 \(e\) 反向單調（\(\gamma_d = G_s\gamma_w/(1+e)\)）。
+孔隙最少 = 最密 = 乾單位重最大。這裡題目沒有給 Proctor 曲線，所以用最密狀態當 \(\gamma_{d,max}\) 的替代。
+</div>
+$$\gamma_{d,max} = \frac{2.65\times9.81}{1.55} = 16.77\ \text{kN/m}^3$$
+$$\gamma_{df} = 0.95\times16.77 = \boxed{15.93\ \text{kN/m}^3}$$
+
+<p><b>Step 3　\(\gamma_{df}\) → \(e_f\) → \(\Delta H\)</b></p>
+$$e_f = \frac{G_s\gamma_w}{\gamma_{df}}-1 = \frac{26.00}{15.93}-1 = 0.632$$
+$$\Delta H = H_0\cdot\frac{e_0-e_f}{1+e_0} = 2\times\frac{0.750-0.632}{1.750} = \boxed{0.135\ \text{m}}$$
+
+<p><b>Step 4　自我檢查</b></p>
+<ul>
+<li><b>反向驗算 \(D_r\)</b>：夯實後 \(D_r = \dfrac{0.95-0.632}{0.40} = 79.6\%\)。與 §2.1 的經驗式對照：
+\(RC = 80+0.2\times79.6 = 95.9\%\)，非常接近題目要求的 95% → 兩把尺互相印證，計算可信。</li>
+<li><b>方向檢查</b>：夯實後 \(e\) 應該變小（0.750 → 0.632 ✓）、\(\gamma_d\) 應該變大（14.86 → 15.93 ✓）、厚度應該變小（沉 13.5 cm ✓）。</li>
+<li><b>量級檢查</b>：2 m 厚回填沉 13.5 cm，約 6.8% 的體積應變，對「中等密實 → 密實」的砂土是合理的量級。若算出 1.35 m（沉掉 2/3）就一定錯了。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§2 因果鏈</b><br>
+實驗室用 Proctor 曲線訂出 \(\gamma_{d,max}\)（細粒土）或用極值孔隙比訂出 \(e_{min}\)（砂土）
+<b>→</b> 工地用砂錐／氣球／核子儀量出 \(\gamma_{d,field}\) <b>→</b> 相除得 RC，但要記得 RC 的刻度零點被墊到 80%
+<b>→</b> 混合料來不及做完整試驗時，用曲線族法單點定位（必須乾側、必須同能量）
+<b>→</b> 土方與加水量一律以「乾土重守恆」建方程式 <b>→</b> 體積變化再回到 \(\Delta e/(1+e_0)\)。
+</div>
+</section>
+<section id="s3">
+<h2>§3　壓密的起點：土有記憶</h2>
+
+<div class="lead">
+壓密沉陷計算在怕的是：<b>用錯斜率</b>。<br>
+同一塊黏土，被同樣大小的應力增量壓下去，沉陷量可以差 4 倍以上 —— 全看它<b>以前被壓過沒有</b>。
+所以每一道壓密題的第一步永遠不是套沉陷公式，而是回答兩個問題：現在的 \(p_0'\) 是多少？歷史最大的 \(p_c'\) 是多少？
+</div>
+
+<h3>3.1　為什麼「歷史」會決定現在的斜率</h3>
+
+<div class="why">
+<b>物理直覺 ▸</b> 土壤壓縮有兩種截然不同的機制：
+<ul>
+<li><b>再壓縮（Recompression, \(C_r\)）</b>：顆粒骨架先前已經被壓到那個排列，卸載後只是彈性回彈了一點。重新加載時顆粒沿著原路滑回去，幾乎沒有新的重排 → <b>可回復、量小</b>。</li>
+<li><b>處女壓縮（Virgin compression, \(C_c\)）</b>：應力超過歷史最高點，顆粒骨架被迫進入從來沒到過的排列，接觸點被壓碎、顆粒滑移、結構崩塌 → <b>不可回復、量大</b>。</li>
+</ul>
+典型比值 \(C_c/C_r \approx 5\sim10\)。所以「有沒有跨過 \(p_c'\)」是本單元最大的分岔點，比任何公式都重要。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="470" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="100" y1="400" x2="840" y2="400" stroke="#455a64" stroke-width="2"/>
+  <line x1="100" y1="400" x2="100" y2="50" stroke="#455a64" stroke-width="2"/>
+  <text x="470" y="437" font-size="14" fill="#37474f" text-anchor="middle">有效應力 σ′ (kPa)　—　對數刻度</text>
+  <text x="34" y="225" font-size="14" fill="#37474f" text-anchor="middle" transform="rotate(-90 34 225)">孔隙比 e</text>
+  <!-- x ticks (log) -->
+  <g font-size="12" fill="#607d8b" text-anchor="middle">
+    <line x1="100" y1="400" x2="100" y2="406" stroke="#455a64"/><text x="100" y="420">10</text>
+    <line x1="205" y1="400" x2="205" y2="406" stroke="#455a64"/><text x="205" y="420">20</text>
+    <line x1="345" y1="400" x2="345" y2="406" stroke="#455a64"/><text x="345" y="420">50</text>
+    <line x1="450" y1="400" x2="450" y2="406" stroke="#455a64"/><text x="450" y="420">100</text>
+    <line x1="555" y1="400" x2="555" y2="406" stroke="#455a64"/><text x="555" y="420">200</text>
+    <line x1="695" y1="400" x2="695" y2="406" stroke="#455a64"/><text x="695" y="420">500</text>
+    <line x1="800" y1="400" x2="800" y2="406" stroke="#455a64"/><text x="800" y="420">1000</text>
+  </g>
+  <!-- y ticks -->
+  <g font-size="12" fill="#607d8b" text-anchor="end">
+    <line x1="94" y1="60" x2="100" y2="60" stroke="#455a64"/><text x="88" y="65">1.00</text>
+    <line x1="94" y1="124" x2="100" y2="124" stroke="#455a64"/><text x="88" y="129">0.90</text>
+    <line x1="94" y1="188" x2="100" y2="188" stroke="#455a64"/><text x="88" y="193">0.80</text>
+    <line x1="94" y1="252" x2="100" y2="252" stroke="#455a64"/><text x="88" y="257">0.70</text>
+    <line x1="94" y1="316" x2="100" y2="316" stroke="#455a64"/><text x="88" y="321">0.60</text>
+  </g>
+
+  <!-- Casagrande construction lines (drawn first, behind) -->
+  <line x1="500" y1="138" x2="660" y2="138" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="666" y="142" font-size="11.5" fill="#6a1b9a">② 水平線</text>
+  <line x1="500" y1="138" x2="660" y2="194" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="666" y="198" font-size="11.5" fill="#6a1b9a">③ 切線</text>
+  <line x1="500" y1="138" x2="660" y2="166" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="666" y="170" font-size="11.5" font-weight="bold" fill="#6a1b9a">④ 角平分線</text>
+  <line x1="600" y1="182" x2="466" y2="108" stroke="#c62828" stroke-width="1.5" stroke-dasharray="7 4"/>
+  <text x="380" y="100" font-size="11.5" fill="#c62828">⑤ 處女線向後延伸</text>
+
+  <!-- main curve -->
+  <path d="M338 124 C 400 127 462 132 500 138 C 540 149 572 164 600 182 L 800 292"
+        fill="none" stroke="#1565c0" stroke-width="3.5"/>
+
+  <!-- markers -->
+  <circle cx="338" cy="124" r="5.5" fill="#2e7d32"/>
+  <text x="300" y="112" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">現況</text>
+  <text x="300" y="98" font-size="12" fill="#2e7d32" text-anchor="middle">(p₀′, e₀)</text>
+  <line x1="338" y1="124" x2="338" y2="400" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="338" y="392" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">p₀′</text>
+
+  <circle cx="500" cy="138" r="5.5" fill="#6a1b9a"/>
+  <text x="474" y="126" font-size="11.5" fill="#6a1b9a" text-anchor="end">① 最大曲率點</text>
+
+  <circle cx="516" cy="141" r="6" fill="#c62828"/>
+  <line x1="516" y1="141" x2="516" y2="400" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <text x="516" y="392" font-size="12.5" font-weight="bold" fill="#c62828" text-anchor="middle">pc′</text>
+  <text x="560" y="120" font-size="12" font-weight="bold" fill="#c62828">⑥ 交點 = pc′</text>
+
+  <!-- slope labels -->
+  <rect x="186" y="146" width="146" height="46" rx="7" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="259" y="166" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">再壓縮段 Cr</text>
+  <text x="259" y="184" font-size="12" fill="#2e7d32" text-anchor="middle">平緩 → 沉陷小</text>
+  <path d="M300 172 L336 152" stroke="#2e7d32" stroke-width="1.5"/>
+
+  <rect x="656" y="286" width="176" height="46" rx="7" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="744" y="306" font-size="12.5" font-weight="bold" fill="#c62828" text-anchor="middle">處女壓縮段 Cc</text>
+  <text x="744" y="324" font-size="12" fill="#c62828" text-anchor="middle">陡 → 沉陷大（5~10 倍）</text>
+  <path d="M700 286 L718 268" stroke="#c62828" stroke-width="1.5"/>
+
+  <!-- OCR zone -->
+  <rect x="338" y="440" width="178" height="0" />
+  <path d="M338 452 L514 452" stroke="#455a64" stroke-width="1.5" marker-end="url(#a4)" marker-start="url(#a4b)"/>
+  <text x="426" y="466" font-size="12.5" font-weight="bold" fill="#455a64" text-anchor="middle">這段距離就是「土的記憶」：OCR = pc′ / p₀′</text>
+
+  <defs><marker id="a4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker>
+    <marker id="a4b" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto">
+    <path d="M9 0 L0 4.5 L9 9 z" fill="#455a64"/></marker></defs>
+</svg>
+<div class="cap">\(e\)–\(\log\sigma'\) 曲線與 Casagrande 作圖法（示意，比例非精確）。
+六個步驟：① 找最大曲率點 → ② 過該點畫水平線 → ③ 過該點畫切線 → ④ 畫兩者的角平分線 →
+⑤ 把處女壓縮直線段向後延伸 → ⑥ 兩線交點的橫座標即 \(p_c'\)。
+<b>用 \(\log\sigma'\) 當橫軸不是為了好看</b>：處女壓縮段在對數座標下才是一條直線，斜率才能定義成常數 \(C_c\)。</div>
+</div>
+
+<h3>3.2　\(p_c' > p_0'\) 是怎麼發生的</h3>
+
+<p>台灣的考題常直接給 \(p_c'\)，但知道成因才能在「概念題」拿分（<a class="qlink" href="problems-view/SM-2012-2.html" target="_blank">SM-2012-2</a>、<a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a> 都問到）：</p>
+
+<ul>
+<li><b>覆土被移除</b>：侵蝕、河道下切、開挖、冰川退卻 —— 歷史上曾有更厚的土壓在上面。</li>
+<li><b>地下水位曾經更低</b>：水位低 → 浮力小 → \(\sigma'\) 大。抽水期把土壓密了，停抽後水位回升，\(\sigma'\) 降回來但記憶留著。<b>台灣西南部地層下陷區的典型情形。</b></li>
+<li><b>乾燥收縮（Desiccation）</b>：表層黏土乾裂時毛細張力等效於很大的有效應力，形成「乾燥硬殼層（crust）」。</li>
+<li><b>老化與次生膠結（Aging / secondary cementation）</b>：長期在固定應力下顆粒接觸點產生化學膠結，表現出類似過壓密的行為（此時 \(p_c'\) 稱為「準過壓密應力」）。</li>
+</ul>
+
+<div class="why">
+<b>反過來想 ▸</b> \(OCR = p_c'/p_0'\)。極限檢查：<br>
+\(OCR = 1\)：正常壓密（NC），目前就站在處女壓縮線上，任何加載都直接走 \(C_c\) → <b>最會沉的土</b>。<br>
+\(OCR \gg 1\)（如 4 以上）：重過壓密，只要加載後仍在 \(p_c'\) 以內，沉陷小到常可忽略。<br>
+\(OCR < 1\)：<b>欠壓密（Underconsolidated）</b>，代表自重壓密還沒做完（新填海地、快速沉積），未來連「什麼都不做」都還會繼續沉。這是真正棘手的情況。
+</div>
+
+<h3>3.3　\(p_0'\) 的兩個必踩之處</h3>
+
+<div class="box">
+<b>① 代表點取「土層中點」</b><br>
+壓密公式假設整層用一個應力代表。取中點深度的 \(p_0'\)，因為 \(\log\) 曲線在該層範圍內近似線性，中點值最接近整層平均。
+<span style="color:#607d8b">（實務規範對厚層要求切成子層分別計算再加總，但考場上 4~6 m 厚度用中點是標準做法。）</span>
+<br><br>
+<b>② 有效應力要逐層扣孔隙水壓</b>
+$$p_0' = \sum \gamma_i h_i - u = \sum_{\text{水位上}}\gamma_{t}h + \sum_{\text{水位下}}\gamma' h,\qquad \gamma'=\gamma_{sat}-\gamma_w$$
+水位以上用濕（或乾）單位重，水位以下用浮單位重 \(\gamma'\) —— 這是最常出錯的地方，也是
+<a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a> 刻意給出 \(\gamma_{sat}\) 當干擾項的原因（預載砂土在地表以上，該用 \(\gamma_{dry}\)）。
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 「地下水位下降」型的題目（<a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a>）有三個連環坑：
+<ol>
+<li>水位以上的土層變乾，題目常<b>只給 \(\gamma_{sat}\) 與飽和含水量</b>，要自己推 \(\gamma_d = \gamma_{sat}/(1+w)\)。</li>
+<li>問「C 點有效應力變化」和問「黏土層沉陷量」用的是<b>不同的代表點</b>（C 點在交界面，沉陷要用黏土層中點）。不可以拿 C 點的應力去代沉陷公式。</li>
+<li>降水造成的 \(\Delta\sigma'\) 來自<b>浮力消失</b>，不是外加載重。這種載重在整個土層深度都不折減。</li>
+</ol>
+</div>
+
+<h3>3.4　取樣擾動：為什麼實驗室算出的沉陷會偏大</h3>
+
+<div class="fig">
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <line x1="100" y1="330" x2="820" y2="330" stroke="#455a64" stroke-width="2"/>
+  <line x1="100" y1="330" x2="100" y2="40" stroke="#455a64" stroke-width="2"/>
+  <text x="460" y="366" font-size="13.5" fill="#37474f" text-anchor="middle">log σ′</text>
+  <text x="34" y="185" font-size="13.5" fill="#37474f" text-anchor="middle" transform="rotate(-90 34 185)">孔隙比 e</text>
+
+  <!-- true field curve -->
+  <path d="M180 80 C 260 84 340 90 420 100 C 470 112 510 132 550 160 L 780 302"
+        fill="none" stroke="#2e7d32" stroke-width="3.5"/>
+  <text x="600" y="196" font-size="12.5" font-weight="bold" fill="#2e7d32">現地真實曲線</text>
+  <text x="600" y="214" font-size="12" fill="#2e7d32">轉折銳利，pc′ 清楚</text>
+
+  <!-- disturbed curve -->
+  <path d="M180 96 C 260 112 330 134 400 160 C 470 190 530 226 600 260 L 780 316"
+        fill="none" stroke="#c62828" stroke-width="3.5" stroke-dasharray="9 5"/>
+  <text x="196" y="150" font-size="12.5" font-weight="bold" fill="#c62828">擾動試體曲線</text>
+  <text x="196" y="168" font-size="12" fill="#c62828">整條被抹圓，轉折不見</text>
+
+  <!-- pc markers -->
+  <line x1="420" y1="100" x2="420" y2="330" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="420" y="348" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">真實 pc′</text>
+  <line x1="330" y1="134" x2="330" y2="330" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="322" y="348" font-size="12.5" font-weight="bold" fill="#c62828" text-anchor="end">誤判 pc′（偏低）</text>
+
+  <!-- 0.42 e0 line -->
+  <line x1="100" y1="290" x2="820" y2="290" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="106" y="284" font-size="12" fill="#6a1b9a">e = 0.42 e₀：兩條曲線在此匯合（Schmertmann 修正的控制點）</text>
+
+  <!-- consequence box -->
+  <rect x="470" y="46" width="356" height="112" rx="9" fill="#fff3e0" stroke="#ffcc80"/>
+  <text x="486" y="70" font-size="13" font-weight="bold" fill="#e65100">擾動造成三個連鎖後果</text>
+  <text x="486" y="94" font-size="12.5" fill="#37474f">① 低應力段變陡 → Cr 被高估</text>
+  <text x="486" y="116" font-size="12.5" fill="#37474f">② 轉折被抹圓 → pc′ 被低估</text>
+  <text x="486" y="138" font-size="12.5" fill="#37474f">③ 兩者都讓 Δe 變大 → 沉陷高估</text>
+</svg>
+<div class="cap">取樣、運送、切修、裝環的每一步都在擾動試體。擾動的作用是「先幫土卸載、再幫土重塑」，
+結果實驗室曲線在低應力區變陡、轉折點被抹平。<b>兩條曲線在 \(e = 0.42e_0\) 附近匯合</b>（Schmertmann 的觀察），
+所以修正法就是拿 \((p_0', e_0)\) 與 \(0.42e_0\) 這兩個控制點重建現地曲線。</div>
+</div>
+
+<div class="box">
+<b>Schmertmann 修正法（<a class="qlink" href="problems-view/SM-2002-1.html" target="_blank">SM-2002-1</a> 整題就在問這個）</b>
+<ul>
+<li><b>正常壓密（NC）</b>：從 \((p_0', e_0)\) 這一點，直線連到實驗室曲線上 \(e = 0.42e_0\) 的位置 —— 這條直線就是現地的處女壓縮線，其斜率才是真正該用的 \(C_c\)。</li>
+<li><b>過壓密（OC）</b>：從 \((p_0', e_0)\) 畫一條斜率等於實驗室<b>回脹段</b> \(C_s\) 的線到 \(\sigma'=p_c'\)（實驗室的 \(C_r\) 已被擾動污染，改用比較可靠的卸載回脹段 \(C_s\) 代替）；再從該點連到 \(0.42e_0\)。</li>
+</ul>
+<p><b>為什麼可以用 \(C_s\) 代替 \(C_r\)</b>：卸載回脹是純彈性行為，對擾動不敏感；而再壓縮段夾雜了擾動造成的重塑變形。這也是
+<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a> 明確假設 \(C_r \approx C_s\) 的理由。</p>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> <a class="qlink" href="problems-view/SM-2002-1.html" target="_blank">SM-2002-1</a> 問「為什麼 \(\Delta H = \frac{\Delta e}{1+e_0}H\) 會<b>高估</b>沉陷」，
+很多人答「因為 \(e_0\) 用錯」。但注意：若 \(e_0\) 因卸載回脹而<b>變大</b>，代進<b>分母</b>反而讓 \(\Delta H\) 變<b>小</b>（低估）。
+所以高估的主因必然出在<b>分子 \(\Delta e\)</b> —— 起算點錯（把卸載後的回脹狀態當起點，白算了一段不該存在的再壓縮）
+加上擾動使低應力段變陡。<b>答題要指名分子。</b>
+</div>
+
+<h3>3.5　手算範例：地下水位下降的有效應力與沉陷（<a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：覆土層 0–8 m（\(\gamma_{sat}=19.68\)、\(\gamma_d=16.00\) kN/m³）；砂土層 8–20 m（\(\gamma_{sat}=18.29\)、\(w=18\%\)）；
+黏土層 20–30 m（\(\gamma_{sat}=21.78\)、\(w=21\%\)、\(e_0=0.9\)、\(C_c=0.15\)）。初始水位在地表下 2 m，降至 18 m。</p>
+
+<p><b>Step 1　先補齊排水後變乾的單位重</b></p>
+<p>砂土層題目只給 \(\gamma_{sat}\) 與飽和含水量，必須自己推：</p>
+$$\gamma_{d,sand} = \frac{\gamma_{sat}}{1+w} = \frac{18.29}{1.18} = 15.50\ \text{kN/m}^3$$
+<div class="why" style="margin:10px 0">
+<b>為什麼這條式子成立 ▸</b> 飽和狀態下 \(\gamma_{sat} = \gamma_d(1+w)\)，因為此時所有孔隙都是水、
+\(W_w = wW_s\)，總重就是乾重的 \((1+w)\) 倍。這是「飽和含水量」這個資訊唯一的用途 —— 看到它就知道題目要你反推 \(\gamma_d\)。
+</div>
+
+<p><b>Step 2　黏土層中點（深 25 m）的初始與最終有效應力</b></p>
+<p>降水前（水位 2 m）：0–2 m 用 \(\gamma_d\)，2–25 m 全部在水位下用 \(\gamma'\)。<br>
+降水後（水位 18 m）：0–18 m 用 \(\gamma_d\)，18–25 m 用 \(\gamma'\)。</p>
+<p>差值就是 2–18 m 這 16 m 土層「浮力消失」貢獻的有效應力增量，量級約
+\(16\times(\gamma_{sat}-\gamma')\approx16\times9.81\approx157\) kPa 扣掉 \(\gamma_{sat}\to\gamma_d\) 的減少量後，官方驗證答案為
+<b>\(\Delta\sigma'_{C} = 106.98\) kPa</b>（C 點在深 20 m）。</p>
+
+<p><b>Step 3　正常壓密：一段式</b></p>
+$$S_c = \frac{C_c H}{1+e_0}\log\frac{\sigma_{v0}'+\Delta\sigma'}{\sigma_{v0}'} \;\Rightarrow\; \boxed{S_c = 12.10\ \text{cm}}$$
+
+<p><b>Step 4　同一題改成過壓密（\(p_c'=300\) kPa、\(C_s=0.02\)）</b></p>
+$$S_c = \frac{C_s H}{1+e_0}\log\frac{p_c'}{\sigma_{v0}'} + \frac{C_c H}{1+e_0}\log\frac{\sigma_{vf}'}{p_c'} \;\Rightarrow\; \boxed{S_c = 7.01\ \text{cm}}$$
+
+<p><b>Step 5　自我檢查 —— 這一步最有價值</b></p>
+<ul>
+<li><b>比值檢查</b>：\(7.01/12.10 = 0.58\)。同樣的載重，過壓密只沉了正常壓密的 58% —— 方向與 §3.1 說的「\(C_r\) 段沉得少」一致。
+如果算出 OC 的沉陷比 NC 大，一定是把 \(C_c\)、\(C_s\) 對調了。</li>
+<li><b>極限檢查</b>：若 \(p_c'\) 大到讓 \(\sigma_{vf}' < p_c'\)（完全不跨越），沉陷應該只剩第一段，量級會再掉一個檔次。反之若 \(p_c'\to\sigma_{v0}'\)（OCR→1），
+兩式應該收斂成同一個答案 —— 這是驗算雙段式公式有沒有寫對的最快方法。</li>
+<li><b>工程量級</b>：抽水造成十幾公分沉陷，與台灣地層下陷的實測量級相符。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§3 因果鏈</b><br>
+土的顆粒骨架記得自己被壓過的最高應力 <b>→</b> 記憶以內是彈性再壓縮（\(C_r\) 小），超過記憶才進入處女壓縮（\(C_c\) 大，5~10 倍）
+<b>→</b> 所以要先量 \(p_c'\)，用 Casagrande 作圖法（最大曲率點的角平分線 × 處女線延伸）<b>→</b> 但取樣擾動會抹圓轉折、低估 \(p_c'\)、高估 \(C_r\)
+<b>→</b> 兩者都讓 \(\Delta e\) 變大 → 沉陷被高估 <b>→</b> 用 \((p_0',e_0)\) 與 \(0.42e_0\) 兩個控制點做 Schmertmann 修正。
+</div>
+</section>
+<section id="s4">
+<h2>§4　壓密沉陷量：最終會沉多少</h2>
+
+<div class="lead">
+這一節只有一個決策：<b>應力路徑從 \(p_0'\) 走到 \(p_0'+\Delta\sigma\)，有沒有跨過 \(p_c'\)？</b><br>
+答案只有三種，對應三個公式。把這三種情況背成「一張圖」而不是「三條式子」，考場上就不會選錯。
+本單元最高頻的標籤「壓密沉陷量」出現 9 次，全部在考這個判斷。
+</div>
+
+<h3>4.1　三種情況，一張圖</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="350" fill="#ffffff"/>
+
+  <!-- ===== Case A ===== -->
+  <rect x="12" y="10" width="278" height="28" rx="6" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="151" y="30" font-size="13.5" font-weight="bold" fill="#c62828" text-anchor="middle">Case A：正常壓密 NC</text>
+  <line x1="48" y1="230" x2="272" y2="230" stroke="#607d8b" stroke-width="1.5"/>
+  <line x1="48" y1="230" x2="48" y2="60" stroke="#607d8b" stroke-width="1.5"/>
+  <text x="160" y="248" font-size="11" fill="#78909c" text-anchor="middle">log σ′</text>
+  <text x="36" y="148" font-size="11" fill="#78909c" text-anchor="middle" transform="rotate(-90 36 148)">e</text>
+  <path d="M96 84 L248 206" fill="none" stroke="#c62828" stroke-width="3.5"/>
+  <circle cx="96" cy="84" r="5" fill="#2e7d32"/>
+  <text x="96" y="74" font-size="11" fill="#2e7d32" text-anchor="middle">p₀′= pc′</text>
+  <circle cx="200" cy="167" r="5" fill="#37474f"/>
+  <text x="228" y="163" font-size="11" fill="#37474f">pf′</text>
+  <line x1="200" y1="167" x2="200" y2="230" stroke="#37474f" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="151" y="272" font-size="12" fill="#37474f" text-anchor="middle">全程走 Cc，一段式</text>
+  <text x="151" y="296" font-size="11.5" fill="#c62828" text-anchor="middle">OCR = 1，最會沉的土</text>
+  <text x="151" y="322" font-size="11.5" fill="#607d8b" text-anchor="middle">SM-2021-2 / 2019-2 / 2015-1 / 2014-4</text>
+
+  <!-- ===== Case B ===== -->
+  <rect x="312" y="10" width="278" height="28" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="451" y="30" font-size="13.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">Case B：OC 且未跨越 pc′</text>
+  <line x1="348" y1="230" x2="572" y2="230" stroke="#607d8b" stroke-width="1.5"/>
+  <line x1="348" y1="230" x2="348" y2="60" stroke="#607d8b" stroke-width="1.5"/>
+  <text x="460" y="248" font-size="11" fill="#78909c" text-anchor="middle">log σ′</text>
+  <path d="M382 82 L486 100" fill="none" stroke="#2e7d32" stroke-width="4"/>
+  <path d="M486 100 L556 196" fill="none" stroke="#bdbdbd" stroke-width="3" stroke-dasharray="6 4"/>
+  <circle cx="382" cy="82" r="5" fill="#2e7d32"/>
+  <text x="382" y="72" font-size="11" fill="#2e7d32" text-anchor="middle">p₀′</text>
+  <circle cx="450" cy="94" r="5" fill="#37474f"/>
+  <text x="450" y="72" font-size="11" fill="#37474f" text-anchor="middle">pf′</text>
+  <line x1="486" y1="100" x2="486" y2="230" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="492" y="224" font-size="11.5" font-weight="bold" fill="#c62828">pc′</text>
+  <text x="451" y="272" font-size="12" fill="#37474f" text-anchor="middle">全程走 Cr（或 Cs），一段式</text>
+  <text x="451" y="296" font-size="11.5" fill="#2e7d32" text-anchor="middle">沉陷小，常在數 cm 以內</text>
+  <text x="451" y="322" font-size="11.5" fill="#607d8b" text-anchor="middle">SM-2016-1</text>
+
+  <!-- ===== Case C ===== -->
+  <rect x="612" y="10" width="278" height="28" rx="6" fill="#fff3e0" stroke="#ffcc80"/>
+  <text x="751" y="30" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">Case C：OC 但跨越 pc′</text>
+  <line x1="648" y1="230" x2="872" y2="230" stroke="#607d8b" stroke-width="1.5"/>
+  <line x1="648" y1="230" x2="648" y2="60" stroke="#607d8b" stroke-width="1.5"/>
+  <text x="760" y="248" font-size="11" fill="#78909c" text-anchor="middle">log σ′</text>
+  <path d="M676 78 L744 92" fill="none" stroke="#2e7d32" stroke-width="4"/>
+  <path d="M744 92 L848 204" fill="none" stroke="#c62828" stroke-width="4"/>
+  <circle cx="676" cy="78" r="5" fill="#2e7d32"/>
+  <text x="676" y="68" font-size="11" fill="#2e7d32" text-anchor="middle">p₀′</text>
+  <line x1="744" y1="92" x2="744" y2="230" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="722" y="224" font-size="11.5" font-weight="bold" fill="#c62828">pc′</text>
+  <circle cx="812" cy="167" r="5" fill="#37474f"/>
+  <text x="840" y="163" font-size="11" fill="#37474f">pf′</text>
+  <text x="700" y="112" font-size="10.5" fill="#2e7d32">Cr 段</text>
+  <text x="790" y="128" font-size="10.5" fill="#c62828">Cc 段</text>
+  <text x="751" y="272" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">必須分兩段相加</text>
+  <text x="751" y="296" font-size="11.5" fill="#e65100" text-anchor="middle">漏掉任一段就錯，最常失分</text>
+  <text x="751" y="322" font-size="11.5" fill="#607d8b" text-anchor="middle">SM-2003-2 / 2011-3 / 2024-3(四)</text>
+</svg>
+<div class="cap">先算 \(p_0'\)、\(\Delta\sigma\)、\(p_f'=p_0'+\Delta\sigma\)，再把三個數字和 \(p_c'\) 排在一條對數軸上，圖自己會告訴你該用哪個公式。
+<b>每次動筆前先畫這條軸</b>，花 20 秒，可以避免整題報廢。</div>
+</div>
+
+<div class="box">
+<b>三個公式（同一個母式的三種切法）</b>
+<p><b>Case A　正常壓密（\(p_0' = p_c'\)）</b></p>
+$$S_c = \frac{C_c H}{1+e_0}\log\frac{p_0'+\Delta\sigma}{p_0'}$$
+<p><b>Case B　過壓密，\(p_0'+\Delta\sigma \le p_c'\)</b></p>
+$$S_c = \frac{C_r H}{1+e_0}\log\frac{p_0'+\Delta\sigma}{p_0'}\qquad(C_r \approx C_s \ll C_c)$$
+<p><b>Case C　過壓密，\(p_0'+\Delta\sigma > p_c'\)</b></p>
+$$S_c = \frac{C_r H}{1+e_0}\log\frac{p_c'}{p_0'} + \frac{C_c H}{1+e_0}\log\frac{p_0'+\Delta\sigma}{p_c'}$$
+<p><b>特例（題目直接給孔隙比變化）</b>：跳過所有應力計算，直接用 \(S_c = \dfrac{\Delta e}{1+e_0}H\)。
+<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a> 就是這樣設計的 —— 看到題目給了 \(e_0\) 與最終 \(e\)，先算沉陷，再<b>反推</b>載重。</p>
+</div>
+
+<div class="why">
+<b>為什麼是 \(\log\) 而不是線性 ▸</b> 因為處女壓縮線在 \(e\)–\(\log\sigma'\) 座標才是直線（§3.1）。
+所以公式裡出現的是<b>應力比</b>，不是應力差。這帶來一個重要的工程直覺：
+<b>同樣 100 kPa 的增量，加在淺層（\(p_0'\) 小）造成的沉陷遠大於加在深層。</b>
+極限檢查：\(\Delta\sigma \to 0 \Rightarrow \log 1 = 0 \Rightarrow S_c = 0\) ✓；\(p_0' \to \infty\) 時同樣的 \(\Delta\sigma\) 造成的沉陷 \(\to 0\) ✓。
+這也解釋了為什麼「深開挖回填後再蓋房」的沉陷比「直接在原地表蓋房」小 —— 因為土已經被自己的覆土壓過一輪。
+</div>
+
+<h3>4.2　\(\Delta\sigma\) 從哪來：三種載重、三種算法</h3>
+
+<div class="fig">
+<svg viewBox="0 0 880 350" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="350" fill="#ffffff"/>
+  <!-- ground -->
+  <line x1="40" y1="60" x2="440" y2="60" stroke="#5d4037" stroke-width="2"/>
+  <text x="46" y="52" font-size="12" fill="#5d4037">地表</text>
+  <!-- footing -->
+  <rect x="180" y="96" width="120" height="18" fill="#90a4ae" stroke="#455a64"/>
+  <text x="240" y="110" font-size="11.5" fill="#ffffff" text-anchor="middle">基礎 B × L</text>
+  <path d="M200 76 L200 94" stroke="#c62828" stroke-width="2" marker-end="url(#a5)"/>
+  <path d="M240 76 L240 94" stroke="#c62828" stroke-width="2" marker-end="url(#a5)"/>
+  <path d="M280 76 L280 94" stroke="#c62828" stroke-width="2" marker-end="url(#a5)"/>
+  <text x="316" y="84" font-size="12" fill="#c62828">Q</text>
+  <!-- Df -->
+  <line x1="150" y1="60" x2="150" y2="96" stroke="#607d8b" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="128" y="82" font-size="11.5" fill="#607d8b" text-anchor="end">Df</text>
+  <!-- 2:1 spread -->
+  <line x1="180" y1="114" x2="100" y2="274" stroke="#1565c0" stroke-width="2" stroke-dasharray="7 4"/>
+  <line x1="300" y1="114" x2="380" y2="274" stroke="#1565c0" stroke-width="2" stroke-dasharray="7 4"/>
+  <text x="118" y="180" font-size="11" fill="#1565c0">2</text>
+  <text x="140" y="196" font-size="11" fill="#1565c0">1</text>
+  <path d="M126 172 L126 200" stroke="#1565c0" stroke-width="1.2"/>
+  <path d="M126 200 L140 200" stroke="#1565c0" stroke-width="1.2"/>
+  <!-- clay layer -->
+  <rect x="40" y="234" width="400" height="80" fill="#d7ccc8" opacity="0.6"/>
+  <line x1="40" y1="234" x2="440" y2="234" stroke="#5d4037" stroke-width="1.5"/>
+  <line x1="40" y1="314" x2="440" y2="314" stroke="#5d4037" stroke-width="1.5"/>
+  <text x="410" y="252" font-size="11.5" fill="#5d4037" text-anchor="end">黏土層</text>
+  <line x1="60" y1="274" x2="420" y2="274" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="424" y="278" font-size="11.5" fill="#c62828">中點</text>
+  <!-- z -->
+  <line x1="330" y1="114" x2="330" y2="274" stroke="#c62828" stroke-width="1.5"/>
+  <path d="M330 114 L330 122" stroke="#c62828" stroke-width="1.5"/>
+  <path d="M330 266 L330 274" stroke="#c62828" stroke-width="1.5"/>
+  <text x="342" y="200" font-size="13" font-weight="bold" fill="#c62828">z</text>
+  <text x="342" y="218" font-size="11" fill="#c62828">從基礎底面</text>
+  <text x="342" y="232" font-size="11" fill="#c62828">起算！</text>
+  <!-- spread width -->
+  <path d="M100 292 L380 292" stroke="#1565c0" stroke-width="1.5" marker-end="url(#a6)" marker-start="url(#a6b)"/>
+  <text x="240" y="308" font-size="11.5" fill="#1565c0" text-anchor="middle">B + z</text>
+
+  <!-- right panel: three cases -->
+  <rect x="470" y="30" width="400" height="292" rx="9" fill="#f7f9fb" stroke="#cfd8dc"/>
+  <text x="486" y="56" font-size="13.5" font-weight="bold" fill="#0d47a1">三種載重形態，三種算法</text>
+
+  <rect x="486" y="68" width="368" height="72" rx="6" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="498" y="90" font-size="12.5" font-weight="bold" fill="#1565c0">① 有限尺寸基礎 → 2:1 應力傳佈法</text>
+  <text x="498" y="112" font-size="12" fill="#37474f">Δσ = Q / [(B+z)(L+z)]，方形取 Q/(B+z)²</text>
+  <text x="498" y="132" font-size="12" fill="#c62828">z 由基礎底面起算，不是地表</text>
+
+  <rect x="486" y="150" width="368" height="72" rx="6" fill="#f3e5f5" stroke="#ce93d8"/>
+  <text x="498" y="172" font-size="12.5" font-weight="bold" fill="#6a1b9a">② 需要精確值 → Boussinesq 影響係數</text>
+  <text x="498" y="194" font-size="12" fill="#37474f">角隅法疊加、影響值圖表；比 2:1 法準但慢</text>
+  <text x="498" y="214" font-size="12" fill="#37474f">國考若未指定，用 2:1 法即可（並註明假設）</text>
+
+  <rect x="486" y="232" width="368" height="76" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="498" y="254" font-size="12.5" font-weight="bold" fill="#2e7d32">③ 大面積均布載重 → 完全不折減</text>
+  <text x="498" y="276" font-size="12" fill="#37474f">Δσ = 地表壓力，任何深度都一樣</text>
+  <text x="498" y="296" font-size="12" fill="#37474f">預壓覆土、大範圍回填、水位下降皆屬此類</text>
+
+  <defs><marker id="a5" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#c62828"/></marker>
+    <marker id="a6" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#1565c0"/></marker>
+    <marker id="a6b" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto">
+    <path d="M8 0 L0 4 L8 8 z" fill="#1565c0"/></marker></defs>
+</svg>
+<div class="cap">2:1 法的物理意象：載重像一個從基礎邊緣以 2 垂 1 橫的斜率往下擴散的角錐，總力守恆、面積放大、應力下降。
+<b>「大面積均布載重不折減」的判準是「載重範圍的寬度遠大於土層深度」</b> —— 一個 60 m 直徑的儲油槽對 4 m 深的黏土層就算大面積，
+但同一個儲油槽對 40 m 深的黏土層就不能這樣簡化。</div>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 2:1 法的深度 \(z\) 必須從<b>基礎底面</b>算到目標點。
+<a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a> 中黏土層中點在地表下 8 m、基礎底在 1.5 m，正確的 \(z = 6.5\) m。
+用 8 m 會把 \(\Delta\sigma\) 低估約 25%。<a class="qlink" href="problems-view/SM-2011-3.html" target="_blank">SM-2011-3</a> 同一個坑。
+</div>
+
+<h3>4.3　\(m_v\) 法：另一條路（<a class="qlink" href="problems-view/SM-2005-3.html" target="_blank">SM-2005-3</a>）</h3>
+
+<p>體積變化係數 \(m_v\)（coefficient of volume compressibility）定義為單位應力增量造成的單位體積應變：</p>
+$$m_v = \frac{1}{H}\cdot\frac{\Delta H}{\Delta\sigma'} = \frac{\Delta e}{(1+e_0)\,\Delta\sigma'}\qquad [\text{kPa}^{-1}]$$
+$$\Rightarrow\quad S_c = m_v \cdot H \cdot \Delta\sigma'$$
+
+<div class="why">
+<b>\(m_v\) 與 \(C_c\) 的關係 ▸</b> 把 \(\Delta e = C_c\log\frac{\sigma_2'}{\sigma_1'}\) 對小增量做線性化：
+\(\log\frac{\sigma_2'}{\sigma_1'} = \frac{1}{2.303}\ln(1+\frac{\Delta\sigma'}{\sigma_1'}) \approx \frac{\Delta\sigma'}{2.303\,\sigma'_{avg}}\)，代入定義得
+$$m_v \approx \frac{C_c}{2.303\,(1+e_0)\,\sigma'_{avg}}$$
+<b>關鍵結論：\(m_v\) 不是材料常數，它與應力水準成反比。</b>
+所以 \(m_v\) 法只在<b>小應力區間</b>內有效，一定要分段。
+（\(2.303 = \ln 10\)，來自 \(\log_{10}\) 與 \(\ln\) 的換算，不是實驗係數。）
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> <a class="qlink" href="problems-view/SM-2005-3.html" target="_blank">SM-2005-3</a> 給了四個應力區間的 \(m_v\)，兩個必踩：
+① 拿一個「平均 \(m_v\)」乘上總應力增量 —— 錯，必須切段，每段用該區間的 \(m_v\)；
+② 從 \(\sigma'=0\) 開始對應表格 —— 錯，黏土原本就承受自重 \(\sigma_{v0}'\)（該題約 25.5 kPa），起點要放在那裡。
+本題應力從 25.5 kPa 走到 225.5 kPa，橫跨表格的四個區間中的三個以上。
+</div>
+
+<h3>4.4　沉陷不只有壓密沉陷</h3>
+
+$$S = S_i + S_c + S_s$$
+
+<table>
+<thead><tr><th>成分</th><th>機制</th><th>時間</th><th>什麼土要算</th></tr></thead>
+<tbody>
+<tr><td>\(S_i\) 瞬時（彈性）沉陷</td><td>不排水的彈性剪變形，體積不變、形狀改變</td><td>加載當下</td><td><b>砂土主要只有這一項</b>；黏土也有但常較小</td></tr>
+<tr><td>\(S_c\) 主要壓密沉陷</td><td>孔隙水排出、有效應力轉移</td><td>數月～數十年</td><td>飽和黏土、粉土</td></tr>
+<tr><td>\(S_s\) 次壓縮沉陷</td><td>超額孔隙水壓已消散後顆粒骨架的持續蠕變</td><td>壓密完成後仍持續</td><td><b>高塑性黏土、有機土、泥炭</b></td></tr>
+</tbody>
+</table>
+
+<div class="trap">
+<b>陷阱 ▸</b> 兩個方向都會出錯：<b>砂土基礎額外加一筆壓密沉陷</b>（砂的 \(k\) 大，加載瞬間就排完水，沒有時間依存的壓密過程）；
+<b>有機土／高塑性黏土漏掉 \(S_s\)</b>（次壓縮量有時可達主壓密量的 30% 以上）。
+容許值可對照：一般建築物總沉陷約 25~50 mm，差異沉陷角變位約 1/500 ~ 1/300。
+</div>
+
+<h3>4.5　手算範例：過壓密跨越型（<a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：2 m × 2 m 方形基腳，埋深 1.5 m，載重 \(Q=1200\) kN。砂土層 0–5 m（\(\gamma_{dry}=\gamma_{sat}=18.5\) kN/m³），
+黏土層 5–11 m（\(\gamma_{sat}=18\)、\(e_0=0.8\)、\(C_c=0.25\)、\(C_s=0.06\)、\(p_c'=90\) kPa），地下水位在 1.5 m。用 2:1 法。</p>
+
+<p><b>Step 1　黏土層中點（深 8 m）的初始有效應力</b></p>
+$$p_0' = \underbrace{1.5\times18.5}_{\text{水位上砂}} + \underbrace{3.5\times(18.5-9.81)}_{\text{水位下砂}} + \underbrace{3.0\times(18-9.81)}_{\text{上半黏土}}$$
+$$= 27.75 + 30.42 + 24.57 = 82.73\ \text{kPa}$$
+
+<p><b>Step 2　判斷應力歷史</b></p>
+$$OCR = \frac{p_c'}{p_0'} = \frac{90}{82.73} = 1.09 \;>\; 1 \quad\Rightarrow\quad \text{輕度過壓密}$$
+<div class="why" style="margin:10px 0">
+<b>這個 OCR 值本身就是提示 ▸</b> \(OCR\) 只有 1.09，代表 \(p_c'\) 離 \(p_0'\) 很近 —— 只要載重稍大就會跨過去。
+看到接近 1 的 OCR，心裡要先預期是 <b>Case C（雙段）</b>。反之 OCR = 3 以上就要先檢查會不會落在 Case B。
+</div>
+
+<p><b>Step 3　2:1 法算 \(\Delta\sigma\)（注意 \(z\) 的起算點）</b></p>
+$$z = 8 - 1.5 = 6.5\ \text{m}\ (\text{基礎底面至黏土中點})$$
+$$\Delta\sigma = \frac{Q}{(B+z)^2} = \frac{1200}{(2+6.5)^2} = \frac{1200}{72.25} = 16.61\ \text{kPa}$$
+
+<p><b>Step 4　確認跨越，用 Case C 雙段式</b></p>
+$$p_f' = 82.73 + 16.61 = 99.34\ \text{kPa} \;>\; p_c' = 90\ \text{kPa}\quad\checkmark\ \text{Case C}$$
+$$S_c = \frac{0.06\times6}{1.8}\log\frac{90}{82.73} + \frac{0.25\times6}{1.8}\log\frac{99.34}{90}$$
+$$= 0.2\times0.03656 + 0.8333\times0.04290 = 0.00731 + 0.03575 = \boxed{4.31\ \text{cm}}$$
+
+<p><b>Step 5　自我檢查 —— 用「錯誤答案」當標尺</b></p>
+<ul>
+<li><b>全用 \(C_c\)</b>（忘記 OC）：\(0.8333\times\log\frac{99.34}{82.73} = 6.62\) cm → 高估 54%。</li>
+<li><b>全用 \(C_s\)</b>（忘記跨越）：\(0.2\times\log\frac{99.34}{82.73} = 1.59\) cm → 低估 63%。</li>
+<li>正確答案 4.31 cm 必然<b>夾在這兩個數字之間</b>。這是雙段式最好的驗算方法：算完後順手算兩個極端，
+看自己的答案有沒有落在區間內。落在外面就一定是代錯數。</li>
+<li><b>分段權重合理性</b>：\(C_r\) 段只貢獻 0.73 mm（17%）、\(C_c\) 段貢獻 3.58 cm（83%）。
+因為 \(p_0'\to p_c'\) 這一小段的應力比小、斜率又平緩，貢獻本來就小。若算出 \(C_r\) 段佔大頭，回頭檢查是不是把兩個 \(\log\) 的內容寫反了。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§4 因果鏈</b><br>
+先定 \(p_0'\)（土層中點、逐層扣孔隙水壓）<b>→</b> 再定 \(\Delta\sigma\)（有限基礎用 2:1 法且 \(z\) 從基礎底面算／大面積不折減）
+<b>→</b> 把 \(p_0'\)、\(p_c'\)、\(p_f'\) 三個數字排上對數軸判 Case <b>→</b> Case A 用 \(C_c\)、Case B 用 \(C_r\)、Case C 兩段相加
+<b>→</b> 算完用「全 \(C_c\)／全 \(C_r\)」兩個極端夾出答案驗算 <b>→</b> 最後別忘了問這題要不要加 \(S_i\) 與 \(S_s\)。
+</div>
+</section>
+<section id="s5">
+<h2>§5　壓密速率：什麼時候沉完</h2>
+
+<div class="lead">
+沉陷速率在怕的是：<b>把排水路徑判斷錯，時間就差 4 倍。</b><br>
+這是本單元最高頻、也最容易一整題報廢的地方 —— 25 題中至少 6 題（<a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>、
+<a class="qlink" href="problems-view/SM-2021-2.html" target="_blank">SM-2021-2</a>、<a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a>、
+<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a>、<a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a>、
+<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a>）刻意在排水邊界上設局。
+</div>
+
+<h3>5.1　為什麼壓密方程長得像熱傳導</h3>
+
+<div class="why">
+<b>物理直覺 ▸</b> 加載瞬間，水不可壓縮又還沒來得及流動，所以<b>全部的應力增量由孔隙水承擔</b>：\(u = \Delta\sigma\)，有效應力一點都沒增加。
+接下來的整個壓密過程，就是「超額孔隙水壓 \(u\) 從土層裡慢慢消散」的過程。而水要流動就受 Darcy 定律管：
+流量 \(\propto k \times\) 水頭梯度。壓力高的地方往壓力低的地方流 —— 這正是<b>擴散</b>的定義。
+所以 Terzaghi 一維壓密方程與熱傳導方程完全同形：
+$$\frac{\partial u}{\partial t} = c_v\frac{\partial^2 u}{\partial z^2},\qquad c_v = \frac{k}{m_v\gamma_w}$$
+<b>\(c_v\) 就是「孔隙水壓的擴散係數」</b>，量綱是（長度²／時間），所以單位一定是 cm²/s、m²/yr 這種形式。
+看到 \(c_v\) 的單位裡有平方，就該立刻想到「時間會與長度的平方成正比」。
+</div>
+
+<div class="box">
+<b>\(c_v = \dfrac{k}{m_v\gamma_w}\) 這個組合在說什麼</b>
+<ul>
+<li><b>分子 \(k\)（滲透係數）</b>：水排得多快。砂 \(k\approx10^{-2}\) cm/s，黏土 \(k\approx10^{-7}\sim10^{-9}\) cm/s —— 相差七個數量級，這就是「砂土瞬間沉陷、黏土沉幾十年」的全部理由。</li>
+<li><b>分母 \(m_v\)（體積壓縮性）</b>：要排出多少水才能達到目標變形。土越軟（\(m_v\) 越大），要排的水越多，壓密越慢。</li>
+<li>所以「快」有兩個來源：水路通暢，或者要排的水本來就少。</li>
+</ul>
+</div>
+
+<h3>5.2　無因次化：\(T_v\) 為什麼一定是那個樣子</h3>
+
+<p>擴散方程無因次化時，時間必然要用 \(\dfrac{(\text{特徵長度})^2}{c_v}\) 來歸一。壓密問題的特徵長度就是<b>水必須走的最長距離 \(H_{dr}\)</b>：</p>
+
+$$\boxed{\;T_v = \frac{c_v\, t}{H_{dr}^{\,2}}\;}$$
+
+<div class="why">
+<b>這條式子不是背的，是量綱唯一的可能 ▸</b> \([c_v] = L^2T^{-1}\)、\([t]=T\)、\([H_{dr}]=L\)。
+要組出無因次量，只能是 \(c_v t / H_{dr}^2\)。既然 \(H_{dr}\) 一定帶平方，那麼：
+<b>排水路徑加倍，時間就變 4 倍。</b>這是本單元最貴的一句話。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <!-- LEFT: double drainage -->
+  <rect x="20" y="14" width="400" height="30" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="220" y="35" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">雙面排水　Hdr = H / 2</text>
+  <rect x="70" y="58" width="300" height="34" fill="#ffe0b2" stroke="#8d6e63"/>
+  <text x="220" y="80" font-size="12.5" fill="#5d4037" text-anchor="middle">透水砂層</text>
+  <rect x="70" y="92" width="300" height="140" fill="#d7ccc8" stroke="#5d4037"/>
+  <text x="220" y="130" font-size="12.5" fill="#4e342e" text-anchor="middle">飽和黏土層　厚度 H</text>
+  <rect x="70" y="232" width="300" height="34" fill="#ffe0b2" stroke="#8d6e63"/>
+  <text x="220" y="254" font-size="12.5" fill="#5d4037" text-anchor="middle">透水砂層</text>
+  <!-- flow arrows -->
+  <g stroke="#1565c0" stroke-width="2.5">
+    <path d="M120 158 L120 100" marker-end="url(#a7)"/>
+    <path d="M180 158 L180 100" marker-end="url(#a7)"/>
+    <path d="M120 166 L120 224" marker-end="url(#a7)"/>
+    <path d="M180 166 L180 224" marker-end="url(#a7)"/>
+  </g>
+  <line x1="70" y1="162" x2="370" y2="162" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="376" y="166" font-size="11.5" fill="#c62828">中線（不排水面）</text>
+  <!-- Hdr dimension -->
+  <line x1="300" y1="92" x2="300" y2="162" stroke="#6a1b9a" stroke-width="2"/>
+  <path d="M296 96 L304 96" stroke="#6a1b9a" stroke-width="2"/>
+  <path d="M296 158 L304 158" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="312" y="132" font-size="13" font-weight="bold" fill="#6a1b9a">Hdr = H/2</text>
+  <text x="220" y="296" font-size="12.5" fill="#37474f" text-anchor="middle">水從中線往上下兩側跑，最遠只走一半層厚</text>
+  <rect x="70" y="308" width="300" height="34" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="220" y="330" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">所需時間 = 1 倍（基準）</text>
+  <text x="220" y="364" font-size="11.5" fill="#607d8b" text-anchor="middle">SM-2025-1(實驗室) / 2021-2 / 2019-2 / 2015-1</text>
+
+  <!-- RIGHT: single drainage -->
+  <rect x="460" y="14" width="400" height="30" rx="6" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="660" y="35" font-size="14" font-weight="bold" fill="#c62828" text-anchor="middle">單面排水　Hdr = H</text>
+  <rect x="510" y="58" width="300" height="34" fill="#ffe0b2" stroke="#8d6e63"/>
+  <text x="660" y="80" font-size="12.5" fill="#5d4037" text-anchor="middle">透水砂層</text>
+  <rect x="510" y="92" width="300" height="140" fill="#d7ccc8" stroke="#5d4037"/>
+  <text x="660" y="130" font-size="12.5" fill="#4e342e" text-anchor="middle">飽和黏土層　厚度 H</text>
+  <rect x="510" y="232" width="300" height="34" fill="#9e9e9e" stroke="#424242"/>
+  <text x="660" y="254" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">不透水岩盤／不透水層</text>
+  <g stroke="#1565c0" stroke-width="2.5">
+    <path d="M560 224 L560 100" marker-end="url(#a7)"/>
+    <path d="M620 224 L620 100" marker-end="url(#a7)"/>
+  </g>
+  <line x1="740" y1="92" x2="740" y2="230" stroke="#6a1b9a" stroke-width="2"/>
+  <path d="M736 96 L744 96" stroke="#6a1b9a" stroke-width="2"/>
+  <path d="M736 226 L744 226" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="752" y="166" font-size="13" font-weight="bold" fill="#6a1b9a">Hdr = H</text>
+  <text x="660" y="296" font-size="12.5" fill="#37474f" text-anchor="middle">底部封死，全部的水只能往上走整個層厚</text>
+  <rect x="510" y="308" width="300" height="34" rx="6" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="660" y="330" font-size="13" font-weight="bold" fill="#c62828" text-anchor="middle">所需時間 = 4 倍（因為 Hdr 平方）</text>
+  <text x="660" y="364" font-size="11.5" fill="#607d8b" text-anchor="middle">SM-2025-1(現場) / 2016-1 / 2014-4</text>
+
+  <defs><marker id="a7" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#1565c0"/></marker></defs>
+</svg>
+<div class="cap">判斷口訣：<b>看黏土層的上下鄰居是誰。</b>兩邊都是砂（或都能排水）→ 雙面，\(H_{dr}=H/2\)；
+有一邊是岩盤、不透水層、或題目畫了斜線陰影 → 單面，\(H_{dr}=H\)。
+除非題目明寫「破碎岩盤」或「透水岩盤」，看到「岩盤（bedrock）」一律當不透水。</div>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> 三種偽裝方式都出現過：
+<ul>
+<li><b>圖上只標「岩盤」兩個字</b>（<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a>、<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a>）。習慣性代 \(H/2\) 會把 377 天算成 94 天。</li>
+<li><b>實驗室與現場排水條件不同</b>（<a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>）。試體上下都有透水石＝雙面；現場單面。要換兩次 \(H_{dr}\)。</li>
+<li><b>預壓砂土層本身就創造了頂部排水面</b>（<a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a>）。原本以為只有下方砂層可排，加了透水預載反而變雙面。</li>
+</ul>
+</div>
+
+<h3>5.3　\(U\)–\(T_v\)：兩段公式與它們的交界</h3>
+
+<div class="fig">
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <line x1="80" y1="340" x2="800" y2="340" stroke="#455a64" stroke-width="2"/>
+  <line x1="80" y1="340" x2="80" y2="50" stroke="#455a64" stroke-width="2"/>
+  <text x="440" y="376" font-size="13.5" fill="#37474f" text-anchor="middle">時間因數 Tv</text>
+  <text x="30" y="200" font-size="13.5" fill="#37474f" text-anchor="middle" transform="rotate(-90 30 200)">平均壓密度 U (%)</text>
+  <g font-size="12" fill="#607d8b" text-anchor="middle">
+    <line x1="80" y1="340" x2="80" y2="346" stroke="#455a64"/><text x="80" y="360">0</text>
+    <line x1="255" y1="340" x2="255" y2="346" stroke="#455a64"/><text x="255" y="360">0.5</text>
+    <line x1="430" y1="340" x2="430" y2="346" stroke="#455a64"/><text x="430" y="360">1.0</text>
+    <line x1="605" y1="340" x2="605" y2="346" stroke="#455a64"/><text x="605" y="360">1.5</text>
+    <line x1="780" y1="340" x2="780" y2="346" stroke="#455a64"/><text x="780" y="360">2.0</text>
+  </g>
+  <g font-size="12" fill="#607d8b" text-anchor="end">
+    <line x1="74" y1="340" x2="80" y2="340" stroke="#455a64"/><text x="68" y="345">0</text>
+    <line x1="74" y1="284" x2="80" y2="284" stroke="#455a64"/><text x="68" y="289">20</text>
+    <line x1="74" y1="228" x2="80" y2="228" stroke="#455a64"/><text x="68" y="233">40</text>
+    <line x1="74" y1="172" x2="80" y2="172" stroke="#455a64"/><text x="68" y="177">60</text>
+    <line x1="74" y1="116" x2="80" y2="116" stroke="#455a64"/><text x="68" y="121">80</text>
+    <line x1="74" y1="60" x2="80" y2="60" stroke="#455a64"/><text x="68" y="65">100</text>
+  </g>
+  <!-- asymptote -->
+  <line x1="80" y1="60" x2="800" y2="60" stroke="#b0bec5" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="806" y="64" font-size="11.5" fill="#78909c">100%</text>
+
+  <!-- parabolic branch -->
+  <path d="M80 340 Q92 300 97 269 Q106 254 115 240 Q133 217 150 199 Q165 184 179 172"
+        fill="none" stroke="#1565c0" stroke-width="3.5"/>
+  <!-- log branch -->
+  <path d="M179 172 Q200 155 220 145 Q255 124 290 111 Q335 97 377 88 Q404 82 430 79 Q518 69 605 66 L780 62"
+        fill="none" stroke="#c62828" stroke-width="3.5"/>
+
+  <!-- transition markers -->
+  <circle cx="179" cy="172" r="6" fill="#6a1b9a"/>
+  <line x1="179" y1="172" x2="179" y2="340" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="80" y1="172" x2="179" y2="172" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="188" y="330" font-size="12" font-weight="bold" fill="#6a1b9a">Tv ≈ 0.283</text>
+  <circle cx="377" cy="88" r="6" fill="#c62828"/>
+  <line x1="377" y1="88" x2="377" y2="340" stroke="#c62828" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="386" y="330" font-size="12" fill="#c62828">Tv = 0.848 → U = 90%</text>
+
+  <!-- formula boxes -->
+  <rect x="96" y="212" width="242" height="80" rx="8" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="110" y="234" font-size="12.5" font-weight="bold" fill="#1565c0">U &lt; 60%：拋物線段</text>
+  <text x="110" y="256" font-size="12" fill="#37474f">Tv = (π/4) U²　⇔　U = √(4Tv/π)</text>
+  <text x="110" y="278" font-size="12" fill="#37474f">U 與 √t 成正比</text>
+
+  <rect x="420" y="140" width="380" height="102" rx="8" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="434" y="162" font-size="12.5" font-weight="bold" fill="#c62828">U ≥ 60%：對數段</text>
+  <text x="434" y="184" font-size="12" fill="#37474f">Tv = 1.781 − 0.933 log(100 − U%)</text>
+  <text x="434" y="206" font-size="12" fill="#37474f">等價寫法：Tv = −0.933 log(1−U) − 0.085</text>
+  <text x="434" y="228" font-size="12" fill="#37474f">U 只能漸近 100%，永遠不到</text>
+
+  <text x="560" y="300" font-size="12.5" fill="#455a64">尾巴極平：U 從 90% 走到 98% 要再等 0.68 個 Tv，</text>
+  <text x="560" y="320" font-size="12.5" fill="#455a64">比從 0 走到 60% 的 0.283 還久 —— 這就是預壓工法的立足點。</text>
+</svg>
+<div class="cap">兩段近似公式與它們在 \(U=60\%\) 的交界。
+<b>曲線形狀本身就是答案</b>：前半段像 \(\sqrt{t}\)（陡），後半段像 \(\log\)（極平）。
+所以「壓密的最後 10% 比前面 60% 還花時間」，這不是巧合，是擴散問題的本質。</div>
+</div>
+
+<div class="box">
+<b>兩個誠實的細節（考場上未必要寫，但要知道）</b>
+<ul>
+<li><b>交界不完全連續</b>：在 \(U=60\%\) 處，拋物線式給 \(T_v = \frac{\pi}{4}(0.6)^2 = 0.2827\)，對數式給 \(1.781-0.933\log 40 = 0.2863\)。
+差 1.3% —— 因為兩者都是同一個無窮級數解的不同區間近似式，不是同一條曲線。
+考試時<b>依題目給的公式為準</b>；題目沒給時用 0.283 當分界都會被接受。</li>
+<li><b>「\(U \le 60\%\)」還是「\(< 60\%\)」不影響答案</b>，因為兩式在該點僅差 1%。真正會出事的是在 \(U=80\%\) 還硬用拋物線式：
+正確 \(T_v = 0.567\)，錯誤 \(T_v = 0.503\)，低估 11%；到 \(U=95\%\) 錯誤式會給出 \(T_v=0.709\) 而正確值是 \(1.129\)，<b>低估 37%</b>。
+<a class="qlink" href="problems-view/SM-2018-1.html" target="_blank">SM-2018-1</a> 要算 1/2/3/4 年，正是設計成中途要換公式。</li>
+</ul>
+</div>
+
+<h3>5.4　超額孔隙水壓的空間分布（等時線）</h3>
+
+<div class="fig">
+<svg viewBox="0 0 880 390" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="390" fill="#ffffff"/>
+  <!-- frame -->
+  <rect x="120" y="60" width="380" height="260" fill="#fafafa" stroke="#cfd8dc"/>
+  <rect x="120" y="40" width="380" height="20" fill="#ffe0b2" stroke="#8d6e63"/>
+  <text x="310" y="55" font-size="11.5" fill="#5d4037" text-anchor="middle">排水面（z = 0，u 恆為 0）</text>
+  <rect x="120" y="320" width="380" height="20" fill="#9e9e9e" stroke="#424242"/>
+  <text x="310" y="335" font-size="11.5" font-weight="bold" fill="#ffffff" text-anchor="middle">不透水面（z = Hdr）</text>
+  <!-- axes labels -->
+  <text x="310" y="366" font-size="13" fill="#37474f" text-anchor="middle">超額孔隙水壓比　u / Δu₀</text>
+  <text x="96" y="190" font-size="13" fill="#37474f" text-anchor="middle" transform="rotate(-90 96 190)">深度 z / Hdr</text>
+  <g font-size="11.5" fill="#607d8b" text-anchor="middle">
+    <text x="120" y="78">0</text><text x="310" y="78">0.5</text><text x="500" y="78">1.0</text>
+  </g>
+  <line x1="500" y1="60" x2="500" y2="320" stroke="#c62828" stroke-width="2.5"/>
+  <text x="506" y="200" font-size="12" font-weight="bold" fill="#c62828">t = 0⁺</text>
+  <text x="506" y="218" font-size="12" fill="#c62828">u = Δσ</text>
+
+  <!-- isochrones -->
+  <path d="M120 60 C 400 96 490 140 494 320" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="440" y="300" font-size="11.5" fill="#1565c0">Tv=0.05</text>
+  <path d="M120 60 C 300 112 400 200 412 320" fill="none" stroke="#1976d2" stroke-width="2.5"/>
+  <text x="352" y="300" font-size="11.5" fill="#1976d2">Tv=0.2</text>
+  <path d="M120 60 C 230 122 288 214 296 320" fill="none" stroke="#42a5f5" stroke-width="2.5"/>
+  <text x="238" y="300" font-size="11.5" fill="#42a5f5">Tv=0.5</text>
+  <path d="M120 60 C 168 118 190 226 194 320" fill="none" stroke="#90caf9" stroke-width="2.5"/>
+  <text x="146" y="300" font-size="11.5" fill="#1565c0">Tv=0.848</text>
+  <text x="146" y="316" font-size="11" fill="#1565c0">(U=90%)</text>
+
+  <!-- right panel -->
+  <rect x="560" y="40" width="304" height="300" rx="9" fill="#f7f9fb" stroke="#cfd8dc"/>
+  <text x="576" y="66" font-size="13.5" font-weight="bold" fill="#0d47a1">怎麼用（SM-2016-1(三)）</text>
+  <text x="576" y="92" font-size="12" fill="#37474f">級數解第一項（Tv &gt; 0.2 時很精確）：</text>
+  <text x="576" y="118" font-size="12" font-family="monospace" fill="#c62828">u = (4/π)·Δu₀·sin(πz/2Hdr)</text>
+  <text x="600" y="138" font-size="12" font-family="monospace" fill="#c62828">· exp(−π²Tv/4)</text>
+  <text x="576" y="166" font-size="12" fill="#37474f">局部壓密度：</text>
+  <text x="576" y="188" font-size="12" font-family="monospace" fill="#1565c0">Uz = 1 − u / Δu₀</text>
+  <text x="576" y="216" font-size="12" fill="#37474f">・靠排水面：Uz 大、u 小（先壓完）</text>
+  <text x="576" y="238" font-size="12" fill="#37474f">・靠不透水面：Uz 小、u 大（最後才壓）</text>
+  <text x="576" y="264" font-size="12" fill="#e65100">・「平均」壓密度 U 與「某一點」的 Uz</text>
+  <text x="588" y="284" font-size="12" fill="#e65100">　是兩件事，不可混用</text>
+  <text x="576" y="312" font-size="12" font-weight="bold" fill="#2e7d32">・每條曲線與左軸間的面積</text>
+  <text x="588" y="332" font-size="12" font-weight="bold" fill="#2e7d32">　＝該時刻的平均壓密度 U</text>
+</svg>
+<div class="cap">等時線（Isochrones）：每一條代表某個時刻的超額孔隙水壓沿深度的分布。
+剛加載時是一條垂直線（處處 \(u=\Delta\sigma\)）；隨時間曲線從排水面開始向左「塌」下來。
+<b>單面排水時只看圖的上半（\(0\le z/H_{dr}\le1\)）</b>；雙面排水時圖形對稱，中線相當於這裡的「不透水面」。</div>
+</div>
+
+<h3>5.5　手算範例：實驗室 → 現場的排水路徑換算（<a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：10 m 厚黏土層取樣做單向度壓密試驗，試體高 25.4 mm、<b>可雙向排水</b>，3 分鐘達 \(U=50\%\)。
+現場<b>僅可單向排水</b>。求 (一) 現場達 \(U=90\%\) 需多久？(二) 若總壓密沉陷 20 cm，達 9 cm 需多久？</p>
+
+<p><b>Step 0　先把單位統一（這題最容易死在這裡）</b></p>
+<p>試體用 mm、現場用 m。全部轉成 <b>cm</b>，時間用 <b>min</b>，這樣 \(c_v\) 的單位是 cm²/min，代回去不會出錯。</p>
+
+<p><b>Step 1　由實驗室反推 \(c_v\)（雙向排水 → \(H_{dr}=H/2\)）</b></p>
+$$H_{dr,lab} = \frac{25.4\ \text{mm}}{2} = 12.7\ \text{mm} = 1.27\ \text{cm}$$
+$$U=50\% \le 60\% \;\Rightarrow\; T_{v,50} = \frac{\pi}{4}(0.5)^2 = 0.19635$$
+$$c_v = \frac{T_{v,50}\,H_{dr,lab}^2}{t_{lab}} = \frac{0.19635\times1.27^2}{3} = 0.10556\ \text{cm}^2/\text{min}$$
+<div class="why" style="margin:10px 0">
+<b>為什麼要繞這一圈 ▸</b> \(c_v\) 是<b>材料性質</b>，同一塊土的實驗室試體與現場土層共用同一個 \(c_v\)。
+\(H_{dr}\) 與 \(t\) 是<b>幾何與情境</b>，兩邊完全不同。所以標準流程永遠是：<b>實驗室 → \(c_v\) → 現場</b>。
+量級檢查：黏土的 \(c_v\) 典型範圍約 \(10^{-4}\sim10^{-2}\) cm²/s，本題 0.1056 cm²/min \(= 1.76\times10^{-3}\) cm²/s → 落在區間內 ✓。
+</div>
+
+<p><b>Step 2　現場 \(U=90\%\)（單向排水 → \(H_{dr}=H\)）</b></p>
+$$H_{dr,field} = 10\ \text{m} = 1000\ \text{cm}$$
+$$U=90\% > 60\% \;\Rightarrow\; T_{v,90} = -0.933\log(1-0.9)-0.085 = 0.933-0.085 = 0.848$$
+$$t_{90} = \frac{0.848\times1000^2}{0.10556} = 8.03\times10^6\ \text{min} \approx \boxed{5579\ \text{天}\ (15.3\ \text{年})}$$
+
+<p><b>Step 3　現場沉陷達 9 cm</b></p>
+$$U = \frac{S(t)}{S_{max}} = \frac{9}{20} = 45\% \le 60\% \;\Rightarrow\; T_{v,45} = \frac{\pi}{4}(0.45)^2 = 0.15904$$
+$$t_{45} = \frac{0.15904\times1000^2}{0.10556} = 1.51\times10^6\ \text{min} \approx \boxed{1046\ \text{天}\ (2.87\ \text{年})}$$
+
+<p><b>Step 4　自我檢查</b></p>
+<ul>
+<li><b>比值檢查（最有力）</b>：\(t_{90}/t_{45} = 5579/1046 = 5.33\)。理論上應該等於 \(T_{v,90}/T_{v,45} = 0.848/0.159 = 5.33\) ✓ 完全一致
+（因為 \(c_v\) 與 \(H_{dr}\) 兩邊相同，時間比就是 \(T_v\) 比）。</li>
+<li><b>排水路徑的代價</b>：若誤判成雙面排水，兩個答案都會除以 4 → 15.3 年變 3.8 年。<b>這種量級的錯誤在工程上是災難性的</b>，也是閱卷者最想抓的地方。</li>
+<li><b>工程直覺檢查</b>：10 m 厚單面排水的軟黏土要 15 年才壓密九成 —— 這正是為什麼實務上必須用預壓工法或排水砂樁（見 §6）。若算出 15 天，一定是 \(H_{dr}\) 或單位錯了。</li>
+<li><b>對照另一題</b>：<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a> 是 8 m 單面排水、\(c_v = 0.005\) cm²/s，達 \(U=57\%\) 要 377 天。
+兩題量級相符（本題 \(c_v\) 小得多、層厚又更大，所以慢得多）。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§5 因果鏈</b><br>
+加載瞬間全部應力由水承擔（\(u=\Delta\sigma\)）<b>→</b> 水必須靠 Darcy 流出去，所以是擴散問題，\(c_v = k/(m_v\gamma_w)\)
+<b>→</b> 量綱唯一的無因次時間是 \(T_v = c_v t/H_{dr}^2\)，\(H_{dr}\) 必然帶平方 <b>→</b> 排水路徑判錯就是 4 倍誤差
+<b>→</b> \(U\) 與 \(T_v\) 的關係前段像 \(\sqrt{t}\)、後段像 \(\log\)，尾巴極平 <b>→</b> 所以最後 10% 特別慢，工程上必須另尋加速手段。
+</div>
+</section>
+<section id="s6">
+<h2>§6　等不起怎麼辦：預壓工法與監測</h2>
+
+<div class="lead">
+§5 的結論是「軟黏土壓密要十幾年」。但工程進度只有兩年。<br>
+解法只有兩條路，而且都直接從 \(T_v = c_v t / H_{dr}^2\) 這條式子讀出來：<b>把 \(H_{dr}\) 變小</b>（排水砂樁、預鑄排水帶），
+或者<b>把目標所需的 \(U\) 變小</b>（預壓／預載）。第二條路很反直覺，也是考題最愛的。
+</div>
+
+<h3>6.1　預壓工法：用「超載」換「不必等到 100%」</h3>
+
+<div class="why">
+<b>核心邏輯 ▸</b> 你要的不是「壓密度 100%」，而是「沉陷量達到某個值」。<br>
+永久載重 \(\Delta p\) 造成最終沉陷 \(S_c\)；如果先施加更大的預壓載重 \(\Delta p_f > \Delta p\)，它的最終沉陷 \(S_{cf} > S_c\)。
+那麼在預壓載重之下，只需要達到
+$$U = \frac{S_c}{S_{cf}} < 100\%$$
+就已經把「永久載重最終會造成的沉陷」提前做完了。此時移除預壓、蓋上結構物，未來就不會再沉（主要壓密部分）。
+<b>而 §5.3 那條尾巴極平的曲線告訴我們：從 100% 降到 70%，時間可以省掉一個數量級。</b>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <line x1="100" y1="60" x2="100" y2="330" stroke="#455a64" stroke-width="2"/>
+  <line x1="100" y1="60" x2="800" y2="60" stroke="#455a64" stroke-width="2"/>
+  <text x="450" y="42" font-size="13.5" fill="#37474f" text-anchor="middle">時間 t（天）</text>
+  <text x="40" y="200" font-size="13.5" fill="#37474f" text-anchor="middle" transform="rotate(-90 40 200)">沉陷量 S (cm)　↓</text>
+  <g font-size="12" fill="#607d8b" text-anchor="middle">
+    <line x1="291" y1="54" x2="291" y2="60" stroke="#455a64"/><text x="291" y="30">209</text>
+    <line x1="474" y1="54" x2="474" y2="60" stroke="#455a64"/><text x="474" y="30">400</text>
+    <line x1="616" y1="54" x2="616" y2="60" stroke="#455a64"/><text x="616" y="30">564</text>
+    <line x1="740" y1="54" x2="740" y2="60" stroke="#455a64"/><text x="740" y="30">700</text>
+  </g>
+  <g font-size="12" fill="#607d8b" text-anchor="end">
+    <line x1="94" y1="125" x2="100" y2="125" stroke="#455a64"/><text x="88" y="130">10</text>
+    <line x1="94" y1="190" x2="100" y2="190" stroke="#455a64"/><text x="88" y="195">20</text>
+    <line x1="94" y1="255" x2="100" y2="255" stroke="#455a64"/><text x="88" y="260">30</text>
+    <line x1="94" y1="320" x2="100" y2="320" stroke="#455a64"/><text x="88" y="325">40</text>
+  </g>
+
+  <!-- target settlement line -->
+  <line x1="100" y1="230" x2="800" y2="230" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="806" y="226" font-size="12" font-weight="bold" fill="#2e7d32">目標</text>
+  <text x="806" y="242" font-size="11.5" fill="#2e7d32">26.17 cm</text>
+
+  <!-- asymptotes -->
+  <line x1="100" y1="230" x2="800" y2="230" stroke="none"/>
+  <line x1="100" y1="300" x2="800" y2="300" stroke="#b0bec5" stroke-width="1.2" stroke-dasharray="5 5"/>
+  <text x="700" y="316" font-size="11.5" fill="#78909c">預壓最終沉陷 36.85 cm</text>
+
+  <!-- permanent load curve -->
+  <path d="M100 60 Q120 100 146 121 Q168 136 191 146 Q214 156 237 164 Q264 173 291 181
+           Q332 191 374 199 Q443 209 511 215 Q564 219 616 222 L740 226"
+        fill="none" stroke="#1565c0" stroke-width="3.5"/>
+  <text x="600" y="205" font-size="12.5" font-weight="bold" fill="#1565c0">只加永久載重 150 kPa</text>
+  <text x="600" y="188" font-size="11.5" fill="#1565c0">永遠只能漸近 26.17 cm</text>
+
+  <!-- preload curve -->
+  <path d="M100 60 Q122 112 146 146 Q168 165 191 181 Q214 195 237 207 Q264 219 291 230
+           Q332 244 374 256 Q443 270 511 279 Q580 286 660 291 L740 294"
+        fill="none" stroke="#c62828" stroke-width="3.5"/>
+  <text x="470" y="286" font-size="12.5" font-weight="bold" fill="#c62828">預壓載重 281 kPa</text>
+
+  <!-- intersection -->
+  <circle cx="291" cy="230" r="7" fill="#c62828" stroke="#ffffff" stroke-width="2"/>
+  <line x1="291" y1="60" x2="291" y2="230" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="306" y="236" width="222" height="52" rx="7" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="318" y="256" font-size="12" fill="#c62828">209 天達到目標沉陷</text>
+  <text x="318" y="276" font-size="12" fill="#c62828">此時 U = 26.17/36.85 = 71%</text>
+
+  <!-- comparison -->
+  <circle cx="616" cy="222" r="6" fill="#1565c0" stroke="#ffffff" stroke-width="2"/>
+  <line x1="616" y1="60" x2="616" y2="222" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="514" y="140" width="286" height="40" rx="7" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="526" y="164" font-size="12" fill="#1565c0">同一條件下 U 只到 95%（24.9 cm）就要 564 天</text>
+
+  <!-- gain -->
+  <path d="M291 348 L616 348" stroke="#2e7d32" stroke-width="2" marker-end="url(#a8)" marker-start="url(#a8b)"/>
+  <text x="453" y="368" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">省下的時間（而且永久載重連 95% 都還不夠）</text>
+
+  <defs><marker id="a8" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#2e7d32"/></marker>
+    <marker id="a8b" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto">
+    <path d="M9 0 L0 4.5 L9 9 z" fill="#2e7d32"/></marker></defs>
+</svg>
+<div class="cap">兩條沉陷–時間曲線（<a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a> 的真實數字）。
+藍線是永久載重，它的終點就是目標值，所以<b>永遠只能漸近、達不到</b>；紅線是預壓載重，終點更深，
+所以它在 209 天就<b>穿過</b>目標線。關鍵洞見：預壓不是「壓得更快」，而是<b>「把終點設遠一點，中途就能達標」</b>。</div>
+</div>
+
+<div class="box">
+<b>預壓工法還有一個常被忽略的副產品</b>
+<p>預壓移除後，土層的 \(p_c'\) 已經被抬高到預壓應力，於是變成<b>過壓密土</b>（\(OCR > 1\)）。
+接著蓋上結構物、施加永久載重時，應力路徑落在 \(p_c'\) 以內 → 走 \(C_r\) 段（§4 Case B）→ 後續沉陷極小。
+<b>所以預壓工法同時解決了「速度」與「後續沉陷」兩個問題</b>，這是它在軟弱地盤上不可取代的原因。</p>
+</div>
+
+<h3>6.2　另一條路：縮短 \(H_{dr}\)</h3>
+
+<table>
+<thead><tr><th>方法</th><th>做什麼</th><th>時間縮短倍數</th></tr></thead>
+<tbody>
+<tr><td><b>排水砂樁</b>（Sand drain）</td><td>打設垂直砂柱，水改成水平流向最近的砂柱</td><td>\(H_{dr}\) 從「數 m 的層厚」變成「數十 cm 的樁距一半」→ 可達 \(10^2\sim10^3\) 倍</td></tr>
+<tr><td><b>預鑄排水帶</b>（PVD / Wick drain）</td><td>同上但用塑膠排水帶，插設快、擾動小</td><td>同上，目前實務主流</td></tr>
+<tr><td><b>真空預壓</b></td><td>用抽真空降低孔隙水壓，等效於增加有效應力，且不需堆土</td><td>無需超載土方，適用場地受限處</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>為什麼砂樁效果這麼驚人 ▸</b> 因為 \(t \propto H_{dr}^2\)。10 m 厚單面排水的 \(H_{dr}=10\) m；
+改成 1.5 m 間距的排水砂樁後，水平排水路徑約 0.75 m。單就這一項，時間比例是 \((0.75/10)^2 = 1/178\)。
+15 年變一個月 —— 這不是誇張，是平方項的威力。
+（實務上還要考慮徑向壓密理論、砂樁擾動帶（smear zone）與井阻效應，所以實際縮短倍數會小於理論值。）
+</div>
+
+<h3>6.3　監測項目：分「安全」與「成效」兩類寫（<a class="qlink" href="problems-view/SM-2004-4.html" target="_blank">SM-2004-4</a>）</h3>
+
+<div class="box">
+<p><b>這題的失分點不是列不出儀器，而是沒有分類、沒有講「為什麼要量」。</b>答題結構固定為兩欄：</p>
+<table>
+<thead><tr><th>目的</th><th>監測項目</th><th>要防／要知道什麼</th></tr></thead>
+<tbody>
+<tr><td rowspan="3"><b>施工安全</b><br>（怕預壓超載把地盤剪壞）</td><td>傾斜管（Inclinometer）</td><td>軟土被超載擠出去的側向位移，是剪力破壞的前兆</td></tr>
+<tr><td>周邊隆起標／地表位移釘</td><td>預壓範圍外側地表隆起 = 土在往旁邊流動</td></tr>
+<tr><td>孔隙水壓計（Piezometer）</td><td>加載速率過快時 \(u\) 來不及消散 → 有效應力上不去 → 強度不足</td></tr>
+<tr><td rowspan="3"><b>改良成效</b><br>（決定何時可移除預壓）</td><td>沉陷板／地表沉陷點</td><td>累積沉陷量與速率，對照設計 \(S_{cf}\) 推算實際 \(U\)</td></tr>
+<tr><td>分層沉陷計</td><td>哪一層在沉，驗證壓密層位假設</td></tr>
+<tr><td>孔隙水壓計（同一支）</td><td>\(u\) 消散百分比 = 直接量出來的壓密度，比沉陷推算更可靠</td></tr>
+</tbody>
+</table>
+<p><b>加分句</b>：實測沉陷–時間曲線可用 Asaoka 法或雙曲線法反推現地 \(c_v\) 與最終沉陷量，
+用來修正設計值並決定預壓移除時機 —— 這比原始設計的實驗室 \(c_v\) 可靠得多。</p>
+</div>
+
+<div class="trap">
+<b>陷阱 ▸</b> <a class="qlink" href="problems-view/SM-2004-4.html" target="_blank">SM-2004-4</a> 是大型儲油槽題，除了沉陷還要記得答：
+① <b>台灣是地震帶</b> → 飽和砂土層必須檢核液化潛能（該題有 N 值偏低的砂層）；
+② <b>差異沉陷</b>比總沉陷更致命（槽壁與底板開裂、管線斷裂）；
+③ 儲油槽是<b>可控載重</b>，所以有一個獨門手段：<b>注水試驗（hydrotest）本身就是一次預壓</b>，分階段注水可同時測沉陷與加載。
+漏掉液化與差異沉陷是最常見的失分。
+</div>
+
+<h3>6.4　手算範例：預壓工法所需時間（<a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a>）</h3>
+
+<div class="box">
+<p><b>題目條件</b>：4 m 厚正常壓密黏土，<b>上下皆為排水砂層</b>；\(e_0=0.9\)、\(C_c=0.25\)、\(c_v=0.008\) m²/day；
+施工前層中央 \(p_0' = 70\) kPa。永久載重 150 kPa；預壓載重 281 kPa。</p>
+
+<p><b>Step 1　永久載重的最終沉陷（Case A，NC 一段式）</b></p>
+$$S_c = \frac{0.25\times4}{1+0.9}\log\frac{70+150}{70} = 0.5263\times\log 3.143 = 0.5263\times0.4972 = \boxed{26.17\ \text{cm}}$$
+
+<p><b>Step 2　預壓載重的最終沉陷（同公式，換載重）</b></p>
+$$S_{cf} = 0.5263\times\log\frac{70+281}{70} = 0.5263\times\log 5.014 = 0.5263\times0.6998 = \boxed{36.85\ \text{cm}}$$
+<div class="why" style="margin:10px 0">
+<b>為什麼 \(\Delta p\) 不折減 ▸</b> 題目寫「地表加載<b>均布</b>荷重」，屬於 §4.2 的第三種情形 —— 大面積均布載重在任何深度都不衰減。
+若這裡誤用 2:1 法折減，兩個沉陷量都會偏小，而且比例也會跑掉。
+</div>
+
+<p><b>Step 3　所需壓密度</b></p>
+$$U = \frac{S_c}{S_{cf}} = \frac{26.17}{36.85} = 71.0\%$$
+
+<p><b>Step 4　查 \(T_v\)（\(U > 60\%\) → 對數式）與求時間（雙面排水）</b></p>
+$$T_v = 1.781-0.933\log(100-71.0) = 1.781-0.933\times1.4624 = 0.4169$$
+$$H_{dr} = \frac{4}{2} = 2\ \text{m}\quad(\text{上下皆砂})$$
+$$t = \frac{T_v H_{dr}^2}{c_v} = \frac{0.4169\times2^2}{0.008} = \boxed{209\ \text{天}}$$
+
+<p><b>Step 5　自我檢查</b></p>
+<ul>
+<li><b>比值檢查</b>：\(S_{cf}/S_c = 36.85/26.17 = 1.41\)。載重比 \(281/150 = 1.87\)，但沉陷比只有 1.41 —— 因為公式裡是 \(\log\)，
+所以沉陷對載重的反應是「壓縮的」（§4.1 的極限檢查）。若算出沉陷比大於載重比，一定錯了。</li>
+<li><b>不做預壓要多久</b>：\(U=95\%\) 對應 \(T_v=1.129\)，\(t=564\) 天，而且沉陷只有 24.9 cm、還沒到 26.17 cm。
+預壓省下超過一年 —— 印證 §5.3「尾巴極平」的結論。</li>
+<li><b>排水路徑檢查</b>：若誤判單面（\(H_{dr}=4\) m），答案會變成 834 天。<b>4 倍</b>。看到「上、下皆為排水砂層」六個字就要圈起來。</li>
+<li><b>公式段檢查</b>：\(U=71\% > 60\%\)，若誤用拋物線式會得 \(T_v = 0.396\)、\(t=198\) 天，偏低 5%。此處誤差不大，但在 \(U=90\%\) 以上就會爆炸（§5.3）。</li>
+</ul>
+</div>
+
+<div class="chain">
+<b>§6 因果鏈</b><br>
+軟黏土壓密要十幾年 <b>→</b> 從 \(T_v = c_v t/H_{dr}^2\) 只有兩個把手可以動 <b>→</b> 動 \(H_{dr}\)：打排水砂樁／PVD，平方項帶來上百倍加速
+<b>→</b> 動「所需 \(U\)」：施加超載使 \(S_{cf}>S_c\)，只要 \(U=S_c/S_{cf}\) 就達標，借到尾巴極平那段時間
+<b>→</b> 副產品是土變成過壓密，後續永久載重走 \(C_r\)，沉陷極小 <b>→</b> 但超載會有剪力破壞風險，所以監測必須同時涵蓋「安全」與「成效」。
+</div>
+</section>
+<section id="s7">
+<h2>§7　解題決策流程</h2>
+
+<div class="lead">
+本單元的題目雖然變化多，動線只有兩條。<b>拿到題目的前 30 秒不要算，先走完流程圖、把 Case 定下來。</b>
+定錯 Case 的損失是整題；算錯一個數字的損失只是一個小題。
+</div>
+
+<h3>7.1　夯實類</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+  <!-- start -->
+  <rect x="330" y="14" width="240" height="42" rx="21" fill="#0d47a1"/>
+  <text x="450" y="41" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">夯實／回填／土方類</text>
+  <line x1="450" y1="56" x2="450" y2="78" stroke="#455a64" stroke-width="2" marker-end="url(#f1)"/>
+  <!-- diamond -->
+  <polygon points="450,80 610,128 450,176 290,128" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="124" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">題目最終要的是什麼？</text>
+  <text x="450" y="144" font-size="12" fill="#e65100" text-anchor="middle">（看小題的問句）</text>
+  <!-- branches -->
+  <path d="M290 128 L160 128 L160 196" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f1)"/>
+  <path d="M450 176 L450 196" stroke="#455a64" stroke-width="2" marker-end="url(#f1)"/>
+  <path d="M610 128 L742 128 L742 196" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f1)"/>
+  <text x="222" y="120" font-size="12" fill="#455a64" text-anchor="middle">曲線／wopt</text>
+  <text x="470" y="192" font-size="12" fill="#455a64">合格與否</text>
+  <text x="678" y="120" font-size="12" fill="#455a64" text-anchor="middle">體積／水量</text>
+
+  <!-- box 1 -->
+  <rect x="26" y="200" width="268" height="132" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.8"/>
+  <text x="160" y="222" font-size="13" font-weight="bold" fill="#1565c0" text-anchor="middle">A. 夯實試驗數據處理</text>
+  <text x="38" y="246" font-size="12" fill="#37474f">① ρt = Mt / V</text>
+  <text x="38" y="268" font-size="12" fill="#37474f">② ρd = ρt / (1+w)，γd = ρd · g</text>
+  <text x="38" y="290" font-size="12" fill="#37474f">③ 畫平滑曲線，內插峰值</text>
+  <text x="38" y="312" font-size="12" fill="#c62828">④ 用 ZAVC 檢查有沒有超上限</text>
+
+  <!-- box 2 -->
+  <rect x="316" y="200" width="268" height="132" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+  <text x="450" y="222" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">B. 工地品管驗收</text>
+  <text x="328" y="246" font-size="12" fill="#37474f">① 量 γd,field（砂錐／氣球／核子）</text>
+  <text x="328" y="268" font-size="12" fill="#c62828">② 題目給 γd,max → 用 RC</text>
+  <text x="328" y="290" font-size="12" fill="#1565c0">③ 題目給 emax, emin → 用 Dr</text>
+  <text x="328" y="312" font-size="12" fill="#37474f">④ 混合料 → 曲線族法（須乾側）</text>
+
+  <!-- box 3 -->
+  <rect x="606" y="200" width="268" height="132" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.8"/>
+  <text x="740" y="222" font-size="13" font-weight="bold" fill="#6a1b9a" text-anchor="middle">C. 土方平衡與加水量</text>
+  <text x="618" y="246" font-size="12" fill="#c62828">① 唯一守恆量：乾土重 Ws</text>
+  <text x="618" y="268" font-size="12" fill="#37474f">② Ws = γd,填 × V填</text>
+  <text x="618" y="290" font-size="12" fill="#37474f">③ 挖方 V借 = Ws / γd,借</text>
+  <text x="618" y="312" font-size="12" fill="#37474f">④ 加水 = Ws · (w目標 − w原)</text>
+
+  <!-- footer note -->
+  <rect x="26" y="348" width="848" height="58" rx="8" fill="#fff3e0" stroke="#ffcc80"/>
+  <text x="40" y="370" font-size="12.5" font-weight="bold" fill="#e65100">三條路都要回頭問一句：題目有沒有提到「透水性 / 自癒性 / 承載力」或「工地能量與實驗室不同」？</text>
+  <text x="40" y="392" font-size="12.5" fill="#37474f">有 → 必須討論乾側／濕側與微觀結構（§1.4），這是概念分的所在，光算密度拿不到分。</text>
+
+  <defs><marker id="f1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker></defs>
+</svg>
+<div class="cap">夯實類的三條動線。判別關鍵在「題目給了什麼參數」而不是題目在講什麼工程 ——
+給 \(\gamma_{d,max}\) 就是 RC 路線，給 \(e_{max}, e_{min}\) 就是 \(D_r\) 路線，給兩個借土區就是土方路線。</div>
+</div>
+
+<h3>7.2　壓密類（本單元 60% 的題目走這條）</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="900" fill="#ffffff"/>
+
+  <rect x="320" y="12" width="260" height="40" rx="20" fill="#0d47a1"/>
+  <text x="450" y="38" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">黏土層沉陷／壓密類</text>
+  <line x1="450" y1="52" x2="450" y2="72" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <!-- step 1 -->
+  <rect x="290" y="74" width="320" height="46" rx="7" fill="#eceff1" stroke="#607d8b" stroke-width="1.8"/>
+  <text x="450" y="94" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">① 定代表點 = 黏土層中點深度</text>
+  <text x="450" y="112" font-size="11.5" fill="#607d8b" text-anchor="middle">（厚層可切子層分別算再加總）</text>
+  <line x1="450" y1="120" x2="450" y2="140" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <!-- step 2 -->
+  <rect x="266" y="142" width="368" height="48" rx="7" fill="#eceff1" stroke="#607d8b" stroke-width="1.8"/>
+  <text x="450" y="162" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">② p₀′ = Σγh − u</text>
+  <text x="450" y="181" font-size="11.5" fill="#c62828" text-anchor="middle">水位上用 γt 或 γd；水位下用 γ′ = γsat − γw</text>
+  <line x1="450" y1="190" x2="450" y2="212" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <!-- diamond load type -->
+  <polygon points="450,214 640,266 450,318 260,266" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="262" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">③ 載重是什麼形態？</text>
+  <text x="450" y="282" font-size="11.5" fill="#e65100" text-anchor="middle">決定 Δσ 怎麼算</text>
+  <path d="M260 266 L60 266 L60 336" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f2)"/>
+  <path d="M450 318 L450 336" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+  <path d="M640 266 L842 266 L842 336" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f2)"/>
+
+  <rect x="14" y="340" width="272" height="70" rx="7" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="150" y="360" font-size="12.5" font-weight="bold" fill="#1565c0" text-anchor="middle">有限尺寸基礎</text>
+  <text x="26" y="380" font-size="11.5" fill="#37474f">Δσ = Q / [(B+z)(L+z)]</text>
+  <text x="26" y="400" font-size="11.5" fill="#c62828">z 由基礎底面起算！</text>
+
+  <rect x="314" y="340" width="272" height="70" rx="7" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="450" y="360" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">大面積均布載重</text>
+  <text x="326" y="380" font-size="11.5" fill="#37474f">Δσ = 地表壓力，全深度不折減</text>
+  <text x="326" y="400" font-size="11.5" fill="#37474f">預壓覆土、大範圍回填屬此類</text>
+
+  <rect x="614" y="340" width="272" height="70" rx="7" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="750" y="360" font-size="12.5" font-weight="bold" fill="#6a1b9a" text-anchor="middle">地下水位下降</text>
+  <text x="626" y="380" font-size="11.5" fill="#37474f">Δσ′ 來自浮力消失</text>
+  <text x="626" y="400" font-size="11.5" fill="#c62828">須自行推 γd = γsat/(1+w)</text>
+
+  <path d="M150 410 L150 428 L450 428" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M750 410 L750 428 L450 428" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M450 410 L450 448" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <!-- pf -->
+  <rect x="326" y="450" width="248" height="40" rx="7" fill="#eceff1" stroke="#607d8b" stroke-width="1.8"/>
+  <text x="450" y="475" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">④ pf′ = p₀′ + Δσ</text>
+  <line x1="450" y1="490" x2="450" y2="510" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <!-- diamond OCR -->
+  <polygon points="450,512 616,558 450,604 284,558" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="554" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">⑤ OCR = pc′/p₀′ &gt; 1 ?</text>
+  <text x="450" y="574" font-size="11.5" fill="#e65100" text-anchor="middle">題目說「正常壓密」就是 = 1</text>
+
+  <path d="M284 558 L120 558 L120 622" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f2)"/>
+  <text x="196" y="550" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">否（NC）</text>
+  <path d="M616 558 L700 558 L700 604" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f2)"/>
+  <text x="662" y="550" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">是（OC）</text>
+
+  <!-- Case A -->
+  <rect x="10" y="626" width="220" height="72" rx="7" fill="#ffebee" stroke="#c62828" stroke-width="1.8"/>
+  <text x="120" y="646" font-size="12.5" font-weight="bold" fill="#c62828" text-anchor="middle">Case A：一段式（Cc）</text>
+  <text x="22" y="668" font-size="11.5" fill="#37474f">Sc = CcH/(1+e₀) · log(pf′/p₀′)</text>
+  <text x="22" y="688" font-size="11.5" fill="#607d8b">最會沉的情況</text>
+
+  <!-- diamond cross -->
+  <polygon points="700,606 858,650 700,694 542,650" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="700" y="646" font-size="13" font-weight="bold" fill="#e65100" text-anchor="middle">⑥ pf′ ≤ pc′ ?</text>
+  <text x="700" y="665" font-size="11.5" fill="#e65100" text-anchor="middle">有沒有跨過記憶點</text>
+  <path d="M542 650 L440 650 L440 712" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f2)"/>
+  <text x="486" y="642" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="middle">是</text>
+  <path d="M700 694 L700 712" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+  <text x="716" y="708" font-size="12" font-weight="bold" fill="#e65100">否（跨越）</text>
+
+  <!-- Case B -->
+  <rect x="256" y="716" width="220" height="72" rx="7" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+  <text x="366" y="736" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">Case B：一段式（Cr）</text>
+  <text x="268" y="758" font-size="11.5" fill="#37474f">Sc = CrH/(1+e₀) · log(pf′/p₀′)</text>
+  <text x="268" y="778" font-size="11.5" fill="#607d8b">沉陷小，常可忽略</text>
+
+  <!-- Case C -->
+  <rect x="540" y="716" width="330" height="72" rx="7" fill="#fff3e0" stroke="#ef6c00" stroke-width="2.2"/>
+  <text x="705" y="736" font-size="12.5" font-weight="bold" fill="#e65100" text-anchor="middle">Case C：兩段相加（最常失分）</text>
+  <text x="552" y="758" font-size="11.5" fill="#37474f">Sc = CrH/(1+e₀)·log(pc′/p₀′)</text>
+  <text x="576" y="778" font-size="11.5" fill="#37474f">+ CcH/(1+e₀)·log(pf′/pc′)</text>
+
+  <!-- converge -->
+  <path d="M120 698 L120 812 L450 812" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M366 788 L366 812" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M705 788 L705 812 L450 812" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M450 812 L450 832" stroke="#455a64" stroke-width="2" marker-end="url(#f2)"/>
+
+  <rect x="196" y="834" width="508" height="52" rx="7" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+  <text x="450" y="856" font-size="13" font-weight="bold" fill="#01579b" text-anchor="middle">得最終沉陷 Sc　→　題目還問時間／壓密度？往 §7.3</text>
+  <text x="450" y="876" font-size="11.5" fill="#01579b" text-anchor="middle">驗算：用「全 Cc」與「全 Cr」兩個極端值把答案夾住</text>
+
+  <defs><marker id="f2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker></defs>
+</svg>
+<div class="cap">壓密沉陷量的完整決策樹。三個菱形分別在問：<b>載重形態</b>（決定 \(\Delta\sigma\)）、
+<b>有沒有記憶</b>（NC / OC）、<b>有沒有跨越記憶點</b>（Case B / C）。三個問題答完，公式自動決定。</div>
+</div>
+
+<h3>7.3　速率子流程（接續 §7.2）</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="900" height="480" fill="#ffffff"/>
+
+  <polygon points="450,10 640,56 450,102 260,56" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="52" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">題目問時間 / 壓密度 / 某時刻沉陷？</text>
+  <text x="450" y="72" font-size="11.5" fill="#e65100" text-anchor="middle">看到 cv、Tv、「幾年後」「多久」就是</text>
+  <path d="M260 56 L120 56 L120 108" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f3)"/>
+  <text x="188" y="48" font-size="12" font-weight="bold" fill="#607d8b" text-anchor="middle">否</text>
+  <rect x="30" y="112" width="180" height="40" rx="20" fill="#607d8b"/>
+  <text x="120" y="137" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">結束，只交 Sc</text>
+
+  <path d="M450 102 L450 124" stroke="#455a64" stroke-width="2" marker-end="url(#f3)"/>
+  <text x="466" y="118" font-size="12" font-weight="bold" fill="#e65100">是</text>
+
+  <!-- Hdr diamond -->
+  <polygon points="450,126 646,176 450,226 254,176" fill="#ffebee" stroke="#c62828" stroke-width="2.5"/>
+  <text x="450" y="170" font-size="13.5" font-weight="bold" fill="#c62828" text-anchor="middle">黏土層上下鄰居各是誰？</text>
+  <text x="450" y="190" font-size="11.5" fill="#c62828" text-anchor="middle">（本單元最貴的一個判斷）</text>
+  <path d="M254 176 L110 176 L110 240" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f3)"/>
+  <path d="M646 176 L790 176 L790 240" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f3)"/>
+  <rect x="10" y="244" width="200" height="66" rx="7" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+  <text x="110" y="266" font-size="12.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">兩側都能排水</text>
+  <text x="110" y="288" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">Hdr = H / 2</text>
+  <text x="110" y="304" font-size="11" fill="#607d8b" text-anchor="middle">砂層／透水預載／透水石</text>
+  <rect x="690" y="244" width="200" height="66" rx="7" fill="#ffebee" stroke="#c62828" stroke-width="1.8"/>
+  <text x="790" y="266" font-size="12.5" font-weight="bold" fill="#c62828" text-anchor="middle">一側不透水</text>
+  <text x="790" y="288" font-size="13" font-weight="bold" fill="#c62828" text-anchor="middle">Hdr = H</text>
+  <text x="790" y="304" font-size="11" fill="#607d8b" text-anchor="middle">岩盤／不透水層／陰影</text>
+
+  <path d="M110 310 L110 330 L450 330" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M790 310 L790 330 L450 330" stroke="#455a64" stroke-width="2" fill="none"/>
+  <path d="M450 330 L450 350" stroke="#455a64" stroke-width="2" marker-end="url(#f3)"/>
+
+  <rect x="234" y="352" width="432" height="46" rx="7" fill="#eceff1" stroke="#607d8b" stroke-width="1.8"/>
+  <text x="450" y="372" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">Tv = cv · t / Hdr²　（長度單位務必先統一）</text>
+  <text x="450" y="390" font-size="11.5" fill="#c62828" text-anchor="middle">若題目給的是實驗室數據，先由實驗室反推 cv，再換現場 Hdr</text>
+  <path d="M450 398 L450 418" stroke="#455a64" stroke-width="2" marker-end="url(#f3)"/>
+
+  <polygon points="450,420 590,444 450,468 310,444" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="450" font-size="13" font-weight="bold" fill="#e65100" text-anchor="middle">U &lt; 60% ?</text>
+  <path d="M310 444 L200 444" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f3)"/>
+  <rect x="14" y="422" width="182" height="44" rx="7" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="105" y="440" font-size="12" font-weight="bold" fill="#1565c0" text-anchor="middle">是：拋物線式</text>
+  <text x="105" y="458" font-size="11.5" fill="#37474f" text-anchor="middle">Tv = (π/4)U²</text>
+  <path d="M590 444 L700 444" stroke="#455a64" stroke-width="2" fill="none" marker-end="url(#f3)"/>
+  <rect x="704" y="418" width="188" height="52" rx="7" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="798" y="436" font-size="12" font-weight="bold" fill="#c62828" text-anchor="middle">否：對數式</text>
+  <text x="798" y="454" font-size="11" fill="#37474f" text-anchor="middle">Tv = 1.781 − 0.933</text>
+  <text x="798" y="468" font-size="11" fill="#37474f" text-anchor="middle">× log(100 − U%)</text>
+
+  <defs><marker id="f3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#455a64"/></marker></defs>
+</svg>
+<div class="cap">速率子流程。注意箭頭方向是雙向可走的：<b>已知 \(t\) 求 \(U\)</b> 就從 \(T_v\) 往下走；
+<b>已知 \(U\) 求 \(t\)</b> 就先用右下兩式求 \(T_v\) 再回代。兩個方向都要練熟，考題兩種都出過。</div>
+</div>
+</section>
+<section id="s8">
+<h2>§8　歷屆題 × 觀念對照表</h2>
+
+<p>主分類 23 題、副分類 2 題，全部列出。<b>「讀哪一節」欄是最實用的一欄</b> —— 練題卡住時直接回去看那一節。</p>
+
+<h3>8.1　主分類（primaryTopicId = SM-U1-3）</h3>
+
+<table>
+<thead><tr><th>題號</th><th>年</th><th>題型</th><th>核心考點</th><th>讀哪一節</th></tr></thead>
+<tbody>
+<tr><td><a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a></td><td>2025</td><td>計算</td><td>一維壓密、壓密度、<b>實驗室雙向 → 現場單向排水</b>、時間因素</td><td><b>§5.2 §5.5</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a></td><td>2024</td><td>混合</td><td>地下水位下降、有效應力變化、NC 與 OC 沉陷對照、Casagrande</td><td><b>§3.3 §3.5 §4.1</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2022-1.html" target="_blank">SM-2022-1</a></td><td>2022</td><td>混合</td><td>夯實原理、夯實曲線繪製、夯實能量參數與影響</td><td><b>§1.1 §1.3 §1.5</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2021-2.html" target="_blank">SM-2021-2</a></td><td>2021</td><td>計算</td><td>NC 沉陷、雙面排水、1/2/3 月沉陷量、反求天數</td><td><b>§4.1 §5.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a></td><td>2019</td><td>計算</td><td>NC 沉陷、<b>預壓工法所需時間</b>、大面積載重不折減</td><td><b>§6.1 §6.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a></td><td>2019</td><td>計算</td><td><b>相對密度 vs 相對夯實度</b>、孔隙比換算、夯實沉陷量</td><td><b>§2.1 §2.5</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2018-1.html" target="_blank">SM-2018-1</a></td><td>2018</td><td>計算</td><td>由已知時點反推 \(S_{max}\)、<b>中途需切換 U 公式</b>（1~4 年）</td><td><b>§5.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a></td><td>2017</td><td>概念</td><td>夯實規範表填寫：能量 × 乾濕側 × 設計需求（含<b>自癒性</b>）</td><td><b>§1.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2017-2.html" target="_blank">SM-2017-2</a></td><td>2017</td><td>混合</td><td>夯實曲線 + <b>CBR 雙側內插</b> → 決定工地密度百分比</td><td><b>§1.5 §2.1</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a></td><td>2016</td><td>計算</td><td>OCR、由解壓段求 \(C_s\)、Case B 沉陷、<b>超額孔隙水壓分布</b></td><td><b>§3.1 §4.1 §5.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a></td><td>2016</td><td>計算</td><td>現地密度試驗、四分法、由 \(e\) 求 \(G_s\)、土方與加水量</td><td><b>§2.2 §2.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a></td><td>2015</td><td>計算</td><td>預載重、<b>預載砂土創造頂部排水面 → 雙面</b>、\(\gamma_{dry}\) vs \(\gamma_{sat}\) 干擾</td><td><b>§3.3 §5.2 §6.1</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a></td><td>2014</td><td>計算</td><td><b>由 \(\Delta e\) 逆推載重</b>、\(C_c=0.009(LL-10)\)、岩盤 → 單面排水</td><td><b>§4.1 §5.2</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a></td><td>2013</td><td>混合</td><td><b>曲線族法／單點夯實法</b>、相對夯實度、方法限制</td><td><b>§2.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2012-2.html" target="_blank">SM-2012-2</a></td><td>2012</td><td>概念</td><td>Casagrande 作圖五步、由 \(p_c'\) 選公式、<b>實驗室與現地的差異</b></td><td><b>§3.1 §3.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2011-3.html" target="_blank">SM-2011-3</a></td><td>2011</td><td>計算</td><td>部分飽和（\(S=50\%\)）單位重、2:1 法、<b>Case C 雙段</b></td><td><b>§4.2 §4.5</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a></td><td>2009</td><td>概念</td><td><b>工地能量 &gt; 實驗室 → 乾側變濕側</b>、微觀結構、透水性劇降</td><td><b>§1.3 §1.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a></td><td>2008</td><td>計算</td><td>兩借土區 4:1 <b>體積比</b>混合、乾土重守恆、加水量（\(G_s\) 為干擾）</td><td><b>§2.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2006-4.html" target="_blank">SM-2006-4</a></td><td>2006</td><td>概念</td><td>室內試驗項目 / 施工控制 / 完工檢驗<b>三階段分開答</b></td><td><b>§2.2</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2005-3.html" target="_blank">SM-2005-3</a></td><td>2005</td><td>混合</td><td>\(m_v\) 的定義與與 \(C_c\) 的關係、<b>依應力區間分段求沉陷</b></td><td><b>§4.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a></td><td>2003</td><td>計算</td><td>2:1 法（\(z\) 從基礎底面）、OCR 判斷、<b>Case C 雙段</b></td><td><b>§4.2 §4.5</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2002-1.html" target="_blank">SM-2002-1</a></td><td>2002</td><td>概念</td><td><b>為何 \(\Delta e/(1+e_0)\) 會高估</b>、取樣擾動、Schmertmann 修正</td><td><b>§0 §3.4</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2002-3.html" target="_blank">SM-2002-3</a></td><td>2002</td><td>概念</td><td>15~20 m 山坡填方：改良夯實、分層滾壓、<b>深度分級的 RC 要求</b></td><td><b>§1.3 §2.2</b></td></tr>
+</tbody>
+</table>
+
+<h3>8.2　副分類（secondaryTopicIds 含 SM-U1-3）</h3>
+
+<table>
+<thead><tr><th>題號</th><th>年</th><th>與本單元的交集</th><th>讀哪一節</th></tr></thead>
+<tbody>
+<tr><td><a class="qlink" href="problems-view/SM-2004-4.html" target="_blank">SM-2004-4</a></td><td>2004</td><td>大型儲油槽軟弱地盤：<b>預壓工法 + 監測項目分類</b>（安全 vs 成效）、現地調查項目、液化檢核</td><td><b>§6.3</b></td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2006-1.html" target="_blank">SM-2006-1</a></td><td>2006</td><td>十字片剪求 \(S_u\)：以 <b>OCR</b> 判斷應力歷史，再連結不排水強度（跨到 SM-U1-5）</td><td><b>§3.2</b></td></tr>
+</tbody>
+</table>
+
+<div class="box">
+<b>從這張表看得出的三個出題規律</b>
+<ol>
+<li><b>夯實與壓密幾乎不同題出現。</b>23 題中，夯實類 9 題、壓密類 14 題，只有 <a class="qlink" href="problems-view/SM-2002-3.html" target="_blank">SM-2002-3</a>（填方沉陷）勉強橫跨。
+所以看到題目第一句就能決定走 §7.1 還是 §7.2。</li>
+<li><b>純概念題佔了 6 題（26%）</b>，且集中在夯實側（2017-1、2009-1、2006-4、2002-3）與擾動／作圖側（2012-2、2002-1）。
+這些題不會算就是不會寫，但也不需要計算能力 —— <b>投報率最高的複習對象。</b></li>
+<li><b>排水路徑陷阱出現在 6 題</b>（2025-1、2021-2、2019-2、2016-1、2015-1、2014-4），是全單元最高頻的單一陷阱。</li>
+</ol>
+</div>
+</section>
+
+<section id="s9">
+<h2>§9　陷阱總表（考前十分鐘掃這張）</h2>
+
+<p>每條三段式：<b>觸發信號 → 錯誤思維 → 正確認知</b>，並標註出自哪一題。按危險程度排序。</p>
+
+<div class="trap">
+<b>1｜排水路徑（4 倍誤差，最高頻）</b><br>
+<b>觸發</b>：圖上出現「岩盤」「不透水層」「斜線陰影」，或層上下寫著砂層。<br>
+<b>錯誤</b>：習慣性代 \(H_{dr}=H/2\)。<br>
+<b>正確</b>：兩側能排水才是 \(H/2\)；有一側封死就是 \(H\)。「岩盤」除非明寫破碎／透水，一律當不透水。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a>、<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>2｜實驗室與現場排水條件不同</b><br>
+<b>觸發</b>：題目分別描述試體與現地的排水情形。<br>
+<b>錯誤</b>：用同一個 \(H_{dr}\) 從頭算到尾。<br>
+<b>正確</b>：先用實驗室 \(H_{dr}\) 反推材料性質 \(c_v\)，再換成現場 \(H_{dr}\) 求時間。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>3｜透水預載反而創造排水面</b><br>
+<b>觸發</b>：地表加了「砂質預載」「排水砂層」。<br>
+<b>錯誤</b>：仍認定頂部不排水。<br>
+<b>正確</b>：透水預載使頂部成為排水邊界 → 從單面變雙面，時間掉到 1/4。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>4｜Case C 漏掉一段</b><br>
+<b>觸發</b>：\(OCR\) 略大於 1（如 1.09），或題目同時給 \(C_c\) 與 \(C_s\)。<br>
+<b>錯誤</b>：只用 \(C_c\)（高估）或只用 \(C_s\)（低估）。<br>
+<b>正確</b>：先算 \(p_f'\) 與 \(p_c'\) 比大小；跨越就兩段相加。<b>驗算法：正確答案必落在「全 \(C_c\)」與「全 \(C_s\)」之間。</b>
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a>、<a class="qlink" href="problems-view/SM-2011-3.html" target="_blank">SM-2011-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>5｜\(U \ge 60\%\) 還用拋物線式</b><br>
+<b>觸發</b>：題目要算 \(U=80\%,90\%\) 或多個年份。<br>
+<b>錯誤</b>：\(T_v=(\pi/4)U^2\) 一路用到 95%（低估 37%）。<br>
+<b>正確</b>：以 \(T_v \approx 0.283\)（\(U=60\%\)）為界切換到 \(T_v = 1.781-0.933\log(100-U\%)\)。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2018-1.html" target="_blank">SM-2018-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>6｜2:1 法的深度起算點</b><br>
+<b>觸發</b>：基礎有埋置深度 \(D_f\)。<br>
+<b>錯誤</b>：\(z\) 從地表算。<br>
+<b>正確</b>：\(z\) 從<b>基礎底面</b>算到目標點（黏土層中點）。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a>、<a class="qlink" href="problems-view/SM-2011-3.html" target="_blank">SM-2011-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>7｜代表點取錯</b><br>
+<b>觸發</b>：題目先問某一點（如砂黏交界 C 點）的應力，再問沉陷。<br>
+<b>錯誤</b>：把 C 點的應力代進沉陷公式。<br>
+<b>正確</b>：沉陷永遠用<b>黏土層中點</b>的應力，要重算一次。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>8｜相對密度 \(D_r\) 與相對夯實度 \(RC\) 混用</b><br>
+<b>觸發</b>：同一題出現 \(e_{max}, e_{min}\) 又出現 \(\gamma_{d,max}\) 或百分比要求。<br>
+<b>錯誤</b>：把兩個百分比直接對接。<br>
+<b>正確</b>：\(D_r\) 基於孔隙比、\(RC\) 基於乾單位重，中間必須用 \(\gamma_d = G_s\gamma_w/(1+e)\) 換算。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>9｜乾側／濕側是相對的</b><br>
+<b>觸發</b>：「工地機具能量與實驗室不同」「日曬蒸發難控含水量」。<br>
+<b>錯誤</b>：以為含水量固定就永遠在同一側。<br>
+<b>正確</b>：能量改變 → \(w_{opt}\) 移動 → 同一含水量可能換邊，透水性／自癒性隨之翻轉。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a>、<a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>10｜水位以上／以下的單位重</b><br>
+<b>觸發</b>：題目同時給 \(\gamma_{dry}\) 與 \(\gamma_{sat}\)。<br>
+<b>錯誤</b>：對地表以上的預載砂土用 \(\gamma_{sat}\)。<br>
+<b>正確</b>：水位上用 \(\gamma_t\) 或 \(\gamma_{dry}\)、水位下用 \(\gamma'=\gamma_{sat}-\gamma_w\)。多給的那個通常是干擾項。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2015-1.html" target="_blank">SM-2015-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>11｜沒給 \(\gamma_d\) 就以為算不下去</b><br>
+<b>觸發</b>：只給 \(\gamma_{sat}\) 與「飽和含水量」。<br>
+<b>錯誤</b>：卡住或亂假設。<br>
+<b>正確</b>：\(\gamma_d = \gamma_{sat}/(1+w)\)。看到「飽和含水量」就是在提示你反推 \(\gamma_d\)。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2024-3.html" target="_blank">SM-2024-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>12｜\(m_v\) 一票到底</b><br>
+<b>觸發</b>：題目給一張「應力區間 vs \(m_v\)」表格。<br>
+<b>錯誤</b>：取平均 \(m_v\) 乘總增量；或從 \(\sigma'=0\) 起算。<br>
+<b>正確</b>：從 \(\sigma_{v0}'\) 起算，依表格區間<b>分段</b>累加。\(m_v\) 與應力水準成反比，不是常數。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2005-3.html" target="_blank">SM-2005-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>13｜大面積載重誤用折減</b><br>
+<b>觸發</b>：「地表加載均布荷重」「大範圍回填」「水位下降」。<br>
+<b>錯誤</b>：套 2:1 法折減。<br>
+<b>正確</b>：載重寬度遠大於土層深度時完全不折減，\(\Delta\sigma\) = 地表壓力。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a>、<a class="qlink" href="problems-view/SM-2005-3.html" target="_blank">SM-2005-3</a>）</span>
+</div>
+
+<div class="trap">
+<b>14｜體積比 vs 重量比</b><br>
+<b>觸發</b>：「以 4:1 之體積比混合」。<br>
+<b>錯誤</b>：當成乾重比或夯實後體積比。<br>
+<b>正確</b>：指借土區<b>原狀體積</b>之比；以乾土重建立方程式求解。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>15｜「高估沉陷」的原因指錯部位</b><br>
+<b>觸發</b>：問「\(\Delta H = \frac{\Delta e}{1+e_0}H\) 為何高估」。<br>
+<b>錯誤</b>：答「因為 \(e_0\) 用壓密環未加載時的值」。<br>
+<b>正確</b>：\(e_0\) 變大會讓分母變大、\(\Delta H\) 變小（低估）。高估來自<b>分子 \(\Delta e\)</b>：起算點錯 + 擾動使低應力段變陡。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2002-1.html" target="_blank">SM-2002-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>16｜單點夯實法用在濕側</b><br>
+<b>觸發</b>：曲線族法題目。<br>
+<b>錯誤</b>：任何含水量都可以定位。<br>
+<b>正確</b>：濕側各土壤曲線都貼向同一條 ZAVC 而互相重疊，定位失效。<b>必須乾側，且能量必須與曲線族一致。</b>
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a>）</span>
+</div>
+
+<div class="trap">
+<b>17｜單位不統一（最無謂的失分）</b><br>
+<b>觸發</b>：\(c_v\) 給 cm²/s 而層厚給 m；試體給 mm 而現場給 m；夯實題混用 g、kgf、kN。<br>
+<b>錯誤</b>：直接代入。<br>
+<b>正確</b>：<b>動筆前先統一長度單位</b>（壓密題建議全部化 cm，夯實題全部化 g/cm³ 再最後乘 \(g\)）。算出的時間記得換算成題目要的天／年。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>、<a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a>）</span>
+</div>
+
+<div class="trap">
+<b>18｜砂土加壓密沉陷、有機土漏次壓縮</b><br>
+<b>觸發</b>：土層是砂／是有機土或高塑性黏土。<br>
+<b>錯誤</b>：一律算 \(S_c\)；或算完 \(S_c\) 就交卷。<br>
+<b>正確</b>：砂土主要只有 \(S_i\)；有機土／高塑性黏土必須加 \(S_s\)（可達主壓密量 30% 以上）。
+</div>
+
+<div class="trap">
+<b>19｜平均壓密度 \(U\) 與局部壓密度 \(U_z\) 混用</b><br>
+<b>觸發</b>：題目問某一深度的超額孔隙水壓。<br>
+<b>錯誤</b>：用平均 \(U\) 算 \(u = \Delta\sigma(1-U)\)。<br>
+<b>正確</b>：要用該深度的 \(U_z\)（查等時線圖或代級數解第一項）。兩者只在特定深度才相等。
+<span style="color:#607d8b">（<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a>）</span>
+</div>
+
+<div class="trap">
+<b>20｜概念題只寫結論不寫機制</b><br>
+<b>觸發</b>：「試說明」「試比較」「應注意哪兩項重點」。<br>
+<b>錯誤</b>：只寫「透水性會下降」「要做夯實試驗」。<br>
+<b>正確</b>：每個結論都補上機制與參數對應（為什麼下降 → 微觀結構改變 + 孔隙率下降；做哪個試驗 → 得到哪個設計參數）。
+<b>閱卷給分的是因果，不是名詞。</b>
+</div>
+</section>
+<section id="s10">
+<h2>§10　自我檢測：12 個「為什麼」</h2>
+
+<p>不要看答案，先在腦中講一遍。<b>講不出來的那一題，回去讀對應章節，不要靠多做題目補。</b></p>
+
+<details>
+<summary>1　夯實排空氣、壓密排水，這個差別如何決定兩者完全不同的時間尺度？</summary>
+<p>空氣可壓縮、黏滯性極低，可以在夯擊的毫秒內從相連孔隙逸散，所以夯實由「能量夠不夠」決定，時間尺度是施工當下。
+水不可壓縮、必須沿孔隙滲流出去，流量受 Darcy 定律與滲透係數 \(k\) 控制。黏土的 \(k\) 比砂小七個數量級，
+所以同樣的體積減少要花數月到數十年。<b>孔隙裡的介質決定了機制，機制決定了時間尺度。</b>（§0）</p>
+</details>
+
+<details>
+<summary>2　為什麼夯實曲線有峰值，而不是含水量越多越密或越少越密？</summary>
+<p>水同時扮演兩個相反角色。水少時它是<b>潤滑劑</b>：降低顆粒間摩擦與毛細吸力，讓顆粒滑得動 → 加水有幫助。
+水多時它是<b>阻擋物</b>：水不可壓縮、夯擊瞬間又來不及排出，佔掉的體積就是顆粒進不去的空間 → 加水有害。
+兩個機制的交叉點就是 \(w_{opt}\)。（§1.1）</p>
+</details>
+
+<details>
+<summary>3　為什麼實際夯實曲線永遠碰不到零空氣孔隙曲線（ZAVC）？</summary>
+<p>ZAVC 是 \(S=100\%\) 的<b>幾何上限</b>（\(\gamma_{zav}=G_s\gamma_w/(1+wG_s)\)），代表空氣被排到一滴不剩。
+但夯擊是瞬間作用，最後那些孤立的封閉氣泡沒有連通路徑可以逸散。實務上峰值大約落在 \(S=80\%\sim90\%\)。
+它的用途是<b>檢查</b>：任何算出來落在 ZAVC 上方的點必定是計算錯誤。（§1.2）</p>
+</details>
+
+<details>
+<summary>4　夯實能量增加時，為什麼 \(w_{opt}\) 會「下降」？直覺上能量大了不是應該需要更多水來潤滑嗎？</summary>
+<p>反了 —— 水的作用是<b>幫顆粒克服摩擦而滑動</b>。能量本身也在做同一件事。能量大了，克服摩擦這件事有更多是靠機械能完成的，
+需要水來幫忙的部分就變少，所以達到最密所需的含水量下降（曲線左移）；同時更大的能量能把顆粒排得更緊，\(\gamma_{d,max}\) 上升（曲線上移）。
+合起來就是「往左上移」。（§1.3）</p>
+</details>
+
+<details>
+<summary>5　同樣的乾單位重，為什麼乾側夯實的黏土透水性比濕側高好幾個數量級？</summary>
+<p>差別在<b>顆粒排列</b>，不在孔隙率。乾側水膜薄、顆粒間斥力小，容易形成邊對面接觸的<b>絮狀結構</b>，
+孔隙雖然總量相同但集中成少數大通道 → 水好走。濕側水膜厚、斥力大，在夯實機械的剪力下顆粒滑成面對面的<b>分散結構</b>，
+孔隙細小且均勻、沒有連續大通道 → 水難走。想像「一堆架橋的碎片」對比「一疊平放的撲克牌」。（§1.4）</p>
+</details>
+
+<details>
+<summary>6　為什麼 \(RC\) 這把尺的起點是 80% 而不是 0%？這對讀規範有什麼影響？</summary>
+<p>因為 \(RC\) 的分母是 Proctor 峰值 \(\gamma_{d,max}\)，而砂土在<b>最鬆狀態</b>的乾單位重本來就已經有峰值的 80% 左右
+（經驗式 \(RC\approx80+0.2D_r\)）。所以整支尺只有 80%~100% 這 20 個百分點的有效行程。
+影響：規範要求 \(RC=95\%\) 聽起來寬鬆，實際上對應 \(D_r=75\%\)，是相當嚴格的密實度要求。（§2.1）</p>
+</details>
+
+<details>
+<summary>7　為什麼一維沉陷公式的分母是 \((1+e_0)\) 而不是 \((1+e_f)\)？</summary>
+<p>因為應變的定義是「變化量除以<b>初始</b>量」。取 \(V_s=1\)，初始總體積是 \(1+e_0\)，所以 \(\varepsilon_v = \Delta e/(1+e_0)\)。
+極限檢查：若土被壓到 \(e_f=0\)，正確式給 \(\varepsilon_v = e_0/(1+e_0)<1\)（合理）；
+錯誤式給 \(\varepsilon_v = e_0\)，當 \(e_0>1\)（軟黏土常見）就會算出應變超過 100%、厚度變負數。（§0）</p>
+</details>
+
+<details>
+<summary>8　為什麼壓密沉陷公式裡出現的是應力「比」（\(\log\frac{p_f'}{p_0'}\)）而不是應力「差」？這帶來什麼工程直覺？</summary>
+<p>因為處女壓縮線在 \(e\)–\(\log\sigma'\) 座標下才是直線，斜率 \(C_c\) 才能定義成常數。取 \(\log\) 就必然出現比值。
+工程直覺：<b>同樣 100 kPa 的增量，加在淺層（\(p_0'\) 小）造成的沉陷遠大於加在深層。</b>
+這也解釋了為什麼深開挖回填後再蓋房的沉陷比直接在原地表蓋房小 —— 土已經被自己的覆土壓過一輪。（§4.1）</p>
+</details>
+
+<details>
+<summary>9　為什麼 Terzaghi 一維壓密的無因次時間一定長成 \(T_v = c_v t/H_{dr}^2\)？</summary>
+<p>因為壓密方程 \(\partial u/\partial t = c_v\,\partial^2u/\partial z^2\) 是<b>擴散方程</b>（與熱傳導同形），
+而 \(c_v\) 的量綱是 \(L^2T^{-1}\)。要把 \(c_v\)、\(t\)、特徵長度 \(H_{dr}\) 組成無因次量，數學上只有 \(c_v t/H_{dr}^2\) 這一種可能。
+所以 \(H_{dr}\) 帶平方不是規定，是量綱的必然。（§5.2）</p>
+</details>
+
+<details>
+<summary>10　為什麼排水路徑判斷錯，誤差剛好是 4 倍？</summary>
+<p>單面排水 \(H_{dr}=H\)、雙面排水 \(H_{dr}=H/2\)，比值是 2。而 \(t = T_v H_{dr}^2/c_v\)，時間與 \(H_{dr}\) 的<b>平方</b>成正比，
+所以 \(2^2 = 4\)。這也是為什麼排水砂樁效果驚人：把 \(H_{dr}\) 從 10 m 降到 0.75 m，理論上是 178 倍加速。（§5.2、§6.2）</p>
+</details>
+
+<details>
+<summary>11　為什麼壓密度從 90% 走到 98% 比從 0% 走到 60% 還花時間？</summary>
+<p>因為擴散問題的驅動力是<b>水壓梯度</b>，而水壓隨壓密進行不斷變小，驅動力越來越弱。
+數學上表現為：前段 \(U \propto \sqrt{t}\)（陡），後段 \(U\) 只能對數式漸近 100%（極平）。
+數字上：\(0\to60\%\) 只要 \(T_v=0.283\)，\(90\%\to98\%\) 卻要 \(1.129-0.848=0.281\) 再加上……實際上 \(98\%\) 需 \(T_v \approx1.5\)，
+所以這段要 \(0.65\) 個 \(T_v\)，比前面 60% 還久。<b>這條尾巴就是預壓工法存在的理由。</b>（§5.3）</p>
+</details>
+
+<details>
+<summary>12　預壓工法明明沒有改變 \(c_v\)，也沒有改變 \(H_{dr}\)，為什麼能縮短時間？</summary>
+<p>因為它改變的是<b>目標所需的壓密度</b>，不是壓密速率。你要的不是「\(U=100\%\)」而是「沉陷量達到 \(S_c\)」。
+加大載重使最終沉陷 \(S_{cf}>S_c\)，於是只需 \(U = S_c/S_{cf}\)（例如 71%）就達標。
+再配合第 11 題的結論 —— 尾巴極平 —— 從 100% 降到 71% 可以省掉一個數量級的時間。
+<b>副產品</b>：預壓後土變成過壓密，後續永久載重走 \(C_r\) 段，沉陷極小。（§6.1）</p>
+</details>
+
+<details>
+<summary>13（加分）為什麼取樣擾動使計算出的沉陷量「高估」而不是低估？</summary>
+<p>擾動的作用等於「先幫土卸載、再幫土重塑」。後果有兩個：① \(e\)–\(\log\sigma'\) 曲線的低應力段變陡（\(C_r\) 被高估）；
+② 轉折被抹圓，\(p_c'\) 被低估 → 更多的應力路徑被誤判成落在陡的 \(C_c\) 段。兩者都讓 \(\Delta e\) 變大 → 沉陷高估。
+注意：若把「\(e_0\) 因回脹而變大」當成原因會答錯方向，因為 \(e_0\) 在<b>分母</b>，變大會讓答案變小。
+高估必然來自<b>分子</b>。（§3.4）</p>
+</details>
+
+<details>
+<summary>14（加分）為什麼修正時可以用卸載回脹指數 \(C_s\) 代替再壓縮指數 \(C_r\)？</summary>
+<p>因為卸載回脹是<b>純彈性</b>行為，對試體擾動不敏感；而實驗室量到的再壓縮段夾雜了擾動造成的重塑變形，已被污染。
+所以取比較乾淨的 \(C_s\) 當 \(C_r\) 的代用值（<a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a> 就明確這樣假設）。
+實務上 \(C_s\) 與 \(C_r\) 本來也很接近，兩者都遠小於 \(C_c\)。（§3.4）</p>
+</details>
+</section>
+
+<section id="s11">
+<h2>★ §11　精選 5 題</h2>
+
+<div class="lead">
+25 題不可能全做。這 5 題的挑選標準不是「涵蓋最多標籤」，而是<b>「一題能練到最多互相獨立的技能」</b>，
+且彼此重疊最少。做完這 5 題，本單元 25 題裡的絕大多數你都會知道從哪裡下手。
+</div>
+
+<h3>① <a class="qlink" href="problems-view/SM-2025-1.html" target="_blank">SM-2025-1</a>（2025，25 分）— 觀念鏈題，必做第一題</h3>
+<div class="box">
+<p><b>為什麼選它</b>：計算量最小，但牽動的因果鏈最長。它把 §5 整節壓縮成一題：
+實驗室反推 \(c_v\) → 換算現場 \(H_{dr}\) → 兩段 \(U\) 公式都要用到 → 還要從沉陷量反推 \(U\)。
+而且它同時考「已知 \(U\) 求 \(t\)」與「已知 \(S\) 求 \(t\)」兩個方向。<b>本單元最高頻的排水路徑陷阱在這題是題目的主軸而非附帶。</b>
+2025 年最新題，代表命題趨勢。</p>
+<p><b>先讀</b>：§5.2（\(T_v\) 與 \(H_{dr}\)）、§5.3（兩段公式）、§5.5（本題完整解法）</p>
+<p><b>做完要能回答</b>：</p>
+<ul>
+<li>為什麼一定要先算 \(c_v\)，不能直接用時間比例？（因為 \(H_{dr}\) 兩邊不同，\(c_v\) 才是共用的材料性質）</li>
+<li>如果實驗室與現場排水條件相同，這題會變得多簡單？（可以直接用 \(t \propto H_{dr}^2\) 的比例，一行算完）</li>
+<li>\(t_{90}/t_{45}\) 應該等於什麼？（\(T_{v,90}/T_{v,45}\)，因為 \(c_v\) 與 \(H_{dr}\) 都相同 —— 這是最好的驗算）</li>
+</ul>
+</div>
+
+<h3>② <a class="qlink" href="problems-view/SM-2003-2.html" target="_blank">SM-2003-2</a>（2003，25 分）— Case C 雙段式的標準模板</h3>
+<div class="box">
+<p><b>為什麼選它</b>：一題把 §3 與 §4 全部走一遍：分層有效應力（含水位以上／以下）→ OCR 判斷 → 2:1 法（\(z\) 從基礎底面）→ 雙段沉陷。
+四個獨立技能、四個獨立陷阱。而且它的 \(OCR = 1.09\) 設計得極巧 —— <b>幾乎貼著 1，逼你非算不可</b>，不能靠直覺跳過。
+Case C 是本單元最常失分的公式，這題是它最乾淨的範本。</p>
+<p><b>先讀</b>：§3.3（\(p_0'\) 兩個必踩之處）、§4.1（三種 Case）、§4.2（2:1 法）、§4.5（本題完整解法）</p>
+<p><b>做完要能回答</b>：</p>
+<ul>
+<li>全用 \(C_c\) 和全用 \(C_s\) 分別得到多少？正確答案有沒有落在兩者之間？（6.62 / 1.59 / 4.31 cm ✓）</li>
+<li>\(C_r\) 段只貢獻 17%，為什麼？（\(p_0'\to p_c'\) 的應力比小，斜率又平緩）</li>
+<li>如果 \(z\) 誤從地表算（8 m 而非 6.5 m），\(\Delta\sigma\) 會變多少？答案會偏哪一邊？</li>
+</ul>
+</div>
+
+<h3>③ <a class="qlink" href="problems-view/SM-2022-1.html" target="_blank">SM-2022-1</a>（2022，25 分）— 夯實側唯一的完整題</h3>
+<div class="box">
+<p><b>為什麼選它</b>：夯實側的三個層次（原理／數據處理／能量影響）在同一題裡各佔一小題，
+而且它是<b>需要自己建立前置資料</b>的題型 —— 從六組濕質量算出整張乾單位重表、畫曲線、內插峰值。
+這種「先自己整理數據再解題」的能力別題練不到，而且 \(\gamma_{d,max}\) 與 \(w_{opt}\) 是後續所有 RC 題的分母來源。
+概念小題（原理、能量影響）是 6 題純概念題的共同答題素材。</p>
+<p><b>先讀</b>：§1.1（鐘形曲線）、§1.2（ZAVC 檢查）、§1.3（能量四參數）、§1.5（本題完整解法）</p>
+<p><b>做完要能回答</b>：</p>
+<ul>
+<li>為什麼峰值不在實測最大值那一點上？怎麼判斷它偏左還是偏右？（比較兩側鄰點的落差不對稱）</li>
+<li>用 ZAVC 檢查你算出的 \(\gamma_{d,max}\)，對應的飽和度是多少？合理嗎？（約 85%，落在 80~90% ✓）</li>
+<li>「夯實排空氣、壓密排水」這句話怎麼用兩三句寫成得分的答案？</li>
+</ul>
+</div>
+
+<h3>④ <a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a>（2019，25 分）— \(D_r\) vs \(RC\) 的唯一考題</h3>
+<div class="box">
+<p><b>為什麼選它</b>：全單元唯一同時考 \(D_r\) 與 \(RC\) 的題目，而這兩者混用是高頻失分點。
+計算量小（十分鐘可完成），但練到的核心技能是<b>「固體體積不變」這條萬用鑰匙</b>在孔隙比、乾單位重、沉陷量三者之間來回換算的熟練度 ——
+這條鑰匙在壓密題也天天用。投報率極高。</p>
+<p><b>先讀</b>：§0（\(\Delta e/(1+e_0)\) 的來源）、§2.1（兩把尺）、§2.5（本題完整解法）</p>
+<p><b>做完要能回答</b>：</p>
+<ul>
+<li>\(D_r\) 與 \(RC\) 之間唯一的橋樑是哪條式子？（\(\gamma_d = G_s\gamma_w/(1+e)\)）</li>
+<li>夯實後的 \(D_r\) 是多少？用經驗式 \(RC \approx 80+0.2D_r\) 回頭檢查，對得上嗎？（79.6% → 95.9% ✓）</li>
+<li>為什麼 \(\gamma_{d,max}\) 對應 \(e_{min}\) 而不是 \(e_{max}\)？</li>
+</ul>
+</div>
+
+<h3>⑤ <a class="qlink" href="problems-view/SM-2019-2.html" target="_blank">SM-2019-2</a>（2019，20 分）— 預壓工法的逆向思考</h3>
+<div class="box">
+<p><b>為什麼選它</b>：預壓工法的 \(U = S_c/S_{cf}\) 是本單元唯一需要<b>逆向思考</b>的地方 ——
+其他題都是「給載重求沉陷／時間」，這題是「給目標沉陷反推所需壓密度」。這個思路轉不過來就完全下不了筆。
+同時練到：NC 一段式（算兩次）、大面積載重不折減、雙面排水、對數式 \(T_v\)。<b>而且它是理解「為什麼壓密尾巴很慢」最有說服力的一題。</b></p>
+<p><b>先讀</b>：§5.3（尾巴極平）、§6.1（預壓原理）、§6.4（本題完整解法）</p>
+<p><b>做完要能回答</b>：</p>
+<ul>
+<li>不做預壓，光靠永久載重要多久才沉到 26.17 cm？（永遠不會 —— 那是它的最終值，只能漸近）</li>
+<li>載重比是 1.87，為什麼沉陷比只有 1.41？（公式裡是 \(\log\)，反應被壓縮）</li>
+<li>預壓移除後土的 \(OCR\) 變成多少？這對後續沉陷有什麼影響？</li>
+</ul>
+</div>
+
+<h3>練這 5 題的正確方法</h3>
+<div class="why">
+<ol>
+<li><b>先蓋住解答，只做「§7 流程圖」那一步。</b>寫下：走哪條動線、Case 是 A/B/C、\(H_{dr}\) 取多少。
+這一步錯了就不用算了，直接回去看對應章節。這比算完再對答案有效得多。</li>
+<li><b>每題算完立刻做「錯誤答案」。</b>刻意用錯的 \(H_{dr}\)、錯的 \(C\) 值再算一次，記住錯的答案長什麼樣子。
+考場上你認得出錯誤答案的量級，就不會交錯的那一份。</li>
+<li><b>單位先統一再動筆。</b>壓密題全部化 cm、夯實題全部化 g/cm³。這一個習慣可以消滅陷阱第 17 條。</li>
+<li><b>概念小題要寫因果不寫名詞。</b>每個結論後面補一句機制。這 5 題裡的概念小題（2022-1 的原理與能量影響、
+2003-2 的假設說明）就是 6 題純概念題的答題素材庫。</li>
+</ol>
+</div>
+
+<h3>候補 2 題（時間允許再加）</h3>
+<div class="box">
+<ul>
+<li><b><a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a>（2016）</b> — 全單元最完整的計算題：OCR + 由解壓段推 \(C_s\) + Case B 沉陷 + <b>超額孔隙水壓的深度分布</b>。
+計算量最大（需要級數解或查等時線圖），但它是唯一考「局部壓密度 \(U_z\)」的題。如果精選 5 題都做熟了，這題是最好的第 6 題。</li>
+<li><b><a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a>（2009）</b> — 純概念、十分鐘可讀完，但它把「能量 → \(w_{opt}\) 移動 → 乾濕側換邊 → 微觀結構 → 透水性」
+這條完整因果鏈練到位。投報率是全單元最高的。</li>
+</ul>
+</div>
+
+<h3>這 5 題<b>沒有</b>涵蓋到的考點（誠實說明）</h3>
+<div class="trap">
+<b>做完精選 5 題不等於本單元滿分。</b>以下六個考點群完全沒被涵蓋，必須另外處理：
+<table style="margin-top:10px">
+<thead><tr><th>未涵蓋考點</th><th>對應題目</th><th>怎麼補</th></tr></thead>
+<tbody>
+<tr><td>曲線族法／單點夯實試驗</td><td><a class="qlink" href="problems-view/SM-2013-2.html" target="_blank">SM-2013-2</a></td><td>讀 §2.4，該節已含完整實算，不必另做題</td></tr>
+<tr><td>土方平衡與加水量</td><td><a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a>、<a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a></td><td>讀 §2.3 的「乾土重守恆」三步；建議至少做 SM-2008-1</td></tr>
+<tr><td>Casagrande 作圖法與 Schmertmann 修正</td><td><a class="qlink" href="problems-view/SM-2012-2.html" target="_blank">SM-2012-2</a>、<a class="qlink" href="problems-view/SM-2002-1.html" target="_blank">SM-2002-1</a></td><td>讀 §3.1 圖與 §3.4；<b>務必動手畫一次六步作圖</b>，考試會要求繪圖</td></tr>
+<tr><td>超額孔隙水壓的深度分布（\(U_z\)）</td><td><a class="qlink" href="problems-view/SM-2016-1.html" target="_blank">SM-2016-1</a></td><td>讀 §5.4；建議做候補題</td></tr>
+<tr><td>預壓監測項目分類</td><td><a class="qlink" href="problems-view/SM-2004-4.html" target="_blank">SM-2004-4</a></td><td>背 §6.3 那張「安全 vs 成效」兩欄表即可</td></tr>
+<tr><td>乾濕側與工程需求對照（規範填表）</td><td><a class="qlink" href="problems-view/SM-2017-1.html" target="_blank">SM-2017-1</a>、<a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a></td><td>背 §1.4 那張四列表；這是最容易拿的概念分</td></tr>
+</tbody>
+</table>
+<p style="margin-top:10px"><b>建議的完整讀法</b>：精選 5 題（動筆算）+ 候補 2 題（動筆算）+ 上表六項（讀本講義對應節即可，不必再做題）。
+這樣 25 題的考點就覆蓋完了，總時數約 6~8 小時。</p>
+</div>
+
+<h3>全單元因果鏈總覽</h3>
+<div class="chain">
+<b>①</b> 夯實排空氣（能量問題）／壓密排水（滲流問題）—— 孔隙裡的介質決定機制與時間尺度<br>
+<b>②</b> 固體體積不變 → 所有變形都寫成 \(\Delta e/(1+e_0)\)，分母永遠是初始值<br>
+<b>③</b> 水在夯實中同時是潤滑劑與阻擋物 → 有峰值 \(w_{opt}\)；能量↑則曲線左上移；ZAVC 是幾何上限<br>
+<b>④</b> 乾側絮狀（k 大、強度高）／濕側分散（k 小、有自癒性）→ 規範同時管能量與含水量落在哪一側<br>
+<b>⑤</b> 品管：細粒土用 \(RC\)（尺的零點在 80%）、砂土用 \(D_r\)；土方題一律以乾土重守恆<br>
+<b>⑥</b> 土有記憶 \(p_c'\)：記憶內走 \(C_r\)、超過走 \(C_c\)（5~10 倍）→ 三個 Case 決定沉陷公式<br>
+<b>⑦</b> 公式裡是應力比（因為 \(e\)–\(\log\sigma'\) 才是直線）→ 淺層加載比深層加載沉得多<br>
+<b>⑧</b> 壓密是擴散問題 → \(T_v = c_v t/H_{dr}^2\)，\(H_{dr}\) 必帶平方 → 判錯就是 4 倍<br>
+<b>⑨</b> \(U\)–\(T_v\) 前段像 \(\sqrt{t}\)、後段像 \(\log\) → 最後 10% 特別慢<br>
+<b>⑩</b> 所以加速只有兩條路：縮短 \(H_{dr}\)（砂樁，平方項威力）或降低所需 \(U\)（預壓，借尾巴的時間）
+</div>
+</section>
+
+</main>
+<footer>
+SM-U1-3 觀念講義｜資料來源：exam-wiki-SM 知識庫（raw/solutions、wiki/concepts、wiki/methods、wiki/materials）<br>
+建議使用順序：本講義（練題前）→ Keynote（課堂）→ 速查頁（考前十分鐘）
+</footer>
+</body>
+</html>

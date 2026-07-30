@@ -47,6 +47,7 @@ Cowork 讀取 CLAUDE.md + 考卷 PDF + question_index.json
 raw/solutions/SM-XXXX-N/SM-XXXX-N.md  ──→  wiki/problems/      （Cowork: ingest）
 raw/json/concepts.json                 ──→  wiki/concepts/      （Cowork: compile-all）
 raw/solutions/methods/                 ──→  wiki/methods/       （Cowork: compile-all）
+   ↑ 修正公式錯誤時改「這一端」，不要只改 wiki 副本（否則下次 compile 會被蓋回）
 Cowork 查詢結果                        ──→  wiki/queries/       （Cowork 直接存入）
 Cowork study 指令輸出                  ──→  study/              （Cowork 直接存入）
 Cowork 跨層知識工具                    ──→  wiki/diagnosis/     （Cowork 直接存入）
@@ -56,6 +57,7 @@ Cowork 跨層知識工具                    ──→  wiki/diagnosis/     （C
 
 解題內容唯一來源：raw/solutions/ 下的 .md 檔案
 索引資訊唯一來源：raw/json/question_index.json
+方法論唯一來源：raw/solutions/methods/（可修正，須驗算＋同步 wiki＋記 log，見規則 1）
 wiki/queries/、study/（study 輸出）及四個跨層知識目錄：由 Cowork 直接寫入，不走 ingest 流程
 ```
 
@@ -73,18 +75,18 @@ exam-wiki-SM/
 │
 ├── study/                           ← 讀書筆記、講義、study 指令 HTML 輸出（study-SM-UN.html / study-SM-UN-n.html）
 │
-├── raw/                             ← 所有原始資料（唯讀，絕對不可修改）
+├── raw/                             ← 所有原始資料（預設唯讀，僅 ✏️ 三處可改）
 │   ├── exams/                       ← 原始考卷 PDF（命名：SM-YYYY_土壤力學與基礎設計.pdf）
 │   ├── json/
 │   │   ├── concepts.json            ← 概念定義（供 compile-all）
-│   │   └── question_index.json      ← ⭐ 題目總索引（唯一需要人工維護的 JSON）
+│   │   └── question_index.json      ← ⭐✏️ 題目總索引（唯一需要人工維護的 JSON）
 │   └── solutions/                   ← AI 解析 + 補充截圖（每題一個資料夾）
-│       ├── SM-YYYY-N/
-│       │   ├── SM-YYYY-N.md
-│       │   ├── SM-YYYY-N-fig-1.png
+│       ├── SM-YYYY-N/               ← 🔒 證據，不可修改（規則 1、2）
+│       │   ├── SM-YYYY-N.md         ←   🔒 內容凍結，但 ✏️ 附圖引用行／圖說可補正（規則 1-C）
+│       │   ├── SM-YYYY-N-fig-1.png  ←   ✏️ 命名不符規範時可改名（規則 1-C）
 │       │   ├── SM-YYYY-N-[內容碼]-viz.html
 │       │   └── *.pdf                    ← 補充筆記（選用，命名無限制）
-│       └── methods/                 ← 解題方法論
+│       └── methods/                 ← ✏️ 解題方法論（可修正公式／單位，見規則 1）
 │
 └── wiki/                            ← 知識庫輸出
     ├── index.md                     ← 主導航（七層架構）
@@ -161,7 +163,52 @@ Wiki 導航依七層知識架構組織（前三層由 Cowork 透過 compile-all/
 
 ## 重要規則
 
-1. **`raw/` 目錄下所有檔案絕對不可修改**（`question_index.json` 除外）
+1. **`raw/` 目錄下所有檔案一律不可修改**，僅以下三處例外：
+   - `raw/json/question_index.json`（索引唯一人工維護處）
+   - `raw/solutions/methods/`（方法論文件，可修正公式錯誤與單位標註）
+   - `raw/solutions/SM-YYYY-N/SM-YYYY-N.md` 的**附圖引用區塊**（僅限圖片引用、alt text、圖說三者，見下方 1-C）
+
+   > **為什麼 methods/ 是例外**：本規則要保護的是**證據**（考卷、AI 解析、驗證過的答案），
+   > 這些一旦被改就失去可追溯性。但 `raw/solutions/methods/` 存的是**可維護的知識整理**，
+   > 且它是 `wiki/methods/` 的 compile 來源 —— 只改 wiki 副本的話，下次 `compile-all` 會被蓋回舊版。
+   > 發現公式或係數錯誤時，必須改 raw 來源才算根治。
+   >
+   > **修改 methods/ 的三個條件（缺一不可）**：
+   > ① 修正前先做**數值驗算**（邊界代入、量綱檢查、與驗證解答交叉比對），不可憑印象改；
+   > ② 改完**同步覆蓋** `wiki/methods/` 對應檔；
+   > ③ 在 `wiki/log.md` 記錄**改了什麼、為什麼、怎麼驗證的**。
+
+   ### 1-C　附圖引用補正（窄例外）
+
+   > **為什麼需要這個例外**：`CLAUDE-SPEC.md` 明訂「每張圖片在 .md 中必須包含 alt text + 圖說兩部分」，
+   > 且完成標準含「每張 PNG 圖片有對應 `*圖說：*`」。但實務上會出現三種**規格違反**狀態：
+   > ① 使用者已把截圖存進題目資料夾，`.md` 卻沒有引用它（圖被孤立，讀者看不到）；
+   > ② `.md` 引用了資料夾內不存在的檔名（破圖連結）；
+   > ③ 圖檔命名不符 `SM-YYYY-N-<fig|chart|eqn|hand>-N.png`（如殘留的裁切暫存檔）。
+   >
+   > 這三種都是**證據與解析之間的連結斷裂**，不是證據本身有爭議。
+   > 補上引用是**恢復**可追溯性，而不是改動證據 —— 這正是規則 1 想保護的東西。
+   > 若不允許修正，缺陷只能靠顯示層繞過，下次重新渲染又會復發。
+   >
+   > **可以動的範圍（白名單，僅此三項）**：
+   > - `![alt text](SM-YYYY-N-<type>-N.png)` 圖片引用行
+   > - 緊接其後的 `*圖說：…*` 段落
+   > - 圖檔本身的檔名（改成符合命名規範）或刪除確認為重複／暫存的檔案
+   >
+   > **絕對不可動（違反即等同違反規則 1、2）**：
+   > 題目重述的文字與數值、任何公式、計算過程、`verifiedSolution`、結論、
+   > 章節結構（§1~§5）、標籤、分類。**一個數字都不准改。**
+   >
+   > **補正的四個條件（缺一不可）**：
+   > ① 必須**先實際看過圖片內容**再寫 alt text 與圖說，不可憑檔名或上下文猜測；
+   > ② 圖說須依 `CLAUDE-SPEC.md` 各類型要求撰寫（`fig` 記幾何與土層參數、`chart` 記控制點座標、
+   >    `eqn` **所有公式完整 LaTeX 文字化**、`hand` 記步驟摘要），做到「看不到圖也能解題」；
+   > ③ 若圖片內容與 `.md` 現有敘述**矛盾**（例：`.md` 寫「無附圖」但圖存在），
+   >    **只修正該句敘述本身**，並在 `wiki/log.md` 明確記下原文與新文；矛盾若牽涉數值，**停手改問使用者**；
+   > ④ 在 `wiki/log.md` 記錄**改了哪幾題、每題補了什麼圖、圖的內容是什麼、以及「未改動任何數值／公式／結論」的自我確認**。
+   >
+   > ⚠️ 除上述白名單外，`raw/solutions/SM-YYYY-N/` 仍受規則 1 與規則 2 完整保護。
+
 2. **`verifiedSolution` 是最終答案，不可質疑或重新計算**
 3. **`wiki/log.md` 只可 append，不可刪除已有紀錄**
 4. **wiki/ 大多數目錄是 compile 輸出，不可手動修改**；例外：diagnosis/ · failure-modes/ · materials/ · code-ref/ · queries/ 由 Cowork 直接維護
@@ -177,3 +224,5 @@ Wiki 導航依七層知識架構組織（前三層由 Cowork 透過 compile-all/
 | 日期 | 變更 | 原因 |
 |------|------|------|
 | 2026-07-11 | 從 exam-wiki-RC 克隆，全面改寫為 SM 科目（土壤力學與基礎設計） | 建立土壤力學與基礎設計獨立知識庫；沿用 RC 版本已驗證的兩層（User/Cowork）工作流程與 16 個 Cowork 指令架構；清空 RC 領域專屬的 wiki 內容（題目解析、概念、方法論等），重置為空白索引，等待依「解析 XXXX 年考卷」流程逐年建立 SM 題庫 |
+| 2026-07-25 | **規則 1 例外擴充**：`raw/` 唯讀的例外從「`question_index.json`」擴充為「`question_index.json` + `raw/solutions/methods/`」，並訂出三項修改條件（驗算／同步 wiki／記 log） | `methods/` 是 `wiki/methods/` 的 compile 來源，只改 wiki 副本會被 `compile-all` 蓋回；公式勘誤需能根治。個別題目解析 `raw/solutions/SM-YYYY-N/` 仍受完整保護 |
+| 2026-07-30 | **規則 1 新增窄例外 1-C「附圖引用補正」**：`raw/solutions/SM-YYYY-N/SM-YYYY-N.md` 的圖片引用行、圖說段落與圖檔命名可修正，白名單外一律不可動（題目數值、公式、計算、結論、章節結構皆完全禁止）。訂四項條件（先看過圖／圖說依 SPEC 各類型要求／敘述矛盾只改該句且牽涉數值須停手問人／記 log 並自我確認未改數值） | 全庫掃描發現 8 題存在「圖檔已在資料夾但 `.md` 未引用」「引用了不存在的檔名」「命名不符規範」三類**規格違反**（`CLAUDE-SPEC.md` 已明訂每張圖須有 alt text + 圖說）。此類缺陷是「證據與解析之間的連結斷裂」，補正屬於恢復可追溯性而非改動證據；若僅靠顯示層繞過，重新渲染即復發。最嚴重者為 SM-2017-1：`.md` 寫「無須額外附圖」，但資料夾內的 fig-1 正是答題必需的圖1-1 夯實曲線與表1-1 夯實土壤工程特性 |

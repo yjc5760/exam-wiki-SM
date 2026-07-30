@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SM-2020-1 應力隨深度分布圖</title>
+<style>
+:root{--ink:#263238;--mut:#607d8b;--bd:#dfe6ea;--sig:#0d47a1;--u:#0288d1;--eff:#2e7d32;--neg:#c62828}
+*{box-sizing:border-box}
+body{margin:0;padding:14px;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+color:var(--ink);background:#fff;font-size:14px;line-height:1.7}
+.wrap{max-width:580px;margin:0 auto}
+h1{font-size:1.05em;margin:0 0 4px;color:var(--sig)}
+.sub{font-size:.82em;color:var(--mut);margin:0 0 12px}
+svg{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:8px;background:#fff}
+table{width:100%;border-collapse:collapse;margin:12px 0 6px;font-size:.84em}
+th,td{border:1px solid var(--bd);padding:5px 7px;text-align:center}
+th{background:#eceff1;font-weight:600}
+.note{font-size:.8em;color:var(--mut);margin:8px 0 0}
+.lg{display:flex;gap:14px;flex-wrap:wrap;font-size:.82em;margin:10px 0 2px}
+.lg span{display:inline-flex;align-items:center;gap:5px}
+.sw{width:20px;height:3px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>SM-2020-1　垂直總應力 σ、孔隙水壓 u、有效應力 σ′ 隨深度之分布</h1>
+<p class="sub">對應第（二）小題。數值取自本題已驗證之解答表，未經重新計算。</p>
+
+<div class="lg">
+  <span><i class="sw" style="background:#0d47a1"></i>總應力 σ</span>
+  <span><i class="sw" style="background:#0288d1"></i>孔隙水壓 u</span>
+  <span><i class="sw" style="background:#2e7d32"></i>有效應力 σ′</span>
+  <span><i class="sw" style="background:#c62828"></i>u 為負值之毛細區</span>
+</div>
+
+<svg viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg">
+  <!-- negative-u shaded band -->
+  <rect x="90" y="60" width="43" height="245" fill="#ffebee"/>
+  <text x="94" y="80" font-size="10.5" fill="#c62828">u &lt; 0</text>
+  <text x="94" y="94" font-size="10.5" fill="#c62828">毛細區</text>
+
+  <!-- layer bands -->
+  <rect x="133" y="60" width="387" height="171.4" fill="#fffde7" opacity=".55"/>
+  <rect x="133" y="231.4" width="387" height="73.6" fill="#fff3e0" opacity=".55"/>
+  <rect x="133" y="305" width="387" height="155" fill="#e8eaf6" opacity=".55"/>
+  <text x="514" y="150" font-size="10.5" fill="#8d6e63" text-anchor="end">乾砂　H₁ = 2.1 m</text>
+  <text x="514" y="272" font-size="10.5" fill="#8d6e63" text-anchor="end">濕砂（毛細區）H₂ = 0.9 m</text>
+  <text x="514" y="390" font-size="10.5" fill="#5c6bc0" text-anchor="end">飽和黏土　H₃ = 1.9 m</text>
+
+  <!-- axes -->
+  <line x1="90" y1="60" x2="520" y2="60" stroke="#455a64" stroke-width="1.6"/>
+  <line x1="133" y1="60" x2="133" y2="470" stroke="#455a64" stroke-width="1.6"/>
+  <text x="305" y="34" font-size="12" fill="#37474f" text-anchor="middle">應力 (kPa)</text>
+  <text x="24" y="265" font-size="12" fill="#37474f" text-anchor="middle" transform="rotate(-90 24 265)">深度 z (m)</text>
+
+  <!-- x ticks -->
+  <g font-size="10.5" fill="#607d8b" text-anchor="middle">
+    <line x1="90" y1="54" x2="90" y2="60" stroke="#455a64"/><text x="90" y="48">−10</text>
+    <line x1="133" y1="54" x2="133" y2="60" stroke="#455a64"/><text x="133" y="48">0</text>
+    <line x1="219" y1="54" x2="219" y2="60" stroke="#455a64"/><text x="219" y="48">20</text>
+    <line x1="305" y1="54" x2="305" y2="60" stroke="#455a64"/><text x="305" y="48">40</text>
+    <line x1="391" y1="54" x2="391" y2="60" stroke="#455a64"/><text x="391" y="48">60</text>
+    <line x1="477" y1="54" x2="477" y2="60" stroke="#455a64"/><text x="477" y="48">80</text>
+  </g>
+
+  <!-- depth ticks / point rows -->
+  <g font-size="10.5" fill="#607d8b" text-anchor="end">
+    <line x1="127" y1="60" x2="133" y2="60" stroke="#455a64"/><text x="122" y="64">0　A</text>
+    <line x1="127" y1="231.4" x2="133" y2="231.4" stroke="#455a64"/><text x="122" y="235">2.1　B</text>
+    <line x1="127" y1="305" x2="133" y2="305" stroke="#455a64"/><text x="122" y="309">3.0　C</text>
+    <line x1="127" y1="460" x2="133" y2="460" stroke="#455a64"/><text x="122" y="464">4.9　D</text>
+  </g>
+  <g stroke="#b0bec5" stroke-width=".8" stroke-dasharray="3 3">
+    <line x1="133" y1="231.4" x2="520" y2="231.4"/>
+    <line x1="133" y1="305" x2="520" y2="305"/>
+    <line x1="133" y1="460" x2="520" y2="460"/>
+  </g>
+  <text x="524" y="309" font-size="10" fill="#0288d1">GWT</text>
+
+  <!-- u curve -->
+  <polyline points="133,60 114,231.4 133,305 212.2,460" fill="none" stroke="#0288d1" stroke-width="2.6"/>
+  <!-- sigma curve -->
+  <polyline points="133,60 289.5,231.4 363,305 507.1,460" fill="none" stroke="#0d47a1" stroke-width="2.6"/>
+  <!-- sigma' curve -->
+  <polyline points="133,60 308.4,231.4 363,305 427.1,460" fill="none" stroke="#2e7d32" stroke-width="2.6"/>
+
+  <!-- markers -->
+  <g fill="#0288d1"><circle cx="133" cy="60" r="3.4"/><circle cx="114" cy="231.4" r="3.4"/><circle cx="133" cy="305" r="3.4"/><circle cx="212.2" cy="460" r="3.4"/></g>
+  <g fill="#0d47a1"><circle cx="289.5" cy="231.4" r="3.4"/><circle cx="363" cy="305" r="3.4"/><circle cx="507.1" cy="460" r="3.4"/></g>
+  <g fill="#2e7d32"><circle cx="308.4" cy="231.4" r="3.4"/><circle cx="427.1" cy="460" r="3.4"/></g>
+
+  <!-- value labels -->
+  <text x="108" y="226" font-size="10" fill="#0288d1" text-anchor="end">−4.41</text>
+  <text x="216" y="474" font-size="10" fill="#0288d1">18.64</text>
+  <text x="286" y="226" font-size="10" fill="#0d47a1" text-anchor="end">36.39</text>
+  <text x="313" y="248" font-size="10" fill="#2e7d32">40.80</text>
+  <text x="367" y="300" font-size="10" fill="#37474f">53.46</text>
+  <text x="431" y="452" font-size="10" fill="#2e7d32">68.36</text>
+  <text x="511" y="452" font-size="10" fill="#0d47a1" text-anchor="end">87.00</text>
+
+  <!-- annotation: sigma' local peak at B -->
+  <path d="M340 200 L312 226" stroke="#2e7d32" stroke-width="1.2" fill="none"/>
+  <text x="344" y="190" font-size="10.5" fill="#2e7d32">σ′ 在 B 點因負孔隙水壓</text>
+  <text x="344" y="203" font-size="10.5" fill="#2e7d32">出現局部凸起（σ′ &gt; σ）</text>
+
+  <!-- curve labels -->
+  <text x="200" y="404" font-size="11" font-weight="bold" fill="#0288d1">u</text>
+  <text x="470" y="404" font-size="11" font-weight="bold" fill="#0d47a1">σ</text>
+  <text x="390" y="404" font-size="11" font-weight="bold" fill="#2e7d32">σ′</text>
+</svg>
+
+<table>
+<thead><tr><th>點位</th><th>深度 z (m)</th><th>σ (kPa)</th><th>u (kPa)</th><th>σ′ (kPa)</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>0.0</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>B</td><td>2.1</td><td>36.39</td><td>−4.41</td><td>40.80</td></tr>
+<tr><td>C</td><td>3.0</td><td>53.46</td><td>0.00</td><td>53.46</td></tr>
+<tr><td>D</td><td>4.9</td><td>87.00</td><td>18.64</td><td>68.36</td></tr>
+</tbody>
+</table>
+
+<p class="note">
+<b>三段折線的斜率意義</b>：A→B（乾砂）u = 0 起算並在 B 點降至負值，σ′ 略大於 σ；
+B→C（毛細區）u 由 −4.41 回升至 0，該段 σ′ 的增加率相當於等效有效單位重 14.07 kN/m³；
+C→D（飽和黏土）u 依靜水壓線性增加至 18.64 kPa，σ′ 增加率轉為浮單位重。<br>
+<b>自我檢查</b>：四點皆滿足 σ′ = σ − u（0−0=0；36.39−(−4.41)=40.80；53.46−0=53.46；87.00−18.64=68.36）。
+</p>
+<p class="note">數值來源：<code>raw/solutions/SM-2020-1/SM-2020-1.md</code> §4 已驗證之解答表。本檔為視覺化輸出，不改動任何數值。</p>
+</div>
+</body>
+</html>
