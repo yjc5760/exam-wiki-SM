@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-U3-3 深開挖擋土與地層穩定 — 觀念講義</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--ac2:#e3f2fd;--tension:#2e7d32;--tension2:#e8f5e9;
+--comp:#c62828;--comp2:#ffebee;--warn:#ef6c00;--warn2:#fff3e0;
+--key:#6a1b9a;--key2:#f3e5f5;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:34px 26px}
+header h1{margin:0 0 8px;font-size:1.6em}header .sub{opacity:.9;font-size:.93em;margin:0}
+header .meta{margin-top:12px;font-size:.82em;opacity:.8}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:2px solid var(--bd);
+padding:9px 14px;display:flex;flex-wrap:wrap;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+nav a{text-decoration:none;color:var(--ac);font-size:.85em;padding:4px 11px;border-radius:14px;background:var(--ac2)}
+nav a:hover{background:var(--ac);color:#fff}
+main{max-width:980px;margin:0 auto;padding:24px 18px 80px}
+section{margin-bottom:46px}
+h2{font-size:1.32em;border-left:6px solid var(--ac);padding-left:12px;margin:44px 0 18px;line-height:1.4}
+h3{font-size:1.08em;margin:30px 0 10px;color:#0d47a1}
+h4{font-size:.99em;margin:20px 0 8px;color:#37474f}
+.lead{font-size:1.03em;background:#fff;border:1px solid var(--bd);border-left:5px solid var(--ac);
+border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:11px;padding:16px 18px;margin:16px 0}
+.why{background:var(--key2);border:1px solid #ce93d8;border-left:5px solid var(--key);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.why b:first-child{color:var(--key)}
+.trap{background:var(--warn2);border:1px solid #ffcc80;border-left:5px solid var(--warn);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.trap b:first-child{color:#e65100}
+.tens{background:var(--tension2);border:1px solid #a5d6a7;border-left:5px solid var(--tension);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.comp{background:var(--comp2);border:1px solid #ef9a9a;border-left:5px solid var(--comp);
+border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0}
+.fig{background:#fff;border:1px solid var(--bd);border-radius:11px;padding:16px 14px 10px;margin:20px 0;overflow-x:auto}
+.fig svg{display:block;margin:0 auto;max-width:100%;height:auto}
+.fig .cap{font-size:.85em;color:var(--mut);text-align:center;margin-top:10px;line-height:1.6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9em;background:#fff}
+th,td{border:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600}
+tbody tr:nth-child(even){background:#fafcfd}
+ul,ol{margin:10px 0 10px 4px;padding-left:22px}li{margin:5px 0}
+.pill{display:inline-block;font-size:.76em;padding:2px 8px;border-radius:10px;margin-right:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+details{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:10px 14px;margin:12px 0}
+summary{cursor:pointer;font-weight:600;color:var(--ac)}
+details p{border-left:3px solid #e0e0e0;padding-left:12px;margin:8px 0;color:#37474f}
+.qlink{color:#1565c0;text-decoration:none;border-bottom:1px dotted #90caf9;font-weight:600}
+.katex-display{margin:14px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-top:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<header>
+<h1>SM-U3-3　深開挖擋土與地層穩定</h1>
+<p class="sub">命題大綱名稱為「坡地工程」，但 15 題實際考的全是深開挖擋土結構與地層破壞 —— 本講義以實際題型為準</p>
+<p class="meta">土壤力學與基礎設計 · 命題大綱第三單元第 3 子項 · 觀念講義（練題前讀）· 15 題主分類，佔全科 16%，命題排名第 1</p>
+</header>
+
+<nav>
+<a href="#s0">§0 全景</a>
+<a href="#s1">§1 土壓力</a>
+<a href="#s2">§2 貫入深度</a>
+<a href="#s3">§3 支撐荷重</a>
+<a href="#s4">§4 基底隆起</a>
+<a href="#s5">§5 水的三種攻擊</a>
+<a href="#s6">§6 對策</a>
+<a href="#s7">§7 決策流程</a>
+<a href="#s8">§8 考點對照</a>
+<a href="#s9">§9 陷阱總表</a>
+<a href="#s10">§10 自我檢測</a>
+<a href="#s10b">§10.5 因果鏈</a>
+<a href="#s11">★ 精選 5 題</a>
+<span style="flex:1"></span>
+<a href="study-SM-U3-3.html" style="background:#eceff1;color:#455a64">📊 速查頁</a>
+<a href="SM-U3-3_坡地工程.pdf" target="_blank" style="background:#eceff1;color:#455a64">📄 Keynote</a>
+<a href="lecture-SM-U3-3.pdf" target="_blank" style="background:#eceff1;color:#455a64">🖨️ 本頁 PDF</a>
+</nav>
+
+<main>
+<section id="s0">
+<h2>§0　全景：這 15 題只在問兩件事</h2>
+
+<div class="lead">
+深開挖只做了一個動作 —— <b>把一塊土挖走</b>。而那塊土原本同時提供了兩樣東西：對擋土面的<b>側向支撐</b>，以及對下方地層的<b>垂直壓重</b>。
+兩樣東西一起消失，於是產生兩個彼此獨立的問題：<b>牆會不會倒</b>（側向支撐沒了 → 背側的土與水推過來），
+<b>地會不會浮</b>（垂直壓重沒了 → 下方的土與水頂上來）。
+本單元 15 題，每一題都可以歸到這兩軸上；把題目歸對軸，公式就自己浮出來了。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+  <line x1="450" y1="10" x2="450" y2="450" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7 5"/>
+
+  <!-- LEFT : wall overturning -->
+  <text x="30" y="32" font-size="19" font-weight="bold" fill="#c62828">① 牆會不會倒？</text>
+  <text x="30" y="56" font-size="13.5" fill="#607d8b">側向支撐被拿走 → 背側土壓＋水壓推向開挖側</text>
+
+  <!-- backfill ground -->
+  <rect x="30" y="90" width="220" height="240" fill="#ffebee" stroke="none"/>
+  <line x1="30" y1="90" x2="250" y2="90" stroke="#455a64" stroke-width="2.5"/>
+  <!-- excavation side -->
+  <rect x="258" y="230" width="160" height="100" fill="#eceff1" stroke="none"/>
+  <line x1="258" y1="230" x2="418" y2="230" stroke="#455a64" stroke-width="2.5"/>
+  <!-- wall -->
+  <rect x="250" y="80" width="8" height="270" fill="#37474f"/>
+  <!-- active arrows -->
+  <path d="M190 130 L244 130" stroke="#c62828" stroke-width="3" marker-end="url(#arR)"/>
+  <path d="M175 170 L244 170" stroke="#c62828" stroke-width="3" marker-end="url(#arR)"/>
+  <path d="M160 210 L244 210" stroke="#c62828" stroke-width="3" marker-end="url(#arR)"/>
+  <path d="M145 250 L244 250" stroke="#c62828" stroke-width="3" marker-end="url(#arR)"/>
+  <text x="60" y="300" font-size="14" fill="#c62828">主動土壓 + 水壓</text>
+  <!-- passive -->
+  <path d="M330 300 L266 300" stroke="#2e7d32" stroke-width="3" marker-end="url(#arL)"/>
+  <path d="M345 330 L266 330" stroke="#2e7d32" stroke-width="3" marker-end="url(#arL)"/>
+  <text x="278" y="358" font-size="13.5" fill="#2e7d32">被動土壓（貫入換來）</text>
+  <!-- rotation -->
+  <path d="M300 352 A 46 46 0 0 1 254 398" fill="none" stroke="#e65100" stroke-width="2.5" marker-end="url(#arO)"/>
+  <text x="305" y="392" font-size="13.5" fill="#e65100">繞樁尖轉動</text>
+
+  <rect x="30" y="404" width="390" height="44" rx="8" fill="#ffebee" stroke="#ef9a9a"/>
+  <text x="42" y="424" font-size="14.5" font-weight="bold" fill="#c62828">這是「力矩／力平衡」問題</text>
+  <text x="42" y="442" font-size="13" fill="#37474f">解方：加深貫入深度 D、加支撐或地錨、加大牆體剛度</text>
+
+  <!-- RIGHT : ground heaving -->
+  <text x="470" y="32" font-size="19" font-weight="bold" fill="#1565c0">② 地會不會浮？</text>
+  <text x="470" y="56" font-size="13.5" fill="#607d8b">垂直壓重被拿走 → 下方土與水頂上來</text>
+
+  <rect x="470" y="90" width="220" height="240" fill="#e3f2fd" stroke="none"/>
+  <line x1="470" y1="90" x2="690" y2="90" stroke="#455a64" stroke-width="2.5"/>
+  <rect x="698" y="230" width="160" height="100" fill="#eceff1" stroke="none"/>
+  <line x1="698" y1="230" x2="858" y2="230" stroke="#455a64" stroke-width="2.5"/>
+  <rect x="690" y="80" width="8" height="200" fill="#37474f"/>
+  <!-- downward load -->
+  <path d="M560 100 L560 160" stroke="#546e7a" stroke-width="3" marker-end="url(#arD)"/>
+  <path d="M610 100 L610 160" stroke="#546e7a" stroke-width="3" marker-end="url(#arD)"/>
+  <text x="500" y="185" font-size="14" fill="#546e7a">背側覆土重 γH + q（驅動）</text>
+  <!-- upward arrows -->
+  <path d="M730 330 L730 244" stroke="#1565c0" stroke-width="3.5" marker-end="url(#arU)"/>
+  <path d="M780 330 L780 244" stroke="#1565c0" stroke-width="3.5" marker-end="url(#arU)"/>
+  <path d="M830 330 L830 244" stroke="#1565c0" stroke-width="3.5" marker-end="url(#arU)"/>
+  <text x="706" y="356" font-size="14" fill="#1565c0">底部土體／水壓上頂</text>
+  <path d="M700 226 Q 780 206 856 226" fill="none" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="470" y="392" font-size="13.5" fill="#e65100">三種機制：剪力不足／水壓頂破／滲流失重</text>
+
+  <rect x="470" y="404" width="390" height="44" rx="8" fill="#e3f2fd" stroke="#90caf9"/>
+  <text x="482" y="424" font-size="14.5" font-weight="bold" fill="#1565c0">這是「應力平衡」問題</text>
+  <text x="482" y="442" font-size="13" fill="#37474f">解方：留覆土／降低水頭／地盤改良提高 Su</text>
+
+  <defs>
+    <marker id="arR" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c62828"/></marker>
+    <marker id="arL" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2e7d32"/></marker>
+    <marker id="arU" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1565c0"/></marker>
+    <marker id="arD" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#546e7a"/></marker>
+    <marker id="arO" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#e65100"/></marker>
+  </defs>
+</svg>
+<div class="cap">兩軸互相獨立：貫入深度加再深，也擋不住受壓水層把坑底頂破；坑底改良得再硬，也救不了支撐不足的牆。考題常在同一題裡同時問兩軸（如 SM-2020-2、SM-2017-4、SM-2012-4），必須分開檢核。</div>
+</div>
+
+<h3>把 15 題放到兩軸上</h3>
+
+<table>
+<thead><tr><th style="width:22%">軸</th><th style="width:26%">子問題</th><th>對應題目</th></tr></thead>
+<tbody>
+<tr><td rowspan="3"><b style="color:#c62828">① 牆會不會倒</b><br>力矩／力平衡</td>
+<td>貫入深度 D（懸臂／單支撐／固定端）</td><td>SM-2022-4、SM-2020-2、SM-2005-1、SM-2014-3、SM-2007-4、SM-2008-3</td></tr>
+<tr><td>多層支撐荷重與斷面需求</td><td>SM-2011-4、SM-2012-4、SM-2015-3</td></tr>
+<tr><td>擋土牆四項檢核（傾覆／滑移）</td><td>SM-2018-4、SM-2015-2</td></tr>
+<tr><td rowspan="3"><b style="color:#1565c0">② 地會不會浮</b><br>應力平衡</td>
+<td>基底隆起（剪力強度不足）</td><td>SM-2012-4、SM-2015-3、SM-2017-4、SM-2023-4</td></tr>
+<tr><td>上舉破壞（受壓水層頂破不透水層）</td><td>SM-2003-3、SM-2017-4</td></tr>
+<tr><td>砂湧／管湧（滲流使有效應力歸零）</td><td>SM-2020-2、SM-2017-4</td></tr>
+<tr><td><b style="color:#6a1b9a">③ 特例</b></td><td>沿水平弱面的側向滑動（島式開挖）</td><td>SM-2006-3</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>為什麼要先分軸再算？</b>因為兩軸用的土壤參數常常不同，甚至互相矛盾。
+最典型的是 <a class="qlink" href="problems-view/SM-2006-3.html" target="_blank">SM-2006-3</a>：豪雨讓水位上升，砂土的<b>有效應力</b>下降（土壓力那一軸要換 \(\gamma'\)、要加水壓），
+但薄層黏土的<b>不排水剪力強度 \(s_u\)</b> 完全不變（抗滑那一軸維持原值）。
+若沒有先分軸，很容易把水壓也拿去扣黏土的抗剪力，答案直接崩掉。
+</div>
+
+<div class="trap">
+<b>大綱名稱的陷阱。</b>本子項官方名稱是「坡地工程」，但歷屆 15 題<b>沒有一題</b>是圓弧滑動或無限邊坡分析 ——
+那些題目在知識庫中歸在 SM-U3-4（6 題）。所以讀這一節時不要花時間在 Fellenius／Bishop 上；
+但考場上若真的出現邊坡題，記得它與本單元共用同一套「驅動 vs 抵抗」的極限平衡骨架。
+</div>
+</section>
+<section id="s1">
+<h2>§1　土壓力：所有擋土題的燃料</h2>
+
+<div class="lead">
+「牆會不會倒」那一軸，全部的驅動力與抵抗力都來自側向土壓力。
+所以 \(K_a\)、\(K_p\) 不是要背的兩個數字，而是<b>土壤被推到剪力破壞邊緣時，水平應力與垂直應力的比值</b>。
+把這句話記住，砂土、黏土、傾斜背填的所有變形都能自己推。
+</div>
+
+<h3>1.1　\(K_a\)、\(K_p\) 在怕什麼</h3>
+
+<p>土元素在地下受垂直應力 \(\sigma_v'\)。牆往外移一點，水平應力 \(\sigma_h'\) 就掉一點；掉到 Mohr 圓剛好碰到破壞包絡線，就不能再掉了 —— 那個下限就是<b>主動</b>。反過來牆往土裡擠，\(\sigma_h'\) 一直漲，漲到 Mohr 圓再度碰到包絡線，那個上限就是<b>被動</b>。由 Mohr 圓與 \(\tau=c'+\sigma'\tan\phi'\) 相切的幾何關係可得：</p>
+
+$$\sigma_a' = K_a\sigma_v' - 2c'\sqrt{K_a},\qquad \sigma_p' = K_p\sigma_v' + 2c'\sqrt{K_p}$$
+$$K_a=\tan^2\!\left(45^\circ-\tfrac{\phi'}{2}\right),\qquad K_p=\tan^2\!\left(45^\circ+\tfrac{\phi'}{2}\right)=\frac{1}{K_a}$$
+
+<div class="why">
+<b>用極限檢查取代背表。</b>
+\(\phi'=0\)（飽和黏土不排水）→ \(K_a=K_p=\tan^2 45^\circ=1\)，水平與垂直應力相等，這正是「不排水黏土像流體」的數學表現。
+\(\phi'\to 90^\circ\)（假想極粗顆粒）→ \(K_a\to 0\)、\(K_p\to\infty\)，土完全自立、不推牆。
+考場忘記公式時，代 \(\phi'=30^\circ\) 心算：\(K_a=\tan^2 30^\circ=1/3\)、\(K_p=3\)，馬上就能檢查計算機有沒有按錯。
+</div>
+
+<h3>1.2　\(\phi=0\) 黏土的淨壓力 \(4S_u-q\)：本單元最好用的一條</h3>
+
+<p>開挖面以下若是飽和黏土（\(\phi=0\)、以總應力法分析），版樁兩側的壓力寫出來是：</p>
+
+$$\text{背側（主動）：}\ \sigma_a=(q+\gamma z)-2S_u \qquad\qquad \text{開挖側（被動）：}\ \sigma_p=\gamma z+2S_u$$
+
+<p>相減，\(\gamma z\) 兩邊<b>互相抵消</b>：</p>
+
+$$p_{net}=\sigma_p-\sigma_a=4S_u-q$$
+
+<div class="fig">
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Panel A -->
+  <text x="30" y="30" font-size="15" font-weight="bold" fill="#c62828">背側（主動）</text>
+  <text x="30" y="50" font-size="13" fill="#37474f">q + γz − 2Su</text>
+  <line x1="60" y1="70" x2="60" y2="300" stroke="#455a64" stroke-width="2"/>
+  <polygon points="60,70 118,70 176,300 60,300" fill="#ffcdd2" stroke="#c62828" stroke-width="1.6"/>
+  <text x="122" y="66" font-size="12.5" fill="#c62828">q − 2Su</text>
+  <text x="120" y="322" font-size="12.5" fill="#c62828">q + γD − 2Su</text>
+  <text x="30" y="348" font-size="12.5" fill="#607d8b">隨深度以斜率 γ 增加</text>
+
+  <text x="238" y="196" font-size="30" fill="#607d8b">−</text>
+
+  <!-- Panel B -->
+  <text x="300" y="30" font-size="15" font-weight="bold" fill="#2e7d32">開挖側（被動）</text>
+  <text x="300" y="50" font-size="13" fill="#37474f">γz + 2Su</text>
+  <line x1="330" y1="70" x2="330" y2="300" stroke="#455a64" stroke-width="2"/>
+  <polygon points="330,70 388,70 446,300 330,300" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="392" y="66" font-size="12.5" fill="#2e7d32">2Su</text>
+  <text x="392" y="322" font-size="12.5" fill="#2e7d32">γD + 2Su</text>
+  <text x="300" y="348" font-size="12.5" fill="#607d8b">同樣以斜率 γ 增加</text>
+
+  <text x="500" y="196" font-size="30" fill="#607d8b">=</text>
+
+  <!-- Panel C -->
+  <text x="560" y="30" font-size="15" font-weight="bold" fill="#1565c0">淨壓力（抵抗）</text>
+  <text x="560" y="50" font-size="13" fill="#37474f">4Su − q ← 與深度無關</text>
+  <line x1="590" y1="70" x2="590" y2="300" stroke="#455a64" stroke-width="2"/>
+  <rect x="590" y="70" width="110" height="230" fill="#bbdefb" stroke="#1565c0" stroke-width="1.8"/>
+  <text x="706" y="76" font-size="12.5" fill="#1565c0">4Su − q</text>
+  <text x="706" y="300" font-size="12.5" fill="#1565c0">4Su − q</text>
+  <text x="560" y="348" font-size="12.5" fill="#607d8b">γ 抵消 → 均布矩形</text>
+  <text x="560" y="372" font-size="12.5" fill="#e65100">若 4Su &lt; q 則為負 → 牆撐不住</text>
+</svg>
+<div class="cap">γz 在兩側都出現且大小相同，相減後消失，所以 φ=0 黏土的淨抵抗壓力是<b>均布矩形</b>。這讓力矩積分退化成「矩形面積 × 到形心的距離」，是 SM-2005-1、SM-2014-3 能在考場算完的關鍵。</div>
+</div>
+
+<div class="why">
+<b>「4」是怎麼來的？</b>不是背的。主動側往下扣 \(2S_u\)、被動側往上加 \(2S_u\)，兩者相減自然出現 \(4S_u\)。
+而 \(2S_u\) 又來自 \(2c\sqrt{K}\) 在 \(K=1\) 時的退化。整條式子只有一個外來項 \(q\)（開挖面上方的<b>總</b>覆土壓力），
+它代表「背側比開挖側多壓的那一段」。
+</div>
+
+<div class="why">
+<b>負值的物理意義比公式重要。</b>若 \(4S_u&lt;q\)，代表黏土的強度已經不足以承受開挖造成的應力差 ——
+這正是<b>基底隆起</b>（§4）的臨界條件從側向土壓力角度看到的樣子。同一件事，兩種寫法。
+\(4S_u=q\) 對應 \(\gamma H/S_u=4\)，也就是 §3 會用到的<b>穩定數 \(N=4\)</b> 分界線。三者是同一個門檻。
+</div>
+
+<h3>1.3　總應力法還是有效應力法？決定要不要另外加水壓</h3>
+
+<table>
+<thead><tr><th style="width:20%">情況</th><th style="width:32%">側向壓力寫法</th><th>水壓要不要另外加</th></tr></thead>
+<tbody>
+<tr><td>砂土、給 \(\phi'\)（有效應力法）</td><td>\(\sigma_h'=K\sigma_v'\)，\(\sigma_v'\) 用 \(\gamma'\) 累積</td><td><b style="color:#c62828">要</b>。\(K\) 只作用在有效應力上，水壓另外畫一個三角形疊上去</td></tr>
+<tr><td>飽和黏土、給 \(S_u\)（總應力法，\(\phi=0\)）</td><td>\(\sigma_h=\sigma_v\pm 2S_u\)，\(\sigma_v\) 用<b>總</b>單位重</td><td><b style="color:#2e7d32">不要</b>。算出來已經是總側向應力，水壓已含在內</td></tr>
+</tbody>
+</table>
+
+<div class="trap">
+<b>陷阱：水壓重複計算。</b><a class="qlink" href="problems-view/SM-2008-3.html" target="_blank">SM-2008-3</a> 與 <a class="qlink" href="problems-view/SM-2014-3.html" target="_blank">SM-2014-3</a> 都在這裡設卡。
+判準很簡單：<b>公式裡出現 \(\gamma_{sat}\)（總單位重）就不要再加水壓；出現 \(\gamma'\) 就一定要加。</b>
+同一題可以上半段（砂土）用有效應力法加水壓、下半段（黏土）用總應力法不加水壓 —— SM-2014-3 正是如此。
+</div>
+
+<h3>1.4　張力裂縫：黏土背填一定要處理</h3>
+
+<p>當 \(c'&gt;0\)，主動土壓力在淺層是負的（拉力）。土不能受拉，所以那一段實際上是裂開的，不提供任何側向推力。裂縫深度由 \(\sigma_a'=0\) 解出：</p>
+
+$$z_c=\frac{2c'}{\gamma\sqrt{K_a}}$$
+
+<div class="trap">
+<b>兩個相反方向的錯誤，都會扣分。</b><br>
+① 把 \(0\sim z_c\) 的負壓力算進去 → 推力被低估 → <b>不保守</b>（<a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a>）。<br>
+② 遇豪雨卻只扣掉裂縫、忘了<b>裂縫會積滿水</b> → 推力被嚴重低估。
+<a class="qlink" href="problems-view/SM-2006-3.html" target="_blank">SM-2006-3</a> 中 12 m 深的積水裂縫產生 706 kN/m 水推力，佔總驅動力的 85%，
+安全係數從 1.22 直接掉到 0.47。這就是邊坡與擋土結構「大雨才破壞」的量化原因。
+</div>
+
+<h3>1.5　背填傾斜：Rankine 要換一般式</h3>
+
+<p>地表傾角 \(\alpha\neq 0\) 時，\(K_a\) 不能用 \(\tan^2(45^\circ-\phi/2)\)：</p>
+
+$$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha+\sqrt{\cos^2\alpha-\cos^2\phi}}$$
+
+<p>而且合力 \(P_a\) 的<b>方向與地表平行</b>，所以有垂直分量 \(P_{ay}=P_a\sin\alpha\)。這個垂直分量壓在牆踵上，對抗傾覆與抗滑移都是<b>有利</b>的，漏掉會低估安全係數（<a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a> 中 \(P_{ay}=51.3\) kN/m，貢獻 287 kN·m/m 的抵抗力矩）。</p>
+
+<div class="why">
+<b>懸臂式擋土牆的「虛擬牆背」。</b>Rankine 假設牆背垂直光滑，但 L 形／倒 T 形牆的牆背根本不是一個平面。
+標準處理是：<b>從牆踵末端垂直向上劃一個假想面</b>，這個面到牆身之間的土「算成牆的一部分」（跟著牆一起動，所以牆背確實光滑垂直）。
+虛擬牆背高度 \(H'=\) 莖高 ＋ 底版厚 ＋ 踵長 \(\times\tan\alpha\) —— 三項缺一不可，SM-2018-4 若只用題目標的 7.5 m 會低估 \(P_a\) 約 33%。
+</div>
+
+<h3>1.6　手算範例：SM-2005-1 的土壓力分布</h3>
+
+<div class="box">
+<b>條件</b>：開挖 \(H=9\) m，背側砂土 \(\gamma_s=18\) kN/m³、\(\phi=32^\circ\)；開挖面以下黏土 \(\phi=0\)、\(c_c=45\) kPa。地下水位以上。
+
+<p><b>① 砂土段主動土壓力</b></p>
+$$K_a=\tan^2(45^\circ-16^\circ)=\tan^2 29^\circ=0.3073$$
+$$p_a(z{=}9)=\gamma_s H K_a=18\times 9\times 0.3073=49.78\ \text{kPa}\quad(\text{三角形})$$
+$$P_a=\tfrac12\times 49.78\times 9=224.0\ \text{kN/m},\quad \text{作用於開挖面上方 }3\ \text{m}$$
+
+<p><b>② 黏土段淨抵抗壓力</b>（此處 \(q=\gamma_s H=162\) kPa）</p>
+$$p_{net}=4c_c-q=4(45)-162=180-162=18\ \text{kPa}\quad(\text{均布})$$
+
+<p><b>③ 自我檢查</b>：\(p_{net}=18&gt;0\)，代表黏土還撐得住，版樁有解。
+若題目把 \(c_c\) 改成 40 kPa，\(p_{net}=160-162=-2&lt;0\) —— 這時<b>方程式無正根</b>，
+正確答案不是「D 很大」而是「此工法不可行，須先地盤改良或降低開挖深度」。考場上算出負值時千萬別硬解。</p>
+</div>
+</section>
+<section id="s2">
+<h2>§2　貫入深度：你在買被動土壓力</h2>
+
+<div class="lead">
+版樁／連續壁伸到開挖面以下，唯一的目的是<b>換取開挖側的被動土壓力</b>。
+被動土壓力隨深度線性增加，所以貫入愈深、抵抗力矩以 \(D^2\)（甚至 \(D^3\)）成長，而驅動力矩幾乎不變 ——
+這就是為什麼「加深貫入」總能解決倒牆問題，也是為什麼所有貫入深度題最後都變成一個對 \(D\) 的多項式方程。
+<b>你要決定的只有兩件事：牆的變形形狀（決定模型），以及對哪一點取矩（決定能不能解）。</b>
+</div>
+
+<h3>2.1　三種模型，看變形形狀選</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
+  <!-- panel 1 : cantilever -->
+  <text x="20" y="28" font-size="15.5" font-weight="bold" fill="#c62828">① 懸臂式（無支撐）</text>
+  <line x1="20" y1="80" x2="130" y2="80" stroke="#455a64" stroke-width="2"/>
+  <line x1="138" y1="190" x2="270" y2="190" stroke="#455a64" stroke-width="2"/>
+  <rect x="130" y="70" width="8" height="270" fill="#37474f"/>
+  <path d="M168 74 Q 152 200 126 300 Q 120 325 118 340" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <circle cx="134" cy="285" r="5" fill="#e65100"/>
+  <text x="144" y="290" font-size="12.5" fill="#e65100">旋轉中心</text>
+  <circle cx="134" cy="340" r="6" fill="#1565c0"/>
+  <text x="146" y="345" font-size="13" font-weight="bold" fill="#1565c0">O（樁尖）</text>
+  <text x="20" y="378" font-size="13" fill="#37474f">未知數：只有 D</text>
+  <text x="20" y="398" font-size="13" font-weight="bold" fill="#1565c0">對樁尖 O 取矩</text>
+  <text x="20" y="418" font-size="12.5" fill="#607d8b">SM-2022-4 · SM-2020-2</text>
+
+  <!-- panel 2 : free earth -->
+  <text x="320" y="28" font-size="15.5" font-weight="bold" fill="#2e7d32">② 自由端支撐法</text>
+  <line x1="320" y1="80" x2="430" y2="80" stroke="#455a64" stroke-width="2"/>
+  <line x1="438" y1="190" x2="570" y2="190" stroke="#455a64" stroke-width="2"/>
+  <rect x="430" y="70" width="8" height="270" fill="#37474f"/>
+  <path d="M436 100 L390 100" stroke="#6a1b9a" stroke-width="3"/>
+  <circle cx="392" cy="100" r="5" fill="#6a1b9a"/>
+  <text x="330" y="96" font-size="13" font-weight="bold" fill="#6a1b9a">地錨 T</text>
+  <path d="M434 74 Q 470 190 448 300 Q 442 325 442 340" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <text x="446" y="345" font-size="12.5" fill="#607d8b">樁底可自由轉動</text>
+  <text x="320" y="378" font-size="13" fill="#37474f">未知數：D 與 T（兩個）</text>
+  <text x="320" y="398" font-size="13" font-weight="bold" fill="#6a1b9a">對地錨點取矩 → 消掉 T</text>
+  <text x="320" y="418" font-size="12.5" fill="#607d8b">SM-2005-1 · SM-2014-3 · SM-2008-3</text>
+
+  <!-- panel 3 : fixed earth -->
+  <text x="620" y="28" font-size="15.5" font-weight="bold" fill="#1565c0">③ 固定端支撐法</text>
+  <line x1="620" y1="80" x2="730" y2="80" stroke="#455a64" stroke-width="2"/>
+  <line x1="738" y1="190" x2="870" y2="190" stroke="#455a64" stroke-width="2"/>
+  <rect x="730" y="70" width="8" height="290" fill="#37474f"/>
+  <path d="M736 100 L690 100" stroke="#6a1b9a" stroke-width="3"/>
+  <circle cx="692" cy="100" r="5" fill="#6a1b9a"/>
+  <text x="630" y="96" font-size="13" font-weight="bold" fill="#6a1b9a">地錨 T</text>
+  <path d="M734 74 Q 772 180 734 240 Q 700 300 726 360" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <circle cx="734" cy="240" r="6" fill="#e65100"/>
+  <text x="746" y="238" font-size="12.5" font-weight="bold" fill="#e65100">反曲點（淨壓力＝0）</text>
+  <text x="746" y="256" font-size="12" fill="#607d8b">深度 y，視為鉸接</text>
+  <text x="620" y="378" font-size="13" fill="#37474f">樁底被土夾住，不能轉</text>
+  <text x="620" y="398" font-size="13" font-weight="bold" fill="#e65100">對反曲點取矩 → Blum 等值梁</text>
+  <text x="620" y="418" font-size="12.5" fill="#607d8b">SM-2007-4</text>
+</svg>
+<div class="cap">三種模型的差別只在「樁底能不能轉」與「有沒有支撐」。變形形狀決定了哪一點的彎矩為零，而彎矩為零的那一點就是最佳取矩點 —— 因為在那裡把梁切開，切口上沒有力矩，靜力方程立刻可解。</div>
+</div>
+
+<div class="why">
+<b>取矩點不是隨便選的，是為了「消未知數」。</b>
+自由端支撐法有 \(D\) 與 \(T\) 兩個未知數，但只有兩條方程（\(\Sigma M=0\)、\(\Sigma F_x=0\)）。
+若對樁底取矩，兩個未知數都會出現在同一條式子裡，解不開；
+<b>對地錨點取矩，\(T\) 的力臂為零而自動消失</b>，剩下的方程只含 \(D\)，變成一元二次式。
+求出 \(D\) 之後再回到 \(\Sigma F_x=0\) 拿 \(T\)。這個「先取矩消掉一個、再用力平衡補回來」的順序，六題共用。
+</div>
+
+<h3>2.2　自由端支撐法：一元二次式的來歷</h3>
+
+<p>以 \(\phi=0\) 黏土為例（§1.2 已知淨壓力為均布 \(p_{net}=4S_u-q\)）：主動側合力 \(P_a\) 位置固定，抵抗側是一塊寬 \(p_{net}\)、高 \(D\) 的矩形，形心在 \(D/2\)。對地錨點取矩：</p>
+
+$$\underbrace{p_{net}\,D}_{\text{抵抗力}}\times\underbrace{\left[(H-h_a)+\tfrac{D}{2}\right]}_{\text{力臂}}\;=\;P_a\times\left(\tfrac{2}{3}H-h_a\right)$$
+
+<p>展開後 \(D\) 的最高次是 2 —— 這就是為什麼自由端支撐法永遠得到一元二次式。</p>
+
+<div class="box">
+<b>手算：SM-2005-1 續（承 §1.6）</b><br>
+已知 \(P_a=224.0\) kN/m、\(p_{net}=18\) kPa、\(H=9\)、\(h_a=1.5\)。
+$$18D\,(7.5+0.5D)=224.0\times 4.5=1008.0$$
+$$9D^2+135D-1008.0=0\ \Rightarrow\ D^2+15D-112.0=0\ \Rightarrow\ \boxed{D=5.47\ \text{m}}$$
+$$T=P_a-p_{net}D=224.0-18(5.47)=\boxed{125.5\ \text{kN/m}}$$
+<b>自我檢查</b>：\(T\) 必須為正且小於 \(P_a\)。若算出 \(T&lt;0\)，表示被動抵抗已超過主動推力，代表 \(D\) 解錯（多半是取矩點選錯或力臂算錯）。
+</div>
+
+<h3>2.3　固定端支撐法：Blum 等值梁</h3>
+
+<p>當貫入夠深、土壤把樁底夾住不讓它轉，牆的變形會出現<b>反曲點</b>（彎矩為零）。Blum 的簡化是：<b>把反曲點當成鉸接，直接在該處把牆切成上下兩段靜定梁。</b></p>
+
+<ol>
+<li><b>找反曲點深度 \(y\)</b>：淨壓力為零處。開挖面以下淨壓力 \(=\gamma y(K_p'-K_a)-p_{a,\text{開挖面}}\)，令其為零：
+$$y=\frac{p_{a,\text{開挖面}}}{\gamma\,(K_p'-K_a)}$$</li>
+<li><b>上段梁</b>（地錨 ↔ 鉸接點）對鉸接點取矩 → 得 \(T\)。</li>
+<li><b>鉸接點剪力</b> \(R=\Sigma P_{\text{主動}}-T\)。</li>
+<li><b>下段梁</b>需要多長才能產生反力 \(R\)？Blum 近似：\(L_5=\sqrt{6R/[\gamma(K_p'-K_a)]}\)，總貫入 \(D=y+L_5\)。</li>
+</ol>
+
+<div class="why">
+<b>\(\sqrt{6R/k'}\) 的來歷。</b>下段梁承受的是斜率為 \(k'=\gamma(K_p'-K_a)\) 的三角形淨被動壓力。
+令它同時滿足剪力平衡與力矩平衡，即可解出所需長度 —— \(6\) 這個數字來自三角形分布的形心在 \(1/3\) 處。
+量綱檢查：\(R\)[kN/m] ÷ \(k'\)[kN/m³] = m²，開根號得 m。<b>量綱對，公式就記對了。</b>
+</div>
+
+<div class="trap">
+<b>陷阱：安全係數要施加在哪裡？</b>兩種都被接受，但<b>結果不同、不可混用</b>：<br>
+① <b>折減 \(K_p\)</b>：\(K_p'=K_p/FS\) 後再解方程。此法算出的 \(T\) 也自帶安全餘裕。
+<a class="qlink" href="problems-view/SM-2007-4.html" target="_blank">SM-2007-4</a> 明講「安全係數採用 1.5」，就走這條。<br>
+② <b>先算理論值再放大</b>：以 \(FS=1\) 求 \(D_{theory}\)，實務再乘 1.2～1.3。
+題目問「<b>理論</b>貫入深度」「<b>最少</b>入土深度」時走這條，直接寫理論值（SM-2005-1、SM-2014-3、SM-2022-4）。<br>
+判準：<b>題目有沒有給 FS 數字，以及有沒有「理論／最少」字眼。</b>
+</div>
+
+<h3>2.4　懸臂式：零淨壓力點與四次方程</h3>
+
+<p>懸臂樁在開挖面以下會繞某點旋轉，導致<b>兩側的主／被動角色在該點上下互換</b>。淨壓力從開挖面的主動值線性遞減，到某深度 \(L_3\) 歸零，再往下轉為被動側控制：</p>
+
+$$L_3=\frac{p_{a,\text{開挖面}}}{\gamma'(K_p-K_a)}$$
+
+<p>再對樁尖取矩並代入 \(\Sigma F=0\)，就得到考卷會直接印給你的四次方程 \(L_4^4+A_1L_4^3-A_2L_4^2-A_3L_4-A_4=0\)，最後 \(D_L=L_3+L_4\)。</p>
+
+<div class="trap">
+<b>陷阱：\(\bar{z}\) 是對「零淨壓力點」取矩，不是對開挖面。</b>
+<a class="qlink" href="problems-view/SM-2022-4.html" target="_blank">SM-2022-4</a> 的 \(A_1\sim A_4\) 全部依賴 \(\bar{z}\)，取錯基準點會讓四個常數同時錯。
+考場上這種題的風險不在觀念而在<b>按錯計算機</b>：先把 \(\gamma'(K_p-K_a)\)、\(P\)、\(\bar{z}\) 三個中間量寫在紙上框起來，再逐一代入。
+</div>
+
+<div class="why">
+<b>懸臂在深開挖幾乎不可行 —— 這是可以驗證的。</b>
+<a class="qlink" href="problems-view/SM-2020-2.html" target="_blank">SM-2020-2</a> 中砂土開挖僅 4 m、版樁貫入 6 m（貫入／開挖 = 1.5），
+算出來 \(FS=818/1364=0.60&lt;1.0\)。
+<a class="qlink" href="problems-view/SM-2022-4.html" target="_blank">SM-2022-4</a> 開挖 9 m，臨界貫入 \(D_L=7.13\) m。
+記住這個量級：<b>懸臂樁的貫入深度大約要等於甚至超過開挖深度</b>，一旦題目給的貫入明顯偏小，答案八成是「不安全，需加支撐或地錨」。
+</div>
+
+<h3>2.5　地錨要拉多遠才有效</h3>
+
+<p>地錨的抵抗來自錨碇端的<b>被動</b>楔體；版樁的推力來自背側的<b>主動</b>楔體。兩個楔體若在地表重疊，等於「自己拉自己」，地錨形同虛設。所以：</p>
+
+$$x\ \ge\ \underbrace{\sum H_i\cot\!\left(45^\circ+\tfrac{\phi_i}{2}\right)}_{\text{版樁主動楔體（自樁底起算）}}\;+\;\underbrace{h_a\cot\!\left(45^\circ-\tfrac{\phi}{2}\right)}_{\text{錨碇被動楔體}}$$
+
+<div class="why">
+<b>角度為什麼一個加一個減？</b>主動破壞面與水平夾 \(45^\circ+\phi/2\)（陡），被動破壞面夾 \(45^\circ-\phi/2\)（緩）——
+這正是 Mohr 圓上破壞面方位的直接結果，也是 \(K_a\)、\(K_p\) 裡那兩個角度的來源。
+兩個楔體一陡一緩，所以主動楔體「往後倒」、被動楔體「往前鋪」，兩者要錯開。
+SM-2007-4 算得 \(x\ge 9.39\) m，約為開挖深度 7.5 m 的 1.25 倍 —— 記住這個量級當檢查。
+</div>
+</section>
+<section id="s3">
+<h2>§3　多層支撐：視土壓力為什麼「不是真的土壓力」</h2>
+
+<div class="lead">
+單支撐的牆繞一點轉，用 Rankine 三角形分布沒問題。<b>但多層支撐的牆根本不繞任何一點轉</b> ——
+它由上而下逐層架設，上層支撐先鎖住，下層還沒挖到；等挖到下層時，上半段早已停止變形。
+變形歷程完全不同，實測到的支撐力也就與三角形分布對不上。
+Peck 的做法很誠實：<b>不去推導理論分布，而是把大量現場實測的支撐力反推回去，畫出一條「包住所有量測值」的包絡線。</b>
+</div>
+
+<div class="why">
+<b>「包絡線」三個字要當真。</b>它是所有支撐、所有施工階段量測值的<b>上限</b>，
+不代表任何一個瞬間牆上真的存在這樣一條壓力分布。
+所以它天生保守 —— 用它算支撐荷重是安全的；用它算牆體彎矩與斷面（<a class="qlink" href="problems-view/SM-2011-4.html" target="_blank">SM-2011-4</a> 第三小題就是這樣做）
+在考試與實務上都被接受，但要理解那是「保守的設計彎矩」，不是真實彎矩圖。
+</div>
+
+<h3>3.1　三種包絡線與選擇準則</h3>
+
+<div class="fig">
+<svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg">
+  <!-- A sand -->
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#ef6c00">砂土</text>
+  <text x="20" y="46" font-size="13" fill="#37474f">p = 0.65 Ka γ H（全深度均布）</text>
+  <line x1="70" y1="60" x2="70" y2="285" stroke="#455a64" stroke-width="2"/>
+  <rect x="70" y="60" width="95" height="220" fill="#ffe0b2" stroke="#ef6c00" stroke-width="1.8"/>
+  <text x="20" y="66" font-size="11.5" fill="#607d8b">0</text>
+  <text x="20" y="286" font-size="11.5" fill="#607d8b">H</text>
+  <text x="172" y="176" font-size="12.5" fill="#ef6c00">0.65KaγH</text>
+  <text x="20" y="312" font-size="12" fill="#607d8b">最單純，無需判別</text>
+
+  <!-- B soft-medium clay -->
+  <text x="300" y="26" font-size="15" font-weight="bold" fill="#c62828">軟至中等黏土（N &gt; 4）</text>
+  <text x="300" y="46" font-size="13" fill="#37474f">p = max( γH − 4Su , 0.3γH )</text>
+  <line x1="350" y1="60" x2="350" y2="285" stroke="#455a64" stroke-width="2"/>
+  <polygon points="350,60 440,115 440,280 350,280" fill="#ffcdd2" stroke="#c62828" stroke-width="1.8"/>
+  <line x1="350" y1="115" x2="440" y2="115" stroke="#c62828" stroke-width="0.9" stroke-dasharray="3 3"/>
+  <text x="290" y="119" font-size="11.5" fill="#607d8b">0.25H</text>
+  <text x="300" y="66" font-size="11.5" fill="#607d8b">0</text>
+  <text x="300" y="286" font-size="11.5" fill="#607d8b">H</text>
+  <text x="448" y="200" font-size="12.5" fill="#c62828">壓力維持到坑底</text>
+  <text x="300" y="312" font-size="12" fill="#607d8b">下限 0.3γH 不可忘</text>
+
+  <!-- C stiff clay -->
+  <text x="600" y="26" font-size="15" font-weight="bold" fill="#1565c0">堅硬裂隙黏土（N ≤ 4）</text>
+  <text x="600" y="46" font-size="13" fill="#37474f">p = 0.2 ~ 0.4 γH</text>
+  <line x1="650" y1="60" x2="650" y2="285" stroke="#455a64" stroke-width="2"/>
+  <polygon points="650,60 725,115 725,225 650,280" fill="#bbdefb" stroke="#1565c0" stroke-width="1.8"/>
+  <line x1="650" y1="115" x2="725" y2="115" stroke="#1565c0" stroke-width="0.9" stroke-dasharray="3 3"/>
+  <line x1="650" y1="225" x2="725" y2="225" stroke="#1565c0" stroke-width="0.9" stroke-dasharray="3 3"/>
+  <text x="590" y="119" font-size="11.5" fill="#607d8b">0.25H</text>
+  <text x="590" y="229" font-size="11.5" fill="#607d8b">0.75H</text>
+  <text x="600" y="66" font-size="11.5" fill="#607d8b">0</text>
+  <text x="600" y="286" font-size="11.5" fill="#607d8b">H</text>
+  <text x="733" y="252" font-size="12.5" fill="#1565c0">底部收斂回 0</text>
+  <text x="600" y="312" font-size="12" fill="#607d8b">底部有硬土可自撐</text>
+</svg>
+<div class="cap">Peck (1969) 三條包絡線。判別鑰匙是<b>穩定數</b> \(N=\gamma H/S_u\)：\(N&gt;4\) 走軟至中等黏土（壓力延伸到坑底），\(N\le 4\) 走堅硬黏土（底部收斂）。兩者只在最下層支撐附近有差別。</div>
+</div>
+
+<div class="why">
+<b>\(N=4\) 這個分界不是隨便訂的。</b>回到 §1.2：\(\phi=0\) 黏土的淨抵抗壓力是 \(4S_u-\gamma H\)。
+\(N=\gamma H/S_u=4\) 正是 \(4S_u=\gamma H\)，也就是<b>坑底黏土的抵抗恰好被開挖卸載吃光</b>的那一刻。
+\(N&gt;4\) 表示坑底已經進入塑性、土會往開挖區擠 —— 所以壓力當然一路延伸到坑底，不會收斂。
+「穩定數」「淨壓力」「抗隆起」三個看似不同的東西，是同一個門檻的三種說法。
+</div>
+
+<div class="trap">
+<b>陷阱一：「中等堅硬」四個字不能信。</b>
+<a class="qlink" href="problems-view/SM-2011-4.html" target="_blank">SM-2011-4</a> 題幹寫「medium stiff 之黏土層」，
+但算出 \(N=\gamma H/c=17.5\times 7/30=4.08&gt;4\)，依 Peck 定義必須走<b>軟至中等黏土</b>。
+<b>永遠用算的 \(N\) 判別，不要用題幹的形容詞。</b>
+</div>
+
+<div class="trap">
+<b>陷阱二：下限 \(0.3\gamma H\)。</b>
+同一題 \(p_a=\gamma H(1-4c/\gamma H)=122.5\times 0.0204=2.5\) kPa，小到荒謬 ——
+因為 \(N\) 只比 4 大一點點，公式幾乎相減歸零。Peck 明訂此時取 \(0.3\gamma H=36.75\) kPa。
+<b>只要 \(N\) 落在 4 附近，一定要檢查下限。</b>
+</div>
+
+<div class="trap">
+<b>陷阱三：同一庫內存在兩種畫法。</b>
+本知識庫的 SM-2011-4 對軟至中等黏土採「壓力延伸至坑底」（符合 Peck 原文），
+而 <a class="qlink" href="problems-view/SM-2012-4.html" target="_blank">SM-2012-4</a>、<a class="qlink" href="problems-view/SM-2015-3.html" target="_blank">SM-2015-3</a>
+採「0.75H 之後收斂為零」的梯形（部分國內教材畫法）。
+差異<b>只影響最下層支撐</b>（SM-2011-4 的討論指出 C 支撐會從 275.6 kN 變成 192.9 kN，
+而 A、B 支撐與最大彎矩完全相同）。
+考場作法：<b>明確寫出你採用哪一種包絡線與依據</b>，再照那個形狀一路算到底，不要中途換。
+</div>
+
+<h3>3.2　層狀土：把砂土翻譯成「等值黏土」</h3>
+
+<p>包絡線公式只吃單一組 \((\gamma, S_u)\)，但實際地層常是上砂下黏。Peck (1943) 的等值參數法把砂土的摩擦抗力折算成一個等值凝聚力：</p>
+
+$$\bar{\gamma}=\frac{\sum \gamma_i H_i}{H},\qquad
+\bar{c}=\frac{1}{H}\left(\tfrac{1}{2}\gamma_s H_s^2 K_s\tan\phi_s+S_u H_c\right)$$
+
+<div class="why">
+<b>\(\tfrac12\gamma_s H_s^2 K_s\tan\phi_s\) 是什麼？</b>是砂土層側面上的<b>總摩擦阻力</b>（沿深度積分 \(K_s\gamma_s z\tan\phi_s\)）。
+把它除以總深度 \(H\)，就變成「平均每單位深度的等值凝聚力」。
+所以 SM-2015-3 寫成 \(C_{u,s}=\tfrac12\gamma_sH_sK_s\tan\phi_s\) 再加權平均，
+與 SM-2012-4 直接寫成上式，<b>是完全相同的東西</b>（展開後兩者相等），不要以為是兩條公式。
+</div>
+
+<div class="trap">
+<b>\(K_s\) 取多少？</b>國考主流（施國欽《基礎工程》）取 \(K_s\approx 1.0\)。
+若改取 \(K_a\)，\(\bar{c}\) 會變小、\(N\) 變大、視土壓力變大（SM-2012-4 中會從 67.4 kPa 跳到約 99 kPa）。
+兩者都能拿分，但<b>必須在卷面上寫明假設值</b>。
+</div>
+
+<h3>3.3　鉸接法：把連續牆切成一堆簡支梁</h3>
+
+<p>牆是連續的超靜定構件，但考場沒時間解超靜定。標準簡化：<b>假設每一層內支撐處都是鉸接（彎矩為零）</b>，牆就被切成數段靜定簡支梁，逐段用 \(\Sigma M=0\)、\(\Sigma F=0\) 求反力。中間層支撐的荷重＝<b>上段傳下來的 ＋ 下段傳上來的</b>，兩者相加。</p>
+
+<div class="box">
+<b>手算：SM-2012-4 的三層支撐</b>（開挖 \(H=10\) m，支撐在 1.5／4.5／7.5 m）<br>
+
+<b>① 等值參數</b>（上砂 5 m：\(\gamma_s=16.5,\phi=30^\circ\)；下黏 5 m：\(\gamma_c=18.5,S_u=30\)）
+$$\bar{\gamma}=\frac{16.5(5)+18.5(5)}{10}=17.5\ \text{kN/m}^3$$
+$$\bar{c}=\frac{1}{10}\left[\tfrac12(16.5)(5^2)(1.0)\tan 30^\circ+30(5)\right]=\frac{119.08+150}{10}=26.91\ \text{kPa}$$
+
+<b>② 判別與壓力值</b>
+$$N=\frac{17.5\times 10}{26.91}=6.50&gt;4\ \Rightarrow\ \text{軟至中等黏土}$$
+$$p_a=175-4(26.91)=67.36\ \text{kPa}\quad(&gt;0.3\bar{\gamma}H=52.5\ \text{OK})$$
+
+<b>③ 分段求反力</b>（鉸接點設於 B、C）
+<ul>
+<li>梁 1（0～4.5 m，支承 A、B）：三角形 84.2 ＋ 矩形 134.72，對 B 取矩 → \(P_A=124.4\) kN/m，\(R_{B1}=94.5\)</li>
+<li>梁 2（4.5～7.5 m，均布 67.36，跨 3 m，對稱）：\(R_{B2}=R_{C1}=101.0\)</li>
+<li>梁 3（7.5～10 m）：\(R_{C2}=56.1\)</li>
+</ul>
+$$P_A=124.4,\quad P_B=94.5+101.0=195.5,\quad P_C=101.0+56.1=157.1\ \text{kN/m}$$
+
+<b>④ 自我檢查</b>：三個支撐荷重總和 477.0 kN/m，應與包絡線總面積相近。
+包絡線面積 \(=\tfrac12(2.5)(67.36)+5(67.36)+\tfrac12(2.5)(67.36)=505.2\) kN/m，
+差額 28.2 kN/m 即由坑底土壤（梁 3 的下端反力）承擔 —— <b>對得上，代表分段沒漏</b>。
+</div>
+
+<h3>3.4　從支撐荷重到鋼版樁斷面</h3>
+
+<p>最大彎矩<b>不在支撐點</b>，而在<b>剪力為零處</b>（通常落在跨距最大的那一段）。找到後：</p>
+
+$$S=\frac{M_{max}}{\sigma_{all}}$$
+
+<div class="box">
+<b>SM-2011-4 的量級檢查</b>：\(M_{max}=38.91\) kN·m/m，\(\sigma_{all}=170{,}000\) kN/m²
+$$S=\frac{38.91}{170{,}000}=2.29\times 10^{-4}\ \text{m}^3/\text{m}=229\ \text{cm}^3/\text{m}$$
+FSP-II 型鋼版樁約 \(874\ \text{cm}^3/\text{m}\)、FSP-III 約 \(1340\)。算出 229 表示連最小型號都綽綽有餘 —— 這個對照能立刻抓出「單位換算錯一個 \(10^3\)」的錯誤。
+</div>
+</section>
+<section id="s4">
+<h2>§4　地會不會浮（一）：三種機制先分清楚</h2>
+
+<div class="lead">
+坑底往上鼓的原因有三種，公式完全不同、參數完全不同、對策也完全不同。
+考題的第一個門檻永遠是<b>認出是哪一種</b>；認錯的話，後面算得再漂亮都是零分。
+辨識的鑰匙只有三個字：<b>題目給了什麼</b>。
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+  <!-- 1 basal heave -->
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#c62828">① 基底隆起 Basal Heave</text>
+  <rect x="20" y="70" width="150" height="200" fill="#ffcdd2"/>
+  <rect x="178" y="150" width="100" height="120" fill="#eceff1"/>
+  <line x1="20" y1="70" x2="170" y2="70" stroke="#455a64" stroke-width="2"/>
+  <line x1="178" y1="150" x2="278" y2="150" stroke="#455a64" stroke-width="2"/>
+  <rect x="170" y="62" width="8" height="170" fill="#37474f"/>
+  <path d="M60 72 Q 40 190 130 235 Q 220 265 240 152" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <path d="M85 82 L85 120" stroke="#546e7a" stroke-width="2.6" marker-end="url(#d2)"/>
+  <path d="M120 82 L120 120" stroke="#546e7a" stroke-width="2.6" marker-end="url(#d2)"/>
+  <path d="M225 200 L225 162" stroke="#c62828" stroke-width="2.8" marker-end="url(#u2)"/>
+  <text x="20" y="294" font-size="12.5" fill="#37474f">土的<b>剪力強度</b>不足以承擔應力差</text>
+  <text x="20" y="314" font-size="12.5" fill="#c62828">關鍵字：軟弱黏土、Su、開挖深度</text>
+  <text x="20" y="334" font-size="12.5" font-weight="bold" fill="#1565c0">FS = Nc·Su / (γH + q)</text>
+
+  <!-- 2 uplift -->
+  <text x="320" y="26" font-size="15" font-weight="bold" fill="#6a1b9a">② 上舉破壞 Blowout</text>
+  <rect x="320" y="70" width="150" height="140" fill="#f3e5f5"/>
+  <rect x="478" y="150" width="100" height="60" fill="#e1bee7"/>
+  <rect x="320" y="210" width="258" height="34" fill="#b3e5fc"/>
+  <line x1="320" y1="70" x2="470" y2="70" stroke="#455a64" stroke-width="2"/>
+  <line x1="478" y1="150" x2="578" y2="150" stroke="#455a64" stroke-width="2"/>
+  <rect x="470" y="62" width="8" height="130" fill="#37474f"/>
+  <text x="484" y="176" font-size="11.5" fill="#4a148c">剩餘不透水層 W′</text>
+  <text x="326" y="232" font-size="12" fill="#01579b">受壓含水層（壓力水頭 hp）</text>
+  <path d="M500 206 L500 162" stroke="#6a1b9a" stroke-width="2.8" marker-end="url(#u3)"/>
+  <path d="M545 206 L545 162" stroke="#6a1b9a" stroke-width="2.8" marker-end="url(#u3)"/>
+  <text x="320" y="294" font-size="12.5" fill="#37474f">整片不透水層被<b>水壓</b>頂開，像拔瓶塞</text>
+  <text x="320" y="314" font-size="12.5" fill="#6a1b9a">關鍵字：受壓含水層、壓力水頭、承壓水</text>
+  <text x="320" y="334" font-size="12.5" font-weight="bold" fill="#1565c0">FS = W′ / U</text>
+
+  <!-- 3 boiling -->
+  <text x="620" y="26" font-size="15" font-weight="bold" fill="#00838f">③ 砂湧／管湧 Boiling</text>
+  <rect x="620" y="70" width="150" height="200" fill="#e0f7fa"/>
+  <rect x="778" y="150" width="100" height="120" fill="#eceff1"/>
+  <line x1="620" y1="70" x2="770" y2="70" stroke="#455a64" stroke-width="2"/>
+  <line x1="778" y1="150" x2="878" y2="150" stroke="#455a64" stroke-width="2"/>
+  <rect x="770" y="62" width="8" height="180" fill="#37474f"/>
+  <path d="M700 88 Q 700 200 774 244 Q 830 256 828 152" fill="none" stroke="#00838f" stroke-width="2" marker-end="url(#u4)"/>
+  <path d="M735 88 Q 735 210 774 240 Q 800 250 798 152" fill="none" stroke="#00838f" stroke-width="2" marker-end="url(#u4)"/>
+  <path d="M785 196 L785 158" stroke="#00838f" stroke-width="3" marker-end="url(#u4)"/>
+  <text x="620" y="294" font-size="12.5" fill="#37474f">向上滲流力抵銷土重，<b>有效應力歸零</b></text>
+  <text x="620" y="314" font-size="12.5" fill="#00838f">關鍵字：水位差、滲透係數、流網、砂土</text>
+  <text x="620" y="334" font-size="12.5" font-weight="bold" fill="#1565c0">FS = i_cr / i_exit</text>
+
+  <defs>
+    <marker id="d2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#546e7a"/></marker>
+    <marker id="u2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c62828"/></marker>
+    <marker id="u3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#6a1b9a"/></marker>
+    <marker id="u4" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#00838f"/></marker>
+  </defs>
+</svg>
+<div class="cap">三種機制的辨識鑰匙：給 <b>Su</b> → 隆起；給 <b>壓力水頭／受壓含水層</b> → 上舉；給 <b>水位差＋滲透性砂土</b> → 砂湧。<a class="qlink" href="problems-view/SM-2017-4.html" target="_blank">SM-2017-4</a> 一題內同時問三種，是最好的鑑別練習。</div>
+</div>
+
+<h3>4.1　基底隆起：把開挖看成一個「反過來的基礎」</h3>
+
+<div class="why">
+<b>為什麼隆起公式長得像承載力公式？</b>因為它<b>就是</b>承載力公式。
+淺基礎承載力問「地表往下壓多少會破壞」，答案是 \(q_u=N_cS_u\)；
+基底隆起問「開挖旁邊的土往下壓，會不會把坑底的土擠進來」，驅動的是<b>開挖面內外的應力差</b> \(\gamma H+q\)。
+兩者是同一個 Prandtl 塑性破壞機構，只是上下顛倒。
+所以 \(N_c\) 的來源、修正方式、形狀效應全部通用 —— 學過 §承載力 就不用再背一次。
+</div>
+
+$$FS=\frac{N_c\,S_u}{\gamma H+q}$$
+
+<h4>三種 \(N_c\)，看題目給什麼選</h4>
+
+<table>
+<thead><tr><th style="width:22%">方法</th><th style="width:30%">\(N_c\)</th><th>用時機／來源</th></tr></thead>
+<tbody>
+<tr><td>Prandtl 條形</td><td>\(\pi+2=5.14\)</td><td>純理論值。題目直接把公式印給你時（SM-2017-4）就照用</td></tr>
+<tr><td>Terzaghi</td><td>\(5.7\)，並在分母扣掉滑動面上的抗剪力 \(T/B'\)，\(B'=B/\sqrt{2}\)</td><td>題目給了<b>開挖寬度 B</b> 且給了上覆砂土的 \(\phi\)（表示要你用它算 \(T\)）—— SM-2012-4</td></tr>
+<tr><td>Bjerrum &amp; Eide</td><td>\(N_c=5\left(1+0.2\tfrac{B}{L}\right)\left(1+0.2\tfrac{D}{B}\right)\)<br>上限 \(7.5\left(1+0.2\tfrac{B}{L}\right)\)</td><td>題目給了<b>平面尺寸 B 與 L</b>（明示要考慮三維形狀效應）—— SM-2015-3</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>Bjerrum &amp; Eide 公式的每一項都能講出物理意義。</b>
+\(5\) 是圓形／方形基礎的基本 \(N_c\)（Skempton）；
+\(\left(1+0.2\frac{B}{L}\right)\) 是<b>形狀修正</b> —— 開挖愈接近正方形（\(B/L\to1\)）愈不容易破壞，因為四周都有土箍著；
+\(\left(1+0.2\frac{D}{B}\right)\) 是<b>深度修正</b> —— 挖得愈深相對愈窄，破壞面愈難發展。
+極限檢查：長條形開挖 \(L\to\infty\)、淺開挖 \(D\to0\) 時 \(N_c\to 5\)，退化回二維最不利情況。<b>三維一定比二維安全，所以修正項都是「1＋」。</b>
+</div>
+
+<div class="trap">
+<b>陷阱：\(N_c\) 不是固定 5.7。</b>用 5.7 而題目給了 \(B\times L\)，會<b>低估</b>抗隆起能力；
+反之題目只給二維剖面卻硬套三維公式，會<b>高估</b>。
+SM-2015-3 若誤用 Terzaghi 5.7，\(FS=5.7(30)/137=1.25\)；正解 Bjerrum &amp; Eide 得 \(FS=1.50\)。
+一個「合格」一個「不合格」，結論完全相反。
+</div>
+
+<h4>Terzaghi 法的 \(T\)：為什麼要扣</h4>
+
+<p>Terzaghi 模型中，開挖兩側往下壓的土柱並不是自由落下的 —— 它沿著兩側的<b>垂直滑動面</b>被摩擦力／黏著力吊住。所以驅動應力要扣掉這一項：</p>
+
+$$FS=\frac{N_cS_u}{\;\gamma H+q-\dfrac{T}{B'}\;},\qquad
+T=\underbrace{\tfrac12 K_0\gamma_sH_s^2\tan\phi_s}_{\text{砂土段摩擦}}+\underbrace{S_uH_c}_{\text{黏土段黏著}}$$
+
+<div class="box">
+<b>手算：SM-2012-4 的抗隆起</b>（\(B=6\) m，上砂 5 m \(\phi=30^\circ\)，下黏 5 m \(S_u=30\)）
+$$q=16.5(5)+18.5(5)=175\ \text{kPa},\qquad B'=6/\sqrt2=4.243\ \text{m}$$
+$$K_0=1-\sin 30^\circ=0.5\ \Rightarrow\ T_{sand}=\tfrac12(0.5)(16.5)(5^2)\tan30^\circ=59.5\ \text{kN/m}$$
+$$T_{clay}=30\times 5=150\ \text{kN/m},\qquad T=209.5\ \text{kN/m}$$
+$$FS=\frac{5.7\times 30}{175-209.5/4.243}=\frac{171}{175-49.4}=\frac{171}{125.6}=\boxed{1.36}$$
+<b>自我檢查</b>：若忘記扣 \(T\)，\(FS=171/175=0.98\) —— 結論會從「勉強合格」翻成「立刻破壞」。
+\(T\) 的貢獻高達 28%，題目給了砂土的 \(\phi=30^\circ\) 卻沒別的地方用到，就是在提示你要算 \(T\)。
+<b>「有給卻沒用到的參數」通常不是干擾項，而是你漏了一步。</b>
+</div>
+
+<div class="trap">
+<b>但「有給卻沒用到」也可能真的是干擾項。</b>
+<a class="qlink" href="problems-view/SM-2003-3.html" target="_blank">SM-2003-3</a> 給了砂土 \(\gamma_{sat}=18\) kN/m³，全程用不到 ——
+因為破壞面就在黏土／砂土界面上，而該處的水壓已由「壓力水頭 7 m」直接給定。
+<b>判準：問自己「這個參數在我的力平衡式裡有沒有位置」。</b>有位置卻沒用到 → 你漏了；連位置都沒有 → 它是干擾項。
+</div>
+</section>
+<section id="s5">
+<h2>§5　地會不會浮（二）：水的兩種攻擊，與它對土壓力的回饋</h2>
+
+<h3>5.1　上舉破壞：不透水層被當成瓶塞拔開</h3>
+
+<p>坑底下方若有<b>受壓含水層</b>，中間夾著的不透水層就是一個瓶塞。開挖每挖深一分，瓶塞就變薄一分、壓不住下面的水壓。臨界條件是<b>界面處的有效應力歸零</b>：</p>
+
+$$\sigma_v'=\underbrace{\gamma_{sat}\,(H_{layer}-D)}_{\text{剩餘不透水層總重}}-\underbrace{h_p\gamma_w}_{\text{受壓水頭}}\;\ge\;0
+\qquad\Longleftrightarrow\qquad FS=\frac{W'}{U}$$
+
+<div class="why">
+<b>這裡一定要用「總」單位重，不能用 \(\gamma'\)。</b>
+因為抵抗上舉的是那塊土的<b>整體重量</b>（水土一起壓），不是有效重。
+用 \(\gamma'\) 會把抵抗力少算約一半，是這一題型最常見的致命錯誤。
+記憶方式：這是一個<b>整體浮力</b>問題（阿基米德式），不是剪力問題，所以看總重。
+</div>
+
+<div class="box">
+<b>手算 A：SM-2003-3 的臨界開挖深度</b>（黏土層厚 10 m，\(\gamma_{sat}=17.5\)；下方受壓砂層 \(h_p=7\) m）
+$$u=7\times 9.81=68.67\ \text{kPa}$$
+$$17.5(10-D)=68.67\ \Rightarrow\ 10-D=3.92\ \Rightarrow\ \boxed{D=6.08\ \text{m}}$$
+此時界面有效應力 \(\sigma_v'=68.67-68.67=\boxed{0}\)。<br>
+<b>物理意義</b>：這是 \(FS=1.0\) 的極限。實務要求 \(FS=1.2\sim1.5\)，容許開挖深度會更淺；
+要挖更深就必須<b>降低下方水頭</b>（深井抽水），而不是加厚牆或加支撐 —— <b>擋土結構完全救不了上舉破壞。</b>
+</div>
+
+<div class="box">
+<b>手算 B：SM-2017-4 的反算降水深度</b>（開挖到 GL−8.0，不透水 CL 層到 GL−10.32，\(\gamma_{CL}=1.86\) tf/m³，設計水位 GL−1.0）
+$$W=1.86\times(10.32-8.0)=4.315\ \text{tf/m}^2,\qquad U=1.0\times(10.32-1.0)=9.32\ \text{tf/m}^2$$
+$$FS=4.315/9.32=\boxed{0.46}\quad(\text{極度危險})$$
+要達 \(FS=2\)：\(U_{req}=4.315/2=2.158\) tf/m² → 水頭 2.158 m → 水位須降至 \(10.32-2.158=\boxed{\text{GL}-8.16\ \text{m}}\)。<br>
+<b>自我檢查</b>：降水後水位（GL−8.16）必須比開挖面（GL−8.0）還低，物理上才說得通。若算出的水位比開挖面高，代表你把公式方向弄反了。
+</div>
+
+<h3>5.2　砂湧與管湧：滲流把有效應力吃掉</h3>
+
+<p>水從坑底往上滲，滲流力方向與重力相反。當水力坡降大到滲流力恰好等於土的有效重，有效應力歸零、土粒失去接觸力，變成流砂：</p>
+
+$$i_{cr}=\frac{\gamma'}{\gamma_w}=\frac{G_s-1}{1+e},\qquad FS=\frac{i_{cr}}{i_{exit}}\ \ge\ 1.5\ \text{（建築物基礎構造設計規範）}$$
+
+<div class="why">
+<b>\(i_{cr}\) 幾乎永遠接近 1.0，這是很好用的檢查。</b>
+一般土壤 \(G_s\approx2.65\sim2.70\)、\(e\approx0.6\sim0.9\)，代入得 \(i_{cr}=0.87\sim1.06\)。
+所以你算出的 \(i_{cr}\) 若不在 0.8～1.1 之間，多半是 \(G_s\) 或 \(e\) 代錯。
+SM-2020-2 得 0.998、SM-2017-4 得 0.86，都落在這個區間。
+</div>
+
+<h4>\(i_{exit}\) 怎麼估：最高流線法</h4>
+
+<p>沒有流網時，用<b>緊貼牆面的最短滲流路徑</b>（最高流線）保守估計：</p>
+
+$$i=\frac{\Delta H}{L},\qquad L=\underbrace{(D_{tip}-z_{w,\text{外}})}_{\text{外側下行段}}+\underbrace{(D_{tip}-H_{exc})}_{\text{內側上行段}}$$
+
+<div class="box">
+<b>SM-2017-4</b>：\(L=(14-1)+(14-8)=19\) m，\(\Delta H=8-1=7\) m
+$$i=7/19=0.368,\qquad FS=0.86/0.368=\boxed{2.34}\ \ge 1.5\ \text{OK}$$
+<b>量級檢查</b>：牆愈深 → \(L\) 愈長 → \(i\) 愈小 → \(FS\) 愈大。
+<b>這是唯一一種「加深牆體真的能改善」的地層破壞</b>（隆起靠強度、上舉靠水頭，都不是靠牆深）。
+</div>
+
+<div class="trap">
+<b>陷阱：管湧 ≠ 砂湧。</b>
+<b>砂湧（boiling）</b>是出口處<b>大面積</b>土體因向上滲流失重而整體浮起，用 \(i_{cr}/i_{exit}\) 檢核。
+<b>管湧（piping）</b>是沿某條優勢路徑<b>逐粒沖蝕</b>、由下游往上游掏空成通道，最後突然大量湧水塌陷；
+它與級配、有無濾層有關，靠加濾層／逆濾料防治，不是單靠 \(i\) 判定。
+考題若用「管湧」一詞卻給 \(FS=i_c/i\) 的公式（SM-2017-4 就是），依題目給的公式作答即可，
+但在討論欄點出兩者差異能加分。
+</div>
+
+<h3>5.3　滲流的回饋：它同時改寫了土壓力那一軸</h3>
+
+<div class="lead">
+主被動兩側水位不同時，水不是靜止的。<b>向下滲流的一側（背側）土的有效單位重<span style="color:#c62828">增加</span>；
+向上滲流的一側（開挖側）<span style="color:#2e7d32">減少</span>。</b>
+這代表：驅動力變大、抵抗力變小，<b>兩頭同時往不利方向跑</b>。忽略滲流會嚴重不保守。
+</div>
+
+$$\gamma'_{A}=(\gamma_{sat}-\gamma_w)+i\gamma_w,\qquad \gamma'_{P}=(\gamma_{sat}-\gamma_w)-i\gamma_w$$
+
+<div class="fig">
+<svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg">
+  <!-- left: section -->
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#37474f">繞流路徑與有效單位重修正</text>
+  <rect x="30" y="70" width="250" height="230" fill="#eceff1"/>
+  <rect x="288" y="180" width="150" height="120" fill="#f5f5f5"/>
+  <line x1="30" y1="70" x2="280" y2="70" stroke="#455a64" stroke-width="2"/>
+  <line x1="288" y1="180" x2="438" y2="180" stroke="#455a64" stroke-width="2"/>
+  <rect x="280" y="60" width="8" height="240" fill="#37474f"/>
+  <!-- water tables -->
+  <line x1="30" y1="95" x2="278" y2="95" stroke="#1565c0" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="34" y="90" font-size="11.5" fill="#1565c0">背側水位</text>
+  <text x="296" y="169" font-size="11.5" fill="#1565c0">開挖側水位</text>
+  <!-- flow -->
+  <path d="M150 100 Q 150 240 284 296 Q 380 300 372 186" fill="none" stroke="#00838f" stroke-width="2" marker-end="url(#fu)"/>
+  <path d="M205 100 Q 205 250 284 292 Q 340 296 334 186" fill="none" stroke="#00838f" stroke-width="2" marker-end="url(#fu)"/>
+  <path d="M100 120 L100 165" stroke="#c62828" stroke-width="2.6" marker-end="url(#fd)"/>
+  <text x="42" y="192" font-size="12.5" fill="#c62828">滲流向下 → γ′ 加 i·γw</text>
+  <path d="M410 250 L410 208" stroke="#2e7d32" stroke-width="2.6" marker-end="url(#fu2)"/>
+  <text x="300" y="272" font-size="12.5" fill="#2e7d32">滲流向上 → γ′ 減 i·γw</text>
+  <circle cx="284" cy="300" r="5" fill="#1565c0"/>
+  <text x="240" y="322" font-size="12.5" font-weight="bold" fill="#1565c0">O（樁尖）</text>
+  <text x="30" y="348" font-size="12.5" fill="#37474f">簡化流徑 L ≈ 背側水深 + 2×貫入深度</text>
+
+  <!-- right: net water pressure -->
+  <text x="520" y="26" font-size="15" font-weight="bold" fill="#37474f">淨水壓力分布</text>
+  <line x1="580" y1="70" x2="580" y2="300" stroke="#455a64" stroke-width="2"/>
+  <polygon points="580,95 700,180 580,300" fill="#bbdefb" stroke="#1565c0" stroke-width="1.8"/>
+  <line x1="530" y1="95" x2="580" y2="95" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="530" y1="180" x2="580" y2="180" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="530" y1="300" x2="580" y2="300" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="490" y="99" font-size="11.5" fill="#607d8b">背側水位</text>
+  <text x="490" y="184" font-size="11.5" fill="#607d8b">開挖面</text>
+  <text x="500" y="304" font-size="11.5" fill="#607d8b">樁尖</text>
+  <text x="708" y="184" font-size="12.5" font-weight="bold" fill="#1565c0">最大值</text>
+  <text x="608" y="322" font-size="12.5" fill="#1565c0">樁尖處兩側水壓相等 → 淨值歸零</text>
+  <text x="520" y="348" font-size="12.5" fill="#e65100">若誤用靜水壓，會畫成矩形 → 高估抵抗、不保守</text>
+
+  <defs>
+    <marker id="fu" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#00838f"/></marker>
+    <marker id="fu2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2e7d32"/></marker>
+    <marker id="fd" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c62828"/></marker>
+  </defs>
+</svg>
+<div class="cap">淨水壓力在樁尖必為零 —— 因為水繞過樁尖後，兩側該點的<b>總水頭相同</b>。這是一個免費的檢查點：若你畫出的淨水壓在樁尖不為零，一定算錯了。</div>
+</div>
+
+<div class="box">
+<b>手算：SM-2020-2 的滲流修正</b>（背側水位 GL−0.5，開挖 4 m，版樁長 10 m，\(\gamma_{sat}=19.6\)）
+$$\Delta H=3.5\ \text{m},\qquad L\approx 3.5+2(6.0)=15.5\ \text{m}\ \Rightarrow\ i=3.5/15.5=0.226$$
+$$i\gamma_w=0.226\times 9.81=2.215\ \text{kN/m}^3$$
+$$\gamma'_{A}=(19.6-9.81)+2.215=12.01,\qquad \gamma'_{P}=(19.6-9.81)-2.215=7.57\ \text{kN/m}^3$$
+<b>影響有多大？</b>被動側有效單位重被削掉 22.6%，被動抵抗力矩也跟著少 22.6%（1057 → 818 kN·m/m）。
+但若改用靜水壓假設，<b>淨水壓力也會被畫成矩形而變大</b>，驅動力矩同時被拉高（1364 → 1649 kN·m/m），
+兩個錯誤方向相反、部分抵消，最後 \(FS\) 由 0.60 變成 0.64（高估約 7%）。<br>
+<b>不要因此以為「反正會抵消」。</b>抵消的程度取決於水位差與貫入深度的比例，純屬巧合；
+換一組數字就可能是單向高估。正確的作法永遠是兩處都用滲流修正值。<br>
+<b>驗算</b>：樁尖淨水壓 \(u_A=9.81(9.5)(1-0.226)=72.2\)，\(u_P=9.81(6.0)(1+0.226)=72.2\) → 淨值 0 ✓
+</div>
+
+<div class="trap">
+<b>陷阱：靜水壓假設會讓你在兩個地方同時錯。</b>
+① 淨水壓力畫成矩形 → 驅動力矩算錯；② 被動側有效單位重沒折減 → 抵抗力矩高估。
+判準：<b>只要題目後面問到「砂湧」，就代表出題者已經承認有滲流</b>，前面的土壓力就必須用滲流修正版。
+</div>
+</section>
+<section id="s6">
+<h2>§6　對策端：把公式反過來用</h2>
+
+<div class="lead">
+考題有兩種問法：<b>正算</b>（給條件求 FS）與<b>反算</b>（給目標 FS 求需要的改良強度／降水深度／貫入深度）。
+反算不需要新知識，只需要把同一條式子的未知數換一個 —— 但前提是你得<b>選對藥</b>。
+選錯藥的話，公式再熟也算不出東西：連續壁再深也擋不住上舉，坑底改良再硬也救不了支撐不足。
+</div>
+
+<h3>6.1　對症下藥表</h3>
+
+<table>
+<thead><tr><th style="width:20%">問題</th><th style="width:26%">為什麼會發生</th><th>有效的藥</th><th style="width:16%">無效的藥</th></tr></thead>
+<tbody>
+<tr><td>牆倒／貫入不足</td><td>被動抵抗力矩不夠</td><td>加深貫入、加設支撐或地錨、坑內被動側地盤改良、逆打提高剛度</td><td>降水（幫助有限）</td></tr>
+<tr><td>基底隆起</td><td>坑底黏土 \(S_u\) 太低</td><td>坑底地盤改良（DCM／JSG）提高 \(S_u\)、縮小開挖分區、加深牆體使滑動面加長</td><td>抽水（\(S_u\) 不隨水壓變）</td></tr>
+<tr><td>上舉破壞</td><td>下方受壓水頭太高</td><td><b>深井降低承壓水頭</b>（唯一直接有效）、留厚覆土、坑底改良增加自重</td><td>加深連續壁、加支撐</td></tr>
+<tr><td>砂湧／管湧</td><td>出口水力坡降過大</td><td>加深牆體拉長滲流路徑、坑內降水減小 \(\Delta H\)、坑底設濾層</td><td>加支撐</td></tr>
+</tbody>
+</table>
+
+<div class="why">
+<b>「加深連續壁」為什麼對上舉無效？</b>
+上舉的驅動力是受壓含水層的<b>水頭</b>，抵抗力是上方那塊土的<b>重量</b>。牆再深也不會讓那塊土變重、也不會降低水頭
+（除非牆完全切穿含水層形成止水，那是另一種設計）。
+而砂湧就不同 —— 牆深直接拉長滲流路徑、降低 \(i_{exit}\)。<b>同樣是「水」引起的破壞，藥完全不同，因為機制不同。</b>
+</div>
+
+<h3>6.2　反算範例：地盤改良要多強</h3>
+
+<p><a class="qlink" href="problems-view/SM-2008-3.html" target="_blank">SM-2008-3</a> 是最完整的反算題。它先用<b>總應力法側土壓力</b>（§1.3）算貫入深度安全係數：</p>
+
+$$\sigma_{h,A}=\sigma_{v,A}-2S_u,\qquad \sigma_{h,P}=\sigma_{v,P}+2S_u,\qquad
+FS=\frac{M_P}{M_A}\ \text{（對最下階支撐取矩）}$$
+
+<div class="box">
+<b>正算</b>：\(M_P=15440\)、\(M_A=21261\) kN·m/m → \(FS=0.73\)（不合格）<br>
+<b>反算</b>：要 \(FS\ge1.5\) → \(M_P\ge 1.5\times 21261=31891\)<br>
+改良後被動側壓力 \(\sigma_{h,P}=\gamma_m(z-16)+q_u\)（因為 \(2S_{um}=2\times\frac{q_u}{2}=q_u\)）
+$$\underbrace{9q_u\times 7.5}_{\text{矩形部分}}+\underbrace{870.75\times 9}_{\text{三角形部分}}=31891
+\ \Rightarrow\ 67.5q_u=24055\ \Rightarrow\ \boxed{q_u\ge 356\ \text{kPa}}$$
+<b>量級檢查</b>：一般水泥系深層攪拌改良體的 \(q_u\) 約 \(500\sim2000\) kPa，所以 356 kPa 是<b>做得到</b>的。
+若反算出 \(q_u&gt;3000\) kPa，代表改良不可行，答案應改為「須同時加深牆體或增設支撐」。
+</div>
+
+<div class="why">
+<b>\(S_u=q_u/2\) 為什麼？</b>單軸壓縮試驗中側壓為零，Mohr 圓的直徑就是 \(q_u\)，半徑（最大剪應力）就是 \(q_u/2\)。
+在 \(\phi=0\) 條件下最大剪應力即為抗剪強度，所以 \(S_u=q_u/2\)。
+於是被動側的 \(+2S_u\) 恰好等於 \(+q_u\) —— 這個巧合讓反算式子變得很乾淨。
+</div>
+
+<h3>6.3　災變案例：當土本身就是問題（SM-2023-4）</h3>
+
+<p>這題不用算 FS，但它把前面所有觀念串成一條因果鏈，是「觀念鏈題」的典型。關鍵在於<b>從鑽探表算出液性指數</b>：</p>
+
+$$PI=LL-PL,\qquad LI=\frac{w-PL}{PI}$$
+
+<div class="box">
+以深度 10 m 為例：\(w=41\%\)、\(LL=32\%\)、\(PL=12\%\)
+$$PI=32-12=20,\qquad LI=\frac{41-12}{20}=1.45\ &gt;\ 1.0$$
+<b>\(LI&gt;1\) 的意思是：天然含水量已經超過液性限度。</b>
+土在未擾動時靠結構鍵結勉強維持強度（\(N=1\)），一旦被開挖解壓或施工擾動，結構破壞，
+強度大幅喪失並表現得像黏滯流體 —— 這就是<b>高靈敏度</b>。
+</div>
+
+<div class="why">
+<b>整條因果鏈（能用嘴巴講出來才算會）：</b><br>
+高靈敏度軟弱黏土（\(N=1\)、\(LI&gt;1\)）
+→ 開挖解壓＋施工擾動使 \(S_u\) 進一步下降
+→ \(N_c S_u\) 不足以抗衡 \(\gamma H\)，坑底隆起
+→ 連續壁下端失去坑內被動抵抗
+→ 牆體大幅內擠（踢腳），主動土壓力趨近靜水壓般增加
+→ 支撐超載連鎖挫屈
+→ 大量土體損失 → 鄰房傾斜下陷。<br>
+<b>注意鏈條的第 4 環</b>：連續壁深 24 m 但 24 m 處 \(N\) 仍為 1 ——
+<b>牆「有多深」不重要，重要的是「有沒有進到堅實層」。</b>這是本題最容易被忽略的一環。
+</div>
+
+<h3>6.4　特例：島式開挖的側向滑動（SM-2006-3）</h3>
+
+<p>當開挖面下方夾有<b>水平的軟弱薄層</b>，破壞可能不是隆起也不是傾覆，而是整塊土沿著那層水平滑走。此時把土體當剛體：</p>
+
+$$FS=\frac{\overbrace{s_uL}^{\text{底部抗剪}}+\overbrace{P_P}^{\text{被動抵抗}}}{\underbrace{P_A}_{\text{主動驅動}}}$$
+
+<div class="trap">
+<b>這題的核心陷阱是參數混用。</b>砂土給的是有效應力參數 \((c',\phi')\)，薄層黏土給的是總應力參數 \(s_u\)。
+豪雨使水位上升時：<b>砂土那邊要換 \(\gamma'\)、要加水壓（土壓力改變）；黏土那邊 \(s_u\) 完全不變（抗剪力不變）。</b>
+數字上，\(FS\) 從 1.22 掉到 0.47，而其中 706/832 = 85% 的驅動力來自純水壓。
+<b>記住這個 85%：擋土與邊坡工程真正的敵人幾乎永遠是水，不是土。</b>
+</div>
+</section>
+<section id="s7">
+<h2>§7　解題決策流程</h2>
+
+<div class="lead">
+拿到題目先做<b>一件事</b>：判斷這一小題屬於哪一軸。同一大題的 (一)(二)(三) 常分屬不同軸（SM-2020-2、SM-2012-4、SM-2017-4 都是），
+必須逐小題判斷，不能一路用同一套參數算到底。
+</div>
+
+<h3>7.1　結構軸：牆會不會倒</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
+  <rect x="330" y="18" width="240" height="46" rx="9" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.8"/>
+  <text x="450" y="47" font-size="14.5" font-weight="bold" fill="#0d47a1" text-anchor="middle">這一小題在問牆／樁本身</text>
+  <line x1="450" y1="64" x2="450" y2="84" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+
+  <polygon points="450,86 625,130 450,174 275,130" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="127" font-size="14.5" font-weight="bold" fill="#e65100" text-anchor="middle">有幾道支撐或地錨？</text>
+  <text x="450" y="147" font-size="11.5" fill="#8d6e63" text-anchor="middle">（看題目圖上畫了幾層）</text>
+
+  <path d="M275 130 L150 130 L150 206" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+  <text x="160" y="124" font-size="12.5" font-weight="bold" fill="#c62828">0 道</text>
+  <path d="M625 130 L760 130 L760 206" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+  <text x="640" y="124" font-size="12.5" font-weight="bold" fill="#1565c0">2 道以上</text>
+  <line x1="450" y1="174" x2="450" y2="206" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+  <text x="458" y="196" font-size="12.5" font-weight="bold" fill="#2e7d32">1 道</text>
+
+  <rect x="30" y="208" width="240" height="94" rx="9" fill="#ffebee" stroke="#c62828" stroke-width="1.6"/>
+  <text x="42" y="232" font-size="13.5" font-weight="bold" fill="#c62828">懸臂式 · 淨壓力法</text>
+  <text x="42" y="252" font-size="12" fill="#37474f">L3 = pa / [γ′(Kp − Ka)]</text>
+  <text x="42" y="270" font-size="12" fill="#37474f">對樁尖 O 取矩 → 四次方程 L4</text>
+  <text x="42" y="288" font-size="12" fill="#37474f">DL = L3 + L4</text>
+
+  <rect x="650" y="208" width="240" height="94" rx="9" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/>
+  <text x="662" y="232" font-size="13.5" font-weight="bold" fill="#1565c0">多層支撐 · Peck 包絡線</text>
+  <text x="662" y="252" font-size="12" fill="#37474f">先算 N = γH/Su 選包絡線</text>
+  <text x="662" y="270" font-size="12" fill="#37474f">鉸接法分段 → 各層支撐荷重</text>
+  <text x="662" y="288" font-size="12" fill="#37474f">剪力零點 → Mmax → S</text>
+
+  <polygon points="450,208 618,254 450,300 282,254" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="250" font-size="13.5" font-weight="bold" fill="#e65100" text-anchor="middle">樁底能自由轉動嗎？</text>
+  <text x="450" y="270" font-size="11.5" fill="#8d6e63" text-anchor="middle">（多半由題目直接指定）</text>
+
+  <path d="M450 300 L320 330 L320 356" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+  <text x="240" y="326" font-size="12.5" font-weight="bold" fill="#2e7d32">能（自由端）</text>
+  <path d="M450 300 L600 330 L600 356" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fa)"/>
+  <text x="612" y="326" font-size="12.5" font-weight="bold" fill="#6a1b9a">不能（固定端）</text>
+
+  <rect x="190" y="358" width="250" height="96" rx="9" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="202" y="382" font-size="13.5" font-weight="bold" fill="#2e7d32">自由端支撐法</text>
+  <text x="202" y="402" font-size="12" fill="#37474f">對地錨點取矩（消掉 T）</text>
+  <text x="202" y="420" font-size="12" fill="#37474f">→ 一元二次式解 D</text>
+  <text x="202" y="440" font-size="12" fill="#37474f">再由 ΣFx = 0 求 T</text>
+
+  <rect x="470" y="358" width="250" height="96" rx="9" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.6"/>
+  <text x="482" y="382" font-size="13.5" font-weight="bold" fill="#6a1b9a">固定端 · Blum 等值梁</text>
+  <text x="482" y="402" font-size="12" fill="#37474f">先找反曲點 y（淨壓力＝0）</text>
+  <text x="482" y="420" font-size="12" fill="#37474f">對反曲點取矩 → T → R</text>
+  <text x="482" y="440" font-size="12" fill="#37474f">L4 = √(6R/k′)，D = y + L4</text>
+
+  <rect x="30" y="476" width="860" height="52" rx="9" fill="#eceff1" stroke="#90a4ae" stroke-width="1.4"/>
+  <text x="44" y="498" font-size="13" font-weight="bold" fill="#37474f">共同最後一步：安全係數施加在哪裡？</text>
+  <text x="44" y="518" font-size="12.5" fill="#455a64">題目給 FS 數值 → Kp′ = Kp/FS 後再解；題目問「理論／最少」深度 → 直接用 FS = 1 的結果，並註明實務再乘 1.2～1.3</text>
+
+  <defs><marker id="fa" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455a64"/></marker></defs>
+</svg>
+<div class="cap">三個模型的分岔只取決於「支撐道數」與「樁底能否轉動」，其餘步驟共用。取矩點的選法一律是：<b>選在未知力的作用點或彎矩為零處。</b></div>
+</div>
+
+<h3>7.2　地層軸：地會不會浮</h3>
+
+<div class="fig">
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+  <rect x="320" y="18" width="260" height="46" rx="9" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.8"/>
+  <text x="450" y="47" font-size="14.5" font-weight="bold" fill="#0d47a1" text-anchor="middle">這一小題在問坑底會不會浮</text>
+  <line x1="450" y1="64" x2="450" y2="82" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+
+  <polygon points="450,84 660,130 450,176 240,130" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="126" font-size="14.5" font-weight="bold" fill="#e65100" text-anchor="middle">題目給的關鍵線索是什麼？</text>
+  <text x="450" y="146" font-size="11.5" fill="#8d6e63" text-anchor="middle">看參數，不看題目用的中文名詞</text>
+
+  <path d="M240 130 L130 130 L130 200" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <text x="30" y="124" font-size="12.5" font-weight="bold" fill="#c62828">Su、開挖深度</text>
+  <line x1="450" y1="176" x2="450" y2="200" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <text x="332" y="194" font-size="12.5" font-weight="bold" fill="#6a1b9a">壓力水頭／受壓含水層</text>
+  <path d="M660 130 L780 130 L780 200" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <text x="672" y="124" font-size="12.5" font-weight="bold" fill="#00838f">水位差＋透水砂土</text>
+
+  <rect x="20" y="202" width="220" height="76" rx="9" fill="#ffebee" stroke="#c62828" stroke-width="1.6"/>
+  <text x="32" y="226" font-size="13.5" font-weight="bold" fill="#c62828">基底隆起</text>
+  <text x="32" y="248" font-size="12.5" fill="#37474f">FS = Nc·Su / (γH + q)</text>
+  <text x="32" y="268" font-size="12" fill="#607d8b">分子是強度，分母是卸載</text>
+
+  <rect x="300" y="202" width="300" height="76" rx="9" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.6"/>
+  <text x="312" y="226" font-size="13.5" font-weight="bold" fill="#6a1b9a">上舉破壞（Blowout）</text>
+  <text x="312" y="248" font-size="12.5" fill="#37474f">FS = W′ / U，W′ 用「總」單位重</text>
+  <text x="312" y="268" font-size="12" fill="#607d8b">臨界時界面有效應力 = 0</text>
+
+  <rect x="660" y="202" width="230" height="76" rx="9" fill="#e0f7fa" stroke="#00838f" stroke-width="1.6"/>
+  <text x="672" y="226" font-size="13.5" font-weight="bold" fill="#00838f">砂湧 / 管湧</text>
+  <text x="672" y="248" font-size="12.5" fill="#37474f">FS = icr / iexit ≥ 1.5</text>
+  <text x="672" y="268" font-size="12" fill="#607d8b">icr = γ′/γw ≈ 0.9 ~ 1.0</text>
+
+  <line x1="145" y1="278" x2="145" y2="308" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <polygon points="145,310 275,352 145,394 15,352" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="145" y="349" font-size="12.5" font-weight="bold" fill="#e65100" text-anchor="middle">題目有給 B 和 L 嗎？</text>
+  <text x="145" y="368" font-size="11" fill="#8d6e63" text-anchor="middle">（平面尺寸）</text>
+
+  <path d="M145 394 L75 420 L75 442" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <text x="26" y="416" font-size="12" font-weight="bold" fill="#2e7d32">有</text>
+  <path d="M145 394 L228 420 L228 442" fill="none" stroke="#455a64" stroke-width="2" marker-end="url(#fb)"/>
+  <text x="236" y="416" font-size="12" font-weight="bold" fill="#c62828">沒有</text>
+
+  <rect x="12" y="444" width="132" height="80" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="22" y="466" font-size="12.5" font-weight="bold" fill="#2e7d32">Bjerrum &amp; Eide</text>
+  <text x="22" y="486" font-size="11" fill="#37474f">Nc = 5(1+0.2B/L)</text>
+  <text x="22" y="502" font-size="11" fill="#37474f">　　　×(1+0.2D/B)</text>
+  <text x="22" y="518" font-size="11" fill="#607d8b">上限 7.5(1+0.2B/L)</text>
+
+  <rect x="162" y="444" width="150" height="80" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="172" y="466" font-size="12.5" font-weight="bold" fill="#c62828">二維公式</text>
+  <text x="172" y="486" font-size="11" fill="#37474f">Terzaghi Nc = 5.7</text>
+  <text x="172" y="502" font-size="11" fill="#37474f">分母扣抗剪力 T/B′</text>
+  <text x="172" y="518" font-size="11" fill="#607d8b">或題目印的 Nc = π+2</text>
+
+  <path d="M775 278 L775 320 L620 320 L620 348" fill="none" stroke="#00838f" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#fc)"/>
+  <rect x="360" y="350" width="530" height="76" rx="9" fill="#e0f7fa" stroke="#00838f" stroke-width="1.6"/>
+  <text x="374" y="374" font-size="13.5" font-weight="bold" fill="#00838f">回饋！確認有滲流後，必須回頭修正結構軸的計算</text>
+  <text x="374" y="396" font-size="12.5" fill="#37474f">背側 γ′A = γsub + i·γw（變大） · 開挖側 γ′P = γsub − i·γw（變小）</text>
+  <text x="374" y="416" font-size="12.5" fill="#37474f">淨水壓力畫成三角形，樁尖處必為 0（免費檢查點）</text>
+
+  <rect x="360" y="444" width="530" height="80" rx="9" fill="#eceff1" stroke="#90a4ae" stroke-width="1.4"/>
+  <text x="374" y="468" font-size="13" font-weight="bold" fill="#37474f">對症下藥（反算題）</text>
+  <text x="374" y="490" font-size="12.5" fill="#455a64">隆起 → 坑底改良提高 Su　　上舉 → 深井降低承壓水頭（牆再深也沒用）</text>
+  <text x="374" y="510" font-size="12.5" fill="#455a64">砂湧 → 加深牆體拉長滲流路徑　　牆倒 → 加支撐／加深貫入／逆打</text>
+
+  <defs>
+    <marker id="fb" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455a64"/></marker>
+    <marker id="fc" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#00838f"/></marker>
+  </defs>
+</svg>
+<div class="cap">虛線是<b>回饋路徑</b>：一旦確認有穩定滲流，結構軸的有效單位重與淨水壓力都必須重算。SM-2020-2 把兩軸的耦合完整考出來，是本單元最有代表性的一題。</div>
+</div>
+</section>
+<section id="s8">
+<h2>§8　歷屆題 × 觀念對照表</h2>
+
+<p>全部 15 題皆為<b>主分類</b>（無副分類題），涵蓋 2003～2023 共 21 年。近 6 年（2018～2023）出題 4 次，是本科命題排名第 1 的子項。</p>
+
+<table>
+<thead><tr><th style="width:11%">題號</th><th style="width:7%">考年</th><th style="width:9%">軸</th><th style="width:27%">核心模型／公式</th><th>本講義對應節次</th></tr></thead>
+<tbody>
+<tr><td><a class="qlink" href="problems-view/SM-2003-3.html" target="_blank">SM-2003-3</a></td><td>2003</td><td style="color:#6a1b9a">地層</td><td>上舉破壞臨界深度、有效應力歸零</td><td>§5.1、§4（干擾資訊辨識）</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2005-1.html" target="_blank">SM-2005-1</a></td><td>2005</td><td style="color:#c62828">結構</td><td>自由端支撐法、φ=0 淨壓力 4c−q、地錨預力</td><td>§1.2、§1.6、§2.2</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2006-3.html" target="_blank">SM-2006-3</a></td><td>2006</td><td style="color:#00838f">特例</td><td>島式開挖沿軟弱薄層側向滑動、張力裂縫積水</td><td>§1.4、§6.4</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2007-4.html" target="_blank">SM-2007-4</a></td><td>2007</td><td style="color:#c62828">結構</td><td>固定端支撐法 Blum 等值梁、Kp/FS、地錨有效距離</td><td>§2.3、§2.5</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2008-3.html" target="_blank">SM-2008-3</a></td><td>2008</td><td style="color:#c62828">結構</td><td>總應力法 σv±2Su、貫入 FS=MP/MA、反算改良 qu</td><td>§1.3、§6.2</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2011-4.html" target="_blank">SM-2011-4</a></td><td>2011</td><td style="color:#c62828">結構</td><td>Peck 包絡線判別、鉸接法支撐荷重、截面模數</td><td>§3.1、§3.3、§3.4</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2012-4.html" target="_blank">SM-2012-4</a></td><td>2012</td><td>兩軸</td><td>層狀等值參數、支撐荷重＋Terzaghi 抗隆起（含 T）</td><td>§3.2、§3.3、§4.1</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2014-3.html" target="_blank">SM-2014-3</a></td><td>2014</td><td style="color:#c62828">結構</td><td>自由端支撐法、砂土加水壓＋黏土不加水壓</td><td>§1.2、§1.3、§2.2</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a></td><td>2015</td><td style="color:#c62828">結構</td><td>雙層土 Rankine、張力裂縫、抗滑動、牆底揚水壓</td><td>§1.4、§1.5</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2015-3.html" target="_blank">SM-2015-3</a></td><td>2015</td><td>兩軸</td><td>層狀等值參數＋Bjerrum &amp; Eide 三維 Nc</td><td>§3.1、§3.2、§4.1</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2017-4.html" target="_blank">SM-2017-4</a></td><td>2017</td><td style="color:#6a1b9a">地層</td><td>管湧＋上舉＋隆起三種一次到齊、鑽探報告判讀、降水反算</td><td>§4、§5.1、§5.2、§6.1</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a></td><td>2018</td><td style="color:#c62828">結構</td><td>懸臂擋土牆虛擬牆背、傾斜背填 Ka、傾覆／滑移</td><td>§1.5</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2020-2.html" target="_blank">SM-2020-2</a></td><td>2020</td><td>兩軸</td><td>懸臂版樁＋滲流修正 γ′＋淨水壓＋對 O 點力矩＋砂湧＋規範值</td><td>§2.4、§5.2、§5.3</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2022-4.html" target="_blank">SM-2022-4</a></td><td>2022</td><td style="color:#c62828">結構</td><td>懸臂淨壓力法、零淨壓力點 L3、四次方程 L4</td><td>§2.4</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2023-4.html" target="_blank">SM-2023-4</a></td><td>2023</td><td>概念</td><td>液性指數判高靈敏度、破壞因果鏈、災害防治對策</td><td>§6.3、§6.1</td></tr>
+</tbody>
+</table>
+
+<h3>考點群出現次數（決定複習優先順序）</h3>
+
+<table>
+<thead><tr><th style="width:32%">考點群</th><th style="width:12%">題數</th><th>代表題</th></tr></thead>
+<tbody>
+<tr><td>貫入深度（三種模型）</td><td><b>6</b></td><td>SM-2022-4、SM-2020-2、SM-2005-1、SM-2014-3、SM-2007-4、SM-2008-3</td></tr>
+<tr><td>Peck 視土壓力＋支撐荷重</td><td><b>3</b></td><td>SM-2011-4、SM-2012-4、SM-2015-3</td></tr>
+<tr><td>基底隆起</td><td><b>4</b></td><td>SM-2012-4、SM-2015-3、SM-2017-4、SM-2023-4</td></tr>
+<tr><td>滲流破壞（上舉／砂湧／管湧）</td><td><b>3</b></td><td>SM-2003-3、SM-2017-4、SM-2020-2</td></tr>
+<tr><td>擋土牆四項檢核</td><td>2</td><td>SM-2018-4、SM-2015-2（主戰場其實在 SM-U3-2，另有 8 題）</td></tr>
+<tr><td>災害防治／對策論述</td><td>2</td><td>SM-2023-4、SM-2008-3（後半）</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="s9">
+<h2>§9　陷阱總表（考前十分鐘掃這一頁）</h2>
+
+<table>
+<thead><tr><th style="width:5%">#</th><th style="width:26%">觸發信號</th><th style="width:30%">錯誤思維</th><th>正確認知</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>題目寫「坡地工程」</td><td>準備 Fellenius／Bishop 圓弧分析</td><td>本子項 15 題全是深開挖擋土；圓弧邊坡在 SM-U3-4</td></tr>
+<tr><td>2</td><td>黏土層 φ=0，給 Su</td><td>分別算主動、被動再相減，代數一堆</td><td>直接用 \(p_{net}=4S_u-q\)，均布矩形。<span style="color:#c62828">SM-2005-1 / SM-2014-3</span></td></tr>
+<tr><td>3</td><td>總應力法 \(\sigma_h=\sigma_v\pm2S_u\)</td><td>再加一個靜水壓三角形</td><td>算出來已是總側向應力，水壓已含在內。<span style="color:#c62828">SM-2008-3 / SM-2014-3</span></td></tr>
+<tr><td>4</td><td>砂土 \(K\sigma_v'\)</td><td>以為 K 已含水壓</td><td>K 只作用在有效應力上，水壓必須另加。判準：看用 \(\gamma'\) 還是 \(\gamma_{sat}\)</td></tr>
+<tr><td>5</td><td>黏土背填、c&gt;0</td><td>從 z=0 積分到底，含負壓力</td><td>先算 \(z_c=2c/(\gamma\sqrt{K_a})\)，只積分正壓力區。<span style="color:#c62828">SM-2015-2</span></td></tr>
+<tr><td>6</td><td>豪雨／水位上升＋有張力裂縫</td><td>只扣掉裂縫段</td><td>裂縫會<b>積滿水</b>，須加全深度靜水壓。SM-2006-3 中佔驅動力 85%</td></tr>
+<tr><td>7</td><td>單支撐版樁</td><td>對樁底或牆頂取矩</td><td>對<b>地錨點</b>取矩才能消掉 T；固定端則對<b>反曲點</b>取矩。<span style="color:#c62828">SM-2005-1 / SM-2007-4</span></td></tr>
+<tr><td>8</td><td>題目給了 FS 數值</td><td>先算理論 D 再乘 FS</td><td>寫明作法。給 FS → \(K_p'=K_p/FS\)；問「理論／最少」→ 直接寫 FS=1 結果。<span style="color:#c62828">SM-2007-4</span></td></tr>
+<tr><td>9</td><td>懸臂版樁四次方程</td><td>\(\bar{z}\) 對開挖面取矩</td><td>\(\bar{z}\) 必須對<b>零淨壓力點</b>取矩，錯了四個常數全錯。<span style="color:#c62828">SM-2022-4</span></td></tr>
+<tr><td>10</td><td>題幹寫「中等堅硬黏土」</td><td>直接用堅硬黏土包絡線</td><td>用算的 \(N=\gamma H/S_u\) 判別。SM-2011-4 的 N=4.08&gt;4 屬軟至中等</td></tr>
+<tr><td>11</td><td>\(N\) 只比 4 大一點</td><td>\(p_a=\gamma H-4S_u\) 算出極小值就用</td><td>檢查下限 \(0.3\gamma H\)。SM-2011-4 從 2.5 kPa 變 36.75 kPa</td></tr>
+<tr><td>12</td><td>上砂下黏的層狀開挖</td><td>兩層分開畫兩個包絡線</td><td>包絡線是<b>全深度單一圖形</b>，須先求 \(\bar\gamma\)、\(\bar{c}\)。<span style="color:#c62828">SM-2012-4 / SM-2015-3</span></td></tr>
+<tr><td>13</td><td>等值凝聚力的 \(K_s\)</td><td>隨手用 \(K_a\)</td><td>國考主流取 \(K_s=1.0\)；用什麼都要在卷面寫明假設</td></tr>
+<tr><td>14</td><td>抗隆起，題目給了 B 與 L</td><td>直接套 \(N_c=5.7\)</td><td>給平面尺寸＝要你用 Bjerrum &amp; Eide 三維 \(N_c\)。SM-2015-3 差距 1.25 vs 1.50</td></tr>
+<tr><td>15</td><td>抗隆起，給了上覆砂土的 φ</td><td>算完 \(N_cS_u/\gamma H\) 就交卷</td><td>Terzaghi 法分母要扣滑動面抗剪力 \(T/B'\)。SM-2012-4 差 0.98 vs 1.36</td></tr>
+<tr><td>16</td><td>「隆起」兩個字</td><td>一律套 \(N_cS_u\)</td><td>先看是不是<b>受壓含水層</b>造成的上舉（\(W'/U\)）。SM-2003-3、SM-2017-4 都是上舉</td></tr>
+<tr><td>17</td><td>上舉破壞算抵抗力</td><td>用有效單位重 \(\gamma'\)</td><td>抵抗的是整塊土的<b>總重</b>，用 \(\gamma_{sat}\)。用 \(\gamma'\) 會少算約一半</td></tr>
+<tr><td>18</td><td>主被動兩側水位不同</td><td>畫成矩形靜水壓、不修正 \(\gamma'\)</td><td>有滲流：背側 \(+i\gamma_w\)、開挖側 \(-i\gamma_w\)，淨水壓在樁尖為 0。<span style="color:#c62828">SM-2020-2</span></td></tr>
+<tr><td>19</td><td>題目後面問到砂湧</td><td>前面土壓力仍用靜水壓假設</td><td>問砂湧＝承認有滲流，前後必須一致</td></tr>
+<tr><td>20</td><td>豪雨使水位上升，底部有軟弱黏土</td><td>把水壓拿去扣黏土的抗剪力</td><td>\(s_u\) 是總應力參數，不隨水壓改變。<span style="color:#c62828">SM-2006-3</span></td></tr>
+<tr><td>21</td><td>鑽探表有 w、LL、PL</td><td>只寫「N=1 很軟弱」</td><td>算 \(LI=(w-PL)/PI&gt;1\)，點出高靈敏度／流體化。<span style="color:#c62828">SM-2023-4</span></td></tr>
+<tr><td>22</td><td>連續壁「很深」（如 24 m）</td><td>認為深度足夠</td><td>看壁底的 N 值有沒有進堅實層；SM-2023-4 的 24 m 處仍 N=1</td></tr>
+<tr><td>23</td><td>題目給的參數用不到</td><td>直接當干擾項忽略</td><td>先問「它在我的力平衡式裡有沒有位置」。SM-2012-4 的 φ 有位置（算 T）；SM-2003-3 的 \(\gamma_{sat}\) 沒有</td></tr>
+<tr><td>24</td><td>算出 \(p_{net}&lt;0\) 或方程無正根</td><td>硬解或改參數</td><td>答案是「此工法不可行，須先改良／降低開挖深度」，直接寫結論比亂算得分高</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="s10">
+<h2>§10　自我檢測：能回答才算讀懂</h2>
+
+<details><summary>1　為什麼多層支撐開挖不能用 Rankine 三角形土壓力？</summary>
+<p>因為變形歷程完全不同。Rankine 假設整面牆均勻位移到主動狀態；多層支撐是由上而下逐層架設，上層在下層還沒開挖時就被鎖死，之後幾乎不再變形。實測支撐力因此與三角形分布對不上，Peck 才改用「包住所有實測值」的經驗包絡線。這也是它叫「<b>視</b>土壓力（apparent）」的原因 —— 它不是真的土壓力，是反推出來的等效設計值。（§3 開頭）</p></details>
+
+<details><summary>2　\(\phi=0\) 黏土的淨壓力為什麼是 \(4S_u-q\)，而不是 \(2S_u-q\) 或 \(4S_u-2q\)？</summary>
+<p>主動側 \(\sigma_a=(q+\gamma z)-2S_u\)、被動側 \(\sigma_p=\gamma z+2S_u\)。相減時 \(\gamma z\) 抵消，\(2S_u\) 一減一加變成 \(4S_u\)，而 \(q\) 只出現在主動側（開挖側沒有那層覆土），所以只扣一次。「4」來自兩側各 \(2S_u\) 且方向相反。（§1.2）</p></details>
+
+<details><summary>3　自由端支撐法為什麼一定要對地錨點取矩？</summary>
+<p>未知數有 \(D\) 與 \(T\) 兩個，可用方程只有 \(\Sigma M=0\) 與 \(\Sigma F_x=0\)。對地錨點取矩時 \(T\) 的力臂為零而自動消失，方程只剩 \(D\) 一個未知數，可解；求得 \(D\) 後再用力平衡補回 \(T\)。對任何其他點取矩都會讓兩個未知數同時出現，解不開。（§2.1、§2.2）</p></details>
+
+<details><summary>4　固定端支撐法的「反曲點」為什麼可以當成鉸接？</summary>
+<p>反曲點的定義就是彎矩為零之處。在彎矩為零的斷面把梁切開，切口上沒有彎矩傳遞，剛好符合鉸的力學條件，於是原本超靜定的連續牆被拆成兩段靜定梁，可以逐段用靜力方程解。Blum 進一步把「淨土壓力為零的深度」當作反曲點位置的近似。（§2.3）</p></details>
+
+<details><summary>5　為什麼穩定數 \(N=4\) 恰好是 Peck 包絡線的分界？</summary>
+<p>\(N=\gamma H/S_u=4\) 等價於 \(4S_u=\gamma H\)，也就是 §1.2 的淨抵抗壓力 \(4S_u-q\) 恰好歸零 —— 坑底黏土的抵抗被開挖卸載完全吃掉。\(N&gt;4\) 表示坑底已進入塑性、土往開挖區擠，所以壓力延伸到坑底不收斂。穩定數、淨壓力、抗隆起是同一個門檻的三種寫法。（§3.1）</p></details>
+
+<details><summary>6　基底隆起公式為什麼長得像淺基礎承載力公式？</summary>
+<p>因為兩者是同一個 Prandtl 塑性破壞機構，只是方向顛倒。淺基礎問「往下壓多少會破壞」得 \(q_u=N_cS_u\)；基底隆起問「開挖旁邊的土往下壓，會不會把坑底土擠進坑內」，驅動的是內外應力差 \(\gamma H+q\)。所以 \(N_c\) 的形狀修正、深度修正全部通用。（§4.1）</p></details>
+
+<details><summary>7　Bjerrum &amp; Eide 的兩個修正項為什麼都是「1＋」？</summary>
+<p>因為三維一定比二維安全。\(\left(1+0.2\frac{B}{L}\right)\) 是形狀效應 —— 開挖愈接近正方形，四周都有土箍著；\(\left(1+0.2\frac{D}{B}\right)\) 是深度效應 —— 挖得愈深相對愈窄，破壞面愈難發展。極限檢查：\(L\to\infty\)、\(D\to0\) 時 \(N_c\to5\)，退化回二維最不利情況。（§4.1）</p></details>
+
+<details><summary>8　Terzaghi 抗隆起公式為什麼要在分母扣掉 \(T/B'\)？</summary>
+<p>因為開挖兩側往下壓的土柱不是自由落下，它沿垂直滑動面被摩擦力（砂土段 \(\frac12K_0\gamma_sH_s^2\tan\phi_s\)）與黏著力（黏土段 \(S_uH_c\)）吊住，實際傳到坑底的驅動應力因此變小。SM-2012-4 中這一項貢獻 28%，忘記扣會把 1.36 算成 0.98。（§4.1）</p></details>
+
+<details><summary>9　上舉破壞的抵抗力為什麼用總單位重而不是有效單位重？</summary>
+<p>因為它是整體浮力問題，不是剪力問題。抵抗上舉的是那塊不透水層的整體重量（水與土一起壓在下方水壓上），不是有效重。用 \(\gamma'\) 會把抵抗力少算約一半，是這題型最致命的錯誤。（§5.1）</p></details>
+
+<details><summary>10　為什麼加深連續壁能改善砂湧，卻救不了上舉破壞？</summary>
+<p>砂湧的驅動量是<b>出口水力坡降</b> \(i_{exit}=\Delta H/L\)，牆加深直接拉長滲流路徑 \(L\)，\(i\) 下降、FS 上升。上舉的驅動量是<b>受壓含水層的水頭</b>，牆再深既不會讓上方那塊土變重、也不會降低水頭，唯一直接有效的藥是深井降低承壓水頭。（§6.1）</p></details>
+
+<details><summary>11　豪雨時邊坡／擋土結構為什麼特別容易破壞？請量化。</summary>
+<p>兩個效應疊加：① 有效應力下降使土壓力的抵抗端變弱；② 更關鍵的是<b>水本身提供巨大的側向推力</b>。SM-2006-3 中 12 m 深的積水張力裂縫產生 706 kN/m 水壓推力，佔總驅動力 832 kN/m 的 85%，FS 從 1.22 直接掉到 0.47。土壓力只佔 15% —— 真正的敵人是水。（§1.4、§6.4）</p></details>
+
+<details><summary>12　\(LI&gt;1\) 代表什麼？為什麼它比 N=1 更能說明問題？</summary>
+<p>\(LI=(w-PL)/PI&gt;1\) 表示天然含水量已超過液性限度。土在未擾動時靠結構鍵結維持強度，一旦被開挖解壓或施工擾動，結構破壞、強度大幅喪失並表現得像黏滯流體 —— 這就是高靈敏度。N=1 只說明「現在很弱」，\(LI&gt;1\) 說明「一擾動會更弱」，後者才解釋得了「為什麼會突然連鎖破壞」。（§6.3）</p></details>
+
+<details><summary>13　題目給了一個參數卻用不到，該怎麼判斷是漏算還是干擾項？</summary>
+<p>問自己「這個參數在我列的力平衡／力矩方程裡有沒有位置」。SM-2012-4 給砂土 \(\phi=30^\circ\)：抗隆起的 \(T\) 項需要它 → 有位置，是我漏了。SM-2003-3 給砂土 \(\gamma_{sat}=18\)：破壞面在界面上、水壓已由壓力水頭給定 → 方程裡根本沒有它的位置，是干擾項。（§4.1）</p></details>
+</section>
+<section id="s10b">
+<h2>§10.5　因果鏈重列：能用嘴巴講出來才算會</h2>
+
+<div class="lead">每一條都是 5～7 步的箭頭鏈。考前把這六條唸過一遍，比重看公式有效。</div>
+
+<div class="why"><b>① 為什麼要有貫入深度</b><br>
+挖走的土失去側向支撐 → 背側主動土壓力無人抵抗 → 牆繞某點旋轉 → 需要開挖側的被動土壓力提供反向力矩 → 被動土壓力隨深度線性增加 → 加深貫入即可買到足夠力矩 → \(D\) 的多項式方程。</div>
+
+<div class="why"><b>② 為什麼 \(\phi=0\) 黏土的淨壓力是均布的</b><br>
+不排水黏土 \(K_a=K_p=1\) → 兩側的 \(\gamma z\) 大小相同 → 相減時抵消 → 只剩 \(\pm2S_u\) 與 \(q\) → \(p_{net}=4S_u-q\) 與深度無關 → 力矩積分退化成矩形面積 → 一元二次式可手算。</div>
+
+<div class="why"><b>③ 為什麼多層支撐要用視土壓力</b><br>
+支撐由上而下逐層架設 → 上層先鎖死、下層還沒挖 → 每一段牆的變形歷程不同 → 實測支撐力與 Rankine 三角形對不上 → Peck 用實測值反推包絡線 → 包絡線是所有階段的上限（保守）→ 用它算支撐荷重安全、算彎矩偏保守。</div>
+
+<div class="why"><b>④ 為什麼開挖會隆起</b><br>
+挖走土 → 坑底垂直應力大幅卸載，但坑外仍有 \(\gamma H+q\) → 內外應力差驅動坑底土往坑內流動 → 這與淺基礎承載力是同一個 Prandtl 機構（方向顛倒）→ 抵抗為 \(N_cS_u\) → 軟弱黏土 \(S_u\) 小 → \(FS&lt;1.5\) → 對策是提高 \(S_u\)（改良），不是加深牆。</div>
+
+<div class="why"><b>⑤ 為什麼滲流同時傷害兩軸</b><br>
+兩側水位差 → 水繞過樁尖形成穩定滲流 → 背側水流向下、產生向下滲流力 → \(\gamma'_A\) 變大、主動推力變大 → 開挖側水流向上 → \(\gamma'_P\) 變小、被動抵抗變小 → 力矩兩端同時惡化 → 同時出口坡降 \(i_{exit}\) 逼近 \(i_{cr}\) → 砂湧。</div>
+
+<div class="why"><b>⑥ 高靈敏度黏土的連鎖破壞（SM-2023-4）</b><br>
+\(LI&gt;1\)、\(N=1\) 的軟弱黏土 → 開挖解壓與施工擾動使 \(S_u\) 再下降 → \(N_cS_u\) 抗不住 \(\gamma H\)，坑底隆起 → 連續壁下端失去被動抵抗（且壁底未入堅實層）→ 牆體踢腳內擠 → 背側主動土壓力趨近靜水壓般增加 → 支撐超載連鎖挫屈 → 大量土體損失 → 鄰房傾斜下陷。</div>
+</section>
+
+<section id="s11">
+<h2>★ §11　精選 5 題：時間只夠練五題就練這五題</h2>
+
+<div class="lead">
+挑選標準不是「最難」，而是<b>一題能練到最多獨立技能、且彼此重疊最少</b>。
+貪婪最大覆蓋演算法給出的另一組（SM-2015-3／SM-2008-3／SM-2006-3／SM-2018-4／SM-2014-3，標籤覆蓋 60%）
+在「跨軸耦合」與「自建前置資料」兩種能力上是空的，所以我改用下面這組（覆蓋 56%，但考點群更完整）。
+標籤覆蓋率會低估真實涵蓋度 —— 同義標籤（「視土壓力」vs「Peck包絡線」、「鈑樁」vs「連續壁」）被分別計數 —— 所以下方另以<b>考點群</b>報告。
+</div>
+
+<h3>① <a class="qlink" href="problems-view/SM-2020-2.html" target="_blank">SM-2020-2</a>（2020）— 全單元最有代表性的一題</h3>
+<div class="box">
+<b>為什麼選它</b>：唯一把「兩軸耦合」完整考出來的題目。一題之內要做完：懸臂版樁土壓力分布 → 滲流修正有效單位重 → 淨水壓力圖 → 對樁尖取矩求 FS → 抗砂湧 FS → 對照規範判定合格與否。<b>四個獨立技能，別題最多只能練到兩個。</b><br>
+<b>先讀</b>：§2.4（懸臂模型）、§5.2（砂湧）、§5.3（滲流回饋）<br>
+<b>做完要能回答</b>：① 為什麼被動側的 \(\gamma'\) 要減 \(i\gamma_w\)？② 淨水壓力在樁尖為什麼是 0？③ 算出 \(FS_{wall}=0.60\) 該怎麼作結論？④《建築物基礎構造設計規範》對砂湧的要求值是多少？
+</div>
+
+<h3>② <a class="qlink" href="problems-view/SM-2012-4.html" target="_blank">SM-2012-4</a>（2012）— 支撐系統與地層破壞一次到位</h3>
+<div class="box">
+<b>為什麼選它</b>：層狀土等值參數 → Peck 包絡線判別 → 鉸接法三層支撐荷重 → Terzaghi 抗隆起（且必須算滑動面抗剪力 \(T\)）。
+兩軸各一半，而且「\(T\) 要不要扣」這個陷阱只有這題練得到（差距 0.98 vs 1.36，結論會翻轉）。<br>
+<b>先讀</b>：§3.2（等值參數）、§3.3（鉸接法）、§4.1（Terzaghi 的 \(T\)）<br>
+<b>做完要能回答</b>：① \(K_s=1.0\) 與 \(K_a\) 的差別會讓 \(p_a\) 差多少？② 三個支撐荷重總和為什麼小於包絡線總面積？③ 若改用 Bjerrum &amp; Eide 會得到多少？兩者為何都算對？
+</div>
+
+<h3>③ <a class="qlink" href="problems-view/SM-2017-4.html" target="_blank">SM-2017-4</a>（2017）— 三種地層破壞的鑑別診斷</h3>
+<div class="box">
+<b>為什麼選它</b>：管湧、上舉、隆起<b>在同一題內全部出現</b>，是唯一能練「鑑別診斷」的題目。
+更重要的是它要求<b>自己從鑽探報告建立前置資料</b>（分層加權平均單位重、加權平均 N 值、判定不透水／透水層界面）——
+這種「題目不給參數、要自己算出來」的能力，別的題型完全練不到。還附帶降水深度反算與施工工法論述。<br>
+<b>先讀</b>：§4（三機制對照）、§5.1（上舉與反算）、§5.2（管湧最高流線）<br>
+<b>做完要能回答</b>：① 上舉的受壓面為什麼定在 GL−10.32 而不是開挖面？② 隆起的 \(S_u\) 為什麼取開挖面到樁底的加權平均？③ 為什麼降水後的水位必須低於開挖面？
+</div>
+
+<h3>④ <a class="qlink" href="problems-view/SM-2014-3.html" target="_blank">SM-2014-3</a>（2014）— 自由端支撐法的標準題</h3>
+<div class="box">
+<b>為什麼選它</b>：自由端支撐法是三種擋土模型的<b>基準</b>（另兩種都是它的變形），而且本子項有三題用它。
+這一題的版本最完整：上半段砂土用有效應力法<b>要加水壓</b>、下半段黏土用總應力法 \(4S_u-q\) <b>不加水壓</b> —— 兩種水壓處理方式在同一題內並存，是最好的對照練習。<br>
+<b>先讀</b>：§1.2（\(4S_u-q\)）、§1.3（加不加水壓）、§2.2（一元二次式）<br>
+<b>做完要能回答</b>：① 為什麼黏土層的 \(\gamma=19.11\) 完全用不到？② 為什麼力矩要對 z=1 m 取而不是牆頂？③ 算出 \(D=0.371\) m 這麼小合理嗎（提示：\(4S_u=200\) 遠大於 \(q=78.4\)）？
+</div>
+
+<h3>⑤ <a class="qlink" href="problems-view/SM-2007-4.html" target="_blank">SM-2007-4</a>（2007）— 固定端支撐法與地錨幾何</h3>
+<div class="box">
+<b>為什麼選它</b>：全庫<b>唯一</b>的 Blum 等值梁題，也是唯一考「地錨要拉多遠才有效」的題。
+另外它示範了「把 FS 施加在 \(K_p\) 上」這種與前四題不同的安全係數處理方式，以及分層土在開挖面處 \(K_a\) 的跳躍。<br>
+<b>先讀</b>：§2.3（Blum）、§2.5（地錨有效距離）、§2.1（取矩點）<br>
+<b>做完要能回答</b>：① 反曲點深度 \(y\) 為什麼是 \(p_a/[\gamma(K_p'-K_a)]\)？② \(L_5=\sqrt{6R/k'}\) 的量綱對不對？③ 主動楔體角 \(45^\circ+\phi/2\) 與被動楔體角 \(45^\circ-\phi/2\)，為什麼一陡一緩？
+</div>
+
+<h3>考點群涵蓋度（誠實版）</h3>
+
+<table>
+<thead><tr><th style="width:34%">考點群</th><th style="width:14%">是否涵蓋</th><th>說明</th></tr></thead>
+<tbody>
+<tr><td>懸臂式貫入深度</td><td style="color:#2e7d32"><b>✔</b></td><td>①（力矩法版本）。四次方程版本見候補 SM-2022-4</td></tr>
+<tr><td>自由端支撐法</td><td style="color:#2e7d32"><b>✔</b></td><td>④</td></tr>
+<tr><td>固定端 Blum 等值梁</td><td style="color:#2e7d32"><b>✔</b></td><td>⑤</td></tr>
+<tr><td>Peck 視土壓力＋支撐荷重</td><td style="color:#2e7d32"><b>✔</b></td><td>②</td></tr>
+<tr><td>基底隆起（Terzaghi 含 T）</td><td style="color:#2e7d32"><b>✔</b></td><td>②</td></tr>
+<tr><td>上舉、砂湧、管湧</td><td style="color:#2e7d32"><b>✔</b></td><td>①、③</td></tr>
+<tr><td>滲流修正土壓力</td><td style="color:#2e7d32"><b>✔</b></td><td>①</td></tr>
+<tr><td>Bjerrum &amp; Eide 三維 \(N_c\)</td><td style="color:#e65100"><b>△</b></td><td>只在②的討論欄出現，未實際計算 → 補 SM-2015-3 的第二小題（10 分鐘）</td></tr>
+<tr><td>截面模數 / 最大彎矩</td><td style="color:#e65100"><b>△</b></td><td>②練到支撐荷重但沒算 \(M_{max}\) → 補 SM-2011-4 第三小題（10 分鐘）</td></tr>
+<tr><td>擋土牆四項檢核</td><td style="color:#c62828"><b>✘</b></td><td>本子項只有 2 題，主戰場在 SM-U3-2（另有 8 題）。建議連同 U3-2 一起練</td></tr>
+<tr><td>張力裂縫與積水</td><td style="color:#c62828"><b>✘</b></td><td>五題都沒有 \(c&gt;0\) 的背填土 → 補 SM-2006-3 或 SM-2015-2</td></tr>
+<tr><td>災害防治論述題</td><td style="color:#c62828"><b>✘</b></td><td>SM-2023-4 建議<b>當閱讀材料</b>而非計算練習（§6.3 已整理完因果鏈）</td></tr>
+</tbody>
+</table>
+
+<h3>候補題（時間還有的話，依序加）</h3>
+<ol>
+<li><a class="qlink" href="problems-view/SM-2008-3.html" target="_blank">SM-2008-3</a> — 總應力法 \(\sigma_v\pm2S_u\) ＋ 反算地盤改良 \(q_u\)。唯一的「反算」訓練，且與③的降水反算互補。</li>
+<li><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a> — 張力裂縫 ＋ 牆底揚水壓 ＋ 抗滑動。補齊上表兩個 ✘。</li>
+<li><a class="qlink" href="problems-view/SM-2022-4.html" target="_blank">SM-2022-4</a> — 懸臂淨壓力法四次方程。觀念與①相同，價值在於<b>訓練長算式不出錯</b>；時間不夠可略。</li>
+</ol>
+
+<h3>練這五題的正確方法</h3>
+<ol>
+<li><b>先不看解答，只做「分軸」與「列方程」</b>，把每一小題標上結構軸／地層軸、寫出要用哪條式子、對哪一點取矩。這一步做對，題目就贏了七成。花 10 分鐘。</li>
+<li><b>再動手算</b>，但每算完一個中間量就做一次量級檢查（\(K_a\) 是否落在 0.2～0.5、\(i_{cr}\) 是否接近 1.0、\(FS\) 是否在 0.5～3 之間）。<b>錯誤要在中途抓到，不是最後才發現。</b></li>
+<li><b>對答案時只看數字對不對，先不看解法。</b>數字錯了先自己找，找不到再看該題解析裡的「3.5 變數層次分析」定位卡關層級（L1 給定／L2 推導／L3 深層知識）。</li>
+<li><b>最後回到 §9 陷阱總表</b>，圈出這題踩到的那幾條。五題做完應該圈掉 15 條以上；沒圈到的那幾條要另外找題目補。</li>
+</ol>
+</section>
+</main>
+
+<footer>
+exam-wiki-SM · unit-lecture 產出 · 資料來源：raw/solutions/（解題內容唯一正本）＋ raw/json/question_index.json
+</footer>
+</body>
+</html>

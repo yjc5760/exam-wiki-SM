@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2013-3 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2013-3 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：[SM-2013-3]</h1>
+<p><strong>主分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>分析法：</strong> 有效應力法 / 總應力法<br />
+<strong>標籤：</strong> <code>三軸試驗</code> <code>應力路徑</code> <code>有效應力</code> <code>孔隙水壓參數</code></p>
+<hr />
+<h2>1. 原始題目重述 (Problem Restatement)</h2>
+<p>有一不擾動之黏土樣品，若進行 $K_0$ 不等向壓密不排水軸向壓縮（axial compression, AC）試驗，靜止土壓力係數 $K_0=0.7$，即初始條件為水平壓密應力 $\sigma_{cell}=280 \text{ kN/m}^2$，垂直軸向壓密應力為 $400 \text{ kN/m}^2$，假設初始孔隙水壓為零。此 AC 試驗之應力對應變以及孔隙水壓（$\Delta u$）對應變之結果，如圖二所示。</p>
+<p>茲再準備一完全相同之黏土樣品（即孔隙比、含水量等皆保持相同），進行側向伸張試驗（lateral extension, LE），即垂直軸向應力保持一定，而側向壓力減少至試體破壞為止。</p>
+<p>(一) 試繪出 AC 與 LE 試驗之總應力與有效應力路徑？（8 分）<br />
+(二) 試繪出 LE 試驗中，孔隙水壓對應變圖？（8 分）<br />
+(三) 試決定 AC 與 LE 試驗中之破壞時孔隙水壓參數 $A_f$，有效應力抗剪角 $\phi'$，總應力抗剪角 $\phi$ 與破壞面角度？（9 分）</p>
+<p><img alt="SM-2013-3 題目附圖：AC 試驗之應力對應變與孔壓對應變圖" src="../../raw/solutions/SM-2013-3/SM-2013-3-fig-1.png" /><br />
+<em>圖說：左圖為應力差 $(\sigma_1-\sigma_3)$ 與軸向應變 $\epsilon$ 關係曲線，峰值約發生在 $\epsilon=1.0\%$；右圖為孔隙水壓 $\Delta u$ 與軸向應變 $\epsilon$ 關係曲線。</em></p>
+<hr />
+<h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
+<p>本題為極高水準之觀念題，主要測試考生對<strong>應力路徑 (Stress Path)</strong>與<strong>有效應力原理</strong>的深刻理解。出題者意圖包含：</p>
+<ol>
+<li><strong>有效應力路徑 (ESP) 唯一性</strong>：對於初始狀態相同的同種黏土，在不排水條件下，只要主應力方向不旋轉，不論總應力路徑如何改變（加載或解載），其有效應力路徑與孔隙水壓參數 $A$ 皆視為相同。</li>
+<li><strong>總應力與有效應力參數之差異</strong>：引導考生發現，儘管兩試驗的有效應力抗剪角 $\phi'$ 相同，但在不同總應力路徑下（若假設 $c=0$），總應力抗剪角 $\phi$ 會因測試方法 (AC vs LE) 而有顯著差異，凸顯總應力參數非土壤基本性質。</li>
+<li><strong>破壞面角度的本質</strong>：測試考生是否知道物理上的破壞面角度應由<strong>有效應力摩擦角 $\phi'$</strong> 控制，而非總應力摩擦角。</li>
+</ol>
+<hr />
+<h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
+<ul>
+<li>
+<p><strong>步驟 1：讀取圖表與判定破壞點</strong><br />
+  從圖二中，需準確讀出破壞（應力差峰值）時的對應狀態。觀察左圖，峰值約發生在應變 $\epsilon=1.0\%$，此時 $(\sigma_1-\sigma_3)_f \approx 280 \text{ kPa}$；對應至右圖，孔隙水壓增量 $\Delta u_f \approx 130 \text{ kPa}$。</p>
+</li>
+<li>
+<p><strong>步驟 2：總應力路徑 (TSP) 分析</strong></p>
+</li>
+<li><strong>AC 試驗</strong>：側壓不變 ($\Delta \sigma_3 = 0$)，軸壓增加 ($\Delta \sigma_1 > 0$)。</li>
+<li>
+<p><strong>LE 試驗</strong>：軸壓不變 ($\Delta \sigma_1 = 0$)，側壓減少 ($\Delta \sigma_3 < 0$)。<br />
+  需注意 LE 試驗中，垂直應力 (400) 始終大於側向應力 (280 遞減)，故大主應力 $\sigma_1$ 始終為垂直向，主應力方向未旋轉。</p>
+</li>
+<li>
+<p><strong>步驟 3：利用 ESP 唯一性求孔壓</strong><br />
+  由 Skempton 參數 $A$ 在相同應變下相等的特性，可推導出 $u_{LE}$ 與 $u_{AC}$ 的直接數學關係，藉此繪製 LE 試驗的水壓變化圖。</p>
+</li>
+<li>
+<p><strong>陷阱與應對</strong>：</p>
+</li>
+<li><strong>陷阱</strong>：計算 $\phi$ 與 $\phi'$ 時，許多人不知如何處理凝聚力 $c$。</li>
+<li><strong>應對</strong>：由於僅有一組初始壓密狀態，依據考題慣例，針對單一試驗推導 $\phi'$ 與 $\phi$ 時，皆假設過原點 ($c'=0$ 及 $c_{cu}=0$) 進行計算。</li>
+</ul>
+<hr />
+<h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
+<h3>最終目標</h3>
+<p><code>繪製 AC 與 LE 之應力路徑與水壓應變圖，並求出破壞時之強度與孔壓參數</code></p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<ul>
+<li>
+<p>應力路徑座標 (以 $p, q$ 表示)：<br />
+  $$p = \frac{\sigma_1 + \sigma_3}{2} \quad ; \quad q = \frac{\sigma_1 - \sigma_3}{2}$$</p>
+</li>
+<li>
+<p>總應力增量與 Skempton 孔隙水壓公式：<br />
+  $$\Delta u = \Delta \sigma_3 + A_f(\Delta \sigma_1 - \Delta \sigma_3)$$</p>
+</li>
+<li>
+<p>兩試驗孔隙水壓關聯（基於 $A$ 參數相同）：<br />
+  $$u_{LE} = u_{AC} - \Delta(\sigma_1 - \sigma_3)$$</p>
+</li>
+<li>
+<p>有效應力破壞參數（假設 $c'=0$）：<br />
+  $$\sin\phi' = \frac{\sigma_{1f}' - \sigma_{3f}'}{\sigma_{1f}' + \sigma_{3f}'}$$</p>
+</li>
+<li>
+<p>總應力破壞參數（假設 $c_{cu}=0$）：<br />
+  $$\sin\phi_{cu} = \frac{\sigma_{1f} - \sigma_{3f}}{\sigma_{1f} + \sigma_{3f}}$$</p>
+</li>
+<li>
+<p>實質破壞面角度（由有效應力控制）：<br />
+  $$\theta = 45^\circ + \frac{\phi'}{2}$$</p>
+</li>
+</ul>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\sigma_{vc}$</td>
+<td>$400 \text{ kPa}$</td>
+<td>初始垂直壓密應力</td>
+</tr>
+<tr>
+<td>$\sigma_{hc}$</td>
+<td>$280 \text{ kPa}$</td>
+<td>初始水平壓密應力</td>
+</tr>
+<tr>
+<td>$(\sigma_1-\sigma_3)_f$</td>
+<td>$280 \text{ kPa}$</td>
+<td>由圖讀取之破壞應力差 (於 $\epsilon=1.0\%$)</td>
+</tr>
+<tr>
+<td>$\Delta u_{AC,f}$</td>
+<td>$130 \text{ kPa}$</td>
+<td>由圖讀取之破壞孔隙水壓 (於 $\epsilon=1.0\%$)</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<p><strong>應力路徑與水壓關係</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|-----|-----------|------|<br />
+| $u_{LE}$ | $= u_{AC} - [(\sigma_1-\sigma_3) - (\sigma_1-\sigma_3)_0]$ | |<br />
+| $p', q$ | $p' = p - u$ ; $q = (\sigma_1-\sigma_3)/2$ | |</p>
+<h3>L3：深層知識（不懂就卡住）</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有效應力路徑 (ESP) 唯一性</strong></td>
+<td>相同壓密狀態下，不排水剪力行為由有效應力決定。AC與LE的 $p'-q$ ESP 為同一條曲線。</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>總應力抗剪角 $\phi$ 的非基本性</strong></td>
+<td>對同一土壤，不同總應力路徑(AC vs LE)繪出過原點之總應力包絡線，會得到不同的 $\phi_{cu}$。</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>破壞面角度 $\theta$</strong></td>
+<td>土壤破壞由有效應力摩擦控制，故永遠為 $45^\circ + \phi'/2$，不受總應力路徑影響。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
+<h3>Step 1: 初始狀態與破壞點數值讀取</h3>
+<p>定義應力路徑座標為 $p = \frac{\sigma_1 + \sigma_3}{2}$， $q = \frac{\sigma_1 - \sigma_3}{2}$。<br />
+初始狀態（對於 AC 與 LE 皆同）：</p>
+<ul>
+<li>$\sigma_1 = \sigma_v = 400 \text{ kPa}$</li>
+<li>$\sigma_3 = \sigma_h = 280 \text{ kPa}$</li>
+<li>$p_0 = \frac{400+280}{2} = 340 \text{ kPa}$</li>
+<li>$q_0 = \frac{400-280}{2} = 60 \text{ kPa}$<br />
+初始孔壓 $u_0 = 0$，故初始有效應力 $p_0' = p_0 = 340 \text{ kPa}$。</li>
+</ul>
+<p>從圖二讀取 <strong>AC 試驗破壞點</strong>：</p>
+<ul>
+<li>峰值約在 $\epsilon = 1.0\%$</li>
+<li>破壞應力差 $(\sigma_1 - \sigma_3)_f = 280 \text{ kPa} \implies \Delta(\sigma_1 - \sigma_3) = 280 - 120 = 160 \text{ kPa}$</li>
+<li>破壞孔隙水壓 $u_{AC, f} = 130 \text{ kPa}$</li>
+</ul>
+<hr />
+<h3>Step 2: (一) AC 與 LE 試驗之總應力與有效應力路徑</h3>
+<p><strong>1. AC 試驗總應力路徑 (TSP)</strong>：</p>
+<ul>
+<li>條件：$\Delta \sigma_1 > 0$，$\Delta \sigma_3 = 0$</li>
+<li>破壞時：$\sigma_{1f} = 400 + 160 = 560 \text{ kPa}$，$\sigma_{3f} = 280 \text{ kPa}$</li>
+<li>破壞點座標：$p_f = \frac{560+280}{2} = 420 \text{ kPa}$， $q_f = \frac{280}{2} = 140 \text{ kPa}$</li>
+<li>路徑：起點 $(340, 60)$，終點 $(420, 140)$，斜率為 $+1$ 的直線。</li>
+</ul>
+<p><strong>2. LE 試驗總應力路徑 (TSP)</strong>：</p>
+<ul>
+<li>條件：$\Delta \sigma_1 = 0$ (保持 400 kPa)，$\Delta \sigma_3 < 0$ (減少至破壞)。</li>
+<li>因有效應力路徑唯一，兩者破壞時之 $q_f$ 相同（$q_f = 140 \text{ kPa}$），對應 $(\sigma_1 - \sigma_3)_f = 280 \text{ kPa}$。</li>
+<li>破壞時：$\sigma_{1f} = 400 \text{ kPa}$，則 $\sigma_{3f} = 400 - 280 = 120 \text{ kPa}$。</li>
+<li>破壞點座標：$p_f = \frac{400+120}{2} = 260 \text{ kPa}$， $q_f = 140 \text{ kPa}$</li>
+<li>路徑：起點 $(340, 60)$，終點 $(260, 140)$，斜率為 $-1$ 的直線。</li>
+</ul>
+<p><strong>3. 有效應力路徑 (ESP) (兩者共用)</strong>：</p>
+<ul>
+<li>破壞時有效應力（以 AC 為例）：$p_f' = p_f - u_{AC,f} = 420 - 130 = 290 \text{ kPa}$。</li>
+<li>破壞點座標：$(p_f', q_f) = (290, 140)$。</li>
+<li>路徑：從起點 $(340, 60)$ 隨孔壓增加，向左彎曲延伸至終點 $(290, 140)$。</li>
+</ul>
+<p><em>(考試作答時，請於平面圖上標示橫軸 $p$ 或 $p'$，縱軸 $q$，並畫出上述三條路徑及起終點座標)</em></p>
+<hr />
+<h3>Step 3: (二) LE 試驗中，孔隙水壓對應變圖</h3>
+<p>依據 Skempton 孔隙水壓公式 $\Delta u = \Delta \sigma_3 + A(\Delta \sigma_1 - \Delta \sigma_3)$：</p>
+<ul>
+<li>AC 試驗：$\Delta u_{AC} = A \cdot \Delta(\sigma_1 - \sigma_3)$</li>
+<li>LE 試驗：$\Delta \sigma_1 = 0 \implies \Delta \sigma_3 = -\Delta(\sigma_1 - \sigma_3)$<br />
+  $\Delta u_{LE} = -\Delta(\sigma_1 - \sigma_3) + A[0 - (-\Delta(\sigma_1 - \sigma_3))] = \Delta u_{AC} - \Delta(\sigma_1 - \sigma_3)$<br />
+已知初始應力差為 120 kPa，故應力差增量 $\Delta(\sigma_1 - \sigma_3) = (\sigma_1 - \sigma_3)_{current} - 120$。<br />
+代入得 LE 試驗之孔壓公式：<br />
+$$u_{LE} = u_{AC} - (\sigma_1 - \sigma_3)_{current} + 120$$</li>
+</ul>
+<p>從圖二擷取各應變點計算 $u_{LE}$：<br />
+| 應變 $\epsilon$ (%) | $(\sigma_1-\sigma_3)$ (kPa) | $u_{AC}$ (kPa) | $u_{LE}$ 計算式 | <strong>$u_{LE}$ (kPa)</strong> |<br />
+|:---:|:---:|:---:|:---|:---:|<br />
+| 0 | 120 | 0 | $0 - 120 + 120$ | <strong>0</strong> |<br />
+| 0.5 | ~220 | ~105 | $105 - 220 + 120$ | <strong>5</strong> |<br />
+| 1.0 (破壞) | 280 | 130 | $130 - 280 + 120$ | <strong>-30</strong> |</p>
+<p><strong>繪圖描述</strong>：<br />
+LE 試驗的 $u_{LE}$ 曲線從原點 $(0,0)$ 出發，微幅上升至正值（約 5 kPa），隨後快速下降，在試體破壞點（$\epsilon = 1.0\%$）時達到 $u_{LE} = -30 \text{ kPa}$。<br />
+<em>(由於題目指定側向壓力減少「至試體破壞為止」，曲線繪製至 $\epsilon=1.0\%$ 即可)</em></p>
+<hr />
+<h3>Step 4: (三) 決定破壞時之強度與孔壓參數</h3>
+<p><strong>1. 破壞時孔隙水壓參數 $A_f$</strong><br />
+對於 AC 與 LE 試驗，在同一破壞應變下具有相同的 $A_f$。以 AC 試驗計算：</p>
+<ul>
+<li>$\Delta \sigma_1 = 160 \text{ kPa}$，$\Delta \sigma_3 = 0$，$\Delta u_f = 130 \text{ kPa}$<br />
+$$A_f = \frac{\Delta u_f - \Delta \sigma_3}{\Delta \sigma_1 - \Delta \sigma_3} = \frac{130 - 0}{160 - 0} = \boxed{0.813}$$</li>
+</ul>
+<p><strong>2. 有效應力抗剪角 $\phi'$</strong><br />
+破壞時有效主應力：<br />
+$\sigma_{1f}' = \sigma_{1f} - u_f = 560 - 130 = 430 \text{ kPa}$<br />
+$\sigma_{3f}' = \sigma_{3f} - u_f = 280 - 130 = 150 \text{ kPa}$<br />
+假設有效應力凝聚力 $c' = 0$：<br />
+$$\sin\phi' = \frac{\sigma_{1f}' - \sigma_{3f}'}{\sigma_{1f}' + \sigma_{3f}'} = \frac{430 - 150}{430 + 150} = \frac{280}{580} = 0.4827$$<br />
+$$\phi' = \arcsin(0.4827) = \boxed{28.86^\circ}$$</p>
+<p><strong>3. 總應力抗剪角 $\phi$</strong><br />
+因試驗方法不同，過原點之總應力包絡線（假設 $c_{cu}=0$）將產生不同之 $\phi_{cu}$：</p>
+<ul>
+<li>
+<p><strong>AC 試驗</strong>：$\sigma_{1f} = 560$, $\sigma_{3f} = 280$<br />
+  $$\sin\phi_{AC} = \frac{560 - 280}{560 + 280} = \frac{280}{840} = 0.333 \implies \boxed{\phi_{AC} = 19.47^\circ}$$</p>
+</li>
+<li>
+<p><strong>LE 試驗</strong>：$\sigma_{1f} = 400$, $\sigma_{3f} = 120$<br />
+  $$\sin\phi_{LE} = \frac{400 - 120}{400 + 120} = \frac{280}{520} = 0.538 \implies \boxed{\phi_{LE} = 32.58^\circ}$$<br />
+<em>(註：若以同一不排水狀態下 $S_u=140 \text{ kPa}$ 恆定之觀點，兩總應力莫爾圓半徑相同，其共同水平切線則對應 $\phi = 0^\circ, c_u = 140 \text{ kPa}$。考試時建議以上述分別計算 $\phi_{cu}$ 為主，並附註此觀念。)</em></p>
+</li>
+</ul>
+<p><strong>4. 破壞面角度 $\theta$</strong><br />
+土壤實質破壞面受<strong>有效應力摩擦角</strong>控制，與大主應力面（對於 AC 與 LE 皆為水平面）的夾角為：<br />
+$$\theta = 45^\circ + \frac{\phi'}{2} = 45^\circ + \frac{28.86^\circ}{2} = 45^\circ + 14.43^\circ = \boxed{59.43^\circ}$$</p>
+<hr />
+<h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
+<ol>
+<li>
+<p><strong>總應力抗剪角的陷阱</strong><br />
+   很多考生誤以為土壤有唯一的「總應力抗剪角」。本題完美展示了：對於同一土壤、同樣的壓密狀態，僅因為加載路徑的不同（AC 為被動加壓，LE 為主動解載），求出的總應力摩擦角 $\phi_{cu}$ 竟從 $19.47^\circ$ 變為 $32.58^\circ$。這證明了<strong>總應力參數不是土壤的基本力學性質</strong>，它高度依賴於應力路徑與試驗方法。</p>
+</li>
+<li>
+<p><strong>$A$ 參數的物理意義</strong><br />
+   本題能順利解出 LE 的孔壓，完全仰賴 $A$ 參數在相同偏應力/應變下恆定之假設。對於未發生主應力旋轉之 $K_0$ 壓密土壤，此假設與「唯一有效應力路徑」在數學與力學上是完全等價的。</p>
+</li>
+<li>
+<p><strong>破壞面的判定</strong><br />
+   不管總應力表現出的 $\phi$ 是多少，物理上的剪切破壞面永遠由有效力學機制主導。因此破壞面角度必須使用 $\theta = 45^\circ + \phi'/2$ 計算，若誤用 $\phi_{cu}$ 代入將得到錯誤的傾角。</p>
+</li>
+</ol></main>
+<footer>來源：raw/solutions/SM-2013-3/SM-2013-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>

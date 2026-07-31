@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2008-2 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2008-2 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：SM-2008-2</h1>
+<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與應力<br />
+<strong>副分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>分析法：</strong> 有效應力法<br />
+<strong>標籤：</strong> <code>三軸應力狀態</code> <code>Skempton孔隙水壓參數</code> <code>Mohr-Coulomb破壞準則</code> <code>未排水分析</code></p>
+<hr />
+<h2>1. 原始題目重述</h2>
+<p>二、有一工廠為解決用水問題，擬興建一內徑 D=10 m 之儲水槽，如圖一所示。由試驗得知砂土層之飽和度 S=50%，孔隙比 e=0.7，比重 Gs=2.66；黏土層之飽和單位重γsat=19 kN/m³。已知蓄水的荷重增量 Δq 造成圖中 A 點垂直應力增量 Δσv 和水平應力增量 Δσh 分別為 1.5Δσv=3Δσh=Δq。已知黏土層有效凝聚力 c'=0，有效摩擦角φ'=30°，靜止土壓力係數 K0=0.5，破壞時之孔隙水壓力參數 Af=0.7，地下水位於地表下 2 m。試問水槽中的水位 H 上升至多高時黏土中的 A 點產生破壞？（25 分）<br />
+（註：假設水槽自重不計，且水位快速上升）</p>
+<p><img alt="SM-2008-2 題目附圖：儲水槽與土層剖面圖，直徑D=10m，砂土厚2m，黏土厚5m，地下水位在砂土與黏土交界面，A點在黏土層內深3.5m處" src="../../raw/solutions/SM-2008-2/SM-2008-2-fig-1.png" /><br />
+<em>圖說：本圖顯示一內徑 10 m 儲水槽置於地表。地層分為兩層，上層為 2 m 厚砂土，地下水位於地表下 2 m 處；下層為 5 m 厚黏土。A 點位於黏土層內，距黏土層頂部深 3.5 m（砂土 2 m + 黏土 3.5 m = 距地表深 5.5 m）。</em></p>
+<h2>2. 考題核心精神與出題者意圖</h2>
+<p>這是一道結合「應力增量」、「Skempton 孔隙水壓參數」與「有效應力破壞準則」的綜合題。<br />
+出題者旨在測驗考生是否了解：</p>
+<ol>
+<li>短期不排水加載（水位快速上升）時，土壤內會產生超額孔隙水壓力，其大小可用 Skempton 參數 $A_f$ 與 $B$ 估算。</li>
+<li>土壤真正的破壞是由「有效應力」控制，即便是在不排水條件下，只要能推算出現場的孔隙水壓，就能將總應力轉換為有效應力，並代入 Mohr-Coulomb 有效應力破壞準則判斷是否破壞。</li>
+<li>題目雖給了直徑 D=10 m，但又直接給定了應力增量與 $\Delta q$ 的關係式，測驗考生能否直接利用已知關係式建立代數方程式求解。</li>
+</ol>
+<h2>3. 解題戰略地圖與陷阱分析</h2>
+<ol>
+<li><strong>計算初始有效應力</strong>：先依據土層參數求出 A 點的初始總應力 $\sigma_{v0}$ 與水壓 $u_0$，得出初始垂直有效應力 $\sigma'_{v0}$。再利用靜止土壓力係數 $K_0$ 求出初始水平有效應力 $\sigma'_{h0}$。</li>
+<li><strong>計算總應力增量與超額水壓</strong>：根據題目給定條件，以水槽荷重增量 $\Delta q$ 表示 $\Delta\sigma_v$ 與 $\Delta\sigma_h$。由於黏土飽和，取 $B=1$，代入 Skempton 孔隙水壓公式 $\Delta u = \Delta\sigma_3 + A_f(\Delta\sigma_1 - \Delta\sigma_3)$ 求出破壞時的超額孔隙水壓。</li>
+<li><strong>建立破壞時的有效應力</strong>：將初始有效應力加上總應力增量，再扣除超額孔隙水壓，得到破壞時的垂直與水平有效應力 $\sigma'_{vf}$、$\sigma'_{hf}$（皆為 $\Delta q$ 的函數）。</li>
+<li><strong>代入破壞準則求解</strong>：將 $\sigma'_{vf}$ 與 $\sigma'_{hf}$ 代入 $c'=0, \phi'=30^\circ$ 的 Mohr-Coulomb 破壞準則，解出 $\Delta q$，進而換算為水深 $H$。</li>
+</ol>
+<p><strong>陷阱分析</strong>：</p>
+<ul>
+<li><strong>陷阱 1</strong>：將 $\Delta\sigma_v$ 直接當作有效應力增量。這是未排水加載，必須扣除 $\Delta u$ 才能得到有效應力增量。</li>
+<li><strong>陷阱 2</strong>：忽略砂土層的水位條件。砂土層在地下水位以上，飽和度 S=50%，需使用公式 $\gamma_t = (G_s + Se)\gamma_w / (1+e)$ 準確計算單位重，不能當作乾土或全飽和。</li>
+<li><strong>陷阱 3</strong>：$\Delta\sigma_1$ 與 $\Delta\sigma_3$ 的判定。由於 $\Delta\sigma_v = 2/3 \Delta q$ 大於 $\Delta\sigma_h = 1/3 \Delta q$，且初始 $\sigma'_{v0} > \sigma'_{h0}$，故加載過程中垂直方向始終為大主應力，水平方向為小主應力。若搞錯 $A_f$ 公式中括號內的相減順序會導致錯誤。</li>
+</ul>
+<h2>3.5 變數層次分析</h2>
+<h3>最終目標</h3>
+<p>計算水槽水位上升的高度 $H$，使得黏土層內的 A 點達到剪力破壞。</p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<p>初始有效應力：<br />
+$\sigma_{v0}' = \sigma_{v0} - u_0$<br />
+$\sigma_{h0}' = K_0 \cdot \boxed{\sigma_{v0}'}$</p>
+<p>加載後應力與水壓增量：<br />
+$\Delta u = \Delta \sigma_h + A_f (\Delta \sigma_v - \Delta \sigma_h)$</p>
+<p>破壞時有效應力狀態：<br />
+$\sigma_{vf}' = \boxed{\sigma_{v0}'} + \Delta \sigma_v - \boxed{\Delta u}$<br />
+$\sigma_{hf}' = \boxed{\sigma_{h0}'} + \Delta \sigma_h - \boxed{\Delta u}$</p>
+<p>Mohr-Coulomb 破壞準則：<br />
+$\boxed{\sigma_{vf}'} = \boxed{\sigma_{hf}'} \tan^2\left(45^\circ + \frac{\phi'}{2}\right) + 2c' \tan\left(45^\circ + \frac{\phi'}{2}\right)$</p>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$S_{sand}$</td>
+<td>50%</td>
+<td>砂土飽和度</td>
+</tr>
+<tr>
+<td>$e$</td>
+<td>0.7</td>
+<td>砂土孔隙比</td>
+</tr>
+<tr>
+<td>$G_s$</td>
+<td>2.66</td>
+<td>砂土比重</td>
+</tr>
+<tr>
+<td>$\gamma_{sat,clay}$</td>
+<td>19 $\text{kN/m}^3$</td>
+<td>黏土飽和單位重</td>
+</tr>
+<tr>
+<td>$z_{sand}$</td>
+<td>2 m</td>
+<td>砂土層厚度（水表上）</td>
+</tr>
+<tr>
+<td>$z_{clay}$</td>
+<td>3.5 m</td>
+<td>黏土層中A點深度</td>
+</tr>
+<tr>
+<td>$c'$</td>
+<td>0</td>
+<td>黏土有效凝聚力</td>
+</tr>
+<tr>
+<td>$\phi'$</td>
+<td>$30^\circ$</td>
+<td>黏土有效摩擦角</td>
+</tr>
+<tr>
+<td>$K_0$</td>
+<td>0.5</td>
+<td>靜止土壓力係數</td>
+</tr>
+<tr>
+<td>$A_f$</td>
+<td>0.7</td>
+<td>破壞時之孔隙水壓力參數</td>
+</tr>
+<tr>
+<td>$\Delta\sigma_v$</td>
+<td>$\frac{2}{3}\Delta q$</td>
+<td>垂直應力增量</td>
+</tr>
+<tr>
+<td>$\Delta\sigma_h$</td>
+<td>$\frac{1}{3}\Delta q$</td>
+<td>水平應力增量</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<p><strong>初始應力計算</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\gamma_{sand}$ | $\frac{G_s + S \cdot e}{1+e}\gamma_w$ | |<br />
+| $\sigma_{v0}'$ | $\sum \gamma \Delta z - \gamma_w z_w$ | |<br />
+| $\sigma_{h0}'$ | $K_0 \cdot \sigma_{v0}'$ | |</p>
+<p><strong>應力與水壓增量計算</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\Delta u$ | $B[\Delta\sigma_3 + A_f(\Delta\sigma_1 - \Delta\sigma_3)]$ (取 B=1) | |<br />
+| $\sigma_{1f}'$ | $\sigma_{v0}' + \Delta\sigma_v - \Delta u$ | |<br />
+| $\sigma_{3f}'$ | $\sigma_{h0}' + \Delta\sigma_h - \Delta u$ | |</p>
+<p><strong>破壞高度計算</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\Delta q$ | $\sigma_{1f}' = \sigma_{3f}' \tan^2(45^\circ+\phi'/2)$ 解方程式 | |<br />
+| $H$ | $\Delta q / \gamma_w$ | |</p>
+<h3>L3：深層知識（不懂就卡住）</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速加載下的不排水分析</td>
+<td>「快速上升」表示土壤不排水加載，需使用 Skempton 公式求 $\Delta u$，並由有效應力準則判斷破壞。</td>
+<td></td>
+</tr>
+<tr>
+<td>Skempton 參數 B 的取值</td>
+<td>題目未給 B 值，但黏土層位於地下水位以下，為完全飽和，故隱含 $B = 1$。</td>
+<td></td>
+</tr>
+<tr>
+<td>主應力方向判斷</td>
+<td>加載點在圓形基礎中心線上，對稱性使剪應力為零，垂直與水平即為主應力方向。由於 $\sigma_v > \sigma_h$，故垂直為大主應力。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 步驟化詳細計算過程</h2>
+<p><strong>Step 1: 砂土層單位重計算</strong><br />
+已知砂土層 $G_s = 2.66$，$e = 0.7$，$S = 50\% = 0.5$。<br />
+水的單位重取 $\gamma_w = 9.81 \text{ kN/m}^3$。<br />
+$$
+\gamma_{sand} = \frac{G_s + S \cdot e}{1+e} \gamma_w = \frac{2.66 + 0.5 \times 0.7}{1 + 0.7} \times 9.81 = \frac{3.01}{1.7} \times 9.81 = 17.37 \text{ kN/m}^3
+$$</p>
+<p><strong>Step 2: A點初始有效應力計算</strong><br />
+A 點位於地表下 5.5 m 處（砂土 2 m + 黏土 3.5 m）。地下水位於地表下 2 m 處。<br />
+初始總垂直應力：<br />
+$$
+\sigma_{v0} = \gamma_{sand} \times 2 + \gamma_{sat,clay} \times 3.5 = 17.37 \times 2 + 19 \times 3.5 = 34.74 + 66.50 = 101.24 \text{ kN/m}^2
+$$<br />
+初始孔隙水壓力：<br />
+$$
+u_0 = \gamma_w \times 3.5 = 9.81 \times 3.5 = 34.34 \text{ kN/m}^2
+$$<br />
+初始垂直有效應力：<br />
+$$
+\sigma_{v0}' = \sigma_{v0} - u_0 = 101.24 - 34.34 = 66.90 \text{ kN/m}^2
+$$<br />
+初始水平有效應力：<br />
+$$
+\sigma_{h0}' = K_0 \cdot \sigma_{v0}' = 0.5 \times 66.90 = 33.45 \text{ kN/m}^2
+$$</p>
+<p><strong>Step 3: 加載引起之應力與孔隙水壓增量</strong><br />
+假設水槽水深為 $H$，蓄水荷重增量 $\Delta q = \gamma_w H = 9.81 H$。<br />
+題目給定：<br />
+$$
+1.5\Delta \sigma_v = \Delta q \implies \Delta \sigma_v = \frac{2}{3} \Delta q = 0.667 \Delta q
+$$<br />
+$$
+3\Delta \sigma_h = \Delta q \implies \Delta \sigma_h = \frac{1}{3} \Delta q = 0.333 \Delta q
+$$<br />
+A 點位於水槽中心線正下方，無剪應力產生，且 $\Delta\sigma_v > \Delta\sigma_h$，故大主應力增量 $\Delta\sigma_1 = \Delta\sigma_v$，小主應力增量 $\Delta\sigma_3 = \Delta\sigma_h$。<br />
+由於黏土層完全飽和，Skempton 參數 $B = 1$。不排水加載產生之超額孔隙水壓 $\Delta u$：<br />
+$$
+\Delta u = B[\Delta \sigma_3 + A_f (\Delta \sigma_1 - \Delta \sigma_3)] = 1 \cdot \left[ \frac{1}{3}\Delta q + 0.7 \left( \frac{2}{3}\Delta q - \frac{1}{3}\Delta q \right) \right]
+$$<br />
+$$
+\Delta u = \frac{1}{3}\Delta q + 0.7 \times \frac{1}{3}\Delta q = \frac{1.7}{3}\Delta q = 0.567 \Delta q
+$$</p>
+<p><strong>Step 4: 破壞時之有效應力狀態</strong><br />
+破壞時垂直有效應力（即大主應力 $\sigma_{1f}'$）：<br />
+$$
+\sigma_{1f}' = \sigma_{vf}' = \sigma_{v0}' + \Delta \sigma_v - \Delta u = 66.90 + \frac{2}{3}\Delta q - \frac{1.7}{3}\Delta q = 66.90 + \frac{0.3}{3}\Delta q = 66.90 + 0.1 \Delta q
+$$<br />
+破壞時水平有效應力（即小主應力 $\sigma_{3f}'$）：<br />
+$$
+\sigma_{3f}' = \sigma_{hf}' = \sigma_{h0}' + \Delta \sigma_h - \Delta u = 33.45 + \frac{1}{3}\Delta q - \frac{1.7}{3}\Delta q = 33.45 - \frac{0.7}{3}\Delta q = 33.45 - 0.233 \Delta q
+$$</p>
+<p><strong>Step 5: 代入 Mohr-Coulomb 破壞準則求解</strong><br />
+黏土的有效強度參數為 $c' = 0$ 且 $\phi' = 30^\circ$。破壞準則為：<br />
+$$
+\sigma_{1f}' = \sigma_{3f}' \tan^2\left(45^\circ + \frac{\phi'}{2}\right) + 2c' \tan\left(45^\circ + \frac{\phi'}{2}\right)
+$$<br />
+代入數值 $\tan^2(45^\circ + 15^\circ) = \tan^2(60^\circ) = 3$：<br />
+$$
+\sigma_{1f}' = 3 \sigma_{3f}'
+$$<br />
+$$
+66.90 + 0.1 \Delta q = 3 \left( 33.45 - \frac{0.7}{3} \Delta q \right)
+$$<br />
+$$
+66.90 + 0.1 \Delta q = 100.35 - 0.7 \Delta q
+$$<br />
+$$
+0.8 \Delta q = 33.45 \implies \Delta q = 41.81 \text{ kN/m}^2
+$$</p>
+<p>將 $\Delta q = \gamma_w H$ 帶入求 $H$：<br />
+$$
+H = \frac{\Delta q}{\gamma_w} = \frac{41.81}{9.81} = \boxed{4.26 \text{ m}}
+$$</p>
+<h2>5. 關鍵爭議點與進階探討</h2>
+<ul>
+<li><strong>有效應力分析與總應力分析的選擇</strong>：遇到「快速加載」、「施工期間」等情境，常規作法有兩種：一是使用 UU 試驗得到的未壓密未排水強度 $S_u$ 進行總應力分析；二是使用已知孔壓參數 ($A, B$) 預測超額孔隙水壓，再搭配有效應力強度參數 ($c', \phi'$) 進行有效應力分析。本題明確給定了 $A_f, c', \phi'$，即指明考生必須採取「預測孔壓的有效應力分析法」。</li>
+<li><strong>水槽直徑 D=10m 的用途</strong>：題目雖給出 D=10 m，但同時直接提供 $\Delta q$ 與 $\Delta \sigma_v, \Delta \sigma_h$ 的轉換關係式，這是為了避免考生繁瑣查表或代入 Boussinesq 公式計算圓形載重下方的應力增量。若題目未給關係式，考生就必須利用 Boussinesq 的圓周均佈載重公式自行求出應力增量。</li>
+<li><strong>$\Delta u$ 的推導中 B 值的選用</strong>：題目說明黏土為「飽和單位重」，且地下水位在黏土層上方，表示黏土處於完全飽和狀態 ($S=100\%$)，故 Skempton 參數 $B=1$ 是合理的隱含條件。</li>
+</ul></main>
+<footer>來源：raw/solutions/SM-2008-2/SM-2008-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2010-1 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2010-1 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：[SM-2010-1]</h1>
+<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類、滲透、壓密、剪力強度 (SM-U1-5 土壤強度特性與變形性)<br />
+<strong>副分類：</strong> <br />
+<strong>分析法：</strong> 有效應力法 / 總應力法<br />
+<strong>標籤：</strong> <code>UU試驗</code> <code>不排水剪力強度</code> <code>有效摩擦角</code> <code>孔隙水壓力</code> <code>Skempton孔隙水壓參數</code></p>
+<hr />
+<h2>1. 原始題目重述 (Problem Restatement)</h2>
+<p>有一黏土層其土壤單位重 $\gamma_{sat} = 17.5 \text{ kN/m}^3$，有效摩擦角 $\phi' = 28^\circ$，於現地土層深度 $12 \text{ m}$ 處取得土樣進行不排水三軸（UU）試驗。<br />
+若現地地下水位面位於地表以下 $2 \text{ m}$，請計算：</p>
+<ol>
+<li>由不排水三軸試驗所測得之不排水剪力強度 $S_u$ 為何？</li>
+<li>如果在 UU 試驗過程對於試體施加圍壓 $\sigma_3 = 50 \text{ kPa}$，且試體仍維持飽和狀態，則其內部產生之孔隙水壓力為何？（25 分）</li>
+</ol>
+<p><em>(註：本題為純文字題，無附圖)</em></p>
+<h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
+<p>本題旨在測驗考生對於<strong>正常壓密黏土（Normally Consolidated Clay）之不排水剪力強度與有效應力參數之間關係</strong>的深刻理解。<br />
+出題者的核心意圖包括：</p>
+<ol>
+<li><strong>建立現地有效應力狀態</strong>：能準確計算給定深度之現地有效覆土壓力 $\sigma'_{v0}$。</li>
+<li><strong>完美取樣與破壞應力路徑</strong>：測驗考生是否知道，若未給定 Skempton 孔隙水壓參數，實務與理論上常針對正常壓密黏土假設破壞時的 $A_f \approx 1$（或等效認為破壞時的最大主有效應力 $\sigma'_{1f}$ 恰等於現地最大主有效應力 $\sigma'_{v0}$）。</li>
+<li><strong>有效應力破壞準則的應用</strong>：在 UU 試驗中，雖然總應力呈現 $\phi_u = 0$ 之行為，但其<strong>有效應力莫爾圓</strong>在破壞時必定會相切於由 $\phi'$ 定義之破壞包絡線。</li>
+<li><strong>孔隙水壓力之推算</strong>：利用總應力、有效應力與孔隙水壓之關係（$\sigma = \sigma' + u$），推求在給定圍壓下破壞時的內部孔隙水壓力 $u_f$。</li>
+</ol>
+<h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
+<ol>
+<li><strong>計算現地應力狀態</strong>：<br />
+   - 地表下 $2 \text{ m}$ 為地下水位，假設水位上方土層受毛細作用或初始狀態下單位重亦接近 $\gamma_t = \gamma_{sat} = 17.5 \text{ kN/m}^3$（若未特指乾單位重，此為常態假設）。<br />
+   - 計算深度 $12 \text{ m}$ 處之總應力 $\sigma_{v0}$、孔隙水壓 $u_0$ 及有效應力 $\sigma'_{v0}$。</li>
+<li><strong>推求不排水剪力強度 $S_u$</strong>：<br />
+   - 針對正常壓密黏土，在未給定 $A_f$ 之情況下，採用最合理之理論邊界條件：假設 $A_f = 1$。<br />
+   - 根據此條件，破壞時的最大主有效應力 $\sigma'_{1f} = \sigma'_{v0}$。<br />
+   - 依據 Mohr-Coulomb 有效應力破壞準則，利用 $\sigma'_{1f}$ 與 $\phi'$ 推算 $\sigma'_{3f}$。<br />
+   - $S_u$ 即為破壞時莫爾圓之半徑：$S_u = (\sigma'_{1f} - \sigma'_{3f}) / 2$。<br />
+   - 亦可直接代入推導結果：$S_u = \sigma'_{v0} \frac{\sin \phi'}{1 + \sin \phi'}$。</li>
+<li><strong>計算試驗內部孔隙水壓力 $u_f$</strong>：<br />
+   - 給定總應力圍壓 $\sigma_3 = 50 \text{ kPa}$。<br />
+   - 由前步已求得破壞時的有效圍壓 $\sigma'_{3f}$。<br />
+   - 利用有效應力原理：$u_f = \sigma_3 - \sigma'_{3f}$ 求得破壞時之孔隙水壓。<br />
+   - <em>(陷阱防範)</em> 題目詢問「產生之孔隙水壓力」，語意可能指「破壞時之總孔隙水壓 $u_f$」，也可能單指「施加圍壓階段因 $B=1$ 產生的 $\Delta u = 50 \text{ kPa}$」。為求嚴謹，計算過程中應將兩者（圍壓引發之水壓、破壞時之總水壓）一併論述。</li>
+</ol>
+<h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
+<h3>最終目標</h3>
+<p>求出現地土樣在 UU 試驗中之不排水剪力強度 $S_u$，以及在施加 $\sigma_3 = 50 \text{ kPa}$ 圍壓破壞時試體內部之孔隙水壓力 $u_f$。</p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<p>現地有效覆土壓力：<br />
+$$ \sigma'_{v0} = \Sigma \gamma z - \gamma_w z_w $$<br />
+破壞時主有效應力與強度關係（假設 $A_f=1 \Rightarrow \sigma'_{1f} = \boxed{\sigma'_{v0}}$）：<br />
+$$ S_u = \frac{\boxed{\sigma'_{1f}} - \sigma'_{3f}}{2} \quad \text{其中} \quad \sigma'_{3f} = \boxed{\sigma'_{1f}} \tan^2\left(45^\circ - \frac{\phi'}{2}\right) $$<br />
+<em>(或直接使用導出公式)</em>：<br />
+$$ S_u = \boxed{\sigma'_{v0}} \frac{\sin \phi'}{1 + \sin \phi'} $$<br />
+破壞時孔隙水壓力：<br />
+$$ u_f = \sigma_3 - \boxed{\sigma'_{3f}} $$</p>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\gamma_{sat}$</td>
+<td>$17.5 \text{ kN/m}^3$</td>
+<td>土壤飽和單位重</td>
+</tr>
+<tr>
+<td>$\phi'$</td>
+<td>$28^\circ$</td>
+<td>土壤有效摩擦角</td>
+</tr>
+<tr>
+<td>$z$</td>
+<td>$12 \text{ m}$</td>
+<td>取樣深度</td>
+</tr>
+<tr>
+<td>$z_w$</td>
+<td>$10 \text{ m}$</td>
+<td>地下水頭高度（$12\text{m} - 2\text{m}$）</td>
+</tr>
+<tr>
+<td>$\sigma_3$</td>
+<td>$50 \text{ kPa}$</td>
+<td>UU 試驗施加之總應力圍壓</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<p><strong>現地應力狀態</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\sigma_{v0}$ | $\gamma_t \times 2 + \gamma_{sat} \times 10$ | |<br />
+| $u_0$ | $\gamma_w \times z_w$ | |<br />
+| $\sigma'_{v0}$ | $\sigma_{v0} - u_0$ | |</p>
+<p><strong>剪力強度與試驗應力狀態</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\sigma'_{1f}$ | $\sigma'_{1f} \approx \sigma'_{v0}$ (基於 $A_f=1$ 之 NC 黏土假設) | |<br />
+| $\sigma'_{3f}$ | $\sigma'_{1f} \tan^2(45^\circ - \phi'/2)$ | |<br />
+| $S_u$ | $(\sigma'_{1f} - \sigma'_{3f}) / 2$ | |<br />
+| $u_f$ | $\sigma_3 - \sigma'_{3f}$ | |</p>
+<h3>L3：深層知識（不懂就卡住）</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A_f=1$ 假設</td>
+<td>在未提供孔隙水壓參數的考題中，由 Skempton 理論可知，完美取樣之 NC 黏土破壞時 $\sigma'_{1f} \approx \sigma'_{v0}$，此為解題唯一突破口。</td>
+<td></td>
+</tr>
+<tr>
+<td>有效應力破壞準則</td>
+<td>即使 UU 試驗是總應力 $\phi_u=0$ 之行為，但其破壞瞬間的內部有效應力仍須滿足 $c'=0, \phi'$ 之 Mohr-Coulomb 包絡線。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
+<p><strong>Step 1: 計算現地深度 12 m 處之有效應力</strong><br />
+假設地下水位以上之土壤因毛細作用或天然含水量高，單位重近似為 $17.5 \text{ kN/m}^3$（若未特別說明乾單位重，此為常態假設；水的單位重取 $\gamma_w = 9.81 \text{ kN/m}^3$）。<br />
+總垂直應力：<br />
+$$ \sigma_{v0} = 17.5 \times 12 = 210 \text{ kPa} $$<br />
+孔隙水壓力：<br />
+$$ u_0 = 9.81 \times (12 - 2) = 9.81 \times 10 = 98.1 \text{ kPa} $$<br />
+有效垂直應力：<br />
+$$ \sigma'_{v0} = 210 - 98.1 = 111.9 \text{ kPa} $$</p>
+<p><strong>Step 2: 推算不排水剪力強度 $S_u$</strong><br />
+對於正常壓密黏土（$c'=0$），根據 Skempton 之孔隙水壓理論，若經過完美取樣並進行 UU 試驗，在破壞時若假設孔隙水壓參數 $A_f = 1$（此為正常壓密黏土之典型值），則破壞時之最大主有效應力 $\sigma'_{1f}$ 會等於現地有效覆土壓力 $\sigma'_{v0}$。<br />
+$$ \sigma'_{1f} = \sigma'_{v0} = 111.9 \text{ kPa} $$<br />
+依據 Mohr-Coulomb 有效應力破壞準則，破壞時主應力關係為：<br />
+$$ \sigma'_{1f} = \sigma'_{3f} \tan^2\left(45^\circ + \frac{\phi'}{2}\right) = \sigma'_{3f} \frac{1+\sin\phi'}{1-\sin\phi'} $$<br />
+代入 $\phi' = 28^\circ$，計算主動土壓力係數倒數（或稱被動土壓力係數 $K_p$）：<br />
+$$ \tan^2\left(45^\circ + \frac{28^\circ}{2}\right) = \tan^2(59^\circ) \approx 2.7698 $$<br />
+求破壞時之有效圍壓 $\sigma'_{3f}$：<br />
+$$ \sigma'_{3f} = \frac{\sigma'_{1f}}{2.7698} = \frac{111.9}{2.7698} \approx 40.40 \text{ kPa} $$<br />
+不排水剪力強度 $S_u$ 即為破壞時莫爾圓之半徑：<br />
+$$ S_u = \frac{\sigma'_{1f} - \sigma'_{3f}}{2} = \frac{111.9 - 40.40}{2} = 35.75 \text{ kPa} $$<br />
+<em>(註：代入公式 $S_u = \sigma'_{v0} \frac{\sin 28^\circ}{1 + \sin 28^\circ} = 111.9 \times \frac{0.46947}{1.46947} = 35.75 \text{ kPa}$，結果完全一致。)</em></p>
+<p><strong>答 1：不排水剪力強度 $S_u = \boxed{35.75 \text{ kPa}}$</strong></p>
+<p><strong>Step 3: 計算試驗內部產生之孔隙水壓力</strong><br />
+在 UU 試驗中，施加總應力圍壓 $\sigma_3 = 50 \text{ kPa}$ 並剪動至破壞。<br />
+已知破壞時之有效圍壓 $\sigma'_{3f} = 40.40 \text{ kPa}$。<br />
+根據有效應力原理 $\sigma = \sigma' + u$，破壞時試體內部之總孔隙水壓力 $u_f$ 為：<br />
+$$ u_f = \sigma_3 - \sigma'_{3f} = 50 - 40.40 = 9.60 \text{ kPa} $$</p>
+<p><em>(補充說明：若僅探討「施加圍壓階段」產生之水壓變化，因試體飽和 $B=1$，故施加 $\Delta\sigma_3 = 50 \text{ kPa}$ 時會產生 $\Delta u_c = 50 \text{ kPa}$ 的孔隙水壓增量。但本題合併剪力破壞之情境，故以破壞時的總孔隙水壓 $u_f = 9.6 \text{ kPa}$ 為主要解答。)</em></p>
+<p><strong>答 2：試驗破壞時內部產生之孔隙水壓力 $u_f = \boxed{9.6 \text{ kPa}}$</strong></p>
+<h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
+<ol>
+<li>
+<p><strong>$A_f = 1$ 的隱含假設</strong>：<br />
+   這類題目在未提供 Skempton $A$ 參數的情況下，最合理的破題方式便是假定正常壓密黏土 $A_f = 1$ 以及 $A_s = 1$。如此一來，試體從現地取樣到 UU 試驗破壞的有效應力路徑，其最大主有效應力恰好會回到 $\sigma'_{1f} = \sigma'_{v0}$。這是許多教科書（如 Das 或施國欽《土壤力學》）推導 $S_u / \sigma'_{v0}$ 理論公式的核心前置假設。</p>
+</li>
+<li>
+<p><strong>孔隙水壓力的語意解讀</strong>：<br />
+   題目敘述「施加圍壓 $\sigma_3 = 50 \text{ kPa}$，試體仍維持飽和狀態，則其內部產生之孔隙水壓力為何？」，語意上存在兩種可能：</p>
+</li>
+</ol>
+<ul>
+<li>(A) 施加圍壓「當下」產生的水壓增量：因飽和黏土 $B=1$，故 $\Delta u = 50 \text{ kPa}$。</li>
+<li>(B) UU 試驗「破壞時」的內部水壓 $u_f$：利用 $\sigma_3 - \sigma'_{3f} = 9.6 \text{ kPa}$ 求得。<br />
+   在考場上，建議如本解法般，以求取最終破壞時之 $u_f$ 為主，並輔以文字說明施加圍壓階段的 $B=1$ 效應，這樣最能展現對三軸試驗機制的全面理解，確保拿到滿分。</li>
+</ul>
+<ol start="3">
+<li><strong>單位重 $\gamma_{sat}$ 之選用</strong>：<br />
+   考題僅給定 $\gamma_{sat} = 17.5 \text{ kN/m}^3$，並未給定水位上方土層的乾單位重或濕單位重。在實務上，近地表的細粒土壤通常因毛細現象而處於高飽和或完全飽和狀態，因此全段採用 $17.5 \text{ kN/m}^3$ 來計算總應力是這類考題最標準的處理方式。</li>
+</ol></main>
+<footer>來源：raw/solutions/SM-2010-1/SM-2010-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>

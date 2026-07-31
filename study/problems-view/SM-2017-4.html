@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2017-4 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2017-4 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：SM-2017-4</h1>
+<p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>副分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>分析法：</strong> 總應力法 / 概念題<br />
+<strong>標籤：</strong> <code>管湧</code> <code>上舉破壞</code> <code>隆起</code> <code>打擊式鋼版樁</code> <code>液化</code></p>
+<hr />
+<h2>1. 原始題目重述 (Problem Restatement)</h2>
+<p>某地下室開挖剖面如下圖所示，擋土壁使用打擊式 FSP IV 鋼版樁（長度 15.0 m，打至 GL-14.0 m），預定開挖深度為 GL-8.0 m。基地旁為空地並堆放材料，地表超載重 $q = 1 \text{ tf/m}^2$。地下水位設計在 GL-1.0 m。鑽探報告顯示表層為極軟弱之 ML/CL 土層（N=1~4），深層為 SM 砂土層（N=14）。已知 $\gamma_w = 1 \text{ tf/m}^3$。</p>
+<p>本題要求分析以下四個問題：</p>
+<ol>
+<li>打樁時是否會振動、液化損鄰？說明打擊式鋼版樁與土壤 N 值特性與深度的關係。為避免損鄰，應做哪些應變措施？</li>
+<li>以擋土壁最高流線分析管湧安全係數。($FS = i_c/i$ , $i_c = \gamma_{sub}/\gamma_w$)</li>
+<li>分析上舉破壞（土湧）安全係數。若要求 FS=2，基坑內地下水位應降至 GL-？m。</li>
+<li>已知土壤短期不排水剪力強度 $S_u = \frac{10N}{16}$（砂土、粘土皆可用），分析隆起之安全係數。($FS = \frac{S_u \times (\pi + 2)}{\gamma \times H + q}$)</li>
+</ol>
+<p><img alt="SM-2017-4 題目附圖：地下室開挖剖面與擋土壁幾何配置" src="../../raw/solutions/SM-2017-4/SM-2017-4-fig-1.png" /><br />
+<em>圖說：開挖深度 GL-8.0m，擋土壁深至 GL-14.0m。設計地下水位 GL-1.0m。右側地表有超載 q=1 tf/m²。</em></p>
+<p><img alt="SM-2017-4 鑽探報告：各深度之土壤分類、N值與物理性質" src="../../raw/solutions/SM-2017-4/SM-2017-4-fig-2.png" /><br />
+<em>圖說：GL-0~10.32m 主要為 ML 及 CL，N值介於 1~4，濕密度約 1.74~1.86 g/cc。GL-10.32m 以下為 SM，N值為 14，濕密度約 2.05~2.13 g/cc。</em></p>
+<h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
+<p>本題綜合測驗開挖工程常見的各項穩定性與施工問題：</p>
+<ol>
+<li><strong>施工影響評估</strong>：測驗對土層特性（極軟弱、無塑性 ML 及高敏感 CL）與打擊式工法交互作用的理解。</li>
+<li><strong>管湧 (Piping)</strong>：測驗滲流路徑長度計算與臨界水力坡降的觀念。</li>
+<li><strong>上舉破壞 (Uplift/Heave)</strong>：測驗透水層上覆位不透水層時，自重與上揚水壓力的抗衡。</li>
+<li><strong>隆起 (Basal Heave)</strong>：測驗總應力法下，以 N 值推算 $S_u$ 並應用於底部隆起承載力公式的計算。</li>
+</ol>
+<p>出題者刻意給定一個分層明顯的地質（淺層軟弱黏土/粉土，深層中等堅硬砂土），要求考生能根據破壞模式正確選取對應深度區間的土壤參數（如平均單位重、平均 N 值等）。</p>
+<h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
+<ul>
+<li><strong>(一) 振動與液化評估</strong>：直接觀察 N 值與土壤分類。0~8m 的 ML 層 N=1~3 且 NP（無塑性），極易發生極大超孔隙水壓及液化現象。需提出低振動的替代工法（如靜壓植樁）。</li>
+<li><strong>(二) 管湧分析</strong>：</li>
+<li><strong>陷阱</strong>：「最高流線」指的是緊貼擋土壁的最短滲流路徑。流徑長度 $L = D_{out} + D_{in} = (14-1) + (14-8) = 19 \text{ m}$。</li>
+<li>$i_c$ 需使用出水處（GL-8.0m 附近）之有效單位重。</li>
+<li><strong>(三) 上舉破壞</strong>：</li>
+<li><strong>陷阱</strong>：需找出不透水層（CL）與透水層（SM）的交界。從鑽探表可知交界在 GL-10.32m。</li>
+<li>抵抗力為 GL-8.0m 至 GL-10.32m 之 CL 覆土重；驅動力為 GL-10.32m 處之受壓水頭。</li>
+<li><strong>(四) 隆起分析</strong>：</li>
+<li>上覆壓力 $\gamma H$ 需精確計算 GL-0~8.0m 各層土壤自重之加總平均。</li>
+<li>$S_u$ 需取擋土壁貫入深度（GL-8.0~14.0m）範圍內土層的加權平均 N 值來換算，因滑動面會經過此區域。</li>
+</ul>
+<h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
+<h3>最終目標</h3>
+<p>分別檢核打樁施工性、管湧安全係數、上舉破壞安全係數及所需降水深度、以及底部隆起安全係數。</p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<ul>
+<li>管湧水力坡降：$i = \frac{\Delta H}{L}$</li>
+<li>管湧安全係數：$FS = \frac{i_c}{\boxed{i}}$</li>
+<li>上舉破壞抵抗力：$W = \Sigma (\gamma_t \times H_{plug})$</li>
+<li>上舉破壞上揚力：$U = \gamma_w \times h_w$</li>
+<li>隆起總覆土壓：$\sigma_v = \Sigma (\gamma_{t,i} \times h_i)$</li>
+<li>隆起安全係數：$FS = \frac{\boxed{S_u} \times (\pi + 2)}{\boxed{\sigma_v} + q}$</li>
+</ul>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$H$</td>
+<td>8.0 m</td>
+<td>預定開挖深度</td>
+</tr>
+<tr>
+<td>$D_{tip}$</td>
+<td>14.0 m</td>
+<td>鋼版樁打設深度</td>
+</tr>
+<tr>
+<td>$q$</td>
+<td>1.0 tf/m²</td>
+<td>地表超載重</td>
+</tr>
+<tr>
+<td>$\text{GL}_{WT}$</td>
+<td>-1.0 m</td>
+<td>設計地下水位</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<p><strong>管湧分析</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $L$ | $L = (14.0 - 1.0) + (14.0 - 8.0)$ | |<br />
+| $\Delta H$ | $\Delta H = 8.0 - 1.0$ | |<br />
+| $i$ | $i = \Delta H / L$ | |<br />
+| $i_c$ | $i_c = (\gamma_{t} - \gamma_w) / \gamma_w$ (取底面土層) | |</p>
+<p><strong>上舉破壞分析</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $H_{plug}$ | $H_{plug} = 10.32 - 8.0$ (CL層剩餘厚度) | |<br />
+| $W$ | $W = \gamma_{CL} \times H_{plug}$ | |<br />
+| $h_w$ | $h_w = 10.32 - 1.0$ (SM層頂部之水頭) | |<br />
+| $U$ | $U = \gamma_w \times h_w$ | |</p>
+<p><strong>隆起分析</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|---|---|---|<br />
+| $\gamma H$ | $\Sigma_{0}^{8.0} (\gamma_{t,i} \times h_i)$ | |<br />
+| $N_{avg}$ | 深度 8.0~14.0m 之 N 值加權平均 | |<br />
+| $S_u$ | $S_u = 10 \times N_{avg} / 16$ | |</p>
+<h3>L3：深層知識（不懂就卡住）</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>擋土壁最高流線</td>
+<td>指緊貼擋土壁兩側的最短滲流路徑，決定了平均最大水力坡降。</td>
+<td></td>
+</tr>
+<tr>
+<td>上舉破壞地層判定</td>
+<td>必須從鑽探報告判別何處為不透水層（CL）與透水層（SM）的交界，以此作為受壓面。</td>
+<td></td>
+</tr>
+<tr>
+<td>隆起區間平均參數</td>
+<td>基礎隆起破壞面會向下延伸至版樁底部附近，故 $S_u$ 應取開挖面至樁底的加權平均。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
+<h3>(一) 施工影響與應變措施</h3>
+<p><strong>1. 振動與液化損鄰評估：</strong><br />
+由鑽探報告（表 4-1）可知，GL-0m ~ GL-10.32m 地層主要為粉土（ML）及黏土（CL），且 N 值極低（N=1~4），含水量高（26~30.5%），屬於<strong>極軟弱且具高敏感性之土壤</strong>。<br />
+特別在深度 0~8m 的 ML 層，其塑性指數標示為 NP（無塑性），這類疏鬆且無塑性的粉土在打擊式鋼版樁的強烈動態振動下，<strong>極易發生液化</strong>或產生極大的超孔隙水壓，導致土壤承載力瞬間喪失；周邊軟弱黏土亦會因擠壓而產生側向變形及後續的壓密沉陷。<br />
+深度 GL-10.32m 以下雖為中等堅硬之 SM（N=14），但上部軟弱層的反應已足以造成嚴重的損鄰事件。<br />
+<strong>結論：打擊式鋼版樁會產生嚴重振動，極可能導致液化與損鄰。</strong></p>
+<p><strong>2. 應變措施：</strong><br />
+為避免損鄰，應採取以下措施：</p>
+<ul>
+<li><strong>工法變更</strong>：將「打擊式」改為「靜壓植樁工法（Silent Piler）」，以無振動、無噪音方式壓入鋼版樁。若經費允許，可改用剛度更大、振動更小的地下連續壁或 SMW 工法。</li>
+<li><strong>輔助工法</strong>：若堅持使用鋼版樁，應搭配「預鑽孔」或「水沖法」以降低打擊阻力與振動能量。</li>
+<li><strong>監測系統</strong>：施工前落實鄰房現況鑑定，並密集配置沉陷觀測點、傾斜管、以及水壓計以嚴密監控施工影響。</li>
+</ul>
+<hr />
+<h3>(二) 管湧安全係數</h3>
+<p>依題意，使用「最高流線」（緊貼擋土壁之最短路徑）進行分析。</p>
+<ul>
+<li>擋土壁外側水位：GL-1.0 m</li>
+<li>開挖面水位：GL-8.0 m</li>
+<li>擋土壁底端：GL-14.0 m</li>
+</ul>
+<ol>
+<li>
+<p><strong>計算滲流路徑長度 ($L$) 與水頭差 ($\Delta H$)</strong>：<br />
+   外側下行路徑 $D_{out} = 14.0 - 1.0 = 13.0 \text{ m}$<br />
+   內側上行路徑 $D_{in} = 14.0 - 8.0 = 6.0 \text{ m}$<br />
+   總滲流路徑 $L = D_{out} + D_{in} = 13.0 + 6.0 = 19.0 \text{ m}$<br />
+   總水頭差 $\Delta H = 8.0 - 1.0 = 7.0 \text{ m}$<br />
+   平均水力坡降 $i = \frac{\Delta H}{L} = \frac{7.0}{19.0} = 0.368$</p>
+</li>
+<li>
+<p><strong>計算臨界水力坡降 ($i_c$)</strong>：<br />
+   出水點（開挖面 GL-8.0m 附近）土壤為 CL（深度 7.85~10.32m），其 $\gamma_t = 1.86 \text{ tf/m}^3$。<br />
+   $\gamma_{sub} = \gamma_t - \gamma_w = 1.86 - 1.0 = 0.86 \text{ tf/m}^3$<br />
+   $i_c = \frac{\gamma_{sub}}{\gamma_w} = \frac{0.86}{1.0} = 0.86$</p>
+</li>
+<li>
+<p><strong>計算安全係數 ($FS$)</strong>：<br />
+   $$ FS = \frac{i_c}{i} = \frac{0.86}{0.368} = 2.337 $$<br />
+   答：管湧安全係數為 $\boxed{2.34}$。</p>
+</li>
+</ol>
+<hr />
+<h3>(三) 上舉破壞（土湧）安全係數與降水設計</h3>
+<p>上舉破壞檢核面上方為不透水層，下方為受壓透水層。<br />
+查鑽探報告，GL-7.85~10.32m 為 CL（黏土，不透水），GL-10.32m 以下為 SM（砂土，透水）。因此上舉受壓面在 <strong>GL-10.32 m</strong> 處。</p>
+<ol>
+<li><strong>分析上舉破壞安全係數</strong>：<br />
+   - 抵抗力 (Downward weight $W$)：為開挖面 (GL-8.0m) 至受壓面 (GL-10.32m) 間之土重。<br />
+     $H_{plug} = 10.32 - 8.0 = 2.32 \text{ m}$<br />
+     $W = \gamma_{CL} \times H_{plug} = 1.86 \times 2.32 = 4.315 \text{ tf/m}^2$</li>
+</ol>
+<ul>
+<li>
+<p>上揚力 (Uplift pressure $U$)：由 GL-1.0m 的設計地下水位連通至 SM 層產生。<br />
+     SM層頂部之水頭 $h_w = 10.32 - 1.0 = 9.32 \text{ m}$<br />
+     $U = \gamma_w \times h_w = 1.0 \times 9.32 = 9.32 \text{ tf/m}^2$</p>
+</li>
+<li>
+<p>安全係數 $FS$：<br />
+     $$ FS = \frac{W}{U} = \frac{4.315}{9.32} = 0.463 $$<br />
+     答：上舉破壞安全係數為 $\boxed{0.46}$（極不安全）。</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>計算 FS=2 之降水深度</strong>：<br />
+   - 目標 $FS = 2.0 = \frac{W}{U_{req}}$<br />
+   - 容許上揚力 $U_{req} = \frac{W}{2.0} = \frac{4.315}{2.0} = 2.1575 \text{ tf/m}^2$<br />
+   - 對應之受壓水頭 $h_{req} = \frac{U_{req}}{\gamma_w} = 2.1575 \text{ m}$<br />
+   - 水位高程應降至受壓面上方 $2.1575 \text{ m}$ 處：<br />
+     降水後地下水位深度 $= 10.32 - 2.1575 = 8.1625 \text{ m}$<br />
+     答：為防止發生上舉破壞，基坑內（抽水井）地下水位應降至 $\boxed{\text{GL}-8.16 \text{ m}}$。</li>
+</ol>
+<hr />
+<h3>(四) 隆起之安全係數</h3>
+<p>公式：$FS = \frac{S_u \times (\pi + 2)}{\gamma \times H + q}$ （註：考卷原稿或文字辨識中之 $2\alpha$ 應為 $2)$ 括號之誤植，標準承載力係數 $N_c = \pi + 2 \approx 5.14$）</p>
+<ol>
+<li><strong>計算開挖面以上總平均覆土壓力 ($\gamma H$)</strong>：<br />
+   根據各深度之 $\gamma_t$ 累加計算 (GL-0~8.0m)：</li>
+</ol>
+<ul>
+<li>0.00~1.24m (ML): $1.24 \times 1.82 = 2.257$</li>
+<li>1.24~3.42m (ML-CL): $2.18 \times 1.74 = 3.793$</li>
+<li>
+<p>3.42~7.85m (ML): 取平均 $\gamma_t = (1.81+1.83+1.82)/3 = 1.82$<br />
+     $4.43 \times 1.82 = 8.063$</p>
+</li>
+<li>
+<p>7.85~8.00m (CL): $0.15 \times 1.86 = 0.279$<br />
+   總上覆壓力 $\gamma H = 2.257 + 3.793 + 8.063 + 0.279 = 14.392 \text{ tf/m}^2$</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>計算開挖面以下之平均不排水剪力強度 ($S_u$)</strong>：<br />
+   破壞面涵蓋開挖面至擋土壁底端（GL-8.0~14.0m），依厚度計算加權平均 N 值：</li>
+</ol>
+<ul>
+<li>8.00~10.32m (CL, 2.32m厚): N=4</li>
+<li>10.32~14.00m (SM, 3.68m厚): N=14<br />
+   平均 $N_{avg} = \frac{4 \times 2.32 + 14 \times 3.68}{6.0} = \frac{9.28 + 51.52}{6.0} = 10.133$<br />
+   $S_u = \frac{10 \times N_{avg}}{16} = \frac{10 \times 10.133}{16} = 6.333 \text{ tf/m}^2$</li>
+</ul>
+<ol start="3">
+<li><strong>計算隆起安全係數 ($FS$)</strong>：<br />
+   超載 $q = 1 \text{ tf/m}^2$<br />
+   $$ FS = \frac{S_u \times (\pi + 2)}{\gamma H + q} = \frac{6.333 \times (\pi + 2)}{14.392 + 1} $$<br />
+   $$ FS = \frac{6.333 \times 5.1416}{15.392} = \frac{32.562}{15.392} = 2.115 $$<br />
+   答：隆起之安全係數為 $\boxed{2.12}$。</li>
+</ol>
+<h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
+<ul>
+<li><strong>隆起公式的 $2\alpha$ 問題</strong>：部分考卷掃描或排版會將 $S_u \times (\pi + 2)$ 錯植為 $S_u \times (\pi + 2\alpha)$，此公式源自 Prandtl 的剛塑性承載力理論，其條形基礎極限承載力係數 $N_c = \pi + 2$。解題時直接將其視為 $N_c = 5.14$ 即可。</li>
+<li><strong>混合地層的隆起檢核</strong>：傳統隆起（Basal Heave）多針對純軟弱黏土層。但本題特意聲明「砂土、粘土皆可用此 $S_u$ 轉換公式」，代表出題者希望考生突破單一土層的思維，計算破壞影響區（開挖底面至樁底）內的等效加權平均剪力強度來進行檢核。</li>
+<li><strong>上舉破壞的水位設定</strong>：本題計算指出 $FS=0.46$ 極其危險。實務上，開挖至此深度前，必定需先在坑內施打「深井（Deep Well）」抽排 SM 層的受壓地下水，確保坑底 CL 層不被沖毀。這也是第(三)子題要求算出「降水高程」的實務意義。</li>
+</ul></main>
+<footer>來源：raw/solutions/SM-2017-4/SM-2017-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>

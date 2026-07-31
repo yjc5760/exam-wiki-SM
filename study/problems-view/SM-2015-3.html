@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2015-3 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2015-3 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：SM-2015-3</h1>
+<p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>分析法：</strong> 總應力法<br />
+<strong>標籤：</strong> <code>Peck視土壓力</code> <code>層狀土壤</code> <code>抗隆起安全係數</code> <code>Bjerrum&amp;Eide</code></p>
+<hr />
+<h2>1. 原始題目重述 (Problem Restatement)</h2>
+<p>有一支撐開挖，其開挖深度為 $H = 8 \text{ m}$，地層剖面如下：</p>
+<ul>
+<li><strong>上方砂土層</strong>：厚度 $H_s = 3 \text{ m}$，土壤單位重 $\gamma_s = 16.5 \text{ kN/m}^3$，土壤摩擦角 $\phi_s = 32^\circ$。</li>
+<li><strong>下方黏土層</strong>：開挖範圍內厚度 $H_c = 5 \text{ m}$（假設向下延伸），土壤單位重 $\gamma_c = 17.5 \text{ kN/m}^3$，不排水剪力強度 $C_u = 30 \text{ kN/m}^2$。</li>
+<li><strong>開挖面幾何</strong>：寬度 $B = 6 \text{ m}$，長度 $L = 15 \text{ m}$。</li>
+</ul>
+<p><strong>要求：</strong></p>
+<ol>
+<li>計算並繪出支撐牆背之設計視土壓力 (Apparent Earth Pressure) 分布情形。</li>
+<li>計算開挖底部之抗隆起安全係數 (Factor of Safety against Basal Heave)。</li>
+</ol>
+<p><em>註：本題無附圖，依文字描述即可完全建構分析模型。</em></p>
+<h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
+<ol>
+<li><strong>層狀土壤之視土壓力計算</strong>：測驗考生是否知道當開挖面包含砂土與黏土時，不能分開繪製土壓力，而必須計算「等值平均單位重 $\bar{\gamma}$」與「等值平均凝聚力 $\bar{C_u}$」，再判斷整體開挖區的穩定數 $N$ 來套用 Peck (1969) 的經驗圖體。</li>
+<li><strong>砂土層的等值凝聚力轉換</strong>：測驗考生是否懂得將砂土的抗剪強度轉換為等效的 $C_{u,s}$ 以便與黏土層合併計算。</li>
+<li><strong>三維抗隆起分析</strong>：測驗考生在非無限長條形開挖（給定 $B$ 與 $L$）時，能正確選用 Bjerrum &amp; Eide (1956) 的 Skempton 承載力係數 $N_c$ 來計算抗隆起安全係數。</li>
+</ol>
+<h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
+<ul>
+<li><strong>步驟一</strong>：計算全深度之平均單位重 $\bar{\gamma}$。</li>
+<li><strong>步驟二</strong>：計算砂土層之等值不排水剪力強度 $C_{u,s}$，再與黏土層計算加權平均 $\bar{C_u}$。</li>
+<li><strong>步驟三</strong>：計算開挖穩定數 $N = \bar{\gamma}H / \bar{C_u}$。判斷為軟弱至中度黏土 ($N>4$) 或堅硬黏土 ($N \le 4$)。</li>
+<li><strong>步驟四</strong>：依判定之土層類別，套用 Peck 視土壓力公式，取極大值作為設計壓力 $p_a$，並繪製分布圖。</li>
+<li><strong>步驟五</strong>：使用 Bjerrum &amp; Eide 法，依據開挖深度 $D$、寬度 $B$ 與長度 $L$ 計算 Skempton $N_c$ 係數。</li>
+<li><strong>步驟六</strong>：代入 $FS = N_c C_u / \Sigma \gamma H$ 計算抗隆起安全係數。</li>
+</ul>
+<p><strong>⚠ 陷阱分析：</strong></p>
+<ul>
+<li><strong>陷阱一</strong>：將砂土與黏土的視土壓力分開畫。Peck 視土壓力是支撐系統的<strong>總包絡線</strong>，必須以全深度單一圖形呈現。</li>
+<li><strong>陷阱二</strong>：忽略砂土層本身的抗剪強度貢獻，直接以 $C_u = 0$ 加權，這會導致穩定數 $N$ 高估、設計土壓力偏大。標準做法應將砂土轉換為 $C_{u,s} = \frac{1}{2}\gamma_s H_s K_s \tan\phi_s$。</li>
+<li><strong>陷阱三</strong>：抗隆起檢核時，將上方砂土的自重漏掉。覆土壓力應包含砂土與黏土的總和 ($\Sigma \gamma H$)。</li>
+</ul>
+<h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
+<h3>最終目標</h3>
+<p>求出「支撐牆背等值視土壓力最大值 $p_a$ 及分布圖」與「底部抗隆起安全係數 $FS$」。</p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<ol>
+<li>等值單位重：$\bar{\gamma} = \frac{\sum \gamma_i H_i}{H}$</li>
+<li>砂土等值強度：$C_{u,s} = \frac{1}{2} \gamma_s H_s K_s \tan\phi_s$</li>
+<li>平均等值強度：$\bar{C_u} = \frac{C_{u,s} H_s + C_{u,c} H_c}{H}$</li>
+<li>穩定數：$N = \frac{\boxed{\bar{\gamma}} H}{\boxed{\bar{C_u}}}$</li>
+<li>軟弱黏土最大視土壓力：$p_a = \max \left[ \boxed{\bar{\gamma}} H \left( 1 - \frac{4\boxed{\bar{C_u}}}{\boxed{\bar{\gamma}}H} \right), 0.3 \boxed{\bar{\gamma}} H \right]$</li>
+<li>Skempton 承載力係數：$N_c = 5 \left( 1 + 0.2 \frac{B}{L} \right) \left( 1 + 0.2 \frac{D}{B} \right)$</li>
+<li>抗隆起安全係數：$FS = \frac{\boxed{N_c} C_{u,b}}{\Sigma \gamma H}$</li>
+</ol>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$H$</td>
+<td>8 m</td>
+<td>總開挖深度</td>
+</tr>
+<tr>
+<td>$H_s$</td>
+<td>3 m</td>
+<td>砂土層厚度</td>
+</tr>
+<tr>
+<td>$\gamma_s$</td>
+<td>16.5 kN/m³</td>
+<td>砂土單位重</td>
+</tr>
+<tr>
+<td>$\phi_s$</td>
+<td>$32^\circ$</td>
+<td>砂土摩擦角</td>
+</tr>
+<tr>
+<td>$H_c$</td>
+<td>5 m</td>
+<td>黏土層厚度 (開挖內)</td>
+</tr>
+<tr>
+<td>$\gamma_c$</td>
+<td>17.5 kN/m³</td>
+<td>黏土單位重</td>
+</tr>
+<tr>
+<td>$C_u$</td>
+<td>30 kN/m²</td>
+<td>黏土不排水剪力強度</td>
+</tr>
+<tr>
+<td>$B, L$</td>
+<td>6 m, 15 m</td>
+<td>開挖面寬度與長度</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<p><strong>等值參數與視土壓力</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|-----|-----------|------|<br />
+| $\bar{\gamma}$ | $\frac{\gamma_s H_s + \gamma_c H_c}{H}$ | |<br />
+| $C_{u,s}$ | $\frac{1}{2} \gamma_s H_s K_s \tan\phi_s$ (取 $K_s=1$) | |<br />
+| $\bar{C_u}$ | $\frac{C_{u,s} H_s + C_{u,c} H_c}{H}$ | |<br />
+| $N$ | $\frac{\bar{\gamma}H}{\bar{C_u}}$ | |<br />
+| $p_a$ | $\max[\bar{\gamma} H - 4\bar{C_u}, 0.3\bar{\gamma}H]$ (當 $N>4$) | |</p>
+<p><strong>抗隆起分析</strong><br />
+| 符號 | 公式／來源 | 卡關? |<br />
+|-----|-----------|------|<br />
+| $N_c$ | $5(1+0.2\frac{B}{L})(1+0.2\frac{D}{B})$ | |<br />
+| $\Sigma \gamma H$ | 底部上方總覆土壓力 ($\bar{\gamma}H$) | |<br />
+| $FS$ | $\frac{N_c C_u}{\Sigma \gamma H}$ | |</p>
+<h3>L3：深層知識（不懂就卡住）</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>層狀土壤等值強度轉換</td>
+<td>砂土的抗剪強度隨深度增加，其等效 $C_{u}$ 是將推力積分後的平均值，需熟記 $C_{u,s} = \frac{1}{2}\gamma_s H_s K_s \tan\phi_s$ 公式。</td>
+<td></td>
+</tr>
+<tr>
+<td>Peck 視土壓力判別</td>
+<td>必須先求出 $N$，若 $N \le 4$ 屬堅硬黏土，若 $N > 4$ 屬軟弱至中度黏土，兩者對應的經驗分布圖完全不同。</td>
+<td></td>
+</tr>
+<tr>
+<td>矩形開挖抗隆起</td>
+<td>不能盲目代入 Terzaghi 2D 公式，必須使用 Bjerrum &amp; Eide 搭配 Skempton $N_c$ 公式。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
+<h3>第一部分：設計視土壓力分布情形</h3>
+<p><strong>Step 1：計算等值平均單位重 ($\bar{\gamma}$)</strong><br />
+$$
+\bar{\gamma} = \frac{\gamma_s H_s + \gamma_c H_c}{H_{total}} = \frac{16.5 \times 3 + 17.5 \times 5}{8} = \frac{49.5 + 87.5}{8} = 17.125 \text{ kN/m}^3
+$$<br />
+開挖面底部之總覆土壓力：<br />
+$$
+\Sigma \gamma H = \bar{\gamma}H = 17.125 \times 8 = 137 \text{ kN/m}^2
+$$</p>
+<p><strong>Step 2：計算等值平均不排水剪力強度 ($\bar{C_u}$)</strong><br />
+依據 Peck 等人建議，砂土層之等值不排水剪力強度 $C_{u,s}$（常取 $K_s = 1.0$）：<br />
+$$
+C_{u,s} = \frac{1}{2} \gamma_s H_s K_s \tan\phi_s = \frac{1}{2} \times 16.5 \times 3 \times 1.0 \times \tan 32^\circ = 24.75 \times 0.6249 = 15.47 \text{ kN/m}^2
+$$<br />
+加權平均求全層等值強度：<br />
+$$
+\bar{C_u} = \frac{C_{u,s} H_s + C_{u,c} H_c}{H_{total}} = \frac{15.47 \times 3 + 30 \times 5}{8} = \frac{46.41 + 150}{8} = 24.55 \text{ kN/m}^2
+$$</p>
+<p><strong>Step 3：判斷穩定數與土壤行為分類</strong><br />
+穩定數 $N$：<br />
+$$
+N = \frac{\bar{\gamma} H}{\bar{C_u}} = \frac{137}{24.55} = 5.58
+$$<br />
+因為 $N = 5.58 > 4$，視為<strong>軟弱至中度黏土 (Soft to Medium Clay)</strong>。</p>
+<p><strong>Step 4：計算最大視土壓力 ($p_a$)</strong><br />
+對於軟弱至中度黏土，其最大視土壓力取下列兩者之極大值：<br />
+$$
+p_{a1} = \bar{\gamma} H \left( 1 - m \frac{4\bar{C_u}}{\bar{\gamma}H} \right) \quad (\text{一般取 } m=1.0)
+$$<br />
+$$
+p_{a1} = 137 - 4 \times 24.55 = 137 - 98.2 = 38.8 \text{ kN/m}^2
+$$<br />
+$$
+p_{a2} = 0.3 \bar{\gamma} H = 0.3 \times 137 = 41.1 \text{ kN/m}^2
+$$<br />
+取較大值，故設計最大視土壓力：<br />
+$$
+\boxed{p_a = 41.1 \text{ kN/m}^2}
+$$</p>
+<p><strong>Step 5：繪製設計視土壓力分布圖</strong><br />
+Peck 軟弱黏土之壓力分布為梯形：</p>
+<ul>
+<li>$0 \sim 0.25H$ (0 m ~ 2 m)：從 0 線性增加至 $p_a$。</li>
+<li>$0.25H \sim 0.75H$ (2 m ~ 6 m)：維持最大值 $p_a$。</li>
+<li>$0.75H \sim 1.0H$ (6 m ~ 8 m)：從 $p_a$ 線性遞減至 0。</li>
+</ul>
+<p>分布圖示意如下：</p>
+<pre><code class="language-text">深度 (m)      土壓力 (kN/m²)
+  0    +-----+ 0
+       |      \
+       |       \
+  2    +--------+ 41.1
+       |        |
+       |        |
+  6    +--------+ 41.1
+       |       /
+       |      /
+  8    +-----+ 0
+</code></pre>
+<p><em>(作答時建議在考卷上依照比例尺畫出梯形，並標註深度轉折點 2m、6m 及最大壓力值 41.1 kN/m²)</em></p>
+<hr />
+<h3>第二部分：底部抗隆起安全係數</h3>
+<p><strong>Step 1：選擇適用公式與參數</strong><br />
+因題目給定長寬比，故採用 Bjerrum &amp; Eide (1956) 三維抗隆起公式。<br />
+開挖面下方為黏土，其強度 $C_{u,b} = 30 \text{ kN/m}^2$。<br />
+開挖總深 $D = 8 \text{ m}$，寬度 $B = 6 \text{ m}$，長度 $L = 15 \text{ m}$。</p>
+<p><strong>Step 2：計算 Skempton 承載力係數 ($N_c$)</strong><br />
+$$
+N_c = 5 \left( 1 + 0.2 \frac{B}{L} \right) \left( 1 + 0.2 \frac{D}{B} \right)
+$$<br />
+$$
+N_c = 5 \left( 1 + 0.2 \times \frac{6}{15} \right) \left( 1 + 0.2 \times \frac{8}{6} \right) = 5 \times (1 + 0.08) \times (1 + 0.2667)
+$$<br />
+$$
+N_c = 5 \times 1.08 \times 1.2667 = 6.84
+$$<br />
+檢核 $N_c$ 上限：最大不得超過 $7.5(1 + 0.2 \frac{B}{L}) = 7.5(1.08) = 8.1$。<br />
+本題 $6.84 \le 8.1$，故採用 $N_c = 6.84$。</p>
+<p><strong>Step 3：計算安全係數 ($FS$)</strong><br />
+$$
+FS = \frac{N_c C_{u,b}}{\Sigma \gamma H} = \frac{6.84 \times 30}{137} = \frac{205.2}{137} = 1.498
+$$<br />
+$$
+\boxed{FS \approx 1.50}
+$$</p>
+<h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
+<ol>
+<li>
+<p><strong>砂土層側向土壓力係數 $K_s$ 的選定</strong>：<br />
+   在將砂土轉換為等值黏土強度時，公式中的 $K_s$ 依據 Peck (1969) 原文建議，常假設為 $1.0$。部分學者或規範可能會建議使用 $K_a = \tan^2(45^\circ - \phi/2)$。若考場上採用 $K_a$ ($0.307$)，算得之等值 $C_{u,s}$ 將較小，導致 $\bar{C_u}$ 變小、$N$ 變大，最終土壓力可能由 $\bar{\gamma}H - 4\bar{C_u}$ 控制而變大。在台灣國考中，一般採用 $K_s=1.0$ 為主流（如施國欽《基礎工程》之範例做法），故本解析以此為標準解答。</p>
+</li>
+<li>
+<p><strong>抗隆起公式的選擇</strong>：<br />
+   當題目中明確給定開挖平面的尺寸 ($B \times L$) 時，強烈暗示考生需要考慮「三維形狀效應」。若此時仍使用 Terzaghi (1943) 的二維長條形公式（未修正長寬比），會低估基地的抗隆起能力，因此 Bjerrum &amp; Eide (1956) 是最標準且正確的選擇。</p>
+</li>
+</ol></main>
+<footer>來源：raw/solutions/SM-2015-3/SM-2015-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>
