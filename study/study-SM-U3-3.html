@@ -3,205 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-U3-3 坡地工程 讀書筆記</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+<title>SM-U3-3 坡地工程｜命題分析</title>
 <style>
-:root{--navy:#1e3a5f;--teal:#0e7490;--amber:#b45309;--green:#166534;--red:#b91c1c;--bg:#f8fafc;--line:#e2e8f0;--muted:#64748b;}
-*{box-sizing:border-box;}
-body{margin:0;font-family:'Noto Sans TC','PingFang TC',-apple-system,sans-serif;background:var(--bg);color:#1e293b;line-height:1.6;}
-.wrap{max-width:980px;margin:0 auto;padding:20px 16px 80px;}
-header.top{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;padding:28px 20px;border-radius:0 0 16px 16px;margin-bottom:20px;}
-header.top h1{margin:0 0 6px;font-size:1.5rem;}
-header.top p{margin:0;opacity:.9;font-size:.92rem;}
-section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:20px;}
-section h2{margin:0 0 14px;font-size:1.15rem;color:var(--navy);border-left:4px solid var(--teal);padding-left:10px;}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px;}
-.kpi{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
-.kpi .n{font-size:1.6rem;font-weight:700;color:var(--teal);}
-.kpi .l{font-size:.78rem;color:var(--muted);margin-top:2px;}
-.subtopic-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.chip{padding:6px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.82rem;transition:.15s;}
-.chip.active{background:var(--teal);color:#fff;border-color:var(--teal);}
-canvas{max-width:100%;}
-.qlist{display:flex;flex-direction:column;gap:8px;}
-.qcard{border:1px solid var(--line);border-radius:8px;padding:10px 14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.86rem;}
-.qcard .qid{font-weight:700;color:var(--navy);min-width:92px;}
-.qcard .badge{padding:2px 8px;border-radius:12px;font-size:.72rem;background:var(--bg);border:1px solid var(--line);}
-.qcard .tags{display:flex;flex-wrap:wrap;gap:4px;flex:1;}
-.qcard .tag{background:#eef2ff;color:#3730a3;padding:1px 8px;border-radius:10px;font-size:.72rem;}
-.qcard a.openlink{margin-left:auto;font-size:.78rem;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:3px 10px;border-radius:6px;white-space:nowrap;}
-.qcard a.openlink:hover{background:var(--teal);color:#fff;}
-.formula-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
-.fcard{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;}
-.fcard h3{margin:0 0 8px;font-size:.95rem;color:var(--teal);}
-.fcard .eq{overflow-x:auto;padding:4px 0;}
-.fcard p{font-size:.82rem;color:var(--muted);margin:6px 0 0;}
-.trap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;}
-.trap{border-left:4px solid var(--amber);background:#fffbeb;border-radius:0 8px 8px 0;padding:10px 14px;font-size:.84rem;}
-.trap .src{font-size:.72rem;color:var(--amber);font-weight:700;margin-bottom:4px;}
-.calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-@media (max-width:700px){.calc{grid-template-columns:1fr;}}
-.calc label{display:block;font-size:.8rem;color:var(--muted);margin:8px 0 3px;}
-.calc input,.calc select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font-size:.88rem;}
-.calc button{margin-top:14px;background:var(--teal);color:#fff;border:none;padding:9px 18px;border-radius:8px;cursor:pointer;font-size:.88rem;}
-.calc button:hover{background:var(--navy);}
-.result-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.88rem;}
-.result-box .big{font-size:1.3rem;font-weight:700;color:var(--teal);}
-.svgwrap{text-align:center;background:var(--bg);border-radius:10px;padding:10px;}
-.note{font-size:.78rem;color:var(--muted);margin-top:8px;}
-footer.pagefoot{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px;}
+:root{--ac:#1565c0;--ac2:#e3f2fd;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#78909c;--bd:#e0e6ea;--warn:#c62828}
+*{box-sizing:border-box}body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;padding:28px 24px}
+header h1{margin:0 0 6px;font-size:1.5em}header p{margin:0;opacity:.85;font-size:.92em}
+nav{position:sticky;top:0;z-index:9;background:#fff;border-bottom:2px solid var(--bd);padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px}
+nav a{text-decoration:none;color:var(--ac);font-size:.88em;padding:5px 10px;border-radius:16px;background:var(--ac2)}
+nav a:hover{background:var(--ac);color:#fff}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+section{margin-bottom:34px}
+h2{font-size:1.25em;border-left:5px solid var(--ac);padding-left:10px;margin:26px 0 14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+h3{font-size:1.05em;margin:30px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--ac2)}
+.role{background:#fffde7;border:1px solid #ffe082;border-left:5px solid #f9a825;border-radius:8px;padding:12px 16px;font-size:.88em;margin-bottom:8px}
+.role b{color:#e65100}
+.btnbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.btnbar a{padding:5px 14px;border-radius:6px;font-size:.9em;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;text-align:center}
+.kpi .n{font-size:1.9em;font-weight:700;color:var(--ac)}.kpi .l{font-size:.82em;color:var(--mut)}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.cat{background:var(--card);border:1px solid var(--bd);border-left:6px solid;border-radius:10px;padding:12px 14px;cursor:pointer;transition:.15s}
+.cat:hover{transform:translateY(-2px);box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.cat h3{margin:0 0 4px;font-size:1em;border:none;padding:0}.cat p{margin:0;font-size:.82em;color:var(--mut)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:760px){.charts{grid-template-columns:1fr}}
+.chartbox{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px}
+.chartbox h4{margin:0 0 8px;font-size:.95em;color:var(--mut)}
+canvas{width:100%;height:auto}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.9em}
+th,td{border:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:middle}
+th{background:var(--ac2)}
+td.num{text-align:center;font-variant-numeric:tabular-nums}
+.bar{display:inline-block;height:12px;border-radius:3px;vertical-align:middle}
+.up{color:#2e7d32;font-weight:700;text-align:center}.down{color:var(--warn);font-weight:700;text-align:center}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.fbtn{border:1px solid var(--bd);background:#fff;border-radius:18px;padding:6px 14px;cursor:pointer;font-size:.88em;font-family:inherit}
+.fbtn.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.qrow{background:var(--card);border:1px solid var(--bd);border-left:6px solid;border-radius:8px;padding:10px 14px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qrow.sec{background:#fafafa;border-style:dashed}
+.qrow a{font-weight:700;text-decoration:none;color:var(--ac);min-width:92px}
+.qrow a:hover{text-decoration:underline}
+.qrow .sum{flex:1;min-width:200px;font-size:.92em}
+.qrow .tags{font-size:.75em;color:var(--mut)}
+.qrow .meta{font-size:.72em;white-space:nowrap;color:#fff;border-radius:10px;padding:1px 8px}
+.note{font-size:.85em;color:var(--mut);background:#fff;border:1px dashed var(--bd);border-radius:8px;padding:10px 14px;margin-top:12px}
+.risk-hi{background:#ffebee}.risk-md{background:#fff8e1}.risk-lo{background:#f1f8e9}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:20px}
 </style>
 </head>
 <body>
-<div class='wrap'>
-<header class="top"><h1>SM-U3-3　坡地工程</h1><p>SM 土壤力學與基礎設計 · 命題大綱第三單元 · 複習導覽頁</p></header>
-<section><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;"><h2 style="margin: 0;">① 總覽</h2><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"><a href="lecture-SM-U3-3.html" style="background:#6a1b9a;color:white;padding:6px 16px;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:bold;box-shadow:0 2px 4px rgba(0,0,0,0.1);">觀念講義</a><a href="lecture-SM-U3-3.pdf" target="_blank" style="background:#ce93d8;color:#4a148c;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:bold;box-shadow:0 2px 4px rgba(0,0,0,0.1);">PDF</a><a href="SM-U3-3_坡地工程.pdf" target="_blank" style="background: var(--teal); color: white; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Keynote</a></div></div><p style="margin:0 0 14px;font-size:0.85rem;color:#607d8b;">使用順序：<b>觀念講義（練題前，建立原理）</b> → Keynote（課堂） → 本速查頁（考前總複習）</p><div class="kpi-grid"><div class="kpi"><div class="n">15 題</div><div class="l">歷屆題數</div></div><div class="kpi"><div class="n">16%</div><div class="l">佔全科比例</div></div><div class="kpi"><div class="n">第 1 名</div><div class="l">命題排名</div></div><div class="kpi"><div class="n">4/6 年</div><div class="l">近6年出題率</div></div></div>
-<div class="subtopic-chips">
-  <div class="chip active" onclick="filterSub(null,this)">全部 (15)</div>
-  <div class="chip" onclick="filterSub('wall_stability',this)">擋土結構/貫入深度 (10)</div>
-  <div class="chip" onclick="filterSub('heave_seepage',this)">隆起/管湧/滲流 (5)</div>
+<header>
+<h1>SM-U3-3 坡地工程 — 命題分析</h1>
+<p>結構技師「土壤力學與基礎設計」子項命題情報頁｜資料來源：raw/json/question_index.json（2002–2025，24 個考年、96 題）｜更新日期 2026-08-14</p>
+</header>
+<nav>
+<a href="#b1">出題概況</a><a href="#b2">考點結構</a><a href="#b3">考點漂移</a>
+<a href="#b4">分析法走向</a><a href="#b5">考題清單</a><a href="#b6">命題風險</a>
+</nav>
+<main>
+
+<section id="s1">
+<h2><span>命題分析</span></h2>
+
+<div class="role" style="background:#fff3e0;border-color:#ffcc80;border-left-color:#ef6c00">⚠️ <b>先說一件重要的事：這個代號的名稱與內容對不上。</b><br>本子項在 2026-08-14 全庫稽核前掛 15 題，全部是深開挖擋土（已歸位到 <code>SM-U2-3</code>）；而真正的邊坡穩定題被放在 <code>SM-U3-4</code>「生態工法在邊坡工程之應用」。稽核後兩邊互換歸位，本子項終於名副其實：<b>6 題全部是邊坡穩定分析</b>，而 <b>SM-U3-4 歸零</b>——本考科 24 年確實從未考過生態工法。也因為是新歸位，本子項<b>目前還沒有觀念講義與給／背分界</b>；原本掛在 U3-3 名下的那兩份教材內容是深開挖，已改名為 <code>-SM-U2-3</code>。</div>
+<div class="role">
+📚 <b>本頁只回答一件事：這個子項「考什麼」。</b>
+原理與圖解看 <b>觀念講義</b>、公式要不要背看 <b>給／背分界</b>；本頁提供的是可從 <code>question_index.json</code> 重生的命題事實：頻率、結構、漂移、方法別、清單、風險。<br>
+建議順序：<b style="color:#6a1b9a;">觀念講義</b>（練題前建立直覺）→ <b style="color:var(--warn);">給／背分界</b>（決定記憶投資）→ <b>本頁</b>（決定練題順序與押題）。
 </div>
-<canvas id="yearChart"></canvas>
-<div class="note">高頻標籤：深開挖(7)、貫入深度(5)、隆起(3)、視土壓力(3)、抗隆起安全係數(3)、連續壁(2)、被動土壓力(2)、安全係數(2)</div>
-<div class="note">說明：本子項命題大綱名稱為「坡地工程」，但實際歷屆考題絕大多數為深開挖擋土結構（連續壁/鈑樁）穩定性與抗隆起/滲流破壞分析，未見典型圓弧滑動邊坡分析題目，故本頁計算器與流程圖以實際題型為準。</div>
+<div class="note" style="margin-top:10px">📭 本子項目前<b>沒有</b>觀念講義與給／背分界（2026-08-14 全庫稽核後本子項才收到這 7 題邊坡穩定題，教材尚未撰寫）。本頁仍可獨立使用——所有數字都由 <code>scripts/stats.py</code> 從索引算出。</div>
+
+<h3 id="b1">出題概況</h3>
+<div class="kpis">
+<div class="kpi"><div class="n">6</div><div class="l">主考點題數（另有 1 題副考點）</div></div>
+<div class="kpi"><div class="n">6.2%</div><div class="l">佔全科比例（6／96）</div></div>
+<div class="kpi"><div class="n">#7</div><div class="l">全科出題排名（第一名 U1-3 22 題；本子項 6 題）</div></div>
+<div class="kpi"><div class="n">3/6</div><div class="l">近 6 考年出題年數（2020–25 共 3 題）</div></div>
+</div>
+<div class="charts">
+<div class="chartbox"><h4>年度分布（依考點分群堆疊，主考點 6 題）</h4><canvas id="cvBar" width="520" height="260"></canvas></div>
+<div class="chartbox"><h4>考點結構比例（主考點 6 題）</h4><canvas id="cvPie" width="520" height="260"></canvas></div>
+</div>
+<div class="note">
+📌 <b>三個要記住的數字</b>：① 稽核後由「15 題深開挖」變成「6 題邊坡穩定」，是全庫稽核中變動最徹底的子項；② 24 個考年只命中 6 年（2006、2008、2014、2021、2023、2024），空窗年段 2002–2005、2009–2013、2015–2020，三段各長達 4–6 年；③ 但近 6 考年出 3 題（2021-4、2023-2、2024-2）——本子項 24 年來密度最高的一段就是現在，邊坡題正在回溫。<br>
+<b>空窗年段（連續兩年以上未出題）：</b>2002–2005、2009–2013、2015–2020。空窗不代表退場——本科 24 個考年裡，每個子項都出現過「空窗數年後回歸」的情形。
+</div>
+
+<h3 id="b2">考點結構（點卡片可篩選下方考題清單）</h3>
+<div class="cats">
+<div class="cat" style="border-left-color:#2e7d32" onclick="filterQ('I')"><h3>⛰️ 無限邊坡與淺層滑動（主 2 題）</h3><p>無限邊坡分析・平行滲流・浸水邊坡・水力坡降</p></div>
+<div class="cat" style="border-left-color:#c62828" onclick="filterQ('W')"><h3>📐 平面與圓弧滑動（主 3 題）</h3><p>楔形塊體・Fellenius 切片法・瑞典圓弧法・臨界滑動面</p></div>
+<div class="cat" style="border-left-color:#1565c0" onclick="filterQ('E')"><h3>🏗️ 開挖邊坡與整體穩定（主 1 題）</h3><p>島式開挖側向滑動・順向坡・加勁擋土・整體穩定</p></div>
+</div>
+<div class="note">分群依「考生實際的解題套路」切，不是照標籤字面切；<b>每題只歸一群</b>，所以上面各群題數加總等於主考點 6 題，圓餅圖不會重複計數。</div>
+
+<h3 id="b3">考點漂移</h3>
+<div class="note">⏭️ <b>本區塊跳過。</b>主考點只有 6 題，對切後每半不到 4 題，前後期比較沒有統計意義，硬做會給出誤導性的結論。<br>主考點只有 6 題，對切後每半 3 題，前後期比較沒有統計意義。但有一件不需要統計就看得出來的事：<b>6 題裡有 3 題落在近 4 個考年</b>（2021-4 圓弧切片法、2023-2 楔形平面滑動、2024-2 無限邊坡），而 2015–2020 是完整的六年空窗、2009–2013 是五年空窗。把 2008-4（岩坡平面滑動＋地震力）也算進來，「極限平衡求 FS」這一條線在 24 年裡出現 5 次，是本子項唯一穩定的骨架。</div>
+
+<h3 id="b4">分析法走向</h3>
+<table>
+<thead><tr><th>期間</th><th class="num">有效應力法</th><th class="num">混合</th><th>觀察</th></tr></thead>
+<tbody>
+<tr><td>前段 2006–2014（3 題）</td><td class="num">1</td><td class="num">2</td><td></td></tr>
+<tr><td>後段 2021–2024（3 題）</td><td class="num">3</td><td class="num">0</td><td></td></tr>
+<tr style="background:#fff8e1"><td><b>近 6 考年 2020–2025</b></td><td class="num">3</td><td class="num">0</td><td></td></tr>
+</tbody>
+</table>
+<div class="note">
+📌 <b>對複習的直接影響</b>：本子項 <b>6 題全是有效應力法或混合</b>，共同點是「孔隙水壓怎麼進入抗剪強度」——無限邊坡用 u=γ_w H_w cos²β、圓弧切片法用 (W cosα − uΔL)、島式開挖用軟弱夾層的總應力 S_u。換句話說，本子項的方法別欄位實際上等於「這題的水位怎麼設定」。<b>沒有一題是純概念題</b>——邊坡題在本考科一律要求算出安全係數。
+</div>
+
+<h3 id="b5">考題清單（主 6 ＋ 副 1 ＝ 7 題，點題號開啟渲染後的解析頁）</h3>
+<div class="filters">
+<button class="fbtn on" onclick="filterQ('ALL',this)">全部（7）</button>
+<button class="fbtn" onclick="filterQ('I',this)">無限邊坡與淺層滑動（2）</button>
+<button class="fbtn" onclick="filterQ('W',this)">平面與圓弧滑動（3）</button>
+<button class="fbtn" onclick="filterQ('E',this)">開挖邊坡與整體穩定（2）</button>
+<button class="fbtn" onclick="filterQ('PRI',this)">僅主考點（6）</button>
+<button class="fbtn" onclick="filterQ('SEC',this)">僅副考點（1）</button>
+</div>
+<div id="qlist"></div>
+<div class="note">虛線灰底＝副考點（該題的主考點在別的子項，但解題會用到本子項的知識）。色籤為 <code>designMethod</code>：有效應力法／總應力法／混合／概念題／彈性理論。圖示：📄 有解析、📊 有互動圖；末位為驗算狀態——✅ 已人工驗算／⏳ 尚未驗算／⚠️ 發現錯誤待修正（直接讀 <code>question_index.json</code> 的 <code>verificationStatus</code>，不是寫死的）。</div>
+
+<h3 id="b6">命題風險排序（下一次最可能考什麼）</h3>
+<p style="font-size:.9em;margin:0 0 10px;color:var(--mut)"><b>這是推測而不是預言。</b>依「歷史頻率 × 空窗年數 × 近年趨勢」排序，用途是決定<b>練題順序</b>，不是叫你 all-in 單一考點。</p>
+<table>
+<thead><tr><th>風險</th><th>考點</th><th class="num">歷史題數</th><th>最後出現</th><th class="num">空窗</th><th>理由</th></tr></thead>
+<tbody>
+<tr class="risk-hi"><td><b>高</b></td><td>無限邊坡安全係數（乾坡／浸水／平行滲流）</td><td class="num">2</td><td>2024-2</td><td class="num">1 年</td><td>2014-1 與 2024-2 兩題都要求分別算乾與有水兩種情況；公式短、計算快，是 25 分題裡最好配分的邊坡型，且 2024 剛考過</td></tr>
+<tr class="risk-hi"><td><b>高</b></td><td>切片法求圓弧滑動 FS（Fellenius／普通切片法）</td><td class="num">1</td><td>2021-4</td><td class="num">4 年</td><td>24 年僅一次，但 2021-4 已示範「題目直接給切片、只要求代公式」的出法，大幅降低了出題成本；一旦出過一次，重複的門檻就低了</td></tr>
+<tr class="risk-md"><td><b>中高</b></td><td>楔形／平面滑動塊體的極限平衡</td><td class="num">2</td><td>2023-2</td><td class="num">2 年</td><td>2008-4（岩坡＋地震力）與 2023-2（凝聚力折減）兩題架構相同：自重分解＋Mohr-Coulomb 抗滑力。下一個未考過的變形是「加地下水」</td></tr>
+<tr class="risk-md"><td><b>中</b></td><td>雨水入滲／水位上升對 FS 的敏感度</td><td class="num">2</td><td>2024-2</td><td class="num">1 年</td><td>2023-2 把 c 由 50 降到 5 使 FS 由 3.68 掉到 1.02、2024-2 比較乾坡與浸水坡，兩題都在問「水來了會怎樣」——這是近年邊坡題的共同主軸</td></tr>
+<tr class="risk-lo"><td><b>中低</b></td><td>開挖邊坡的側向滑動</td><td class="num">1</td><td>2006-3</td><td class="num">19 年</td><td>2006-3 之後未再出現，且它與 U2-3 開挖穩定高度重疊，較可能以 U2-3 的形式現身</td></tr>
+<tr class="risk-lo"><td><b>低</b></td><td>生態工法在邊坡工程之應用（SM-U3-4）</td><td class="num">0</td><td>從未出現</td><td class="num">24 年</td><td>命題大綱有這個子項，但 <b>24 個考年 0 題</b>。稽核前它掛著 6 題，全部是被誤置的邊坡穩定題；歸位後 SM-U3-4 已歸零</td></tr>
+</tbody>
+</table>
+<div class="note">
+📌 <b>若只剩三天</b>：先練「<b>無限邊坡 FS</b>」——公式最短、2024 剛考過、且乾坡與浸水兩種情況一次練完；第二天練「<b>楔形／平面滑動的自重分解</b>」（2008-4＋2023-2 架構相同）；第三天把 2021-4 的切片法表格算一遍，那是唯一計算量大的題型。本子項目前沒有觀念講義，可先看 <a href="lecture-SM-U2-3.html">U2-3 深開挖擋土講義</a>的「驅動 vs 抵抗」極限平衡骨架，兩者共用同一套思路。
+</div>
+
 </section>
-<section><h2>② 剖面圖解</h2><div class="svgwrap">
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="13">
-  <rect x="0" y="0" width="640" height="300" fill="#f8fafc"/>
-  <text x="320" y="22" text-anchor="middle" font-weight="700" fill="#1e3a5f">深開挖擋土結構剖面示意圖</text>
-  <rect x="0" y="40" width="270" height="80" fill="#e2e8f0"/>
-  <rect x="370" y="40" width="270" height="200" fill="#fef3c7"/>
-  <rect x="270" y="40" width="100" height="220" fill="#94a3b8"/><text x="320" y="35" text-anchor="middle" font-size="11">連續壁/鈑樁</text>
-  <rect x="240" y="90" width="30" height="8" fill="#dc2626"/><text x="150" y="96" font-size="11" fill="#dc2626" text-anchor="middle">支撐/地錨</text>
-  <line x1="0" y1="120" x2="270" y2="120" stroke="#0e7490" stroke-dasharray="4,3"/><text x="140" y="115" font-size="10" fill="#0e7490">開挖面 GL</text>
-  <line x1="370" y1="60" x2="640" y2="60" stroke="#0e7490" stroke-dasharray="4,3"/><text x="500" y="55" font-size="10" fill="#0e7490">背側地下水位</text>
-  <path d="M270,120 L270,260 L370,260 L370,40" fill="none" stroke="#334155"/>
-  <text x="290" y="200" font-size="11" fill="#166534" transform="rotate(90 290 200)">主動側 Pa（背側）</text>
-  <text x="350" y="200" font-size="11" fill="#b45309" transform="rotate(-90 350 200)">被動側 Pp（開挖側）</text>
-  <path d="M270,260 Q320,280 370,260" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>
-  <text x="320" y="292" text-anchor="middle" font-size="11" fill="#dc2626">開挖面下方隆起/砂湧潛在破壞區</text>
-</svg>
-</div></section><section><h2>③ 解題流程圖</h2><div class="svgwrap">
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans TC',sans-serif" font-size="12.5">
-  <rect x="0" y="0" width="640" height="300" fill="#f8fafc"/>
-  <rect x="220" y="10" width="220" height="36" rx="6" fill="#1e3a5f"/><text x="330" y="33" fill="#fff" text-anchor="middle">開挖破壞模式判斷</text>
-  <line x1="260" y1="46" x2="120" y2="80" stroke="#334155"/><text x="140" y="66">整體穩定</text>
-  <line x1="330" y1="46" x2="330" y2="80" stroke="#334155"/><text x="340" y="66">底部隆起</text>
-  <line x1="400" y1="46" x2="520" y2="80" stroke="#334155"/><text x="480" y="66">滲流破壞</text>
 
-  <rect x="20" y="80" width="200" height="40" rx="6" fill="#0e7490"/><text x="120" y="104" fill="#fff" text-anchor="middle">傾覆/滑移/貫入深度</text>
-  <line x1="120" y1="120" x2="120" y2="150" stroke="#334155"/>
-  <rect x="20" y="150" width="200" height="46" rx="6" fill="#166534"/><text x="120" y="169" fill="#fff" text-anchor="middle" font-size="11">Rankine/Coulomb 主被動土壓力</text><text x="120" y="184" fill="#fff" text-anchor="middle" font-size="9">FS_OT≥2, FS_SL≥1.5</text>
+<footer>study SM-U3-3 命題分析｜exam-wiki-SM 知識庫｜統計基準 raw/json/question_index.json（96 題／24 考年）｜可用 <code>scripts/stats.py SM-U3-3</code> 複算全部數字</footer>
+</main>
 
-  <rect x="230" y="80" width="200" height="40" rx="6" fill="#0e7490"/><text x="330" y="104" fill="#fff" text-anchor="middle">黏土(Su)或砂土(φ)？</text>
-  <line x1="330" y1="120" x2="330" y2="150" stroke="#334155"/>
-  <rect x="230" y="150" width="200" height="46" rx="6" fill="#b45309"/><text x="330" y="169" fill="#fff" text-anchor="middle" font-size="11">Terzaghi 抗隆起FS</text><text x="330" y="184" fill="#fff" text-anchor="middle" font-size="9">FS=Su·Nc/(γH+q)</text>
-
-  <rect x="440" y="80" width="200" height="40" rx="6" fill="#0e7490"/><text x="540" y="104" fill="#fff" text-anchor="middle">管湧/砂湧(向上滲流)</text>
-  <line x1="540" y1="120" x2="540" y2="150" stroke="#334155"/>
-  <rect x="440" y="150" width="200" height="46" rx="6" fill="#7c3aed"/><text x="540" y="169" fill="#fff" text-anchor="middle" font-size="11">FS = icr/iexit</text><text x="540" y="184" fill="#fff" text-anchor="middle" font-size="9">或 FS=W'/U（上舉力）</text>
-
-  <rect x="140" y="230" width="360" height="40" rx="6" fill="#334155"/>
-  <text x="320" y="254" fill="#fff" text-anchor="middle" font-size="11">本子項考題多為開挖擋土結構問題，非圓弧滑動邊坡分析</text>
-</svg>
-</div></section><section><h2>④ 核心公式速查</h2>
-<div class="formula-grid">
-  <div class="fcard"><h3>懸臂式擋土牆 FS</h3><div class="eq">$$FS_{OT}=\dfrac{\sum M_R}{\sum M_O}\ge2.0,\quad FS_{SL}=\dfrac{\sum F_R}{\sum F_D}\ge1.5$$</div><p>抗傾覆取基腳趾端力矩平衡；抗滑移含基底摩擦力+被動土壓力</p></div>
-  <div class="fcard"><h3>Rankine 主動/被動土壓力</h3><div class="eq">$$K_a=\tan^2(45-\phi/2),\ K_p=\tan^2(45+\phi/2)$$</div><p>牆背與地表傾斜時需用一般化 Rankine 公式</p></div>
-  <div class="fcard"><h3>Terzaghi 抗隆起安全係數</h3><div class="eq">$$FS = \dfrac{S_u N_c}{\gamma H + q}$$</div><p>Nc 依開挖寬深比查表（約5.7~7.5），H為開挖深度</p></div>
-  <div class="fcard"><h3>管湧/砂湧安全係數</h3><div class="eq">$$FS = i_{cr}/i_{exit} = \dfrac{G_s-1}{(1+e)i_{exit}}$$</div><p>i_exit 由流網在開挖面出口處的等勢降差求得</p></div>
-  <div class="fcard"><h3>上舉力安全係數（不透水層下方）</h3><div class="eq">$$FS = \dfrac{W'(有效重)}{U(上舉水壓力)}$$</div><p>常見於開挖底部有承壓水層時的隆起破壞檢核</p></div>
-  <div class="fcard"><h3>視土壓力（Peck 包絡線）</h3><div class="eq">$$\sigma_h \approx 0.65 K_a \gamma H\ (\text{砂土，經驗值})$$</div><p>用於多層支撐開挖之支撐荷重估算，非真實土壓力分布</p></div>
-</div>
-</section><section><h2>⑤ 考題清單</h2><div style="margin-bottom:10px;font-size:.85rem;color:#64748b">共 <b id="qcount">15</b> 題</div><div id="qlist" class="qlist"></div></section><section><h2>⑥ 高頻陷阱</h2><div class="trap-grid"><div class="trap"><div class="src">📌 貫入深度須另加安全裕量</div>懸臂式版樁貫入深度計算出理論值後，實務上常需再乘以1.2~1.3倍的安全係數，題目若未特別說明需留意是否要求理論值或設計值。<div class="note">相關題目：SM-2022-4 / SM-2008-3</div></div><div class="trap"><div class="src">📌 背填土傾斜時 Rankine 公式需修正</div>背填土地表傾斜角β≠0時，Ka/Kp 公式含 cosβ 修正項，不可直接套用水平地表版本公式。<div class="note">相關題目：SM-2018-4</div></div><div class="trap"><div class="src">📌 張力裂縫深度扣除</div>黏土主動土壓力上部因張力裂縫（zc=2c/√Ka/γ×...）不產生實際側向推力，總推力需扣除此區段。<div class="note">相關題目：SM-2015-2</div></div><div class="trap"><div class="src">📌 視土壓力非真實分布</div>Peck 包絡線視土壓力是經驗性支撐荷重估算工具，不代表真實的三角形土壓力分布，不可用於計算牆體彎矩。<div class="note">相關題目：SM-2015-3 / SM-2012-4</div></div><div class="trap"><div class="src">📌 抗隆起 Nc 依開挖形狀查表</div>Terzaghi 抗隆起公式中的 Nc 依開挖寬深比(B/H)查表，非固定5.7，深開挖窄開挖與淺開挖寬開挖的 Nc 不同。<div class="note">相關題目：SM-2015-3 / SM-2003-3</div></div><div class="trap"><div class="src">📌 自由端 vs 固定端支撐法選擇</div>版樁貫入深度較淺時用自由端法（樁底可自由轉動）；貫入較深且土壤提供足夠拘束時用固定端法，兩法貫入深度需求與彎矩分布不同。<div class="note">相關題目：SM-2007-4 / SM-2005-1</div></div><div class="trap"><div class="src">📌 地下水位差造成的滲流力</div>開挖側與背側水位不同時會產生滲流，需先建流網求各點水頭，不可逕用靜水壓力計算側向水壓力。<div class="note">相關題目：SM-2020-2 / SM-2006-3</div></div><div class="trap"><div class="src">📌 島式開挖的側向滑動檢核</div>島式工法中間平台土體本身的側向滑動穩定需單獨檢核，與版樁本身的貫入深度/傾覆檢核是兩個不同的破壞模式。<div class="note">相關題目：SM-2006-3</div></div></div></section><section><h2>⑦ 互動計算器</h2>
-<div class="calc">
-  <div>
-    <h3 style="margin-top:0;color:#0e3a5f">① 懸臂式擋土牆穩定性 FS</h3>
-    <label>抗傾覆力矩 ΣM_R (kN·m/m)</label><input type="number" id="w_mr" value="220">
-    <label>傾覆力矩 ΣM_O (kN·m/m)</label><input type="number" id="w_mo" value="60">
-    <label>抗滑移力 ΣF_R (kN/m)</label><input type="number" id="w_fr" value="140">
-    <label>滑移驅動力 ΣF_D (kN/m)</label><input type="number" id="w_fd" value="90">
-    <button onclick="calcWall()">計算 FS_OT、FS_SL</button>
-  </div>
-  <div>
-    <h3 style="margin-top:0;color:#0e3a5f">② Terzaghi 抗隆起安全係數</h3>
-    <label>不排水剪力強度 Su (kPa)</label><input type="number" id="h_su" value="35">
-    <label>承載力因數 Nc</label><input type="number" id="h_nc" value="6.5" step="0.1">
-    <label>單位重 γ (kN/m³)</label><input type="number" id="h_gamma" value="18">
-    <label>開挖深度 H (m)</label><input type="number" id="h_H" value="8">
-    <label>地表額外載重 q (kPa)</label><input type="number" id="h_q" value="10">
-    <button onclick="calcHeave()">計算抗隆起 FS</button>
-  </div>
-</div>
-<div id="calcResult" class="result-box" style="margin-top:16px;">請輸入參數並點擊計算按鈕</div>
 <script>
-function calcWall(){
-  const mr=+document.getElementById('w_mr').value, mo=+document.getElementById('w_mo').value;
-  const fr=+document.getElementById('w_fr').value, fd=+document.getElementById('w_fd').value;
-  const fsOT = mr/mo, fsSL = fr/fd;
-  const okOT = fsOT>=2.0, okSL = fsSL>=1.5;
-  document.getElementById('calcResult').innerHTML = `<div class="big">FS_OT ≈ ${fsOT.toFixed(2)}（${okOT?'通過':'不足'}，需≥2.0）　FS_SL ≈ ${fsSL.toFixed(2)}（${okSL?'通過':'不足'}，需≥1.5）</div>`;
+const CATC={I:'#2e7d32',W:'#c62828',E:'#1565c0'};
+const CATN={I:'無限邊坡與淺層滑動',W:'平面與圓弧滑動',E:'開挖邊坡與整體穩定'};
+const MC={"有效應力法": "#1565c0", "總應力法": "#f57c00", "混合": "#6a1b9a", "概念題": "#546e7a", "彈性理論": "#00838f"};
+const VI={verified:'✅',unverified:'⏳','needs-review':'⚠️'};
+const VT={verified:'已人工驗算',unverified:'尚未驗算','needs-review':'發現錯誤，待修正'};
+// [題號, 分群, 摘要, 標籤, 有viz, 分析法, 主(1)/副(0), 副考點的所屬單元, 驗算狀態]
+const Q=[
+["SM-2006-3", "E", "島式開挖邊坡夾軟弱薄層的側向滑動安全係數", ["側向滑動", "Rankine主動土壓力", "Rankine被動土壓力", "張力裂縫", "孔隙水壓", "不排水剪力強度", "安全係數"], 1, "混合", 1, "", "verified"],
+["SM-2008-4", "W", "岩坡平面滑動在地震力下的 FS 與地錨荷重", ["平面滑動分析", "岩石邊坡", "水平地震力", "地錨", "Mohr-Coulomb破壞準則", "安全係數"], 0, "混合", 1, "", "verified"],
+["SM-2013-1", "E", "順向坡、波動方程式、土壓力理論、加勁土四題", ["加勁擋土結構", "整體穩定", "Rankine主動土壓力", "Coulomb土壓力", "波動方程式", "樁基承載力", "順向坡", "殘餘強度"], 0, "概念題", 0, "U3-2 擋土結構物穩定分析", "verified"],
+["SM-2014-1", "I", "平行滲流無限邊坡的安全係數", ["無限邊坡分析", "安全係數", "平行滲流", "孔隙水壓", "三相關係", "Mohr-Coulomb破壞準則"], 0, "有效應力法", 1, "", "verified"],
+["SM-2021-4", "W", "以普通切片法求圓弧破壞面安全係數", ["Fellenius法", "瑞典圓弧法", "邊坡穩定", "安全係數", "孔隙水壓", "有效應力原理"], 0, "有效應力法", 1, "", "verified"],
+["SM-2023-2", "W", "楔形平面滑動 FS 與凝聚力折減的影響", ["邊坡穩定", "平面滑動", "安全係數", "Mohr-Coulomb破壞準則", "凝聚力折減", "雨水入滲"], 0, "有效應力法", 1, "", "verified"],
+["SM-2024-2", "I", "乾砂與浸水無限邊坡 FS 及自由水層水力坡降", ["無限邊坡分析", "安全係數", "水力坡降", "浸水邊坡", "淺層滑動"], 0, "有效應力法", 1, "", "verified"]
+];
+function renderQ(cat){
+  const box=document.getElementById('qlist');box.innerHTML='';
+  const sel=Q.filter(q=>{
+    if(cat==='ALL')return true;
+    if(cat==='PRI')return q[6]===1;
+    if(cat==='SEC')return q[6]===0;
+    return q[1]===cat;});
+  sel.sort((a,b)=>a[0].localeCompare(b[0])).forEach(q=>{
+    const d=document.createElement('div');
+    d.className='qrow'+(q[6]?'':' sec');d.style.borderLeftColor=CATC[q[1]];
+    d.innerHTML=`<a href="problems-view/${q[0]}.html" target="_blank">${q[0]}</a>
+    <span class="meta" style="background:${MC[q[5]]||'#90a4ae'}">${q[5]}</span>
+    ${q[6]?'':`<span class="meta" style="background:#90a4ae">副・${q[7]}</span>`}
+    <span class="sum">${q[2]}</span><span class="tags">${q[3].join('・')}</span>
+    <span class="ico" title="${VT[q[8]]||q[8]}">📄${q[4]?' 📊':''} ${VI[q[8]]||'❓'}</span>`;
+    box.appendChild(d);});
 }
-function calcHeave(){
-  const su=+document.getElementById('h_su').value, nc=+document.getElementById('h_nc').value;
-  const gamma=+document.getElementById('h_gamma').value, H=+document.getElementById('h_H').value, q=+document.getElementById('h_q').value;
-  const fs = (su*nc)/(gamma*H+q);
-  document.getElementById('calcResult').innerHTML = `<div class="big">FS ≈ ${fs.toFixed(2)}（${fs>=1.5?'通過，一般要求≥1.5':'不足，一般要求≥1.5'}）</div>`;
+function filterQ(cat,btn){renderQ(cat);
+  const order=["ALL", "I", "W", "E", "PRI", "SEC"];
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+  const idx=order.indexOf(cat);if(idx>=0)document.querySelectorAll('.fbtn')[idx].classList.add('on');
+  if(!btn)document.getElementById('b5').scrollIntoView({behavior:'smooth'});
 }
+renderQ('ALL');
+const CODES=["I", "W", "E"];
+const PQ=Q.filter(q=>q[6]===1);
+const byYear={};PQ.forEach(q=>{const y=q[0].split('-')[1];
+  if(!byYear[y]){byYear[y]={I:0,W:0,E:0};}byYear[y][q[1]]++;});
+function drawBar(){
+  const cv=document.getElementById('cvBar'),ctx=cv.getContext('2d');
+  const years=Object.keys(byYear).sort(),W=cv.width,H=cv.height,bw=(W-60)/years.length;
+  const max=Math.max(...years.map(y=>Object.values(byYear[y]).reduce((a,b)=>a+b,0)));
+  ctx.font='10px sans-serif';ctx.fillStyle='#78909c';
+  for(let i=0;i<=max;i++){const yy=H-30-(H-60)*i/max;ctx.fillStyle='#78909c';ctx.fillText(i,8,yy+3);ctx.strokeStyle='#eceff1';ctx.beginPath();ctx.moveTo(24,yy);ctx.lineTo(W-10,yy);ctx.stroke();}
+  years.forEach((y,i)=>{let acc=0;
+    CODES.forEach(c=>{const v=byYear[y][c];if(!v)return;
+      const h=(H-60)*v/max;ctx.fillStyle=CATC[c];
+      ctx.fillRect(30+i*bw,H-30-acc-h,Math.max(bw*0.7,4),h);acc+=h;});
+    ctx.fillStyle='#78909c';ctx.save();ctx.translate(30+i*bw+bw*0.35,H-18);ctx.rotate(-0.7);ctx.fillText(y.slice(2),0,0);ctx.restore();});
+}
+function drawPie(){
+  const cv=document.getElementById('cvPie'),ctx=cv.getContext('2d');
+  const cnt={};CODES.forEach(c=>cnt[c]=0);PQ.forEach(q=>cnt[q[1]]++);
+  const tot=PQ.length,cx=cv.width*0.28,cy=cv.height/2,r=Math.min(cx,cy)-16;let a=-Math.PI/2;
+  CODES.forEach(c=>{const frac=cnt[c]/tot,a2=a+frac*2*Math.PI;
+    ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,a2);ctx.closePath();ctx.fillStyle=CATC[c];ctx.fill();a=a2;});
+  ctx.font='12px sans-serif';let ly=40;
+  CODES.forEach(c=>{ctx.fillStyle=CATC[c];ctx.fillRect(cv.width*0.56,ly-9,12,12);
+    ctx.fillStyle='#263238';ctx.fillText(`${CATN[c]}：${cnt[c]} 題（${Math.round(cnt[c]/tot*100)}%）`,cv.width*0.56+18,ly);ly+=26;});
+}
+drawBar();drawPie();
 </script>
-</section><footer class='pagefoot'>exam-wiki-SM · study 指令輸出 · 資料來源：raw/json/question_index.json + raw/solutions/</footer></div>
-<script>const QUESTIONS = [{"id": "SM-2023-4", "year": 2023, "method": "概念題", "tags": ["深開挖", "連續壁", "支撐系統失敗", "災害防治", "軟弱黏土"], "subtype": "wall_stability"}, {"id": "SM-2022-4", "year": 2022, "method": "有效應力法", "tags": ["懸臂板樁", "貫入深度", "主動土壓力", "被動土壓力", "臨界深度"], "subtype": "wall_stability"}, {"id": "SM-2020-2", "year": 2020, "method": "有效應力法", "tags": ["懸臂式版樁", "穩定滲流", "土壓力", "砂湧", "安全係數"], "subtype": "heave_seepage"}, {"id": "SM-2018-4", "year": 2018, "method": "有效應力法", "tags": ["懸臂擋土牆", "Rankine土壓力", "傾覆安全係數", "滑移安全係數", "傾斜背填土"], "subtype": "wall_stability"}, {"id": "SM-2017-4", "year": 2017, "method": "混合", "tags": ["深開挖", "打擊式鋼版樁", "管湧", "上舉破壞", "隆起"], "subtype": "heave_seepage"}, {"id": "SM-2015-2", "year": 2015, "method": "混合", "tags": ["雙層土", "Rankine土壓力", "張力裂縫", "抗滑安全係數", "擋土牆"], "subtype": "wall_stability"}, {"id": "SM-2015-3", "year": 2015, "method": "混合", "tags": ["深開挖", "視土壓力", "Peck包絡線", "隆起", "抗隆起安全係數"], "subtype": "heave_seepage"}, {"id": "SM-2014-3", "year": 2014, "method": "混合", "tags": ["開挖", "地錨", "鈑樁", "貫入深度", "預力", "淨土壓力"], "subtype": "wall_stability"}, {"id": "SM-2012-4", "year": 2012, "method": "混合", "tags": ["深開挖", "視土壓力", "Peck包絡線", "支撐荷重", "抗隆起安全係數"], "subtype": "heave_seepage"}, {"id": "SM-2011-4", "year": 2011, "method": "總應力法", "tags": ["深開挖", "視土壓力", "鉸接法", "支撐荷重", "截面模數"], "subtype": "wall_stability"}, {"id": "SM-2008-3", "year": 2008, "method": "總應力法", "tags": ["深開挖", "連續壁", "貫入深度", "被動土壓力", "地盤改良", "單壓強度"], "subtype": "wall_stability"}, {"id": "SM-2007-4", "year": 2007, "method": "有效應力法", "tags": ["錨定式版樁", "固定端支撐法", "貫入深度", "地錨拉力", "安全距離"], "subtype": "wall_stability"}, {"id": "SM-2006-3", "year": 2006, "method": "混合", "tags": ["島式開挖", "側向滑動", "安全係數", "水壓力", "地下水位", "不排水剪力強度"], "subtype": "wall_stability"}, {"id": "SM-2005-1", "year": 2005, "method": "混合", "tags": ["錨定式版樁", "自由端支撐法", "土壓力分佈", "貫入深度", "地錨預力"], "subtype": "wall_stability"}, {"id": "SM-2003-3", "year": 2003, "method": "有效應力法", "tags": ["深開挖", "隆起", "抗隆起安全係數", "有效應力", "壓力水頭"], "subtype": "heave_seepage"}];</script>
-<script>
-function renderQuestions(filterType){
-  const box = document.getElementById('qlist');
-  const items = QUESTIONS.filter(q => !filterType || q.subtype === filterType);
-  box.innerHTML = items.map(q => `
-    <div class="qcard">
-      <span class="qid">${q.id}</span>
-      <span class="badge">${q.year}年</span>
-      <span class="badge">${q.method}</span>
-      <span class="tags">${q.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span>
-      <a class="openlink" href="../index.html#md=raw/solutions/${q.id}/${q.id}.md&t=${q.id}" target="_blank">查看解析 →</a>
-    </div>`).join('');
-  document.getElementById('qcount').textContent = items.length;
-}
-</script>
-<script>renderQuestions(null); 
-(function(){
-  const cvs = document.getElementById('yearChart');
-  const ctx = cvs.getContext('2d');
-  const years = [...new Set(QUESTIONS.map(q=>q.year))].sort((a,b)=>a-b);
-  const counts = years.map(y => QUESTIONS.filter(q=>q.year===y).length);
-  const W = cvs.width = cvs.parentElement.clientWidth;
-  const H = cvs.height = 180;
-  ctx.clearRect(0,0,W,H);
-  const maxC = Math.max(...counts, 1);
-  const bw = W / years.length;
-  ctx.font = '10px sans-serif';
-  years.forEach((y, i) => {
-    const h = (counts[i] / maxC) * (H - 40);
-    const x = i * bw + bw*0.15;
-    const w = bw * 0.7;
-    ctx.fillStyle = '#0e7490';
-    ctx.fillRect(x, H - 24 - h, w, h);
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    if(counts[i] > 0) ctx.fillText(counts[i], x + w/2, H - 28 - h);
-    ctx.save();
-    ctx.translate(x + w/2, H - 8);
-    ctx.rotate(-Math.PI/3);
-    ctx.textAlign='right';
-    ctx.fillText(String(y).slice(2), 0, 0);
-    ctx.restore();
-  });
-})();
-</script>
-<script>
-function filterSub(type, el){
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-  el.classList.add('active');
-  renderQuestions(type);
-}
-</script></body></html>
+</body>
+</html>

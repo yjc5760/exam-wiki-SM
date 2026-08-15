@@ -411,8 +411,6 @@
   }
 
   renderStats();render();renderCharts();renderExams();
-  // 靜默恢復上次的資料夾授權（僅限本機環境）
-  if(location.protocol === 'file:') ensureDir(false);
 
   /* ================= 解析閱讀器 ================= */
   const overlay=document.getElementById('overlay'),reader=document.getElementById('reader'),
@@ -476,6 +474,13 @@
       alert('選擇的資料夾內找不到 raw/，請選擇 exam-wiki-SM 資料夾本身。');return null;}
     dirHandle=h;await idbSet(h);return h;
   }
+
+  // 靜默恢復上次的資料夾授權（僅限本機環境）
+  // 註：本行必須放在 dirHandle 宣告與 ensureDir 定義「之後」。
+  //     ensureDir 是函式宣告會被提升，但 dirHandle 是 let 宣告；
+  //     若在其宣告之前呼叫，會踩到暫時性死區（TDZ）而拋出
+  //     ReferenceError，使「靜默恢復上次授權」永遠失效。
+  if(location.protocol === 'file:') ensureDir(false).catch(()=>{});
   async function readFileByPath(relPath){
     const parts=relPath.split('/').filter(Boolean);
     let d=dirHandle;

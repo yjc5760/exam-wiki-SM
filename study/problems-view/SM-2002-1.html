@@ -14,7 +14,7 @@ body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans
   background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
 header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
 header h1{margin:0;font-size:1.15em}
-header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+header .back{display:inline-block;margin-top:10px;margin-right:8px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
   padding:4px 12px;border-radius:14px;text-decoration:none}
 main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
 h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
@@ -27,7 +27,8 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2002-1 題目解析</h1><a class="back" href="javascript:history.back()">← 返回講義</a></header>
+<header><h1>SM-2002-1 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
+<a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2002-1</h1>
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
 <strong>分析法：</strong> 概念題<br />
@@ -130,4 +131,15 @@ $$ \Delta H = \frac{\Delta e_{field}}{1+e_{v0}} H $$<br />
 <li><strong>三維沉陷效應之高估 (Skempton-Bjerrum 修正)</strong>：除了一維壓密曲線之擾動會造成高估外，1D 壓密理論假設側向變形為零。對於過壓密黏土，其實際的三維沉陷量通常小於一維計算結果。實務設計時，常會再乘上 Skempton-Bjerrum 沉陷修正係數 $\mu$（OC 黏土中 $\mu < 1.0$）進一步折減，使預估值更貼近現場觀測值。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2002-1/SM-2002-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+<script>
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
+   靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
+(function(){try{
+  var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);
+  if(!m)return;var u=m[1],s=u.replace('SM-','');
+  var q=document.querySelector('a.quick'),l=document.querySelector('a.lect');
+  if(q){q.setAttribute('href','../study-'+u+'.html');q.innerHTML='\uD83D\uDD0D '+s+' \u547D\u984C\u5206\u6790';}
+  if(l){l.setAttribute('href','../lecture-'+u+'.html');l.innerHTML='\uD83D\uDCDA '+s+' \u8B1B\u7FA9';}
+}catch(e){}})();
+</script>
 </body></html>

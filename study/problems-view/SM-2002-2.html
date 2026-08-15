@@ -14,7 +14,7 @@ body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans
   background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
 header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
 header h1{margin:0;font-size:1.15em}
-header .back{display:inline-block;margin-top:10px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+header .back{display:inline-block;margin-top:10px;margin-right:8px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
   padding:4px 12px;border-radius:14px;text-decoration:none}
 main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
 h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
@@ -26,7 +26,7 @@ img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);bor
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2002-2 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<header><h1>SM-2002-2 題目解析</h1><a class="back" href="../../index.html">&#127968; 回知識庫首頁</a></header>
 <main><h1>考題編號：SM-2002-2</h1>
 <p><strong>主分類：</strong> <code>SM-U2-5</code> 地層改良方法<br />
 <strong>副分類：</strong> <code>SM-U2-4</code> 基礎型式之選擇與評估<br />
@@ -123,4 +123,15 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>替代方案比較</strong>：若不使用震動揚實法，另一常見的大面積深層處理法為<strong>動力夯實法（Dynamic Compaction）</strong>。然而，海邊地區地下水位極高，動力夯實的重錘反覆打擊容易導致表層土壤孔隙水壓瞬間飆高而發生「泥濘化（Pumping）」，需額外鋪設厚達 $1 \sim 2 \text{ m}$ 的透水碎石墊層，且對環境震動與噪音污染巨大。相較之下，震動揚實法更適應高水位且環境衝擊較小。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2002-2/SM-2002-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+<script>
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
+   靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
+(function(){try{
+  var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);
+  if(!m)return;var u=m[1],s=u.replace('SM-','');
+  var q=document.querySelector('a.quick'),l=document.querySelector('a.lect');
+  if(q){q.setAttribute('href','../study-'+u+'.html');q.innerHTML='\uD83D\uDD0D '+s+' \u547D\u984C\u5206\u6790';}
+  if(l){l.setAttribute('href','../lecture-'+u+'.html');l.innerHTML='\uD83D\uDCDA '+s+' \u8B1B\u7FA9';}
+}catch(e){}})();
+</script>
 </body></html>

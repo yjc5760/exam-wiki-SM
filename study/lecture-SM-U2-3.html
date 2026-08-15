@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-U3-3 深開挖擋土與地層穩定 — 觀念講義</title>
+<title>SM-U2-3 深開挖擋土與地層穩定 — 觀念講義</title>
 <link rel="stylesheet" href="assets/katex/katex.min.css">
 <script defer src="assets/katex/katex.min.js"></script>
 <script defer src="assets/katex/auto-render.min.js"
@@ -61,8 +61,8 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 </head>
 <body>
 <header>
-<h1>SM-U3-3　深開挖擋土與地層穩定</h1>
-<p class="sub">命題大綱名稱為「坡地工程」，但 15 題實際考的全是深開挖擋土結構與地層破壞 —— 本講義以實際題型為準</p>
+<h1>SM-U2-3　開挖之穩定性分析</h1>
+<p class="sub">深開挖擋土與地層穩定：版樁貫入深度・支撐系統與視土壓力・基盤隆起／上舉／砂湧</p>
 <p class="meta">土壤力學與基礎設計 · 命題大綱第三單元第 3 子項 · 觀念講義（練題前讀）· 15 題主分類，佔全科 16%，命題排名第 1</p>
 </header>
 
@@ -81,9 +81,10 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 <a href="#s10b">§10.5 因果鏈</a>
 <a href="#s11">★ 精選 5 題</a>
 <span style="flex:1"></span>
-<a href="study-SM-U3-3.html" style="background:#eceff1;color:#455a64">📊 速查頁</a>
-<a href="SM-U3-3_坡地工程.pdf" target="_blank" style="background:#eceff1;color:#455a64">📄 Keynote</a>
-<a href="lecture-SM-U3-3.pdf" target="_blank" style="background:#eceff1;color:#455a64">🖨️ 本頁 PDF</a>
+<a href="formula-given-SM-U2-3.html" style="background:#fde7e9;color:#b71c1c">🔴 U2-3 給／背分界</a>
+
+<a href="study-SM-U2-3.html" style="background:#eceff1;color:#455a64">📊 U2-3 命題分析</a>
+<a href="lecture-SM-U2-3.pdf" target="_blank" style="background:#eceff1;color:#455a64">🖨️ 本頁 PDF</a>
 </nav>
 
 <main>
@@ -192,9 +193,11 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 </div>
 
 <div class="trap">
-<b>大綱名稱的陷阱。</b>本子項官方名稱是「坡地工程」，但歷屆 15 題<b>沒有一題</b>是圓弧滑動或無限邊坡分析 ——
-那些題目在知識庫中歸在 SM-U3-4（6 題）。所以讀這一節時不要花時間在 Fellenius／Bishop 上；
-但考場上若真的出現邊坡題，記得它與本單元共用同一套「驅動 vs 抵抗」的極限平衡骨架。
+<b>本講義的範圍（2026-08-14 全庫稽核後更新）。</b>本講義原以 <code>SM-U2-3</code>「坡地工程」為名撰寫，
+全庫稽核後已正名為 <code>SM-U2-3</code>「開挖之穩定性分析」——講義內容一字未改，只是回到它本來就屬於的子項。
+原本涵蓋的 15 題中，<b>12 題</b>現為 SM-U2-3 主考點；<b>2 題</b>（2006-3 島式開挖側向滑動、2015-2 土壓力合力與抗滑）留在 SM-U2-3 坡地工程，
+<b>1 題</b>（2018-4 懸臂擋土牆傾覆滑移）移至 SM-U3-2 擋土結構物穩定分析。
+真正的邊坡穩定（無限邊坡、Fellenius／Bishop 切片法、平面滑動）現集中在 <b>SM-U2-3</b>（7 題），與本單元共用同一套「驅動 vs 抵抗」的極限平衡骨架。
 </div>
 </section>
 <section id="s1">
@@ -1196,7 +1199,7 @@ $$FS=\frac{\overbrace{s_uL}^{\text{底部抗剪}}+\overbrace{P_P}^{\text{被動�
 <table>
 <thead><tr><th style="width:5%">#</th><th style="width:26%">觸發信號</th><th style="width:30%">錯誤思維</th><th>正確認知</th></tr></thead>
 <tbody>
-<tr><td>1</td><td>題目寫「坡地工程」</td><td>準備 Fellenius／Bishop 圓弧分析</td><td>本子項 15 題全是深開挖擋土；圓弧邊坡在 SM-U3-4</td></tr>
+<tr><td>1</td><td>看到「開挖」就想擋土牆公式</td><td>直接套 Rankine 主動＋抗滑抗傾覆</td><td>開挖題的控制項通常是<b>貫入深度</b>與<b>基盤隆起</b>，不是牆體傾覆；圓弧邊坡在 SM-U2-3</td></tr>
 <tr><td>2</td><td>黏土層 φ=0，給 Su</td><td>分別算主動、被動再相減，代數一堆</td><td>直接用 \(p_{net}=4S_u-q\)，均布矩形。<span style="color:#c62828">SM-2005-1 / SM-2014-3</span></td></tr>
 <tr><td>3</td><td>總應力法 \(\sigma_h=\sigma_v\pm2S_u\)</td><td>再加一個靜水壓三角形</td><td>算出來已是總側向應力，水壓已含在內。<span style="color:#c62828">SM-2008-3 / SM-2014-3</span></td></tr>
 <tr><td>4</td><td>砂土 \(K\sigma_v'\)</td><td>以為 K 已含水壓</td><td>K 只作用在有效應力上，水壓必須另加。判準：看用 \(\gamma'\) 還是 \(\gamma_{sat}\)</td></tr>
