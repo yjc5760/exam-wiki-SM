@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-2025-3 &#8212; 題目解析</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},
+  {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<style>
+:root{--ac:#1565c0;--bg:#f7f9fb;--card:#fff;--ink:#263238;--mut:#607d8b;--bd:#dfe6ea}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Microsoft JhengHei","Noto Sans TC",-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+header{background:linear-gradient(135deg,#0d47a1,#1976d2 60%,#42a5f5);color:#fff;padding:22px 26px}
+header h1{margin:0;font-size:1.15em}
+header .back{display:inline-block;margin-top:10px;margin-right:8px;font-size:.82em;color:#fff;background:rgba(255,255,255,.18);
+  padding:4px 12px;border-radius:14px;text-decoration:none}
+main{max-width:880px;margin:0 auto;padding:26px 22px 70px}
+h1,h2,h3{color:#0d47a1} h2{font-size:1.2em;border-left:6px solid var(--ac);padding-left:12px;margin:34px 0 14px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92em;background:#fff}
+th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
+code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
+img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+.katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
+footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
+</style></head><body>
+<header><h1>SM-2025-3 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
+<main><h1>考題編號：SM-2025-3</h1>
+<p><strong>主分類：</strong> <code>SM-U3</code> 側向土壓力與擋土結構物<br />
+<strong>副分類：</strong> <code>SM-U3-2</code> 擋土結構物穩定分析<br />
+<strong>分析法：</strong> 總應力法<br />
+<strong>標籤：</strong> <code>重力式擋土牆</code> <code>抗滑動</code> <code>主active土壓力</code> <code>凝聚力</code> <code>不排水剪力強度</code></p>
+<hr />
+<h2>1. 原始題目重述 (Problem Restatement)</h2>
+<p>請評估圖中所示之重力式擋土牆抗滑動之安全係數。（25 分）<br />
+附註：地表呈水平，牆背面垂直，可不考慮牆面摩擦，主動土壓力係數可用：$K_A = \tan^2[45^\circ - \frac{\phi}{2}]$</p>
+<ul>
+<li><strong>幾何形狀：</strong> 牆頂寬 2m，牆背面垂直，牆高 7m（扣除底版）。底版於趾部突出 1m，高度 1m。牆底版總寬為 1m (趾部) + 6m (牆身) = 7m。總牆高為 7m + 1m = 8m。</li>
+<li><strong>背填土 (Sand)：</strong> $\gamma = 17 \text{ kN/m}^3, \phi' = 30^\circ$</li>
+<li><strong>基礎土 (Clay)：</strong> $S_u = 30 \text{ kPa}$</li>
+<li><strong>混凝土 (Concrete)：</strong> $\gamma = 23.5 \text{ kN/m}^3$</li>
+</ul>
+<p><img alt="SM-2025-3 題目附圖：重力式擋土牆幾何與土層參數" src="../../raw/solutions/SM-2025-3/SM-2025-3-fig-1.png" /></p>
+<p><em>圖說：重力式擋土牆座落於黏土基礎（$S_u=30$ kPa）上，右側背填砂土（$\gamma=17$ kN/m³, $\phi'=30^\circ$）。牆身垂直背填土，牆頂寬 2m，總高 8m，底寬 7m。</em></p>
+<h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
+<p>本題為最基本之擋土牆滑動穩定性檢核。主要測驗考生是否清楚「滑動驅動力」與「滑動抵抗力」的來源。出題者特別設定基礎土壤為黏土（僅給不排水剪力強度 $S_u$），這是一個重要的暗示：在純凝聚力（$\phi=0$）的不排水狀態下，底部的抗滑力完全取決於基礎底面積與黏著力，與擋土牆本身的自重無關。</p>
+<h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
+<p><strong>戰略地圖：</strong></p>
+<ul>
+<li><strong>Step 1:</strong> 釐清幾何關係，判斷擋土牆承受側向土壓力的總高度 $H$ 以及擋土牆與基礎接觸的底面積寬度 $B$。</li>
+<li><strong>Step 2:</strong> 計算滑動驅動力（主動土壓力 $P_A$）。利用給定的公式計算 $K_A$，再代入三角形土壓力分布公式求得水平推力。</li>
+<li><strong>Step 3:</strong> 計算滑動抵抗力（底部抗滑力 $R$）。因基礎為黏土，僅具不排水剪力強度 $S_u$（即 $\phi=0$ 分析），採用純凝聚力滑動模型，抗滑力為基底寬度乘上黏著力（一般假定基礎與黏土之最大黏著力 $c_a = S_u$）。</li>
+<li><strong>Step 4:</strong> 計算安全係數 $FS = R / P_A$。</li>
+</ul>
+<p><strong>陷阱分析：</strong></p>
+<ol>
+<li><strong>多餘資訊陷阱（重量的干擾）：</strong> 題目給了混凝土單位重 $\gamma = 23.5$，許多考生會習慣性地去切割牆體計算各區塊重量 $W$。但在基礎為純黏土（$\phi=0$）的滑動檢核中，垂直載重不會增加抗滑摩擦力（即 $W \tan\delta = 0$）。若花大量時間算牆重，不僅白費功夫，還可能暴露觀念不清而被扣分。</li>
+<li><strong>總高度判讀：</strong> 擋土牆背填土的受壓面高度為總高（牆身 7m + 底版 1m = 8m），若僅取 7m 算土壓力會導致極大的低估錯誤。</li>
+<li><strong>被動土壓力的取捨：</strong> 牆趾部分高度僅 1m，且題目圖示並未標出趾部前方有任何覆土，故保守起見（且通常規範允許）不計算被動土壓力提供之抗滑抵抗。</li>
+</ol>
+<h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
+<h3>最終目標</h3>
+<p><code>評估重力式擋土牆在純黏土基礎上的抗滑動安全係數 (FS)。</code></p>
+<h3>本題關鍵公式（依計算順序）</h3>
+<p>$$ K_A = \tan^2(45^\circ - \phi'/2) $$<br />
+$$ P_A = \frac{1}{2} K_A \gamma_{sand} H^2 $$<br />
+$$ R = S_u \times B $$<br />
+$$ FS = \frac{\boxed{R}}{\boxed{P_A}} $$</p>
+<h3>L1：題目直接給定</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>數值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$H_{stem}$</td>
+<td>7 m</td>
+<td>擋土牆牆身高度</td>
+</tr>
+<tr>
+<td>$H_{base}$</td>
+<td>1 m</td>
+<td>擋土牆底版高度</td>
+</tr>
+<tr>
+<td>$B_{toe}$</td>
+<td>1 m</td>
+<td>趾部寬度</td>
+</tr>
+<tr>
+<td>$B_{stem}$</td>
+<td>6 m</td>
+<td>底版跟部與牆身底部對應寬度</td>
+</tr>
+<tr>
+<td>$\gamma_{sand}$</td>
+<td>17 kN/m³</td>
+<td>砂土單位重</td>
+</tr>
+<tr>
+<td>$\phi'$</td>
+<td>30°</td>
+<td>砂土內摩擦角</td>
+</tr>
+<tr>
+<td>$S_u$</td>
+<td>30 kPa</td>
+<td>黏土不排水剪力強度</td>
+</tr>
+</tbody>
+</table>
+<h3>L2：需知識點推導</h3>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>公式／來源</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第一階段：計算滑動驅動力 $P_A$</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$H$</td>
+<td>$H_{stem} + H_{base} = 7 + 1$</td>
+<td></td>
+</tr>
+<tr>
+<td>$K_A$</td>
+<td>$\tan^2(45^\circ - 30^\circ/2)$</td>
+<td></td>
+</tr>
+<tr>
+<td>$P_A$</td>
+<td>$0.5 \times K_A \times \gamma_{sand} \times H^2$</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>第二階段：計算滑動抵抗力 $R$</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$B$</td>
+<td>$B_{toe} + B_{stem} = 1 + 6$</td>
+<td></td>
+</tr>
+<tr>
+<td>$c_a$</td>
+<td>$S_u$ (未特別註明則取黏著係數 $\alpha=1$)</td>
+<td></td>
+</tr>
+<tr>
+<td>$R$</td>
+<td>$c_a \times B$</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>第三階段：計算安全係數 $FS$</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$FS$</td>
+<td>$R / P_A$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>L3：深層知識</h3>
+<table>
+<thead>
+<tr>
+<th>知識點</th>
+<th>說明</th>
+<th>卡關?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>純凝聚力滑動觀念</td>
+<td>在 $\phi=0$ 的黏土上，極限抗剪力 $\tau_f = S_u$，與正向力 (牆重) 大小無關。</td>
+<td></td>
+</tr>
+<tr>
+<td>牆面摩擦角 $\delta$ 的影響</td>
+<td>題目明示「可不考慮牆面摩擦」，故 $\delta=0$，主動土壓力 $P_A$ 呈完全水平向。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
+<p><strong>Step 1：確認擋土牆幾何尺寸</strong><br />
+背填土側（右側）承受主動土壓力的總垂直高度 $H$ 為：<br />
+$$ H = 7 \text{ m (牆身)} + 1 \text{ m (底版)} = 8 \text{ m} $$<br />
+擋土牆與基礎接觸之底寬 $B$ 為（依圖示箭頭標示判定）：<br />
+$$ B = 1 \text{ m (左側趾部)} + 6 \text{ m (剩餘底座)} = 7 \text{ m} $$</p>
+<p><strong>Step 2：計算滑動驅動力（主動土壓力 $P_A$）</strong><br />
+背填土為砂土（$\phi' = 30^\circ$），地表水平，且牆背面垂直。<br />
+依題目公式計算主動土壓力係數 $K_A$：<br />
+$$ K_A = \tan^2\left(45^\circ - \frac{30^\circ}{2}\right) = \tan^2(30^\circ) = \frac{1}{3} $$<br />
+由於「不考慮牆面摩擦」($\delta=0$)，土壓力完全呈水平向。單位寬度之總主動土壓力推力為：<br />
+$$ P_A = \frac{1}{2} K_A \gamma_{sand} H^2 = \frac{1}{2} \times \left(\frac{1}{3}\right) \times 17 \times (8)^2 = \frac{1}{6} \times 17 \times 64 = \frac{1088}{6} \approx 181.33 \text{ kN/m} $$</p>
+<p><strong>Step 3：計算滑動抵抗力（底部抗剪力 $R$）</strong><br />
+基礎為黏土，僅給定不排水剪力強度 $S_u = 30 \text{ kPa}$。<br />
+此為不排水條件之純凝聚力滑動（$\phi=0$ 分析），底部極限剪應力等於黏著力 $c_a$。通常假設基底與土壤完全貼合且無額外折減，取 $c_a = S_u$。<br />
+<em>(策略註解：因為 $\phi=0$，正向力（即牆體自重）不會貢獻任何摩擦阻力。故題目給定的混凝土單位重為干擾資訊，不需要花時間計算牆重。)</em><br />
+單位寬度之底部最大抗滑力為：<br />
+$$ R = c_a \times B = S_u \times B = 30 \times 7 = 210 \text{ kN/m} $$</p>
+<p><strong>Step 4：計算抗滑動安全係數</strong><br />
+$$ FS = \frac{\Sigma F_R}{\Sigma F_D} = \frac{R}{P_A} = \frac{210}{181.33} \approx 1.158 $$</p>
+<p>$$ \boxed{ FS \approx 1.158 } $$</p>
+<h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
+<ol>
+<li><strong>干擾資訊的取捨：</strong> 本題最精華的考點就是「不計算牆重」。出題老師給出混凝土單位重 $\gamma=23.5$，許多考生會反射性地將牆體分割為矩形與三角形計算重量與重心。這在抗傾覆分析或砂土底盤分析時是必要的，但在純凝聚力基礎的抗滑動分析中，正向力完全無用武之地，花費大量時間算重量可能暴露觀念不清。</li>
+<li><strong>安全係數偏低：</strong> 算出的 FS=1.158 低於一般擋土牆設計規範的滑動安全係數要求（通常至少 1.5）。這表示該牆在實際工程中是不安全的，可能需要加深埋置深度利用被動土壓力，或在底版下方增設止滑榫 (Shear key) 以強迫滑動面穿過深層土壤，從而增加抗滑力。</li>
+<li><strong>被動土壓力的保守性：</strong> 題圖左側趾部前方沒有畫出覆土，實務上開挖區表土也容易受擾動或掏刷流失，因此忽略被動土壓力的貢獻是正確且偏保守的設計做法。</li>
+</ol></main>
+<footer>來源：raw/solutions/SM-2025-3/SM-2025-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+</body></html>
