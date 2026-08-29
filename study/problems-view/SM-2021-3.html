@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2021-3 &#8212; 題目解析</title>
+<title>SM-2021-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,15 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2021-3 題目解析</h1><a class="back quick" href="../study-SM-U2-2.html">&#128269; U2-2 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-2.html">&#128218; U2-2 深基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2021-3</h1>
-<p><strong>主分類：</strong> <code>SM-U2-2 深基礎之支承力與沉陷量</code><br />
-<strong>分析法：</strong> 有效應力法與總應力法混合<br />
-<strong>標籤：</strong> <code>容許支承力</code> <code>拉拔力</code> <code>α法</code> <code>β法</code> <code>有效重量</code></p>
+<p><strong>主分類：</strong> <code>SM-U2-2</code> 深基礎之支承力與沉陷量<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>樁基承載力</code> <code>α法</code> <code>β法</code> <code>端點承載力</code> <code>摩擦力</code> <code>抗拔力</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一長度 12 m，直徑 60 cm 之圓形預鑄混凝土基樁，貫入於 6 m 厚之砂土層及其下之黏土層中，地下水位於地表面。已知土壤與基樁參數如下：</p>
@@ -39,12 +41,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>砂土層</strong> (0~6 m)：$c'= 0 \text{ kN/m}^2$，$ \phi'= 32^\circ $，$ \gamma_{\text{sat}} = 19.2 \text{ kN/m}^3 $</li>
 <li><strong>黏土層</strong> (6~12 m)：$c_u = 100 \text{ kN/m}^2$，$ \gamma_{\text{sat}} = 18.9 \text{ kN/m}^3 $</li>
 <li><strong>基樁參數</strong>：長度 $L = 12 \text{ m}$，直徑 $D = 0.6 \text{ m}$，混凝土單位重 $\gamma_c = 24 \text{ kN/m}^3$</li>
-<li><strong>相關係數與附註</strong>：<br />
-  1. 側向土壓力係數 $K = 1.4 K_o$<br />
-  2. 砂土與混凝土基樁之介面摩擦角 $\delta' = 0.8 \phi'$<br />
-  3. 黏土層之附著力係數 $\alpha = 0.65$<br />
-  4. 黏土層之基樁承載值因數 $N_c^* = 9$ (於 $\phi=0^\circ$ 時)<br />
-  5. 設計安全係數 $FS = 3$</li>
+<li><strong>相關係數與附註</strong>：</li>
+<li>側向土壓力係數 $K = 1.4 K_o$</li>
+<li>砂土與混凝土基樁之介面摩擦角 $\delta' = 0.8 \phi'$</li>
+<li>黏土層之附著力係數 $\alpha = 0.65$</li>
+<li>黏土層之基樁承載值因數 $N_c^* = 9$ (於 $\phi=0^\circ$ 時)</li>
+<li>設計安全係數 $FS = 3$</li>
 </ul>
 <p><strong>求解：</strong><br />
 (一) 計算此基樁之容許垂直支承力。<br />
@@ -62,9 +64,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><strong>解題策略：</strong></p>
 <ol>
 <li><strong>幾何與基本參數</strong>：先計算基樁之斷面積 $A_p$、周長 $p$、體積 $V_p$ 及有效單位重。</li>
-<li><strong>樁身摩擦力 ($Q_s$)</strong>：<br />
-   - <strong>砂土層 ($Q_{s1}$)</strong>：計算深度 0~6 m 處的有效覆土壓力 $\sigma_v'$，求出平均有效應力 $\bar{\sigma}_v'$，再代入 $f_s = K \bar{\sigma}_v' \tan\delta'$ 求解。<br />
-   - <strong>黏土層 ($Q_{s2}$)</strong>：直接利用 $\alpha$ 法，$f_s = \alpha c_u$ 求解。</li>
+<li><strong>樁身摩擦力 ($Q_s$)</strong>：</li>
+<li><strong>砂土層 ($Q_{s1}$)</strong>：計算深度 0~6 m 處的有效覆土壓力 $\sigma_v'$，求出平均有效應力 $\bar{\sigma}_v'$，再代入 $f_s = K \bar{\sigma}_v' \tan\delta'$ 求解。</li>
+<li><strong>黏土層 ($Q_{s2}$)</strong>：直接利用 $\alpha$ 法，$f_s = \alpha c_u$ 求解。</li>
 <li><strong>樁端承載力 ($Q_p$)</strong>：利用 $q_p = c_u N_c^*$ 求解。</li>
 <li><strong>容許垂直支承力</strong>：將總極限承載力除以安全係數 $FS=3$。</li>
 <li><strong>容許拉拔力</strong>：極限拉拔力為總摩擦力 $Q_s$ 加上基樁之有效重量 $W_p'$。通常自重為常數不折減，故 $T_a = Q_s/FS + W_p'$。</li>
@@ -80,34 +82,20 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p>計算基樁的容許垂直支承力 $Q_{a,\text{comp}}$ 與容許拉拔力 $Q_{a,\text{uplift}}$。</p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ol>
-<li>
-<p>砂土層底部有效應力：<br />
-   $$ \sigma'_{v,6m} = (\gamma_{\text{sat,sand}} - \gamma_w) \cdot L_{\text{sand}} $$</p>
-</li>
-<li>
-<p>砂土層樁身摩擦力：<br />
-   $$ Q_{s1} = K \cdot \left(\frac{0 + \boxed{\sigma'_{v,6m}}}{2}\right) \cdot \tan\delta' \cdot (\pi D) \cdot L_{\text{sand}} $$</p>
-</li>
-<li>
-<p>黏土層樁身摩擦力：<br />
-   $$ Q_{s2} = \alpha \cdot c_u \cdot (\pi D) \cdot L_{\text{clay}} $$</p>
-</li>
-<li>
-<p>樁端淨承載力：<br />
-   $$ Q_p = c_u \cdot N_c^* \cdot \frac{\pi}{4} D^2 $$</p>
-</li>
-<li>
-<p>容許垂直支承力：<br />
-   $$ Q_{a,\text{comp}} = \frac{\boxed{Q_{s1}} + \boxed{Q_{s2}} + \boxed{Q_p}}{FS} $$</p>
-</li>
-<li>
-<p>基樁有效重量：<br />
-   $$ W'_p = (\gamma_{\text{pile}} - \gamma_w) \cdot \frac{\pi}{4} D^2 \cdot L_{\text{total}} $$</p>
-</li>
-<li>
-<p>容許拉拔力：<br />
-   $$ Q_{a,\text{uplift}} = \frac{\boxed{Q_{s1}} + \boxed{Q_{s2}}}{FS} + \boxed{W'_p} $$</p>
-</li>
+<li>砂土層底部有效應力：<br />
+   $$ \sigma'_{v,6m} = (\gamma_{\text{sat,sand}} - \gamma_w) \cdot L_{\text{sand}} $$</li>
+<li>砂土層樁身摩擦力：<br />
+   $$ Q_{s1} = K \cdot \left(\frac{0 + \boxed{\sigma'_{v,6m}}}{2}\right) \cdot \tan\delta' \cdot (\pi D) \cdot L_{\text{sand}} $$</li>
+<li>黏土層樁身摩擦力：<br />
+   $$ Q_{s2} = \alpha \cdot c_u \cdot (\pi D) \cdot L_{\text{clay}} $$</li>
+<li>樁端淨承載力：<br />
+   $$ Q_p = c_u \cdot N_c^* \cdot \frac{\pi}{4} D^2 $$</li>
+<li>容許垂直支承力：<br />
+   $$ Q_{a,\text{comp}} = \frac{\boxed{Q_{s1}} + \boxed{Q_{s2}} + \boxed{Q_p}}{FS} $$</li>
+<li>基樁有效重量：<br />
+   $$ W'_p = (\gamma_{\text{pile}} - \gamma_w) \cdot \frac{\pi}{4} D^2 \cdot L_{\text{total}} $$</li>
+<li>容許拉拔力：<br />
+   $$ Q_{a,\text{uplift}} = \frac{\boxed{Q_{s1}} + \boxed{Q_{s2}}}{FS} + \boxed{W'_p} $$</li>
 </ol>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -232,30 +220,20 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li>靜止土壓力係數（Jaky 經驗公式）：$K_o = 1 - \sin(32^\circ) = 1 - 0.5299 = 0.4701$</li>
 <li>側向土壓力係數：$K = 1.4 \times K_o = 1.4 \times 0.4701 = 0.6581$</li>
 <li>介面摩擦角：$\delta' = 0.8 \times 32^\circ = 25.6^\circ$ ($\tan 25.6^\circ = 0.4791$)</li>
-<li>
-<p>砂土層底部 ($z=6\text{m}$) 之有效覆土壓力：<br />
-  $$ \sigma'_{v,6} = \gamma'_{s} \times 6 = 9.39 \times 6 = 56.34 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>砂土層平均單位摩擦力：<br />
-  $$ f_{s1} = K \cdot \bar{\sigma}'_v \cdot \tan\delta' = 0.6581 \times \left(\frac{0 + 56.34}{2}\right) \times 0.4791 = 8.88 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>砂土層摩擦力：<br />
-  $$ Q_{s1} = f_{s1} \cdot p \cdot L_{\text{sand}} = 8.88 \times 1.8850 \times 6 = 100.46 \text{ kN} $$</p>
-</li>
+<li>砂土層底部 ($z=6\text{m}$) 之有效覆土壓力：<br />
+  $$ \sigma'_{v,6} = \gamma'_{s} \times 6 = 9.39 \times 6 = 56.34 \text{ kN/m}^2 $$</li>
+<li>砂土層平均單位摩擦力：<br />
+  $$ f_{s1} = K \cdot \bar{\sigma}'_v \cdot \tan\delta' = 0.6581 \times \left(\frac{0 + 56.34}{2}\right) \times 0.4791 = 8.88 \text{ kN/m}^2 $$</li>
+<li>砂土層摩擦力：<br />
+  $$ Q_{s1} = f_{s1} \cdot p \cdot L_{\text{sand}} = 8.88 \times 1.8850 \times 6 = 100.46 \text{ kN} $$</li>
 </ul>
 <h3>Step 3：計算黏土層之樁身摩擦力 ($Q_{s2}$)</h3>
 <p>深度區間：$6 \sim 12 \text{ m}$</p>
 <ul>
-<li>
-<p>黏土層單位摩擦力（$\alpha$ 法）：<br />
-  $$ f_{s2} = \alpha \cdot c_u = 0.65 \times 100 = 65 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>黏土層摩擦力：<br />
-  $$ Q_{s2} = f_{s2} \cdot p \cdot L_{\text{clay}} = 65 \times 1.8850 \times 6 = 735.15 \text{ kN} $$</p>
-<blockquote>
+<li>黏土層單位摩擦力（$\alpha$ 法）：<br />
+  $$ f_{s2} = \alpha \cdot c_u = 0.65 \times 100 = 65 \text{ kN/m}^2 $$</li>
+<li>黏土層摩擦力：<br />
+  $$ Q_{s2} = f_{s2} \cdot p \cdot L_{\text{clay}} = 65 \times 1.8850 \times 6 = 735.15 \text{ kN} $$<blockquote>
 <p><strong>策略註解</strong>：總樁身摩擦力 $Q_s = Q_{s1} + Q_{s2} = 100.46 + 735.15 = 835.61 \text{ kN}$。</p>
 </blockquote>
 </li>
@@ -263,14 +241,10 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h3>Step 4：計算樁端承載力 ($Q_p$)</h3>
 <p>樁端位於深度 $12 \text{ m}$ 處（黏土層中）。</p>
 <ul>
-<li>
-<p>單位淨端點承載力：<br />
-  $$ q_p = c_u \cdot N_c^* = 100 \times 9 = 900 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>樁端淨承載力：<br />
-  $$ Q_p = q_p \cdot A_p = 900 \times 0.2827 = 254.43 \text{ kN} $$</p>
-</li>
+<li>單位淨端點承載力：<br />
+  $$ q_p = c_u \cdot N_c^* = 100 \times 9 = 900 \text{ kN/m}^2 $$</li>
+<li>樁端淨承載力：<br />
+  $$ Q_p = q_p \cdot A_p = 900 \times 0.2827 = 254.43 \text{ kN} $$</li>
 </ul>
 <h3>Step 5：(一) 計算容許垂直支承力 ($Q_{a,\text{comp}}$)</h3>
 <p>極限淨垂直承載力 $Q_{u,\text{net}}$ 等於總摩擦力加端點淨承載力：<br />
@@ -287,20 +261,22 @@ $$ Q_{a,\text{uplift}} = \frac{Q_s}{FS} + W_p' = \frac{835.61}{3} + 48.15 = 278.
 </blockquote>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
+<li><strong>淨承載力與總承載力之差異</strong>：</li>
+<li>本解析採用<strong>淨承載力法（Net Bearing Capacity）</strong>，即視 $c_u N_c^*$ 為淨抗力，並忽略基樁有效重量與被開挖土壤有效重量之間的差異，此為深基礎分析最常被接受的作法。</li>
 <li>
-<p><strong>淨承載力與總承載力之差異</strong>：<br />
-   - 本解析採用<strong>淨承載力法（Net Bearing Capacity）</strong>，即視 $c_u N_c^*$ 為淨抗力，並忽略基樁有效重量與被開挖土壤有效重量之間的差異，此為深基礎分析最常被接受的作法。<br />
-   - 若採用<strong>總承載力法（Gross Bearing Capacity）</strong>，端點總承載力為 $q_{p,\text{gross}} = c_u N_c^* + \sigma'_{v,\text{tip}}$。此時 $\sigma'_{v,\text{tip}} = 6 \times 9.39 + 6 \times (18.9 - 9.81) = 110.88 \text{ kPa}$。這解釋了題目給定黏土層 $\gamma_{\text{sat}} = 18.9 \text{ kN/m}^3$ 的可能用途。然而，若以總承載力除以 FS 後再扣除基樁重量求容許結構載重（$P_{\text{allow}} = Q_{u,\text{gross}}/FS - W_p'$），概念上會將上覆土重帶入折減，學理上並不完全合理，故推薦使用淨承載力法。</p>
+<p>若採用<strong>總承載力法（Gross Bearing Capacity）</strong>，端點總承載力為 $q_{p,\text{gross}} = c_u N_c^* + \sigma'_{v,\text{tip}}$。此時 $\sigma'_{v,\text{tip}} = 6 \times 9.39 + 6 \times (18.9 - 9.81) = 110.88 \text{ kPa}$。這解釋了題目給定黏土層 $\gamma_{\text{sat}} = 18.9 \text{ kN/m}^3$ 的可能用途。然而，若以總承載力除以 FS 後再扣除基樁重量求容許結構載重（$P_{\text{allow}} = Q_{u,\text{gross}}/FS - W_p'$），概念上會將上覆土重帶入折減，學理上並不完全合理，故推薦使用淨承載力法。</p>
 </li>
 <li>
-<p><strong>拉拔力安全係數折減對象</strong>：<br />
-   - 本文採用 $T_a = (Q_s / FS) + W_p'$，將安全係數僅施加於不確定性較高的土壤摩擦力。<br />
-   - 某些考場解法可能採用較保守的整體折減公式 $T_a = (Q_s + W_p') / FS$。若採此法，容許拉拔力為 $(835.61 + 48.15) / 3 = 294.59 \text{ kN}$。考場上強烈建議寫出算式以明示自身採用的折減邏輯，通常前者的工程學理基礎更為堅實。</p>
+<p><strong>拉拔力安全係數折減對象</strong>：</p>
+</li>
+<li>本文採用 $T_a = (Q_s / FS) + W_p'$，將安全係數僅施加於不確定性較高的土壤摩擦力。</li>
+<li>
+<p>某些考場解法可能採用較保守的整體折減公式 $T_a = (Q_s + W_p') / FS$。若採此法，容許拉拔力為 $(835.61 + 48.15) / 3 = 294.59 \text{ kN}$。考場上強烈建議寫出算式以明示自身採用的折減邏輯，通常前者的工程學理基礎更為堅實。</p>
 </li>
 <li>
-<p><strong>水單位重的選用</strong>：<br />
-   - 本題未指明水的單位重，採 $\gamma_w = 9.81 \text{ kN/m}^3$ 或 $10 \text{ kN/m}^3$ 皆屬合理範圍。若採 $\gamma_w = 10 \text{ kN/m}^3$，求得之 $Q_{a,\text{comp}} \approx 362.7 \text{ kN}$、$Q_{a,\text{uplift}} \approx 325.4 \text{ kN}$，差異均在 1% 內，不影響給分。</p>
+<p><strong>水單位重的選用</strong>：</p>
 </li>
+<li>本題未指明水的單位重，採 $\gamma_w = 9.81 \text{ kN/m}^3$ 或 $10 \text{ kN/m}^3$ 皆屬合理範圍。若採 $\gamma_w = 10 \text{ kN/m}^3$，求得之 $Q_{a,\text{comp}} \approx 362.7 \text{ kN}$、$Q_{a,\text{uplift}} \approx 325.4 \text{ kN}$，差異均在 1% 內，不影響給分。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2021-3/SM-2021-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

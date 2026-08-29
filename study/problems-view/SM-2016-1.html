@@ -29,10 +29,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </style></head><body>
 <header><h1>SM-2016-1 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
-<main><h1>考題編號：[SM-2016-1]</h1>
-<p><strong>主分類：</strong> <code>SM-U1-3</code> 壓密沉陷與速率<br />
+<main><h1>考題編號：SM-2016-1</h1>
+<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>副分類：</strong> <code>SM-U1-4</code> 土體內應力<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>壓密沉陷</code> <code>過壓密比(OCR)</code> <code>超額孔隙水壓</code> <code>單面排水</code></p>
+<strong>標籤：</strong> <code>e-log p'曲線</code> <code>OCR</code> <code>過壓密</code> <code>回脹指數Cs</code> <code>壓密沉陷</code> <code>超額孔隙水壓</code> <code>壓密度</code> <code>單面排水</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、圖一為某覆土加載施工剖面圖，施工前於地下 4.0 m（點 B 處）取回粘土執行壓密試驗；圖二為壓密試驗結果推算之原始 $e-\log\sigma'$ 曲線，圖三為 $T_v$ 及 $z/H_{dr}$ 與壓密度 $U$ 之對應圖，表一表列原始 $e-\log\sigma'$ 曲線主要加壓與解壓應力對應之孔隙比。<br />
@@ -50,27 +51,19 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
 <ul>
 <li><strong>有效應力與應力歷史：</strong> 測驗考生計算原地層有效應力($\sigma_{v0}'$)，並能與室內壓密試驗結果($\sigma_0'$)對接，判斷過壓密比(OCR)。</li>
-<li><strong>沉陷量計算判別：</strong> 測驗考生判斷加載後之最終有效應力($\sigma_f'$)是否超過預壓密應力($\sigma_c'$)。本題 $\sigma_f' < \sigma_c'$，故整體沉陷皆處於「再壓密(Recompression)」階段，必須先從解壓段求得回脹指數($C_s$)，並假定再壓密指數 $C_r \approx C_s$ 進行計算。</li>
+<li><strong>沉陷量計算判別：</strong> 測驗考生判斷加載後之最終有效應力($\sigma_f'$)是否超過預壓密應力($\sigma_c'$)。本題 $\sigma_f' &lt; \sigma_c'$，故整體沉陷皆處於「再壓密(Recompression)」階段，必須先從解壓段求得回脹指數($C_s$)，並假定再壓密指數 $C_r \approx C_s$ 進行計算。</li>
 <li><strong>單面排水與等時線圖讀取：</strong> 粘土層上方為砂土、下方為不透水岩盤，構成單面排水條件，排水路徑 $H_{dr} = H = 4.0\text{ m}$。測驗考生如何根據此邊界條件與 $T_v$ 從等時曲線圖(Isochrones)中讀取特定深度的壓密度($U_z$)，進而計算超額孔隙水壓。</li>
 </ul>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
-<li>
-<p><strong>Step 1: 初始狀態與 OCR 分析</strong> <br />
-  計算 B 點(粘土層中點)之初始有效應力 $\sigma_{v0}'$，並驗證其等同於試驗曲線起點 $\sigma_0'$。再利用 $\sigma_c'$ 計算 OCR。</p>
-</li>
-<li>
-<p><strong>Step 2: 曲線參數推求</strong><br />
-  利用解壓段($\sigma_1'$ 至 $\sigma_2'$)求得回脹指數 $C_s$。假設 $C_r = C_s$，計算 $\sigma_c'$ 時的孔隙比 $e_c$。</p>
-</li>
-<li>
-<p><strong>Step 3: 最終沉陷量計算</strong><br />
-  加入覆土載重求得 $\Delta\sigma$ 與 $\sigma_f'$。因 $\sigma_f' < \sigma_c'$，全程使用 $C_r$ 計算極限壓密沉陷量 $S_c$。</p>
-</li>
-<li>
-<p><strong>Step 4: 歷時沉陷與水壓計算</strong><br />
-  判斷為單面排水($H_{dr}=H=4.0\text{ m}$)，計算 3 年時之 $T_v$。以 $T_v$ 求取平均壓密度 $U_{avg}$ 及各點局部壓密度 $U_z$ (可查圖或代級數解)，最終求出沉陷量及超額孔隙水壓。</p>
-</li>
+<li><strong>Step 1: 初始狀態與 OCR 分析</strong> <br />
+  計算 B 點(粘土層中點)之初始有效應力 $\sigma_{v0}'$，並驗證其等同於試驗曲線起點 $\sigma_0'$。再利用 $\sigma_c'$ 計算 OCR。</li>
+<li><strong>Step 2: 曲線參數推求</strong><br />
+  利用解壓段($\sigma_1'$ 至 $\sigma_2'$)求得回脹指數 $C_s$。假設 $C_r = C_s$，計算 $\sigma_c'$ 時的孔隙比 $e_c$。</li>
+<li><strong>Step 3: 最終沉陷量計算</strong><br />
+  加入覆土載重求得 $\Delta\sigma$ 與 $\sigma_f'$。因 $\sigma_f' &lt; \sigma_c'$，全程使用 $C_r$ 計算極限壓密沉陷量 $S_c$。</li>
+<li><strong>Step 4: 歷時沉陷與水壓計算</strong><br />
+  判斷為單面排水($H_{dr}=H=4.0\text{ m}$)，計算 3 年時之 $T_v$。以 $T_v$ 求取平均壓密度 $U_{avg}$ 及各點局部壓密度 $U_z$ (可查圖或代級數解)，最終求出沉陷量及超額孔隙水壓。</li>
 </ul>
 <p><strong>⚠️ 陷阱分析：</strong></p>
 <ol>
@@ -170,7 +163,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 |---|---|---|<br />
 | $H_{dr}$ | 單面排水，即粘土層厚度 $H$ | |<br />
 | $T_v$ | $c_v t / H_{dr}^2$ | |<br />
-| $U_{avg}$ | 查表或公式 $\sqrt{4T_v/\pi}$ (當 $U<60\%$) | |<br />
+| $U_{avg}$ | 查表或公式 $\sqrt{4T_v/\pi}$ (當 $U&lt;60\%$) | |<br />
 | $S(t)$ | $S_c \times U_{avg}$ | |<br />
 | $U_z$ | 由圖表讀取，或代級數解 | |<br />
 | $u_z$ | $\Delta\sigma (1 - U_z)$ | |</p>
@@ -221,7 +214,7 @@ $$ e_c = \boxed{0.875} $$</p>
 <ul>
 <li>砂質覆土載重：$\Delta\sigma = 6.0 \text{ m} \times 16 \text{ kN/m}^3 = 96 \text{ kPa}$</li>
 <li>最終有效應力：$\sigma_f' = \sigma_{v0}' + \Delta\sigma = 48 + 96 = 144 \text{ kPa}$<br />
-因 $\sigma_f' (144 \text{ kPa}) < \sigma_c' (150 \text{ kPa})$，故加載全程均處於「過壓密狀態(再壓密區段)」。</li>
+因 $\sigma_f' (144 \text{ kPa}) &lt; \sigma_c' (150 \text{ kPa})$，故加載全程均處於「過壓密狀態(再壓密區段)」。</li>
 </ul>
 <p><strong>Step 2: 計算極限壓密沉陷量 $S_c$</strong><br />
 將 4.0 m 粘土層視為一單一土層，以中央點 B 之應力代表全層：<br />
@@ -231,7 +224,7 @@ $$ S_c = \frac{4.0}{1.900} \times 0.04983 \times \log(3) = 2.1053 \times 0.04983
 <ul>
 <li>單面排水(下方不透水岩盤)：$H_{dr} = H = 4.0 \text{ m}$</li>
 <li>時間因素：$T_v = \frac{c_v t}{H_{dr}^2} = \frac{1.5 \times 3}{4.0^2} = 0.28125$<br />
-利用公式 $U_{avg} = \sqrt{\frac{4T_v}{\pi}}$ (適用 $U<60\%$) 求平均壓密度：<br />
+利用公式 $U_{avg} = \sqrt{\frac{4T_v}{\pi}}$ (適用 $U&lt;60\%$) 求平均壓密度：<br />
 $$ U_{avg} = \sqrt{\frac{4 \times 0.28125}{\pi}} = \sqrt{0.3581} \approx 0.598 \quad (即 59.8\%) $$<br />
 <em>(註：若代入嚴密級數解計算，得 $U_{avg} \approx 59.5\%$)</em></li>
 </ul>
@@ -267,7 +260,7 @@ $$ u_z = \frac{4}{\pi} (96) \sin\left(\frac{\pi z}{8}\right) e^{-0.6940} = 122.2
 <p><em>(註：若使用圖表查讀法，此三點之局部壓密度分別約為 $U_A\approx 76\%, U_B\approx 55\%, U_C\approx 41\%$，對應得到水壓約為 $23.0\text{ kPa}, 43.2\text{ kPa}, 56.6\text{ kPa}$)</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li><strong>查圖法 vs 理論解</strong>：本題雖附有 $T_v - U_z$ 等時線圖供考生查閱，但人眼查圖存在內插誤差。實務上與考場上，建議直接採用級數解第一項(當 $T_v > 0.2$ 時極度精確)進行計算，不僅能展現出紮實的理論基礎，亦可避免閱卷者對查圖準確度的疑慮。</li>
+<li><strong>查圖法 vs 理論解</strong>：本題雖附有 $T_v - U_z$ 等時線圖供考生查閱，但人眼查圖存在內插誤差。實務上與考場上，建議直接採用級數解第一項(當 $T_v &gt; 0.2$ 時極度精確)進行計算，不僅能展現出紮實的理論基礎，亦可避免閱卷者對查圖準確度的疑慮。</li>
 <li><strong>代表點位置</strong>：計算整層沉陷量時，實務規範常要求將厚度較大的土層細分為若干子層(Sublayers)分別計算再加總。但在一般考試中，針對 4 m 厚的土層，採用其中央點(B點)之初始應力作為全層之代表應力是標準且可接受的作法。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2016-1/SM-2016-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>

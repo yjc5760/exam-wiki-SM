@@ -27,13 +27,13 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2013-1 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
+<header><h1>SM-2013-1 題目解析</h1><a class="back quick" href="../study-SM-U2-2.html">&#128269; U2-2 命題分析</a>
+<a class="back lect" href="../lecture-SM-U2-2.html">&#128218; U2-2 深基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2013-1</h1>
-<p><strong>主分類：</strong> <code>SM-U3</code> 坡地與擋土工程<br />
-<strong>副分類：</strong> <code>SM-U2</code> 基礎工程<br />
+<p><strong>主分類：</strong> <code>SM-U3-2</code> 擋土結構物穩定分析<br />
+<strong>副分類：</strong> <code>SM-U3-3</code> 坡地工程、<code>SM-U2-2</code> 深基礎之支承力與沉陷量、<code>SM-U3-1</code> 側向土壓力理論<br />
 <strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>順向坡</code> <code>波動方程式</code> <code>Rankine與Coulomb比較</code> <code>加勁土壤結構物</code></p>
+<strong>標籤：</strong> <code>加勁擋土結構</code> <code>整體穩定</code> <code>Rankine主動土壓力</code> <code>Coulomb土壓力</code> <code>波動方程式</code> <code>樁基承載力</code> <code>順向坡</code> <code>殘餘強度</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、試回答下列各項：<br />
@@ -43,17 +43,21 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 (四)在加勁土壤結構物（Reinforced Earth Structure）穩定分析時，應進行那些檢核？（7 分）</p>
 <p><em>(本題為純文字觀念題，無附圖)</em></p>
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
-<p>本題為綜合觀念題，橫跨了坡地工程、深基礎、側向土壓力與加勁擋土結構四個不同領域，主要測驗考生對大地工程常見分析方法之基本假定、適用條件、檢核項目及所需參數的綜合理解：<br />
-1. <strong>順向坡參數</strong>：測驗對於岩坡滑動機制（弱面/節理/層泥）與殘出強度的認知。<br />
-2. <strong>波動方程式</strong>：測驗對動力打樁公式背後力學模型（質量-彈簧-阻尼系統）的理解，取代傳統經驗打樁公式。<br />
-3. <strong>Rankine vs. Coulomb</strong>：測驗對兩大古典土壓力理論之基本假設（牆背摩擦、破壞面形狀等）的比較。<br />
-4. <strong>加勁擋土結構</strong>：測驗對於複合材料結構物內部與外部穩定性檢核的系統性認識。</p>
+<p>本題為綜合觀念題，橫跨了坡地工程、深基礎、側向土壓力與加勁擋土結構四個不同領域，主要測驗考生對大地工程常見分析方法之基本假定、適用條件、檢核項目及所需參數的綜合理解：</p>
+<ol>
+<li><strong>順向坡參數</strong>：測驗對於岩坡滑動機制（弱面/節理/層泥）與殘出強度的認知。</li>
+<li><strong>波動方程式</strong>：測驗對動力打樁公式背後力學模型（質量-彈簧-阻尼系統）的理解，取代傳統經驗打樁公式。</li>
+<li><strong>Rankine vs. Coulomb</strong>：測驗對兩大古典土壓力理論之基本假設（牆背摩擦、破壞面形狀等）的比較。</li>
+<li><strong>加勁擋土結構</strong>：測驗對於複合材料結構物內部與外部穩定性檢核的系統性認識。</li>
+</ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
-<p>本題無計算，需條理分明地列點說明：<br />
-- (一) 順向坡：強調「位態」、「弱面性質」及「殘餘強度」。需進行現地位態調查、室內弱面剪力試驗等。<br />
-- (二) 波動方程式：從一維波傳遞、Smith模型（質量塊、彈簧、阻尼器）及邊界條件（土阻力）切入。<br />
-- (三) 差異性：可用表格或列點比較「牆背摩擦」、「破壞面形狀」、「土壓力作用方向」及「土體破壞條件」。<br />
-- (四) 加勁土：分為「外部穩定」（滑動、傾覆、承載力、整體穩定）與「內部穩定」（加勁材拉斷、拔出）。</p>
+<p>本題無計算，需條理分明地列點說明：</p>
+<ul>
+<li>(一) 順向坡：強調「位態」、「弱面性質」及「殘餘強度」。需進行現地位態調查、室內弱面剪力試驗等。</li>
+<li>(二) 波動方程式：從一維波傳遞、Smith模型（質量塊、彈簧、阻尼器）及邊界條件（土阻力）切入。</li>
+<li>(三) 差異性：可用表格或列點比較「牆背摩擦」、「破壞面形狀」、「土壓力作用方向」及「土體破壞條件」。</li>
+<li>(四) 加勁土：分為「外部穩定」（滑動、傾覆、承載力、整體穩定）與「內部穩定」（加勁材拉斷、拔出）。</li>
+</ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p><code>清晰且有條理地論述四個大地工程次領域的核心概念與分析參數。</code></p>
@@ -74,30 +78,30 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h3>(一) 在順向坡進行邊坡穩定分析時，需進行之試驗與參數</h3>
 <p>順向坡之穩定性主要受控於岩層弱面（如層面、節理面、層泥等），而非完整岩體。進行邊坡穩定分析所需之試驗及參數如下：</p>
 <ol>
-<li><strong>現地調查與地質鑽探</strong>：<br />
-   - 目的：確認岩層之<strong>位態（走向與傾角）</strong>、弱面分布及地下水位。<br />
-   - 參數：岩層傾角、坡面傾角、滑動面深度、地下水位高度。</li>
-<li><strong>基本物理性質試驗</strong>：<br />
-   - 試驗：含水量、比重、單位重試驗。<br />
-   - 參數：土體/岩體之<strong>單位重（$\gamma$）</strong>，用於計算滑動土體重量。</li>
-<li><strong>室內弱面直接剪力試驗（Direct Shear Test on Weak Planes）</strong>：<br />
-   - 目的：因順向坡常沿既有弱面滑動，需取得弱面之抗剪強度。若已有潛變或歷史滑動，需進行反覆直剪試驗求殘餘強度。<br />
-   - 參數：弱面之<strong>凝聚力（$c'$）</strong>與<strong>摩擦角（$\phi'$）</strong>，或殘餘強度參數（$c_r'$、$ \phi_r'$）。</li>
-<li><strong>地下水與滲透試驗</strong>（視需要）：<br />
-   - 參數：孔隙水壓分布，順向坡水壓常為觸發破壞之主因。</li>
+<li><strong>現地調查與地質鑽探</strong>：</li>
+<li>目的：確認岩層之<strong>位態（走向與傾角）</strong>、弱面分布及地下水位。</li>
+<li>參數：岩層傾角、坡面傾角、滑動面深度、地下水位高度。</li>
+<li><strong>基本物理性質試驗</strong>：</li>
+<li>試驗：含水量、比重、單位重試驗。</li>
+<li>參數：土體/岩體之<strong>單位重（$\gamma$）</strong>，用於計算滑動土體重量。</li>
+<li><strong>室內弱面直接剪力試驗（Direct Shear Test on Weak Planes）</strong>：</li>
+<li>目的：因順向坡常沿既有弱面滑動，需取得弱面之抗剪強度。若已有潛變或歷史滑動，需進行反覆直剪試驗求殘餘強度。</li>
+<li>參數：弱面之<strong>凝聚力（$c'$）</strong>與<strong>摩擦角（$\phi'$）</strong>，或殘餘強度參數（$c_r'$、$ \phi_r'$）。</li>
+<li><strong>地下水與滲透試驗</strong>（視需要）：</li>
+<li>參數：孔隙水壓分布，順向坡水壓常為觸發破壞之主因。</li>
 </ol>
 <h3>(二) 利用波動方程式估計樁承載力之原理</h3>
 <p>傳統之動力打樁公式（如工程新聞公式）為半經驗法則，未考慮應力波在樁身傳遞之時間效應。波動方程式（Wave Equation Analysis of Piles, WEAP）則基於一維彈性應力波傳遞原理，其原理如下：</p>
 <ol>
-<li><strong>系統模型化（Smith Model）</strong>：<br />
-   - 將打樁系統（落錘、墊塊、樁帽、樁身）離散化為一系列之<strong>集中質量（Mass）</strong>，質量之間以無質量之<strong>線性彈簧（Spring）</strong>連接。</li>
-<li><strong>土壤阻力模擬</strong>：<br />
-   - 樁側及樁尖之土壤阻力模型化為彈簧與阻尼器之並聯系統。<br />
-   - <strong>靜態阻力（彈簧）</strong>：模擬土層之彈塑性行為，以極限靜阻力與彈性壓縮極限（Quake）定義。<br />
-   - <strong>動態阻力（阻尼器）</strong>：模擬打樁瞬間之黏滯阻尼（Damping），動阻力與樁身質點運動速度成正比。</li>
-<li><strong>分析過程與原理</strong>：<br />
-   - 當落錘撞擊樁頂，產生之初始動能與邊界條件，依一維波動方程式（$E\frac{\partial^2 u}{\partial x^2} - \rho\frac{\partial^2 u}{\partial t^2} = R$）計算各質點在不同時間點之位移、速度、受力。<br />
-   - 透過調整模型中之極限靜阻力（即樁之極限承載力），直到計算出之每擊貫入量（或貫入度 $s$）與現地打樁紀錄相符，該靜阻力即為估計之樁承載力。</li>
+<li><strong>系統模型化（Smith Model）</strong>：</li>
+<li>將打樁系統（落錘、墊塊、樁帽、樁身）離散化為一系列之<strong>集中質量（Mass）</strong>，質量之間以無質量之<strong>線性彈簧（Spring）</strong>連接。</li>
+<li><strong>土壤阻力模擬</strong>：</li>
+<li>樁側及樁尖之土壤阻力模型化為彈簧與阻尼器之並聯系統。</li>
+<li><strong>靜態阻力（彈簧）</strong>：模擬土層之彈塑性行為，以極限靜阻力與彈性壓縮極限（Quake）定義。</li>
+<li><strong>動態阻力（阻尼器）</strong>：模擬打樁瞬間之黏滯阻尼（Damping），動阻力與樁身質點運動速度成正比。</li>
+<li><strong>分析過程與原理</strong>：</li>
+<li>當落錘撞擊樁頂，產生之初始動能與邊界條件，依一維波動方程式（$E\frac{\partial^2 u}{\partial x^2} - \rho\frac{\partial^2 u}{\partial t^2} = R$）計算各質點在不同時間點之位移、速度、受力。</li>
+<li>透過調整模型中之極限靜阻力（即樁之極限承載力），直到計算出之每擊貫入量（或貫入度 $s$）與現地打樁紀錄相符，該靜阻力即為估計之樁承載力。</li>
 </ol>
 <h3>(三) Rankine 與 Coulomb 側向土壓力理論之差異性</h3>
 <table>
@@ -144,15 +148,19 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h3>(四) 加勁土壤結構物之穩定分析應進行的檢核</h3>
 <p>加勁土壤結構物包含面版、加勁材及回填土，其穩定分析需分為<strong>外部穩定（External Stability）</strong>與<strong>內部穩定（Internal Stability）</strong>兩大部分進行檢核：</p>
 <p><strong>1. 外部穩定性檢核（External Stability）</strong><br />
-將加勁土體視為一個整體之重力式擋土牆進行剛體檢核：<br />
-* <strong>抗滑動檢核（Sliding）</strong>：檢核水平驅動力（主動土壓力）是否小於加勁體底面與基礎土壤之抗滑摩擦力。<br />
-* <strong>抗傾覆檢核（Overturning）</strong>：檢核推動牆體傾覆之力矩是否小於牆體自重產生之抗傾覆力矩。<br />
-* <strong>基礎承載力檢核（Bearing Capacity）</strong>：檢核基底最大壓應力是否小於基礎土壤之容許承載力，並檢核偏心距（$e \le B/6$）。<br />
-* <strong>整體穩定性檢核（Global/Deep-seated Stability）</strong>：檢核滑動面通過加勁結構體外部或下方深處之邊坡整體穩定（通常以圓弧滑動法檢核）。</p>
+將加勁土體視為一個整體之重力式擋土牆進行剛體檢核：</p>
+<ul>
+<li><strong>抗滑動檢核（Sliding）</strong>：檢核水平驅動力（主動土壓力）是否小於加勁體底面與基礎土壤之抗滑摩擦力。</li>
+<li><strong>抗傾覆檢核（Overturning）</strong>：檢核推動牆體傾覆之力矩是否小於牆體自重產生之抗傾覆力矩。</li>
+<li><strong>基礎承載力檢核（Bearing Capacity）</strong>：檢核基底最大壓應力是否小於基礎土壤之容許承載力，並檢核偏心距（$e \le B/6$）。</li>
+<li><strong>整體穩定性檢核（Global/Deep-seated Stability）</strong>：檢核滑動面通過加勁結構體外部或下方深處之邊坡整體穩定（通常以圓弧滑動法檢核）。</li>
+</ul>
 <p><strong>2. 內部穩定性檢核（Internal Stability）</strong><br />
-檢核加勁材與土壤間之互制作用是否足夠抵抗內部土壓力，通常以 Rankine 破壞面將土體分為「主動區」與「抗拔區」：<br />
-* <strong>加勁材抗拉斷檢核（Rupture / Tensile Failure）</strong>：檢核任一深度加勁材所承受之最大拉力（$T_{max}$），必須小於加勁材本身之容許抗拉強度（需考慮潛變、耐久性與施工損傷折減）。<br />
-* <strong>加勁材抗拔出檢核（Pullout Failure）</strong>：檢核加勁材埋置於「抗拔區」（破壞面以後之有效長度 $L_e$）所提供之表面摩擦力/握裹力，必須大於該層加勁材所受之最大拉力（$T_{max}$），防止加勁材從土體中被拔出。</p>
+檢核加勁材與土壤間之互制作用是否足夠抵抗內部土壓力，通常以 Rankine 破壞面將土體分為「主動區」與「抗拔區」：</p>
+<ul>
+<li><strong>加勁材抗拉斷檢核（Rupture / Tensile Failure）</strong>：檢核任一深度加勁材所承受之最大拉力（$T_{max}$），必須小於加勁材本身之容許抗拉強度（需考慮潛變、耐久性與施工損傷折減）。</li>
+<li><strong>加勁材抗拔出檢核（Pullout Failure）</strong>：檢核加勁材埋置於「抗拔區」（破壞面以後之有效長度 $L_e$）所提供之表面摩擦力/握裹力，必須大於該層加勁材所受之最大拉力（$T_{max}$），防止加勁材從土體中被拔出。</li>
+</ul>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
 <li><strong>順向坡之特殊性</strong>：一般土坡常以圓弧滑動面分析，但順向坡為典型之平面滑動，故需採用無限邊坡模型或剛體滑動塊模型分析。此外，受地震或長期風化影響，弱面強度常降至殘餘強度（Residual Strength），因此試驗時務必注意不應僅使用峰值強度。</li>
@@ -160,7 +168,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ul></main>
 <footer>來源：raw/solutions/SM-2013-1/SM-2013-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

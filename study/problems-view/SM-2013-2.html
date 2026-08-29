@@ -30,10 +30,10 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <header><h1>SM-2013-2 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2013-2</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類<br />
-<strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>分析法：</strong> 計算題 / 概念題<br />
-<strong>標籤：</strong> <code>標準夯實試驗</code> <code>曲線族法</code> <code>相對夯實度</code> <code>單點夯實法</code></p>
+<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>夯實曲線</code> <code>標準夯實試驗</code> <code>單點夯實法</code> <code>曲線族法</code> <code>最大乾單位重</code> <code>相對夯實度</code> <code>最佳含水量</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、甲乙兩種土壤之標準夯實曲線如圖一所示。一填方工程之回填土係取自某借土區中甲、乙兩種土壤之混合物，吾人取其代表性混合物土樣測得標準夯實試驗之濕單位重為 19.9 $\text{kN/m}^3$，含水量為 11%：<br />
@@ -63,22 +63,14 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p>利用單點夯實試驗與曲線族法估算混合土之最大乾單位重，並求出現地相對夯實度。</p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p>乾單位重：<br />
-  $$ \gamma_d = \frac{\gamma_m}{1 + w} $$</p>
-</li>
-<li>
-<p>曲線族內插比例：<br />
-  $$ r = \frac{\gamma_{d,A} - \boxed{\gamma_d}}{\gamma_{d,A} - \gamma_{d,B}} \quad \text{(於相同 } w \text{ 之下)} $$</p>
-</li>
-<li>
-<p>估算最大乾單位重：<br />
-  $$ \gamma_{d,max} = \gamma_{d,max,A} - \boxed{r} \cdot (\gamma_{d,max,A} - \gamma_{d,max,B}) $$</p>
-</li>
-<li>
-<p>相對夯實度：<br />
-  $$ RC = \frac{\gamma_{d,field}}{\boxed{\gamma_{d,max}}} \times 100\% $$</p>
-</li>
+<li>乾單位重：<br />
+  $$ \gamma_d = \frac{\gamma_m}{1 + w} $$</li>
+<li>曲線族內插比例：<br />
+  $$ r = \frac{\gamma_{d,A} - \boxed{\gamma_d}}{\gamma_{d,A} - \gamma_{d,B}} \quad \text{(於相同 } w \text{ 之下)} $$</li>
+<li>估算最大乾單位重：<br />
+  $$ \gamma_{d,max} = \gamma_{d,max,A} - \boxed{r} \cdot (\gamma_{d,max,A} - \gamma_{d,max,B}) $$</li>
+<li>相對夯實度：<br />
+  $$ RC = \frac{\gamma_{d,field}}{\boxed{\gamma_{d,max}}} \times 100\% $$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -181,14 +173,10 @@ $$ RC = \frac{15.8}{18.76} \times 100\% = 84.22\% $$<br />
 <h3>(三) 在以此方法決定相對夯實度時，應注意那兩項重點？</h3>
 <p>以此「單點夯實試驗配合曲線族法」估計最大乾單位重，進而決定相對夯實度時，應特別注意以下兩項核心重點：</p>
 <ol>
-<li>
-<p><strong>單點試驗之含水量必須位於「乾燥側」(Dry Side of Optimum)：</strong><br />
-   執行單點夯實的試驗含水量，必須低於或接近最佳含水量。若含水量落於「過濕側」(Wet Side)，因各類型土壤在濕側的夯實曲線都會趨近並平行於「零空氣孔隙曲線 (ZAVC)」，使得各曲線彼此重疊。在此區間將無法準確分辨土樣所對應的內插位置，導致嚴重誤判最大乾單位重。</p>
-</li>
-<li>
-<p><strong>單點土樣之代表性與材料相似性 (Representativeness &amp; Similarity)：</strong><br />
-   進行單點試驗的土樣，必須真實代表現地正在滾壓的混合土層；且其土壤來源、礦物成分及級配特徵，必須與建立該「曲線族（甲、乙土壤）」的材料為同質或相似。若現場混入了不屬於甲、乙兩類土壤的其他異常材料，則曲線族的內插幾何關係將不再成立，估計結果將失去準確度。</p>
-</li>
+<li><strong>單點試驗之含水量必須位於「乾燥側」(Dry Side of Optimum)：</strong><br />
+   執行單點夯實的試驗含水量，必須低於或接近最佳含水量。若含水量落於「過濕側」(Wet Side)，因各類型土壤在濕側的夯實曲線都會趨近並平行於「零空氣孔隙曲線 (ZAVC)」，使得各曲線彼此重疊。在此區間將無法準確分辨土樣所對應的內插位置，導致嚴重誤判最大乾單位重。</li>
+<li><strong>單點土樣之代表性與材料相似性 (Representativeness &amp; Similarity)：</strong><br />
+   進行單點試驗的土樣，必須真實代表現地正在滾壓的混合土層；且其土壤來源、礦物成分及級配特徵，必須與建立該「曲線族（甲、乙土壤）」的材料為同質或相似。若現場混入了不屬於甲、乙兩類土壤的其他異常材料，則曲線族的內插幾何關係將不再成立，估計結果將失去準確度。</li>
 </ol>
 <p><em>(補充：實務上尚須確保單點夯實試驗所使用之夯實能量必須與建立曲線族時的能量完全一致，例如兩者皆必須為標準夯實試驗。)</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>

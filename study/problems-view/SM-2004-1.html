@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2004-1 &#8212; 題目解析</title>
+<title>SM-2004-1 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,15 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2004-1 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
 <main><h1>考題編號：SM-2004-1</h1>
-<p><strong>主分類：</strong> 土壤基本性質與分類 (SM-U1-1)<br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>三相關係</code> <code>夯實</code></p>
+<p><strong>主分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>三相關係</code> <code>孔隙比</code> <code>飽和度</code> <code>乾單位重</code> <code>濕單位重</code> <code>比重</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、某一凝聚性土壤夯實後含水量為 18%，土壤顆粒之比重為 2.70，夯實試體之體積為 944 cm³，質量為 1955 公克。試求此夯實土壤之孔隙比、飽和度、濕土單位重（kN/m³）、及乾土單位重（kN/m³）。若進一步夯實後，可將土壤試體之飽和度提高至 95%。假設試體之含水量不改變，試計算進一步夯實後，土壤試體之孔隙比、濕土單位重（kN/m³）、及乾土單位重（kN/m³）。（25 分）</p>
@@ -169,11 +171,33 @@ $$ e' = \frac{wG_s}{S'} = \frac{0.18 \times 2.70}{0.95} = 0.5116 \approx \boxed{
 $$ \gamma_d' = \frac{G_s \gamma_w}{1+e'} = \frac{2.70 \times 9.81}{1+0.5116} = \frac{26.487}{1.5116} = 17.522 \approx \boxed{17.52 \text{ kN/m}^3} $$<br />
 新的濕土單位重 $\gamma_t'$：<br />
 $$ \gamma_t' = \gamma_d' (1+w) = 17.522 \times (1+0.18) = 20.676 \approx \boxed{20.68 \text{ kN/m}^3} $$</p>
+<p><img alt="夯實前後的三相體積柱對照：兩根柱子的土粒段（613.6 cm³）與水段（298.2 cm³）高度完全相同並以兩條水平虛線對齊，只有頂端的空氣段由 32.2 cm³ 縮為 15.7 cm³；總體積由 944.0 縮為 927.5 cm³" src="../../raw/solutions/SM-2004-1/figs/SM-2004-1-fig-1-phase-before-after.svg" /></p>
+<p><em>圖 1　進一步夯實時，被擠掉的只有空氣那一格。它攔的是讓水量跟著變：「含水量不改變」是題目明講的條件，所以 $V_w$ 這一格前後必須完全相同，$e'$ 只能由 $S'e' = \omega G_s$ 求得。空氣少了一半，總體積卻只縮 1.74%——因為空氣本來就只佔 3.4%。</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
 <li><strong>重力加速度的選取</strong>：考試若無特別規定 $g = 9.81 \text{ m/s}^2$ 或水的單位重 $\gamma_w = 9.81 \text{ kN/m}^3$ 時，使用 $9.81$ 是最標準且安全的作法。部分參考書或考題為了計算方便會允許 $g=9.8 \text{ m/s}^2$ 甚至 $10 \text{ m/s}^2$，計算時可以加註所使用的假設。</li>
+<li><strong>這塊土還能再夯多少？（夯實的物理天花板）</strong>：<br />
+  含水量固定在 $\omega = 18\%$、$G_s = 2.70$ 時，最緊的可能狀態就是「空氣被完全擠光」，<br />
+  即 $S = 100\%$，此時的孔隙比與乾單位重為：<br />
+  $$e_{min,\omega} = \omega G_s = 0.18 \times 2.70 = 0.486
+  \quad,\quad \gamma_{d,ZAV} = \frac{G_s\gamma_w}{1+\omega G_s} = \frac{26.487}{1.486} = 17.82 \text{ kN/m}^3$$<br />
+  本題的兩個狀態分別為 $\gamma_d = 17.22$（$S = 90.3\%$）與 $\gamma_d' = 17.52$（$S' = 95\%$），<br />
+  都在 $17.82$ 以下，故題目設定是可行的；但也看得出來<strong>剩餘空間只剩 $0.30 \text{ kN/m}^3$</strong>——<br />
+  再怎麼夯，乾單位重也不可能超過 17.82，除非把水排掉或降低含水量。<br />
+  這正是夯實曲線在最佳含水量右側會貼近零空氣孔隙線的原因。<br />
+  （反例見 SM-2008-1：該題考卷指定的目標狀態就落在 ZAV 線之上，物理上做不到。）<br />
+<img alt="乾單位重對含水量的關係圖：四條由 γ_d = G_s γ_w /(1 + ωG_s/S) 以 G_s = 2.70 算出的等飽和度線（S = 100%、95%、90%、80%），S = 100% 即零空氣孔隙線；ω = 18% 的垂直虛線上標出夯實前 γ_d = 17.22（S = 90.3%）與夯實後 γ_d = 17.52（S = 95%）兩點，以及 ZAV 上限 17.82" src="../../raw/solutions/SM-2004-1/figs/SM-2004-1-fig-2-zav-ceiling.svg" /></li>
+</ul>
+<p><em>圖 2　含水量固定時，乾單位重有一個夯不過去的天花板。它攔的是「以為可以無限夯下去」：本題兩個狀態都在線下，但距離上限只剩 0.30 kN/m³。凡是算出的 $(\omega,\ \gamma_d)$ 落在 ZAV 線上方，就是題目數據或計算有問題——SM-2008-1 正是那種案例。</em></p>
+<ul>
+<li><strong>體積縮減量</strong>：由 $e = 0.538$ 夯到 $e' = 0.512$，體積縮減率為<br />
+  $\frac{(1+e)-(1+e')}{1+e} = \frac{0.0268}{1.5384} = 1.74\%$，<br />
+  即 $944 \text{ cm}^3$ 的試體約縮為 $927.5 \text{ cm}^3$。飽和度從 90.3% 提到 95% 聽起來很多，<br />
+  但體積只變了不到 2%——因為擠掉的只是那一點點殘餘空氣。</li>
 <li><strong>有效小數點位數</strong>：物理量的計算中，四捨五入的取捨會略微影響最後的數值，建議在中間計算時至少保留四位有效小數，最後結果取至小數點後二或三位。例如先取 $e = 0.538$ 直接代入計算 $S$ 可得 $90.3\%$；若用精確值 $0.5384$ 則得 $90.27\%$。兩者在國考閱卷上均屬正確。</li>
-</ul></main>
+</ul>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-28（向量 SVG，程式繪製，腳本 <code>gen_SM-2004-1.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2004-1/SM-2004-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

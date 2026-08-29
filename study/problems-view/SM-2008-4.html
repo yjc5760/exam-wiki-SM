@@ -27,13 +27,12 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2008-4 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
-<main><h1>考題編號：[SM-2008-4]</h1>
-<p><strong>主分類：</strong> <code>SM-3</code> 坡地工程<br />
-<strong>副分類：</strong><br />
-<strong>分析法：</strong> 概念題 / 平面滑動分析<br />
-<strong>標籤：</strong> <code>邊坡穩定</code>, <code>平面滑動</code>, <code>地震力</code>, <code>地錨</code></p>
+<header><h1>SM-2008-4 題目解析</h1><a class="back quick" href="../../index.html">&#128218; 回題庫瀏覽</a></header>
+<main><h1>考題編號：SM-2008-4</h1>
+<p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>平面滑動分析</code> <code>岩石邊坡</code> <code>水平地震力</code> <code>地錨</code> <code>Mohr-Coulomb破壞準則</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一岩石邊坡為砂岩含有一泥岩夾層，如圖三所示。已知砂岩之單位重 $\gamma = 20 \text{ kN/m}^3$，泥岩夾層之凝聚力 $c = 10 \text{ kN/m}^2$，摩擦角 $\phi = 28^\circ$，水平地震力係數 $k_h = 0.2$。（25 分）<br />
@@ -45,21 +44,21 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p>本題測驗工程師對於<strong>岩坡平面滑動（Planar Failure）</strong>的剛體力學分析能力。出題者刻意給定各邊夾角與單一垂直高度，測驗考生利用正弦定理（Sine Rule）解構幾何並求取滑動塊體面積與重量的能力。同時，加入了水平地震力，測驗考生是否能正確將地震力分解至平行與垂直滑動面的方向（特別是地震力會<strong>減少正向力</strong>的陷阱）。最後，引入地錨設計，測驗考生將所需額外抗滑力反推為地錨荷重，並注意單位長度轉換至單支地錨間距的計算。</p>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ol>
-<li><strong>解構幾何（最容易出錯的一步）</strong>：<br />
-   - 觀察 $\triangle ABC$。滑動面 AC 傾角為 $40^\circ$。坡面 AB 傾角為 $40^\circ + 30^\circ = 70^\circ$。<br />
-   - 利用點 B 垂直高度 7.5m，求出 AB 長度。<br />
-   - 根據三角形內角和求出 $\angle B = 180^\circ - 30^\circ - 35^\circ = 115^\circ$。<br />
-   - 運用正弦定理求出滑動面 AC 長度，接著計算 $\triangle ABC$ 面積及每公尺寬度的重量 $W$。</li>
-<li><strong>分析作用力與安全係數（無地錨時）</strong>：<br />
-   - 地震力 $F_h = k_h W$ 必須施加於<strong>最不利方向</strong>（水平向左外推）。<br />
-   - 將 $W$ 與 $F_h$ 投影至平行滑動面（驅動力）與垂直滑動面（正向力）。<br />
-   - <strong>陷阱</strong>：向左的地震力會產生遠離滑動面的垂直分力，因此會<strong>減小</strong>有效正向力，不可加錯符號。<br />
-   - 帶入 Mohr-Coulomb 準則計算抗滑力，求出初始 FS。</li>
-<li><strong>地錨設計</strong>：<br />
-   - 根據目標 $FS = 1.2$ 反推所需的總抗滑力。<br />
-   - 計算現有抗滑力與目標抗滑力之差額，此差額必須由地錨提供。<br />
-   - 因為地錨<strong>垂直</strong>於滑動面，其張力完全轉換為滑動面上的正向力增量 $\Delta N$。<br />
-   - 求出每公尺所需地錨張力 $P$，再乘上間距 2m，即為單支地錨荷重 $T$。</li>
+<li><strong>解構幾何（最容易出錯的一步）</strong>：</li>
+<li>觀察 $\triangle ABC$。滑動面 AC 傾角為 $40^\circ$。坡面 AB 傾角為 $40^\circ + 30^\circ = 70^\circ$。</li>
+<li>利用點 B 垂直高度 7.5m，求出 AB 長度。</li>
+<li>根據三角形內角和求出 $\angle B = 180^\circ - 30^\circ - 35^\circ = 115^\circ$。</li>
+<li>運用正弦定理求出滑動面 AC 長度，接著計算 $\triangle ABC$ 面積及每公尺寬度的重量 $W$。</li>
+<li><strong>分析作用力與安全係數（無地錨時）</strong>：</li>
+<li>地震力 $F_h = k_h W$ 必須施加於<strong>最不利方向</strong>（水平向左外推）。</li>
+<li>將 $W$ 與 $F_h$ 投影至平行滑動面（驅動力）與垂直滑動面（正向力）。</li>
+<li><strong>陷阱</strong>：向左的地震力會產生遠離滑動面的垂直分力，因此會<strong>減小</strong>有效正向力，不可加錯符號。</li>
+<li>帶入 Mohr-Coulomb 準則計算抗滑力，求出初始 FS。</li>
+<li><strong>地錨設計</strong>：</li>
+<li>根據目標 $FS = 1.2$ 反推所需的總抗滑力。</li>
+<li>計算現有抗滑力與目標抗滑力之差額，此差額必須由地錨提供。</li>
+<li>因為地錨<strong>垂直</strong>於滑動面，其張力完全轉換為滑動面上的正向力增量 $\Delta N$。</li>
+<li>求出每公尺所需地錨張力 $P$，再乘上間距 2m，即為單支地錨荷重 $T$。</li>
 </ol>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
@@ -182,10 +181,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
 <h3>(一) 無地錨情形下之安全係數 FS</h3>
 <p><strong>Step 1：解算滑動塊體幾何</strong><br />
-觀察 $\triangle ABC$：<br />
-- 滑動面 AC 傾角 $\alpha = 40^\circ$。<br />
-- 坡面 AB 傾角 $\beta = 40^\circ + \angle BAC = 40^\circ + 30^\circ = 70^\circ$。<br />
-- $\triangle ABC$ 內角：$\angle A = 30^\circ$，$\angle C = 35^\circ$，推得 $\angle B = 180^\circ - 30^\circ - 35^\circ = 115^\circ$。</p>
+觀察 $\triangle ABC$：</p>
+<ul>
+<li>滑動面 AC 傾角 $\alpha = 40^\circ$。</li>
+<li>坡面 AB 傾角 $\beta = 40^\circ + \angle BAC = 40^\circ + 30^\circ = 70^\circ$。</li>
+<li>$\triangle ABC$ 內角：$\angle A = 30^\circ$，$\angle C = 35^\circ$，推得 $\angle B = 180^\circ - 30^\circ - 35^\circ = 115^\circ$。</li>
+</ul>
 <p>利用垂直高度 $H = 7.5 \text{ m}$，求 AB 邊長：<br />
 $$L_{AB} = \frac{H}{\sin 70^\circ} = \frac{7.5}{0.9397} = 7.981 \text{ m}$$</p>
 <p>利用正弦定理求 AC 邊長（滑動面長度）：<br />
@@ -198,15 +199,19 @@ $$Area = \frac{1}{2} L_{AB} \cdot L_{AC} \cdot \sin(\angle A) = \frac{1}{2} \tim
 $$W = \gamma \times Area = 20 \times 25.162 = 503.24 \text{ kN/m}$$</p>
 <p>水平地震力 $F_h$（向左外推方向最為臨界）：<br />
 $$F_h = k_h \times W = 0.2 \times 503.24 = 100.65 \text{ kN/m}$$</p>
-<p><strong>Step 3：將力分解至平行與垂直滑動面 AC 方向</strong><br />
-- <strong>驅動力 $T_d$</strong>（平行滑動面向下）：<br />
+<p><strong>Step 3：將力分解至平行與垂直滑動面 AC 方向</strong></p>
+<ul>
+<li>
+<p><strong>驅動力 $T_d$</strong>（平行滑動面向下）：<br />
   $$T_d = W \sin 40^\circ + F_h \cos 40^\circ = 503.24 \times 0.6428 + 100.65 \times 0.7660$$<br />
   $$T_d = 323.48 + 77.10 = 400.58 \text{ kN/m}$$</p>
-<ul>
-<li><strong>正向力 $N$</strong>（垂直滑動面壓緊）：<br />
+</li>
+<li>
+<p><strong>正向力 $N$</strong>（垂直滑動面壓緊）：<br />
 <em>(注意：向左之水平地震力會產生離開滑動面的分力，故為負號)</em><br />
   $$N = W \cos 40^\circ - F_h \sin 40^\circ = 503.24 \times 0.7660 - 100.65 \times 0.6428$$<br />
-  $$N = 385.50 - 64.69 = 320.81 \text{ kN/m}$$</li>
+  $$N = 385.50 - 64.69 = 320.81 \text{ kN/m}$$</p>
+</li>
 </ul>
 <p><strong>Step 4：計算抗滑力與安全係數</strong><br />
 抗滑力 $T_r$：<br />
@@ -237,7 +242,7 @@ $$\boxed{T \ge 692.18 \text{ kN}}$$</p>
 </ul></main>
 <footer>來源：raw/solutions/SM-2008-4/SM-2008-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

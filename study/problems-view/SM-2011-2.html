@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2011-2 &#8212; 題目解析</title>
+<title>SM-2011-2 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -30,9 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2011-2</h1>
 <p><strong>主分類：</strong> <code>SM-U1-2</code> 土壤滲透<br />
-<strong>副分類：</strong> <br />
-<strong>分析法：</strong> 概念題 / 有效應力法<br />
-<strong>標籤：</strong> <code>流網</code>, <code>滲流</code>, <code>水頭計算</code>, <code>Darcy定律</code></p>
+<strong>副分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>分析法：</strong> 有效應力法<br />
+<strong>標籤：</strong> <code>流網</code> <code>Darcy定律</code> <code>滲透係數</code> <code>水頭計算</code> <code>水力坡降</code> <code>滲流量</code> <code>圍堰開挖</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、某工地因施工需要在複雜土層進行傾斜向開挖底面為 2 m×2 m 正方形之圍堰開挖，如下圖所示，開挖後水在圍堰內土層 B 之土壤中產生滲流，試求：<br />
@@ -62,30 +63,18 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><code>求出各點水頭、水力坡降以及每日滲流量</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p>點 b 到點 e 之流徑長度：<br />
-  $$L = \frac{\Delta Z}{\sin\theta}$$</p>
-</li>
-<li>
-<p>平均水力坡降：<br />
-  $$\boxed{i} = \frac{\Delta h}{\boxed{L}}$$</p>
-</li>
-<li>
-<p>各點總水頭：<br />
-  $$h = h_b - \boxed{i} \cdot s$$</p>
-</li>
-<li>
-<p>壓力水頭：<br />
-  $$P = \boxed{h} - Z$$</p>
-</li>
-<li>
-<p>正交流面積：<br />
-  $$A_{\perp} = A_{\text{horiz}} \cdot \sin\theta$$</p>
-</li>
-<li>
-<p>滲流量：<br />
-  $$Q = k \cdot \boxed{i} \cdot \boxed{A_{\perp}}$$</p>
-</li>
+<li>點 b 到點 e 之流徑長度：<br />
+  $$L = \frac{\Delta Z}{\sin\theta}$$</li>
+<li>平均水力坡降：<br />
+  $$\boxed{i} = \frac{\Delta h}{\boxed{L}}$$</li>
+<li>各點總水頭：<br />
+  $$h = h_b - \boxed{i} \cdot s$$</li>
+<li>壓力水頭：<br />
+  $$P = \boxed{h} - Z$$</li>
+<li>正交流面積：<br />
+  $$A_{\perp} = A_{\text{horiz}} \cdot \sin\theta$$</li>
+<li>滲流量：<br />
+  $$Q = k \cdot \boxed{i} \cdot \boxed{A_{\perp}}$$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <ul>
@@ -125,18 +114,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ul>
 <p><strong>Step 2：確定邊界水頭</strong></p>
 <ul>
-<li>
-<p><strong>a 點</strong>：位於水壓計內水面，與大氣接觸，壓力水頭 $P_a = 0\text{m}$。<br />
-  總水頭 $h_a = Z_a + P_a = 8 + 0 = \boxed{8\text{m}}$。</p>
-</li>
-<li>
-<p><strong>b 點</strong>：連接至水壓計的砂土層為高透水層，內部水頭一致為 8m。<br />
-  總水頭 $h_b = \boxed{8\text{m}}$。壓力水頭 $P_b = h_b - Z_b = 8 - 0 = \boxed{8\text{m}}$。</p>
-</li>
-<li>
-<p><strong>e 點</strong>：位於開挖底面，水直接滲入開挖區。假設無積水，壓力水頭 $P_e = \boxed{0\text{m}}$。<br />
-  總水頭 $h_e = Z_e + P_e = 5 + 0 = \boxed{5\text{m}}$。</p>
-</li>
+<li><strong>a 點</strong>：位於水壓計內水面，與大氣接觸，壓力水頭 $P_a = 0\text{m}$。<br />
+  總水頭 $h_a = Z_a + P_a = 8 + 0 = \boxed{8\text{m}}$。</li>
+<li><strong>b 點</strong>：連接至水壓計的砂土層為高透水層，內部水頭一致為 8m。<br />
+  總水頭 $h_b = \boxed{8\text{m}}$。壓力水頭 $P_b = h_b - Z_b = 8 - 0 = \boxed{8\text{m}}$。</li>
+<li><strong>e 點</strong>：位於開挖底面，水直接滲入開挖區。假設無積水，壓力水頭 $P_e = \boxed{0\text{m}}$。<br />
+  總水頭 $h_e = Z_e + P_e = 5 + 0 = \boxed{5\text{m}}$。</li>
 </ul>
 <p><strong>Step 3：計算水力坡降與中間點水頭</strong><br />
 由圖示斜率 $4:3$，可知傾角 $\theta = 53^\circ$，$\sin\theta = 0.8$。假設流線平行於不透水邊界：</p>
@@ -147,16 +130,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ul>
 <p>各點沿流向距 b 點的流徑長度 $s$ 及水頭計算：</p>
 <ul>
-<li>
-<p><strong>c 點</strong>：$s_c = \frac{Z_c - Z_b}{\sin 53^\circ} = \frac{2 - 0}{0.8} = 2.5\text{m}$<br />
+<li><strong>c 點</strong>：$s_c = \frac{Z_c - Z_b}{\sin 53^\circ} = \frac{2 - 0}{0.8} = 2.5\text{m}$<br />
   總水頭 $h_c = h_b - i \cdot s_c = 8 - 0.48 \times 2.5 = \boxed{6.8\text{m}}$<br />
-  壓力水頭 $P_c = h_c - Z_c = 6.8 - 2 = \boxed{4.8\text{m}}$</p>
-</li>
-<li>
-<p><strong>d 點</strong>：$s_d = \frac{Z_d - Z_b}{\sin 53^\circ} = \frac{3 - 0}{0.8} = 3.75\text{m}$<br />
+  壓力水頭 $P_c = h_c - Z_c = 6.8 - 2 = \boxed{4.8\text{m}}$</li>
+<li><strong>d 點</strong>：$s_d = \frac{Z_d - Z_b}{\sin 53^\circ} = \frac{3 - 0}{0.8} = 3.75\text{m}$<br />
   總水頭 $h_d = h_b - i \cdot s_d = 8 - 0.48 \times 3.75 = \boxed{6.2\text{m}}$<br />
-  壓力水頭 $P_d = h_d - Z_d = 6.2 - 3 = \boxed{3.2\text{m}}$</p>
-</li>
+  壓力水頭 $P_d = h_d - Z_d = 6.2 - 3 = \boxed{3.2\text{m}}$</li>
 </ul>
 <p><strong>計算結果彙整表：</strong><br />
 | 點位 | 高度水頭 $Z$ (m) | 壓力水頭 $P$ (m) | 總水頭 $h$ (m) |<br />
@@ -187,19 +166,13 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><strong>（三）計算滲流量 (m³/day)</strong></p>
 <ul>
 <li>透水係數 $k = 0.005\text{ cm/s} = 5 \times 10^{-5}\text{ m/s}$</li>
-<li>
-<p>正交於流向的截面積 $A_{\perp}$：<br />
+<li>正交於流向的截面積 $A_{\perp}$：<br />
   開挖底面為 $2\text{m} \times 2\text{m}$ 之水平面，其水平面積 $A_{\text{horiz}} = 4\text{m}^2$。<br />
-  $A_{\perp} = A_{\text{horiz}} \times \sin 53^\circ = 4 \times 0.8 = 3.2\text{m}^2$</p>
-</li>
-<li>
-<p>滲流量 $Q$ (使用達西定律)：<br />
-  $$Q = k \cdot i \cdot A_{\perp} = (5 \times 10^{-5}\text{ m/s}) \times 0.48 \times 3.2\text{ m}^2 = 7.68 \times 10^{-5}\text{ m}^3\text{/s}$$</p>
-</li>
-<li>
-<p>換算為每日滲流量：<br />
-  $$Q = 7.68 \times 10^{-5} \times (60 \times 60 \times 24) = 6.63552 \approx \boxed{6.64 \text{ m}^3\text{/day}}$$</p>
-</li>
+  $A_{\perp} = A_{\text{horiz}} \times \sin 53^\circ = 4 \times 0.8 = 3.2\text{m}^2$</li>
+<li>滲流量 $Q$ (使用達西定律)：<br />
+  $$Q = k \cdot i \cdot A_{\perp} = (5 \times 10^{-5}\text{ m/s}) \times 0.48 \times 3.2\text{ m}^2 = 7.68 \times 10^{-5}\text{ m}^3\text{/s}$$</li>
+<li>換算為每日滲流量：<br />
+  $$Q = 7.68 \times 10^{-5} \times (60 \times 60 \times 24) = 6.63552 \approx \boxed{6.64 \text{ m}^3\text{/day}}$$</li>
 </ul>
 <p><em>(註：若使用垂直流速法，垂直流速 $v_z = (ki) \times \sin 53^\circ = 1.92 \times 10^{-5}\text{ m/s}$，流量 $Q = v_z \times A_{\text{horiz}} = 1.92 \times 10^{-5} \times 4 = 7.68 \times 10^{-5}\text{ m}^3\text{/s}$，計算結果完全一致。)</em></p>
 <h2>5. 關鍵爭議點與進階探討</h2>

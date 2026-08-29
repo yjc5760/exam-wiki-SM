@@ -31,9 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2014-4</h1>
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質與分類<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>壓密沉陷</code> <code>壓密度</code> <code>單面排水</code> <code>有效應力</code> <code>岩盤</code></p>
+<strong>標籤：</strong> <code>壓密沉陷</code> <code>壓密度</code> <code>時間因數</code> <code>單面排水</code> <code>正常壓密</code> <code>壓縮指數Cc</code> <code>孔隙比</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一基地土層剖面如圖所示，地下水位於地表下方 2 m，若黏土為正常壓密，於地表施加均佈載重 $\Delta\sigma$ 後，黏土空隙比（void ratio） $e$ 變為 0.96，試估算：</p>
@@ -43,7 +43,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li>當沉陷量為 20 cm 時，該黏土層之平均壓密度為何？</li>
 <li>若黏土層之壓密係數 $C_v$ 於壓密過程為定值 $0.005 \text{ cm}^2/\text{sec}$，則前述 20 cm 沉陷量，需多久（以天為單位）才能達成？（25 分）</li>
 </ol>
-<p>（壓縮指數 $C_c = 0.009(LL-10)$；壓密度 $U > 60\%$，$T_v = 1.781-0.933\log(100-U\%)$，$U \le 60\%$，$T_v = \frac{\pi}{4}(\frac{U\%}{100})^2$ ）</p>
+<p>（壓縮指數 $C_c = 0.009(LL-10)$；壓密度 $U &gt; 60\%$，$T_v = 1.781-0.933\log(100-U\%)$，$U \le 60\%$，$T_v = \frac{\pi}{4}(\frac{U\%}{100})^2$ ）</p>
 <p><img alt="SM-2014-4 題目附圖：土層剖面與參數表" src="../../raw/solutions/SM-2014-4/SM-2014-4-fig-1.png" /></p>
 <p><em>圖說：地表受均佈載重 $\Delta\sigma$；0~2m 為乾砂；2~8m 為飽和砂土，砂土參數為 $e=0.62$、$G_s=2.67$；地下水位位於地表下 2m；8~16m 為黏土層，參數為 $e_0=1.05$、$G_s=2.72$、$\omega_L=45\%$；黏土層下方為岩盤。</em></p>
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
@@ -192,18 +192,12 @@ $$\boxed{S_c = 35.12 \text{ cm}}$$</p>
 <p><strong>【Step 2】計算各土層單位重與黏土層中點初始有效應力 $\sigma_{vo}'$</strong><br />
 黏土層中點深度為地表下 $2 + 6 + \frac{8}{2} = 12 \text{ m}$ 處。</p>
 <ol>
-<li>
-<p><strong>0~2m 乾砂：</strong> <br />
-   $$\gamma_d = \frac{G_s \gamma_w}{1+e} = \frac{2.67 \times 9.81}{1+0.62} = 16.17 \text{ kN/m}^3$$</p>
-</li>
-<li>
-<p><strong>2~8m 飽和砂土：</strong> <br />
-   $$\gamma_{sat,s} = \frac{(G_s + e)\gamma_w}{1+e} = \frac{(2.67 + 0.62) \times 9.81}{1+0.62} = 19.92 \text{ kN/m}^3$$</p>
-</li>
-<li>
-<p><strong>8~16m 飽和黏土：</strong> <br />
-   $$\gamma_{sat,c} = \frac{(G_s + e_0)\gamma_w}{1+e_0} = \frac{(2.72 + 1.05) \times 9.81}{1+1.05} = 18.04 \text{ kN/m}^3$$</p>
-</li>
+<li><strong>0~2m 乾砂：</strong> <br />
+   $$\gamma_d = \frac{G_s \gamma_w}{1+e} = \frac{2.67 \times 9.81}{1+0.62} = 16.17 \text{ kN/m}^3$$</li>
+<li><strong>2~8m 飽和砂土：</strong> <br />
+   $$\gamma_{sat,s} = \frac{(G_s + e)\gamma_w}{1+e} = \frac{(2.67 + 0.62) \times 9.81}{1+0.62} = 19.92 \text{ kN/m}^3$$</li>
+<li><strong>8~16m 飽和黏土：</strong> <br />
+   $$\gamma_{sat,c} = \frac{(G_s + e_0)\gamma_w}{1+e_0} = \frac{(2.72 + 1.05) \times 9.81}{1+1.05} = 18.04 \text{ kN/m}^3$$</li>
 </ol>
 <p>計算黏土層中點有效覆土應力：<br />
 $$\sigma_{vo}' = h_{dry}\gamma_d + h_{sat,s}(\gamma_{sat,s} - \gamma_w) + h_{sat,c}(\gamma_{sat,c} - \gamma_w)$$<br />
@@ -224,7 +218,7 @@ $$\boxed{\Delta\sigma = 117.21 \text{ kPa} \quad (\text{或 } 11.95 \text{ t/m}^
 $$U = \frac{S_t}{S_c} \times 100\% = \frac{20 \text{ cm}}{35.122 \text{ cm}} \times 100\% = 56.94\%$$<br />
 $$\boxed{U = 56.94\%}$$</p>
 <p><strong>【Step 5】求達成 20 cm 沉陷所需天數 $t$</strong><br />
-因 $U = 56.94\% < 60\%$，代入題目給定之時間因素公式：<br />
+因 $U = 56.94\% &lt; 60\%$，代入題目給定之時間因素公式：<br />
 $$T_v = \frac{\pi}{4} \left(\frac{U\%}{100}\right)^2 = \frac{\pi}{4} (0.5694)^2 = 0.2547$$<br />
 <strong>判斷排水邊界條件：</strong> 黏土層下方為岩盤，視為不透水層，故為「單面排水」，$H_{dr} = H = 800 \text{ cm}$。<br />
 $$t = \frac{T_v H_{dr}^2}{C_v} = \frac{0.2547 \times (800)^2}{0.005} = 32,601,600 \text{ sec}$$<br />

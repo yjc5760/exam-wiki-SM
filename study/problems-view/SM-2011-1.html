@@ -27,14 +27,13 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2011-1 題目解析</h1>
-<a class="back quick" href="../study-SM-U1-5.html">&#128269; U1-5 命題分析</a>
+<header><h1>SM-2011-1 題目解析</h1><a class="back quick" href="../study-SM-U1-5.html">&#128269; U1-5 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-5.html">&#128218; U1-5 土壤強度特性與變形性 講義</a></header>
 <main><h1>考題編號：SM-2011-1</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類<br />
-<strong>副分類：</strong> <code>SM-U1</code> 土體內應力 / 土壤強度特性與變形性 / 坡地工程<br />
+<p><strong>主分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質、<code>SM-U1-3</code> 土壤夯實及壓密、<code>SM-U1-2</code> 土壤滲透、<code>SM-U2-1</code> 淺基礎之支承力與沉陷量<br />
 <strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>名詞解釋</code> <code>零空氣孔隙曲線</code> <code>應力路徑</code> <code>流黏土</code> <code>角變位</code> <code>臨界水力坡降</code></p>
+<strong>標籤：</strong> <code>零空氣孔隙曲線</code> <code>夯實曲線</code> <code>應力路徑</code> <code>靈敏度</code> <code>流黏土</code> <code>角變位</code> <code>臨界水力坡降</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、解釋或說明下列名詞：（25 分）<br />
@@ -46,25 +45,31 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
 <p>本題為經典名詞解釋題，測驗考生對於土壤力學各章節基礎核心觀念的理解。出題者期望考生不僅能精確定義名詞，還能寫出其物理意義、數學定義式（公式）以及在工程實務上的應用或代表的破壞行為。</p>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
-<p>針對每一名詞，回答需包含：<br />
-1. <strong>名詞定義</strong>：精確的文字描述。<br />
-2. <strong>數學公式</strong>（如適用）：寫出表示式並解釋符號。<br />
-3. <strong>物理意義/工程應用</strong>：說明為什麼這個名詞重要、用在什麼分析中、代表何種極限或破壞狀態。</p>
-<p><strong>陷阱分析</strong>：<br />
-1. 名詞解釋若只寫中文定義而缺乏公式或圖形描述，容易拿不到滿分。<br />
-2. 「應力路徑」需點出表示方法（如 $p-q$ 點或 $p'-q$ 點）。<br />
-3. 「流黏土」要提到靈敏度（Sensitivity）大於 16，且受擾動後強度急遽喪失。<br />
-4. 「角變位」要與總沉陷量和差異沉陷量做區別，是造成建築物結構破壞的關鍵指標。<br />
-5. 「臨界水力坡降」需寫出數學公式以及對應的「砂湧（boiling）」或「管湧（piping）」現象。</p>
+<p>針對每一名詞，回答需包含：</p>
+<ol>
+<li><strong>名詞定義</strong>：精確的文字描述。</li>
+<li><strong>數學公式</strong>（如適用）：寫出表示式並解釋符號。</li>
+<li><strong>物理意義/工程應用</strong>：說明為什麼這個名詞重要、用在什麼分析中、代表何種極限或破壞狀態。</li>
+</ol>
+<p><strong>陷阱分析</strong>：</p>
+<ol>
+<li>名詞解釋若只寫中文定義而缺乏公式或圖形描述，容易拿不到滿分。</li>
+<li>「應力路徑」需點出表示方法（如 $p-q$ 點或 $p'-q$ 點）。</li>
+<li>「流黏土」要提到靈敏度（Sensitivity）大於 16，且受擾動後強度急遽喪失。</li>
+<li>「角變位」要與總沉陷量和差異沉陷量做區別，是造成建築物結構破壞的關鍵指標。</li>
+<li>「臨界水力坡降」需寫出數學公式以及對應的「砂湧（boiling）」或「管湧（piping）」現象。</li>
+</ol>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p><code>精確解釋土壤力學中五個重要專有名詞的定義、公式及工程意義</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
-<p>（本題為概念題，無固定計算步驟，以下列出各名詞相關公式）<br />
-- 零空氣孔隙曲線：$\gamma_{zav} = \frac{G_s \gamma_w}{1 + w G_s}$<br />
-- 臨界水力坡降：$i_{cr} = \frac{G_s - 1}{1 + e} = \frac{\gamma'}{\gamma_w}$<br />
-- 角變位：$\beta = \frac{\delta}{L}$<br />
-- 靈敏度：$S_t = \frac{q_u(\text{undisturbed})}{q_u(\text{remolded})}$</p>
+<p>（本題為概念題，無固定計算步驟，以下列出各名詞相關公式）</p>
+<ul>
+<li>零空氣孔隙曲線：$\gamma_{zav} = \frac{G_s \gamma_w}{1 + w G_s}$</li>
+<li>臨界水力坡降：$i_{cr} = \frac{G_s - 1}{1 + e} = \frac{\gamma'}{\gamma_w}$</li>
+<li>角變位：$\beta = \frac{\delta}{L}$</li>
+<li>靈敏度：$S_t = \frac{q_u(\text{undisturbed})}{q_u(\text{remolded})}$</li>
+</ul>
 <h3>L1：題目直接給定</h3>
 <ul>
 <li>無數值計算。</li>
@@ -123,9 +128,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <ol>
 <li><strong>定義</strong>：在土壤受力變形或破壞的過程中，將其一系列的應力狀態（通常以 Mohr 圓表示）以特定代表點（如 Mohr 圓頂點）連接起來的軌跡。</li>
 <li><strong>數學公式/表示法</strong>：<br />
-   常以 $p-q$ 座標系統表示：<br />
-   - 總應力路徑：$p = \frac{\sigma_1 + \sigma_3}{2}$， $q = \frac{\sigma_1 - \sigma_3}{2}$<br />
-   - 有效應力路徑：$p' = \frac{\sigma_1' + \sigma_3'}{2}$， $q = \frac{\sigma_1' - \sigma_3'}{2}$</li>
+   常以 $p-q$ 座標系統表示：</li>
+<li>總應力路徑：$p = \frac{\sigma_1 + \sigma_3}{2}$， $q = \frac{\sigma_1 - \sigma_3}{2}$</li>
+<li>有效應力路徑：$p' = \frac{\sigma_1' + \sigma_3'}{2}$， $q = \frac{\sigma_1' - \sigma_3'}{2}$</li>
 <li><strong>工程意義</strong>：應力路徑能清晰追蹤土壤在開挖、填土或承受載重過程中應力狀態的變化，並判斷應力狀態是否觸及破壞包絡線（Failure envelope），常用於預測土壤破壞行為。</li>
 </ol>
 <h3>(三) 流黏土（Quick clay）</h3>
@@ -159,7 +164,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ul></main>
 <footer>來源：raw/solutions/SM-2011-1/SM-2011-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

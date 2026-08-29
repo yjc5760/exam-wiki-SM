@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2020-2 &#8212; 題目解析</title>
+<title>SM-2020-2 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2020-2 題目解析</h1><a class="back quick" href="../study-SM-U2-3.html">&#128269; U2-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2020-2</h1>
-<p><strong>主分類：</strong> <code>SM-U2</code> 淺基礎與深基礎<br />
-<strong>副分類：</strong> <code>SM-U3</code> 擋土結構與邊坡<br />
+<p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>副分類：</strong> <code>SM-U3-1</code> 側向土壓力理論、<code>SM-U1-2</code> 土壤滲透<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>懸臂式版樁</code> <code>滲流效應</code> <code>抗砂湧安全係數</code> <code>建築物基礎構造設計規範</code></p>
+<strong>標籤：</strong> <code>板樁</code> <code>開挖穩定性</code> <code>砂湧</code> <code>臨界水力坡降</code> <code>Rankine主動土壓力</code> <code>Rankine被動土壓力</code> <code>穩定滲流</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、某共同管溝工程採用明挖覆蓋工法，基地地層主要層為砂土，如下圖所示。開挖深度為 4 m，設計長度 10 m 之懸臂式版樁作為開挖之擋土設施。請繪製作用於版樁兩側之土壓力隨深度變化圖及淨水壓力隨深度變化圖，並在相關深度標示數值？請以簡化法（以土壓力對 O 點之力矩值）估算此擋土壁之破壞安全係數？請估算此開挖擋土設施之抗砂湧安全係數，並請依據「建築物基礎構造設計規範」之規定說明此項安全係數是否符合規範需求？（25 分）</p>
@@ -168,14 +169,10 @@ $$ i = \frac{\Delta H}{L} = \frac{3.5}{15.5} = 0.2258 $$</p>
 <ul>
 <li>$\phi' = 30^\circ \implies K_{a2} = \tan^2(45^\circ - 30^\circ/2) = 0.333$</li>
 <li>$\phi' = 30^\circ \implies K_{p2} = \tan^2(45^\circ + 30^\circ/2) = 3.0$</li>
-<li>
-<p>主動側水下 (水流向下)：<br />
-  $$ \gamma'_{A2} = (\gamma_{sat2} - \gamma_w) + i\gamma_w = (19.6 - 9.81) + 2.215 = 12.005 \text{ kN/m}^3 $$</p>
-</li>
-<li>
-<p>被動側水下 (水流向上)：<br />
-  $$ \gamma'_{P2} = (\gamma_{sat2} - \gamma_w) - i\gamma_w = (19.6 - 9.81) - 2.215 = 7.575 \text{ kN/m}^3 $$</p>
-</li>
+<li>主動側水下 (水流向下)：<br />
+  $$ \gamma'_{A2} = (\gamma_{sat2} - \gamma_w) + i\gamma_w = (19.6 - 9.81) + 2.215 = 12.005 \text{ kN/m}^3 $$</li>
+<li>被動側水下 (水流向上)：<br />
+  $$ \gamma'_{P2} = (\gamma_{sat2} - \gamma_w) - i\gamma_w = (19.6 - 9.81) - 2.215 = 7.575 \text{ kN/m}^3 $$</li>
 </ul>
 <h3>Step 3：各深度之應力與壓力值計算</h3>
 <p><strong>A. 有效垂直應力 $\sigma_v'$</strong></p>
@@ -220,13 +217,13 @@ $$ i = \frac{\Delta H}{L} = \frac{3.5}{15.5} = 0.2258 $$</p>
 <li>$z = 4.0 \sim 10.0$ (土, 矩)：$P = 6.0 \times 15.74 = 94.44 \text{ kN/m}$，$y = 3.0 \text{ m}$，$M = 283.32 \text{ kN-m/m}$</li>
 <li>$z = 4.0 \sim 10.0$ (土, 三角)：$P = 0.5 \times 6.0 \times (39.75 - 15.74) = 72.03 \text{ kN/m}$，$y = 2.0 \text{ m}$，$M = 144.06 \text{ kN-m/m}$</li>
 <li>$z = 0.5 \sim 4.0$ (淨水, 三角)：$P = 0.5 \times 3.5 \times 26.58 = 46.52 \text{ kN/m}$，$y = 7.167 \text{ m}$，$M = 333.41 \text{ kN-m/m}$</li>
-<li>$z = 4.0 \sim 10.0$ (淨水, 三角)：$P = 0.5 \times 6.0 \times 26.58 = 79.74 \text{ kN/m}$，$y = 4.0 \text{ m}$，$M = 318.96 \text{ kN-m/m}$<br />
-   - <strong>總推覆力矩 $\sum M_O = 1363.88 \text{ kN-m/m}$</strong></li>
+<li>$z = 4.0 \sim 10.0$ (淨水, 三角)：$P = 0.5 \times 6.0 \times 26.58 = 79.74 \text{ kN/m}$，$y = 4.0 \text{ m}$，$M = 318.96 \text{ kN-m/m}$</li>
+<li><strong>總推覆力矩 $\sum M_O = 1363.88 \text{ kN-m/m}$</strong></li>
 </ol>
 <p><strong>抵抗力矩 $M_R$ (被動側)：</strong></p>
-<ol start="8">
-<li>$z = 4.0 \sim 10.0$ (土, 三角)：$P = 0.5 \times 6.0 \times 136.35 = 409.05 \text{ kN/m}$，$y = 2.0 \text{ m}$<br />
-   - <strong>總抵抗力矩 $\sum M_R = 818.10 \text{ kN-m/m}$</strong></li>
+<ol>
+<li>$z = 4.0 \sim 10.0$ (土, 三角)：$P = 0.5 \times 6.0 \times 136.35 = 409.05 \text{ kN/m}$，$y = 2.0 \text{ m}$</li>
+<li><strong>總抵抗力矩 $\sum M_R = 818.10 \text{ kN-m/m}$</strong></li>
 </ol>
 <p><strong>破壞安全係數：</strong><br />
 $$ \boxed{FS_{wall} = \frac{\sum M_R}{\sum M_O} = \frac{818.10}{1363.88} = 0.60} $$</p>
@@ -240,7 +237,7 @@ $$ \boxed{FS_{boiling} = \frac{i_{cr}}{i} = \frac{0.998}{0.2258} = 4.42} $$<br /
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
 <li><strong>靜水壓力 vs. 滲流壓力：</strong> 在部分簡化考題中，考生可能會忽略滲流效應而採用「靜水壓力」假定。若採用靜水壓力，開挖面以下的淨水壓力將呈現 $3.5\gamma_w$ 的常數分布（矩形）。但本題明確在後續子題詢問「砂湧」，證明土體中必然存在水頭差造成的滲流網，因此採用繞流折減水壓與修正有效單位重是嚴謹且被期望的解法。</li>
-<li><strong>破壞安全係數偏低：</strong> 本題計算所得 $FS \approx 0.60 < 1.0$，代表懸臂式版樁在此開挖條件下是不穩定的。實務上在砂土中開挖 4 m 深度，懸臂式擋土的變形量過大且極易產生傾覆破壞，通常需設置內支撐（Strut）或地錨（Anchor）才能確保穩定。此計算結果反映了工程實務的限制。</li>
+<li><strong>破壞安全係數偏低：</strong> 本題計算所得 $FS \approx 0.60 &lt; 1.0$，代表懸臂式版樁在此開挖條件下是不穩定的。實務上在砂土中開挖 4 m 深度，懸臂式擋土的變形量過大且極易產生傾覆破壞，通常需設置內支撐（Strut）或地錨（Anchor）才能確保穩定。此計算結果反映了工程實務的限制。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2020-2/SM-2020-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

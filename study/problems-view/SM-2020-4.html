@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2020-4 &#8212; 題目解析</title>
+<title>SM-2020-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -30,8 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U2-1.html">&#128218; U2-1 淺基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2020-4</h1>
 <p><strong>主分類：</strong> <code>SM-U2-1</code> 淺基礎之支承力與沉陷量<br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>條形基礎</code> <code>無圍壓縮強度</code> <code>極限承載力</code> <code>Terzaghi承載力理論</code> <code>淨承載力</code></p>
+<strong>標籤：</strong> <code>Terzaghi承載力公式</code> <code>承載力因數</code> <code>不排水剪力強度</code> <code>容許承載力</code> <code>條形基礎</code> <code>淨承載力</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一面牆將建構在一狹長的淺基礎上（基礎長遠大於 10 倍基礎寬），此基礎寬度為 1.25 公尺，厚度為 0.5 公尺厚且其底部置於地表下 0.5 公尺處。現地之土壤為粉土質黏土，其無圍壓縮強度為 100 kPa，此土壤之單位重為 18.8 $\text{kN/m}^3$，地下水位在地表處。請以計算說明該基礎能否安全地承載 120 kN/m 之荷重？（25 分）</p>
@@ -55,44 +57,28 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ol>
 <p><strong>陷阱分析：</strong></p>
 <ul>
-<li>
-<p><strong>陷阱一：水位的影響（總應力 vs 有效應力）</strong><br />
-  許多考生看到「地下水位在地表處」，會直覺將載重項或土重項扣除水浮力。但在 $\phi_u = 0$ 的不排水分析（總應力法）中，承載力的抵抗來自於 $S_u$，且 $N_\gamma = 0$，上覆土重 $q$ 提供的是絕對總應力，不需轉為有效應力（若比較淨承載力，上覆水壓力項相互抵銷）。</p>
-</li>
-<li>
-<p><strong>陷阱二：忽略基礎自重與開挖土重的差異</strong><br />
-  題目敘述基礎厚度為 0.5m，底部置於地表下 0.5m，表示基礎頂齊平地表。牆荷重 120 kN/m 直接作用於基礎上，計算傳遞至基礎底部的淨壓力時，嚴格來說需計入混凝土（$\approx 24 \text{kN/m}^3$）取代原地表土（$18.8 \text{kN/m}^3$）所增加的額外載重。</p>
-</li>
-<li>
-<p><strong>陷阱三：安全係數的設定</strong><br />
-  題目未明示安全係數。在淺基礎設計中，常規安全係數必須由考生自行給定並說明（合理假設 $FS = 3.0$），這是驗證基礎是否「安全」的判斷基準。</p>
-</li>
+<li><strong>陷阱一：水位的影響（總應力 vs 有效應力）</strong><br />
+  許多考生看到「地下水位在地表處」，會直覺將載重項或土重項扣除水浮力。但在 $\phi_u = 0$ 的不排水分析（總應力法）中，承載力的抵抗來自於 $S_u$，且 $N_\gamma = 0$，上覆土重 $q$ 提供的是絕對總應力，不需轉為有效應力（若比較淨承載力，上覆水壓力項相互抵銷）。</li>
+<li><strong>陷阱二：忽略基礎自重與開挖土重的差異</strong><br />
+  題目敘述基礎厚度為 0.5m，底部置於地表下 0.5m，表示基礎頂齊平地表。牆荷重 120 kN/m 直接作用於基礎上，計算傳遞至基礎底部的淨壓力時，嚴格來說需計入混凝土（$\approx 24 \text{kN/m}^3$）取代原地表土（$18.8 \text{kN/m}^3$）所增加的額外載重。</li>
+<li><strong>陷阱三：安全係數的設定</strong><br />
+  題目未明示安全係數。在淺基礎設計中，常規安全係數必須由考生自行給定並說明（合理假設 $FS = 3.0$），這是驗證基礎是否「安全」的判斷基準。</li>
 </ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>計算淺基礎之容許承載力與實際施加壓力，並判斷基礎是否安全。</p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p><strong>Step 1：不排水剪力強度</strong> <br />
-  $$ S_u = \frac{q_u}{2} $$</p>
-</li>
-<li>
-<p><strong>Step 2：淨極限承載力 (Terzaghi 條形基礎)</strong> <br />
-  $$ q_{ult,net} = \boxed{S_u} N_c $$</p>
-</li>
-<li>
-<p><strong>Step 3：容許淨承載力</strong> <br />
-  $$ q_{a,net} = \frac{\boxed{q_{ult,net}}}{FS} $$</p>
-</li>
-<li>
-<p><strong>Step 4：實際淨載重強度</strong> <br />
-  $$ q_{app,net} = \frac{Q}{B} + (\gamma_c - \gamma_{sat}) D_f $$</p>
-</li>
-<li>
-<p><strong>Step 5：安全性檢核</strong> <br />
-  $$ \text{Check: } \boxed{q_{app,net}} \le \boxed{q_{a,net}} $$</p>
-</li>
+<li><strong>Step 1：不排水剪力強度</strong> <br />
+  $$ S_u = \frac{q_u}{2} $$</li>
+<li><strong>Step 2：淨極限承載力 (Terzaghi 條形基礎)</strong> <br />
+  $$ q_{ult,net} = \boxed{S_u} N_c $$</li>
+<li><strong>Step 3：容許淨承載力</strong> <br />
+  $$ q_{a,net} = \frac{\boxed{q_{ult,net}}}{FS} $$</li>
+<li><strong>Step 4：實際淨載重強度</strong> <br />
+  $$ q_{app,net} = \frac{Q}{B} + (\gamma_c - \gamma_{sat}) D_f $$</li>
+<li><strong>Step 5：安全性檢核</strong> <br />
+  $$ \text{Check: } \boxed{q_{app,net}} \le \boxed{q_{a,net}} $$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -230,33 +216,27 @@ $$<br />
 <p><strong>Step 5：安全性檢核與結論</strong><br />
 比較實際淨載重強度與容許淨承載力：<br />
 $$
-\boxed{q_{app,net} = 98.6 \text{ kPa} \quad (若簡化為 96 \text{ kPa}) > q_{a,net} = 95 \text{ kPa}}
+\boxed{q_{app,net} = 98.6 \text{ kPa} \quad (若簡化為 96 \text{ kPa}) &gt; q_{a,net} = 95 \text{ kPa}}
 $$<br />
-由於實際載重強度大於容許淨承載力（即實際安全係數 $FS \approx 2.89 < 3.0$），因此：<br />
+由於實際載重強度大於容許淨承載力（即實際安全係數 $FS \approx 2.89 &lt; 3.0$），因此：<br />
 $$
 \text{\textbf{結論：該基礎無法安全地承載 120 kN/m 之荷重。}}
 $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>安全係數 (FS) 的選擇</strong><br />
-   本題未給定要求之安全係數，實務上淺基礎設計皆取 $FS = 3.0$。將本題的安全係數回推：$FS_{actual} = \frac{q_{ult,net}}{q_{app,net}} = \frac{285}{98.6} \approx 2.89$（若不計混凝土重差異則為 $285 / 96 \approx 2.97$）。兩者均小於 3.0，因此認定為不安全。作答時必須明確寫出「假設容許安全係數 $FS=3.0$」作為判斷的依據。</p>
-</li>
-<li>
-<p><strong>承載力公式的選用（Terzaghi vs Meyerhof）</strong><br />
-   - 若採用 <strong>Terzaghi</strong> 公式，如上述計算 $N_c = 5.7$，容許淨承載力為 95 kPa，結論為「不安全」。<br />
-   - 若採用 <strong>Meyerhof</strong> 或 <strong>Hansen</strong> 等一般承載力公式，條形基礎之 $N_c = 5.14$，並需考慮深度修正因子 $d_c$。以 Meyerhof 為例：<br />
+<li><strong>安全係數 (FS) 的選擇</strong><br />
+   本題未給定要求之安全係數，實務上淺基礎設計皆取 $FS = 3.0$。將本題的安全係數回推：$FS_{actual} = \frac{q_{ult,net}}{q_{app,net}} = \frac{285}{98.6} \approx 2.89$（若不計混凝土重差異則為 $285 / 96 \approx 2.97$）。兩者均小於 3.0，因此認定為不安全。作答時必須明確寫出「假設容許安全係數 $FS=3.0$」作為判斷的依據。</li>
+<li><strong>承載力公式的選用（Terzaghi vs Meyerhof）</strong></li>
+<li>若採用 <strong>Terzaghi</strong> 公式，如上述計算 $N_c = 5.7$，容許淨承載力為 95 kPa，結論為「不安全」。</li>
+<li>若採用 <strong>Meyerhof</strong> 或 <strong>Hansen</strong> 等一般承載力公式，條形基礎之 $N_c = 5.14$，並需考慮深度修正因子 $d_c$。以 Meyerhof 為例：<br />
      $$ d_c = 1 + 0.2 \frac{D_f}{B} = 1 + 0.2 \left( \frac{0.5}{1.25} \right) = 1.08 $$<br />
      $$ q_{ult,net} = c_u N_c d_c = 50 \times 5.14 \times 1.08 \approx 277.56 \text{ kPa} $$<br />
      $$ q_{a,net} = \frac{277.56}{3} \approx 92.52 \text{ kPa} $$<br />
-     比較結果為 $96 \text{ kPa} > 92.52 \text{ kPa}$，結論依然是「不安全」。</p>
-</li>
-</ol>
-<ul>
-<li><strong>實務建議</strong>：在國家考試中，針對「狹長淺基礎」且未特別指明時，直接選用 Terzaghi 條形基礎公式（$N_c=5.7$）最簡明且被廣泛接受；若能在計算後加註 Meyerhof 方法亦不安全，更能展現觀念的全面性。<br />
-3. <strong>淨承載力 (Net) 與總承載力 (Gross) 觀念的區辨</strong><br />
+     比較結果為 $96 \text{ kPa} &gt; 92.52 \text{ kPa}$，結論依然是「不安全」。</li>
+<li><strong>實務建議</strong>：在國家考試中，針對「狹長淺基礎」且未特別指明時，直接選用 Terzaghi 條形基礎公式（$N_c=5.7$）最簡明且被廣泛接受；若能在計算後加註 Meyerhof 方法亦不安全，更能展現觀念的全面性。</li>
+<li><strong>淨承載力 (Net) 與總承載力 (Gross) 觀念的區辨</strong><br />
    基礎承載力的比較必須在相同的基準面上。本解答使用「淨載重」與「容許淨承載力」作比較，排除了「開挖前後地層本身土重 ($q$)」的相互抵銷干擾，這是最不容易出錯且觀念最清晰的標準作法。</li>
-</ul></main>
+</ol></main>
 <footer>來源：raw/solutions/SM-2020-4/SM-2020-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

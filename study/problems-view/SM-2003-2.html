@@ -30,10 +30,10 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <header><h1>SM-2003-2 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2003-2</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與應力<br />
-<strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>副分類：</strong> <code>SM-U1-4</code> 土體內應力、<code>SM-U2-1</code> 淺基礎之支承力與沉陷量<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>壓密沉陷</code> <code>2:1應力分散法</code> <code>過壓密</code></p>
+<strong>標籤：</strong> <code>壓密沉陷</code> <code>應力增量</code> <code>過壓密</code> <code>預壓密應力</code> <code>壓縮指數</code> <code>回脹指數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一方形放腳基礎置於地表下 1.5 m 處，該處地層為厚度 5 m 之砂土層，下方為厚 6 m 之黏土層，地下水位於深度 1.5 m 處。<br />
@@ -50,21 +50,13 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ul>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
-<li>
-<p><strong>步驟一：定位代表點與計算初始應力</strong><br />
-  取黏土層中央（地表下 $5 + 6/2 = 8 \text{ m}$ 處）為代表點，計算初始有效應力 $p_0'$。需注意砂土層在水位以上為 $\gamma_{dry}$，水位以下需用 $\gamma'$。</p>
-</li>
-<li>
-<p><strong>步驟二：判定壓密狀態</strong><br />
-  比較 $p_0'$ 與給定之 $p_c' = 90 \text{ kPa}$。確認 $OCR > 1$，為過壓密黏土。</p>
-</li>
-<li>
-<p><strong>步驟三：計算應力增量</strong><br />
-  使用 2:1 法計算基礎荷重至黏土層中點的應力增量 $\Delta \sigma_z$。</p>
-</li>
-<li>
-<p><em>陷阱</em>：深度 $z$ 應為「基礎底面」至「黏土層中點」的距離，即 $8 - 1.5 = 6.5 \text{ m}$，不可誤用全深 $8 \text{ m}$。</p>
-</li>
+<li><strong>步驟一：定位代表點與計算初始應力</strong><br />
+  取黏土層中央（地表下 $5 + 6/2 = 8 \text{ m}$ 處）為代表點，計算初始有效應力 $p_0'$。需注意砂土層在水位以上為 $\gamma_{dry}$，水位以下需用 $\gamma'$。</li>
+<li><strong>步驟二：判定壓密狀態</strong><br />
+  比較 $p_0'$ 與給定之 $p_c' = 90 \text{ kPa}$。確認 $OCR &gt; 1$，為過壓密黏土。</li>
+<li><strong>步驟三：計算應力增量</strong><br />
+  使用 2:1 法計算基礎荷重至黏土層中點的應力增量 $\Delta \sigma_z$。</li>
+<li><em>陷阱</em>：深度 $z$ 應為「基礎底面」至「黏土層中點」的距離，即 $8 - 1.5 = 6.5 \text{ m}$，不可誤用全深 $8 \text{ m}$。</li>
 <li><em>考量</em>：實務上外加載重應扣除開挖土壤重量（淨載重），但考量一般國考習慣與題目未特別指明，以總載重 $Q=1200 \text{ kN}$ 直接計算應力增量為主流作法，並於解答後方附加淨載重之計算作為補充。</li>
 <li><strong>步驟四：雙段式壓密沉陷計算</strong><br />
   檢核 $p_0' + \Delta \sigma_z$ 是否大於 $p_c'$。若大於，則需拆分為 $p_0' \to p_c'$（使用 $C_s$）及 $p_c' \to p_0'+\Delta \sigma_z$（使用 $C_c$）兩段進行計算。</li>
@@ -74,18 +66,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><code>求出黏土層受基礎荷重影響產生之最終壓密沉陷量</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p>黏土層中點初始有效應力：<br />
-  $$p_0' = \sum (\gamma \cdot H)_{dry} + \sum (\gamma_{sat} - \gamma_w) \cdot H_{sub}$$</p>
-</li>
-<li>
-<p>2:1 應力分散法計算應力增量：<br />
-  $$\Delta \sigma_z = \frac{Q}{(B+z')(L+z')}$$</p>
-</li>
-<li>
-<p>過壓密土壤沉陷量（當 $\boxed{p_0'} + \boxed{\Delta \sigma_z} > p_c'$ 時）：<br />
-  $$S_c = \frac{C_s H}{1+e_0} \log \left(\frac{p_c'}{\boxed{p_0'}}\right) + \frac{C_c H}{1+e_0} \log \left(\frac{\boxed{p_0'} + \boxed{\Delta \sigma_z}}{p_c'}\right)$$</p>
-</li>
+<li>黏土層中點初始有效應力：<br />
+  $$p_0' = \sum (\gamma \cdot H)_{dry} + \sum (\gamma_{sat} - \gamma_w) \cdot H_{sub}$$</li>
+<li>2:1 應力分散法計算應力增量：<br />
+  $$\Delta \sigma_z = \frac{Q}{(B+z')(L+z')}$$</li>
+<li>過壓密土壤沉陷量（當 $\boxed{p_0'} + \boxed{\Delta \sigma_z} &gt; p_c'$ 時）：<br />
+  $$S_c = \frac{C_s H}{1+e_0} \log \left(\frac{p_c'}{\boxed{p_0'}}\right) + \frac{C_c H}{1+e_0} \log \left(\frac{\boxed{p_0'} + \boxed{\Delta \sigma_z}}{p_c'}\right)$$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -213,16 +199,18 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 地下水位於地表下 $1.5 \text{ m}$ 處，故 $0 \sim 1.5 \text{ m}$ 為乾砂， $1.5 \text{ m}$ 以下為飽和土層。（水的單位重取 $\gamma_w = 9.81 \text{ kN/m}^3$）<br />
 $$
 \begin{aligned}
-p_0' &= \gamma_{dry,sand} \times 1.5 + (\gamma_{sat,sand} - \gamma_w) \times (5 - 1.5) + (\gamma_{sat,clay} - \gamma_w) \times (8 - 5) \\
-&= 18.5 \times 1.5 + (18.5 - 9.81) \times 3.5 + (18 - 9.81) \times 3 \\
-&= 27.75 + 8.69 \times 3.5 + 8.19 \times 3 \\
-&= 27.75 + 30.415 + 24.57 \\
-&= 82.735 \text{ kPa}
+p_0' &amp;= \gamma_{dry,sand} \times 1.5 + (\gamma_{sat,sand} - \gamma_w) \times (5 - 1.5) + (\gamma_{sat,clay} - \gamma_w) \times (8 - 5) \\
+&amp;= 18.5 \times 1.5 + (18.5 - 9.81) \times 3.5 + (18 - 9.81) \times 3 \\
+&amp;= 27.75 + 8.69 \times 3.5 + 8.19 \times 3 \\
+&amp;= 27.75 + 30.415 + 24.57 \\
+&amp;= 82.735 \text{ kPa}
 \end{aligned}
 $$</p>
+<p><img alt="左格為地層剖面：地表至 1.5 m 為乾砂 γ = 18.5、1.5～5 m 為飽和砂 γ_sat = 18.5、5～11 m 為黏土 γ_sat = 18.0，地下水位在 GL−1.5 m，2 m×2 m 方形基腳埋深 1.5 m 承受 Q = 1200 kN，黏土層中點標於 z = 8 m；右格為同一深度範圍的垂直應力剖線，三條線分別為全應力 σ_v、孔隙水壓 u 與有效應力 σ'_v" src="../../raw/solutions/SM-2003-2/figs/SM-2003-2-fig-1-profile-stress.svg" /></p>
+<p><em>圖 1　初始有效應力 $p_0'$ 沿深度的疊加過程。它攔的是水位以下忘記扣孔隙水壓：三條線的水平間距就是 $u$，在 $z=8$ m 處 $u = 63.77$ kPa；若整層都用 $\gamma_{sat}$ 而不扣 $u$，$p_0'$ 會變成 146.5 kPa，已大於 $p_c' = 90$ kPa，整題會被誤判成正常壓密而全程走 $C_c$。</em></p>
 <p><strong>Step 3：判斷壓密狀態</strong><br />
 已知預壓密應力 $p_c' = 90 \text{ kPa}$。<br />
-因為 $p_0' = 82.735 \text{ kPa} < p_c'$，所以該黏土層處於<strong>過壓密狀態 (Overconsolidated, OC)</strong>。</p>
+因為 $p_0' = 82.735 \text{ kPa} &lt; p_c'$，所以該黏土層處於<strong>過壓密狀態 (Overconsolidated, OC)</strong>。</p>
 <p><strong>Step 4：計算應力增量 ($\Delta \sigma_z$)</strong><br />
 依題意採用 2:1 應力分散法：</p>
 <ul>
@@ -235,40 +223,46 @@ $$</p>
 $$</p>
 <p>計算最終有效應力：<br />
 $$p_f' = p_0' + \Delta \sigma_z = 82.735 + 16.609 = 99.344 \text{ kPa}$$</p>
+<p><img alt="2:1 應力分散示意圖：2 m 方形基腳位於地表下 1.5 m，載重以水平 1 比垂直 2 的斜率向下擴散成錐體；錐體在黏土層中點（基底下 6.5 m）處寬 8.5 m，該處 Δσ_z = 16.61 kPa；圖上另標黏土層頂 Δσ = 39.7 kPa 與黏土層底 Δσ = 9.1 kPa" src="../../raw/solutions/SM-2003-2/figs/SM-2003-2-fig-2-two-to-one.svg" /></p>
+<p><em>圖 2　2:1 分散法的深度 $z'$ 從基礎底面起算。它攔的是把 $z$ 誤取成地表起算的 8 m —— 那會得到 $(2+8)^2 = 100$ m²、$\Delta\sigma$ 只剩 12.00 kPa，少了 28%。圖上另可看出黏土層頂底的 $\Delta\sigma$ 相差約 4.4 倍，取中點代表全層只是考試簡化。</em></p>
 <p><strong>Step 5：計算壓密沉陷量 ($S_c$)</strong><br />
-由於 $p_0' < p_c' < p_f'$ ($82.735 < 90 < 99.344$)，沉陷曲線跨越了預壓密點，需分兩段計算：</p>
+由於 $p_0' &lt; p_c' &lt; p_f'$ ($82.735 &lt; 90 &lt; 99.344$)，沉陷曲線跨越了預壓密點，需分兩段計算：</p>
 <ul>
 <li>$p_0' \to p_c'$ 使用回脹指數 $C_s$</li>
 <li>$p_c' \to p_f'$ 使用壓縮指數 $C_c$</li>
 </ul>
 <p>$$
 \begin{aligned}
-S_c &= \frac{C_s \cdot H}{1 + e_0} \log \left(\frac{p_c'}{p_0'}\right) + \frac{C_c \cdot H}{1 + e_0} \log \left(\frac{p_0' + \Delta \sigma_z}{p_c'}\right) \\
-&= \frac{0.06 \times 6}{1 + 0.8} \log \left(\frac{90}{82.735}\right) + \frac{0.25 \times 6}{1 + 0.8} \log \left(\frac{99.344}{90}\right) \\
-&= \frac{0.36}{1.8} \log (1.0878) + \frac{1.5}{1.8} \log (1.1038) \\
-&= 0.2 \times 0.03655 + 0.8333 \times 0.04289 \\
-&= 0.00731 + 0.03574 \\
-&= 0.04305 \text{ m}
+S_c &amp;= \frac{C_s \cdot H}{1 + e_0} \log \left(\frac{p_c'}{p_0'}\right) + \frac{C_c \cdot H}{1 + e_0} \log \left(\frac{p_0' + \Delta \sigma_z}{p_c'}\right) \\
+&amp;= \frac{0.06 \times 6}{1 + 0.8} \log \left(\frac{90}{82.735}\right) + \frac{0.25 \times 6}{1 + 0.8} \log \left(\frac{99.344}{90}\right) \\
+&amp;= \frac{0.36}{1.8} \log (1.0878) + \frac{1.5}{1.8} \log (1.1038) \\
+&amp;= 0.2 \times 0.03655 + 0.8333 \times 0.04289 \\
+&amp;= 0.00731 + 0.03574 \\
+&amp;= 0.04305 \text{ m}
 \end{aligned}
 $$</p>
 <p>$$
 \boxed{S_c = 4.31 \text{ cm}}
-$$<br />
+$$</p>
+<p><img alt="e–log p' 雙段壓密路徑圖：橫軸為有效應力對數刻度（72～118 kPa），縱軸為孔隙比（0.778～0.802）；由 p'_0 = 82.74 沿斜率 C_s = 0.06 的回脹線走到 p'_c = 90，再沿斜率 C_c = 0.25 的處女壓縮線走到 p'_f = 99.34；另以灰虛線畫出「全程用 C_c」的錯誤路徑" src="../../raw/solutions/SM-2003-2/figs/SM-2003-2-fig-3-e-logp.svg" /></p>
+<p><em>圖 3　最終應力跨過 $p_c'$ 時的兩段式路徑。它攔的是不分段：全程用 $C_c$ 會得 $S_c = 6.62$ cm（高估 54%），全程用 $C_s$ 只得 1.59 cm（低估 63%）——兩種錯的方向相反，故必須先比對 $p_0'$、$p_c'$、$p_f'$ 三者的大小關係再決定。</em><br />
 <em>(註：若使用 $\gamma_w = 9.8 \text{ kN/m}^3$，求得 $p_0' = 82.8 \text{ kPa}$，$S_c = 4.32 \text{ cm}$，結果差異甚微。)</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
+<li><strong>淨載重 (Net Load) vs 總載重 (Gross Load)</strong></li>
+<li><strong>學理上</strong>：基礎開挖會造成解壓（移去原土重），所以實際引發土壤額外壓密的應力增量應為「淨載重」。本題基礎埋深 $1.5 \text{ m}$，移去之原土體重量為 $W_{exc} = 18.5 \times 1.5 \times (2 \times 2) = 111 \text{ kN}$。淨載重應為 $Q_{net} = 1200 - 111 = 1089 \text{ kN}$。</li>
+<li><strong>考試實務</strong>：在多數國家考試中，若題目僅提供「荷重 $Q = 1200 \text{ kN}$」，未特別說明基礎自重或強調淨載重，閱卷通常預期考生直接使用 $Q$ 來進行計算（如同 Step 4 之作法）。</li>
 <li>
-<p><strong>淨載重 (Net Load) vs 總載重 (Gross Load)</strong><br />
-   - <strong>學理上</strong>：基礎開挖會造成解壓（移去原土重），所以實際引發土壤額外壓密的應力增量應為「淨載重」。本題基礎埋深 $1.5 \text{ m}$，移去之原土體重量為 $W_{exc} = 18.5 \times 1.5 \times (2 \times 2) = 111 \text{ kN}$。淨載重應為 $Q_{net} = 1200 - 111 = 1089 \text{ kN}$。<br />
-   - <strong>考試實務</strong>：在多數國家考試中，若題目僅提供「荷重 $Q = 1200 \text{ kN}$」，未特別說明基礎自重或強調淨載重，閱卷通常預期考生直接使用 $Q$ 來進行計算（如同 Step 4 之作法）。<br />
-   - 若採用淨載重計算：$\Delta \sigma_{z,net} = \frac{1089}{72.25} = 15.073 \text{ kPa}$，則 $p_f' = 82.735 + 15.073 = 97.808 \text{ kPa}$，計算出之 $S_c \approx 3.74 \text{ cm}$。建議在考場上依標準程序以總重計算，但可附註淨載重之概念以顯示觀念清晰。</p>
+<p>若採用淨載重計算：$\Delta \sigma_{z,net} = \frac{1089}{72.25} = 15.073 \text{ kPa}$，則 $p_f' = 82.735 + 15.073 = 97.808 \text{ kPa}$，計算出之 $S_c \approx 3.74 \text{ cm}$。建議在考場上依標準程序以總重計算，但可附註淨載重之概念以顯示觀念清晰。</p>
 </li>
 <li>
-<p><strong>厚黏土層之應力均值處理</strong><br />
-   - 黏土層厚達 $6 \text{ m}$（為基礎寬度 $2 \text{ m}$ 的三倍），此時黏土層頂部與底部的應力增量差異極大（頂部約 $39.7 \text{ kPa}$，底部約 $9.1 \text{ kPa}$）。<br />
-   - 雖然以中點應力代表全層是考試中最常見的簡化算法，但更精確的作法是將黏土層細分為 2 至 3 個次圖層（Sub-layers）分別計算沉陷量後加總，或是使用辛普森法則（Simpson's Rule）求取平均應力增量 $\Delta \sigma_{avg} = \frac{1}{6}(\Delta \sigma_{top} + 4\Delta \sigma_{mid} + \Delta \sigma_{bot})$。但在有時間壓力的國考中，若無特別要求，取中點計算是合理且最有效率的給分標準做法。</p>
+<p><strong>厚黏土層之應力均值處理</strong></p>
 </li>
-</ol></main>
+<li>黏土層厚達 $6 \text{ m}$（為基礎寬度 $2 \text{ m}$ 的三倍），此時黏土層頂部與底部的應力增量差異極大（頂部約 $39.7 \text{ kPa}$，底部約 $9.1 \text{ kPa}$）。</li>
+<li>雖然以中點應力代表全層是考試中最常見的簡化算法，但更精確的作法是將黏土層細分為 2 至 3 個次圖層（Sub-layers）分別計算沉陷量後加總，或是使用辛普森法則（Simpson's Rule）求取平均應力增量 $\Delta \sigma_{avg} = \frac{1}{6}(\Delta \sigma_{top} + 4\Delta \sigma_{mid} + \Delta \sigma_{bot})$。但在有時間壓力的國考中，若無特別要求，取中點計算是合理且最有效率的給分標準做法。</li>
+</ol>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-28（向量 SVG，程式繪製，腳本 <code>gen_SM-2003-2.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2003-2/SM-2003-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

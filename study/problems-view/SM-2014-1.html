@@ -27,39 +27,45 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2014-1 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
-<main><h1>考題編號：[SM-2014-1]</h1>
-<p><strong>主分類：</strong> <code>SM-U3</code> 坡地工程<br />
-<strong>副分類：</strong> <code>SM-U1</code> 土壤基本性質與分類<br />
+<header><h1>SM-2014-1 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
+<a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
+<main><h1>考題編號：SM-2014-1</h1>
+<p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>無限邊坡</code> <code>平行滲流</code> <code>有效應力</code> <code>三相圖</code></p>
+<strong>標籤：</strong> <code>無限邊坡分析</code> <code>安全係數</code> <code>平行滲流</code> <code>孔隙水壓</code> <code>三相關係</code> <code>Mohr-Coulomb破壞準則</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、二維度無限邊坡如圖一所示，崩積土層厚 6 m，地下水位於地表下方 1.5 m，其滲流平行於坡面，地下水位上下方崩積土有相同空隙比（void ratio, e）與比重 $G_s = 2.64$，地下水位以下與上方崩積土之含水量 $\omega$ 分別為 35% 與 24%，崩積土與下方岩層之介面摩擦角 $\phi$ 為 20°、凝聚力 $c$ 為 15 kPa，試求該無限邊坡之安全係數。（25 分）</p>
 <p><img alt="SM-2014-1 題目附圖：二維度無限邊坡剖面圖，邊坡傾角 15°，崩積土層厚度 6m，水位在 1.5m 深處，有平行滲流" src="../../raw/solutions/SM-2014-1/SM-2014-1-fig-1.png" /><br />
 <em>圖說：二維無限邊坡，邊坡傾角 $\beta = 15^\circ$，崩積土垂直總厚度 $H = 6\text{m}$，地下水位距地表垂直深度 $H_1 = 1.5\text{m}$。水位於土層中產生平行於坡面之滲流。土壤比重 $G_s = 2.64$，水位上方 $\omega_1 = 24\%$，水位下方 $\omega_2 = 35\%$。滑動面為土岩交界面，參數 $c = 15\text{ kPa}$、$\phi = 20^\circ$。</em></p>
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
-<p>本題主要測驗考生兩大核心觀念：<br />
-1. <strong>土壤基本物理性質的換算（三相圖）</strong>：利用地下水位以下為完全飽和（$S=1$）的隱藏條件，結合已知含水量推算整層共用的空隙比 $e$，進而求出水位上方的濕單位重與下方的飽和單位重。<br />
-2. <strong>無限邊坡之平行滲流分析</strong>：測驗考生是否清楚平行於坡面滲流時，等勢線應垂直於坡面，此時破壞面上的孔隙水壓為 $u = \gamma_w H_w \cos^2\beta$。同時測驗對於「垂直深度」轉換為滑動面上正向力與剪力的幾何關係（$\sigma_n = \sigma_v \cos^2\beta$ 及 $\tau = \sigma_v \sin\beta \cos\beta$）。</p>
+<p>本題主要測驗考生兩大核心觀念：</p>
+<ol>
+<li><strong>土壤基本物理性質的換算（三相圖）</strong>：利用地下水位以下為完全飽和（$S=1$）的隱藏條件，結合已知含水量推算整層共用的空隙比 $e$，進而求出水位上方的濕單位重與下方的飽和單位重。</li>
+<li><strong>無限邊坡之平行滲流分析</strong>：測驗考生是否清楚平行於坡面滲流時，等勢線應垂直於坡面，此時破壞面上的孔隙水壓為 $u = \gamma_w H_w \cos^2\beta$。同時測驗對於「垂直深度」轉換為滑動面上正向力與剪力的幾何關係（$\sigma_n = \sigma_v \cos^2\beta$ 及 $\tau = \sigma_v \sin\beta \cos\beta$）。</li>
+</ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
-<p><strong>作戰計畫：</strong><br />
-1. <strong>求空隙比 $e$</strong>：由水位下方飽和狀態 ($S=1$) 及含水量 $\omega_2 = 35\%$，代入 $S \cdot e = \omega \cdot G_s$ 求解。<br />
-2. <strong>計算單位重</strong>：分別計算水位上方土層之濕單位重 $\gamma_t$ 與下方土層之飽和單位重 $\gamma_{sat}$。<br />
-3. <strong>計算應力與水壓</strong>：<br />
-   - 總垂直應力 $\sigma_v = \gamma_t H_1 + \gamma_{sat} H_2$<br />
-   - 孔隙水壓 $u = \gamma_w H_2 \cos^2\beta$（平行滲流條件）<br />
-   - 有效正向應力 $\sigma_n' = \sigma_v \cos^2\beta - u$<br />
-   - 剪應力（驅動力）$\tau = \sigma_v \sin\beta \cos\beta$<br />
-4. <strong>計算安全係數</strong>：代入 Mohr-Coulomb 破壞準則求抗剪強度 $\tau_f$，最後計算 $FS = \tau_f / \tau$。</p>
-<p><strong>陷阱分析：</strong><br />
-- ⚠ <strong>陷阱 1：孔隙水壓計算錯誤</strong><br />
-  若誤用靜水壓力公式 $u = \gamma_w H_2$，將會高估孔隙水壓，導致有效應力與安全係數偏低。必須乘上 $\cos^2\beta$ 修正。<br />
-- ⚠ <strong>陷阱 2：幾何尺寸的判讀</strong><br />
-  圖示中的尺寸線為鉛直方向，代表 $6\text{m}$ 與 $1.5\text{m}$ 為「鉛直厚度」$H$。若誤認為是垂直於坡面之厚度 $z$，則應力公式的轉換會完全不同（$\sigma_n = \Sigma \gamma z \cos\beta$），易造成計算錯誤。<br />
-- ⚠ <strong>陷阱 3：水位上方土層單位重</strong><br />
-  水位上方並非乾燥狀態，亦不一定完全飽和。需帶入題目給定的含水量 $\omega_1 = 24\%$ 以及算出的空隙比 $e$ 來求取正確的濕單位重 $\gamma_t$。</p>
+<p><strong>作戰計畫：</strong></p>
+<ol>
+<li><strong>求空隙比 $e$</strong>：由水位下方飽和狀態 ($S=1$) 及含水量 $\omega_2 = 35\%$，代入 $S \cdot e = \omega \cdot G_s$ 求解。</li>
+<li><strong>計算單位重</strong>：分別計算水位上方土層之濕單位重 $\gamma_t$ 與下方土層之飽和單位重 $\gamma_{sat}$。</li>
+<li><strong>計算應力與水壓</strong>：</li>
+<li>總垂直應力 $\sigma_v = \gamma_t H_1 + \gamma_{sat} H_2$</li>
+<li>孔隙水壓 $u = \gamma_w H_2 \cos^2\beta$（平行滲流條件）</li>
+<li>有效正向應力 $\sigma_n' = \sigma_v \cos^2\beta - u$</li>
+<li>剪應力（驅動力）$\tau = \sigma_v \sin\beta \cos\beta$</li>
+<li><strong>計算安全係數</strong>：代入 Mohr-Coulomb 破壞準則求抗剪強度 $\tau_f$，最後計算 $FS = \tau_f / \tau$。</li>
+</ol>
+<p><strong>陷阱分析：</strong></p>
+<ul>
+<li>⚠ <strong>陷阱 1：孔隙水壓計算錯誤</strong><br />
+  若誤用靜水壓力公式 $u = \gamma_w H_2$，將會高估孔隙水壓，導致有效應力與安全係數偏低。必須乘上 $\cos^2\beta$ 修正。</li>
+<li>⚠ <strong>陷阱 2：幾何尺寸的判讀</strong><br />
+  圖示中的尺寸線為鉛直方向，代表 $6\text{m}$ 與 $1.5\text{m}$ 為「鉛直厚度」$H$。若誤認為是垂直於坡面之厚度 $z$，則應力公式的轉換會完全不同（$\sigma_n = \Sigma \gamma z \cos\beta$），易造成計算錯誤。</li>
+<li>⚠ <strong>陷阱 3：水位上方土層單位重</strong><br />
+  水位上方並非乾燥狀態，亦不一定完全飽和。需帶入題目給定的含水量 $\omega_1 = 24\%$ 以及算出的空隙比 $e$ 來求取正確的濕單位重 $\gamma_t$。</li>
+</ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>求出該二維無限邊坡在平行滲流條件下之安全係數 (Factor of Safety, FS)</p>
@@ -219,7 +225,7 @@ $$FS = \frac{\tau_f}{\tau} = \frac{36.28}{26.70} = 1.3588 \approx 1.36$$</p>
 </ul></main>
 <footer>來源：raw/solutions/SM-2014-1/SM-2014-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

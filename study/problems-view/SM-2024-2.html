@@ -27,13 +27,12 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2024-2 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
+<header><h1>SM-2024-2 題目解析</h1><a class="back quick" href="../../index.html">&#128218; 回題庫瀏覽</a></header>
 <main><h1>考題編號：SM-2024-2</h1>
-<p><strong>主分類：</strong> <code>SM-U3</code> 坡地工程<br />
-<strong>副分類：</strong> <br />
+<p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
+<strong>副分類：</strong> <code>SM-U1-2</code> 土壤滲透<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>無限邊坡分析</code> <code>浸水邊坡</code> <code>水力坡降</code> <code>安全係數</code></p>
+<strong>標籤：</strong> <code>無限邊坡分析</code> <code>安全係數</code> <code>水力坡降</code> <code>浸水邊坡</code> <code>淺層滑動</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、砂性土壤邊坡若以無限邊坡方式分析淺層滑動，邊坡傾斜角($\beta$) 42 度，土壤摩擦角($\phi$) 35 度，請依圖回答下列問題：<br />
@@ -58,10 +57,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>第三步：滲流水力坡降計算</strong><br />
   依據水頭定義，自由水面壓力為零，總水頭即為高程。沿水流方向每前進距離 $L$，高程下降 $L\sin\theta$，故水頭損失為 $L\sin\theta$，水力坡降即為 $\sin\theta$。</li>
 </ul>
-<p><strong>⚠️ 陷阱分析：</strong><br />
-1. <strong>錯把靜水當滲流</strong>：圖 2 是「完全浸於水面下」，水面水平代表無水頭差、無滲流。若誤套用平行坡面滲流的公式（含有 $\gamma' / \gamma_{sat}$ 折減），將導致嚴重錯誤。<br />
-2. <strong>誤讀第三小題所求</strong>：圖 3 中出現了滲流，很多考生可能會直覺開始計算滲流邊坡的「安全係數」，但題目僅要求計算「水力坡降 $i$」，這是典型的文不對題陷阱。<br />
-3. <strong>坡降角度混淆</strong>：圖 3 中同時給了邊坡角 $\beta=42^\circ$ 與水流角 $\theta=30^\circ$。水力坡降是由水流本身的幾何決定，必須使用 $\theta=30^\circ$，若誤用 $\beta=42^\circ$ 則代表觀念不清。</p>
+<p><strong>⚠️ 陷阱分析：</strong></p>
+<ol>
+<li><strong>錯把靜水當滲流</strong>：圖 2 是「完全浸於水面下」，水面水平代表無水頭差、無滲流。若誤套用平行坡面滲流的公式（含有 $\gamma' / \gamma_{sat}$ 折減），將導致嚴重錯誤。</li>
+<li><strong>誤讀第三小題所求</strong>：圖 3 中出現了滲流，很多考生可能會直覺開始計算滲流邊坡的「安全係數」，但題目僅要求計算「水力坡降 $i$」，這是典型的文不對題陷阱。</li>
+<li><strong>坡降角度混淆</strong>：圖 3 中同時給了邊坡角 $\beta=42^\circ$ 與水流角 $\theta=30^\circ$。水力坡降是由水流本身的幾何決定，必須使用 $\theta=30^\circ$，若誤用 $\beta=42^\circ$ 則代表觀念不清。</li>
+</ol>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>分別求出乾砂邊坡之安全係數、完全浸水邊坡之安全係數，以及傾斜滲流自由水層之水力坡降。</p>
@@ -189,7 +190,7 @@ $$i = \sin 30^\circ = 0.5$$</p>
 </ul></main>
 <footer>來源：raw/solutions/SM-2024-2/SM-2024-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

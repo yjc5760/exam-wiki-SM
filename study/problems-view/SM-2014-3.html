@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2014-3 &#8212; 題目解析</title>
+<title>SM-2014-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -31,8 +32,8 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <main><h1>考題編號：SM-2014-3</h1>
 <p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
 <strong>副分類：</strong> <code>SM-U3-1</code> 側向土壓力理論<br />
-<strong>分析法：</strong> 總應力法 / 有效應力法<br />
-<strong>標籤：</strong> <code>地錨鈑樁</code> <code>自由端支持法</code> <code>黏土</code> <code>淨被動土壓力</code></p>
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>開挖穩定性</code> <code>板樁</code> <code>自由端支持法</code> <code>貫入深度</code> <code>地錨預力</code> <code>Rankine主動土壓力</code> <code>不排水剪力強度</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一 4.5 m 深基地開挖如圖三所示，地表至開挖面為砂土，$\phi=30^\circ$、$c=0$，地下水位於地表下方 2.1 m，地下水位以下與上方之砂土單位重分別為 $18.51 \text{ kN/m}^3$ 與 $16.2 \text{ kN/m}^3$，地錨施設於開挖面頂部下方 1 m 處，開挖面底部為黏土，$\phi=0$ 、不排水剪力強度 $S_u=50 \text{ kPa}$，單位重為 $19.11 \text{ kN/m}^3$，另外為施工考量，開挖面內部水位降至開挖面位置，為穩定該開挖面，試求鈑樁理論貫入深度與地錨預力。（25 分）</p>
@@ -49,19 +50,19 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <p><strong>作戰計畫：</strong></p>
 <ol>
-<li><strong>計算開挖面以上之主動土壓力與水壓力</strong>：<br />
-   - 砂土主動土壓力係數 $K_a = \tan^2(45^\circ - 30^\circ/2) = 1/3$。<br />
-   - 計算 $z=0, 2.1, 4.5$ 處的有效垂直應力，乘以 $K_a$ 得到主動土壓力。<br />
-   - 計算 $z=2.1$ 至 $z=4.5$ 的靜水壓力。<br />
-   - 將土壓力與水壓力分成幾個簡單幾何形狀（三角形、矩形），計算作用力及其相對於地錨點的力臂與力矩。</li>
-<li><strong>計算開挖面以下之淨土壓力</strong>：<br />
-   - 計算開挖面上方之總覆土壓力 $q$。<br />
-   - 應用公式 $p_{net} = 4S_u - q$ 得到開挖面以下的淨側向力均勻分布。</li>
-<li><strong>力矩平衡求 $D$</strong>：<br />
-   - 列出開挖面以下淨土壓力相對於地錨點的抵抗力矩（含 $D$ 的函數）。<br />
-   - 令主動力矩與抵抗力矩相等，解一元二次方程式得 $D$。</li>
-<li><strong>水平力平衡求地錨預力 $T$</strong>：<br />
-   - 由 $\Sigma F_x = 0$，得 $T = P_A - P_R$。</li>
+<li><strong>計算開挖面以上之主動土壓力與水壓力</strong>：</li>
+<li>砂土主動土壓力係數 $K_a = \tan^2(45^\circ - 30^\circ/2) = 1/3$。</li>
+<li>計算 $z=0, 2.1, 4.5$ 處的有效垂直應力，乘以 $K_a$ 得到主動土壓力。</li>
+<li>計算 $z=2.1$ 至 $z=4.5$ 的靜水壓力。</li>
+<li>將土壓力與水壓力分成幾個簡單幾何形狀（三角形、矩形），計算作用力及其相對於地錨點的力臂與力矩。</li>
+<li><strong>計算開挖面以下之淨土壓力</strong>：</li>
+<li>計算開挖面上方之總覆土壓力 $q$。</li>
+<li>應用公式 $p_{net} = 4S_u - q$ 得到開挖面以下的淨側向力均勻分布。</li>
+<li><strong>力矩平衡求 $D$</strong>：</li>
+<li>列出開挖面以下淨土壓力相對於地錨點的抵抗力矩（含 $D$ 的函數）。</li>
+<li>令主動力矩與抵抗力矩相等，解一元二次方程式得 $D$。</li>
+<li><strong>水平力平衡求地錨預力 $T$</strong>：</li>
+<li>由 $\Sigma F_x = 0$，得 $T = P_A - P_R$。</li>
 </ol>
 <p><strong>陷阱分析：</strong></p>
 <ul>
@@ -169,22 +170,16 @@ $$ K_a = \tan^2\left(45^\circ - \frac{30^\circ}{2}\right) = \frac{1}{3} $$</p>
 <p>水位以上砂土 $\gamma = 16.2 \text{ kN/m}^3$，水位以下砂土有效單位重 $\gamma' = 18.51 - 9.81 = 8.7 \text{ kN/m}^3$。</p>
 <p>各深度之有效垂直應力 $\sigma_v'$、主動土壓力 $\sigma_a'$ 與水壓力 $u$：</p>
 <ul>
-<li>
-<p><strong>深度 $z = 0$ m</strong>：<br />
-  $$ \sigma_v' = 0 \text{ kPa} \implies \sigma_a' = 0 \text{ kPa} $$</p>
-</li>
-<li>
-<p><strong>深度 $z = 2.1$ m</strong>（地下水位）：<br />
+<li><strong>深度 $z = 0$ m</strong>：<br />
+  $$ \sigma_v' = 0 \text{ kPa} \implies \sigma_a' = 0 \text{ kPa} $$</li>
+<li><strong>深度 $z = 2.1$ m</strong>（地下水位）：<br />
   $$ \sigma_v' = 16.2 \times 2.1 = 34.02 \text{ kPa} $$<br />
   $$ \sigma_a' = 34.02 \times \frac{1}{3} = 11.34 \text{ kPa} $$<br />
-  $$ u = 0 \text{ kPa} $$</p>
-</li>
-<li>
-<p><strong>深度 $z = 4.5$ m</strong>（開挖面）：<br />
+  $$ u = 0 \text{ kPa} $$</li>
+<li><strong>深度 $z = 4.5$ m</strong>（開挖面）：<br />
   $$ \sigma_v' = 34.02 + 8.7 \times (4.5 - 2.1) = 34.02 + 8.7 \times 2.4 = 54.9 \text{ kPa} $$<br />
   $$ \sigma_a' = 54.9 \times \frac{1}{3} = 18.3 \text{ kPa} $$<br />
-  $$ u = 9.81 \times 2.4 = 23.544 \text{ kPa} $$</p>
-</li>
+  $$ u = 9.81 \times 2.4 = 23.544 \text{ kPa} $$</li>
 </ul>
 <p><strong>Step 2：主動土壓力與水壓力之受力及對地錨（$z=1$ m）之力矩</strong><br />
 將作用力分解為四個區塊，並計算對地錨點之距離（力臂）與力矩：</p>

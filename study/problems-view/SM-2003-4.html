@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2003-4 &#8212; 題目解析</title>
+<title>SM-2003-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2003-4 題目解析</h1><a class="back quick" href="../study-SM-U1-5.html">&#128269; U1-5 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-5.html">&#128218; U1-5 土壤強度特性與變形性 講義</a></header>
-<main><h1>考題編號：[SM-2003-4]</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類、滲透、壓密、剪力強度 (SM-U1-5 土壤強度特性與變形性)<br />
-<strong>副分類：</strong> <br />
+<main><h1>考題編號：SM-2003-4</h1>
+<p><strong>主分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>UU試驗</code> <code>不排水剪力強度</code> <code>有效摩擦角</code> <code>正常壓密黏土</code> <code>完美取樣</code></p>
+<strong>標籤：</strong> <code>正常壓密</code> <code>不排水剪力強度</code> <code>UU試驗</code> <code>Mohr-Coulomb破壞準則</code> <code>孔隙水壓參數</code> <code>有效應力原理</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一正常壓密黏土其有效摩擦角為 $30^\circ$，如自該黏土之現地地層深度 12 m 處取不擾動土樣，假設未受解壓影響，其不排水（UU 三軸試驗）剪力強度為何？（黏土飽和單位重 $\gamma_{sat} = 17.5 \text{ kN/m}^3$，地下水位於地表）（25 分）</p>
@@ -47,15 +48,15 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ol>
-<li><strong>計算現地應力狀態</strong>：<br />
-   - 地下水位位於地表，全深度範圍土壤飽和。<br />
-   - 計算深度 $12 \text{ m}$ 處之總應力 $\sigma_{v0}$、孔隙水壓 $u_0$ 及有效應力 $\sigma_{v0}'$。</li>
-<li><strong>推求不排水剪力強度 $S_u$</strong>：<br />
-   - 針對正常壓密黏土，在未給定 $A_f$ 之情況下，採用最合理之理論邊界條件：假設 $A_f = 1$。<br />
-   - 根據此條件，試樣於 UU 試驗破壞時的最大主有效應力會等同於現地有效覆土壓力，即 $\sigma_{1f}' = \sigma_{v0}'$。<br />
-   - 依據 Mohr-Coulomb 有效應力破壞準則，利用 $\sigma_{1f}'$ 與 $\phi'$ 推算 $\sigma_{3f}'$。<br />
-   - 不排水剪力強度 $S_u$ 即為破壞時莫爾圓之半徑：$S_u = (\sigma_{1f}' - \sigma_{3f}') / 2$。<br />
-   - <em>(捷徑)</em> 可直接代入推導結果：$S_u = \sigma_{v0}' \frac{\sin \phi'}{1 + \sin \phi'}$。</li>
+<li><strong>計算現地應力狀態</strong>：</li>
+<li>地下水位位於地表，全深度範圍土壤飽和。</li>
+<li>計算深度 $12 \text{ m}$ 處之總應力 $\sigma_{v0}$、孔隙水壓 $u_0$ 及有效應力 $\sigma_{v0}'$。</li>
+<li><strong>推求不排水剪力強度 $S_u$</strong>：</li>
+<li>針對正常壓密黏土，在未給定 $A_f$ 之情況下，採用最合理之理論邊界條件：假設 $A_f = 1$。</li>
+<li>根據此條件，試樣於 UU 試驗破壞時的最大主有效應力會等同於現地有效覆土壓力，即 $\sigma_{1f}' = \sigma_{v0}'$。</li>
+<li>依據 Mohr-Coulomb 有效應力破壞準則，利用 $\sigma_{1f}'$ 與 $\phi'$ 推算 $\sigma_{3f}'$。</li>
+<li>不排水剪力強度 $S_u$ 即為破壞時莫爾圓之半徑：$S_u = (\sigma_{1f}' - \sigma_{3f}') / 2$。</li>
+<li><em>(捷徑)</em> 可直接代入推導結果：$S_u = \sigma_{v0}' \frac{\sin \phi'}{1 + \sin \phi'}$。</li>
 </ol>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
@@ -161,14 +162,10 @@ $$ S_u = \frac{\sigma_{1f}' - \sigma_{3f}'}{2} = \frac{92.28 - 30.76}{2} = 30.76
 <p><strong>答：其不排水（UU 三軸試驗）剪力強度為 $\boxed{30.76 \text{ kPa}}$</strong></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>「未受解壓影響」與 $A_f = 1$ 的隱含假設</strong>：<br />
-   在國內的土壤力學考題中，若題幹強調「未受解壓影響」或「完美取樣」，且未給出破壞時的 Skempton $A_f$ 參數，最正統的破題方式便是假定正常壓密黏土的 $A_f = 1$。如此一來，試體從現地取樣到 UU 試驗破壞的有效應力路徑，其最大主有效應力恰好會回到 $\sigma_{1f}' = \sigma_{v0}'$。此為多數教科書（如 Das 或施國欽老師的教材）推導 $S_u / \sigma_{v0}'$ 理論公式的核心前置假設，考生必須能熟練引用。</p>
-</li>
-<li>
-<p><strong>與總應力凝聚力 $c_u$ 的對應</strong>：<br />
-   UU 試驗在飽和黏土下表現出 $\phi_u = 0$ 的總應力破壞包絡線，此時測得的剪力強度即為不排水凝聚力 $c_u$ （亦即 $S_u$）。本題透過有效應力莫爾圓相切於有效破壞包絡線（$c'=0, \phi'=30^\circ$）來反求此半徑，是連接「有效應力參數」與「不排水抗剪強度」的典型題型。</p>
-</li>
+<li><strong>「未受解壓影響」與 $A_f = 1$ 的隱含假設</strong>：<br />
+   在國內的土壤力學考題中，若題幹強調「未受解壓影響」或「完美取樣」，且未給出破壞時的 Skempton $A_f$ 參數，最正統的破題方式便是假定正常壓密黏土的 $A_f = 1$。如此一來，試體從現地取樣到 UU 試驗破壞的有效應力路徑，其最大主有效應力恰好會回到 $\sigma_{1f}' = \sigma_{v0}'$。此為多數教科書（如 Das 或施國欽老師的教材）推導 $S_u / \sigma_{v0}'$ 理論公式的核心前置假設，考生必須能熟練引用。</li>
+<li><strong>與總應力凝聚力 $c_u$ 的對應</strong>：<br />
+   UU 試驗在飽和黏土下表現出 $\phi_u = 0$ 的總應力破壞包絡線，此時測得的剪力強度即為不排水凝聚力 $c_u$ （亦即 $S_u$）。本題透過有效應力莫爾圓相切於有效破壞包絡線（$c'=0, \phi'=30^\circ$）來反求此半徑，是連接「有效應力參數」與「不排水抗剪強度」的典型題型。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2003-4/SM-2003-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

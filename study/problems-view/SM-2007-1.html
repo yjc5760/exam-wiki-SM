@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2007-1 &#8212; 題目解析</title>
+<title>SM-2007-1 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2007-1 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
-<main><h1>考題編號：[SM-2007-1]</h1>
-<p><strong>主分類：</strong> <code>SM-U1-1</code> 土壤基本性質與分類<br />
-<strong>副分類：</strong> <br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>孔隙比</code> <code>單位重</code> <code>含水量</code> <code>飽和土</code> <code>壓縮</code></p>
+<main><h1>考題編號：SM-2007-1</h1>
+<p><strong>主分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>三相關係</code> <code>孔隙比</code> <code>飽和度</code> <code>含水量</code> <code>單位重</code> <code>一維壓縮</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、一飽和黏土試體置於壓密盒中，其直徑為 6.35 公分、厚度為 2.5 公分，經壓縮後直徑不變，厚度變為 1.9 公分，若其初始孔隙比（initial void ratio）為 1.30，且土壤顆粒比重為 2.72，假設壓縮造成體積變化與孔隙比下降之原因，主要來自於孔隙水之流失，試計算下列各問題：<br />
@@ -45,23 +46,15 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 出題者意圖：測驗考生是否清楚飽和狀態下（$S=1$）之三相參數換算，以及在一維壓縮（直徑不變，厚度減小）且僅流失孔隙水（維持 $S=1$）的條件下，如何透過幾何變化來求得新的物理性質參數。</p>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ol>
-<li>
-<p><strong>初始狀態：</strong><br />
-   已知 $S_0=1$, $e_0=1.30$, $G_s=2.72$。利用飽和單位重公式求出 $\gamma_0$。</p>
-</li>
-<li>
-<p><strong>壓縮過程：</strong><br />
+<li><strong>初始狀態：</strong><br />
+   已知 $S_0=1$, $e_0=1.30$, $G_s=2.72$。利用飽和單位重公式求出 $\gamma_0$。</li>
+<li><strong>壓縮過程：</strong><br />
    因置於壓密盒中直徑不變，所以體積變化率等於厚度變化率，即 $\frac{\Delta V}{V_0} = \frac{\Delta H}{H_0} = \frac{\Delta e}{1+e_0}$。<br />
-   藉此關係式求出壓縮後的孔隙比 $e_f$。</p>
-</li>
-<li>
-<p><strong>壓縮後狀態：</strong><br />
-   因題目假設體積與孔隙比下降完全來自孔隙水流失，表示土壤未進氣，依舊保持飽和（$S_f=1$）。已知 $e_f$ 及 $G_s=2.72$，代入飽和單位重公式求出壓縮後的 $\gamma_f$。</p>
-</li>
-<li>
-<p><strong>含水量變化：</strong><br />
-   初始含水量 $w_0$ 可由 $S_0 e_0 = w_0 G_s$ 求得；壓縮後含水量 $w_f$ 由 $S_f e_f = w_f G_s$ 求得。最後求 $\Delta w = w_0 - w_f$。</p>
-</li>
+   藉此關係式求出壓縮後的孔隙比 $e_f$。</li>
+<li><strong>壓縮後狀態：</strong><br />
+   因題目假設體積與孔隙比下降完全來自孔隙水流失，表示土壤未進氣，依舊保持飽和（$S_f=1$）。已知 $e_f$ 及 $G_s=2.72$，代入飽和單位重公式求出壓縮後的 $\gamma_f$。</li>
+<li><strong>含水量變化：</strong><br />
+   初始含水量 $w_0$ 可由 $S_0 e_0 = w_0 G_s$ 求得；壓縮後含水量 $w_f$ 由 $S_f e_f = w_f G_s$ 求得。最後求 $\Delta w = w_0 - w_f$。</li>
 </ol>
 <p>陷阱分析：</p>
 <ul>
@@ -74,30 +67,18 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><code>計算飽和黏土在壓密變形前後的初始單位重、壓縮後孔隙比、壓縮後單位重與含水量變化。</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p>初始單位重：<br />
-  $$ \gamma_0 = \frac{G_s + S_0 e_0}{1 + e_0} \gamma_w $$</p>
-</li>
-<li>
-<p>一維體積變化與孔隙比之關係：<br />
-  $$ \frac{\Delta H}{H_0} = \frac{\Delta e}{1 + e_0} \implies \Delta e = \frac{\Delta H}{H_0} (1 + e_0) $$</p>
-</li>
-<li>
-<p>壓縮後孔隙比：<br />
-  $$ e_f = e_0 - \boxed{\Delta e} $$</p>
-</li>
-<li>
-<p>壓縮後單位重：<br />
-  $$ \gamma_f = \frac{G_s + S_f \boxed{e_f}}{1 + \boxed{e_f}} \gamma_w $$</p>
-</li>
-<li>
-<p>含水量與孔隙比之關係：<br />
-  $$ w = \frac{S e}{G_s} $$</p>
-</li>
-<li>
-<p>含水量變化：<br />
-  $$ \Delta w = \boxed{w_0} - \boxed{w_f} $$</p>
-</li>
+<li>初始單位重：<br />
+  $$ \gamma_0 = \frac{G_s + S_0 e_0}{1 + e_0} \gamma_w $$</li>
+<li>一維體積變化與孔隙比之關係：<br />
+  $$ \frac{\Delta H}{H_0} = \frac{\Delta e}{1 + e_0} \implies \Delta e = \frac{\Delta H}{H_0} (1 + e_0) $$</li>
+<li>壓縮後孔隙比：<br />
+  $$ e_f = e_0 - \boxed{\Delta e} $$</li>
+<li>壓縮後單位重：<br />
+  $$ \gamma_f = \frac{G_s + S_f \boxed{e_f}}{1 + \boxed{e_f}} \gamma_w $$</li>
+<li>含水量與孔隙比之關係：<br />
+  $$ w = \frac{S e}{G_s} $$</li>
+<li>含水量變化：<br />
+  $$ \Delta w = \boxed{w_0} - \boxed{w_f} $$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <p>初始試體直徑 $D$ | 6.35 cm | 試體直徑不變<br />

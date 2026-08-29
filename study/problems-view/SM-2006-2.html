@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2006-2 &#8212; 題目解析</title>
+<title>SM-2006-2 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2006-2 題目解析</h1><a class="back quick" href="../study-SM-U2-2.html">&#128269; U2-2 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-2.html">&#128218; U2-2 深基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2006-2</h1>
-<p><strong>主分類：</strong> <code>SM-U2</code> 基礎工程<br />
-<strong>副分類：</strong> <code>SM-U2-2</code> 深基礎之支承力與沉陷量<br />
+<p><strong>主分類：</strong> <code>SM-U2-2</code> 深基礎之支承力與沉陷量<br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>樁基礎</code> <code>軸向勁度</code> <code>單維彈性地盤</code> <code>微分方程推導</code></p>
+<strong>標籤：</strong> <code>摩擦樁</code> <code>樁頭勁度</code> <code>Winkler地盤模型</code> <code>微分方程</code> <code>彈簧係數</code> <code>半無限長樁</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、有一摩擦樁座落於均勻砂土層中，假設樁周與土壤間之摩擦力可用 $\tau_s = k_s \cdot v$ 來代表，而樁底之土壤反力可用 $\tau_t = k_t \cdot v$ 代表，其中 $k_s$ 與 $k_t$ 分別為樁周與樁底之單位面積土壤彈簧係數，而 $v$ 為樁之軸向位移，試推導下列兩情況之樁頭軸向勁度表示式：<br />
@@ -43,20 +44,20 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
 <ul>
 <li><strong>核心概念</strong>：單向度彈性地盤上之樁基礎軸向受力分析（一維 Winkler 彈簧模型）。</li>
-<li><strong>出題意圖</strong>：<br />
-  1. 測驗考生建立樁身微小元素受力平衡微分方程式之能力。<br />
-  2. 測驗微分方程之邊界條件給定及求解推導能力。<br />
-  3. 測驗對「軸向勁度（Stiffness, $K = P/v$）」定義的理解。<br />
-  4. 評估對極端條件（樁底無反力、樁長趨近半無限長）下之數學極限操作與物理意義的詮釋。</li>
+<li><strong>出題意圖</strong>：</li>
+<li>測驗考生建立樁身微小元素受力平衡微分方程式之能力。</li>
+<li>測驗微分方程之邊界條件給定及求解推導能力。</li>
+<li>測驗對「軸向勁度（Stiffness, $K = P/v$）」定義的理解。</li>
+<li>評估對極端條件（樁底無反力、樁長趨近半無限長）下之數學極限操作與物理意義的詮釋。</li>
 </ul>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
-<li><strong>戰略地圖</strong>：<br />
-  1. <strong>建立控制方程式</strong>：取長度為 $dz$ 之樁身微小元素，繪出自由體圖，建立垂直力平衡方程式 $dP/dz = -\tau_s S$。<br />
-  2. <strong>引入組成律</strong>：代入材料彈性定律 $P = -EA(dv/dz)$ 與土壤彈簧模型 $\tau_s = k_s v$，形成二階常微分方程式 $EA(d^2v/dz^2) - k_s S v = 0$。<br />
-  3. <strong>通解與邊界條件</strong>：設通解形式 $v(z) = C_1 \cosh(\alpha z) + C_2 \sinh(\alpha z)$，套用樁頭 $(z=0, P=P_0)$ 與樁底 $(z=L, P=P_L)$ 之邊界條件。<br />
-  4. <strong>求解情況 (一)</strong>：代入樁底無反力 $(k_t = 0 \implies P(L) = 0)$ 邊界條件，求得樁頭位移 $v_0$ 與負載 $P_0$ 之關係，得出 $K = P_0/v_0$。<br />
-  5. <strong>求解情況 (二)</strong>：代入 $L \to \infty$ 之條件。此時位移必須收斂（$v \to 0$），可由通解的指數形式快速得出樁頭勁度。</li>
+<li><strong>戰略地圖</strong>：</li>
+<li><strong>建立控制方程式</strong>：取長度為 $dz$ 之樁身微小元素，繪出自由體圖，建立垂直力平衡方程式 $dP/dz = -\tau_s S$。</li>
+<li><strong>引入組成律</strong>：代入材料彈性定律 $P = -EA(dv/dz)$ 與土壤彈簧模型 $\tau_s = k_s v$，形成二階常微分方程式 $EA(d^2v/dz^2) - k_s S v = 0$。</li>
+<li><strong>通解與邊界條件</strong>：設通解形式 $v(z) = C_1 \cosh(\alpha z) + C_2 \sinh(\alpha z)$，套用樁頭 $(z=0, P=P_0)$ 與樁底 $(z=L, P=P_L)$ 之邊界條件。</li>
+<li><strong>求解情況 (一)</strong>：代入樁底無反力 $(k_t = 0 \implies P(L) = 0)$ 邊界條件，求得樁頭位移 $v_0$ 與負載 $P_0$ 之關係，得出 $K = P_0/v_0$。</li>
+<li><strong>求解情況 (二)</strong>：代入 $L \to \infty$ 之條件。此時位移必須收斂（$v \to 0$），可由通解的指數形式快速得出樁頭勁度。</li>
 <li><strong>陷阱分析</strong>：</li>
 <li><strong>符號定義錯誤</strong>：位移 $v$ 若設向下為正，則微小元素的壓縮應變應為 $\epsilon = -dv/dz$，樁身壓力 $P = EA \cdot \epsilon = -EA(dv/dz)$。若此處正負號搞混，會導致微分方程出現正號，變成諧振子方程式（正弦/餘弦解）而非衰減方程式（雙曲函數解）。</li>
 <li><strong>極限條件處理</strong>：處理情況(二)時，若直接從情況(一)的解取 $\tanh(\infty) = 1$ 雖可得對應答案，但嚴謹作法應從通解直接套用邊界條件 $v(\infty)=0$ 求解，此方式更為直觀且不會犯錯。</li>
@@ -241,7 +242,7 @@ $$ \boxed{ K = \sqrt{EA k_s S} } $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
 <li><strong>符號慣例的統一性</strong>：在建立常微分方程時，許多考生會忽略位移 $v(z)$ 增加與桿件受壓受拉之間的符號關係，直接寫出 $P = EA(dv/dz)$，從而導出 $v'' + \alpha^2 v = 0$ 的簡諧運動方程式。這是不符合物理現象的，因力量在土壤摩擦耗散下是「衰減」傳遞，並非「波動」，務必在微小元素力平衡時仔細確認正負號。</li>
-<li><strong>半無限長樁的物理意義</strong>：從解答可見，半無限長樁的勁度 $K = \sqrt{EA k_s S}$ 完全由樁身剛度 $(EA)$ 與樁周土壤彈簧剛度 $(k_s S)$ 決定，與樁長 $L$ 無關。實務上，若無因次參數 $\alpha L = \sqrt{\frac{k_s S}{EA}} L \ge 2.5 \sim 3.0$ 時，$\tanh(\alpha L) > 0.98 \approx 1$，即可視為半無限長樁（實務上也常稱為「長樁」或「柔性樁」），此時進一步增加樁長對提昇樁頭勁度的效益極低。</li>
+<li><strong>半無限長樁的物理意義</strong>：從解答可見，半無限長樁的勁度 $K = \sqrt{EA k_s S}$ 完全由樁身剛度 $(EA)$ 與樁周土壤彈簧剛度 $(k_s S)$ 決定，與樁長 $L$ 無關。實務上，若無因次參數 $\alpha L = \sqrt{\frac{k_s S}{EA}} L \ge 2.5 \sim 3.0$ 時，$\tanh(\alpha L) &gt; 0.98 \approx 1$，即可視為半無限長樁（實務上也常稱為「長樁」或「柔性樁」），此時進一步增加樁長對提昇樁頭勁度的效益極低。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2006-2/SM-2006-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

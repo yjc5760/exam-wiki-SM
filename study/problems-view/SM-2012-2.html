@@ -31,9 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2012-2</h1>
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>副分類：</strong> <br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>壓密試驗</code> <code>預壓密應力</code> <code>Casagrande作圖法</code> <code>壓密沉陷量</code> <code>現地沉陷差異</code></p>
+<strong>標籤：</strong> <code>單向度壓密試驗</code> <code>e-log p'曲線</code> <code>預壓密應力</code> <code>Casagrande作圖法</code> <code>壓密沉陷</code> <code>取樣擾動</code> <code>次壓縮</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、對一黏土層進行壓密沉陷分析時，首先需進行現地取樣及單向度壓密試驗。<br />
@@ -133,36 +133,30 @@ $$ S_c = \frac{C_c H}{1+e_0} \log \frac{p_0' + \Delta p}{p_0'} \quad \text{(NC �
 </li>
 <li>
 <p><strong>過壓密黏土 (Overconsolidated, OC)：</strong><br />
-   當 $p_c' > p_0'$ ($OCR > 1$) 時，需考量載重增加後是否超過預壓密應力：</p>
+   當 $p_c' &gt; p_0'$ ($OCR &gt; 1$) 時，需考量載重增加後是否超過預壓密應力：</p>
 </li>
-</ol>
-<ul>
-<li>
-<p><strong>Case 2a：加載後未超過預壓密應力 ($p_0' + \Delta p \le p_c'$)</strong><br />
+<li><strong>Case 2a：加載後未超過預壓密應力 ($p_0' + \Delta p \le p_c'$)</strong><br />
      變形全在回脹曲線上。<br />
      $$ S_c = \frac{C_r H}{1+e_0} \log \left(\frac{p_0' + \Delta p}{p_0'}\right) $$<br />
-     其中，$C_r$ 為回脹指數 (Recompression Index，亦稱 $C_s$)。</p>
-</li>
-<li>
-<p><strong>Case 2b：加載後超過預壓密應力 ($p_0' + \Delta p > p_c'$)</strong><br />
+     其中，$C_r$ 為回脹指數 (Recompression Index，亦稱 $C_s$)。</li>
+<li><strong>Case 2b：加載後超過預壓密應力 ($p_0' + \Delta p &gt; p_c'$)</strong><br />
      變形分兩段：先沿回脹曲線至 $p_c'$，再沿正常壓密曲線至最終應力。<br />
-     $$ S_c = \frac{C_r H}{1+e_0} \log \left(\frac{p_c'}{p_0'}\right) + \frac{C_c H}{1+e_0} \log \left(\frac{p_0' + \Delta p}{p_c'}\right) $$</p>
-</li>
-</ul>
+     $$ S_c = \frac{C_r H}{1+e_0} \log \left(\frac{p_c'}{p_0'}\right) + \frac{C_c H}{1+e_0} \log \left(\frac{p_0' + \Delta p}{p_c'}\right) $$</li>
+</ol>
 <h3>(三) 計算之沉陷量與現地實際沉陷量的比較與原因</h3>
 <p>以此單向度壓密方式計算之沉陷量與現地實際沉陷量可能存在差異，且<strong>可能較低也可能較高</strong>，需視具體條件而定，主要影響原因如下：</p>
 <ol>
+<li><strong>計算值可能低估現地沉陷量之原因：</strong></li>
+<li><strong>次壓縮沉陷 (Secondary Compression)：</strong> 一維壓密試驗求得之 $S_c$ 僅代表「主壓密沉陷量」。現地土層在主壓密完成後，還會發生潛變導致的次壓縮沉陷，因此現地總沉陷量通常較大。</li>
+<li><strong>取樣擾動 (Sample Disturbance)：</strong> 現地取樣會破壞黏土天然結構，使 $e-\log p'$ 曲線平緩。若未利用 Schmertmann 等方法進行修正以還原現地曲線，直接使用實驗室 $C_c$ 計算會低估實際沉陷量。</li>
 <li>
-<p><strong>計算值可能低估現地沉陷量之原因：</strong><br />
-   - <strong>次壓縮沉陷 (Secondary Compression)：</strong> 一維壓密試驗求得之 $S_c$ 僅代表「主壓密沉陷量」。現地土層在主壓密完成後，還會發生潛變導致的次壓縮沉陷，因此現地總沉陷量通常較大。<br />
-   - <strong>取樣擾動 (Sample Disturbance)：</strong> 現地取樣會破壞黏土天然結構，使 $e-\log p'$ 曲線平緩。若未利用 Schmertmann 等方法進行修正以還原現地曲線，直接使用實驗室 $C_c$ 計算會低估實際沉陷量。<br />
-   - <strong>初始剪切變形 (Initial Shear Settlement)：</strong> 單向度分析忽略了加載初期、孔隙水壓尚未消散時（不排水狀態）發生的立即（彈性）沉陷。</p>
+<p><strong>初始剪切變形 (Initial Shear Settlement)：</strong> 單向度分析忽略了加載初期、孔隙水壓尚未消散時（不排水狀態）發生的立即（彈性）沉陷。</p>
 </li>
 <li>
-<p><strong>計算值可能高估現地沉陷量之原因：</strong><br />
-   - <strong>三維效應 (Three-dimensional Effects)：</strong> 實驗室壓密試驗為「單向度」（側向被不銹鋼環限制，$\epsilon_x=\epsilon_y=0$），但現地為三維應力狀態。若基腳寬度較小且土層較厚，孔隙水壓分布會與單向度假設不同，實際發生的壓密沉陷可能較小（Skempton 與 Bjerrum 提出修正係數 $\mu < 1$ 用於修正一維壓密沉陷量，特別是對於過壓密黏土）。<br />
-   - <strong>應力分布的估計誤差：</strong> Boussinesq 理論常高估土層深處的應力增量 $\Delta p$，使得計算之沉陷量偏高。</p>
+<p><strong>計算值可能高估現地沉陷量之原因：</strong></p>
 </li>
+<li><strong>三維效應 (Three-dimensional Effects)：</strong> 實驗室壓密試驗為「單向度」（側向被不銹鋼環限制，$\epsilon_x=\epsilon_y=0$），但現地為三維應力狀態。若基腳寬度較小且土層較厚，孔隙水壓分布會與單向度假設不同，實際發生的壓密沉陷可能較小（Skempton 與 Bjerrum 提出修正係數 $\mu &lt; 1$ 用於修正一維壓密沉陷量，特別是對於過壓密黏土）。</li>
+<li><strong>應力分布的估計誤差：</strong> Boussinesq 理論常高估土層深處的應力增量 $\Delta p$，使得計算之沉陷量偏高。</li>
 </ol>
 <p>綜上所述，最終差異取決於「取樣擾動」、「三維應力效應」與「是否包含次壓縮與立即沉陷」之間的綜合影響。</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>

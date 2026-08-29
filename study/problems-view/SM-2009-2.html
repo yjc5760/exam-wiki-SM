@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2009-2 &#8212; 題目解析</title>
+<title>SM-2009-2 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2009-2 題目解析</h1><a class="back quick" href="../study-SM-U2-1.html">&#128269; U2-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-1.html">&#128218; U2-1 淺基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2009-2</h1>
-<p><strong>主分類：</strong> <code>SM-U2</code> 淺基礎與深基礎<br />
+<p><strong>主分類：</strong> <code>SM-U2-1</code> 淺基礎之支承力與沉陷量<br />
 <strong>副分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
 <strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>部分代償式基礎</code>, <code>承載力</code>, <code>隆起分析</code>, <code>Terzaghi</code></p>
+<strong>標籤：</strong> <code>筏式基礎</code> <code>代償式基礎</code> <code>Terzaghi承載力公式</code> <code>容許承載力</code> <code>基盤隆起</code> <code>不排水剪力強度</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一筏式基礎，基礎之設計尺寸為：$B = 8 \text{ m}$，$L = 12 \text{ m}$，承載荷重 $Q = 18 \text{ MN}$。該處地層為正常壓密黏土，$\gamma_{sat} = 17 \text{ kN/m}^3$，$c_u = 35 \text{ kN/m}^2$，黏土下方為砂土層，地下水位於地表下 3 m處。<br />
@@ -50,15 +51,15 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <p><strong>戰略地圖：</strong></p>
 <ul>
-<li><strong>第一階段（求 $D_f$）</strong>：<br />
-  1. 計算筏基施加之總接觸壓力 $q = Q/A$。<br />
-  2. 計算淨極限承載力 $q_{u,net} = c_u N_c F_c$（本題採 Terzaghi 矩形公式）。<br />
-  3. 建立安全係數方程式 $FS = q_{u,net} / q_{net}$，其中 $q_{net} = q - \gamma D_f$，解出 $D_f$。</li>
-<li><strong>第二階段（求隆起 FS）</strong>：<br />
-  1. 確認開挖深度 $H = D_f$，計算黏土層剩餘厚度 $T = 12 - D_f$。<br />
-  2. 計算 Terzaghi 破壞區寬度 $B' = B/\sqrt{2}$，判斷破壞面是否碰到砂土層（比較 $T$ 與 $B'$）。<br />
-  3. 代入 Terzaghi 隆起公式（或 Bjerrum &amp; Eide 公式）求出抗隆起安全係數。<br />
-  4. （進階檢核）檢核砂土層水壓造成的上舉（Uplift）安全係數。</li>
+<li><strong>第一階段（求 $D_f$）</strong>：</li>
+<li>計算筏基施加之總接觸壓力 $q = Q/A$。</li>
+<li>計算淨極限承載力 $q_{u,net} = c_u N_c F_c$（本題採 Terzaghi 矩形公式）。</li>
+<li>建立安全係數方程式 $FS = q_{u,net} / q_{net}$，其中 $q_{net} = q - \gamma D_f$，解出 $D_f$。</li>
+<li><strong>第二階段（求隆起 FS）</strong>：</li>
+<li>確認開挖深度 $H = D_f$，計算黏土層剩餘厚度 $T = 12 - D_f$。</li>
+<li>計算 Terzaghi 破壞區寬度 $B' = B/\sqrt{2}$，判斷破壞面是否碰到砂土層（比較 $T$ 與 $B'$）。</li>
+<li>代入 Terzaghi 隆起公式（或 Bjerrum &amp; Eide 公式）求出抗隆起安全係數。</li>
+<li>（進階檢核）檢核砂土層水壓造成的上舉（Uplift）安全係數。</li>
 </ul>
 <p><strong>陷阱分析：</strong></p>
 <ul>
@@ -252,14 +253,10 @@ $$ FS_{heave} = \frac{c_u N_c}{\gamma_{sat} H} = \frac{35 \times 6.56}{17 \times
 <ol>
 <li><strong>上舉 (Uplift / Blowout) 破壞的潛在危機</strong><br />
    題目特別強調「將開挖面內之水位抽降至與開挖底面等高」與「下方土層為砂土層」，雖然考題詢問廣義的「抗隆起」，但在實務上，這種深開挖加上外部高水位的地質條件，極易發生因下方受壓水層造成的「整個黏土塊體上舉」破壞。</li>
-</ol>
-<ul>
 <li>開挖底面下方黏土層總重（抵抗力）：$W = T \times \gamma_{sat} = 5.66 \times 17 = 96.22 \text{ kPa}$</li>
 <li>砂土層頂部水壓力（驅動力）：$U = (H_{clay} - D_{water}) \times \gamma_w = (12 - 3) \times 9.81 = 88.29 \text{ kPa}$</li>
 <li>抗上舉安全係數：$FS_{uplift} = \frac{W}{U} = \frac{96.22}{88.29} = 1.09$<br />
 <strong>探討</strong>：抗上舉安全係數僅 1.09，極度逼近臨界值 1.0。實務上要求 $FS_{uplift} \ge 1.2$，因此施工時除注意隆起外，強烈建議需在砂土層打設洩壓井降低水壓。若考生在考卷上補述此點，必能獲得閱卷老師極高評價。</li>
-</ul>
-<ol start="2">
 <li><strong>承載力公式的選擇</strong><br />
    本題使用 Terzaghi 公式計算時，恰好使得 $T = 5.66 \text{ m}$ 完美吻合 $B/\sqrt{2}$ 的幾何限制，這通常是命題教授設計數字時的巧思。若考生使用 Skempton 公式，算得的 $D_f = 6.51 \text{ m}$ 亦符合學理規範，國家考試通常均會給予滿分，但後續的隆起破壞塊體深度就會略小於 $B/\sqrt{2}$。</li>
 </ol></main>

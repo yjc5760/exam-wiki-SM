@@ -461,7 +461,7 @@ $$\bar C_u=\frac{15.47(3)+30(5)}{8}=24.55\ \mathrm{kPa}$$
 <b>Step 3　判型</b>：\(N_s=\dfrac{137}{24.55}=5.58&gt;4\) → <b>軟弱～中等黏土型梯形</b>。<br>
 <b>Step 4　最大視土壓力</b>（兩式取大者）：
 $$p_{a1}=\bar\gamma H-4\bar C_u=137-98.2=38.8\ \mathrm{kPa};\qquad p_{a2}=0.3\bar\gamma H=41.1\ \mathrm{kPa}$$
-$$\Rightarrow p_a=\mathbf{41.1\ kPa};\ \text{分布：}0\!\sim\!2\,\mathrm{m}\ \text{斜升},\ 2\!\sim\!6\,\mathrm{m}\ \text{滿載},\ 6\!\sim\!8\,\mathrm{m}\ \text{斜降}$$
+$$\Rightarrow p_a=\mathbf{41.1\ kPa};\ \text{分布：}0\!\sim\!2\,\mathrm{m}\ \text{斜升}，2\!\sim\!8\,\mathrm{m}\ \text{維持}\ 41.1\ \text{直到坑底}$$<div style="font-size:.92em;color:#b71c1c;margin:6px 0">⚠ <b>底部不回收</b>：軟弱至中等黏土的 Peck 包絡線在 \(0.25H\) 以下維持定值到坑底；誤畫成硬黏土的梯形（\(6\!\sim\!8\) m 斜降回 0）會把總推力由 \(P=287.70\) 低估成 \(246.60\) kN/m（低估 14.3%），形心也由 4.476 上移到 4.000 m。</div>$$P=\tfrac12(2)(41.1)+6(41.1)=41.10+246.60=\mathbf{287.70\ kN/m};\quad \bar z=4.476\ \mathrm{m}$$
 <b>Step 5　抗隆起（Bjerrum &amp; Eide 三維）</b>：
 $$N_c=5\left(1+0.2\frac{B}{L}\right)\left(1+0.2\frac{D}{B}\right)=5(1.08)(1.2667)=6.84\ (\le 7.5\times1.08=8.1\ \text{上限})$$
 $$FS=\frac{N_c C_u}{\bar\gamma H}=\frac{6.84\times30}{137}=\mathbf{1.50}$$
@@ -649,15 +649,15 @@ $$17.5(10-D)=68.67\;\Rightarrow\;10-D=3.924\;\Rightarrow\;\boxed{D=6.08\ \mathrm
 <b>手算範例 D｜一題三種水（<a class="qlink" href="problems-view/SM-2017-4.html" target="_blank">SM-2017-4</a>，2017）</b><br>
 擋土壁打至 GL−14.0 m，開挖 GL−8.0 m，外側水位 GL−1.0 m，超載 \(q=1\) tf/m²。<br><br>
 <b>(1) 管湧（最高流線法）</b>：路徑 \(L=(14-1)+(14-8)=13+6=19\) m；水頭差 \(\Delta H=8-1=7\) m。
-$$i=\frac{7}{19}=0.368;\quad i_{cr}=\frac{\gamma_{sub}}{\gamma_w}=\frac{1.86-1.0}{1.0}=0.86\;\Rightarrow\;FS=\frac{0.86}{0.368}=\mathbf{2.34}\ \checkmark$$
+$$i=\frac{7}{19}=0.3684;\quad i_{cr}=\frac{\gamma_{sub}}{\gamma_w}=\frac{1.86-1.0}{1.0}=0.86\;\Rightarrow\;FS=\frac{0.86}{0.3684}=\mathbf{2.33}\ \checkmark$$
 <b>(2) 上舉</b>：受壓面在 GL−10.32 m（CL/SM 交界）。土塞厚 \(t=10.32-8.0=2.32\) m。
 $$W=1.86\times2.32=4.315\ \mathrm{tf/m^2};\quad U=1.0\times(10.32-1.0)=9.32\ \mathrm{tf/m^2}$$
 $$FS=\frac{4.315}{9.32}=\mathbf{0.46}\ \text{（早就破壞了）}$$
 要達 \(FS=2\)：容許上揚力 \(=4.315/2=2.158\) tf/m² → 水頭降到 2.158 m → 水位降至 GL−\((10.32-2.16)=\mathbf{GL-8.16\ m}\)。<br>
-<b>(3) 隆起</b>：\(\gamma H=14.39\) tf/m²（分層累加），開挖面以下加權 \(N_{avg}=10.13\Rightarrow S_u=10N/16=6.33\) tf/m²。
-$$FS=\frac{S_u(\pi+2)}{\gamma H+q}=\frac{6.33\times5.14}{14.39+1}=\mathbf{2.12}\ \checkmark$$
+<b>(3) 隆起</b>：\(\gamma H=14.392\) tf/m²（分層累加）。開挖面以下 GL−8.0~−14.0 m 依厚度加權：CL 2.32 m 取 \(N=4\)、SM 3.68 m 取三個試驗值平均 \(N=(14+12+14)/3=13.333\)，\(N_{avg}=9.724\Rightarrow S_u=10N/16=6.078\) tf/m²。
+$$FS=\frac{S_u(\pi+2)}{\gamma H+q}=\frac{6.078\times5.1416}{14.392+1}=\mathbf{2.03}\ \checkmark$$<div style="font-size:.92em;color:#b71c1c;margin:6px 0">⚠ 但 \(S_u\) 的<b>取用範圍</b>才是真正會翻盤的爭議：若破壞面被局限在開挖面正下方 2.32 m 厚的 CL（\(N=4\)）內，\(S_u=2.50\)、\(FS=\mathbf{0.84}\)，結論相反。作答時兩個數字都要列出並說明取用理由。</div>
 <b>這題的教學價值：三個 FS 只有一個不及格，而且不及格的那個「插深」救不了。</b>
-管湧 2.34、隆起 2.12 都很安全，但上舉 0.46 —— 因為 GL−10.32 m 以下是 SM 層，它與外界水位連通，
+管湧 2.33、隆起 2.03 都很安全，但上舉 0.46 —— 因為 GL−10.32 m 以下是 SM 層，它與外界水位連通，
 水壓只有 2.32 m 厚的黏土在扛。<b>唯一解是抽水降低受壓水頭。</b>
 </div>
 

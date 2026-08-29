@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2003-3 &#8212; 題目解析</title>
+<title>SM-2003-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2003-3 題目解析</h1><a class="back quick" href="../study-SM-U2-3.html">&#128269; U2-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
-<main><h1>考題編號：[SM-2003-3]</h1>
+<main><h1>考題編號：SM-2003-3</h1>
 <p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
 <strong>副分類：</strong> <code>SM-U1-4</code> 土體內應力<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>基底隆起</code> <code>砂湧</code> <code>受壓含水層</code> <code>有效應力</code> <code>干擾資訊</code></p>
+<strong>標籤：</strong> <code>開挖穩定性</code> <code>基盤隆起</code> <code>上舉破壞</code> <code>受壓含水層</code> <code>有效應力原理</code> <code>孔隙水壓</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>三、有一黏土層厚 10 m，飽和單位重 $\gamma_{sat} = 17.5 \text{ kN/m}^3$，下方為受壓含水砂土層，壓力水頭為 7 m，砂土之飽和單位重 $\gamma_{sat} = 18 \text{ kN/m}^3$；現欲在黏土層內進行開挖，其開挖深度可達多少而不致引起隆起？此時開挖面下方兩土層界面處之有效應力為何？（25 分）</p>
@@ -171,16 +172,16 @@ $$\sigma_v' = \sigma_v - u = 68.67 - 68.67 = 0 \text{ kN/m}^2$$</p>
 <ol>
 <li><strong>破壞機制之名詞釋義 (Heave vs. Blowout)</strong><br />
    工程實務上，深開挖底部的破壞模式有幾種差異：</li>
-</ol>
-<ul>
 <li><strong>基底隆起 (Basal Heave)</strong>：常發生於軟弱黏土層，是由於開挖面內外側土體重量形成的總應力差過大，導致黏土發生塑性剪力破壞而向開挖區內擠入（可用 Terzaghi 或 Bjerrum-Eide 法檢核）。</li>
-<li><strong>砂湧或隆起 (Boiling / Blowout)</strong>：即本題探討之狀況，起因於開挖底面下方有受壓含水層。當覆土總重量不足以抵抗水壓力時，會如同瓶塞被拔開般，整個不透水層被向上頂破。<br />
-   此題雖用中文「隆起」一詞，但透過「受壓含水砂土層」的線索，明確指向 Blowout 破壞，考生必須敏銳辨識此機制，而非套用 $N_c \cdot S_u$ 的公式。</li>
-</ul>
-<ol start="2">
-<li><strong>安全係數 (Factor of Safety)</strong><br />
+<li>
+<p><strong>砂湧或隆起 (Boiling / Blowout)</strong>：即本題探討之狀況，起因於開挖底面下方有受壓含水層。當覆土總重量不足以抵抗水壓力時，會如同瓶塞被拔開般，整個不透水層被向上頂破。<br />
+   此題雖用中文「隆起」一詞，但透過「受壓含水砂土層」的線索，明確指向 Blowout 破壞，考生必須敏銳辨識此機制，而非套用 $N_c \cdot S_u$ 的公式。</p>
+</li>
+<li>
+<p><strong>安全係數 (Factor of Safety)</strong><br />
    本題求的是「不致引起隆起」的最大深度，即對應安全係數 $FS = 1.0$ 的極限狀態。<br />
-   實務上，為確保開挖安全，通常會要求抗隆起安全係數 $FS = \frac{\sigma_v}{u} \ge 1.2 \sim 1.5$。因此實際容許的開挖深度將小於本題計算出的 6.076 m。若要加深開挖，可採用抽水井降低下方的水壓力（降水工法）來提高安全係數。</li>
+   實務上，為確保開挖安全，通常會要求抗隆起安全係數 $FS = \frac{\sigma_v}{u} \ge 1.2 \sim 1.5$。因此實際容許的開挖深度將小於本題計算出的 6.076 m。若要加深開挖，可採用抽水井降低下方的水壓力（降水工法）來提高安全係數。</p>
+</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2003-3/SM-2003-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

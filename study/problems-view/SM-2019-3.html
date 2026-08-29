@@ -29,11 +29,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </style></head><body>
 <header><h1>SM-2019-3 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
-<main><h1>考題編號：[SM-2019-3]</h1>
+<main><h1>考題編號：SM-2019-3</h1>
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質與分類<br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>相對密度</code> <code>相對夯實度</code> <code>乾單位重</code> <code>體積變化</code> <code>孔隙比</code></p>
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>相對夯實度</code> <code>相對密度</code> <code>孔隙比</code> <code>三相關係</code> <code>乾土單位重</code> <code>體積變化</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>三、某施工場址於回填 2 m 厚的砂質土壤後進行夯實，夯實前回填土之相對密度為 50%。該回填土壤於實驗室試驗獲得最大孔隙比 0.95，最小孔隙比 0.55，土壤顆粒比重 2.65。施工規範要求回填土壤的夯實需達到相對夯實度（relative compaction）95%，試求：<br />
@@ -61,14 +61,16 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ol>
 <p><strong>陷阱分析：</strong></p>
 <ol>
-<li><strong>相對密度（$D_r$）與相對夯實度（$R_c$）的混淆</strong>：<br />
-   - 相對密度是基於「孔隙比」定義：$D_r = (e_{max} - e)/(e_{max} - e_{min})$。<br />
-   - 相對夯實度是基於「乾單位重」定義：$R_c = \gamma_d / \gamma_{d,max}$。若將兩者公式搞混，將導致整題算錯。</li>
-<li><strong>沉陷量公式的分母</strong>：<br />
-   - 減少高度 $\Delta H = H_0 \cdot \frac{e_0 - e_f}{1 + e_0}$，分母必須是初始狀態的 $1 + e_0$，若誤用 $1 + e_f$ 會導致計算錯誤。</li>
-<li><strong>$\gamma_{d,max}$ 的對應孔隙比</strong>：<br />
-   - 最大乾單位重對應的是「最小孔隙比 $e_{min}$」，非最大孔隙比，須注意帶入正確數值。</li>
+<li><strong>相對密度（$D_r$）與相對夯實度（$R_c$）的混淆</strong>：</li>
+<li>相對密度是基於「孔隙比」定義：$D_r = (e_{max} - e)/(e_{max} - e_{min})$。</li>
+<li>相對夯實度是基於「乾單位重」定義：$R_c = \gamma_d / \gamma_{d,max}$。若將兩者公式搞混，將導致整題算錯。</li>
+<li><strong>沉陷量公式的分母</strong>：</li>
+<li>減少高度 $\Delta H = H_0 \cdot \frac{e_0 - e_f}{1 + e_0}$，分母必須是初始狀態的 $1 + e_0$，若誤用 $1 + e_f$ 會導致計算錯誤。</li>
+<li><strong>$\gamma_{d,max}$ 的對應孔隙比</strong>：</li>
+<li>最大乾單位重對應的是「最小孔隙比 $e_{min}$」，非最大孔隙比，須注意帶入正確數值。</li>
 </ol>
+<p><img alt="孔隙比軸與兩把刻度尺對照圖：主軸為孔隙比 e，自左至右由 e_max = 0.95（最鬆）遞減至 e_min = 0.55（最緊），其上標出 e_0 = 0.75 與 e_f = 0.632；下方第一把尺為相對密度 D_r，對 e 線性、兩端為 0% 與 100%；第二把尺為相對夯實度 R_c，對 γ_d 線性故對 e 非線性，左端為 79.5% 而非 0" src="../../raw/solutions/SM-2019-3/figs/SM-2019-3-fig-1-two-rulers.svg" /></p>
+<p><em>圖 1　$D_r$ 與 $R_c$ 是同一根 $e$ 軸上的兩把不同的尺。它攔的是本題最致命的混淆：同一個夯實後狀態，$D_r = 79.6\%$ 而 $R_c = 95.0\%$，兩個數字都對但意義不同；若把題目要求的 $R_c = 95\%$ 誤讀成 $D_r = 95\%$，會得 $e_f = 0.570$、$\Delta H = 0.206$ m，比正解多 52%。</em></p>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>求出夯實前、後的乾單位重（$\gamma_{d0}, \gamma_{df}$）以及回填土夯實後減少的高度（$\Delta H$）。</p>
@@ -165,7 +167,12 @@ $\Delta H = H_0 \frac{\boxed{e_0} - \boxed{e_f}}{1 + \boxed{e_0}}$</p>
 </tr>
 <tr>
 <td>相對夯實度定義</td>
-<td>工程上定義為現場乾土單位重與室內標準試驗最大乾土單位重之比值：$R_c = \frac{\gamma_d}{\gamma_{d,max}}$。</td>
+<td>工程上定義為現場乾土單位重與<strong>室內標準夯實（Proctor）試驗</strong>最大乾土單位重之比值：$R_c = \frac{\gamma_d}{\gamma_{d,max}}$。</td>
+<td></td>
+</tr>
+<tr>
+<td>$\gamma_{d,max}$ 的代用</td>
+<td>本題未給 Proctor 試驗結果，只給 $e_{min}$，故以<strong>最緊密狀態</strong>（$e = e_{min}$）之 $\gamma_d$ 代替 Proctor $\gamma_{d,max}$。這是題目條件所迫的代用，不是定義本身，詳見 §5。</td>
 <td></td>
 </tr>
 <tr>
@@ -217,19 +224,28 @@ $$ \Delta H = 2.0 \times \frac{0.75 - 0.6316}{1 + 0.75} = 2.0 \times \frac{0.118
 </blockquote>
 <p><strong>第二小題答案：</strong><br />
 $$ \text{夯實後減低高度 } \Delta H = \boxed{0.135 \text{ m}} \text{ (約 13.5 cm)} $$</p>
+<p><img alt="三相體積柱狀對照圖：左柱為夯實前，下段土粒 V_s = 1、上段孔隙 V_v = e = 0.750，總高對應 H_0 = 2.000 m；右柱為夯實後，土粒段高度不變、孔隙段縮為 V_v = 0.632，總高對應 H = 1.865 m；兩柱土粒段頂面以水平虛線對齊，右側標出 Δe = 0.1184 與 ΔH = 0.135 m" src="../../raw/solutions/SM-2019-3/figs/SM-2019-3-fig-2-phase-columns.svg" /></p>
+<p><em>圖 2　高度只隨孔隙變，土粒那一格從頭到尾不動。它攔的是分母取錯：因為變的是 $\Delta e$ 而基準是「初始」總體積 $1+e_0$，分母若誤用 $1+e_f = 1.632$ 會得 $\Delta H = 0.1452$ m，高估 7.3%。</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li>
-<p><strong>相對密度與相對夯實度之經驗轉換</strong>：<br />
+<li><strong>相對密度與相對夯實度之經驗轉換</strong>：<br />
   工程上常用 Lee &amp; Singh (1971) 提出的經驗公式 $R_c \approx 80 + 0.2 D_r$ 進行概估。若代入本題夯實後計算得到的相對密度：<br />
   $D_{rf} = \frac{0.95 - 0.6316}{0.95 - 0.55} = \frac{0.3184}{0.40} = 79.6\%$<br />
-  使用經驗公式預估 $R_c \approx 80 + 0.2(79.6) = 95.92\%$，與題目要求之 $95\%$ 相近。但考場上<strong>必須</strong>依據基本定義公式從頭推導精確數值，切勿直接使用該經驗公式計算，否則不予計分。</p>
-</li>
-<li>
-<p><strong>計算精度控制</strong>：<br />
-  此類三相圖推演題型，中間過程（例如 $\gamma_{d,max}, e_f$ 等）建議至少保留小數點後 3 到 4 位，到最後一步再四捨五入至小數點後第 2 或第 3 位，避免累積的捨入誤差（round-off error）造成最後答案偏差。</p>
-</li>
-</ul></main>
+  使用經驗公式預估 $R_c \approx 80 + 0.2(79.6) = 95.92\%$，與題目要求之 $95\%$ 相近。但考場上<strong>必須</strong>依據基本定義公式從頭推導精確數值，切勿直接使用該經驗公式計算，否則不予計分。</li>
+<li><strong>本題的 $\gamma_{d,max}$ 並不是 Proctor 的 $\gamma_{d,max}$</strong>：<br />
+  相對夯實度 $R_c$ 的標準定義中，分母是<strong>標準夯實試驗</strong>（ASTM D698／CNS 11777）求得的最大乾單位重；<br />
+  而本題只給了相對密度試驗的 $e_{max}$、$e_{min}$，因此 Step 3 用的是 $e_{min}$ 對應的<br />
+<strong>最緊密狀態乾單位重</strong> $\dfrac{G_s\gamma_w}{1+e_{min}} = 16.77 \text{ kN/m}^3$。<br />
+  兩者在物理上不同：$e_{min}$ 來自振動台／夯搗的乾砂最緊密堆積，Proctor 則是含水量最佳時的動力夯實，<br />
+  砂質土的 Proctor $\gamma_{d,max}$ 通常<strong>略低於</strong> $e_{min}$ 對應值。<br />
+  題目既然只給這組參數，用 $e_{min}$ 是唯一可行且閱卷預期的作法，<br />
+  但作答時宜寫一句「因題目未提供標準夯實試驗結果，以 $e_{min}$ 對應之最大乾單位重代之」，<br />
+  以示觀念清楚——這句話不寫不會扣分，寫了是加分項。</li>
+<li><strong>計算精度控制</strong>：<br />
+  此類三相圖推演題型，中間過程（例如 $\gamma_{d,max}, e_f$ 等）建議至少保留小數點後 3 到 4 位，到最後一步再四捨五入至小數點後第 2 或第 3 位，避免累積的捨入誤差（round-off error）造成最後答案偏差。</li>
+</ul>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-28（向量 SVG，程式繪製，腳本 <code>gen_SM-2019-3.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2019-3/SM-2019-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

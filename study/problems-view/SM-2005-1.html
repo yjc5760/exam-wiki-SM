@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2005-1 &#8212; 題目解析</title>
+<title>SM-2005-1 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2005-1 題目解析</h1><a class="back quick" href="../study-SM-U2-3.html">&#128269; U2-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2005-1</h1>
-<p><strong>主分類：</strong> <code>SM-U2-3 開挖之穩定性分析</code><br />
-<strong>副分類：</strong> <code>SM-U3-1 側向土壓力理論</code><br />
-<strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>錨碇版樁</code> <code>自由土壤支撐法</code> <code>黏土層</code> <code>淨被動土壓力</code></p>
+<p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>副分類：</strong> <code>SM-U3-1</code> 側向土壓力理論<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>板樁</code> <code>錨定式版樁</code> <code>自由端支撐法</code> <code>Rankine主動土壓力</code> <code>淨被動土壓力</code> <code>開挖穩定性</code> <code>貫入深度</code> <code>地錨預力</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、有一版樁 (sheet pile) 使用於地下水位以上之開挖支撐，開挖面高 9m，其背後為砂性土壤，單位重 $\gamma_s = 18 \text{ kN/m}^3$，摩擦角 $\phi_s = 32^\circ$，凝聚力 $c_s = 0$。開挖面以下為黏土層，單位重 $\gamma_c = 20 \text{ kN/m}^3$，摩擦角 $\phi_c = 0^\circ$，凝聚力 $c_c = 45\text{ kPa}$。若版樁自頂部下 1.5m 設置有一排水平地錨，且版樁深入黏土層底部為自由土壤支撐（free earth support）形式：<br />
@@ -50,18 +51,18 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
+<li><strong>戰略：</strong></li>
+<li>計算開挖面以上砂土層的主動土壓力強度 $p_a$、總推力合力 $P_a$ 及對地錨的力臂。</li>
+<li>計算開挖面以下黏土層的淨被動土壓力強度 $p_{net}$。</li>
+<li>利用對地錨作用點的力矩平衡（$\Sigma M_{\text{anchor}} = 0$）列出一元二次方程式解出最少入土深度 $D$。</li>
 <li>
-<p><strong>戰略：</strong><br />
-  1. 計算開挖面以上砂土層的主動土壓力強度 $p_a$、總推力合力 $P_a$ 及對地錨的力臂。<br />
-  2. 計算開挖面以下黏土層的淨被動土壓力強度 $p_{net}$。<br />
-  3. 利用對地錨作用點的力矩平衡（$\Sigma M_{\text{anchor}} = 0$）列出一元二次方程式解出最少入土深度 $D$。<br />
-  4. 利用水平力平衡（$\Sigma F_x = 0$）解出地錨預力 $T$。</p>
+<p>利用水平力平衡（$\Sigma F_x = 0$）解出地錨預力 $T$。</p>
 </li>
 <li>
-<p><strong>陷阱：</strong><br />
-  1. <strong>黏土層淨被動土壓力公式：</strong> 必須理解在 $\phi=0$ 條件下，$p_{net} = 4c_c - \gamma_s H$。如果不熟悉此結論而分別計算主被動壓力，很容易在深度 $z$ 的代數推導中發生錯誤，而使用此簡化公式可將梯形載重轉化為簡易的均布載重。<br />
-  2. <strong>力矩平衡點的選擇：</strong> 自由支撐法的力矩平衡點<strong>必須取於地錨位置</strong>，以此消除未知地錨力 $T$，方能順利解出入土深度 $D$。若誤對樁底取矩，會因為有兩個未知數 ($T$ 與 $D$) 而無法求解。</p>
+<p><strong>陷阱：</strong></p>
 </li>
+<li><strong>黏土層淨被動土壓力公式：</strong> 必須理解在 $\phi=0$ 條件下，$p_{net} = 4c_c - \gamma_s H$。如果不熟悉此結論而分別計算主被動壓力，很容易在深度 $z$ 的代數推導中發生錯誤，而使用此簡化公式可將梯形載重轉化為簡易的均布載重。</li>
+<li><strong>力矩平衡點的選擇：</strong> 自由支撐法的力矩平衡點<strong>必須取於地錨位置</strong>，以此消除未知地錨力 $T$，方能順利解出入土深度 $D$。若誤對樁底取矩，會因為有兩個未知數 ($T$ 與 $D$) 而無法求解。</li>
 </ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
@@ -177,18 +178,20 @@ $$ p_a = \gamma_s H K_a = 18 \times 9 \times 0.3073 = 49.78 \text{ kPa} $$<br />
 $$ p_{net} = p_{p(clay)} - p_{a(clay)} = (\gamma_c z' + 2c_c) - (\gamma_s H + \gamma_c z' - 2c_c) = 4c_c - \gamma_s H $$<br />
 代入數值：<br />
 $$ p_{net} = 4(45) - 18(9) = 180 - 162 = 18 \text{ kPa} $$<br />
-因為 $p_{net} = 18\text{ kPa} > 0$，黏土層提供向左的淨被動土壓力，且呈<strong>均勻矩形分布</strong>。</p>
+因為 $p_{net} = 18\text{ kPa} &gt; 0$，黏土層提供向左的淨被動土壓力，且呈<strong>均勻矩形分布</strong>。</p>
 <p><strong>解答 (一) 的文字描述（對應於圖形繪製）：</strong><br />
 作用於版樁之土壓力分佈為：</p>
 <ul>
 <li>開挖面以上（深度 $0 \sim 9\text{m}$）：為向右推的主動土壓力，呈三角形分佈，由頂部 $0\text{ kPa}$ 增加至開挖面處的 $49.78\text{ kPa}$。</li>
 <li>開挖面以下（黏土層中）：為向左推的淨被動土壓力，呈與深度無關的均勻矩形分佈，大小恆為 $18\text{ kPa}$。</li>
 </ul>
+<p><img alt="SM-2005-1 版樁土壓力分布與自由端支撐的力矩平衡：左側砂土段 0~9 m 為三角形主動土壓、牆底 49.78 kPa、合力 223.99 kN/m；9 m 以下黏土段為與深度無關的均勻淨被動土壓 p_net = 4c − γs H = 18.0 kPa，合力 18.0·D；地錨位於 GL−1.5 m，圖下方列出對地錨取矩的二次式與水平力平衡求得的 T" src="../../raw/solutions/SM-2005-1/figs/SM-2005-1-fig-1-pressure.svg" /></p>
+<p><em>圖 1　兩段土壓力的形狀完全不同。攔的是「把黏土段也畫成三角形」與「把牆重算進抗滑力」：$\phi_c = 0$ 使淨被動土壓力 $p_{net} = 4c - \gamma_s H$ 與深度無關，恆為 $18 \text{ kPa}$ 的矩形；力矩點必須取在地錨，才能消去未知的 $T$、只剩 $D$ 一個未知數。</em></p>
 <hr />
 <h3>(二) 版樁深入黏土層之最少入土深度及地錨預力</h3>
 <p><strong>Step 3: 求解最少入土深度 $D$</strong><br />
 開挖面以上主動土壓力合力 $P_a$ 及其作用點：<br />
-$$ P_a = \frac{1}{2} p_a H = \frac{1}{2} \times 49.78 \times 9 = 224.01 \text{ kN/m} $$<br />
+$$ P_a = \frac{1}{2} p_a H = \frac{1}{2} \times 49.776 \times 9 = 223.99 \text{ kN/m} $$<br />
 $P_a$ 的作用點距離開挖面為 $\frac{H}{3} = 3 \text{ m}$，距離地錨的作用力臂 $L_a$ 為：<br />
 $$ L_a = \frac{2}{3}H - h_a = \frac{2}{3}(9) - 1.5 = 6 - 1.5 = 4.5 \text{ m} $$</p>
 <p>開挖面以下淨被動土壓力合力 $P_{net}$ 及其作用點：<br />
@@ -197,30 +200,82 @@ $P_{net}$ 的作用點在黏土層入土深度的中點（因分布均勻），�
 $$ L_p = (H - h_a) + \frac{D}{2} = (9 - 1.5) + 0.5D = 7.5 + 0.5D \text{ (單位: m)} $$</p>
 <p>根據自由土壤支撐法，針對地錨設置點取力矩平衡 $\Sigma M_{\text{anchor}} = 0$：<br />
 $$ P_{net} \cdot L_p = P_a \cdot L_a $$<br />
-$$ 18D \cdot (7.5 + 0.5D) = 224.01 \cdot 4.5 $$<br />
-$$ 135D + 9D^2 = 1008.045 $$<br />
-$$ D^2 + 15D - 112.005 = 0 $$<br />
+$$ 18D \cdot (7.5 + 0.5D) = 223.99 \cdot 4.5 $$<br />
+$$ 135D + 9D^2 = 1007.96 $$<br />
+$$ D^2 + 15D - 111.996 = 0 $$<br />
 解一元二次方程式：<br />
-$$ D = \frac{-15 \pm \sqrt{15^2 - 4(1)(-112.005)}}{2} = \frac{-15 \pm \sqrt{225 + 448.02}}{2} = \frac{-15 \pm \sqrt{673.02}}{2} \approx \frac{-15 \pm 25.943}{2} $$<br />
+$$ D = \frac{-15 \pm \sqrt{15^2 - 4(1)(-112.005)}}{2} = \frac{-15 \pm \sqrt{225 + 447.984}}{2} = \frac{-15 \pm \sqrt{672.984}}{2} \approx \frac{-15 \pm 25.9420}{2} $$<br />
 取正根：<br />
-$$ D = \frac{10.943}{2} = 5.471 \text{ m} $$<br />
+$$ D = \frac{10.9420}{2} = 5.4710 \text{ m} $$<br />
 故理論最少入土深度為 $\boxed{D = 5.47 \text{ m}}$。</p>
 <p><strong>Step 4: 求解地錨預力 $T$</strong><br />
 利用水平力平衡方程式 $\Sigma F_x = 0$（向左的力 = 向右的力）：<br />
 $$ T + P_{net} = P_a $$<br />
-$$ T = P_a - 18D = 224.01 - 18(5.471) = 224.01 - 98.48 = 125.53 \text{ kN/m} $$<br />
-故每延米的地錨預力為 $\boxed{T = 125.53 \text{ kN/m}}$。</p>
+$$ T = P_a - 18D = 223.99 - 18(5.4710) = 223.99 - 98.48 = 125.51 \text{ kN/m} $$<br />
+故每延米的地錨預力為 $\boxed{T = 125.51 \text{ kN/m}}$。</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li>
-<p><strong>安全係數的實務考量：</strong> <br />
-  本題計算出的 $D = 5.47 \text{ m}$ 為處於極限平衡狀態下的「理論最少入土深度」，在此深度下擋土牆的安全係數 $FS = 1.0$。在工程設計實務中，由於土層參數存在不確定性，通常會將理論求得的入土深度直接增加 20% ~ 30%（即 $D_{design} \approx 1.2 \sim 1.3 \times D$），或者在列力矩方程式時，將被動土壓力預先除以 $FS = 1.5 \sim 2.0$。因考試明確詢問「最少入土深度」，故填寫理論值 $5.47 \text{ m}$ 是正確標準作法。</p>
-</li>
-<li>
-<p><strong>淨被動土壓力的物理意義：</strong> <br />
-  在 $\phi=0$ 的飽和黏土層中，$p_{net} = 4c - \gamma H$ 為常數。若開挖深度 $H$ 較深，或上覆土壤單位重 $\gamma_s$ 較大，導致 $4c < \gamma_s H$ 時，淨被動土壓力將變為負值。此時表示黏土層強度不足以支撐開挖面的土壓，版樁不僅無法達到平衡，甚至可能發生嚴重的<strong>基底隆起 (Basal Heave)</strong> 破壞。本題中 $4(45) > 18(9)$，故淨土壓力為正，版樁可維持穩定。</p>
-</li>
-</ul></main>
+<li><strong>安全係數的實務考量：</strong> <br />
+  本題計算出的 $D = 5.47 \text{ m}$ 為處於極限平衡狀態下的「理論最少入土深度」，在此深度下擋土牆的安全係數 $FS = 1.0$。在工程設計實務中，由於土層參數存在不確定性，通常會將理論求得的入土深度直接增加 20% ~ 30%（即 $D_{design} \approx 1.2 \sim 1.3 \times D$），或者在列力矩方程式時，將被動土壓力預先除以 $FS = 1.5 \sim 2.0$。因考試明確詢問「最少入土深度」，故填寫理論值 $5.47 \text{ m}$ 是正確標準作法。</li>
+<li><strong>⚠ 這面版樁只剩 $10\%$ 的餘裕——$c$ 的敏感度是本題真正的重點：</strong><br />
+  淨被動土壓力 $p_{net} = 4c - \gamma_s H = 180 - 162 = 18 \text{ kPa}$，<br />
+<strong>只佔 $4c = 180$ 的 $10\%$</strong>。也就是說，黏土層提供的抗力幾乎全部被上覆砂土的重量吃掉，<br />
+  剩下來能用的只有那一小塊。把 $c$ 從 $45$ 往下調一點點，入土深度就會失控：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>$c$ (kPa)</th>
+<th>$p_{net} = 4c-162$ (kPa)</th>
+<th>所需入土深度 $D$ (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$45.0$（題給）</td>
+<td>$18.0$</td>
+<td>$5.47$</td>
+</tr>
+<tr>
+<td>$44.0$（$-2.2\%$）</td>
+<td>$14.0$</td>
+<td>$6.65$</td>
+</tr>
+<tr>
+<td>$43.0$（$-4.4\%$）</td>
+<td>$10.0$</td>
+<td>$8.56$</td>
+</tr>
+<tr>
+<td>$42.0$（$-6.7\%$）</td>
+<td>$6.0$</td>
+<td>$12.30$</td>
+</tr>
+<tr>
+<td>$41.0$（$-8.9\%$）</td>
+<td>$2.0$</td>
+<td>$25.12$</td>
+</tr>
+<tr>
+<td>$\mathbf{40.5}$（$\mathbf{-10\%}$）</td>
+<td>$\mathbf{0}$</td>
+<td><strong>無解——任何深度都不平衡</strong></td>
+</tr>
+</tbody>
+</table>
+<p>$c$ 只要降 $10\%$（到 $40.5 = \gamma_s H/4$），$p_{net}$ 歸零，<strong>再深的版樁也救不回來</strong>，<br />
+  因為抗力與 $D$ 成正比、而係數本身變成零。這也是為什麼實務上這種「上砂下黏、開挖又深」的<br />
+  剖面不會用自由端支撐的單錨版樁，而會改用多層支撐或加深到下方較硬的地層。<br />
+  考場上若能補一句「本設計對 $c$ 極度敏感，$c \le \gamma_s H/4 = 40.5$ kPa 即無解」，<br />
+  比只寫出 $D = 5.47 \text{ m}$ 有價值得多。</p>
+<p><img alt="SM-2005-1 所需入土深度 D 對黏土凝聚力 c 的敏感度曲線：橫軸 c = 41~50 kPa、縱軸 D = 0~25 m，D(c) 為雙曲線，題給 c = 45 對應 D = 5.47 m，c = 43 已需 8.56 m、c = 42 需 12.30 m，垂直漸近線落在 c = γs H/4 = 40.5 kPa，該處 p_net 歸零、任何 D 都無法平衡" src="../../raw/solutions/SM-2005-1/figs/SM-2005-1-fig-2-sensitivity.svg" /></p>
+<p><em>圖 2　抗力係數只剩 $10\%$ 時的懸崖。攔的是「把 $D = 5.47 \text{ m}$ 當成穩健答案」：$p_{net} = 4c - \gamma_s H$ 是兩個大數相減的小差值，$c$ 只要降 $10\%$ 就歸零，$D$ 沿雙曲線發散到無解——這正是實務上不採用單錨自由端支撐的原因。</em></p>
+<ul>
+<li><strong>淨被動土壓力的物理意義：</strong> <br />
+  在 $\phi=0$ 的飽和黏土層中，$p_{net} = 4c - \gamma H$ 為常數。若開挖深度 $H$ 較深，或上覆土壤單位重 $\gamma_s$ 較大，導致 $4c &lt; \gamma_s H$ 時，淨被動土壓力將變為負值。此時表示黏土層強度不足以支撐開挖面的土壓，版樁不僅無法達到平衡，甚至可能發生嚴重的<strong>基底隆起 (Basal Heave)</strong> 破壞。本題中 $4(45) &gt; 18(9)$，故淨土壓力為正，版樁可維持穩定。</li>
+</ul>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-29（向量 SVG，程式繪製，腳本 <code>gen_SM-2005-1.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2005-1/SM-2005-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

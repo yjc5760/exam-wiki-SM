@@ -27,12 +27,12 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2023-2 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
-<main><h1>考題編號：[SM-2023-2]</h1>
+<header><h1>SM-2023-2 題目解析</h1><a class="back quick" href="../../index.html">&#128218; 回題庫瀏覽</a></header>
+<main><h1>考題編號：SM-2023-2</h1>
 <p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>邊坡穩定</code> <code>抗滑安全係數</code> <code>平面滑動</code> <code>雨水入滲</code></p>
+<strong>標籤：</strong> <code>邊坡穩定</code> <code>平面滑動</code> <code>安全係數</code> <code>Mohr-Coulomb破壞準則</code> <code>凝聚力折減</code> <code>雨水入滲</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、如下圖所示邊坡之高 H=8 m，土壤單位重 $\gamma$ = 20 $\text{kN/m}^3$，<br />
@@ -53,9 +53,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>抗滑力計算</strong>：運用庫倫破壞準則，抗滑力 $T_r = cL + N\tan\phi$。</li>
 <li><strong>安全係數計算</strong>：分別代入兩種情況的土壤參數求出 $FS$。</li>
 </ol>
-<p><strong>陷阱分析</strong>：<br />
-- <strong>陷阱一</strong>：幾何面積計算錯誤。楔形體頂部寬度應為水平投影距離之差，即 $H\cot(45^\circ) - H\cot(60^\circ)$。<br />
-- <strong>陷阱二</strong>：題意解讀偏差。第 (二) 小題提到「雨水入滲」，實務上雨水入滲會產生孔隙水壓，導致有效正向力降低。但題目已明確指示「降低假設破壞面之土壤強度參數 $c=5 \text{ kPa}$」，且未給定地下水位或滲流條件。因此依題意直接使用新的 $c$ 值計算即可，不宜過度臆測孔隙水壓而導致無法計算。</p>
+<p><strong>陷阱分析</strong>：</p>
+<ul>
+<li><strong>陷阱一</strong>：幾何面積計算錯誤。楔形體頂部寬度應為水平投影距離之差，即 $H\cot(45^\circ) - H\cot(60^\circ)$。</li>
+<li><strong>陷阱二</strong>：題意解讀偏差。第 (二) 小題提到「雨水入滲」，實務上雨水入滲會產生孔隙水壓，導致有效正向力降低。但題目已明確指示「降低假設破壞面之土壤強度參數 $c=5 \text{ kPa}$」，且未給定地下水位或滲流條件。因此依題意直接使用新的 $c$ 值計算即可，不宜過度臆測孔隙水壓而導致無法計算。</li>
+</ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p><code>求出在原條件與雨水入滲導致凝聚力降低兩種情況下，破壞面之抗滑安全係數 FS</code></p>
@@ -147,42 +149,50 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </tbody>
 </table>
 <h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
-<p><strong>Step 1：計算滑動楔形體幾何特徵與重量</strong><br />
-- 坡高 $H = 8 \text{ m}$<br />
-- 坡角 $\alpha = 60^\circ$<br />
-- 破壞面角 $\theta = 45^\circ$<br />
-- 破壞面長度 $L = \frac{H}{\sin\theta} = \frac{8}{\sin 45^\circ} = \frac{8}{0.7071} = 11.314 \text{ m}$</p>
+<p><strong>Step 1：計算滑動楔形體幾何特徵與重量</strong></p>
+<ul>
+<li>坡高 $H = 8 \text{ m}$</li>
+<li>坡角 $\alpha = 60^\circ$</li>
+<li>破壞面角 $\theta = 45^\circ$</li>
+<li>破壞面長度 $L = \frac{H}{\sin\theta} = \frac{8}{\sin 45^\circ} = \frac{8}{0.7071} = 11.314 \text{ m}$</li>
+</ul>
 <p>滑動體上方寬度（水平距離差）：<br />
 $$ b = H\cot\theta - H\cot\alpha = 8\cot 45^\circ - 8\cot 60^\circ = 8(1) - 8\left(\frac{1}{\sqrt{3}}\right) = 8 - 4.619 = 3.381 \text{ m} $$<br />
 滑動體積（每單位寬度）：<br />
 $$ A = \frac{1}{2} \times b \times H = \frac{1}{2} \times 3.381 \times 8 = 13.525 \text{ m}^2 $$<br />
 滑動體總重 $W$：<br />
 $$ W = A \cdot \gamma = 13.525 \times 20 = 270.50 \text{ kN/m} $$</p>
-<p><strong>Step 2：力學分解 (求驅動力與正向力)</strong><br />
-- 驅動力（平行破壞面分量）：<br />
-  $$ T_d = W \sin\theta = 270.50 \times \sin 45^\circ = 270.50 \times 0.7071 = 191.27 \text{ kN/m} $$<br />
-- 正向力（垂直破壞面分量）：<br />
-  $$ N = W \cos\theta = 270.50 \times \cos 45^\circ = 270.50 \times 0.7071 = 191.27 \text{ kN/m} $$</p>
+<p><strong>Step 2：力學分解 (求驅動力與正向力)</strong></p>
+<ul>
+<li>驅動力（平行破壞面分量）：<br />
+  $$ T_d = W \sin\theta = 270.50 \times \sin 45^\circ = 270.50 \times 0.7071 = 191.27 \text{ kN/m} $$</li>
+<li>正向力（垂直破壞面分量）：<br />
+  $$ N = W \cos\theta = 270.50 \times \cos 45^\circ = 270.50 \times 0.7071 = 191.27 \text{ kN/m} $$</li>
+</ul>
 <p><strong>Step 3：計算第(一)小題安全係數</strong><br />
-已知 $c = 50 \text{ kPa}$, $\phi = 36^\circ$<br />
-- 抗滑力 $T_{r1}$：<br />
+已知 $c = 50 \text{ kPa}$, $\phi = 36^\circ$</p>
+<ul>
+<li>抗滑力 $T_{r1}$：<br />
   $$ T_{r1} = cL + N\tan\phi = 50 \times 11.314 + 191.27 \times \tan 36^\circ $$<br />
-  $$ T_{r1} = 565.70 + 191.27 \times 0.7265 = 565.70 + 138.97 = 704.67 \text{ kN/m} $$<br />
-- 安全係數 $FS_1$：<br />
-  $$ FS_1 = \frac{T_{r1}}{T_d} = \frac{704.67}{191.27} = 3.684 $$</p>
-<blockquote>
+  $$ T_{r1} = 565.70 + 191.27 \times 0.7265 = 565.70 + 138.97 = 704.67 \text{ kN/m} $$</li>
+<li>安全係數 $FS_1$：<br />
+  $$ FS_1 = \frac{T_{r1}}{T_d} = \frac{704.67}{191.27} = 3.684 $$<blockquote>
 <p>$\boxed{FS_1 = 3.68}$</p>
 </blockquote>
+</li>
+</ul>
 <p><strong>Step 4：計算第(二)小題安全係數</strong><br />
-已知雨水入滲後 $c = 5 \text{ kPa}$, $\phi = 36^\circ$<br />
-- 抗滑力 $T_{r2}$：<br />
+已知雨水入滲後 $c = 5 \text{ kPa}$, $\phi = 36^\circ$</p>
+<ul>
+<li>抗滑力 $T_{r2}$：<br />
   $$ T_{r2} = cL + N\tan\phi = 5 \times 11.314 + 191.27 \times \tan 36^\circ $$<br />
-  $$ T_{r2} = 56.57 + 138.97 = 195.54 \text{ kN/m} $$<br />
-- 安全係數 $FS_2$：<br />
-  $$ FS_2 = \frac{T_{r2}}{T_d} = \frac{195.54}{191.27} = 1.022 $$</p>
-<blockquote>
+  $$ T_{r2} = 56.57 + 138.97 = 195.54 \text{ kN/m} $$</li>
+<li>安全係數 $FS_2$：<br />
+  $$ FS_2 = \frac{T_{r2}}{T_d} = \frac{195.54}{191.27} = 1.022 $$<blockquote>
 <p>$\boxed{FS_2 = 1.02}$</p>
 </blockquote>
+</li>
+</ul>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
 <li><strong>雨水入滲對孔隙水壓之影響</strong>：實務上，雨水入滲除了弱化土壤結構導致有效凝聚力 $c'$ 下降外，最主要的力學影響是產生超額孔隙水壓或使水位上升，這會降低破壞面上的有效正向力 $N'$，進一步大幅降低抗滑力中摩擦力之貢獻（$N'\tan\phi'$）。本題並未給定地下水面條件或孔隙水壓參數，僅單純指示 $c$ 值降至 5 kPa，為避免假設過度而失分，依題意直接以降低後的 $c$ 值計算即可，符合多數國家考試此類題目的預期解答邏輯。</li>
@@ -190,7 +200,7 @@ $$ W = A \cdot \gamma = 13.525 \times 20 = 270.50 \text{ kN/m} $$</p>
 </ul></main>
 <footer>來源：raw/solutions/SM-2023-2/SM-2023-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

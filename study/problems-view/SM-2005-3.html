@@ -33,7 +33,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
 <strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>體積變化係數</code> <code>壓縮指數</code> <code>沉陷量</code> <code>分段計算</code></p>
+<strong>標籤：</strong> <code>體積變化係數</code> <code>壓縮指數</code> <code>壓密沉陷</code> <code>分段計算</code> <code>有效應力原理</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p><strong>(一) 何謂體積變化係數 $m_v$（coefficient of volume change）？與壓縮指數 $C_c$（compression index）之關係為何？（10 分）</strong></p>
@@ -247,18 +247,12 @@ $$S_{total} = 0.1070 + 0.1200 + 0.0420 + 0.0068 = 0.2758 \text{ m}$$</p>
 <p><em>(若水單位重採 $\gamma_w = 10 \text{ kN/m}^3$，計算結果為 $27.73 \text{ cm}$，兩者皆屬合理)</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>水單位重的選用：</strong><br />
-   考題未指明水的單位重。依習慣可用 $9.81 \text{ kN/m}^3$ 或 $10 \text{ kN/m}^3$ 進行估算。本題解法採用 $9.81 \text{ kN/m}^3$，若考場上為了計算方便選用 $10 \text{ kN/m}^3$，只需在算式旁稍作「假設 $\gamma_w=10 \text{ kN/m}^3$」之註明，閱卷老師均會給予滿分。</p>
-</li>
-<li>
-<p><strong>取點位置的代表性：</strong><br />
-   實務上，若土層極厚，有效應力隨深度變化大，應將該土層再細分成多個子層（例如每 1~2m 一層）分別計算再加總。但本題總黏土層厚度僅 5m，且為考試手算題，取「黏土層中央深度」的應力狀態來代表整層行為是標準作法。</p>
-</li>
-<li>
-<p><strong>$m_v$ 隨應力範圍衰減的意義：</strong><br />
-   從表格可知，$m_v$ 從 $6.2 \times 10^{-4}$ 衰減到 $0.3 \times 10^{-4}$。物理上意味著黏土隨著壓密的進行，孔隙比逐漸減小，土體變得越來越緻密（stiff），要進一步壓縮需要更大的應力增量，這與 $e-\log\sigma'$ 曲線在算術坐標下呈現凹口向上的非線性特性一致。</p>
-</li>
+<li><strong>水單位重的選用：</strong><br />
+   考題未指明水的單位重。依習慣可用 $9.81 \text{ kN/m}^3$ 或 $10 \text{ kN/m}^3$ 進行估算。本題解法採用 $9.81 \text{ kN/m}^3$，若考場上為了計算方便選用 $10 \text{ kN/m}^3$，只需在算式旁稍作「假設 $\gamma_w=10 \text{ kN/m}^3$」之註明，閱卷老師均會給予滿分。</li>
+<li><strong>取點位置的代表性：</strong><br />
+   實務上，若土層極厚，有效應力隨深度變化大，應將該土層再細分成多個子層（例如每 1~2m 一層）分別計算再加總。但本題總黏土層厚度僅 5m，且為考試手算題，取「黏土層中央深度」的應力狀態來代表整層行為是標準作法。</li>
+<li><strong>$m_v$ 隨應力範圍衰減的意義：</strong><br />
+   從表格可知，$m_v$ 從 $6.2 \times 10^{-4}$ 衰減到 $0.3 \times 10^{-4}$。物理上意味著黏土隨著壓密的進行，孔隙比逐漸減小，土體變得越來越緻密（stiff），要進一步壓縮需要更大的應力增量，這與 $e-\log\sigma'$ 曲線在算術坐標下呈現凹口向上的非線性特性一致。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2005-3/SM-2005-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

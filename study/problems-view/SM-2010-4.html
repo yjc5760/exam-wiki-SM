@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2010-4 &#8212; 題目解析</title>
+<title>SM-2010-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2010-4 題目解析</h1><a class="back quick" href="../study-SM-U2-1.html">&#128269; U2-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-1.html">&#128218; U2-1 淺基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2010-4</h1>
-<p><strong>主分類：</strong> <code>SM-U2</code> 淺基礎之支承力與沉陷量<br />
-<strong>副分類：</strong> <code>SM-U1</code> 土壤強度特性與變形性<br />
-<strong>分析法：</strong> 總應力法 / 概念題<br />
-<strong>標籤：</strong> <code>淺基礎承載力</code>, <code>水位變化</code>, <code>長期與短期行為</code></p>
+<p><strong>主分類：</strong> <code>SM-U2-1</code> 淺基礎之支承力與沉陷量<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>Meyerhof承載力公式</code> <code>承載力因數</code> <code>形狀深度修正係數</code> <code>容許承載力</code> <code>不排水剪力強度</code> <code>地下水位變化</code> <code>長短期承載力</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一方型放腳基礎（footing）置於地表下 2 m 處，上方為厚 2 m 之砂土層，位於地下水位以上且單位重為 $\gamma_t = 16 \text{ kN/m}^3$，砂土層下方為厚 16 m 之過壓密黏土層，地下水位於基腳所在深度。基腳之寬度為 4 m，黏土層飽稍微飽和單位重為 $\gamma_{sat} = 17.5 \text{ kN/m}^3$，由試驗得其不排水剪力強度 $C_u = 60 \text{ kPa}$。採用安全係數為 $FS = 3$，則其容許承載力為何？以此容許承載作設計載重，如地下水位下降 4 m，則將對基礎之長短期承載力及安全係數產生何種影響？<br />
@@ -43,9 +44,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>上層（砂土）</strong>：厚度 2 m，$\gamma_t = 16 \text{ kN/m}^3$。</li>
 <li><strong>下層（過壓密黏土）</strong>：厚度 16 m，$\gamma_{sat} = 17.5 \text{ kN/m}^3$，不排水剪力強度 $C_u = 60 \text{ kPa}$。</li>
 <li><strong>地下水位</strong>：原位於基底面（地表下 2 m 處）。</li>
-<li><strong>目標</strong>：<br />
-  1. 求容許承載力（$FS = 3$）。<br />
-  2. 分析地下水位下降 4 m 對長期、短期承載力及安全係數的影響。</li>
+<li><strong>目標</strong>：</li>
+<li>求容許承載力（$FS = 3$）。</li>
+<li>分析地下水位下降 4 m 對長期、短期承載力及安全係數的影響。</li>
 </ul>
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
 <ul>

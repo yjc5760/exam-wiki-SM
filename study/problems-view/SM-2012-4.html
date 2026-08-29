@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2012-4 &#8212; 題目解析</title>
+<title>SM-2012-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -30,9 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2012-4</h1>
 <p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
-<strong>副分類：</strong><br />
-<strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>視土壓力</code> <code>Peck經驗土壓力</code> <code>層狀土層</code> <code>支撐荷重</code> <code>抗隆起</code> <code>Terzaghi法</code></p>
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>開挖穩定性</code> <code>視土壓力</code> <code>Peck包絡線</code> <code>等值土壤參數</code> <code>支撐系統</code> <code>基盤隆起</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一處工地擬進行建築物之地下開挖與支撐，該處地層上方為厚 5 m之砂土層，單位重為 16.5 kN/m³，摩擦角 $\phi = 30^\circ$。下方為黏土層，飽和單位重為 18.5 kN/m³，不排水剪力強度為 30 kPa，地下水面位於二土層之交界。開挖深度為 10 m，寬度為 6 m，擬採用參層支撐，分別位於地表下 1.5、4.5 及 7.5 m處。<br />
@@ -50,9 +51,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>戰略一（等值參數與包絡線）</strong>：採用 Peck (1943) 建議之等值參數法。先求全層等值單位重 $\gamma_{avg}$，再求等值不排水剪力強度 $c_{avg}$（需考慮上層砂土側向擠壓提供之等效強度）。計算穩定數 $N = \gamma_{avg}H / c_{avg}$ 判斷其屬於軟黏土。</li>
 <li><strong>戰略二（支撐載重）</strong>：畫出梯形視土壓力包絡線後，假設相鄰支撐間有鉸接點（彎矩為零），將連續壁視為數段簡支梁，利用靜力平衡求出各支撐點的反力。</li>
 <li><strong>戰略三（抗隆起）</strong>：利用 Terzaghi 基底隆起破壞模型，驅動應力包含上方總覆土重，抵抗力除了黏土層本身的承載力 $N_c S_u$ 外，還必須扣除沿垂直滑動面<strong>砂土層與黏土層所提供之總抗剪力 $T$</strong>。</li>
-<li><strong>⚠ 陷阱</strong>：<br />
-  1. 砂土層的摩擦角 $\phi = 30^\circ$ 不可忽略，它在求等效 $c_{avg}$ 及抗隆起滑動面抗剪力時扮演關鍵角色。<br />
-  2. 視土壓包絡線對於 $N > 4$ 的軟弱黏土，其經驗公式為 $p_a = \gamma H - 4 m S_u$，若不使用等效 $c_{avg}$ 而直接平均 $S_u$，會導致土壓力被嚴重高估。</li>
+<li><strong>⚠ 陷阱</strong>：</li>
+<li>砂土層的摩擦角 $\phi = 30^\circ$ 不可忽略，它在求等效 $c_{avg}$ 及抗隆起滑動面抗剪力時扮演關鍵角色。</li>
+<li>視土壓包絡線對於 $N &gt; 4$ 的軟弱黏土，其經驗公式為 $p_a = \gamma H - 4 m S_u$，若不使用等效 $c_{avg}$ 而直接平均 $S_u$，會導致土壓力被嚴重高估。</li>
 </ul>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
@@ -109,10 +110,10 @@ $$ c_{avg} = \frac{1}{10} \left( \frac{1}{2} \times 16.5 \times 5^2 \times 1.0 \
 $$ c_{avg} = \frac{1}{10} ( 119.08 + 150 ) = \boxed{26.91 \text{ kPa}} $$</p>
 <p><strong>Step 2：判斷土壓包絡線形狀與最大壓力 $p_a$</strong><br />
 計算穩定數 $N$：<br />
-$$ N = \frac{\gamma_{avg} H}{c_{avg}} = \frac{17.5 \times 10}{26.91} = 6.50 > 4 $$<br />
-因 $N > 4$，該層狀系統之視土壓力依<strong>軟弱至中度堅硬黏土</strong> (Soft to medium clay) 之包絡線繪製：<br />
+$$ N = \frac{\gamma_{avg} H}{c_{avg}} = \frac{17.5 \times 10}{26.91} = 6.50 &gt; 4 $$<br />
+因 $N &gt; 4$，該層狀系統之視土壓力依<strong>軟弱至中度堅硬黏土</strong> (Soft to medium clay) 之包絡線繪製：<br />
 $$ p_a = \gamma_{avg} H \left( 1 - \frac{4 c_{avg}}{\gamma_{avg} H} \right) = 17.5 \times 10 - 4 \times 26.91 = 175 - 107.64 = \boxed{67.36 \text{ kPa}} $$<br />
-（檢核下限：$0.3 \gamma_{avg} H = 52.5 \text{ kPa} < 67.36 \text{ kPa}$，故取 $67.36 \text{ kPa}$，OK）</p>
+（檢核下限：$0.3 \gamma_{avg} H = 52.5 \text{ kPa} &lt; 67.36 \text{ kPa}$，故取 $67.36 \text{ kPa}$，OK）</p>
 <p><strong>Step 3：繪製視土壓力包絡線</strong><br />
 依據 Peck 軟黏土經驗包絡線形狀：</p>
 <ul>

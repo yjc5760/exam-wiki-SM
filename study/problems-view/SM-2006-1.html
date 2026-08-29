@@ -29,11 +29,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </style></head><body>
 <header><h1>SM-2006-1 題目解析</h1><a class="back quick" href="../study-SM-U1-5.html">&#128269; U1-5 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-5.html">&#128218; U1-5 土壤強度特性與變形性 講義</a></header>
-<main><h1>考題編號：[SM-2006-1]</h1>
+<main><h1>考題編號：SM-2006-1</h1>
 <p><strong>主分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
 <strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
 <strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>極限平衡</code> <code>Mohr-Coulomb破壞準則</code> <code>十字片剪試驗</code> <code>不排水剪力強度</code> <code>過壓密比</code> <code>OCR</code></p>
+<strong>標籤：</strong> <code>Mohr-Coulomb破壞準則</code> <code>極限平衡</code> <code>十字片剪試驗</code> <code>不排水剪力強度</code> <code>OCR</code> <code>過壓密</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、簡答題：<br />
@@ -53,7 +53,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <ul>
 <li>(一) 以 Mohr 圓與 Coulomb 破壞包絡線相切之幾何關係出發，推導並寫出破壞面上的應力狀態方程式 $\tau_f = c + \sigma \tan\phi$，以及大、小主應力之間的關係式 $\sigma_1 = \sigma_3 \tan^2(45^\circ + \phi/2) + 2c \tan(45^\circ + \phi/2)$。並說明破壞面與大主應力作用面之夾角為 $\theta = 45^\circ + \phi/2$。</li>
 <li>(二) 十字片剪試驗：說明適用條件（軟弱飽和黏土），試驗步驟（插入、等速旋轉測最大扭矩），並列出破壞力矩 $T$ 與不排水剪力強度 $S_u$ 的平衡方程式。注意區分頂底面也有抗剪貢獻。</li>
-<li>(三) 過壓密比：寫出定義方程式 $OCR = p_c' / p_0'$，並輔以說明 $OCR=1$（正常壓密）及 $OCR>1$（過壓密）的物理意義。</li>
+<li>(三) 過壓密比：寫出定義方程式 $OCR = p_c' / p_0'$，並輔以說明 $OCR=1$（正常壓密）及 $OCR&gt;1$（過壓密）的物理意義。</li>
 </ul>
 <p><strong>陷阱分析</strong>：</p>
 <ul>
@@ -69,24 +69,16 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><code>清晰且完整地說明 Mohr-Coulomb 極限平衡狀態、十字片剪試驗求不排水強度之原理，以及過壓密比之定義與物理意義。</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ul>
-<li>
-<p>破壞面應力關係：<br />
-  $$\tau_f = c + \sigma_f \tan\phi$$</p>
-</li>
-<li>
-<p>主應力極限平衡關係：<br />
-  $$\sigma_1 = \sigma_3 \tan^2\left(45^\circ + \frac{\phi}{2}\right) + 2c \tan\left(45^\circ + \frac{\phi}{2}\right)$$</p>
-</li>
-<li>
-<p>十字片剪試驗抗扭矩平衡：<br />
+<li>破壞面應力關係：<br />
+  $$\tau_f = c + \sigma_f \tan\phi$$</li>
+<li>主應力極限平衡關係：<br />
+  $$\sigma_1 = \sigma_3 \tan^2\left(45^\circ + \frac{\phi}{2}\right) + 2c \tan\left(45^\circ + \frac{\phi}{2}\right)$$</li>
+<li>十字片剪試驗抗扭矩平衡：<br />
   $$T = S_u \cdot \left[ \pi D \cdot H \cdot \frac{D}{2} + 2 \cdot \frac{\pi D^2}{4} \cdot \left(\frac{D}{3}\right) \right]$$<br />
   化簡為：<br />
-  $$S_u = \frac{T}{\pi D^2 \left( \frac{H}{2} + \frac{D}{6} \right)}$$</p>
-</li>
-<li>
-<p>過壓密比定義：<br />
-  $$OCR = \frac{p_c'}{p_0'}$$</p>
-</li>
+  $$S_u = \frac{T}{\pi D^2 \left( \frac{H}{2} + \frac{D}{6} \right)}$$</li>
+<li>過壓密比定義：<br />
+  $$OCR = \frac{p_c'}{p_0'}$$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
 <p><em>看到題目就能讀出的數字，不需要任何公式。</em></p>
@@ -142,27 +134,19 @@ $$\theta = 45^\circ + \frac{\phi}{2}$$</p>
 當十字片旋轉造成周圍土壤破壞時，破壞面為一個直徑 $D$、高 $H$ 的圓柱體表面（包含側面與上、下底面）。<br />
 假設破壞面上的不排水剪力強度 $S_u$ 分布均勻：</p>
 <ul>
-<li>
-<p><strong>側面抗扭矩貢獻 ($T_s$)</strong>：<br />
+<li><strong>側面抗扭矩貢獻 ($T_s$)</strong>：<br />
   剪力面積為 $\pi D H$，力臂為 $D/2$。<br />
-  $$T_s = (\pi D H \cdot S_u) \cdot \frac{D}{2} = \frac{\pi}{2} D^2 H S_u$$</p>
-</li>
-<li>
-<p><strong>上、下底面抗扭矩貢獻 ($T_e$)</strong>：<br />
+  $$T_s = (\pi D H \cdot S_u) \cdot \frac{D}{2} = \frac{\pi}{2} D^2 H S_u$$</li>
+<li><strong>上、下底面抗扭矩貢獻 ($T_e$)</strong>：<br />
   底面半徑為 $R=D/2$。對底面微小圓環 $2\pi r \cdot dr$ 積分，力臂為 $r$。積分後可得上下兩底面總抗扭矩：<br />
-  $$T_e = 2 \times \int_0^{D/2} (2\pi r \cdot dr \cdot S_u) \cdot r = 2 \times \left[ \frac{2\pi S_u}{3} r^3 \right]_0^{D/2} = \frac{\pi D^3}{6} S_u$$</p>
-</li>
-<li>
-<p><strong>總扭矩平衡</strong>：<br />
-  $$T = T_s + T_e = \frac{\pi}{2} D^2 H S_u + \frac{\pi D^3}{6} S_u = \pi D^2 S_u \left( \frac{H}{2} + \frac{D}{6} \right)$$</p>
-</li>
-<li>
-<p><strong>推導 $S_u$</strong>：<br />
+  $$T_e = 2 \times \int_0^{D/2} (2\pi r \cdot dr \cdot S_u) \cdot r = 2 \times \left[ \frac{2\pi S_u}{3} r^3 \right]_0^{D/2} = \frac{\pi D^3}{6} S_u$$</li>
+<li><strong>總扭矩平衡</strong>：<br />
+  $$T = T_s + T_e = \frac{\pi}{2} D^2 H S_u + \frac{\pi D^3}{6} S_u = \pi D^2 S_u \left( \frac{H}{2} + \frac{D}{6} \right)$$</li>
+<li><strong>推導 $S_u$</strong>：<br />
   $$\boxed{ S_u = \frac{T}{\pi D^2 \left( \frac{H}{2} + \frac{D}{6} \right)} }$$<br />
   若標準十字片長徑比 $H/D = 2$，則公式可簡化為：<br />
   $$S_u = \frac{T}{\frac{7\pi D^3}{6}} \approx 0.273 \frac{T}{D^3}$$<br />
-<em>(註：此為理論推導之 $S_u$，實務應用於邊坡或基礎設計時，常需再乘上 Bjerrum 修正係數 $\mu$，即 $S_{u(design)} = \mu \cdot S_{u(vane)}$)</em></p>
-</li>
+<em>(註：此為理論推導之 $S_u$，實務應用於邊坡或基礎設計時，常需再乘上 Bjerrum 修正係數 $\mu$，即 $S_{u(design)} = \mu \cdot S_{u(vane)}$)</em></li>
 </ul>
 <h3>(三) 土壤過壓密比（over-consolidation ratio）</h3>
 <p><strong>1. 定義：</strong><br />
@@ -171,19 +155,15 @@ $$\theta = 45^\circ + \frac{\phi}{2}$$</p>
 $$\boxed{ OCR = \frac{p_c'}{p_0'} }$$</p>
 <p><strong>2. 物理意義與分類：</strong></p>
 <ul>
-<li>
-<p><strong>$OCR = 1$ （正常壓密土，Normally Consolidated, NC）</strong>：<br />
-  表示土壤目前承受的有效應力，就是歷史上受過的最大有效應力（$p_0' = p_c'$）。此類土壤若再增加載重，將直接沿著處女壓密曲線（Virgin Compression Curve）變形，產生較大的沉陷量。</p>
-</li>
-<li>
-<p><strong>$OCR > 1$ （過壓密土，Overconsolidated, OC）</strong>：<br />
-  表示土壤歷史上曾經承受過比現在更大的有效應力（$p_c' > p_0'$）。可能是由於上方地層被侵蝕移除、地下水位曾下降後又回升、或曾受到冰川重壓等原因造成。在載重未超過 $p_c'$ 之前，土壤的變形量很小（沿著回脹/再壓縮曲線變化），且其剪力強度通常較同現有應力下的正常壓密土來得高。</p>
-</li>
+<li><strong>$OCR = 1$ （正常壓密土，Normally Consolidated, NC）</strong>：<br />
+  表示土壤目前承受的有效應力，就是歷史上受過的最大有效應力（$p_0' = p_c'$）。此類土壤若再增加載重，將直接沿著處女壓密曲線（Virgin Compression Curve）變形，產生較大的沉陷量。</li>
+<li><strong>$OCR &gt; 1$ （過壓密土，Overconsolidated, OC）</strong>：<br />
+  表示土壤歷史上曾經承受過比現在更大的有效應力（$p_c' &gt; p_0'$）。可能是由於上方地層被侵蝕移除、地下水位曾下降後又回升、或曾受到冰川重壓等原因造成。在載重未超過 $p_c'$ 之前，土壤的變形量很小（沿著回脹/再壓縮曲線變化），且其剪力強度通常較同現有應力下的正常壓密土來得高。</li>
 </ul>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
 <li><strong>十字片剪強度之修正</strong>：十字片剪試驗求得的 $S_u$ 通常會高估現場大面積滑動時的實際不排水強度（原因包含應變速率過快、土壤異向性、進行破壞面不同等）。因此 Bjerrum 提出修正係數 $\mu = 1.7 - 0.54 \log(PI)$，實務使用時應注意是否有要求修正。</li>
-<li><strong>OCR 的狀態</strong>：理論上不可能存在 $OCR < 1$ 的狀態（若正在壓密中，孔隙水壓尚未消散，該狀態稱為壓密未完成，不屬於基本定義範疇）。答題時只要精準定義是「有效應力」的比值即可穩拿全部分數。</li>
+<li><strong>OCR 的狀態</strong>：理論上不可能存在 $OCR &lt; 1$ 的狀態（若正在壓密中，孔隙水壓尚未消散，該狀態稱為壓密未完成，不屬於基本定義範疇）。答題時只要精準定義是「有效應力」的比值即可穩拿全部分數。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2006-1/SM-2006-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

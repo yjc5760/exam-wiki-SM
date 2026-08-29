@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2011-4 &#8212; 題目解析</title>
+<title>SM-2011-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -30,8 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2011-4</h1>
 <p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
 <strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>視在土壓力</code> <code>Peck土壓力包絡線</code> <code>支撐載重</code> <code>鋼鈑樁截面模數</code></p>
+<strong>標籤：</strong> <code>開挖穩定性</code> <code>視土壓力</code> <code>Peck包絡線</code> <code>支撐系統</code> <code>板樁</code> <code>鉸接法</code> <code>截面模數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>某工地在中等堅硬（medium stiff）之黏土層作鋼鈑樁支撐開挖，已知參數如下：</p>
@@ -58,7 +60,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ol>
 <li><strong>單位重陷阱</strong>：題目給定飽和度 $S_r=30\%$，代表土壤未飽和，不可直接使用 $\gamma_{sat}$ 公式，必須使用 $\gamma_t = \frac{G_s + S_r e}{1+e}\gamma_w$。</li>
-<li><strong>包絡線判斷陷阱</strong>：題幹雖稱「中等堅硬（medium stiff）」，但計算穩定數 $N_c = \gamma H / c = 4.08 > 4$，且 $S_u = 30 \text{ kPa} < 50 \text{ kPa}$，依據 Peck (1969) 規範，此土層應判定為「軟弱至中等黏土 (Soft to Medium Clay)」。若誤用「堅硬黏土 (Stiff Clay)」包絡線，將導致 C 支撐載重嚴重低估。</li>
+<li><strong>包絡線判斷陷阱</strong>：題幹雖稱「中等堅硬（medium stiff）」，但計算穩定數 $N_c = \gamma H / c = 4.08 &gt; 4$，且 $S_u = 30 \text{ kPa} &lt; 50 \text{ kPa}$，依據 Peck (1969) 規範，此土層應判定為「軟弱至中等黏土 (Soft to Medium Clay)」。若誤用「堅硬黏土 (Stiff Clay)」包絡線，將導致 C 支撐載重嚴重低估。</li>
 <li><strong>下限值陷阱</strong>：軟弱至中等黏土之最大壓力 $p_a = \gamma H (1 - \frac{4c}{\gamma H})$ 計算值可能極小，必須套用 $p_a \ge 0.3 \gamma H$ 之下限規定。</li>
 <li><strong>最大彎矩尋找</strong>：不可僅計算支撐點處的彎矩，第一段（0~4m）跨距最大，通常最大正彎矩發生在 A 與 B 之間的「剪力為零」處。</li>
 </ol>
@@ -148,7 +150,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <tbody>
 <tr>
 <td>視在土壓力包絡線選定</td>
-<td>$N_c > 4$ 時應選用軟弱至中等黏土包絡線，且須注意 $0.3\gamma H$ 的下限值。</td>
+<td>$N_c &gt; 4$ 時應選用軟弱至中等黏土包絡線，且須注意 $0.3\gamma H$ 的下限值。</td>
 <td></td>
 </tr>
 <tr>
@@ -165,7 +167,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 $$ \gamma_t = \frac{G_s + S_r e}{1 + e} \gamma_w = \frac{2.70 + 0.30 \times 0.617}{1 + 0.617} \times 9.81 = \frac{2.8851}{1.617} \times 9.81 = 17.50 \text{ kN/m}^3 $$</p>
 <p><strong>Step 2：計算穩定數 $N_c$ 並判定土壓力包絡線</strong><br />
 $$ N_c = \frac{\gamma_t H}{c} = \frac{17.50 \times 7}{30} = 4.083 $$<br />
-因為 $N_c > 4$ (且 $S_u = 30 \text{ kPa}$ 小於 $50 \text{ kPa}$)，依據 Peck (1969) 規範，應採用<strong>「軟弱至中等黏土 (Soft to Medium Clay)」</strong>之視在土壓力包絡線。</p>
+因為 $N_c &gt; 4$ (且 $S_u = 30 \text{ kPa}$ 小於 $50 \text{ kPa}$)，依據 Peck (1969) 規範，應採用<strong>「軟弱至中等黏土 (Soft to Medium Clay)」</strong>之視在土壓力包絡線。</p>
 <p>計算理論最大壓力值 $p_a$：<br />
 $$ p_a = \gamma_t H \left( 1 - m\frac{4c}{\gamma_t H} \right) $$<br />
 取 $m = 1.0$，則：<br />
@@ -209,7 +211,7 @@ $$ R_{C2} = R_D = \frac{36.75 \times 1}{2} = 18.375 \text{ kN/m} $$</p>
 <ul>
 <li>第二段 (4~6m) 最大彎矩：$M_2 = \frac{ql^2}{8} = \frac{36.75 \times 2^2}{8} = 18.38 \text{ kN-m/m}$</li>
 <li>第一段 (0~4m) 最大彎矩發生在剪力 $V = 0$ 處。<br />
-  設距地表 $z$ 處 ($z > 1.75\text{m}$) 剪力為 0：<br />
+  設距地表 $z$ 處 ($z &gt; 1.75\text{m}$) 剪力為 0：<br />
   $$ V(z) = (\text{0~1.75m 總載重}) + (\text{1.75~z 均佈載重}) - R_A = 0 $$<br />
   $$ 32.156 + 36.75(z - 1.75) - 61.377 = 0 $$<br />
   $$ 36.75(z - 1.75) = 29.221 \implies z - 1.75 = 0.795 \text{ m} \implies z = 2.545 \text{ m} $$<br />
@@ -224,7 +226,7 @@ $$ R_{C2} = R_D = \frac{36.75 \times 1}{2} = 18.375 \text{ kN/m} $$</p>
 $$ S = \frac{M_{\text{max}}}{\sigma_{all}} = \frac{38.91}{170,000} = 2.289 \times 10^{-4} \text{ m}^3\text{/m} = \boxed{228.9 \text{ cm}^3\text{/m}} $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li><strong>「中等堅硬」字眼的詮釋歧義</strong>：題幹雖明示為「中等堅硬 (medium stiff)」，但在 Peck 經驗土壓力的標準定義中，$N_c \le 4$ 始可稱為「堅硬黏土 (Stiff Clay)」，而本題 $N_c = 4.08 > 4$，故嚴謹做法是選用「軟弱至中等黏土 (Soft to Medium Clay)」包絡線。</li>
+<li><strong>「中等堅硬」字眼的詮釋歧義</strong>：題幹雖明示為「中等堅硬 (medium stiff)」，但在 Peck 經驗土壓力的標準定義中，$N_c \le 4$ 始可稱為「堅硬黏土 (Stiff Clay)」，而本題 $N_c = 4.08 &gt; 4$，故嚴謹做法是選用「軟弱至中等黏土 (Soft to Medium Clay)」包絡線。</li>
 <li><strong>若誤用 Stiff Clay 包絡線的影響</strong>：若考生直觀認定其為堅硬黏土，下半部（5.25m~7.0m）的土壓力會遞減至 0。這會使 C 支撐的載重顯著下降（約變為 192.9 kN）。然而，對於第一段 (0~4m) 的剪力與彎矩分佈，兩種包絡線的圖形完全一致，因此<strong>A/B支撐載重與最大彎矩 $M_{\text{max}}$ 的計算結果會是相同的</strong>，顯示出題者可能刻意將關鍵設計值（如鋼鈑樁斷面需求）設計為不受此歧義影響。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2011-4/SM-2011-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>

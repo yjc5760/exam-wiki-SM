@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2024-4 &#8212; 題目解析</title>
+<title>SM-2024-4 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2024-4 題目解析</h1><a class="back quick" href="../study-SM-U2-2.html">&#128269; U2-2 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-2.html">&#128218; U2-2 深基礎之支承力與沉陷量 講義</a></header>
 <main><h1>考題編號：SM-2024-4</h1>
-<p><strong>主分類：</strong> <code>SM-U2</code> 淺基礎與深基礎<br />
-<strong>副分類：</strong> <code>SM-U2-2</code> 深基礎之支承力與沉陷量<br />
-<strong>分析法：</strong> 有效應力法 / 總應力法<br />
-<strong>標籤：</strong> <code>樁基礎</code> <code>承載力</code> <code>α法</code> <code>臨界深度</code> <code>土層參數轉換</code></p>
+<p><strong>主分類：</strong> <code>SM-U2-2</code> 深基礎之支承力與沉陷量<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>樁基承載力</code> <code>α法</code> <code>臨界深度</code> <code>端點承載力</code> <code>摩擦力</code> <code>三相關係</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>直徑 $1\text{ m}$ 的混凝土樁需承受 $2000\text{ kN}$ 垂直載重，若安全係數為 $2.5$ 的情況下，請計算在兩種不同地層中，需要的設計樁長分別是多少？並繪出樁身阻抗分布圖。</p>
@@ -46,7 +47,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li>黏土層樁尖承載力 $Q_p = A_p \times c_u \times N_c^*$；樁身摩擦力 $Q_s = p \times L \times \alpha \times c_u$。</li>
 <li>砂土層臨界深度 $L_c = 15D$；樁尖承載力 $Q_p = A_p \times q' \times N_q^*$。</li>
 <li>砂土層極限樁底阻抗 $q_l = 0.5 \times p_a \times N_q^* \times \tan(\phi)$。</li>
-<li>砂土樁身摩擦力：$Q_{s1(0\sim15D)} = \frac{1}{2} \times p \times L_c \times K_0 \times \sigma_0' \times \tan(0.8\phi)$；$Q_{s2(>15D)} = p \times L_2 \times K_0 \times \sigma_0' \times \tan(0.8\phi)$。</li>
+<li>砂土樁身摩擦力：$Q_{s1(0\sim15D)} = \frac{1}{2} \times p \times L_c \times K_0 \times \sigma_0' \times \tan(0.8\phi)$；$Q_{s2(&gt;15D)} = p \times L_2 \times K_0 \times \sigma_0' \times \tan(0.8\phi)$。</li>
 </ul>
 <p><img alt="SM-2024-4 題目附圖：樁基礎載重與幾何" src="../../raw/solutions/SM-2024-4/SM-2024-4-fig-1.png" /></p>
 <p><em>圖說：直徑 1m 的樁承受 2000 kN 載重，地下水位位於地表，需計算未知樁長 L。</em></p>
@@ -62,17 +63,17 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <p><strong>戰略地圖：</strong></p>
 <ol>
-<li><strong>黏土層</strong>：<br />
-   - 確認極限載重 $Q_u = Q_{all} \times FS$。<br />
-   - 計算樁端面積 $A_p$ 與周長 $p$。<br />
-   - 透過 $c_u/p_a$ 查表求得 $\alpha$。<br />
-   - 直接代入公式 $Q_u = Q_p + Q_s$ 解出樁長 $L$。</li>
-<li><strong>飽和砂土層</strong>：<br />
-   - <strong>土層參數轉換</strong>：假設 $G_s = 2.65$，由 $\gamma_m$ 及 $w$ 求得 $\gamma_d$，進而推求孔隙比 $e$ 與飽和單位重 $\gamma_{sat}$，並得到水下有效單位重 $\gamma'$。<br />
-   - <strong>靜止土壓力係數</strong>：採用 $K_0 = 1 - \sin\phi$。<br />
-   - <strong>臨界深度阻抗</strong>：計算深度 $15D$ 處的有效應力 $\sigma_{0}'$ 與單位摩擦力。<br />
-   - <strong>樁端承載力檢核</strong>：計算 $Q_p$，並嚴格檢核是否超過上限 $q_l \times A_p$。<br />
-   - <strong>分段計算摩擦力</strong>：計算 $0\sim 15D$ 區段的 $Q_{s1}$，將剩餘需要的承載力交由 $>15D$ 區段的 $Q_{s2}$ 承擔，解出下段樁長 $L_2$，最後加總得到總長。</li>
+<li><strong>黏土層</strong>：</li>
+<li>確認極限載重 $Q_u = Q_{all} \times FS$。</li>
+<li>計算樁端面積 $A_p$ 與周長 $p$。</li>
+<li>透過 $c_u/p_a$ 查表求得 $\alpha$。</li>
+<li>直接代入公式 $Q_u = Q_p + Q_s$ 解出樁長 $L$。</li>
+<li><strong>飽和砂土層</strong>：</li>
+<li><strong>土層參數轉換</strong>：假設 $G_s = 2.65$，由 $\gamma_m$ 及 $w$ 求得 $\gamma_d$，進而推求孔隙比 $e$ 與飽和單位重 $\gamma_{sat}$，並得到水下有效單位重 $\gamma'$。</li>
+<li><strong>靜止土壓力係數</strong>：採用 $K_0 = 1 - \sin\phi$。</li>
+<li><strong>臨界深度阻抗</strong>：計算深度 $15D$ 處的有效應力 $\sigma_{0}'$ 與單位摩擦力。</li>
+<li><strong>樁端承載力檢核</strong>：計算 $Q_p$，並嚴格檢核是否超過上限 $q_l \times A_p$。</li>
+<li><strong>分段計算摩擦力</strong>：計算 $0\sim 15D$ 區段的 $Q_{s1}$，將剩餘需要的承載力交由 $&gt;15D$ 區段的 $Q_{s2}$ 承擔，解出下段樁長 $L_2$，最後加總得到總長。</li>
 </ol>
 <p><strong>陷阱分析：</strong></p>
 <ul>
@@ -98,7 +99,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li>臨界深度有效應力 ($z = 15D$)：$\sigma_{0}' = \boxed{\gamma'} \cdot 15D$</li>
 <li>樁尖承載力：$Q_p = A_p \cdot \min( \boxed{\sigma_{0}'} \cdot N_q^*, \boxed{q_l} )$</li>
 <li>樁身上段摩擦力 ($0\sim 15D$)：$Q_{s1} = 0.5 \cdot p \cdot (15D) \cdot \boxed{K_0} \cdot \boxed{\sigma_{0}'} \cdot \tan(0.8\phi)$</li>
-<li>樁身下段摩擦力 ($> 15D$)：$Q_{s2} = \boxed{Q_u} - \boxed{Q_p} - \boxed{Q_{s1}}$</li>
+<li>樁身下段摩擦力 ($&gt; 15D$)：$Q_{s2} = \boxed{Q_u} - \boxed{Q_p} - \boxed{Q_{s1}}$</li>
 <li>長度求解：$\boxed{Q_{s2}} = p \cdot L_2 \cdot \boxed{K_0} \cdot \boxed{\sigma_{0}'} \cdot \tan(0.8\phi) \implies L = 15D + L_2$</li>
 </ul>
 <h3>L1：題目直接給定</h3>
@@ -241,14 +242,14 @@ $$ f_{s,max} = K_0 \cdot \sigma_0' \cdot \tan(0.8\phi) = 0.384 \times 144.75 \ti
 $$ q_l = 0.5 \times p_a \times N_q^* \times \tan\phi = 0.5 \times 100 \times 20 \times \tan(38^\circ) = 1000 \times 0.7813 = 781.3 \text{ kPa} $$<br />
 假設樁長必大於 $15\text{m}$，此時樁底有效應力 $\sigma_{tip}' = \sigma_0' = 144.75 \text{ kPa}$。<br />
 依承載力公式 $q_p = \sigma_{tip}' \times N_q^* = 144.75 \times 20 = 2895 \text{ kPa}$。<br />
-因 $2895 \text{ kPa} > q_l = 781.3 \text{ kPa}$，故樁尖阻抗受上限值控制，取 $q_p = 781.3 \text{ kPa}$。<br />
+因 $2895 \text{ kPa} &gt; q_l = 781.3 \text{ kPa}$，故樁尖阻抗受上限值控制，取 $q_p = 781.3 \text{ kPa}$。<br />
 $$ Q_p = A_p \times q_p = 0.7854 \times 781.3 = 613.6 \text{ kN} $$</p>
 <p><strong>4. 計算樁身摩擦力並求解樁長 $L$：</strong><br />
 $0 \sim 15\text{m}$ 區段之總摩擦力 $Q_{s1}$ (以 $32.64\text{ kPa}$ 計算)：<br />
 $$ Q_{s1} = \frac{1}{2} \times p \times L_c \times f_{s,max} = 0.5 \times 3.1416 \times 15 \times 32.64 = 769.1 \text{ kN} $$<br />
 需求之下段樁身摩擦力 $Q_{s2}$：<br />
 $$ Q_{s2} = Q_u - Q_p - Q_{s1} = 5000 - 613.6 - 769.1 = 3617.3 \text{ kN} $$<br />
-計算所需之下段樁長 $L_2$ ($z > 15\text{m}$ 之部分)：<br />
+計算所需之下段樁長 $L_2$ ($z &gt; 15\text{m}$ 之部分)：<br />
 $$ Q_{s2} = p \times L_2 \times f_{s,max} \implies 3617.3 = 3.1416 \times L_2 \times 32.64 = 102.54 L_2 $$<br />
 $$ L_2 = \frac{3617.3}{102.54} \approx 35.28 \text{ m} $$<br />
 總設計樁長：<br />
@@ -271,18 +272,12 @@ $$ L = L_c + L_2 = 15 + 35.28 = 50.28 \text{ m} $$</p>
 <hr />
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>「濕土」參數的轉換必要性</strong>：<br />
-   有部分考生在考場上若時間緊迫，可能會直接認定題目給的 $\gamma_m = 17.98$ 即為飽和狀態下的 $\gamma_{sat}$，並直接用 $17.98 - 9.81 = 8.17$ 作為有效單位重計算。然而，學理上「飽和砂土」搭配「含水量 16%」及「濕土」等字眼，強烈暗示這是一組需要經由 $G_s = 2.65$ 推算的考題設計。嚴謹推導 $\gamma_{sat}$ 是獲取滿分的關鍵。若以 $\gamma_{sat}=17.98$ 計算，將求出約 $58\text{ m}$ 的長度。</p>
-</li>
-<li>
-<p><strong>樁尖承載力封頂 (Limiting Tip Resistance)</strong>：<br />
-   本題設計了極小的 $q_l$ 值（僅約 $781\text{ kPa}$，遠低於砂土常見的數千 $\text{kPa}$ 承載力），目的就是要強制觸發考生的「臨界上限檢核」。若忘記比較 $q'N_q^*$ 與 $q_l$ 的大小，會導致端承載力被嚴重高估，進而算出過短的錯誤樁長。</p>
-</li>
-<li>
-<p><strong>公式中 $K_0$ 的選用</strong>：<br />
-   題目為「混凝土樁」，若是打入樁 (Driven pile)，砂土的水平側壓力會因為擠壓而上升，K 值通常大於 1.0；但公式明確指定使用符號 $K_0$，故採用靜止土壓力係數 $K_0 = 1-\sin\phi$ 是唯一且最標準的作答路徑。</p>
-</li>
+<li><strong>「濕土」參數的轉換必要性</strong>：<br />
+   有部分考生在考場上若時間緊迫，可能會直接認定題目給的 $\gamma_m = 17.98$ 即為飽和狀態下的 $\gamma_{sat}$，並直接用 $17.98 - 9.81 = 8.17$ 作為有效單位重計算。然而，學理上「飽和砂土」搭配「含水量 16%」及「濕土」等字眼，強烈暗示這是一組需要經由 $G_s = 2.65$ 推算的考題設計。嚴謹推導 $\gamma_{sat}$ 是獲取滿分的關鍵。若以 $\gamma_{sat}=17.98$ 計算，將求出約 $58\text{ m}$ 的長度。</li>
+<li><strong>樁尖承載力封頂 (Limiting Tip Resistance)</strong>：<br />
+   本題設計了極小的 $q_l$ 值（僅約 $781\text{ kPa}$，遠低於砂土常見的數千 $\text{kPa}$ 承載力），目的就是要強制觸發考生的「臨界上限檢核」。若忘記比較 $q'N_q^*$ 與 $q_l$ 的大小，會導致端承載力被嚴重高估，進而算出過短的錯誤樁長。</li>
+<li><strong>公式中 $K_0$ 的選用</strong>：<br />
+   題目為「混凝土樁」，若是打入樁 (Driven pile)，砂土的水平側壓力會因為擠壓而上升，K 值通常大於 1.0；但公式明確指定使用符號 $K_0$，故採用靜止土壓力係數 $K_0 = 1-\sin\phi$ 是唯一且最標準的作答路徑。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2024-4/SM-2024-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

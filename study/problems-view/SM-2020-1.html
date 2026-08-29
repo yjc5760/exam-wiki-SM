@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2020-1 &#8212; 題目解析</title>
+<title>SM-2020-1 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,15 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2020-1 題目解析</h1><a class="back" href="javascript:history.back()">&#8592; 返回講義</a></header>
-<main><h1>考題編號：[SM-2020-1]</h1>
-<p><strong>主分類：</strong> <code>SM-1</code> 土壤基本性質與分類<br />
-<strong>副分類：</strong> <code>SM-4</code> 土體內應力<br />
+<header><h1>SM-2020-1 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
+<a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
+<main><h1>考題編號：SM-2020-1</h1>
+<p><strong>主分類：</strong> <code>SM-U1-4</code> 土體內應力<br />
+<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>毛細現象</code> <code>有效應力</code> <code>三相關係</code></p>
+<strong>標籤：</strong> <code>有效應力原理</code> <code>總應力</code> <code>孔隙水壓</code> <code>三相關係</code> <code>毛細作用</code> <code>飽和度</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、某工址之土層剖面如下圖所示。已知頂層厚度 $H_1 = 2.1$ m（乾砂），比重 $G_s = 2.65$，孔隙比 $e = 0.5$。第二層厚度 $H_2 = 0.9$ m（濕砂、毛細作用區），比重 $G_s = 2.65$，孔隙比 $e = 0.5$，飽和度 $S = 50\%$。第三層厚度 $H_3 = 1.9$ m（飽和黏土），比重 $G_s = 2.71$，含水量 $w = 42\%$。(25 分)<br />
@@ -42,7 +44,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <h2>2. 考題核心精神與出題者意圖 (Core Concepts &amp; Examiner's Intent)</h2>
 <ol>
 <li><strong>三相關係換算</strong>：測驗考生能否利用基本物理量（$G_s, e, S, w$）正確計算出各土層之單位重（乾單位重 $\gamma_d$、濕單位重 $\gamma_m$、飽和單位重 $\gamma_{sat}$）。</li>
-<li><strong>毛細現象對應力的影響</strong>：測驗對於毛細區內孔隙水壓（負水壓）的認知。當飽和度 $S < 100\%$ 時，有效應力原理中的孔隙水壓貢獻應以 $u = -S \cdot \gamma_w \cdot h_c$ 計算，並理解其如何提升土體的有效應力。</li>
+<li><strong>毛細現象對應力的影響</strong>：測驗對於毛細區內孔隙水壓（負水壓）的認知。當飽和度 $S &lt; 100\%$ 時，有效應力原理中的孔隙水壓貢獻應以 $u = -S \cdot \gamma_w \cdot h_c$ 計算，並理解其如何提升土體的有效應力。</li>
 <li><strong>應力分布圖繪製</strong>：確認考生能否將計算結果視覺化，並正確呈現各層斜率變化。</li>
 </ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
@@ -193,10 +195,8 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><strong>B 點 (毛細區頂部, $z = 2.1$ m)</strong></p>
 </li>
 <li>總應力 $\sigma_B = \gamma_d \times 2.1 = 17.33 \times 2.1 = \boxed{36.39 \text{ kPa}}$</li>
-<li>
-<p>水壓力：根據非飽和土等效孔隙水壓概念 $u = -S \gamma_w h_c$<br />
-    $u_B = -0.5 \times 9.81 \times 0.9 = \boxed{-4.41 \text{ kPa}}$</p>
-</li>
+<li>水壓力：根據非飽和土等效孔隙水壓概念 $u = -S \gamma_w h_c$<br />
+    $u_B = -0.5 \times 9.81 \times 0.9 = \boxed{-4.41 \text{ kPa}}$</li>
 <li>
 <p>有效應力 $\sigma'_B = \sigma_B - u_B = 36.39 - (-4.41) = \boxed{40.80 \text{ kPa}}$</p>
 </li>
@@ -227,17 +227,24 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><em>圖說：總應力 $\sigma$、水壓力 $u$、有效應力 $\sigma'$ 隨深度 $z$ 分布之折線圖，橫軸為應力 (kPa)、縱軸為深度 z (m)，四個控制點座標為 A(0, 0, 0)、B(2.1m, σ=36.39, u=−4.41, σ'=40.80)、C(3.0m, σ=53.46, u=0, σ'=53.46)、D(4.9m, σ=87.00, u=18.64, σ'=68.36)。其中 A→B 段 u 為負值（毛細區負孔隙水壓），B→C 段 u 由負值回升至 0（地下水位面），C→D 段 u 依靜水壓力線性增加；σ' 曲線在 B 點出現因負孔隙水壓造成的局部峰值。</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li>
-<p><strong>非飽和毛細區孔隙水壓的處理方法</strong>：<br />
-  學術上，完全飽和 ($S=100\%$) 毛細區的孔隙水壓為負值 ($u = -\gamma_w h_c$)。然而，當 $S < 100\%$ 時，實際水壓力依然為 $u_w = -\gamma_w h_c$（相對於空氣壓力），但在計算「有效應力」時，水壓的貢獻會受飽和度折減（即 Bishop 等效孔隙水壓力 $u_{eq} = -S \gamma_w h_c$）。<br />
-  多數國家考試與解題標準，在遇到非飽和毛細區時，會將表格中的 $u$ 直接以 $u_{eq} = -S \gamma_w h_c$ 表示，以維持有效應力 $\sigma' = \sigma - u$ 這條最核心定律的直觀性。本解題過程採用此安全作法。</p>
-</li>
-<li>
-<p><strong>有效單位重 $\gamma'$ 的驗證</strong>：<br />
+<li><strong>非飽和毛細區孔隙水壓的處理方法</strong>：<br />
+  學術上，完全飽和 ($S=100\%$) 毛細區的孔隙水壓為負值 ($u = -\gamma_w h_c$)。然而，當 $S &lt; 100\%$ 時，實際水壓力依然為 $u_w = -\gamma_w h_c$（相對於空氣壓力），但在計算「有效應力」時，水壓的貢獻會受飽和度折減（即 Bishop 等效孔隙水壓力 $u_{eq} = -S \gamma_w h_c$）。<br />
+  多數國家考試與解題標準，在遇到非飽和毛細區時，會將表格中的 $u$ 直接以 $u_{eq} = -S \gamma_w h_c$ 表示，以維持有效應力 $\sigma' = \sigma - u$ 這條最核心定律的直觀性。本解題過程採用此安全作法。</li>
+<li><strong>有效單位重 $\gamma'$ 的驗證</strong>：<br />
   在毛細區內，有效應力的增加率其實對應於「有效單位重」。我們可計算毛細區的等效有效單位重：<br />
   $\gamma'_{cap} = \gamma_m - \frac{\Delta u}{\Delta z} = 18.97 - \frac{0 - (-4.41)}{0.9} = 18.97 - 4.90 = 14.07 \text{ kN/m}^3$。<br />
-  由此可再次驗證：$\sigma'_C = \sigma'_B + \gamma'_{cap} \times 0.9 = 40.80 + 14.07 \times 0.9 = 40.80 + 12.66 = 53.46 \text{ kPa}$，與總應力減水壓力的結果完全一致，證明計算邏輯正確。</p>
-</li>
+  由此可再次驗證：$\sigma'_C = \sigma'_B + \gamma'_{cap} \times 0.9 = 40.80 + 14.07 \times 0.9 = 40.80 + 12.66 = 53.46 \text{ kPa}$，與總應力減水壓力的結果完全一致，證明計算邏輯正確。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2020-1/SM-2020-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
+<script>
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
+   靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
+(function(){try{
+  var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);
+  if(!m)return;var u=m[1],s=u.replace('SM-','');
+  var q=document.querySelector('a.quick'),l=document.querySelector('a.lect');
+  if(q){q.setAttribute('href','../study-'+u+'.html');q.innerHTML='\uD83D\uDD0D '+s+' \u547D\u984C\u5206\u6790';}
+  if(l){l.setAttribute('href','../lecture-'+u+'.html');l.innerHTML='\uD83D\uDCDA '+s+' \u8B1B\u7FA9';}
+}catch(e){}})();
+</script>
 </body></html>

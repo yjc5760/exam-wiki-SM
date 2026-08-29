@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2008-3 &#8212; 題目解析</title>
+<title>SM-2008-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,6 +23,7 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
@@ -30,9 +31,9 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2008-3</h1>
 <p><strong>主分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
-<strong>副分類：</strong> <code>SM-U1-5</code> 土壤強度特性與變形性<br />
+<strong>副分類：</strong> <code>SM-U3-1</code> 側向土壓力理論、<code>SM-U1-5</code> 土壤強度特性與變形性、<code>SM-U2-5</code> 地層改良方法<br />
 <strong>分析法：</strong> 總應力法<br />
-<strong>標籤：</strong> <code>連續壁</code> <code>貫入深度</code> <code>安全係數</code> <code>地盤改良</code> <code>不排水剪力強度</code></p>
+<strong>標籤：</strong> <code>開挖穩定性</code> <code>連續壁</code> <code>貫入深度</code> <code>不排水剪力強度</code> <code>被動土壓力</code> <code>地盤改良</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>三、某開挖工程於土層中進行，如圖二所示。地表為一厚 3 m 之回填土，單位重 $\gamma_t = 18 \text{ kN/m}^3$。其下方為一黏土層，飽和單位重 $\gamma_{sat} = 20 \text{ kN/m}^3$，正規化不排水剪力強度 $S_u / \sigma_{v0}' = 0.25$，且不排水剪力強度不受開挖解壓之影響。連續壁總深度為 25 m，開挖深度 16 m，最下階支撐位於最終開挖面上方 3 m 處。（25 分）<br />
@@ -165,14 +166,14 @@ $$ \sigma_{h,P}(z) = \sigma_{v,P}(z) + 2S_{um} = 21.5(z - 16) + q_u $$</p>
 </ul>
 <p>為方便計算力矩，將土壓力分為矩形與三角形：</p>
 <ol>
-<li><strong>矩形部分</strong>（寬度 $q_u$，高度 9 m）：<br />
-   - 力 $F_{P1} = 9 q_u$<br />
-   - 作用點距 $z=13$ 的力臂：$3 + 4.5 = 7.5$ m<br />
-   - 力矩 $M_{P1} = 9 q_u \times 7.5 = 67.5 q_u$</li>
-<li><strong>三角形部分</strong>（頂部 0，底部 193.5，高度 9 m）：<br />
-   - 力 $F_{P2} = \frac{1}{2} \times 193.5 \times 9 = 870.75 \text{ kN/m}$<br />
-   - 作用點距 $z=13$ 的力臂：$3 + \frac{2}{3}(9) = 9$ m<br />
-   - 力矩 $M_{P2} = 870.75 \times 9 = 7836.75$</li>
+<li><strong>矩形部分</strong>（寬度 $q_u$，高度 9 m）：</li>
+<li>力 $F_{P1} = 9 q_u$</li>
+<li>作用點距 $z=13$ 的力臂：$3 + 4.5 = 7.5$ m</li>
+<li>力矩 $M_{P1} = 9 q_u \times 7.5 = 67.5 q_u$</li>
+<li><strong>三角形部分</strong>（頂部 0，底部 193.5，高度 9 m）：</li>
+<li>力 $F_{P2} = \frac{1}{2} \times 193.5 \times 9 = 870.75 \text{ kN/m}$</li>
+<li>作用點距 $z=13$ 的力臂：$3 + \frac{2}{3}(9) = 9$ m</li>
+<li>力矩 $M_{P2} = 870.75 \times 9 = 7836.75$</li>
 </ol>
 <p>總抵抗力矩 $M_P = 67.5 q_u + 7836.75$。<br />
 令 $M_P = 31891.4$：<br />

@@ -29,11 +29,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </style></head><body>
 <header><h1>SM-2016-2 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
-<main><h1>考題編號：[SM-2016-2]</h1>
-<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>副分類：</strong> <code>SM-U1-1</code> 土壤基本性質與分類<br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>孔隙比</code> <code>比重</code> <code>夯實</code> <code>單位重</code> <code>借土體積</code> <code>加水量計算</code></p>
+<main><h1>考題編號：SM-2016-2</h1>
+<p><strong>主分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
+<strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>三相關係</code> <code>比重</code> <code>孔隙比</code> <code>含水量</code> <code>現地密度試驗</code> <code>土粒重不變原則</code> <code>最佳含水量</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>二、某土方工程採用另一疏濬工程之土方執行填土工程，取土處為砂礫石土壤，經大型現地密度試驗，挖孔體積為 $0.25\mathrm{~m^3}$ ，於孔洞內取出土重 $450\mathrm{~kgf}$，以四分法取土密封送回實驗室。於實驗室取適量土樣放入 $1,000\mathrm{~cm^3}$ 容器內，秤重為 $1,720\mathrm{~g}$，土壤經烘乾測得土樣重 $1,620\mathrm{~g}$，並測得該容器內土壤孔隙比 $e$ 為 $0.70$；經實驗室夯實試驗測得 $\gamma_{d,max} = 19.50\mathrm{~kN/m^3}$，最佳含水量 $\mathrm{OMC} \approx 8\%$。（假設水的密度 $\rho_w = 1.0\mathrm{~g/cm^3}$ ）<br />
@@ -64,6 +64,8 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>實驗室容器與現地的差異：</strong> 放入 $1,000\mathrm{~cm^3}$ 容器的土壤孔隙比 $e=0.70$ 是這部分的特定狀態，<strong>不能</strong>當作現地土壤的孔隙比，只能用來算 $G_s$。</li>
 <li><strong>加水量基準：</strong> 水量的增減是以「乾土重 $W_s$」為分母，不可用濕土重或體積計算。</li>
 </ul>
+<p><img alt="三種狀態的三相體積柱對照：左為實驗室容器內（e = 0.70，最鬆），中為現地借土處（e = 0.6244），右為夯實後填方（e = 0.3855）；三根柱子的土粒段高度完全相同並以水平虛線對齊，前兩根的水段亦相同（密封送驗，含水量未變），第三根改為 OMC = 8%" src="../../raw/solutions/SM-2016-2/figs/SM-2016-2-fig-1-three-states.svg" /></p>
+<p><em>圖 1　三種狀態的三相組成。它攔的是把實驗室容器內的 $e = 0.70$ 當成現地孔隙比：那是「重新填入容器」造成的狀態，比現地的 $e = 0.6244$ 還鬆；若誤用，$\gamma_d$ 會變成 15.89 而非 16.63，第三小題的借土量會多算 545 m³。$e = 0.70$ 唯一的用途是反推材質常數 $G_s$。</em></p>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>求出土壤比重 $G_s$、現地乾/濕單位重、需開挖的現地土方體積，以及施工時需添加的水量。</p>
@@ -217,6 +219,8 @@ $$ V_{excavate} = \frac{W_{s,total}}{\gamma_{d,borrow}} = \frac{195,000\mathrm{~
 <p><strong>策略註解：</strong> 計算時應盡量帶入未四捨五入的精確值 ($\gamma_d = 16.6314$) 避免累計誤差；若使用 $16.63$ 代入則會得到 $11,725.8\mathrm{~m^3}$。</p>
 </blockquote>
 <p>$$ \boxed{需取疏濬處土方體積 V_{excavate} = 11,725\mathrm{~m^3}} $$</p>
+<p><img alt="借土與填方的體積流程圖：左方橘色方塊為疏濬處借土 11,725 m³（γ_d = 16.63，鬆），右方綠色方塊為夯實後填方 10,000 m³（γ_d,max = 19.50，緊），兩者以「乾土重 195,000 kN 不變」的箭頭相連；填方上方另有一薄層藍色方塊代表另加水 363.2 m³" src="../../raw/solutions/SM-2016-2/figs/SM-2016-2-fig-2-borrow-fill.svg" /></p>
+<p><em>圖 2　借土量由乾土重不變決定。它攔的是拿體積比去換算：兩個方塊的體積比 0.853 是「結果」而不是「依據」，依據是兩端共有的 $W_s = 195{,}000$ kN。加水量同理——分母是乾土重，不是濕土重也不是體積。</em></p>
 <h3>(四) 需再添加多少水量（體積）</h3>
 <p>填築時要求的目標含水量為 $\mathrm{OMC} = 8\%$。<br />
 現地土壤已含有的含水量為 $w = 6.173\%$。<br />
@@ -230,15 +234,27 @@ $$ V_w = \frac{\Delta W_w}{\gamma_w} = \frac{3563.04\mathrm{~kN}}{9.81\mathrm{~k
 <p>$$ \boxed{需添加的水量體積 V_w = 363.2\mathrm{~m^3}} $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li>
-<p><strong>$g$ 值的選用</strong>：<br />
-  題目中明確使用 $\mathrm{kgf}$ 作為力的單位，並要求輸出為 $\mathrm{kN/m^3}$。在工程計算中，$1\mathrm{~kgf}$ 定義為 $1\mathrm{~kg}$ 在標準重力 $9.80665\mathrm{~m/s^2}$ 下的重量。考試時統一採用 $g=9.81\mathrm{~m/s^2}$ 進行 $\mathrm{kgf}$ 到 $\mathrm{N}$ 的換算是最無爭議的作法。若考生使用 $g=9.8$ 或 $g=10$，雖然結果略有不同，但只要明確寫出假設，通常也會給分。</p>
-</li>
-<li>
-<p><strong>單位精度的保持</strong>：<br />
-  在(三)與(四)計算中，若直接使用四捨五入到小數點第二位的 $\gamma_d = 16.63\mathrm{~kN/m^3}$ 進行計算，會導致體積計算結果產生明顯誤差。工程計算強烈建議中間過程應保留至少4位有效數字，直到最後的答案再四捨五入。</p>
-</li>
-</ul></main>
+<li><strong>$g$ 值的選用</strong>：<br />
+  題目中明確使用 $\mathrm{kgf}$ 作為力的單位，並要求輸出為 $\mathrm{kN/m^3}$。在工程計算中，$1\mathrm{~kgf}$ 定義為 $1\mathrm{~kg}$ 在標準重力 $9.80665\mathrm{~m/s^2}$ 下的重量。考試時統一採用 $g=9.81\mathrm{~m/s^2}$ 進行 $\mathrm{kgf}$ 到 $\mathrm{N}$ 的換算是最無爭議的作法。若考生使用 $g=9.8$ 或 $g=10$，雖然結果略有不同，但只要明確寫出假設，通常也會給分。</li>
+<li><strong>算出來的 $G_s = 2.754$ 偏高，但這是題目數據的必然結果</strong>：<br />
+  一般土壤比重約 $2.65 \sim 2.70$（石英砂 2.65、砂礫石多在 2.65～2.72），本題由<br />
+  $\rho_{d,lab} = 1.62$ 與 $e = 0.70$ 反算得 2.754，略高於常見範圍。<br />
+  這是給定數據自身的結果，<strong>不是計算錯誤，也不需要「修正」成 2.70</strong>；<br />
+  作答時直接寫 2.75 即可，若行有餘力可加註「數值略高於一般砂礫石範圍，<br />
+  推測與試樣中含較重礦物或量測誤差有關」，以示對數量級有感。<br />
+  順帶驗算，以 $G_s = 2.754$ 回推可得：借土區 $e = 0.624$、$S = 27.2\%$；<br />
+  填方區 $e = 0.386$、$S_{OMC} = 57.2\%$，且 $\omega = 8\%$ 時的零空氣孔隙上限為<br />
+  $\gamma_{d,ZAV} = \frac{G_s\gamma_w}{1+\omega G_s} = 22.14 \text{ kN/m}^3 &gt; 19.50$，<br />
+<strong>本題的夯實目標是可以達成的</strong>（對照 SM-2008-1 即為做不到的案例）。</li>
+<li><strong>收縮比的合理性</strong>：借土 $11{,}725 \text{ m}^3$ 夯成 $10{,}000 \text{ m}^3$，<br />
+  體積比 $10000/11725 = 0.853$，即體積縮減約 15%。砂礫石由鬆散現地狀態夯至<br />
+  $\gamma_{d,max}$ 出現一至二成的縮減屬正常；若算出來大於 1（愈夯愈膨脹）或小於 0.6，<br />
+  就該回頭檢查是不是把乾／濕單位重用反了。</li>
+<li><strong>單位精度的保持</strong>：<br />
+  在(三)與(四)計算中，若直接使用四捨五入到小數點第二位的 $\gamma_d = 16.63\mathrm{~kN/m^3}$ 進行計算，會導致體積計算結果產生明顯誤差。工程計算強烈建議中間過程應保留至少4位有效數字，直到最後的答案再四捨五入。</li>
+</ul>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-28（向量 SVG，程式繪製，腳本 <code>gen_SM-2016-2.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2016-2/SM-2016-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

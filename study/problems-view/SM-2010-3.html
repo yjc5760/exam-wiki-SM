@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2010-3 &#8212; 題目解析</title>
+<title>SM-2010-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,16 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
 <header><h1>SM-2010-3 題目解析</h1><a class="back quick" href="../study-SM-U2-3.html">&#128269; U2-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U2-3.html">&#128218; U2-3 開挖之穩定性分析 講義</a></header>
 <main><h1>考題編號：SM-2010-3</h1>
-<p><strong>主分類：</strong> <code>SM-2</code> 深基礎與開挖<br />
-<strong>副分類：</strong> <code>SM-1</code> 土壤滲透<br />
+<p><strong>主分類：</strong> <code>SM-U1-2</code> 土壤滲透<br />
+<strong>副分類：</strong> <code>SM-U2-3</code> 開挖之穩定性分析<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>滲流力</code> <code>管湧</code> <code>砂湧</code> <code>臨界水力坡降</code> <code>一維流徑假設</code></p>
+<strong>標籤：</strong> <code>滲流力</code> <code>臨界水力坡降</code> <code>管湧</code> <code>砂湧</code> <code>抽水降水</code> <code>開挖穩定性</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>有一厚 2 m 之黏土層，其下方為厚 6 m 之砂土層，地下水面位於地表下 1 m 處。今如在該地層開挖至地表下 4 m 後進行建築結構，為便利施工構築，將開挖面內之水位抽降至與開挖面等高，開挖擋土壁貫入至深度 5 m 處。<br />
@@ -209,22 +210,16 @@ $$
 FS = \frac{i_{cr}}{i} = \frac{0.835}{0.75} = 1.113
 $$</p>
 <p>$$
-\boxed{ FS = 1.11 > 1.0 \text{，理論上無管湧發生} }
+\boxed{ FS = 1.11 &gt; 1.0 \text{，理論上無管湧發生} }
 $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>安全係數偏低之實務考量：</strong><br />
-   雖然本題計算出 $FS = 1.11 > 1.0$，理論上不會發生管湧破壞。但在實際工程中，考量到土壤參數的變異性以及二維流網局部出口坡降（Exit Gradient）往往大於平均坡降，一般規範要求抵抗管湧之安全係數應達 $FS \ge 1.5 \sim 2.0$。因此，此設計在實務上<strong>極度危險</strong>，建議加深擋土壁貫入深度，或於擋土壁外側進行點井降水以降低水頭差。</p>
-</li>
-<li>
-<p><strong>一維流徑假設的侷限性：</strong><br />
-   本解析採用「沿壁面最短流徑法」估算平均水力坡降，這是國家考試在未提供流網圖時的標準簡化解法。若實際繪製流網，擋土壁底端（即繞流點附近）之水力坡降會發生集中而大於 0.75，而開挖面出口之水力坡降可能會略小於或接近平均值。若嚴格要求特定點位之準確受力，必須依賴二維滲流分析軟體或流網圖。</p>
-</li>
-<li>
-<p><strong>$\gamma_w$ 數值選用：</strong><br />
-   若考場上為了計算方便選用 $\gamma_w = 10 \text{ kN/m}^3$，則 $i_{cr} = (18 - 10) / 10 = 0.80$，$FS = 0.80 / 0.75 = 1.07$，結論同樣為 $FS > 1.0$。本解析依據一般工程慣例採用精確值 $9.81 \text{ kN/m}^3$ 進行計算。</p>
-</li>
+<li><strong>安全係數偏低之實務考量：</strong><br />
+   雖然本題計算出 $FS = 1.11 &gt; 1.0$，理論上不會發生管湧破壞。但在實際工程中，考量到土壤參數的變異性以及二維流網局部出口坡降（Exit Gradient）往往大於平均坡降，一般規範要求抵抗管湧之安全係數應達 $FS \ge 1.5 \sim 2.0$。因此，此設計在實務上<strong>極度危險</strong>，建議加深擋土壁貫入深度，或於擋土壁外側進行點井降水以降低水頭差。</li>
+<li><strong>一維流徑假設的侷限性：</strong><br />
+   本解析採用「沿壁面最短流徑法」估算平均水力坡降，這是國家考試在未提供流網圖時的標準簡化解法。若實際繪製流網，擋土壁底端（即繞流點附近）之水力坡降會發生集中而大於 0.75，而開挖面出口之水力坡降可能會略小於或接近平均值。若嚴格要求特定點位之準確受力，必須依賴二維滲流分析軟體或流網圖。</li>
+<li><strong>$\gamma_w$ 數值選用：</strong><br />
+   若考場上為了計算方便選用 $\gamma_w = 10 \text{ kN/m}^3$，則 $i_{cr} = (18 - 10) / 10 = 0.80$，$FS = 0.80 / 0.75 = 1.07$，結論同樣為 $FS &gt; 1.0$。本解析依據一般工程慣例採用精確值 $9.81 \text{ kN/m}^3$ 進行計算。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2010-3/SM-2010-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

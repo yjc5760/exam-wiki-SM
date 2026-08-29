@@ -29,11 +29,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </style></head><body>
 <header><h1>SM-2022-1 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
-<main><h1>考題編號：[SM-2022-1]</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類<br />
-<strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>夯實原理</code> <code>標準夯實試驗</code> <code>夯實曲線</code> <code>夯實能量</code></p>
+<main><h1>考題編號：SM-2022-1</h1>
+<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>副分類：</strong> 無<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>夯實試驗</code> <code>最佳含水量</code> <code>最大乾單位重</code> <code>夯實能量</code> <code>夯實曲線</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、請回答下列關於夯實試驗的問題：<br />
@@ -167,11 +167,11 @@ $$ E = \frac{W \cdot h \cdot N \cdot L}{V} $$</p>
 <strong>主要目的</strong>：增加土壤的抗剪強度、降低其壓縮性（減少後續沉陷量）、降低滲透性，以及減少液化潛能。</p>
 <h3>(二) 實驗結果計算與夯實曲線繪製</h3>
 <ol>
+<li><strong>計算公式</strong>：</li>
+<li>溼密度 $\rho_t = \frac{M_t}{V} \text{ (g/cm}^3\text{)}$</li>
+<li>乾密度 $\rho_d = \frac{\rho_t}{1 + \omega} \text{ (g/cm}^3\text{)}$</li>
 <li>
-<p><strong>計算公式</strong>：<br />
-   - 溼密度 $\rho_t = \frac{M_t}{V} \text{ (g/cm}^3\text{)}$<br />
-   - 乾密度 $\rho_d = \frac{\rho_t}{1 + \omega} \text{ (g/cm}^3\text{)}$<br />
-   - 乾單位重 $\gamma_d = \rho_d \times 9.81 \text{ (kN/m}^3\text{)}$</p>
+<p>乾單位重 $\gamma_d = \rho_d \times 9.81 \text{ (kN/m}^3\text{)}$</p>
 </li>
 <li>
 <p><strong>計算表格</strong>：</p>
@@ -239,45 +239,80 @@ $$ E = \frac{W \cdot h \cdot N \cdot L}{V} $$</p>
 </tr>
 </tbody>
 </table>
-<ol start="3">
-<li><strong>夯實曲線與最佳值判斷</strong>：<br />
-   - 根據表格數據，可繪製以含水量 $\omega$ 為橫軸、乾單位重 $\gamma_d$ 為縱軸的關係曲線（為一開口向下的拋物線）。<br />
-   - 資料點在 $\omega = 9.7\%$ 時 $\gamma_d = 18.00 \text{ kN/m}^3$，在 $\omega = 12.9\%$ 時 $\gamma_d = 17.78 \text{ kN/m}^3$。<br />
-   - 經由曲線擬合可發現，峰值約落於 $\omega = 10.5\% \sim 11.0\%$ 之間。<br />
-   - 推估結果為：<ul>
-<li><strong>最佳含水量（OMC）</strong>：約 $\boxed{10.8 \%}$</li>
-<li><strong>最大乾單位重（$\gamma_{d,max}$）</strong>：約 $\boxed{18.05 \text{ kN/m}^3} \text{ (或 } 1.84 \text{ g/cm}^3\text{)}$</li>
+<ol>
+<li><strong>夯實曲線與最佳值判斷</strong>：</li>
+<li>根據表格數據，可繪製以含水量 $\omega$ 為橫軸、乾單位重 $\gamma_d$ 為縱軸的關係曲線（為一開口向下的拋物線）。</li>
+<li>資料點在 $\omega = 9.7\%$ 時 $\gamma_d = 18.00 \text{ kN/m}^3$，在 $\omega = 12.9\%$ 時 $\gamma_d = 17.78 \text{ kN/m}^3$。</li>
+<li>峰值不落在任何一個實驗點上，須內插。取峰值附近三點作二次（拋物線）內插，<br />
+     以頂點 $\omega_{opt} = -\dfrac{b}{2a}$ 求得（$\gamma_d = a\omega^2 + b\omega + c$）：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">取用之三點 $\omega$(%)</th>
+<th style="text-align: center;">$\omega_{opt}$ (%)</th>
+<th style="text-align: center;">$\gamma_{d,max}$ (kN/m³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">7.8、9.7、12.9</td>
+<td style="text-align: center;">10.93</td>
+<td style="text-align: center;">18.15</td>
+</tr>
+<tr>
+<td style="text-align: center;">9.7、12.9、13.8</td>
+<td style="text-align: center;">10.86</td>
+<td style="text-align: center;">18.11</td>
+</tr>
+<tr>
+<td style="text-align: center;">7.8、9.7、12.9、13.8（最小二乘）</td>
+<td style="text-align: center;">10.98</td>
+<td style="text-align: center;">18.14</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>三種取法一致收斂，故推估結果為：<ul>
+<li><strong>最佳含水量（OMC）</strong>：約 $\boxed{10.9 \%}$</li>
+<li><strong>最大乾單位重（$\gamma_{d,max}$）</strong>：約 $\boxed{18.1 \text{ kN/m}^3} \text{ (或 } 1.85 \text{ g/cm}^3\text{)}$</li>
 </ul>
 </li>
-</ol>
+<li>與 §5 所述一致：峰值（18.1）確實高於實測最大值（$\omega = 9.7\%$ 時的 18.00），<br />
+     且落在 9.7% 與 12.9% 之間偏左側——因為左半支斜率（$+0.42$ /%）遠陡於右半支（$-0.07$ /%）。</li>
+</ul>
+<p><img alt="夯實曲線圖：橫軸含水量 4～18%，縱軸乾單位重 15.0～18.5 kN/m³；六個實驗點依序為 (5.3, 15.55)、(7.8, 17.21)、(9.7, 18.00)、(12.9, 17.78)、(13.8, 17.42)、(17.0, 16.58)，以平滑曲線相連，峰值標於 (10.9%, 18.1)，並以虛線圈標出「直接取實測最大點」的錯誤取法" src="../../raw/solutions/SM-2022-1/figs/SM-2022-1-fig-2-compaction-curve.svg" /></p>
+<p><em>圖 2　夯實曲線與峰值內插。它攔的是把 $\gamma_{d,max}$ 直接取在實測最大點 $(9.7\%,\ 18.00)$：左半支斜率 $+0.42$ /% 遠陡於右半支 $-0.07$ /%，峰值必定偏左且高於實測最大值，三種內插取法（兩組三點、一組四點最小二乘）一致收斂到 $\omega_{opt} \approx 10.9\%$、$\gamma_{d,max} \approx 18.1$ kN/m³。</em></p>
 <h3>(三) 影響夯實能量的相關參數及能量增加的影響</h3>
 <ol>
 <li><strong>影響夯實能量的參數</strong>：<br />
    以實驗室夯實試驗為例，施加於單位體積土壤之夯實能量 $E$ 的公式為：<br />
    $$ E = \frac{W \cdot h \cdot N \cdot L}{V} $$<br />
    相關參數包含：</li>
-</ol>
-<ul>
 <li>$W$：夯錘重量</li>
 <li>$h$：夯錘落距</li>
 <li>$N$：每一層的夯擊次數</li>
 <li>$L$：土壤分層夯實的層數</li>
-<li>$V$：模具體積</li>
-</ul>
-<ol start="2">
-<li><strong>夯實能量增加的影響</strong>：<br />
-   若夯實能量增加（例如從標準夯實改為改良式夯實），對夯實特性的影響如下：</li>
-</ol>
-<ul>
+<li>
+<p>$V$：模具體積</p>
+</li>
+<li>
+<p><strong>夯實能量增加的影響</strong>：<br />
+   若夯實能量增加（例如從標準夯實改為改良式夯實），對夯實特性的影響如下：</p>
+</li>
 <li><strong>對夯實曲線的影響</strong>：整條曲線會向<strong>左上方</strong>移動。</li>
 <li><strong>最佳含水量（OMC）</strong>：會<strong>減少</strong>（曲線向左移）。因為較高的能量能在較低含水量下，提早克服土粒間的摩擦力達到密實。</li>
 <li><strong>最大乾單位重（$\gamma_{d,max}$）</strong>：會<strong>增加</strong>（曲線向上移）。因為更大的能量可使土粒排列更緊密，進一步降低孔隙比。</li>
-</ul>
+</ol>
+<p><img alt="夯實能量影響示意圖：兩條開口向下的夯實曲線，實線為標準夯實、虛線為改良夯實；改良夯實的峰值同時位於標準夯實峰值的左方與上方，並以箭頭標示「能量增加，曲線往左上移」，下方標註 OMC 減少、左側標註 γ_d,max 增加" src="../../raw/solutions/SM-2022-1/figs/SM-2022-1-fig-3-energy-shift.svg" /></p>
+<p><em>圖 3　夯實能量增加時曲線的移動方向（趨勢示意，兩軸無因次、不含數值）。它攔的是把方向記反：能量增加只有一種結果 —— OMC 往左（減少）、$\gamma_{d,max}$ 往上（增加），記成「右下移」是本小題最常見的失分。</em></p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
 <li><strong>單位的選擇</strong>：在國家考試中，單位重 $\gamma_d$ 經常直接使用 $\text{g/cm}^3$ 或 $\text{t/m}^3$ 計算（即將密度視為單位重）。若考場時間不足，標註 $\text{g/cm}^3$ 並繪圖即可；嚴格物理定義下，建議乘上重力加速度轉換為 $\text{kN/m}^3$ 或標明是乾密度 $\rho_d$。</li>
 <li><strong>曲線頂點內插</strong>：考試時需手繪平滑曲線。因為最高點（即 OMC）通常不會剛好落在試驗測出的數據點上，必須根據兩側斜率來合理畫出頂部平滑的拋物線，通常最大點會略高於實驗所量測到的最大數據值。</li>
-</ul></main>
+</ul>
+<hr />
+<p><em>解析日期：見 <code>wiki/log.md</code>　｜　圖解補繪：2026-08-28（向量 SVG，程式繪製，腳本 <code>gen_SM-2022-1.py</code> 可重跑；同名 2× PNG 供簡報／影片管線使用）</em></p></main>
 <footer>來源：raw/solutions/SM-2022-1/SM-2022-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
 /* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。

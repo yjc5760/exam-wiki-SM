@@ -30,10 +30,10 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <header><h1>SM-2015-1 題目解析</h1><a class="back quick" href="../study-SM-U1-3.html">&#128269; U1-3 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-3.html">&#128218; U1-3 土壤夯實及壓密 講義</a></header>
 <main><h1>考題編號：SM-2015-1</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與壓密<br />
-<strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
+<strong>副分類：</strong> <code>SM-U2-5</code> 地層改良方法<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>正常壓密黏土</code> <code>預載法</code> <code>壓密沉陷量</code> <code>壓密時間</code> <code>雙面排水</code></p>
+<strong>標籤：</strong> <code>壓密沉陷</code> <code>預壓法</code> <code>壓密度</code> <code>時間因數</code> <code>雙面排水</code> <code>壓縮指數Cc</code> <code>正常壓密</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>一、有一厚 8 m 之正常壓密黏土層位於砂土層上，地下水位於地表下 2 m 處。為加速其沉陷，於上方施加預載厚 6 m 之砂土層，則當壓密達 80%時，黏土層將產生多少沉陷，且共需多少時間？假設黏土之 $\gamma_{sat} = 17 \text{ kN/m}^3$，$e_0 = 0.8$，$C_c = 0.27$，$c_v = 0.003 \text{ cm}^2/\text{sec}$，$T_{80} = 0.567$；砂土之 $\gamma_{dry} = 14 \text{ kN/m}^3$，$\gamma_{sat} = 18 \text{ kN/m}^3$。（25 分）</p>
@@ -186,19 +186,13 @@ $$ t = \frac{T_{80} \times H_{dr}^2}{c_v} $$</p>
 地下水位位於地表下 2m。地表至水位之間（0~2m）之黏土，因題目僅給定 $\gamma_{sat}$，依據土壤力學慣例，假設其因毛細作用保持飽和狀態，即 $\gamma = \gamma_{sat} = 17 \text{ kN/m}^3$。<br />
 （註：本解析採用水之單位重 $\gamma_w = 9.81 \text{ kN/m}^3$ 進行計算）</p>
 <ul>
-<li>
-<p>總應力：<br />
-  $$ \sigma_{v0} = \gamma_{sat, clay} \times 4 = 17 \times 4 = 68 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>孔隙水壓力：<br />
-  $$ u_0 = \gamma_w \times (4 - 2) = 9.81 \times 2 = 19.62 \text{ kN/m}^2 $$</p>
-</li>
-<li>
-<p>初始有效應力：<br />
+<li>總應力：<br />
+  $$ \sigma_{v0} = \gamma_{sat, clay} \times 4 = 17 \times 4 = 68 \text{ kN/m}^2 $$</li>
+<li>孔隙水壓力：<br />
+  $$ u_0 = \gamma_w \times (4 - 2) = 9.81 \times 2 = 19.62 \text{ kN/m}^2 $$</li>
+<li>初始有效應力：<br />
   $$ \sigma_{v0}' = \sigma_{v0} - u_0 = 68 - 19.62 = 48.38 \text{ kN/m}^2 (\text{kPa}) $$<br />
-<em>(若採用 $\gamma_w = 10 \text{ kN/m}^3$，則 $\sigma_{v0}' = 68 - 20 = 48 \text{ kN/m}^2$)</em></p>
-</li>
+<em>(若採用 $\gamma_w = 10 \text{ kN/m}^3$，則 $\sigma_{v0}' = 68 - 20 = 48 \text{ kN/m}^2$)</em></li>
 </ul>
 <h3>Step 3: 計算預載砂土造成之應力增量 ($\Delta p$)</h3>
 <p>預載砂土層位於地表以上，高於地下水位，因此採用乾單位重 $\gamma_{dry, sand} = 14 \text{ kN/m}^3$（題目所給之 $\gamma_{sat, sand} = 18 \text{ kN/m}^3$ 為干擾資訊，或代表底層砂土之性質，但不影響本題應力增量）。</p>
@@ -225,18 +219,12 @@ $$ t = \frac{0.567 \times 160,000}{0.003} = 30,240,000 \text{ sec} $$<br />
 $$ t = \frac{30,240,000}{86,400} = \boxed{350 \text{ days}} $$</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>水之單位重（$\gamma_w$）的取值</strong>：<br />
-   本解析採用標準值 $\gamma_w = 9.81 \text{ kN/m}^3$，計算所得應力比約為 2.736。但若採用 $\gamma_w = 10 \text{ kN/m}^3$，初始有效應力恰好為 48 kPa，應力比為 $\frac{132}{48} = 2.75$，這是一個極為工整的數字（$11/4$）。在無計算機的年代或為了降低計算錯誤率，出題者常會設計此類數字。實務上在國家考試中，若題目未特別聲明 $\gamma_w$，建議以 $9.81$ 為主並註明 $10$ 的結果，或在答題時先寫下「假設 $\gamma_w = 10 \text{ kN/m}^3$ 以利計算」，通常皆能獲得滿分。</p>
-</li>
-<li>
-<p><strong>水位以上黏土的單位重假設</strong>：<br />
-   題目僅給定 $\gamma_{sat} = 17 \text{ kN/m}^3$。依據土壤力學特性，黏土的毛細上升高度常可達數公尺甚至十數公尺以上。因此對於地下水位以上僅 2m 的黏土層，假設其處於毛細飽和狀態（$\gamma = \gamma_{sat}$）是合理且唯一能進行計算的假設。若考試遇到此類情形，直接使用給定的飽和單位重，並可加註「假設水位以上黏土受毛細作用呈飽和狀態」以顯示觀念清晰。</p>
-</li>
-<li>
-<p><strong>預載砂土的排水邊界</strong>：<br />
-   本題利用「砂土」作為預載層，除了提供載重外，同時也作為黏土層頂部的良好排水層。這是極為經典的雙面排水題型。計算出的時間剛好是工整的整數（350天），也從側面印證了 $H_{dr} = H/2 = 400 \text{ cm}$ 絕對是出題者預設的正確路徑（若誤認為單面排水，$t$ 會變成 1400 天）。</p>
-</li>
+<li><strong>水之單位重（$\gamma_w$）的取值</strong>：<br />
+   本解析採用標準值 $\gamma_w = 9.81 \text{ kN/m}^3$，計算所得應力比約為 2.736。但若採用 $\gamma_w = 10 \text{ kN/m}^3$，初始有效應力恰好為 48 kPa，應力比為 $\frac{132}{48} = 2.75$，這是一個極為工整的數字（$11/4$）。在無計算機的年代或為了降低計算錯誤率，出題者常會設計此類數字。實務上在國家考試中，若題目未特別聲明 $\gamma_w$，建議以 $9.81$ 為主並註明 $10$ 的結果，或在答題時先寫下「假設 $\gamma_w = 10 \text{ kN/m}^3$ 以利計算」，通常皆能獲得滿分。</li>
+<li><strong>水位以上黏土的單位重假設</strong>：<br />
+   題目僅給定 $\gamma_{sat} = 17 \text{ kN/m}^3$。依據土壤力學特性，黏土的毛細上升高度常可達數公尺甚至十數公尺以上。因此對於地下水位以上僅 2m 的黏土層，假設其處於毛細飽和狀態（$\gamma = \gamma_{sat}$）是合理且唯一能進行計算的假設。若考試遇到此類情形，直接使用給定的飽和單位重，並可加註「假設水位以上黏土受毛細作用呈飽和狀態」以顯示觀念清晰。</li>
+<li><strong>預載砂土的排水邊界</strong>：<br />
+   本題利用「砂土」作為預載層，除了提供載重外，同時也作為黏土層頂部的良好排水層。這是極為經典的雙面排水題型。計算出的時間剛好是工整的整數（350天），也從側面印證了 $H_{dr} = H/2 = 400 \text{ cm}$ 絕對是出題者預設的正確路徑（若誤認為單面排水，$t$ 會變成 1400 天）。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2015-1/SM-2015-1.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

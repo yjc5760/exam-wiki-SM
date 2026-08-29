@@ -27,13 +27,12 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2021-4 題目解析</h1>
-<a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
+<header><h1>SM-2021-4 題目解析</h1><a class="back quick" href="../../index.html">&#128218; 回題庫瀏覽</a></header>
 <main><h1>考題編號：SM-2021-4</h1>
 <p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
-<strong>副分類：</strong> <br />
+<strong>副分類：</strong> 無<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>邊坡穩定</code> <code>普通切片法</code> <code>Fellenius法</code> <code>孔隙水壓</code></p>
+<strong>標籤：</strong> <code>Fellenius法</code> <code>瑞典圓弧法</code> <code>邊坡穩定</code> <code>安全係數</code> <code>孔隙水壓</code> <code>有效應力原理</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p><strong>題目：</strong><br />
@@ -61,15 +60,19 @@ $$ \text{FS} = \frac{\sum_{n=1}^{p} [c' \Delta L_n + (W_n \cos\alpha_n - u_n \De
 </ol>
 <hr />
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
-<p><strong>戰略地圖：</strong><br />
-1. <strong>幾何與重量分析</strong>：依據切片寬度 $b=5\text{ m}$ 與給定角度 $\alpha_n$，推求或測量各切片面積與平均高度。區分地下水位以上（乾土）與地下水位以下（飽和土）的高度，計算各切片總重 $W_n$。<br />
-2. <strong>孔隙水壓力計算</strong>：找出各切片底面中心點之水頭高度 $h_w$，計算 $u_n = h_w \gamma_w$。<br />
-3. <strong>滑動面長度計算</strong>：$\Delta L_n = b / \cos\alpha_n$。<br />
-4. <strong>代入公式求和</strong>：建立計算表格，分項計算驅動力（$W\sin\alpha$）與抗滑力。</p>
-<p><strong>陷阱分析：</strong><br />
-1. <strong>陷阱 1：孔隙水壓計算方向</strong>：水壓力是作用於滑動面上，方向垂直滑動面。公式中 $u_n \Delta L_n$ 即為總水壓力，需確實計算平均水深。<br />
-2. <strong>陷阱 2：切片 5 的角度符號</strong>：坡趾處滑動面已過最低點，$\alpha_5$ 必須代入負值（$-5^\circ$），若代為正值將嚴重高估驅動力。<br />
-3. <strong>陷阱 3：參數未明列的處置</strong>：若考卷僅提供比例圖而未附表格，考生必須使用幾何推導或按圖量測。本解析採用依據已知條件（寬度 $b=5\text{ m}$、角度 $\alpha$、水位）建立之精確幾何模型推算數值。</p>
+<p><strong>戰略地圖：</strong></p>
+<ol>
+<li><strong>幾何與重量分析</strong>：依據切片寬度 $b=5\text{ m}$ 與給定角度 $\alpha_n$，推求或測量各切片面積與平均高度。區分地下水位以上（乾土）與地下水位以下（飽和土）的高度，計算各切片總重 $W_n$。</li>
+<li><strong>孔隙水壓力計算</strong>：找出各切片底面中心點之水頭高度 $h_w$，計算 $u_n = h_w \gamma_w$。</li>
+<li><strong>滑動面長度計算</strong>：$\Delta L_n = b / \cos\alpha_n$。</li>
+<li><strong>代入公式求和</strong>：建立計算表格，分項計算驅動力（$W\sin\alpha$）與抗滑力。</li>
+</ol>
+<p><strong>陷阱分析：</strong></p>
+<ol>
+<li><strong>陷阱 1：孔隙水壓計算方向</strong>：水壓力是作用於滑動面上，方向垂直滑動面。公式中 $u_n \Delta L_n$ 即為總水壓力，需確實計算平均水深。</li>
+<li><strong>陷阱 2：切片 5 的角度符號</strong>：坡趾處滑動面已過最低點，$\alpha_5$ 必須代入負值（$-5^\circ$），若代為正值將嚴重高估驅動力。</li>
+<li><strong>陷阱 3：參數未明列的處置</strong>：若考卷僅提供比例圖而未附表格，考生必須使用幾何推導或按圖量測。本解析採用依據已知條件（寬度 $b=5\text{ m}$、角度 $\alpha$、水位）建立之精確幾何模型推算數值。</li>
+</ol>
 <hr />
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
@@ -152,10 +155,12 @@ $$ \text{FS} = \frac{\sum [c' \boxed{\Delta L_n} + (\boxed{W_n} \cos\alpha_n - \
 <h2>4. 步驟化詳細計算過程 (Step-by-Step Detailed Calculation)</h2>
 <p><em>(註：由於原圖面未附完整各切片重量與幾何明細表，本計算以符合圖中角度（$\alpha_1=60^\circ$ 至 $\alpha_5=-5^\circ$）、寬度 $b=5\text{ m}$ 及地下水位於坡面中段滲出之逆推幾何模型為基礎，計算相對應之精確面積與水壓，供讀者參考標準流程。實務考試時，請直接引用題卷上給定之數值表。)</em></p>
 <h3>Step 1：建立切片幾何與荷重分析表</h3>
-<p>透過解析圓弧模型推得各切片之平均深度、地下水位高度，並計算以下數值（$\gamma_w = 9.81 \text{ kN/m}^3$）：<br />
-- <strong>$\Delta L_n = \frac{5}{\cos\alpha_n}$</strong><br />
-- <strong>$W_n$</strong> = 切片乾土重 + 切片飽和土重<br />
-- <strong>$u_n$</strong> = 切片底面中心水深 $\times \gamma_w$</p>
+<p>透過解析圓弧模型推得各切片之平均深度、地下水位高度，並計算以下數值（$\gamma_w = 9.81 \text{ kN/m}^3$）：</p>
+<ul>
+<li><strong>$\Delta L_n = \frac{5}{\cos\alpha_n}$</strong></li>
+<li><strong>$W_n$</strong> = 切片乾土重 + 切片飽和土重</li>
+<li><strong>$u_n$</strong> = 切片底面中心水深 $\times \gamma_w$</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -319,7 +324,7 @@ $$ \text{FS} = \frac{\text{Total Resisting}}{\text{Total Driving}} = \frac{1755.
 </ol></main>
 <footer>來源：raw/solutions/SM-2021-4/SM-2021-4.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

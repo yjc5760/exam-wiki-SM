@@ -27,14 +27,13 @@ blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;paddin
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2005-2 題目解析</h1>
-<a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
+<header><h1>SM-2005-2 題目解析</h1><a class="back quick" href="../study-SM-U1-1.html">&#128269; U1-1 命題分析</a>
 <a class="back lect" href="../lecture-SM-U1-1.html">&#128218; U1-1 土壤基本性質 講義</a></header>
 <main><h1>考題編號：SM-2005-2</h1>
-<p><strong>主分類：</strong> <code>SM-U1</code> 土壤基本性質與分類<br />
+<p><strong>主分類：</strong> <code>SM-U1-1</code> 土壤基本性質<br />
 <strong>副分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
-<strong>分析法：</strong> 概念題<br />
-<strong>標籤：</strong> <code>工地密度試驗</code> <code>過大顆粒修正</code> <code>乾密度</code></p>
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>三相關係</code> <code>工地密度試驗</code> <code>過大顆粒修正</code> <code>乾密度</code> <code>比重</code> <code>含水量</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>野外工地密度試驗，挖除試樣之總體積為 $315 \text{ cm}^3$，其餘資料如下表所列，試推求通過 #4 篩之試樣乾密度為何？（25 分）</p>
@@ -84,9 +83,11 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <li><strong>步驟 3：</strong> 從挖除試樣之總體積中，扣除粗顆粒之總體積，得到「小於 #4 篩土壤所佔之體積」。</li>
 <li><strong>步驟 4：</strong> 將小於 #4 篩之土壤濕重換算為乾重，除以其所佔體積，即為所求之試樣乾密度。</li>
 </ul>
-<p><strong>陷阱分析：</strong><br />
-1. <strong>直接相加求平均：</strong> 粗顆粒的含水量與比重不同，必須分別計算出各自的乾重與體積後再加總，不能直接平均比重或含水量。<br />
-2. <strong>粗顆粒體積計算：</strong> 粗顆粒（礫石）的體積是由其乾重除以（比重 $\times$ 水密度）求得，而非使用濕重。</p>
+<p><strong>陷阱分析：</strong></p>
+<ol>
+<li><strong>直接相加求平均：</strong> 粗顆粒的含水量與比重不同，必須分別計算出各自的乾重與體積後再加總，不能直接平均比重或含水量。</li>
+<li><strong>粗顆粒體積計算：</strong> 粗顆粒（礫石）的體積是由其乾重除以（比重 $\times$ 水密度）求得，而非使用濕重。</li>
+</ol>
 <h2>3.5 變數層次分析 (Variable Hierarchy Analysis)</h2>
 <h3>最終目標</h3>
 <p>求出挖除試樣中，通過 #4 篩（細粒料）部分之乾密度 $\rho_{d,f}$。</p>
@@ -144,17 +145,17 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <td style="text-align: left;">3/8" 篩留滯比重</td>
 </tr>
 <tr>
-<td style="text-align: left;">$W_{w, #4}$</td>
+<td style="text-align: left;">$W_{w, \#4}$</td>
 <td style="text-align: left;">$40 \text{ g}$</td>
 <td style="text-align: left;">#4 篩留滯濕重</td>
 </tr>
 <tr>
-<td style="text-align: left;">$w_{#4}$</td>
+<td style="text-align: left;">$w_{\#4}$</td>
 <td style="text-align: left;">$7.2\%$</td>
 <td style="text-align: left;">#4 篩留滯含水量</td>
 </tr>
 <tr>
-<td style="text-align: left;">$G_{s, #4}$</td>
+<td style="text-align: left;">$G_{s, \#4}$</td>
 <td style="text-align: left;">$2.35$</td>
 <td style="text-align: left;">#4 篩留滯比重</td>
 </tr>
@@ -183,12 +184,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 | $V_{1/2}$ | $W_{s, 1/2} / (G_{s, 1/2} \cdot \gamma_w)$ | |<br />
 | $W_{s, 3/8}$ | $W_{w, 3/8} / (1 + w_{3/8})$ | |<br />
 | $V_{3/8}$ | $W_{s, 3/8} / (G_{s, 3/8} \cdot \gamma_w)$ | |<br />
-| $W_{s, #4}$ | $W_{w, #4} / (1 + w_{#4})$ | |<br />
-| $V_{#4}$ | $W_{s, #4} / (G_{s, #4} \cdot \gamma_w)$ | |</p>
+| $W_{s, \#4}$ | $W_{w, \#4} / (1 + w_{\#4})$ | |<br />
+| $V_{\#4}$ | $W_{s, \#4} / (G_{s, \#4} \cdot \gamma_w)$ | |</p>
 <p><strong>細粒料體積與乾密度</strong><br />
 | 符號 | 公式／來源 | 卡關? |<br />
 | :--- | :--- | :--- |<br />
-| $V_f$ | $V_{total} - (V_{1/2} + V_{3/8} + V_{#4})$ | |<br />
+| $V_f$ | $V_{total} - (V_{1/2} + V_{3/8} + V_{\#4})$ | |<br />
 | $W_{s,f}$ | $W_{w,f} / (1 + w_f)$ | |<br />
 | $\rho_{d,f}$ | $W_{s,f} / V_f$ | |</p>
 <h3>L3：深層知識（不懂就卡住）</h3>
@@ -231,12 +232,12 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </li>
 <li>
 <p><strong>#4 篩：</strong><br />
-  $W_{s, #4} = \frac{40}{1 + 0.072} = \frac{40}{1.072} = 37.313 \text{ g}$<br />
-  $V_{#4} = \frac{37.313}{2.35 \times 1} = 15.878 \text{ cm}^3$</p>
+  $W_{s, \#4} = \frac{40}{1 + 0.072} = \frac{40}{1.072} = 37.313 \text{ g}$<br />
+  $V_{\#4} = \frac{37.313}{2.35 \times 1} = 15.878 \text{ cm}^3$</p>
 </li>
 </ul>
 <p>大於 #4 篩之粗顆粒總體積：<br />
-$$V_c = V_{1/2} + V_{3/8} + V_{#4} = 7.301 + 10.766 + 15.878 = 33.945 \text{ cm}^3$$</p>
+$$V_c = V_{1/2} + V_{3/8} + V_{\#4} = 7.301 + 10.766 + 15.878 = 33.945 \text{ cm}^3$$</p>
 <p><strong>Step 2：計算小於 #4 篩細粒料之體積 ($V_f$)</strong><br />
 細粒料之體積為挖除試樣總體積扣除粗顆粒之總體積：<br />
 $$V_f = V_{total} - V_c = 315 - 33.945 = 281.055 \text{ cm}^3$$</p>
@@ -254,7 +255,7 @@ $$\rho_{d,f} = \frac{W_{s,f}}{V_f} = \frac{584.532}{281.055} = 2.0798 \text{ g/c
 </ul></main>
 <footer>來源：raw/solutions/SM-2005-2/SM-2005-2.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
-/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，按鈕改指向來源單元。
+/* 跟隨來源單元：若由 study-/lecture-/formula-given-SM-Un-m.html 開啟，兩顆按鈕改指向來源單元。
    靜態 href 保底，本段只做覆寫；無 JS 或無 referrer 時仍可用。 */
 (function(){try{
   var m=(document.referrer||'').match(/(?:study|lecture|formula-given)-(SM-U\d+-\d+)\.html/);

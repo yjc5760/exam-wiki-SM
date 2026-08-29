@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SM-2006-3 &#8212; 題目解析</title>
+<title>SM-2006-3 — 題目解析</title>
 <link rel="stylesheet" href="../assets/katex/katex.min.css">
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"
@@ -23,15 +23,17 @@ th,td{border:1px solid var(--bd);padding:7px 10px;text-align:left;vertical-align
 th{background:#eceff1;font-weight:600} tbody tr:nth-child(even){background:#fafcfd}
 code{background:#eceff1;padding:1px 5px;border-radius:4px;font-size:.92em}
 img{max-width:100%;display:block;margin:14px auto;border:1px solid var(--bd);border-radius:8px}
+blockquote{border-left:4px solid #90caf9;background:#f4f9ff;margin:14px 0;padding:8px 16px;color:#37474f}
 .katex-display{margin:12px 0!important;overflow-x:auto;overflow-y:hidden}
 footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top:1px solid var(--bd)}
 </style></head><body>
-<header><h1>SM-2006-3 題目解析</h1><a class="back quick" href="../study-SM-U3-3.html">&#128269; U3-3 命題分析</a></header>
+<header><h1>SM-2006-3 題目解析</h1><a class="back quick" href="../study-SM-U3-1.html">&#128269; U3-1 命題分析</a>
+<a class="back lect" href="../lecture-SM-U3-1.html">&#128218; U3-1 側向土壓力理論 講義</a></header>
 <main><h1>考題編號：SM-2006-3</h1>
-<p><strong>主分類：</strong> <code>SM-U3</code> 坡地工程<br />
-<strong>副分類：</strong> <code>SM-U3-2</code> 擋土結構物穩定分析<br />
-<strong>分析法：</strong> 有效應力法與總應力法混合<br />
-<strong>標籤：</strong> <code>側向滑動分析</code> <code>楔形破壞</code> <code>水壓效應</code> <code>不排水剪力強度</code></p>
+<p><strong>主分類：</strong> <code>SM-U3-3</code> 坡地工程<br />
+<strong>副分類：</strong> <code>SM-U3-1</code> 側向土壓力理論、<code>SM-U2-3</code> 開挖之穩定性分析<br />
+<strong>分析法：</strong> 混合<br />
+<strong>標籤：</strong> <code>側向滑動</code> <code>Rankine主動土壓力</code> <code>Rankine被動土壓力</code> <code>張力裂縫</code> <code>孔隙水壓</code> <code>不排水剪力強度</code> <code>安全係數</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>三、有一地下室工程擬採島式開挖施工，其邊坡採 V：H = 1：2 之邊坡開挖如下圖所示。邊坡主要為砂質土層，其單位體積總重在常時與飽和狀態時均為 $\gamma = 20 \text{ kN/m}^3$，且 $c' = 10 \text{ kN/m}^2$，$ \phi' = 30^\circ$。今假設開挖面下夾有一薄層軟弱黏土（如圖中之斜線區所示），厚度約 10 cm，其不排水剪力強度為 $s_u = 12 \text{ kN/m}^2$：</p>
@@ -49,22 +51,14 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <hr />
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
-<li>
-<p><strong>Step 1: 定義滑動區塊</strong><br />
-  滑動區塊的右邊界設於坡頂（承受主動土壓力，高度 $H_1 = 12\text{m}$），左邊界設於坡趾（承受被動土壓力，高度 $H_2 = 2\text{m}$），底面為軟弱黏土層（長度 $L = 20\text{m}$）。</p>
-</li>
-<li>
-<p><strong>Step 2: 土壓力係數計算</strong><br />
-  利用 Rankine 理論求得砂土的 $K_A$ 與 $K_P$。</p>
-</li>
-<li>
-<p><strong>Step 3: 常時狀況分析 (Part 1)</strong><br />
-  水位在黏土層表面，故整個滑動區塊皆無孔隙水壓（$u=0$）。直接以 $\gamma = 20 \text{ kN/m}^3$ 計算 $P_A$ 與 $P_P$，底部抗滑力為 $T = s_u \times L$，計算安全係數。</p>
-</li>
-<li>
-<p><strong>Step 4: 豪雨狀況分析 (Part 2)</strong><br />
-  水位上升至地表。使用浮水漾位重 $\gamma'$ 計算有效土壓力 $P_A'$ 與 $P_P'$。外加兩側的靜水壓力 $P_{wA}$ 與 $P_{wP}$。底部抗滑力 $T$ 維持不變。</p>
-</li>
+<li><strong>Step 1: 定義滑動區塊</strong><br />
+  滑動區塊的右邊界設於坡頂（承受主動土壓力，高度 $H_1 = 12\text{m}$），左邊界設於坡趾（承受被動土壓力，高度 $H_2 = 2\text{m}$），底面為軟弱黏土層（長度 $L = 20\text{m}$）。</li>
+<li><strong>Step 2: 土壓力係數計算</strong><br />
+  利用 Rankine 理論求得砂土的 $K_A$ 與 $K_P$。</li>
+<li><strong>Step 3: 常時狀況分析 (Part 1)</strong><br />
+  水位在黏土層表面，故整個滑動區塊皆無孔隙水壓（$u=0$）。直接以 $\gamma = 20 \text{ kN/m}^3$ 計算 $P_A$ 與 $P_P$，底部抗滑力為 $T = s_u \times L$，計算安全係數。</li>
+<li><strong>Step 4: 豪雨狀況分析 (Part 2)</strong><br />
+  水位上升至地表。使用浮水漾位重 $\gamma'$ 計算有效土壓力 $P_A'$ 與 $P_P'$。外加兩側的靜水壓力 $P_{wA}$ 與 $P_{wP}$。底部抗滑力 $T$ 維持不變。</li>
 </ul>
 <p><strong>⚠️ 關鍵陷阱：</strong></p>
 <ol>
@@ -77,27 +71,17 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><code>分別求出常時與豪雨時，邊坡沿軟弱黏土層發生側向滑動之安全係數 FS</code></p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ol>
-<li>
-<p>Rankine 土壓力係數：<br />
-   $$ K_A = \tan^2(45^\circ - \phi'/2) \quad ; \quad K_P = \tan^2(45^\circ + \phi'/2) $$</p>
-</li>
-<li>
-<p>張力裂縫深度：<br />
-   $$ z_c = \frac{2c'}{\gamma \sqrt{K_A}} $$</p>
-</li>
-<li>
-<p>主動驅動力與被動抵抗力：<br />
+<li>Rankine 土壓力係數：<br />
+   $$ K_A = \tan^2(45^\circ - \phi'/2) \quad ; \quad K_P = \tan^2(45^\circ + \phi'/2) $$</li>
+<li>張力裂縫深度：<br />
+   $$ z_c = \frac{2c'}{\gamma \sqrt{K_A}} $$</li>
+<li>主動驅動力與被動抵抗力：<br />
    $$ P_A = \int_{z_c}^{H_1} (K_A \sigma_v' - 2c'\sqrt{K_A}) dz + P_{wA} $$<br />
-   $$ P_P = \int_{0}^{H_2} (K_P \sigma_v' + 2c'\sqrt{K_P}) dz + P_{wP} $$</p>
-</li>
-<li>
-<p>底部抗滑力：<br />
-   $$ T = s_u \times L $$</p>
-</li>
-<li>
-<p>側向滑動安全係數：<br />
-   $$ FS = \frac{T + \boxed{P_P}}{\boxed{P_A}} $$</p>
-</li>
+   $$ P_P = \int_{0}^{H_2} (K_P \sigma_v' + 2c'\sqrt{K_P}) dz + P_{wP} $$</li>
+<li>底部抗滑力：<br />
+   $$ T = s_u \times L $$</li>
+<li>側向滑動安全係數：<br />
+   $$ FS = \frac{T + \boxed{P_P}}{\boxed{P_A}} $$</li>
 </ol>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -262,18 +246,12 @@ $$ FS_2 = \frac{T + P_{P,total}}{P_{A,total}} = \frac{240.0 + 150.04}{831.95} = 
 <hr />
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ol>
-<li>
-<p><strong>黏土層強度的選用邏輯：</strong> <br />
-   許多考生在處理第(二)小題時，會直覺地想要扣除水壓力來計算底部的「有效正向力」，再乘上 $\tan\phi$。然而，題目明確給定的是「不排水剪力強度 $s_u = 12 \text{ kN/m}^2$」。在總應力分析（短期穩定）的框架下，$s_u$ 是一個獨立於正向總應力的定值（相當於 $\phi_u = 0$）。因此，儘管豪雨造成水壓大增，底部的抗剪力依然維持 $240 \text{ kN/m}$。</p>
-</li>
-<li>
-<p><strong>張力裂縫積水的威力：</strong><br />
-   由計算可知，當豪雨發生時，右側 12m 高的張力裂縫與孔隙中充滿水，產生的純水壓力推力高達 $706.32 \text{ kN/m}$，佔了總驅動力 $831.95 \text{ kN/m}$ 的 <strong>85%</strong> 以上。這反映了實務上邊坡破壞常發生在大雨期間的核心原因：龐大的靜水壓力不僅降低有效應力，更提供了極大的側向驅動力。</p>
-</li>
-<li>
-<p><strong>滲流力與靜水壓假定的等價性：</strong><br />
-   題目敘述「地下水位沿地表分布」，嚴格來說在坡面處會有平行的滲流網。但對於此種剛體滑動區塊模型，由於坡面的水壓為零，對區塊產生水平作用力的僅有左右兩側的垂直截面。而這兩個截面皆位於水平地表下，採用靜水壓力分佈（$u = \gamma_w z$）是最合理且符合極限平衡法假設的做法。</p>
-</li>
+<li><strong>黏土層強度的選用邏輯：</strong> <br />
+   許多考生在處理第(二)小題時，會直覺地想要扣除水壓力來計算底部的「有效正向力」，再乘上 $\tan\phi$。然而，題目明確給定的是「不排水剪力強度 $s_u = 12 \text{ kN/m}^2$」。在總應力分析（短期穩定）的框架下，$s_u$ 是一個獨立於正向總應力的定值（相當於 $\phi_u = 0$）。因此，儘管豪雨造成水壓大增，底部的抗剪力依然維持 $240 \text{ kN/m}$。</li>
+<li><strong>張力裂縫積水的威力：</strong><br />
+   由計算可知，當豪雨發生時，右側 12m 高的張力裂縫與孔隙中充滿水，產生的純水壓力推力高達 $706.32 \text{ kN/m}$，佔了總驅動力 $831.95 \text{ kN/m}$ 的 <strong>85%</strong> 以上。這反映了實務上邊坡破壞常發生在大雨期間的核心原因：龐大的靜水壓力不僅降低有效應力，更提供了極大的側向驅動力。</li>
+<li><strong>滲流力與靜水壓假定的等價性：</strong><br />
+   題目敘述「地下水位沿地表分布」，嚴格來說在坡面處會有平行的滲流網。但對於此種剛體滑動區塊模型，由於坡面的水壓為零，對區塊產生水平作用力的僅有左右兩側的垂直截面。而這兩個截面皆位於水平地表下，採用靜水壓力分佈（$u = \gamma_w z$）是最合理且符合極限平衡法假設的做法。</li>
 </ol></main>
 <footer>來源：raw/solutions/SM-2006-3/SM-2006-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>

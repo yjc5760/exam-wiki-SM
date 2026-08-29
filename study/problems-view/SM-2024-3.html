@@ -33,7 +33,7 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p><strong>主分類：</strong> <code>SM-U1-3</code> 土壤夯實及壓密<br />
 <strong>副分類：</strong> <code>SM-U1-4</code> 土體內應力<br />
 <strong>分析法：</strong> 有效應力法<br />
-<strong>標籤：</strong> <code>壓密沉陷</code> <code>有效應力</code> <code>地下水位下降</code> <code>過壓密黏土</code> <code>Casagrande法</code></p>
+<strong>標籤：</strong> <code>地下水位下降</code> <code>有效應力原理</code> <code>正常壓密</code> <code>過壓密</code> <code>壓密沉陷</code> <code>Casagrande法</code> <code>e-log p'曲線</code></p>
 <hr />
 <h2>1. 原始題目重述 (Problem Restatement)</h2>
 <p>三、鑽探後簡化之土層如下圖，分為覆土層（$\gamma_{sat} = 19.68$ kN/m³、$\gamma_d = 16.00$ kN/m³、飽和含水量 $\omega = 23\%$）、砂土層（$\gamma_{sat} = 18.29$ kN/m³、飽和含水量 $\omega = 18\%$）、黏土層（$\gamma_{sat} = 21.78$ kN/m³、飽和含水量 $\omega = 21\%$），黏土層下方為不透水層。初始地下水位在地表下 2 公尺，請問：<br />
@@ -53,14 +53,14 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 </ol>
 <h2>3. 解題戰略地圖與陷阱分析 (Strategic Roadmap &amp; Trap Analysis)</h2>
 <ul>
+<li><strong>作戰計畫</strong>：</li>
+<li>檢驗並計算地下水位以上土層（覆土層與砂土層）排水後之乾單位重 $\gamma_d$。</li>
+<li>計算初始水位 (深度 2m) 與最終水位 (深度 18m) 下，C 點 (深度 20m) 的有效應力，求其差值解答 (一)。</li>
+<li>針對黏土層中央 (深度 25m)，計算初始與最終有效應力。</li>
+<li>代入正常壓密沉陷公式解答 (二)。</li>
+<li>條列說明 Casagrande 作圖法步驟解答 (三)。</li>
 <li>
-<p><strong>作戰計畫</strong>：<br />
-  1. 檢驗並計算地下水位以上土層（覆土層與砂土層）排水後之乾單位重 $\gamma_d$。<br />
-  2. 計算初始水位 (深度 2m) 與最終水位 (深度 18m) 下，C 點 (深度 20m) 的有效應力，求其差值解答 (一)。<br />
-  3. 針對黏土層中央 (深度 25m)，計算初始與最終有效應力。<br />
-  4. 代入正常壓密沉陷公式解答 (二)。<br />
-  5. 條列說明 Casagrande 作圖法步驟解答 (三)。<br />
-  6. 判斷過壓密狀態下初始與最終應力的區間，以雙段式公式計算解答 (四)。</p>
+<p>判斷過壓密狀態下初始與最終應力的區間，以雙段式公式計算解答 (四)。</p>
 </li>
 <li>
 <p><strong>關鍵陷阱</strong>：</p>
@@ -74,26 +74,16 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p>計算因地下水位下降所增加之有效應力，並評估正常壓密與過壓密狀態下之黏土層沉陷量。</p>
 <h3>本題關鍵公式（依計算順序）</h3>
 <ol>
-<li>
-<p>乾單位重計算：<br />
-   $\gamma_d = \frac{\gamma_{sat}}{1+\omega}$</p>
-</li>
-<li>
-<p>初始與最終有效應力：<br />
-   $\sigma_v' = \sum (\gamma \cdot \Delta z) - u$</p>
-</li>
-<li>
-<p>黏土層中央有效應力增量：<br />
-   $\Delta\sigma' = \boxed{\sigma_{vf}'} - \boxed{\sigma_{v0}'}$</p>
-</li>
-<li>
-<p>正常壓密沉陷量：<br />
-   $S_c = \frac{C_c H}{1+e_0} \log \frac{\boxed{\sigma_{v0}'} + \boxed{\Delta\sigma'}}{\boxed{\sigma_{v0}'}}$</p>
-</li>
-<li>
-<p>過壓密沉陷量：<br />
-   $S_c = \frac{C_s H}{1+e_0} \log \frac{p_c'}{\boxed{\sigma_{v0}'}} + \frac{C_c H}{1+e_0} \log \frac{\boxed{\sigma_{vf}'}}{p_c'}$</p>
-</li>
+<li>乾單位重計算：<br />
+   $\gamma_d = \frac{\gamma_{sat}}{1+\omega}$</li>
+<li>初始與最終有效應力：<br />
+   $\sigma_v' = \sum (\gamma \cdot \Delta z) - u$</li>
+<li>黏土層中央有效應力增量：<br />
+   $\Delta\sigma' = \boxed{\sigma_{vf}'} - \boxed{\sigma_{v0}'}$</li>
+<li>正常壓密沉陷量：<br />
+   $S_c = \frac{C_c H}{1+e_0} \log \frac{\boxed{\sigma_{v0}'} + \boxed{\Delta\sigma'}}{\boxed{\sigma_{v0}'}}$</li>
+<li>過壓密沉陷量：<br />
+   $S_c = \frac{C_s H}{1+e_0} \log \frac{p_c'}{\boxed{\sigma_{v0}'}} + \frac{C_c H}{1+e_0} \log \frac{\boxed{\sigma_{vf}'}}{p_c'}$</li>
 </ol>
 <h3>L1：題目直接給定</h3>
 <table>
@@ -187,39 +177,27 @@ footer{text-align:center;color:var(--mut);font-size:.8em;padding:22px;border-top
 <p>C 點位於深度 20m。</p>
 <p><strong>1. 降水前 (GWT = 2m)</strong></p>
 <ul>
-<li>
-<p>總應力：<br />
+<li>總應力：<br />
   0~2m (覆土層乾土)：$16.00 \times 2 = 32.00$ kPa<br />
   2~8m (覆土層飽和)：$19.68 \times 6 = 118.08$ kPa<br />
   8~20m (砂土層飽和)：$18.29 \times 12 = 219.48$ kPa<br />
-  $\sigma_{v0,C} = 32.00 + 118.08 + 219.48 = 369.56$ kPa</p>
-</li>
-<li>
-<p>孔隙水壓：<br />
-  $u_{0,C} = (20 - 2) \times 9.81 = 176.58$ kPa</p>
-</li>
-<li>
-<p>初始有效應力：<br />
-  $\sigma_{v0,C}' = 369.56 - 176.58 = 192.98$ kPa</p>
-</li>
+  $\sigma_{v0,C} = 32.00 + 118.08 + 219.48 = 369.56$ kPa</li>
+<li>孔隙水壓：<br />
+  $u_{0,C} = (20 - 2) \times 9.81 = 176.58$ kPa</li>
+<li>初始有效應力：<br />
+  $\sigma_{v0,C}' = 369.56 - 176.58 = 192.98$ kPa</li>
 </ul>
 <p><strong>2. 降水後 (GWT = 18m)</strong></p>
 <ul>
-<li>
-<p>總應力：<br />
+<li>總應力：<br />
   0~8m (覆土層變乾)：$16.00 \times 8 = 128.00$ kPa<br />
   8~18m (砂土層變乾)：$15.50 \times 10 = 155.00$ kPa<br />
   18~20m (砂土層飽和)：$18.29 \times 2 = 36.58$ kPa<br />
-  $\sigma_{vf,C} = 128.00 + 155.00 + 36.58 = 319.58$ kPa</p>
-</li>
-<li>
-<p>孔隙水壓：<br />
-  $u_{f,C} = (20 - 18) \times 9.81 = 19.62$ kPa</p>
-</li>
-<li>
-<p>最終有效應力：<br />
-  $\sigma_{vf,C}' = 319.58 - 19.62 = 299.96$ kPa</p>
-</li>
+  $\sigma_{vf,C} = 128.00 + 155.00 + 36.58 = 319.58$ kPa</li>
+<li>孔隙水壓：<br />
+  $u_{f,C} = (20 - 18) \times 9.81 = 19.62$ kPa</li>
+<li>最終有效應力：<br />
+  $\sigma_{vf,C}' = 319.58 - 19.62 = 299.96$ kPa</li>
 </ul>
 <p><strong>3. 有效應力增加量</strong><br />
 $\Delta\sigma_C' = 299.96 - 192.98 = \boxed{106.98 \text{ kPa}}$ (增加)</p>
@@ -253,38 +231,28 @@ $S_{c,NC} = \frac{0.15 \times 10}{1 + 0.9} \log_{10}\left(\frac{359.81}{252.83}\
 <li>初始有效應力：$\sigma_{v0,mid}' = 252.83$ kPa</li>
 <li>最終有效應力：$\sigma_{vf,mid}' = 359.81$ kPa</li>
 <li>預壓密應力：$p_c' = 300$ kPa<br />
-因為 $\sigma_{v0,mid}' < p_c' < \sigma_{vf,mid}'$，黏土層由過壓密狀態跨越至正常壓密狀態，需使用兩段式公式。</li>
+因為 $\sigma_{v0,mid}' &lt; p_c' &lt; \sigma_{vf,mid}'$，黏土層由過壓密狀態跨越至正常壓密狀態，需使用兩段式公式。</li>
 </ul>
 <p><strong>2. 沉陷量計算</strong><br />
 $S_{c,OC} = \frac{C_s H_c}{1+e_0} \log_{10}\left(\frac{p_c'}{\sigma_{v0,mid}'}\right) + \frac{C_c H_c}{1+e_0} \log_{10}\left(\frac{\sigma_{vf,mid}'}{p_c'}\right)$</p>
 <p>分別計算兩部分：</p>
 <ul>
-<li>
-<p>沿回脹曲線壓縮段：<br />
-  $\frac{0.02 \times 10}{1.9} \log_{10}\left(\frac{300}{252.83}\right) = 0.10526 \times 0.07429 = 0.0078\text{ m}$</p>
-</li>
-<li>
-<p>沿原生壓密曲線壓密段：<br />
-  $\frac{0.15 \times 10}{1.9} \log_{10}\left(\frac{359.81}{300}\right) = 0.78947 \times 0.07895 = 0.0623\text{ m}$</p>
-</li>
+<li>沿回脹曲線壓縮段：<br />
+  $\frac{0.02 \times 10}{1.9} \log_{10}\left(\frac{300}{252.83}\right) = 0.10526 \times 0.07429 = 0.0078\text{ m}$</li>
+<li>沿原生壓密曲線壓密段：<br />
+  $\frac{0.15 \times 10}{1.9} \log_{10}\left(\frac{359.81}{300}\right) = 0.78947 \times 0.07895 = 0.0623\text{ m}$</li>
 </ul>
 <p>總沉陷量：<br />
 $S_{c,OC} = 0.0078 + 0.0623 = 0.0701\text{ m}$<br />
 故沉陷量為 $\boxed{7.01 \text{ cm}}$ (保留兩位小數計算為 $7.02\text{ cm}$)</p>
 <h2>5. 關鍵爭議點與進階探討 (Critical Issues &amp; Advanced Discussion)</h2>
 <ul>
-<li>
-<p><strong>土壤含水量與單位重的關聯設計</strong><br />
-  本題最精妙的設計在於覆土層的參數給定。考官給了 $\gamma_{sat} = 19.68$、$\gamma_d = 16.00$ 與 $\omega = 23\%$。考生若將 $19.68 / (1+0.23)$ 計算，會發現完美等於 $16.00$。這形同提供了一個<strong>公式提示</strong>，暗示考生「對於沒有給乾單位重的砂土層，請用相同的 $\gamma_{sat} = \gamma_d(1+\omega)$ 邏輯推算」。這展現了出題者極高的命題水準與嚴謹度。</p>
-</li>
-<li>
-<p><strong>水單位重 $\gamma_w$ 假設的影響</strong><br />
-  本解析採用 $\gamma_w = 9.81$ kN/m³ 計算。若採用 $\gamma_w = 10$ kN/m³ 進行計算，有效應力增量 $\Delta\sigma'$ 將為 $110.02$ kPa，最終算出的 NC 沉陷量會變為約 $12.57$ cm，OC 沉陷量為 $6.96$ cm。由於差距不小，考試作答時<strong>務必清楚寫下 $\gamma_w = 9.81$ kN/m³ 之假設</strong>。</p>
-</li>
-<li>
-<p><strong>排水與毛細現象之簡化</strong><br />
-  實際工程中，地下水位下降後，原水位上的土層不一定會瞬間完全變乾，可能會有毛細水帶（Capillary zone）或維持在特定之田間容水量（Field capacity）。但本題並未給予此類進階參數，因此直接依據「完全排水轉為乾土」之常規考題假設進行分析為標準安全解法。</p>
-</li>
+<li><strong>土壤含水量與單位重的關聯設計</strong><br />
+  本題最精妙的設計在於覆土層的參數給定。考官給了 $\gamma_{sat} = 19.68$、$\gamma_d = 16.00$ 與 $\omega = 23\%$。考生若將 $19.68 / (1+0.23)$ 計算，會發現完美等於 $16.00$。這形同提供了一個<strong>公式提示</strong>，暗示考生「對於沒有給乾單位重的砂土層，請用相同的 $\gamma_{sat} = \gamma_d(1+\omega)$ 邏輯推算」。這展現了出題者極高的命題水準與嚴謹度。</li>
+<li><strong>水單位重 $\gamma_w$ 假設的影響</strong><br />
+  本解析採用 $\gamma_w = 9.81$ kN/m³ 計算。若採用 $\gamma_w = 10$ kN/m³ 進行計算，有效應力增量 $\Delta\sigma'$ 將為 $110.02$ kPa，最終算出的 NC 沉陷量會變為約 $12.57$ cm，OC 沉陷量為 $6.96$ cm。由於差距不小，考試作答時<strong>務必清楚寫下 $\gamma_w = 9.81$ kN/m³ 之假設</strong>。</li>
+<li><strong>排水與毛細現象之簡化</strong><br />
+  實際工程中，地下水位下降後，原水位上的土層不一定會瞬間完全變乾，可能會有毛細水帶（Capillary zone）或維持在特定之田間容水量（Field capacity）。但本題並未給予此類進階參數，因此直接依據「完全排水轉為乾土」之常規考題假設進行分析為標準安全解法。</li>
 </ul></main>
 <footer>來源：raw/solutions/SM-2024-3/SM-2024-3.md（知識庫解題內容唯一正本；本頁僅為渲染顯示）</footer>
 <script>
