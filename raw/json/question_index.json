@@ -27,7 +27,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2025-2",
@@ -49,7 +49,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2025-3",
@@ -73,7 +73,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2025-4",
@@ -94,7 +94,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2024-1",
@@ -116,7 +116,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2024-2",
@@ -139,7 +139,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2024-3",
@@ -164,7 +164,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2024-4",
@@ -189,7 +189,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2023-1",
@@ -213,7 +213,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2023-2",
@@ -235,7 +235,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2023-3",
@@ -258,7 +258,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2023-4",
@@ -284,7 +284,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2022-1",
@@ -305,7 +305,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2022-2",
@@ -327,7 +327,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2022-3",
@@ -349,7 +349,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2022-4",
@@ -373,7 +373,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2021-1",
@@ -397,7 +397,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2021-2",
@@ -419,7 +419,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2021-3",
@@ -441,7 +441,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2021-4",
@@ -463,7 +463,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2020-1",
@@ -487,7 +487,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2020-2",
@@ -514,7 +514,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2020-3",
@@ -524,7 +524,7 @@
       "primaryTopicId": "SM-U1-1",
       "primaryTopicName": "土壤基本性質",
       "secondaryTopicIds": [],
-      "designMethod": "概念題",
+      "designMethod": "混合",
       "tags": [
         "相對密度",
         "三相關係",
@@ -535,7 +535,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2020-4",
@@ -545,7 +545,7 @@
       "primaryTopicId": "SM-U2-1",
       "primaryTopicName": "淺基礎之支承力與沉陷量",
       "secondaryTopicIds": [],
-      "designMethod": "混合",
+      "designMethod": "總應力法",
       "tags": [
         "Terzaghi承載力公式",
         "承載力因數",
@@ -557,7 +557,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2019-1",
@@ -583,7 +583,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2019-2",
@@ -608,7 +608,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2019-3",
@@ -632,7 +632,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2019-4",
@@ -642,7 +642,7 @@
       "primaryTopicId": "SM-U3-1",
       "primaryTopicName": "側向土壓力理論",
       "secondaryTopicIds": [],
-      "designMethod": "混合",
+      "designMethod": "概念題",
       "tags": [
         "Coulomb土壓力",
         "主動土壓力",
@@ -655,7 +655,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2018-1",
@@ -676,7 +676,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2018-2",
@@ -699,7 +699,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2018-3",
@@ -722,7 +722,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2018-4",
@@ -747,7 +747,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2017-1",
@@ -769,7 +769,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2017-2",
@@ -791,7 +791,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2017-3",
@@ -813,7 +813,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2017-4",
@@ -840,7 +840,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2016-1",
@@ -866,7 +866,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2016-2",
@@ -891,7 +891,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2016-3",
@@ -917,7 +917,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2016-4",
@@ -943,7 +943,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2015-1",
@@ -968,7 +968,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2015-2",
@@ -980,7 +980,7 @@
       "secondaryTopicIds": [
         "SM-U3-2"
       ],
-      "designMethod": "混合",
+      "designMethod": "有效應力法",
       "tags": [
         "Rankine主動土壓力",
         "張力裂縫",
@@ -992,7 +992,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2015-3",
@@ -1015,7 +1015,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2015-4",
@@ -1041,7 +1041,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2014-1",
@@ -1065,7 +1065,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2014-2",
@@ -1075,7 +1075,7 @@
       "primaryTopicId": "SM-U2-2",
       "primaryTopicName": "深基礎之支承力與沉陷量",
       "secondaryTopicIds": [],
-      "designMethod": "有效應力法",
+      "designMethod": "總應力法",
       "tags": [
         "樁沉陷",
         "彈性沉陷",
@@ -1087,7 +1087,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2014-3",
@@ -1112,7 +1112,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2014-4",
@@ -1137,7 +1137,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2013-1",
@@ -1165,7 +1165,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2013-2",
@@ -1188,7 +1188,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2013-3",
@@ -1211,7 +1211,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2013-4",
@@ -1238,7 +1238,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2012-1",
@@ -1264,7 +1264,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2012-2",
@@ -1287,7 +1287,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2012-3",
@@ -1309,7 +1309,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2012-4",
@@ -1332,7 +1332,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2011-1",
@@ -1360,7 +1360,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2011-2",
@@ -1385,7 +1385,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2011-3",
@@ -1398,7 +1398,7 @@
         "SM-U1-4",
         "SM-U2-1"
       ],
-      "designMethod": "混合",
+      "designMethod": "有效應力法",
       "tags": [
         "壓密沉陷",
         "2:1應力分布",
@@ -1412,7 +1412,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2011-4",
@@ -1437,7 +1437,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2010-1",
@@ -1461,7 +1461,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2010-2",
@@ -1485,7 +1485,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2010-3",
@@ -1510,7 +1510,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2010-4",
@@ -1533,7 +1533,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2009-1",
@@ -1557,7 +1557,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2009-2",
@@ -1569,7 +1569,7 @@
       "secondaryTopicIds": [
         "SM-U2-3"
       ],
-      "designMethod": "混合",
+      "designMethod": "總應力法",
       "tags": [
         "筏式基礎",
         "代償式基礎",
@@ -1581,7 +1581,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2009-3",
@@ -1606,7 +1606,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2009-4",
@@ -1631,7 +1631,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2008-1",
@@ -1656,7 +1656,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2008-2",
@@ -1680,7 +1680,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2008-3",
@@ -1707,7 +1707,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2008-4",
@@ -1729,7 +1729,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2007-1",
@@ -1751,7 +1751,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2007-2",
@@ -1777,7 +1777,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2007-3",
@@ -1799,7 +1799,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2007-4",
@@ -1825,7 +1825,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2006-1",
@@ -1849,7 +1849,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2006-2",
@@ -1871,7 +1871,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2006-3",
@@ -1897,7 +1897,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2006-4",
@@ -1921,7 +1921,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2005-1",
@@ -1947,7 +1947,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2005-2",
@@ -1971,7 +1971,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2005-3",
@@ -1992,7 +1992,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2005-4",
@@ -2015,7 +2015,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2004-1",
@@ -2037,7 +2037,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2004-2",
@@ -2047,7 +2047,7 @@
       "primaryTopicId": "SM-U1-4",
       "primaryTopicName": "土體內應力",
       "secondaryTopicIds": [],
-      "designMethod": "混合",
+      "designMethod": "總應力法",
       "tags": [
         "莫爾圓",
         "應力轉換",
@@ -2059,7 +2059,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2004-3",
@@ -2071,7 +2071,7 @@
       "secondaryTopicIds": [
         "SM-U3-2"
       ],
-      "designMethod": "混合",
+      "designMethod": "有效應力法",
       "tags": [
         "Rankine主動土壓力",
         "孔隙水壓",
@@ -2083,7 +2083,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2004-4",
@@ -2110,7 +2110,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2003-1",
@@ -2136,7 +2136,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2003-2",
@@ -2161,7 +2161,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2003-3",
@@ -2185,7 +2185,7 @@
       "hasSolution": true,
       "hasViz": true,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2003-4",
@@ -2207,7 +2207,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2002-1",
@@ -2229,7 +2229,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2002-2",
@@ -2254,7 +2254,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2002-3",
@@ -2276,7 +2276,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     },
     {
       "id": "SM-2002-4",
@@ -2298,7 +2298,7 @@
       "hasSolution": true,
       "hasViz": false,
       "hasHandwritten": false,
-      "verificationStatus": "verified"
+      "verificationStatus": "unverified"
     }
   ]
 }
