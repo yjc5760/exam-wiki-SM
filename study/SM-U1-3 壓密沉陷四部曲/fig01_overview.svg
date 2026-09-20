@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" width="1200" height="330">
+<rect x="16.0" y="20.0" width="252.0" height="290.0" rx="14" fill="#F4F6F9" stroke="#D5DAE1" stroke-width="1.5"/>
+<circle cx="56.0" cy="66.0" r="22" fill="#2E7D6B" stroke="none" stroke-width="2.5"/>
+<text x="48.8" y="74.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="24.200000000000003" fill="#FFFFFF" text-anchor="start" font-weight="bold">1</text>
+<text x="90.0" y="75.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="28.6" fill="#2E7D6B" text-anchor="start" font-weight="bold">算現況</text>
+<text x="63.2" y="128.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">黏土層中點 z = 8 m</text>
+<line x1="40.0" y1="150.0" x2="244.0" y2="150.0" stroke="#E3E7EC" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="57.5" y="208.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="37.400000000000006" fill="#1F2A37" text-anchor="start" font-weight="bold">p<tspan font-size="25.4" dy="10.5">0</tspan><tspan dy="-10.5">′ = 90.1</tspan></text>
+<text x="126.1" y="240.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">kPa</text>
+<text x="54.5" y="285.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.6" fill="#2E7D6B" text-anchor="start" font-weight="bold">水位下用浮單位重累加</text>
+<line x1="276.0" y1="165.0" x2="297.0" y2="165.0" stroke="#9AA3AE" stroke-width="3" stroke-linecap="butt"/>
+<polygon points="311.0,165.0 297.0,158.0 297.0,172.0" fill="#9AA3AE" stroke="#9AA3AE" stroke-width="1" stroke-linejoin="round"/>
+<rect x="319.0" y="20.0" width="252.0" height="290.0" rx="14" fill="#F4F6F9" stroke="#D5DAE1" stroke-width="1.5"/>
+<circle cx="359.0" cy="66.0" r="22" fill="#C0392B" stroke="none" stroke-width="2.5"/>
+<text x="351.8" y="74.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="24.200000000000003" fill="#FFFFFF" text-anchor="start" font-weight="bold">2</text>
+<text x="393.0" y="75.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="28.6" fill="#C0392B" text-anchor="start" font-weight="bold">算增量</text>
+<text x="351.2" y="128.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">載重型式決定擴散與否</text>
+<line x1="343.0" y1="150.0" x2="547.0" y2="150.0" stroke="#E3E7EC" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="377.9" y="208.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="37.400000000000006" fill="#1F2A37" text-anchor="start" font-weight="bold">Δσ = 80</text>
+<text x="429.1" y="240.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">kPa</text>
+<text x="354.6" y="285.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.6" fill="#C0392B" text-anchor="start" font-weight="bold">基腳 2:1 法僅 14.9 kPa</text>
+<line x1="579.0" y1="165.0" x2="600.0" y2="165.0" stroke="#9AA3AE" stroke-width="3" stroke-linecap="butt"/>
+<polygon points="614.0,165.0 600.0,158.0 600.0,172.0" fill="#9AA3AE" stroke="#9AA3AE" stroke-width="1" stroke-linejoin="round"/>
+<rect x="622.0" y="20.0" width="252.0" height="290.0" rx="14" fill="#F4F6F9" stroke="#D5DAE1" stroke-width="1.5"/>
+<circle cx="662.0" cy="66.0" r="22" fill="#B8520E" stroke="none" stroke-width="2.5"/>
+<text x="654.8" y="74.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="24.200000000000003" fill="#FFFFFF" text-anchor="start" font-weight="bold">3</text>
+<text x="696.0" y="75.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="28.6" fill="#B8520E" text-anchor="start" font-weight="bold">看歷史</text>
+<text x="663.6" y="128.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">土壤記得被壓過多重</text>
+<line x1="646.0" y1="150.0" x2="850.0" y2="150.0" stroke="#E3E7EC" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="670.3" y="208.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="37.400000000000006" fill="#1F2A37" text-anchor="start" font-weight="bold">p<tspan font-size="25.4" dy="10.5">c</tspan><tspan dy="-10.5">′ = 130</tspan></text>
+<text x="732.1" y="240.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">kPa</text>
+<text x="663.1" y="285.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.6" fill="#B8520E" text-anchor="start" font-weight="bold">OCR = 1.44 → 過壓密</text>
+<line x1="882.0" y1="165.0" x2="903.0" y2="165.0" stroke="#9AA3AE" stroke-width="3" stroke-linecap="butt"/>
+<polygon points="917.0,165.0 903.0,158.0 903.0,172.0" fill="#9AA3AE" stroke="#9AA3AE" stroke-width="1" stroke-linejoin="round"/>
+<rect x="925.0" y="20.0" width="252.0" height="290.0" rx="14" fill="#F4F6F9" stroke="#D5DAE1" stroke-width="1.5"/>
+<circle cx="965.0" cy="66.0" r="22" fill="#2F54C8" stroke="none" stroke-width="2.5"/>
+<text x="957.8" y="74.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="24.200000000000003" fill="#FFFFFF" text-anchor="start" font-weight="bold">4</text>
+<text x="999.0" y="75.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="28.6" fill="#2F54C8" text-anchor="start" font-weight="bold">選公式</text>
+<text x="985.4" y="128.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">三點排上對數軸</text>
+<line x1="949.0" y1="150.0" x2="1153.0" y2="150.0" stroke="#E3E7EC" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="973.7" y="208.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="37.400000000000006" fill="#1F2A37" text-anchor="start" font-weight="bold">S<tspan font-size="25.4" dy="10.5">c</tspan><tspan dy="-10.5"> = 86.9</tspan></text>
+<text x="1033.6" y="240.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.700000000000003" fill="#6B7280" text-anchor="start" font-weight="normal">mm</text>
+<text x="946.1" y="285.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.6" fill="#2F54C8" text-anchor="start" font-weight="bold">p<tspan font-size="12.0" dy="4.9">f</tspan><tspan dy="-4.9">′ = 170.1 &gt; p</tspan><tspan font-size="12.0" dy="4.9">c</tspan><tspan dy="-4.9">′ → Case C</tspan></text>
+</svg>

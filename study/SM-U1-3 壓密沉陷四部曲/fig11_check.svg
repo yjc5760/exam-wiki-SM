@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" width="1100" height="330">
+<rect x="191.9" y="158.0" width="806.0" height="24.0" rx="6" fill="#2E7D6B" stroke="none" stroke-width="1.5" fill-opacity="0.18"/>
+<line x1="60.0" y1="170.0" x2="1040.0" y2="170.0" stroke="#5B6573" stroke-width="2.5" stroke-linecap="butt"/>
+<line x1="60.0" y1="164.0" x2="60.0" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="56.4" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">0</text>
+<line x1="168.9" y1="164.0" x2="168.9" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="161.7" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">20</text>
+<line x1="277.8" y1="164.0" x2="277.8" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="270.6" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">40</text>
+<line x1="386.7" y1="164.0" x2="386.7" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="379.5" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">60</text>
+<line x1="495.6" y1="164.0" x2="495.6" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="488.3" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">80</text>
+<line x1="604.4" y1="164.0" x2="604.4" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="593.6" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">100</text>
+<line x1="713.3" y1="164.0" x2="713.3" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="702.5" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">120</text>
+<line x1="822.2" y1="164.0" x2="822.2" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="811.4" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">140</text>
+<line x1="931.1" y1="164.0" x2="931.1" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="920.3" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">160</text>
+<line x1="1040.0" y1="164.0" x2="1040.0" y2="176.0" stroke="#5B6573" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="1029.2" y="198.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="13.0" fill="#9AA3AE" text-anchor="start" font-weight="normal">180</text>
+<text x="993.1" y="222.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="14.0" fill="#6B7280" text-anchor="start" font-weight="normal">S (mm)</text>
+<circle cx="91.7" cy="170.0" r="10" fill="#6B7280" stroke="#FFFFFF" stroke-width="2.5"/>
+<line x1="91.7" y1="184.0" x2="91.7" y2="230.0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="4,3"/>
+<text x="99.7" y="254.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="16.0" fill="#6B7280" text-anchor="start" font-weight="bold">基腳 Case B　5.8 mm（p<tspan font-size="10.9" dy="4.5">f</tspan><tspan dy="-4.5">′ 未達 p</tspan><tspan font-size="10.9" dy="4.5">c</tspan><tspan dy="-4.5">′）</tspan></text>
+<circle cx="191.9" cy="170.0" r="10" fill="#2F54C8" stroke="#FFFFFF" stroke-width="2.5"/>
+<line x1="191.9" y1="156.0" x2="191.9" y2="120.0" stroke="#2F54C8" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="164.9" y="84.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.0" fill="#2F54C8" text-anchor="start" font-weight="bold">全套 C<tspan font-size="11.6" dy="4.8">r</tspan></text>
+<text x="151.5" y="110.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="19.0" fill="#2F54C8" text-anchor="start" font-weight="bold">24.2 mm</text>
+<circle cx="533.3" cy="170.0" r="10" fill="#B8520E" stroke="#FFFFFF" stroke-width="2.5"/>
+<line x1="533.3" y1="156.0" x2="533.3" y2="120.0" stroke="#B8520E" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="487.1" y="84.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.0" fill="#B8520E" text-anchor="start" font-weight="bold">本例 Case C</text>
+<text x="492.9" y="110.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="19.0" fill="#B8520E" text-anchor="start" font-weight="bold">86.9 mm</text>
+<circle cx="997.9" cy="170.0" r="10" fill="#C0392B" stroke="#FFFFFF" stroke-width="2.5"/>
+<line x1="997.9" y1="156.0" x2="997.9" y2="120.0" stroke="#C0392B" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="970.3" y="84.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="17.0" fill="#C0392B" text-anchor="start" font-weight="bold">全套 C<tspan font-size="11.6" dy="4.8">c</tspan></text>
+<text x="951.9" y="110.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="19.0" fill="#C0392B" text-anchor="start" font-weight="bold">172.3 mm</text>
+<text x="397.9" y="36.0" font-family="Noto Sans CJK TC, Microsoft JhengHei, PingFang TC, sans-serif" font-size="18.0" fill="#2E7D6B" text-anchor="start" font-weight="bold">Case C 必落在綠色區間內；落在外面 → 回頭檢查</text>
+</svg>
