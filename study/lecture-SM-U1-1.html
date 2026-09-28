@@ -163,7 +163,7 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 <p>三相圖有六個未知量（\(V_a, V_w, V_s, W_w, W_s\) 加上比重 \(G_s\)），但題目通常只給三個數字。解法不是「找一條剛好對的公式」，而是<b>先把座標固定住</b>：既然土粒守恆，就令 \(V_s = 1\)（單位土粒法）。整張圖的其他格子立刻只剩兩個參數 \(e\) 與 \(S\)：</p>
 
 <div class="fig">
-<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
   <text x="400" y="26" font-size="16" font-weight="700" fill="#0d47a1" text-anchor="middle">單位土粒法：令 Vs = 1，整張圖只剩 e 與 S 兩個參數</text>
 
   <rect x="290" y="52" width="180" height="56" fill="#f5f5f5" stroke="#9e9e9e" stroke-width="1.8"/>
@@ -195,17 +195,17 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
   <text x="240" y="42" font-size="12.5" fill="#607d8b" text-anchor="end">體積軸</text>
   <text x="500" y="42" font-size="12.5" fill="#607d8b" text-anchor="start">重量軸</text>
 
-  <rect x="60" y="238" width="188" height="104" fill="#fff8e1" stroke="#ffb74d" stroke-width="1.4" rx="8"/>
-  <text x="154" y="262" font-size="13.5" font-weight="700" fill="#e65100" text-anchor="middle">讀圖規則</text>
-  <text x="154" y="286" font-size="12.5" fill="#5d4037" text-anchor="middle">縱向長度 = 體積</text>
-  <text x="154" y="308" font-size="12.5" fill="#5d4037" text-anchor="middle">右側標註 = 重量</text>
-  <text x="154" y="330" font-size="12.5" fill="#5d4037" text-anchor="middle">兩軸只靠 Gs 與 γw 相通</text>
+  <rect x="110" y="364" width="260" height="104" fill="#fff8e1" stroke="#ffb74d" stroke-width="1.4" rx="8"/>
+  <text x="240" y="388" font-size="13.5" font-weight="700" fill="#e65100" text-anchor="middle">讀圖規則</text>
+  <text x="240" y="412" font-size="12.5" fill="#5d4037" text-anchor="middle">縱向長度 = 體積</text>
+  <text x="240" y="434" font-size="12.5" fill="#5d4037" text-anchor="middle">右側標註 = 重量</text>
+  <text x="240" y="456" font-size="12.5" fill="#5d4037" text-anchor="middle">兩軸只靠 Gs 與 γw 相通</text>
 
-  <rect x="540" y="238" width="210" height="104" fill="#e8f5e9" stroke="#81c784" stroke-width="1.4" rx="8"/>
-  <text x="645" y="262" font-size="13.5" font-weight="700" fill="#2e7d32" text-anchor="middle">立刻可讀出的三個定義</text>
-  <text x="645" y="286" font-size="12.5" fill="#1b5e20" text-anchor="middle">e = Vv / Vs = e / 1</text>
-  <text x="645" y="308" font-size="12.5" fill="#1b5e20" text-anchor="middle">S = Vw / Vv = Se / e</text>
-  <text x="645" y="330" font-size="12.5" fill="#1b5e20" text-anchor="middle">w = Ww / Ws = Se / Gs</text>
+  <rect x="430" y="364" width="260" height="104" fill="#e8f5e9" stroke="#81c784" stroke-width="1.4" rx="8"/>
+  <text x="560" y="388" font-size="13.5" font-weight="700" fill="#2e7d32" text-anchor="middle">立刻可讀出的三個定義</text>
+  <text x="560" y="412" font-size="12.5" fill="#1b5e20" text-anchor="middle">e = Vv / Vs = e / 1</text>
+  <text x="560" y="434" font-size="12.5" fill="#1b5e20" text-anchor="middle">S = Vw / Vv = Se / e</text>
+  <text x="560" y="456" font-size="12.5" fill="#1b5e20" text-anchor="middle">w = Ww / Ws = Se / Gs</text>
 </svg>
 <div class="cap">圖 1-1｜令 \(V_s=1\) 之後，六格全部由 \(e\)、\(S\)、\(G_s\) 三個符號填滿。注意最後一行：\(w = Se/G_s\) 就是萬用恆等式 \(Se = wG_s\) 的來源 —— 它不是背來的，是從圖上讀出來的。</div>
 </div>
@@ -247,7 +247,7 @@ $$w=\frac{W_w}{W_s}=\frac{V_w\gamma_w}{V_s G_s\gamma_w}=\frac{Se}{1\cdot G_s}\;\
 \(w\) 是重量世界的量（秤得到），\(e\) 與 \(S\) 是體積世界的量（量不到），\(G_s\) 是換匯率。
 考卷幾乎一定會給你 \(G_s\)，就是為了讓你過這座橋。<br>
 反過來說：<b>題目沒給 \(G_s\)，通常代表要你用「兩個狀態」把它解出來</b>
-（見 §7 的 <a class="qlink" href="problems-view/SM-2020-3.html" target="_blank">SM-2020-3</a> 手算範例）。
+（見 §4 的 <a class="qlink" href="problems-view/SM-2020-3.html" target="_blank">SM-2020-3</a> 手算範例）。
 </div>
 
 <h3>2.2　飽和的特例</h3>
@@ -270,7 +270,7 @@ $$w=\frac{W_w}{W_s}=\frac{V_w\gamma_w}{V_s G_s\gamma_w}=\frac{Se}{1\cdot G_s}\;\
 <b>Step 2</b>　壓縮後孔隙高度：\(H_{v1}=1.9-1.0870=0.8130\) cm \(\Rightarrow e_1=\dfrac{0.8130}{1.0870}=0.748\)。<br>
 <b>Step 3</b>　含水量（全程飽和 \(S=1\)）：\(w_0=e_0/G_s=1.30/2.72=47.8\%\)；\(w_1=0.748/2.72=27.5\%\)。<br>
 <b>Step 4</b>　初始單位重 \(\gamma_0=\dfrac{(G_s+e_0)\gamma_w}{1+e_0}=\dfrac{(2.72+1.30)(9.81)}{2.30}=17.15\) kN/m³；
-壓縮後 \(\gamma_1=\dfrac{(2.72+0.748)(9.81)}{1.748}=19.47\) kN/m³。<br><br>
+壓縮後 \(\gamma_1=\dfrac{(2.72+0.748)(9.81)}{1.748}=19.46\) kN/m³。<br><br>
 <b>自我檢查：</b>孔隙被擠掉，單位重必須<b>上升</b>、含水量必須<b>下降</b>，而且 \(\gamma_1\) 不可能超過 \(G_s\gamma_w=26.7\)。三項都對，答案可信。
 </div>
 </section>
@@ -380,7 +380,7 @@ $$\gamma=\frac{W_s+W_w}{V_s+V_v}=\frac{(G_s+Se)\gamma_w}{1+e}$$
 <p class="lead">這一節在怕什麼：<b>怕你把「這土緊不緊」和「工地夯得夠不夠」混成同一件事。</b>它們用的參考點完全不同：\(D_r\) 比的是這種土自己的鬆緊極限，\(R.C.\) 比的是實驗室在特定夯實能量下的成績。</p>
 
 <div class="fig">
-<svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<svg viewBox="0 0 920 340" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
   <line x1="450" y1="16" x2="450" y2="322" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7,5"/>
   <text x="225" y="32" font-size="15.5" font-weight="700" fill="#2e7d32" text-anchor="middle">相對密度 Dr｜粗粒土（砂、礫）</text>
   <text x="675" y="32" font-size="15.5" font-weight="700" fill="#c62828" text-anchor="middle">相對夯實度 R.C.｜工地夯實控制</text>
@@ -389,27 +389,27 @@ $$\gamma=\frac{W_s+W_w}{V_s+V_v}=\frac{(G_s+Se)\gamma_w}{1+e}$$
   <line x1="112" y1="70" x2="128" y2="70" stroke="#455a64" stroke-width="2"/>
   <line x1="112" y1="250" x2="128" y2="250" stroke="#455a64" stroke-width="2"/>
   <line x1="112" y1="180" x2="128" y2="180" stroke="#2e7d32" stroke-width="3"/>
-  <rect x="120" y="180" width="14" height="70" fill="#a5d6a7"/>
+  <rect x="120" y="70" width="14" height="110" fill="#a5d6a7"/>
   <text x="104" y="75" font-size="12.5" fill="#37474f" text-anchor="end">emax（最鬆）</text>
   <text x="104" y="185" font-size="12.5" font-weight="700" fill="#2e7d32" text-anchor="end">e（現地）</text>
   <text x="104" y="255" font-size="12.5" fill="#37474f" text-anchor="end">emin（最密）</text>
-  <text x="146" y="220" font-size="12.5" fill="#2e7d32" text-anchor="start">Dr = 這段 / 全長</text>
+  <text x="146" y="122" font-size="12.5" fill="#2e7d32" text-anchor="start">Dr = 這段（emax→e）/ 全長</text><text x="146" y="142" font-size="11.5" fill="#607d8b" text-anchor="start">e 越靠近 emin，Dr 越接近 1</text>
   <text x="225" y="286" font-size="13" fill="#1b5e20" text-anchor="middle">Dr = (emax − e)/(emax − emin)</text>
   <text x="225" y="308" font-size="12.5" fill="#455a64" text-anchor="middle">參考點：這種土自己的兩個極限</text>
 
   <line x1="530" y1="250" x2="840" y2="250" stroke="#455a64" stroke-width="2"/>
   <line x1="530" y1="250" x2="530" y2="70" stroke="#455a64" stroke-width="2"/>
-  <path d="M556 232 Q640 78 700 96 Q770 118 812 216" fill="none" stroke="#c62828" stroke-width="2.6"/>
-  <path d="M556 196 Q650 108 812 84" fill="none" stroke="#0288d1" stroke-width="1.8" stroke-dasharray="6,4"/>
-  <circle cx="672" cy="88" r="4.5" fill="#c62828"/>
-  <line x1="672" y1="88" x2="672" y2="250" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="530" y1="88" x2="672" y2="88" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="530" y1="122" x2="760" y2="122" stroke="#6a1b9a" stroke-width="1.6" stroke-dasharray="5,4"/>
-  <text x="522" y="92" font-size="12" fill="#c62828" text-anchor="end">γd,max</text>
+  <path d="M556 232 Q610 90 672 90 Q740 90 812 222" fill="none" stroke="#c62828" stroke-width="2.6"/>
+  <path d="M590 56 Q720 80 830 156" fill="none" stroke="#0288d1" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <circle cx="672" cy="90" r="4.5" fill="#c62828"/>
+  <line x1="672" y1="90" x2="672" y2="250" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="530" y1="90" x2="672" y2="90" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="530" y1="122" x2="728" y2="122" stroke="#6a1b9a" stroke-width="1.6" stroke-dasharray="5,4"/>
+  <text x="522" y="94" font-size="12" fill="#c62828" text-anchor="end">γd,max</text>
   <text x="522" y="126" font-size="12" fill="#6a1b9a" text-anchor="end">工地 γd</text>
   <text x="672" y="268" font-size="12" fill="#c62828" text-anchor="middle">OMC</text>
   <text x="846" y="254" font-size="12.5" fill="#455a64" text-anchor="start">w</text>
-  <text x="836" y="76" font-size="11.5" fill="#0288d1" text-anchor="end">零空氣孔隙曲線</text>
+  <text x="846" y="150" font-size="11.5" fill="#0288d1" text-anchor="start">零空氣孔隙</text><text x="846" y="166" font-size="11.5" fill="#0288d1" text-anchor="start">曲線 S=100%</text>
   <text x="675" y="292" font-size="13" fill="#b71c1c" text-anchor="middle">R.C. = 工地 γd / 實驗室 γd,max</text>
   <text x="675" y="312" font-size="12.5" fill="#455a64" text-anchor="middle">參考點：某一夯實能量下的實驗室峰值</text>
 </svg>
@@ -434,7 +434,7 @@ $$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}
 <b>觸發信號：</b>題目只給 \(\gamma_{d,min},\gamma_{d,max},\gamma_d\)。<br>
 <b>錯誤思維：</b>直接寫 \(D_r=(\gamma_d-\gamma_{d,min})/(\gamma_{d,max}-\gamma_{d,min})\)。<br>
 <b>正確認知：</b>\(D_r\) 定義在 \(e\) 上，而 \(e\) 與 \(\gamma_d\) 成<b>倒數</b>關係，換算後多出 \(\gamma_{d,max}/\gamma_d\) 這個因子。
-最保險的做法是<b>先把三個 \(\gamma_d\) 全部換成 \(e\)</b>，再套定義式 —— 也就是 §7 手算範例 B 的做法。
+最保險的做法是<b>先把三個 \(\gamma_d\) 全部換成 \(e\)</b>，再套定義式 —— 也就是下方手算範例 B 的做法。
 </div>
 
 <div class="box">
@@ -488,16 +488,16 @@ $$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}
   <text x="380" y="42" font-size="11.5" fill="#78909c" text-anchor="middle">塑限</text>
   <text x="630" y="42" font-size="11.5" fill="#78909c" text-anchor="middle">液限</text>
 
-  <line x1="380" y1="160" x2="630" y2="160" stroke="#6a1b9a" stroke-width="2.4"/>
-  <line x1="380" y1="152" x2="380" y2="168" stroke="#6a1b9a" stroke-width="2.4"/>
-  <line x1="630" y1="152" x2="630" y2="168" stroke="#6a1b9a" stroke-width="2.4"/>
-  <text x="505" y="182" font-size="13.5" font-weight="700" fill="#6a1b9a" text-anchor="middle">PI = LL − PL：這段有多長</text>
-  <text x="505" y="202" font-size="12.5" fill="#455a64" text-anchor="middle">＝這土「能保持可塑」的含水量寬度＝黏性有多強</text>
+  <line x1="380" y1="224" x2="630" y2="224" stroke="#6a1b9a" stroke-width="2.4"/>
+  <line x1="380" y1="216" x2="380" y2="232" stroke="#6a1b9a" stroke-width="2.4"/>
+  <line x1="630" y1="216" x2="630" y2="232" stroke="#6a1b9a" stroke-width="2.4"/>
+  <text x="505" y="250" font-size="13.5" font-weight="700" fill="#6a1b9a" text-anchor="middle">PI = LL − PL：這段有多長</text>
+  <text x="505" y="270" font-size="12.5" fill="#455a64" text-anchor="middle">＝這土「能保持可塑」的含水量寬度＝黏性有多強</text>
 
   <circle cx="470" cy="120" r="6" fill="#00695c"/>
-  <line x1="470" y1="120" x2="470" y2="236" stroke="#00695c" stroke-width="1.6" stroke-dasharray="4,4"/>
-  <text x="470" y="256" font-size="13.5" font-weight="700" fill="#00695c" text-anchor="middle">現地含水量 w 落在哪</text>
-  <text x="470" y="278" font-size="12.5" fill="#455a64" text-anchor="middle">LI = (w − PL)/PI：把 w 換算成 0～1 的座標</text>
+  <line x1="470" y1="120" x2="470" y2="150" stroke="#00695c" stroke-width="1.6" stroke-dasharray="4,4"/>
+  <text x="470" y="170" font-size="13.5" font-weight="700" fill="#00695c" text-anchor="middle">現地含水量 w 落在哪</text>
+  <text x="470" y="192" font-size="12.5" fill="#455a64" text-anchor="middle">LI = (w − PL)/PI：把 w 換算成 0～1 的座標</text>
 </svg>
 <div class="cap">圖 5-1｜\(PI\) 是<b>線段長度</b>（這土的本性），\(LI\) 是<b>現在站在哪裡</b>（這土目前的狀態）。兩者一個講材料、一個講狀態，混用就會答錯名詞解釋題。</div>
 </div>
@@ -552,31 +552,31 @@ $$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}
   <text x="110" y="322" font-size="11.5" fill="#607d8b" text-anchor="middle">細</text>
   <text x="720" y="322" font-size="11.5" fill="#607d8b" text-anchor="middle">粗</text>
 
-  <path d="M120 290 Q210 268 300 204 Q400 138 520 96 Q620 72 720 66" fill="none" stroke="#1565c0" stroke-width="3"/>
-  <path d="M330 292 Q392 286 420 190 Q444 96 520 82 Q610 72 720 68" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="8,5"/>
-
+  <polyline points="100.0,298.3 105.0,297.9 110.0,297.4 115.0,296.9 120.0,296.2 125.0,295.4 130.0,294.5 135.0,293.4 140.0,292.0 145.0,290.4 150.0,288.6 155.0,286.4 160.0,283.9 165.0,281.0 170.0,277.8 175.0,274.2 180.0,270.2 185.0,266.0 190.0,261.5 195.0,256.8 200.0,252.0 205.0,247.2 210.0,242.5 215.0,238.0 220.0,233.8 225.0,229.8 230.0,226.2 235.0,223.0 240.0,220.1 245.0,217.6 250.0,215.4 255.0,213.6 260.0,212.0 265.0,210.6 270.0,209.5 275.0,208.5 280.0,207.7 285.0,207.1 290.0,206.5 295.0,206.1 300.0,205.7 305.0,205.4 310.0,205.1 315.0,204.9 320.0,204.7 325.0,204.6 330.0,204.5 335.0,204.4 340.0,204.3 345.0,204.2 350.0,204.1 355.0,204.0 360.0,204.0 365.0,203.9 370.0,203.9 375.0,203.8 380.0,203.7 385.0,203.6 390.0,203.6 395.0,203.5 400.0,203.3 405.0,203.2 410.0,203.1 415.0,202.9 420.0,202.7 425.0,202.4 430.0,202.1 435.0,201.8 440.0,201.4 445.0,201.0 450.0,200.4 455.0,199.8 460.0,199.0 465.0,198.2 470.0,197.2 475.0,196.0 480.0,194.6 485.0,193.1 490.0,191.3 495.0,189.2 500.0,186.8 505.0,184.2 510.0,181.1 515.0,177.7 520.0,174.0 525.0,169.8 530.0,165.3 535.0,160.4 540.0,155.1 545.0,149.6 550.0,143.9 555.0,138.0 560.0,132.0 565.0,126.0 570.0,120.1 575.0,114.4 580.0,108.9 585.0,103.6 590.0,98.7 595.0,94.2 600.0,90.0 605.0,86.3 610.0,82.9 615.0,79.8 620.0,77.2 625.0,74.8 630.0,72.7 635.0,70.9 640.0,69.4 645.0,68.0 650.0,66.8 655.0,65.8 660.0,65.0 665.0,64.2 670.0,63.6 675.0,63.0 680.0,62.6 685.0,62.2 690.0,61.9 695.0,61.6 700.0,61.3 705.0,61.1 710.0,61.0 715.0,60.8 720.0,60.7 725.0,60.6 730.0,60.5" fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="8,5"/>
+  <polyline points="120.0,286.2 125.0,285.4 130.0,284.4 135.0,283.4 140.0,282.3 145.0,281.2 150.0,280.0 155.0,278.8 160.0,277.5 165.0,276.1 170.0,274.6 175.0,273.0 180.0,271.4 185.0,269.7 190.0,267.9 195.0,266.0 200.0,264.0 205.0,261.9 210.0,259.7 215.0,257.4 220.0,255.0 225.0,252.5 230.0,249.9 235.0,247.2 240.0,244.4 245.0,241.5 250.0,238.6 255.0,235.5 260.0,232.3 265.0,229.0 270.0,225.6 275.0,222.1 280.0,218.6 285.0,215.0 290.0,211.3 295.0,207.5 300.0,203.7 305.0,199.8 310.0,195.9 315.0,192.0 320.0,188.0 325.0,184.0 330.0,180.0 335.0,176.0 340.0,172.0 345.0,168.0 350.0,164.1 355.0,160.2 360.0,156.3 365.0,152.5 370.0,148.7 375.0,145.0 380.0,141.4 385.0,137.9 390.0,134.4 395.0,131.0 400.0,127.7 405.0,124.5 410.0,121.4 415.0,118.5 420.0,115.6 425.0,112.8 430.0,110.1 435.0,107.5 440.0,105.0 445.0,102.6 450.0,100.3 455.0,98.1 460.0,96.0 465.0,94.0 470.0,92.1 475.0,90.3 480.0,88.6 485.0,87.0 490.0,85.4 495.0,83.9 500.0,82.5 505.0,81.2 510.0,80.0 515.0,78.8 520.0,77.7 525.0,76.6 530.0,75.6 535.0,74.6 540.0,73.8 545.0,72.9 550.0,72.1 555.0,71.4 560.0,70.7 565.0,70.0 570.0,69.4 575.0,68.8 580.0,68.3 585.0,67.8 590.0,67.3 595.0,66.8 600.0,66.4 605.0,66.0 610.0,65.6 615.0,65.3 620.0,64.9 625.0,64.6 630.0,64.3 635.0,64.0 640.0,63.8 645.0,63.5 650.0,63.3 655.0,63.1 660.0,62.9 665.0,62.7 670.0,62.6 675.0,62.4 680.0,62.2 685.0,62.1 690.0,62.0 695.0,61.8 700.0,61.7 705.0,61.6 710.0,61.5 715.0,61.4 720.0,61.3" fill="none" stroke="#1565c0" stroke-width="3"/>
   <g stroke="#2e7d32" stroke-width="1.4" stroke-dasharray="4,4">
-    <line x1="90" y1="276" x2="212" y2="276"/><line x1="212" y1="276" x2="212" y2="300"/>
-    <line x1="90" y1="228" x2="288" y2="228"/><line x1="288" y1="228" x2="288" y2="300"/>
-    <line x1="90" y1="156" x2="404" y2="156"/><line x1="404" y1="156" x2="404" y2="300"/>
+    <line x1="90" y1="276" x2="165.2" y2="276"/><line x1="165.2" y1="276" x2="165.2" y2="300"/>
+    <line x1="90" y1="228" x2="266.5" y2="228"/><line x1="266.5" y1="228" x2="266.5" y2="300"/>
+    <line x1="90" y1="156" x2="360.4" y2="156"/><line x1="360.4" y1="156" x2="360.4" y2="300"/>
   </g>
   <g fill="#1b5e20" font-size="12">
-    <text x="212" y="316" text-anchor="middle">D10</text>
-    <text x="288" y="316" text-anchor="middle">D30</text>
-    <text x="404" y="316" text-anchor="middle">D60</text>
+    <text x="165.2" y="316" text-anchor="middle">D10</text>
+    <text x="266.5" y="316" text-anchor="middle">D30</text>
+    <text x="360.4" y="316" text-anchor="middle">D60</text>
   </g>
-  <circle cx="212" cy="276" r="4" fill="#2e7d32"/><circle cx="288" cy="228" r="4" fill="#2e7d32"/><circle cx="404" cy="156" r="4" fill="#2e7d32"/>
+  <circle cx="165.2" cy="276" r="4" fill="#2e7d32"/><circle cx="266.5" cy="228" r="4" fill="#2e7d32"/><circle cx="360.4" cy="156" r="4" fill="#2e7d32"/>
 
-  <text x="640" y="140" font-size="12.5" fill="#1565c0" text-anchor="middle">良好級配（寬、順）</text>
-  <text x="640" y="230" font-size="12.5" fill="#c62828" text-anchor="middle">間斷級配</text>
-  <text x="640" y="250" font-size="12.5" fill="#c62828" text-anchor="middle">（中段幾乎水平）</text>
+  <text x="215" y="112" font-size="12.5" fill="#1565c0" text-anchor="middle">良好級配（寬、順）</text>
+  <text x="215" y="130" font-size="11.5" fill="#1565c0" text-anchor="middle">Cu≈32、Cc≈1.1 ✓</text>
+  <text x="440" y="232" font-size="12.5" fill="#c62828" text-anchor="middle">間斷級配：中段平台＝缺中間粒徑</text>
+  <text x="440" y="250" font-size="11.5" fill="#c62828" text-anchor="middle">Cu 很大，但 Cc≪1 ✗</text>
 
   <rect x="88" y="342" width="300" height="30" fill="#e8f5e9" stroke="#81c784" rx="6"/>
   <text x="238" y="362" font-size="12.5" fill="#1b5e20" text-anchor="middle">Cu = D60/D10：曲線有多「寬」</text>
   <rect x="400" y="342" width="336" height="30" fill="#f3e5f5" stroke="#ce93d8" rx="6"/>
   <text x="568" y="362" font-size="12.5" fill="#4a148c" text-anchor="middle">Cc = D30² /(D10·D60)：中段有沒有「凹」下去</text>
 </svg>
-<div class="cap">圖 6-1｜\(C_u\) 大 = 曲線橫跨很多個對數刻度（粗細都有，小顆粒可以塞進大顆粒的縫）；\(C_c\) 落在 1–3 = 中段沒有斷層。<b>兩個條件都滿足才叫良好級配</b>（砂 \(C_u&gt;6\)、礫石 \(C_u&gt;4\)，且 \(1\le C_c\le3\)）。紅色虛線就是 \(C_u\) 很大但 \(C_c\) 不合格的間斷級配 —— 這正是 \(C_c\) 存在的理由。</div>
+<div class="cap">圖 6-1｜\(C_u\) 大 = 曲線橫跨很多個對數刻度（粗細都有，小顆粒可以塞進大顆粒的縫）；\(C_c\) 落在 1–3 = 中段沒有斷層。<b>兩個條件都滿足才叫良好級配</b>（砂 \(C_u\ge6\)、礫石 \(C_u\ge4\)，且 \(1\le C_c\le3\)）。紅色虛線就是 \(C_u\) 很大但 \(C_c\ll1\) 不合格的間斷級配（中段平台＝缺中間粒徑，\(D_{30}\) 被拉向細端） —— 這正是 \(C_c\) 存在的理由。</div>
 </div>
 
 <div class="why">
@@ -598,7 +598,7 @@ $$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}
 <h3>6.1　USCS 的判讀順序（記流程，不記表格）</h3>
 <ol>
 <li>過 #200 篩（0.075 mm）：<b>&lt;50% 通過 → 粗粒土</b>（走級配路線）；<b>≥50% 通過 → 細粒土</b>（走塑性圖路線）。</li>
-<li>粗粒土再看 #4 篩（4.75 mm）：留篩 &gt;50% → 礫石 G；否則砂 S。接著用 \(C_u, C_c\) 決定 W（良好）或 P（不良）；細料多則掛 M/C。</li>
+<li>粗粒土再看 #4 篩（4.75 mm）：<b>粗粒部分</b>中留在 #4 篩上者 &gt;50% → 礫石 G；否則砂 S。接著用 \(C_u, C_c\) 決定 W（良好）或 P（不良）；細料多則掛 M/C。</li>
 <li>細粒土進塑性圖，用 <b>A 線 \(PI=0.73(LL-20)\)</b> 分黏土（上方，C）與粉土（下方，M）；用 \(LL=50\) 分低塑性 L 與高塑性 H。</li>
 </ol>
 
@@ -623,8 +623,8 @@ $$D_r=\frac{e_{max}-e}{e_{max}-e_{min}}
 <b>觸發信號：</b>題目給了篩分析表，各篩上有不同的含水量與比重（<a class="qlink" href="problems-view/SM-2005-2.html" target="_blank">SM-2005-2</a>）。<br>
 <b>錯誤思維：</b>把整坑土的總重除總體積當答案。<br>
 <b>正確認知：</b>室內夯實試驗只能用通過 #4（或 3/4″）的細料，因此現地成果必須<b>把大於該篩的顆粒剔除</b>後才能比較。
-做法是：先用各粗粒的比重把粗粒<b>體積</b>算出來、從總體積扣掉；再用各粗粒的含水量把粗粒<b>乾重</b>算出來、從總乾重扣掉；
-剩下的乾重除剩下的體積才是「通過 #4 之乾密度」。<b>扣體積要用比重，扣重量要用含水量 —— 兩者不能混。</b>
+做法是：先用各粗粒的含水量把留篩濕重換成<b>乾重</b>，從總乾重扣掉；再把這個乾重除以 \(G_s\gamma_w\) 得粗粒<b>體積</b>，從總體積扣掉；
+剩下的乾重除剩下的體積才是「通過 #4 之乾密度」。<b>扣重量要先用含水量換成乾重，扣體積要再用比重 —— 各篩的 \(w\)、\(G_s\) 不能互相借用。</b>
 </div>
 
 <div class="box">
@@ -655,7 +655,7 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 <b>Step 3</b>　重量：甲 \(=0.884\times19.6=17.33\) kN；乙 \(=0.221\times20.6=4.55\) kN；合計 21.88 kN。<br>
 <b>Step 4</b>　加水：目標濕重 \(=20\times1.12=22.40\) kN，故需補 \(22.40-21.88=0.52\) kN \(\Rightarrow \dfrac{0.52}{9.81}=\mathbf{0.053\ m^3}\)（約 53 L）。<br><br>
 <b>自我檢查：</b>重量守恆 —— 借土濕重 21.88 ＋ 加水 0.52 ＝ 22.40 ＝ 夯實土濕重 ✓（<b>體積不守恆，重量一定守恆</b>，這是驗算的鐵則）。
-注意 \(G_s\) 在本題全程<b>沒有用到</b>：因為只要求重量與體積，不問孔隙比。<b>會用不到的已知數，正是出題者設的干擾項。</b>
+<b>別急著把 \(G_s\) 當干擾項丟掉。</b>三個小題的算術確實用不到它，但它是唯一能做<b>可行性檢核</b>的參數：\(V_s=\dfrac{15.90}{2.65\times9.81}+\dfrac{4.10}{2.70\times9.81}=0.766\ \mathrm{m^3}\)、\(V_w=\dfrac{2.40}{9.81}=0.245\ \mathrm{m^3}\)，\(V_s+V_w=1.011&gt;1\ \mathrm{m^3}\) ⇒ \(S=104.7\%\)。也就是說，題目指定的 \(\gamma_d=20\)、\(w=12\%\) 已超過混合土的零空氣孔隙上限（約 19.78 kN/m³），物理上做不到。<b>看似用不到的已知數，要先拿來驗算，再決定丟不丟。</b>
 </div>
 
 <div class="why">
@@ -668,81 +668,52 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 <h2>§8　解題決策流程</h2>
 
 <div class="fig">
-<svg viewBox="0 0 940 640" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<svg viewBox="0 0 940 830" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
   <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
     <path d="M0,0 L0,6 L8,3 z" fill="#455a64"/></marker></defs>
-  <g stroke="#455a64" stroke-width="1.6" fill="none" marker-end="url(#ar)">
-    <line x1="470" y1="62" x2="470" y2="84"/>
-    <line x1="380" y1="118" x2="200" y2="118"/><line x1="200" y1="118" x2="200" y2="160"/>
-    <line x1="560" y1="118" x2="740" y2="118"/><line x1="740" y1="118" x2="740" y2="160"/>
-    <line x1="470" y1="152" x2="470" y2="186"/>
-    <line x1="380" y1="222" x2="180" y2="222"/><line x1="180" y1="222" x2="180" y2="266"/>
-    <line x1="560" y1="222" x2="760" y2="222"/><line x1="760" y1="222" x2="760" y2="266"/>
-    <line x1="180" y1="326" x2="180" y2="360"/>
-    <line x1="760" y1="326" x2="760" y2="360"/>
-    <line x1="470" y1="256" x2="470" y2="300"/>
-    <line x1="380" y1="336" x2="300" y2="336"/><line x1="300" y1="336" x2="300" y2="386"/>
-    <line x1="560" y1="336" x2="640" y2="336"/><line x1="640" y1="336" x2="640" y2="386"/>
-    <line x1="470" y1="470" x2="470" y2="506"/>
+  <g stroke="#455a64" stroke-width="1.6" fill="none">
+    <path d="M470 50 V64" marker-end="url(#ar)"/>
+    <path d="M340 100 H282" marker-end="url(#ar)"/>
+    <path d="M470 134 V168" marker-end="url(#ar)"/>
+    <path d="M600 204 H658" marker-end="url(#ar)"/>
+    <path d="M780 236 V256 H470"/>
+    <path d="M470 238 V270" marker-end="url(#ar)"/>
+    <path d="M290 306 H180 V348" marker-end="url(#ar)"/>
+    <path d="M650 306 H760 V348" marker-end="url(#ar)"/>
+    <path d="M180 410 V428" marker-end="url(#ar)"/>
+    <path d="M760 410 V428" marker-end="url(#ar)"/>
+    <path d="M180 488 V512 H760 V488"/>
+    <path d="M470 512 V538" marker-end="url(#ar)"/>
+    <path d="M320 574 H180 V618" marker-end="url(#ar)"/>
+    <path d="M620 574 H760 V618" marker-end="url(#ar)"/>
+    <path d="M180 678 V702 H760 V678"/>
+    <path d="M470 702 V728" marker-end="url(#ar)"/>
   </g>
-
-  <rect x="330" y="34" width="280" height="30" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/>
-  <text x="470" y="54" font-size="14" font-weight="700" fill="#0d47a1" text-anchor="middle">讀題：這題要的是「值」還是「判斷」？</text>
-
-  <polygon points="470,84 590,118 470,152 350,118" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/>
-  <text x="470" y="114" font-size="13" fill="#e65100" text-anchor="middle">題目要的是數值嗎？</text>
-  <text x="470" y="132" font-size="11.5" fill="#8d6e63" text-anchor="middle">（還是名詞／分類／研判）</text>
-
-  <rect x="80" y="160" width="240" height="60" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
-  <text x="200" y="182" font-size="12.5" fill="#4a148c" text-anchor="middle">名詞解釋／分類／事故研判</text>
-  <text x="200" y="202" font-size="12" fill="#4a148c" text-anchor="middle">→ 走 §5、§6：定義＋物理意義＋判讀值</text>
-
-  <rect x="620" y="160" width="240" height="60" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="740" y="182" font-size="12.5" fill="#1b5e20" text-anchor="middle">密實度／夯實成效</text>
-  <text x="740" y="202" font-size="12" fill="#1b5e20" text-anchor="middle">粗粒 → Dr；工地驗收 → R.C.（§4）</text>
-
-  <polygon points="470,186 590,222 470,258 350,222" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/>
-  <text x="470" y="218" font-size="12.5" fill="#e65100" text-anchor="middle">題目有「兩個狀態」嗎？</text>
-  <text x="470" y="236" font-size="11.5" fill="#8d6e63" text-anchor="middle">夯實前後／壓密前後／借土→填方</text>
-
-  <rect x="60" y="266" width="240" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="180" y="288" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">有 → 先鎖定不變量</text>
-  <text x="180" y="308" font-size="12" fill="#0d47a1" text-anchor="middle">乾土重 Ws（有加水）或 Vs（純壓縮）</text>
-  <rect x="60" y="360" width="240" height="58" rx="8" fill="#fff" stroke="#90a4ae" stroke-width="1.4"/>
-  <text x="180" y="382" font-size="12" fill="#37474f" text-anchor="middle">兩個狀態各寫一次三相圖</text>
-  <text x="180" y="402" font-size="12" fill="#37474f" text-anchor="middle">用不變量把兩張圖綁在一起</text>
-
-  <rect x="640" y="266" width="240" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="760" y="288" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">沒有 → 單狀態換算</text>
-  <text x="760" y="308" font-size="12" fill="#0d47a1" text-anchor="middle">令 Vs = 1，填滿三相圖六格</text>
-  <rect x="640" y="360" width="240" height="58" rx="8" fill="#fff" stroke="#90a4ae" stroke-width="1.4"/>
-  <text x="760" y="382" font-size="12" fill="#37474f" text-anchor="middle">有 Gs → 直接用 Se = wGs</text>
-  <text x="760" y="402" font-size="12" fill="#37474f" text-anchor="middle">無 Gs → 兩條式子聯立解出 Gs</text>
-
-  <polygon points="470,300 590,336 470,372 350,336" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/>
-  <text x="470" y="332" font-size="12.5" fill="#e65100" text-anchor="middle">剖面上有地下水位嗎？</text>
-  <text x="470" y="350" font-size="11.5" fill="#8d6e63" text-anchor="middle">（要接續算應力時才問）</text>
-
-  <rect x="180" y="386" width="240" height="58" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="300" y="408" font-size="12" fill="#b71c1c" text-anchor="middle">有 → 水位上 γt、水位下</text>
-  <text x="300" y="428" font-size="12" fill="#b71c1c" text-anchor="middle">總應力用 γsat、有效應力用 γ′</text>
-
-  <rect x="520" y="386" width="240" height="58" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="640" y="408" font-size="12" fill="#1b5e20" text-anchor="middle">沒有 → 全深度同一組</text>
-  <text x="640" y="428" font-size="12" fill="#1b5e20" text-anchor="middle">γt / γd，但要說明用哪一個</text>
-
-  <rect x="330" y="506" width="280" height="76" rx="8" fill="#fff8e1" stroke="#ffa000" stroke-width="1.8"/>
-  <text x="470" y="528" font-size="13" font-weight="700" fill="#e65100" text-anchor="middle">收尾：三項驗算</text>
-  <text x="470" y="548" font-size="11.5" fill="#5d4037" text-anchor="middle">① 重量守恆 ② 0 ≤ S ≤ 1、e 落在合理帶</text>
-  <text x="470" y="566" font-size="11.5" fill="#5d4037" text-anchor="middle">③ γd &lt; γt &lt; γsat &lt; Gs·γw 的大小順序</text>
-
-  <line x1="470" y1="444" x2="470" y2="506" stroke="#455a64" stroke-width="1.6" stroke-dasharray="5,4"/>
-  <line x1="300" y1="444" x2="300" y2="478" stroke="#455a64" stroke-width="1.6"/>
-  <line x1="640" y1="444" x2="640" y2="478" stroke="#455a64" stroke-width="1.6"/>
-  <line x1="300" y1="478" x2="640" y2="478" stroke="#455a64" stroke-width="1.6"/>
-  <line x1="470" y1="478" x2="470" y2="500" stroke="#455a64" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="330" y="20" width="280" height="30" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/>
+  <text x="470" y="40" font-size="14" font-weight="700" fill="#0d47a1" text-anchor="middle">讀題：這題要的是「值」還是「判斷」？</text>
+  <polygon points="470,66 600,100 470,134 340,100" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/><text x="470" y="98" font-size="13" fill="#e65100" text-anchor="middle">題目要的是數值嗎？</text><text x="470" y="116" font-size="11" fill="#8d6e63" text-anchor="middle">（還是名詞／分類／研判）</text>
+  <text x="312" y="92" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">否</text><text x="484" y="156" font-size="12" font-weight="700" fill="#37474f" text-anchor="start">是</text>
+  <rect x="40" y="70" width="240" height="60" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/><text x="160.0" y="94" font-size="12.5" fill="#4a148c" text-anchor="middle">名詞解釋／分類／事故研判</text><text x="160.0" y="114" font-size="12.5" fill="#4a148c" text-anchor="middle">→ §5、§6：定義＋物理意義＋判讀值</text>
+  <polygon points="470,170 600,204 470,238 340,204" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/><text x="470" y="202" font-size="13" fill="#e65100" text-anchor="middle">問的是鬆密／夯實成效？</text><text x="470" y="220" font-size="11" fill="#8d6e63" text-anchor="middle">（Dr、R.C.）</text>
+  <text x="630" y="196" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">是</text><text x="462" y="250" font-size="12" font-weight="700" fill="#37474f" text-anchor="end">否</text>
+  <rect x="660" y="174" width="240" height="62" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/><text x="780.0" y="199" font-size="12.5" fill="#1b5e20" text-anchor="middle">先定參考點（§4）</text><text x="780.0" y="219" font-size="12.5" fill="#1b5e20" text-anchor="middle">粗粒土 → Dr；工地驗收 → R.C.</text>
+  <text x="786" y="252" font-size="11" fill="#607d8b" text-anchor="start">換算仍走下方流程</text>
+  <polygon points="470,270 650,306 470,342 290,306" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/><text x="470" y="304" font-size="13" fill="#e65100" text-anchor="middle">題目有「兩個狀態」嗎？</text><text x="470" y="322" font-size="11" fill="#8d6e63" text-anchor="middle">夯實前後／壓密前後／借土→填方</text>
+  <text x="270" y="298" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">有</text><text x="672" y="298" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">沒有</text>
+  <rect x="60" y="350" width="240" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/><text x="180.0" y="374" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">先鎖定不變量</text><text x="180.0" y="394" font-size="12.5" fill="#0d47a1" text-anchor="middle">乾土重 Ws（有加水）或 Vs（純壓縮）</text>
+  <rect x="60" y="430" width="240" height="58" rx="8" fill="#fff" stroke="#90a4ae" stroke-width="1.5"/><text x="180.0" y="453" font-size="12.5" fill="#37474f" text-anchor="middle">兩個狀態各寫一次三相圖</text><text x="180.0" y="473" font-size="12.5" fill="#37474f" text-anchor="middle">用不變量把兩張圖綁在一起</text>
+  <rect x="640" y="350" width="240" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/><text x="760.0" y="374" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">單狀態換算</text><text x="760.0" y="394" font-size="12.5" fill="#0d47a1" text-anchor="middle">令 Vs = 1，填滿三相圖六格</text>
+  <rect x="640" y="430" width="240" height="58" rx="8" fill="#fff" stroke="#90a4ae" stroke-width="1.5"/><text x="760.0" y="453" font-size="12.5" fill="#37474f" text-anchor="middle">有 Gs → 直接用 Se = wGs</text><text x="760.0" y="473" font-size="12.5" fill="#37474f" text-anchor="middle">無 Gs → 兩條式子聯立解出 Gs</text>
+  <polygon points="470,540 620,574 470,608 320,574" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/><text x="470" y="572" font-size="13" fill="#e65100" text-anchor="middle">剖面上有地下水位嗎？</text><text x="470" y="590" font-size="11" fill="#8d6e63" text-anchor="middle">（要接續算應力時才問）</text>
+  <text x="300" y="566" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">有</text><text x="640" y="566" font-size="12" font-weight="700" fill="#37474f" text-anchor="middle">沒有</text>
+  <rect x="60" y="620" width="240" height="58" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/><text x="180.0" y="643" font-size="12.5" fill="#b71c1c" text-anchor="middle">水位上 γt；水位下</text><text x="180.0" y="663" font-size="12.5" fill="#b71c1c" text-anchor="middle">總應力用 γsat、有效應力用 γ′</text>
+  <rect x="640" y="620" width="240" height="58" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/><text x="760.0" y="643" font-size="12.5" fill="#1b5e20" text-anchor="middle">全深度同一組 γt / γd</text><text x="760.0" y="663" font-size="12.5" fill="#1b5e20" text-anchor="middle">但要寫明用的是哪一個</text>
+  <rect x="330" y="730" width="280" height="76" rx="8" fill="#fff8e1" stroke="#ffa000" stroke-width="1.8"/>
+  <text x="470" y="752" font-size="13" font-weight="700" fill="#e65100" text-anchor="middle">收尾：三項驗算</text>
+  <text x="470" y="772" font-size="11.5" fill="#5d4037" text-anchor="middle">① 重量守恆 ② 0 ≤ S ≤ 1、e 落在合理帶</text>
+  <text x="470" y="790" font-size="11.5" fill="#5d4037" text-anchor="middle">③ γd &lt; γt &lt; γsat &lt; Gs·γw 的大小順序</text>
 </svg>
-<div class="cap">圖 8-1｜三個菱形分別問：<b>要什麼</b>（值／判斷）、<b>幾個狀態</b>（決定錨點）、<b>有沒有水</b>（決定用哪個 \(\gamma\)）。第三個菱形常被跳過，但它是後面所有單元（有效應力、承載力、土壓力）的交接口。</div>
+<div class="cap">圖 8-1｜四個菱形依序問：<b>要什麼</b>（值／判斷）、<b>是不是密實度題</b>（決定參考點）、<b>幾個狀態</b>（決定錨點）、<b>有沒有水</b>（決定用哪個 \(\gamma\)）。<b>最後一個菱形</b>常被跳過，但它是後面所有單元（有效應力、承載力、土壓力）的交接口。</div>
 </div>
 </section>
 
@@ -768,16 +739,16 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 <table>
 <thead><tr><th>題號</th><th>年度</th><th>本單元在該題扮演什麼</th><th>主戰場</th></tr></thead>
 <tbody>
-<tr><td><a class="qlink" href="problems-view/SM-2006-4.html" target="_blank">SM-2006-4</a></td><td>2006</td><td>由三相關係推現地 \(\gamma_d\)，才能算相對夯實度</td><td>SM-U1-3 夯實</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2006-4.html" target="_blank">SM-2006-4</a></td><td>2006</td><td>敘述題：試驗項目（含 Atterberg 限度、分類）、施工控制與現地密度檢驗 —— 要懂 \(\gamma_d\)、\(R.C.\) 的定義才寫得出來</td><td>SM-U1-3 夯實</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2009-3.html" target="_blank">SM-2009-3</a></td><td>2009</td><td>由 \(e, G_s\) 推 \(\gamma_{sat}\)，才能算總應力與有效應力</td><td>SM-U1-4 土體內應力</td></tr>
-<tr><td><a class="qlink" href="problems-view/SM-2011-1.html" target="_blank">SM-2011-1</a></td><td>2011</td><td>零空氣孔隙曲線、臨界水力坡降都建立在 \(e\)、\(G_s\) 上</td><td>綜合名詞</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2011-1.html" target="_blank">SM-2011-1</a></td><td>2011</td><td>零空氣孔隙曲線、臨界水力坡降都建立在 \(e\)、\(G_s\) 上</td><td>SM-U1-5（名詞解釋）</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2011-4.html" target="_blank">SM-2011-4</a></td><td>2011</td><td>給 \(e=0.617, G_s=2.70, S_r=30\%\) → 先算 \(\gamma\) 才能算視土壓力</td><td>SM-U2-3 開挖</td></tr>
-<tr><td><a class="qlink" href="problems-view/SM-2014-1.html" target="_blank">SM-2014-1</a></td><td>2014</td><td>由三相關係得 \(\gamma_{sat}, \gamma'\) → 無限邊坡安全係數</td><td>SM-U3-4 邊坡</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2014-1.html" target="_blank">SM-2014-1</a></td><td>2014</td><td>由三相關係得 \(\gamma_{sat}, \gamma'\) → 無限邊坡安全係數</td><td>SM-U3-3 坡地工程</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2014-4.html" target="_blank">SM-2014-4</a></td><td>2014</td><td>\(e_0\) 是壓密沉陷公式的分母</td><td>SM-U1-3 壓密</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2019-3.html" target="_blank">SM-2019-3</a></td><td>2019</td><td>相對夯實度與相對密度的換算</td><td>SM-U1-3 夯實</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2020-1.html" target="_blank">SM-2020-1</a></td><td>2020</td><td>毛細帶飽和度改變 → \(\gamma\) 改變 → 有效應力改變</td><td>SM-U1-4 土體內應力</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2023-4.html" target="_blank">SM-2023-4</a></td><td>2023</td><td>\(w&gt;LL\)（\(LI&gt;1\)）＋ N=1 是研判事故原因的<b>唯一證據</b></td><td>SM-U2-3 開挖</td></tr>
-<tr><td><a class="qlink" href="problems-view/SM-2024-4.html" target="_blank">SM-2024-4</a></td><td>2024</td><td>由三相關係得 \(\gamma'\) → 樁的有效覆土應力 → \(\alpha\) 法摩擦力</td><td>SM-U2-2 深基礎</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2024-4.html" target="_blank">SM-2024-4</a></td><td>2024</td><td>砂土層只給 \(\gamma_t\) 與 \(w\)，須由三相關係推 \(\gamma_{sat}\)、\(\gamma'\) → 臨界深度有效覆土應力 → 砂層樁身摩擦與樁尖（黏土層走 \(\alpha\) 法，與 \(\gamma'\) 無關）</td><td>SM-U2-2 深基礎</td></tr>
 </tbody>
 </table>
 
@@ -801,9 +772,9 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 <tr><td>9</td><td>題目沒給 \(G_s\)</td><td>卡住或亂假設 2.65</td><td>通常是要你用<b>兩條式子聯立</b>解出 \(G_s\)（\(\rho_d\) 式＋\(Se=wG_s\)）</td><td><a class="qlink" href="problems-view/SM-2020-3.html" target="_blank">SM-2020-3</a></td></tr>
 <tr><td>10</td><td>算出 \(S&gt;100\%\)</td><td>照抄答案</td><td>必然是 \(e\) 或 \(w\) 用錯狀態；\(S\) 是物理上限</td><td>通用</td></tr>
 <tr><td>11</td><td>算出 \(\gamma_d&gt;\gamma_t\)</td><td>照抄答案</td><td>\(\gamma_d=\gamma_t/(1+w)\)，必然小於 \(\gamma_t\)；多半是乘除相反</td><td>通用</td></tr>
-<tr><td>12</td><td>相對夯實度題給了兩種夯實試驗</td><td>隨便挑一個 \(\gamma_{d,max}\)</td><td>R.C. 必須對應<b>同一夯實能量</b>（標準 vs 修正）</td><td>SM-2006-4、SM-2019-3</td></tr>
+<tr><td>12</td><td>現地夯實能量與實驗室試驗不同（或題目並列標準／修正夯實）</td><td>隨便挑一個 \(\gamma_{d,max}\)</td><td>R.C. 的分母必須對應<b>同一夯實能量</b>；能量變了，\(\gamma_{d,max}\) 與 OMC 都跟著移動</td><td><a class="qlink" href="problems-view/SM-2009-1.html" target="_blank">SM-2009-1</a></td></tr>
 <tr><td>13</td><td>細粒土題目給 \(C_u, C_c\)</td><td>拿去判良好級配</td><td>級配係數只適用粗粒土；細粒土走塑性圖</td><td><a class="qlink" href="problems-view/SM-2023-1.html" target="_blank">SM-2023-1</a></td></tr>
-<tr><td>14</td><td>題目給了用不到的參數</td><td>硬要用進去</td><td>SM 命題常設干擾項（如 SM-2008-1 的 \(G_s\)、SM-2003-3 的砂土 \(\gamma_{sat}\)）</td><td><a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a></td></tr>
+<tr><td>14</td><td>題目給了看似用不到的參數</td><td>硬要用進去，或直接當干擾項丟掉</td><td>先拿它做<b>可行性檢核</b>再決定：SM-2008-1 的 \(G_s\) 一驗就發現指定夯實狀態 \(S=104.7\%\)（超過零空氣孔隙線）；SM-2003-3 的砂土 \(\gamma_{sat}\) 才是真正的干擾項</td><td><a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a></td></tr>
 <tr><td>15</td><td>「零空氣孔隙曲線」</td><td>當成可達成的夯實上限</td><td>它是 \(S=100\%\) 的理論界線，實際夯實曲線<b>永遠在它左下方</b></td><td><a class="qlink" href="problems-view/SM-2011-1.html" target="_blank">SM-2011-1</a></td></tr>
 <tr><td>16</td><td>\(w&gt;LL\) 或 N 值全段 = 1</td><td>當成一般軟弱土</td><td>\(LI&gt;1\)＋極低 N 值＝擾動後會流動；深開挖的高風險訊號</td><td><a class="qlink" href="problems-view/SM-2023-4.html" target="_blank">SM-2023-4</a></td></tr>
 <tr><td>17</td><td>單位混用（g/cm³ 與 kN/m³）</td><td>忘了乘 9.81</td><td>1 g/cm³ = 9.81 kN/m³；答案數量級錯 10 倍多半在這裡</td><td><a class="qlink" href="problems-view/SM-2016-2.html" target="_blank">SM-2016-2</a></td></tr>
@@ -885,7 +856,7 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 
 <h3>② <a class="qlink" href="problems-view/SM-2020-3.html" target="_blank">SM-2020-3</a>（2020）— 唯一的 \(D_r\) 計算題，且 \(G_s\) 要自己解</h3>
 <div class="box">
-<b>為什麼選它：</b>相對密度在名詞解釋題出現過三次，但只有這一題真的要你算。更關鍵的是它<b>故意不給 \(G_s\)</b>，逼你把 \(\rho_d\) 式與 \(Se=wG_s\) 聯立 —— 這是「建立前置資料」的訓練，別題練不到。<br>
+<b>為什麼選它：</b>相對密度在名詞解釋題考過（SM-2023-1），在 SM-2019-3 也當已知條件用來反推 \(e\)；但要你<b>從量測數據算出</b> \(D_r\) 的只有這一題。更關鍵的是它<b>故意不給 \(G_s\)</b>，逼你把 \(\rho_d\) 式與 \(Se=wG_s\) 聯立 —— 這是「建立前置資料」的訓練，別題練不到。<br>
 <b>先讀：</b>§2、§4（範例 B）<br>
 <b>做完要能回答：</b>為什麼不能用 \(\gamma_d\) 線性內插算 \(D_r\)？兩種算法差多少？\(e_{max}\) 對應的是哪一個體積？
 </div>
@@ -899,7 +870,7 @@ $$4x(17.98)+x(18.56)=20\;\Rightarrow\;90.49x=20\;\Rightarrow\;x=0.221\ \mathrm{m
 
 <h3>④ <a class="qlink" href="problems-view/SM-2008-1.html" target="_blank">SM-2008-1</a>（2008）— 兩個來源、體積比混合，最容易列錯方程式</h3>
 <div class="box">
-<b>為什麼選它：</b>本單元唯一的「多來源」題型。它同時測三件事：能不能把體積比正確翻成方程式、知不知道要用乾土重當未知數、會不會用重量守恆驗算。另外它給了 \(G_s\) 卻用不到 —— <b>辨識干擾項</b>本身就是一項技能。<br>
+<b>為什麼選它：</b>本單元唯一的「多來源」題型。它同時測三件事：能不能把體積比正確翻成方程式、知不知道要用乾土重當未知數、會不會用重量守恆驗算。另外 \(G_s\) 在算術裡用不到，卻能驗出題目指定的夯實狀態 \(S=104.7\%\)、超過零空氣孔隙線 —— <b>用不到的已知數要先驗算再丟</b>，這本身就是一項技能。<br>
 <b>先讀：</b>§3.2、§7（範例 D）<br>
 <b>做完要能回答：</b>若題目改成「重量比 4:1」，方程式要怎麼改？借土總體積 1.105 m³ 壓成 1 m³，這 9.5% 的體積是什麼被擠掉？
 </div>

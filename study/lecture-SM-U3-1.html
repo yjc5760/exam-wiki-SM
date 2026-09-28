@@ -102,41 +102,47 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 </div>
 
 <div class="fig">
-<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <defs><marker id="m1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2e7d32"/></marker>
-  <marker id="m2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c62828"/></marker></defs>
-  <line x1="450" y1="16" x2="450" y2="356" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7,5"/>
-  <text x="225" y="32" font-size="16" font-weight="700" fill="#2e7d32" text-anchor="middle">主動狀態 Ka：牆離開土</text>
-  <text x="675" y="32" font-size="16" font-weight="700" fill="#c62828" text-anchor="middle">被動狀態 Kp：牆推向土</text>
-
-  <rect x="200" y="60" width="200" height="200" fill="#efebe9" stroke="#8d6e63"/>
-  <line x1="200" y1="52" x2="200" y2="272" stroke="#37474f" stroke-width="7"/>
-  <path d="M200 52 L184 272" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
-  <line x1="200" y1="150" x2="168" y2="150" stroke="#2e7d32" stroke-width="2.6" marker-end="url(#m1)"/>
-  <text x="150" y="146" font-size="12.5" fill="#2e7d32" text-anchor="end">牆往左倒</text>
-  <path d="M200 260 L360 60" stroke="#6a1b9a" stroke-width="2.2" stroke-dasharray="5,3" fill="none"/>
-  <text x="300" y="130" font-size="12" fill="#6a1b9a" text-anchor="middle">滑動楔</text>
-  <text x="330" y="150" font-size="12" fill="#6a1b9a" text-anchor="middle">45°+φ/2</text>
-  <path d="M226 70 L226 240 M218 78 L226 68 L234 78" stroke="#0288d1" stroke-width="1.6" fill="none"/>
-  <path d="M240 156 L340 156 M330 148 L342 156 L330 164" stroke="#90a4ae" stroke-width="1.4" fill="none"/>
-  <text x="290" y="200" font-size="12" fill="#607d8b" text-anchor="middle">土往下走、往側向伸張</text>
-  <text x="225" y="298" font-size="14" font-weight="700" fill="#1b5e20" text-anchor="middle">Ka = tan²(45° − φ/2) = 1/3</text>
-  <text x="225" y="322" font-size="12.5" fill="#455a64" text-anchor="middle">只要 0.1%~0.4% H 的位移就達到</text>
-  <text x="225" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">→ 幾乎所有擋土牆都處於主動狀態</text>
-
-  <rect x="500" y="60" width="200" height="200" fill="#efebe9" stroke="#8d6e63"/>
-  <line x1="700" y1="52" x2="700" y2="272" stroke="#37474f" stroke-width="7"/>
-  <path d="M700 52 L716 272" stroke="#c62828" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
-  <line x1="700" y1="150" x2="736" y2="150" stroke="#c62828" stroke-width="2.6" marker-end="url(#m2)"/>
-  <text x="750" y="146" font-size="12.5" fill="#c62828" text-anchor="start">牆往右推</text>
-  <path d="M700 260 L520 92" stroke="#6a1b9a" stroke-width="2.2" stroke-dasharray="5,3" fill="none"/>
-  <text x="596" y="140" font-size="12" fill="#6a1b9a" text-anchor="middle">被動楔（較平緩）</text>
-  <text x="600" y="160" font-size="12" fill="#6a1b9a" text-anchor="middle">45°−φ/2</text>
-  <path d="M676 70 L676 240 M668 232 L676 242 L684 232" stroke="#0288d1" stroke-width="1.6" fill="none"/>
-  <text x="600" y="206" font-size="12" fill="#607d8b" text-anchor="middle">土被往上擠、側向壓縮</text>
-  <text x="675" y="298" font-size="14" font-weight="700" fill="#b71c1c" text-anchor="middle">Kp = tan²(45° + φ/2) = 3</text>
-  <text x="675" y="322" font-size="12.5" fill="#455a64" text-anchor="middle">要 2%~5% H 的位移才發揮得完</text>
-  <text x="675" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">→ 設計時通常要折減，因為根本沒出力</text>
+<svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+  <defs><marker id="m1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2e7d32"/></marker><marker id="m2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c62828"/></marker><marker id="m3" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#0288d1"/></marker></defs>
+  <line x1="458" y1="16" x2="458" y2="376" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="250" y="32" font-size="16" font-weight="700" fill="#2e7d32" text-anchor="middle">主動狀態 Ka：牆離開土</text>
+  <text x="715" y="32" font-size="16" font-weight="700" fill="#c62828" text-anchor="middle">被動狀態 Kp：牆推向土</text>
+  <!-- active -->
+  <rect x="150" y="60" width="250" height="200" fill="#efebe9" stroke="#8d6e63"/>
+  <polygon points="150,260 150,60 265.5,60" fill="#e1bee7" opacity="0.55"/>
+  <line x1="150" y1="52" x2="150" y2="272" stroke="#37474f" stroke-width="7"/>
+  <path d="M150 272 L132 52" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <line x1="144" y1="110" x2="110" y2="110" stroke="#2e7d32" stroke-width="2.6" marker-end="url(#m1)"/>
+  <text x="106" y="98" font-size="12.5" fill="#2e7d32" text-anchor="end">牆頂往外倒</text>
+  <path d="M150 260 L265.5 60" stroke="#6a1b9a" stroke-width="2.2" stroke-dasharray="5,3" fill="none"/>
+  <path d="M190 260 A40 40 0 0 0 170.0 225.4" fill="none" stroke="#6a1b9a" stroke-width="1.4"/>
+  <text x="196" y="246" font-size="12" fill="#6a1b9a">45°+φ/2（=60°）</text>
+  <text x="270" y="112" font-size="12" fill="#6a1b9a" text-anchor="start">滑動楔（陡）</text>
+  <line x1="202" y1="120" x2="172" y2="172.0" stroke="#0288d1" stroke-width="2" marker-end="url(#m3)"/>
+  <text x="325" y="170" font-size="12" fill="#607d8b" text-anchor="middle">楔體沿破壞面</text>
+  <text x="325" y="188" font-size="12" fill="#607d8b" text-anchor="middle">往下、往牆滑</text>
+  <text x="325" y="206" font-size="12" fill="#607d8b" text-anchor="middle">（側向伸張）</text>
+  <text x="250" y="302" font-size="14" font-weight="700" fill="#1b5e20" text-anchor="middle">Ka = tan²(45° − φ/2) = 1/3</text>
+  <text x="250" y="326" font-size="12.5" fill="#455a64" text-anchor="middle">只要 0.1%~0.4% H 的位移就達到</text>
+  <text x="250" y="350" font-size="12.5" fill="#455a64" text-anchor="middle">→ 幾乎所有擋土牆都處於主動狀態</text>
+  <!-- passive -->
+  <rect x="520" y="60" width="354" height="200" fill="#efebe9" stroke="#8d6e63"/>
+  <polygon points="520,260 520,60 866.4,60" fill="#ffcdd2" opacity="0.55"/>
+  <line x1="520" y1="52" x2="520" y2="272" stroke="#37474f" stroke-width="7"/>
+  <path d="M520 272 L538 52" stroke="#c62828" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <line x1="476" y1="110" x2="512" y2="110" stroke="#c62828" stroke-width="2.6" marker-end="url(#m2)"/>
+  <text x="486" y="96" font-size="12.5" fill="#c62828" text-anchor="middle">牆推向土</text>
+  <path d="M520 260 L866.4 60" stroke="#6a1b9a" stroke-width="2.2" stroke-dasharray="5,3" fill="none"/>
+  <path d="M580 260 A60 60 0 0 0 572.0 230.0" fill="none" stroke="#6a1b9a" stroke-width="1.4"/>
+  <text x="588" y="252" font-size="12" fill="#6a1b9a">45°−φ/2（=30°）</text>
+  <text x="690" y="84" font-size="12" fill="#6a1b9a" text-anchor="middle">被動楔（緩、體積大）</text>
+  <line x1="640" y1="175" x2="700" y2="140.4" stroke="#0288d1" stroke-width="2" marker-end="url(#m3)"/>
+  <text x="610" y="112" font-size="12" fill="#607d8b" text-anchor="start">楔體沿破壞面</text>
+  <text x="610" y="130" font-size="12" fill="#607d8b" text-anchor="start">被往上擠（側向壓縮）</text>
+  <text x="715" y="302" font-size="14" font-weight="700" fill="#b71c1c" text-anchor="middle">Kp = tan²(45° + φ/2) = 3</text>
+  <text x="715" y="326" font-size="12.5" fill="#455a64" text-anchor="middle">要 2%~5% H 的位移才發揮得完</text>
+  <text x="715" y="350" font-size="12.5" fill="#455a64" text-anchor="middle">→ 設計時通常要折減，因為根本沒出力</text>
+  <text x="480" y="390" font-size="11.5" fill="#90a4ae" text-anchor="middle">兩圖牆都在左、填土都在右；破壞面依 φ = 30° 按比例繪出</text>
 </svg>
 <div class="cap">圖 0-1｜兩邊的破壞楔<b>傾角不同</b>：主動楔陡（\(45^\circ+\phi/2\)），因為土往下滑；被動楔緩（\(45^\circ-\phi/2\)），因為土被往上推、要推開的範圍大得多。<b>這個幾何差異就是 \(K_p\) 需要更大位移的原因</b> —— 要動員的土體本來就更大塊。</div>
 </div>
@@ -152,33 +158,31 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 
 <div class="fig">
 <svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <text x="410" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">側向土壓力係數 K 隨牆位移的變化</text>
+  <text x="410" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">側向土壓力係數 K 隨牆位移的變化（示意，縱軸未按比例）</text>
   <line x1="100" y1="330" x2="760" y2="330" stroke="#455a64" stroke-width="2"/>
   <line x1="380" y1="56" x2="380" y2="360" stroke="#455a64" stroke-width="2"/>
+  <text x="390" y="62" font-size="12.5" fill="#455a64">K</text>
   <text x="410" y="374" font-size="12.5" fill="#455a64" text-anchor="middle">← 牆離開填土　　位移 Δ/H　　牆推向填土 →</text>
-  <text x="60" y="200" font-size="12.5" fill="#455a64" text-anchor="middle" transform="rotate(-90 60 200)">側向壓力係數 K</text>
-
-  <path d="M120 296 Q220 292 300 282 Q350 272 380 232" fill="none" stroke="#2e7d32" stroke-width="3"/>
-  <path d="M380 232 Q420 170 480 120 Q580 76 740 66" fill="none" stroke="#c62828" stroke-width="3"/>
+  <path d="M120 282 L300 282 C335 282 362 266 380 232" fill="none" stroke="#2e7d32" stroke-width="3"/>
+  <path d="M380 232 C420 160 500 90 560 82 L740 82" fill="none" stroke="#c62828" stroke-width="3"/>
+  <line x1="100" y1="232" x2="380" y2="232" stroke="#0d47a1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="100" y1="282" x2="120" y2="282" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="100" y1="82" x2="380" y2="82" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="300" y1="282" x2="300" y2="330" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="560" y1="82" x2="560" y2="330" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
   <circle cx="380" cy="232" r="5.5" fill="#0d47a1"/>
   <circle cx="300" cy="282" r="5.5" fill="#2e7d32"/>
   <circle cx="560" cy="82" r="5.5" fill="#c62828"/>
-
-  <line x1="100" y1="232" x2="380" y2="232" stroke="#0d47a1" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="100" y1="282" x2="300" y2="282" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="100" y1="82" x2="560" y2="82" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="300" y1="282" x2="300" y2="330" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="560" y1="82" x2="560" y2="330" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-
   <text x="94" y="236" font-size="13" font-weight="700" fill="#0d47a1" text-anchor="end">K0 ≈ 1 − sinφ</text>
   <text x="94" y="286" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end">Ka = 1/3</text>
   <text x="94" y="86" font-size="13" font-weight="700" fill="#c62828" text-anchor="end">Kp = 3</text>
   <text x="380" y="352" font-size="12" fill="#0d47a1" text-anchor="middle">0</text>
   <text x="300" y="352" font-size="12" fill="#2e7d32" text-anchor="middle">0.001~0.004</text>
   <text x="560" y="352" font-size="12" fill="#c62828" text-anchor="middle">0.02~0.05</text>
-
-  <text x="230" y="252" font-size="12.5" fill="#2e7d32" text-anchor="middle">很快就掉到底</text>
-  <text x="640" y="150" font-size="12.5" fill="#c62828" text-anchor="middle">要爬很久才到頂</text>
+  <text x="210" y="272" font-size="12" fill="#2e7d32" text-anchor="middle">達 Ka 後持平（不再下降）</text>
+  <text x="650" y="72" font-size="12" fill="#c62828" text-anchor="middle">達 Kp 後持平</text>
+  <text x="300" y="214" font-size="12.5" fill="#2e7d32" text-anchor="middle">很快就掉到底</text>
+  <text x="520" y="170" font-size="12.5" fill="#c62828" text-anchor="middle">要爬很久才到頂</text>
   <rect x="430" y="256" width="320" height="62" rx="8" fill="#fff8e1" stroke="#ffa000"/>
   <text x="590" y="278" font-size="12.5" fill="#e65100" text-anchor="middle">兩條曲線不對稱，是設計哲學的來源：</text>
   <text x="590" y="300" font-size="12.5" fill="#5d4037" text-anchor="middle">Ka 幾乎必然達成 → 不折減；Kp 通常沒達成 → 折減</text>
@@ -200,7 +204,7 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 <b>觸發信號：</b>題目講「地下室外牆」「箱涵」「剛性支撐的結構」。<br>
 <b>錯誤思維：</b>反正是擋土就用 \(K_a\)。<br>
 <b>正確認知：</b>這類牆被樓版夾住，<b>幾乎不能移動</b> → 停在 \(K_0\)（砂約 0.5，是 \(K_a\) 的 1.5 倍）。
-用 \(K_a\) 設計會低估約 50% 的側向力。這也解釋了為什麼地下室外牆比同高度的擋土牆厚。
+用 \(K_a\) 設計會少算約 33% 的側向力（\(1-1/1.5\)）。這也解釋了為什麼地下室外牆比同高度的擋土牆厚。
 </div>
 </section>
 <section id="s2">
@@ -209,43 +213,37 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 <p class="lead">這一節在怕什麼：<b>怕你把 \(K_a\) 當成一個要背的三角函數。</b>它其實只是「莫爾圓長到碰到破壞包絡線」這件事的代數結果，三行就能推完 —— 而且推得出來，你就永遠不會把 \(K_a\) 與 \(K_p\) 寫反。</p>
 
 <div class="fig">
-<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
   <text x="400" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">σv′ 固定不動，σh′ 往兩邊跑，撞到包絡線就是極限狀態</text>
   <line x1="90" y1="340" x2="740" y2="340" stroke="#455a64" stroke-width="2"/>
   <line x1="90" y1="340" x2="90" y2="70" stroke="#455a64" stroke-width="2"/>
   <text x="752" y="344" font-size="13" fill="#455a64">σ′</text>
   <text x="90" y="60" font-size="13" fill="#455a64" text-anchor="middle">τ</text>
-
   <line x1="90" y1="340" x2="560" y2="69" stroke="#c62828" stroke-width="2.4"/>
-  <text x="470" y="120" font-size="13" fill="#c62828" transform="rotate(-30 470 120)">τ = σ′ tanφ（破壞包絡線）</text>
-  <path d="M150 340 A 60 60 0 0 1 141 306" fill="none" stroke="#c62828" stroke-width="1.4"/>
-  <text x="163" y="330" font-size="12.5" fill="#c62828">φ</text>
-
-  <circle cx="190" cy="340" r="50" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.2" opacity="0.85"/>
-  <circle cx="390" cy="340" r="150" fill="none" stroke="#c62828" stroke-width="2.2"/>
-
-  <g fill="#37474f">
-    <circle cx="140" cy="340" r="4" fill="#2e7d32"/>
-    <circle cx="240" cy="340" r="4" fill="#0d47a1"/>
-    <circle cx="540" cy="340" r="4" fill="#c62828"/>
-    <circle cx="165" cy="340" r="3.5" fill="#607d8b"/>
-  </g>
-  <line x1="240" y1="340" x2="240" y2="378" stroke="#0d47a1" stroke-width="1.2"/>
-  <line x1="140" y1="340" x2="140" y2="400" stroke="#2e7d32" stroke-width="1.2"/>
-  <line x1="540" y1="340" x2="540" y2="378" stroke="#c62828" stroke-width="1.2"/>
-  <line x1="165" y1="340" x2="165" y2="422" stroke="#607d8b" stroke-width="1.2" stroke-dasharray="3,3"/>
-  <text x="240" y="394" font-size="13" font-weight="700" fill="#0d47a1" text-anchor="middle">σv′</text>
-  <text x="140" y="416" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="middle">σa′ = Ka σv′</text>
-  <text x="540" y="394" font-size="13" font-weight="700" fill="#c62828" text-anchor="middle">σp′ = Kp σv′</text>
-  <text x="165" y="436" font-size="11.5" fill="#607d8b" text-anchor="middle">K0</text>
-
-  <text x="190" y="276" font-size="12.5" fill="#2e7d32" text-anchor="middle">主動圓</text>
-  <text x="190" y="294" font-size="11.5" fill="#2e7d32" text-anchor="middle">σv′ 當 σ1</text>
-  <text x="390" y="172" font-size="12.5" fill="#c62828" text-anchor="middle">被動圓</text>
-  <text x="390" y="190" font-size="11.5" fill="#c62828" text-anchor="middle">σv′ 當 σ3</text>
-
+  <text x="452" y="118" font-size="13" fill="#c62828" transform="rotate(-30 452 118)">τ = σ′ tanφ（破壞包絡線）</text>
+  <path d="M130 340 A40 40 0 0 0 124.6 320" fill="none" stroke="#c62828" stroke-width="1.4"/>
+  <text x="112" y="334" font-size="12.5" fill="#c62828">φ</text>
+  <path d="M140 340 A50 50 0 0 1 240 340 Z" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.2"/>
+  <path d="M240 340 A150 150 0 0 1 540 340" fill="none" stroke="#c62828" stroke-width="2.2"/>
+  <circle cx="165" cy="297" r="3.5" fill="#2e7d32"/>
+  <circle cx="315" cy="210" r="3.5" fill="#c62828"/>
+  <circle cx="140" cy="340" r="4" fill="#2e7d32"/>
+  <circle cx="240" cy="340" r="4" fill="#0d47a1"/>
+  <circle cx="540" cy="340" r="4" fill="#c62828"/>
+  <circle cx="165" cy="340" r="3.5" fill="#607d8b"/>
+  <line x1="140" y1="340" x2="140" y2="358" stroke="#2e7d32" stroke-width="1.2"/>
+  <line x1="165" y1="340" x2="165" y2="358" stroke="#607d8b" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="240" y1="340" x2="240" y2="358" stroke="#0d47a1" stroke-width="1.2"/>
+  <line x1="540" y1="340" x2="540" y2="358" stroke="#c62828" stroke-width="1.2"/>
+  <text x="136" y="374" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end">σa′ = Ka σv′</text>
+  <text x="170" y="374" font-size="11.5" fill="#607d8b" text-anchor="start">K0σv′</text>
+  <text x="240" y="392" font-size="13" font-weight="700" fill="#0d47a1" text-anchor="middle">σv′</text>
+  <text x="540" y="374" font-size="13" font-weight="700" fill="#c62828" text-anchor="middle">σp′ = Kp σv′</text>
   <path d="M232 330 L152 330 M160 322 L148 330 L160 338" stroke="#2e7d32" stroke-width="1.6" fill="none"/>
   <path d="M250 322 L530 322 M520 314 L534 322 L520 330" stroke="#c62828" stroke-width="1.6" fill="none"/>
+  <rect x="110" y="76" width="236" height="54" rx="6" fill="#fff" stroke="#cfd8dc"/>
+  <text x="122" y="98" font-size="12.5" fill="#2e7d32">■ 主動圓：σv′ 當 σ1（大主應力）</text>
+  <text x="122" y="120" font-size="12.5" fill="#c62828">□ 被動圓：σv′ 當 σ3（小主應力）</text>
 </svg>
 <div class="cap">圖 2-1｜關鍵在<b>「\(\sigma_v'\) 不動」</b>：覆土壓力由深度決定，牆怎麼動都不會變。變的只有 \(\sigma_h'\)。往左跑 → 圓長大 → 碰線 → \(\sigma_v'\) 成為<b>大主應力</b>（主動）；往右跑 → 圓也長大 → 碰線 → \(\sigma_v'\) 變成<b>小主應力</b>（被動）。<b>主動與被動的差別，就是 \(\sigma_v'\) 扮演 \(\sigma_1\) 還是 \(\sigma_3\)。</b></div>
 </div>
@@ -300,7 +298,7 @@ $$\sin\phi=\frac{\sigma_1-\sigma_3}{\sigma_1+\sigma_3+2c\cot\phi}\;\Longrightarr
 括號裡的 \(\dfrac{2c}{\sqrt{K_a}}\) 就是<b>無圍壓單軸抗壓強度 \(q_u\) 的一般化</b>
 （\(\phi=0\) 時 \(\sqrt{K_a}=1\)，退化成 \(q_u=2c_u\)）。<br>
 換句話說：<b>土要先被壓到超過自己的無圍壓強度，才會開始推牆。</b>
-\(\sqrt{K_a}\) 出現是因為強度是在「傾斜的破壞面」上動員的，投影到水平方向只剩一次方根。
+\(\sqrt{K_a}\) 的由來：\(\dfrac{2c}{\sqrt{K_a}}=2c\sqrt{K_p}=2c\tan(45^\circ+\phi/2)\)，正好就是 \(c\)–\(\phi\) 土的無圍壓抗壓強度 \(q_u\)；乘回 \(K_a\) 後剩下 \(2c\sqrt{K_a}\)。
 </div>
 
 <h3>3.2　張力裂縫：\(\sigma_a'=0\) 的深度</h3>
@@ -320,7 +318,7 @@ $$z_c=\frac{2c}{\gamma\sqrt{K_a}}$$
   <line x1="80" y1="156" x2="300" y2="156" stroke="#6a1b9a" stroke-width="1.2" stroke-dasharray="4,3"/>
   <text x="100" y="94" font-size="12" fill="#6a1b9a">負值（張力）</text>
   <text x="66" y="160" font-size="12" fill="#6a1b9a" text-anchor="start">zc</text>
-  <text x="236" y="262" font-size="12" fill="#2e7d32">正值</text>
+  <text x="188" y="284" font-size="12" fill="#2e7d32">正值</text>
   <text x="180" y="48" font-size="12" fill="#8d6e63" text-anchor="middle">地表</text>
   <text x="180" y="326" font-size="13.5" font-weight="700" fill="#455a64" text-anchor="middle">理論分布</text>
   <text x="180" y="348" font-size="12" fill="#607d8b" text-anchor="middle">σa′ = σv′Ka − 2c√Ka</text>
@@ -334,7 +332,7 @@ $$z_c=\frac{2c}{\gamma\sqrt{K_a}}$$
   <line x1="480" y1="156" x2="700" y2="156" stroke="#6a1b9a" stroke-width="1.2" stroke-dasharray="4,3"/>
   <path d="M580 62 L580 154" stroke="#c62828" stroke-width="3.4"/>
   <text x="596" y="106" font-size="12" fill="#c62828">裂縫</text>
-  <text x="466" y="160" font-size="12" fill="#6a1b9a" text-anchor="start">zc = 2c /(γ√Ka)</text>
+  <text x="566" y="148" font-size="12" fill="#6a1b9a" text-anchor="end">zc = 2c /(γ√Ka)</text>
   <text x="580" y="326" font-size="13.5" font-weight="700" fill="#b71c1c" text-anchor="middle">設計分布</text>
   <text x="580" y="348" font-size="12" fill="#607d8b" text-anchor="middle">0 ~ zc 一律取 0（土會裂開）</text>
   <text x="580" y="368" font-size="12" fill="#607d8b" text-anchor="middle">合力只算下面那個三角形</text>
@@ -355,7 +353,7 @@ $$z_c=\frac{2c}{\gamma\sqrt{K_a}}$$
 <b>錯誤思維：</b>把整個梯形（含負的部分）積分求合力。<br>
 <b>正確認知：</b>負值部分<b>直接歸零</b>，合力只算 \(z_c\) 以下的三角形：
 $$P_a=\tfrac12\left(\gamma H K_a-2c\sqrt{K_a}\right)(H-z_c),\quad \text{作用點在牆底上方}\ \frac{H-z_c}{3}$$
-<b>作用點也跟著上移</b>（不是 \(H/3\)！）—— 這是 <a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a> 特別要「合力作用位置」的原因。
+<b>作用點也跟著下移</b>（\((H-z_c)/3&lt;H/3\)，不是 \(H/3\)！）—— 這是 <a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a> 特別要「合力作用位置」的原因。
 </div>
 
 <div class="trap">
@@ -371,13 +369,13 @@ $$P_a=\tfrac12\left(\gamma H K_a-2c\sqrt{K_a}\right)(H-z_c),\quad \text{作用�
 上層黏土 0–4 m：\(\gamma_{dry}=17.5\)、\(\phi=20^\circ\)、\(c=20\) kPa。<br><br>
 \(K_a=\dfrac{1-\sin20^\circ}{1+\sin20^\circ}=\dfrac{1-0.342}{1+0.342}=0.4903\)，\(\sqrt{K_a}=0.7002\)。<br>
 牆頂 \(z=0\)：\(\sigma_a'=0-2(20)(0.7002)=-28.0\) kPa（張力）。<br>
-$$z_c=\frac{2c}{\gamma\sqrt{K_a}}=\frac{40}{17.5\times0.7002}=\frac{40}{12.25}=\mathbf{3.27\ m}$$
+$$z_c=\frac{2c}{\gamma\sqrt{K_a}}=\frac{40}{17.5\times0.7002}=\frac{40}{12.254}=\mathbf{3.26\ m}$$
 黏土層底 \(z=4\)：\(\sigma_a'=70.0\times0.4903-28.0=34.32-28.0=\mathbf{6.31}\) kPa。<br><br>
 <b>自我檢查：</b>
-① \(z_c=3.27\) m 佔黏土層厚 4 m 的 <b>82%</b> —— 這一層幾乎整層不推牆，只有最底下 0.73 m 有效。
+① \(z_c=3.26\) m 佔黏土層厚 4 m 的 <b>82%</b> —— 這一層幾乎整層不推牆，只有最底下 0.74 m 有效。
 ② 用比例驗算：\(z_c/4=0.82\)，而 \(6.31/34.32=0.184=1-0.816\) ✓ 兩者互為餘數。
 ③ <b>工程意義</b>：\(c=20\) kPa 的黏土填土「看起來」對擋土牆很有利，但只要裂縫積水
-（\(\frac12\times9.81\times3.27^2=52.4\) kN/m），這個好處立刻被吃光還倒賠。
+（\(\frac12\times9.81\times3.264^2=52.3\) kN/m），這個好處立刻被吃光還倒賠。
 <b>這就是規範不建議用黏土當回填料的理由</b> —— 短期強度是假的。
 </div>
 </section>
@@ -393,37 +391,38 @@ $$z_c=\frac{2c}{\gamma\sqrt{K_a}}=\frac{40}{17.5\times0.7002}=\frac{40}{12.25}=\
 <li>土壓力增量：由 \(\gamma K_a\)（乾）<b>降為</b> \(\gamma'K_a=(\gamma_{sat}-\gamma_w)K_a\) —— <b>減少 \(\gamma_wK_a\)</b>。</li>
 <li>水壓力增量：<b>增加 \(\gamma_w\)</b>（係數為 1，不打折）。</li>
 </ul>
-<p>淨增量 \(=\gamma_w(1-K_a)\)。以 \(\phi=35^\circ\)（\(K_a=0.271\)）為例，每公尺淨增 \(9.81\times0.729=7.15\) kPa/m —— 而原本乾土的增量才 \(19.2\times0.271=5.20\) kPa/m。<b>水位以下，側向壓力的成長速度比乾土快了 1.4 倍。</b></p>
+<p>淨增量 \(=\gamma_w(1-K_a)\)。以 \(\phi=35^\circ\)（\(K_a=0.271\)）為例，每公尺淨增 \(9.81\times0.729=7.15\) kPa/m —— 而原本乾土的增量才 \(19.2\times0.271=5.20\) kPa/m。<b>水位以下，每公尺總側壓增量為 \(2.55+9.81=12.35\) kPa/m，是乾土的 2.4 倍。</b></p>
 
 <div class="fig">
-<svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<svg viewBox="0 0 920 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
   <line x1="440" y1="14" x2="440" y2="356" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7,5"/>
   <text x="215" y="30" font-size="15.5" font-weight="700" fill="#2e7d32" text-anchor="middle">乾燥填土</text>
-  <text x="665" y="30" font-size="15.5" font-weight="700" fill="#c62828" text-anchor="middle">水位上升到 x 高度</text>
-
-  <line x1="150" y1="56" x2="150" y2="296" stroke="#455a64" stroke-width="2.4"/>
+  <text x="680" y="30" font-size="15.5" font-weight="700" fill="#c62828" text-anchor="middle">水位上升到牆底以上 x</text>
   <line x1="60" y1="56" x2="260" y2="56" stroke="#8d6e63" stroke-width="1.6"/>
   <polygon points="150,56 150,296 258,296" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.8"/>
-  <text x="200" y="256" font-size="12.5" fill="#2e7d32">Ka γ H</text>
+  <line x1="150" y1="56" x2="150" y2="296" stroke="#455a64" stroke-width="2.4"/>
+  <text x="262" y="292" font-size="12.5" fill="#2e7d32">Ka γ H</text>
   <text x="215" y="324" font-size="13" fill="#1b5e20" text-anchor="middle">單一三角形</text>
   <text x="215" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">Pa = ½ Ka γ H²</text>
-
-  <line x1="600" y1="56" x2="600" y2="296" stroke="#455a64" stroke-width="2.4"/>
   <line x1="510" y1="56" x2="710" y2="56" stroke="#8d6e63" stroke-width="1.6"/>
-  <line x1="510" y1="176" x2="710" y2="176" stroke="#0288d1" stroke-width="1.6"/>
-  <polygon points="510,176 518,168 502,168" fill="#0288d1"/>
-  <text x="524" y="168" font-size="11.5" fill="#0288d1">水位</text>
+  <line x1="510" y1="176" x2="720" y2="176" stroke="#0288d1" stroke-width="1.6"/>
+  <polygon points="520,176 528,168 512,168" fill="#0288d1"/>
+  <text x="534" y="168" font-size="11.5" fill="#0288d1">水位</text>
   <polygon points="600,56 600,176 654,176" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
   <polygon points="600,176 654,176 678,296 600,296" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1.6"/>
-  <polygon points="678,176 678,296 786,296" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8" transform="translate(0,0)"/>
-  <polygon points="678,176 786,296 678,296" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8"/>
-  <text x="628" y="126" font-size="11.5" fill="#2e7d32">Ka γ</text>
-  <text x="636" y="252" font-size="11.5" fill="#1b5e20">Ka γ′（變緩）</text>
-  <text x="736" y="264" font-size="12" fill="#0288d1">γw x（很陡）</text>
-  <line x1="600" y1="176" x2="600" y2="296" stroke="#c62828" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="590" y="240" font-size="11.5" fill="#c62828" text-anchor="end">x</text>
-  <text x="665" y="324" font-size="13" fill="#b71c1c" text-anchor="middle">土壓力斜率變緩，但多一個很陡的水壓三角形</text>
-  <text x="665" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">淨效果：總推力增加 ½ γw (1 − Ka) x²</text>
+  <polygon points="654,176 786,296 678,296" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8"/>
+  <line x1="600" y1="56" x2="600" y2="296" stroke="#455a64" stroke-width="2.4"/>
+  <text x="630" y="140" font-size="11.5" fill="#2e7d32">Ka γ</text>
+  <line x1="640" y1="236" x2="760" y2="214" stroke="#2e7d32" stroke-width="1"/>
+  <text x="764" y="212" font-size="12" fill="#1b5e20">土：Ka γ′（斜率變緩）</text>
+  <line x1="740" y1="266" x2="790" y2="250" stroke="#0288d1" stroke-width="1"/>
+  <text x="794" y="248" font-size="12" fill="#0288d1">＋水：γw x（很陡）</text>
+  <line x1="586" y1="176" x2="586" y2="296" stroke="#c62828" stroke-width="1"/>
+  <line x1="580" y1="176" x2="592" y2="176" stroke="#c62828" stroke-width="1"/>
+  <line x1="580" y1="296" x2="592" y2="296" stroke="#c62828" stroke-width="1"/>
+  <text x="576" y="240" font-size="12" fill="#c62828" text-anchor="end">x</text>
+  <text x="680" y="324" font-size="13" fill="#b71c1c" text-anchor="middle">水壓疊在土壓上：土壓斜率變緩，但多一個很陡的水壓三角形</text>
+  <text x="680" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">淨效果：總推力增加 ½ γw (1 − Ka) x²（γsat = γt 時）</text>
 </svg>
 <div class="cap">圖 4-1｜右圖裡的<b>兩個變化互相抵銷不掉</b>：土壓力少掉 \(\frac12K_a\gamma_wx^2\)，水壓多出 \(\frac12\gamma_wx^2\)，淨增 \(\frac12\gamma_w(1-K_a)x^2\)。<b>\(K_a\) 越小（土越好），淨增反而越多</b> —— 因為好土本來推得少，水一來就把優勢抹平。</div>
 </div>
@@ -512,7 +511,7 @@ $$P_A=239.1\ \mathrm{kN/m},\qquad \sum M=572.6\ \mathrm{kN\text{-}m/m},\qquad \b
 <b>自我檢查：</b>
 ① \(\bar y=2.40\) m 遠低於 \(H/3=2.67\) m —— 合理，因為壓力重心被下層黏土的大三角形拉低。
 ② \(P_6\) 一塊就佔了 59% 的合力 —— <b>黏土層是這題的主角</b>，砂層加水壓只佔四成。
-③ 檢查 4 m 以下水壓為何不見了：因為黏土用總應力法，\(u\) 已內含。若誤把水壓延伸到 8 m，會多算約 \(\frac12(9.81\times6)(4)+\ldots\)，答案會嚴重偏大。
+③ 檢查 4 m 以下水壓為何不見了：因為黏土用總應力法，\(u\) 已內含。若誤把水壓延伸到 8 m，會多算 \(19.62\times4+\frac12(39.24)(4)=157\) kN/m，答案幾乎變成 1.66 倍。
 </div>
 
 <div class="trap">
@@ -520,7 +519,7 @@ $$P_A=239.1\ \mathrm{kN/m},\qquad \sum M=572.6\ \mathrm{kN\text{-}m/m},\qquad \b
 <b>觸發信號：</b>分層、有水、有超載、有張力裂縫 —— 任一個成立。<br>
 <b>錯誤思維：</b>反射性地寫「作用於 \(H/3\)」。<br>
 <b>正確認知：</b>\(H/3\) 只在<b>單一均質土、無水、無超載、無凝聚力</b>時成立（純三角形）。
-其他情況一律要切方塊取矩。<b>超載會把作用點推高、水壓會把它拉低、張力裂縫會把它推高。</b>
+其他情況一律要切方塊取矩。<b>超載會把作用點推高；水壓與張力裂縫會把它拉低。</b>
 </div>
 </section>
 <section id="s6">
@@ -530,46 +529,49 @@ $$P_A=239.1\ \mathrm{kN/m},\qquad \sum M=572.6\ \mathrm{kN\text{-}m/m},\qquad \b
 
 <div class="fig">
 <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+  <defs><marker id="w1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#37474f"/></marker><marker id="w2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c62828"/></marker><marker id="w3" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2e7d32"/></marker></defs>
   <line x1="470" y1="14" x2="470" y2="376" stroke="#cfd8dc" stroke-width="1.5"/>
   <text x="235" y="30" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">① 假設破壞面，取土楔為自由體</text>
-  <text x="690" y="30" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">② 三力共點 → 力多邊形</text>
-
-  <!-- wedge -->
-  <line x1="120" y1="300" x2="420" y2="300" stroke="#8d6e63" stroke-width="1.6"/>
-  <line x1="150" y1="70" x2="150" y2="300" stroke="#455a64" stroke-width="5"/>
-  <line x1="150" y1="70" x2="176" y2="300" stroke="#455a64" stroke-width="5"/>
-  <path d="M176 300 L162 96 L330 96 Z" fill="#efebe9" stroke="#8d6e63" stroke-width="1.4"/>
-  <line x1="162" y1="96" x2="330" y2="96" stroke="#8d6e63" stroke-width="1.4"/>
-  <line x1="176" y1="300" x2="330" y2="96" stroke="#6a1b9a" stroke-width="2.4"/>
-  <text x="300" y="88" font-size="12" fill="#8d6e63" text-anchor="middle">填土面（坡角 α）</text>
-  <text x="290" y="216" font-size="12" fill="#6a1b9a" text-anchor="middle">假設破壞面（角 β）</text>
-  <text x="118" y="180" font-size="12" fill="#455a64" text-anchor="end">牆背（傾角 θ）</text>
-
-  <line x1="250" y1="180" x2="250" y2="252" stroke="#37474f" stroke-width="2.4" marker-end="url(#w1)"/>
-  <defs><marker id="w1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#37474f"/></marker>
-  <marker id="w2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c62828"/></marker>
-  <marker id="w3" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2e7d32"/></marker></defs>
-  <text x="262" y="222" font-size="12.5" font-weight="700" fill="#37474f">W（土楔重）</text>
-  <line x1="214" y1="196" x2="164" y2="182" stroke="#c62828" stroke-width="2.4" marker-end="url(#w2)"/>
-  <text x="216" y="192" font-size="12.5" font-weight="700" fill="#c62828">Pa</text>
-  <line x1="238" y1="212" x2="290" y2="182" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#w3)"/>
-  <text x="300" y="176" font-size="12.5" font-weight="700" fill="#2e7d32">R（破壞面反力）</text>
-  <text x="235" y="340" font-size="12" fill="#455a64" text-anchor="middle">R 與破壞面法線夾 φ；Pa 與牆背法線夾 δ</text>
-  <text x="235" y="362" font-size="12" fill="#455a64" text-anchor="middle">兩個角度都由「摩擦」決定方向，不是自由選的</text>
-
-  <!-- force polygon -->
-  <line x1="600" y1="90" x2="600" y2="240" stroke="#37474f" stroke-width="3" marker-end="url(#w1)"/>
-  <text x="586" y="170" font-size="13" font-weight="700" fill="#37474f" text-anchor="end">W</text>
-  <line x1="600" y1="240" x2="712" y2="176" stroke="#2e7d32" stroke-width="3" marker-end="url(#w3)"/>
-  <text x="668" y="228" font-size="13" font-weight="700" fill="#2e7d32">R</text>
-  <line x1="712" y1="176" x2="600" y2="90" stroke="#c62828" stroke-width="3" marker-end="url(#w2)"/>
-  <text x="676" y="120" font-size="13" font-weight="700" fill="#c62828">Pa</text>
-  <text x="690" y="292" font-size="12.5" fill="#455a64" text-anchor="middle">W 已知（幾何算得出）</text>
-  <text x="690" y="314" font-size="12.5" fill="#455a64" text-anchor="middle">R、Pa 方向已知、大小未知</text>
-  <text x="690" y="336" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">三角形自動閉合 → Pa 唯一解</text>
-  <text x="690" y="366" font-size="12.5" font-weight="700" fill="#c62828" text-anchor="middle">③ 改變 β 重算，取 Pa 的最大值</text>
+  <text x="690" y="30" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">② 力多邊形閉合</text>
+  <line x1="60" y1="300" x2="430" y2="300" stroke="#8d6e63" stroke-width="1.6"/>
+  <polygon points="100,300 160,300 180,90 140,90" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
+  <line x1="180" y1="90" x2="430" y2="45.9" stroke="#8d6e63" stroke-width="1.6"/>
+  <polygon points="160,300 180,90 330,63.6" fill="#efebe9" stroke="#8d6e63" stroke-width="1.2"/>
+  <line x1="160" y1="300" x2="330" y2="63.6" stroke="#6a1b9a" stroke-width="2.4"/>
+  <text x="152" y="318" font-size="12.5" font-weight="700" fill="#37474f" text-anchor="middle">A</text>
+  <text x="178" y="82" font-size="12.5" font-weight="700" fill="#37474f" text-anchor="middle">D</text>
+  <text x="334" y="55.6" font-size="12.5" font-weight="700" fill="#37474f">B</text>
+  <text x="400" y="76" font-size="12" fill="#8d6e63" text-anchor="middle">填土面（坡角 α）</text>
+  <text x="296" y="236" font-size="12" fill="#6a1b9a" text-anchor="start">破壞面 AB（與水平夾 β）</text>
+  <text x="96" y="200" font-size="12" fill="#455a64" text-anchor="end">牆背 AD</text>
+  <text x="96" y="216" font-size="12" fill="#455a64" text-anchor="end">（傾角 θ）</text>
+  <line x1="240" y1="105" x2="240" y2="165" stroke="#37474f" stroke-width="2.4" marker-end="url(#w1)"/>
+  <text x="247" y="122" font-size="12.5" font-weight="700" fill="#37474f">W</text>
+  <line x1="170.5" y1="200.0" x2="226.6" y2="185.4" stroke="#c62828" stroke-width="2.4" marker-end="url(#w2)"/>
+  <text x="200" y="215" font-size="12.5" font-weight="700" fill="#c62828">Pa</text>
+  <line x1="270.5" y1="238.5" x2="245" y2="182" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#w3)"/>
+  <text x="277.5" y="246.5" font-size="12.5" font-weight="700" fill="#2e7d32">R</text>
+  <text x="235" y="340" font-size="12" fill="#455a64" text-anchor="middle">R 與 AB 法線夾 φ；Pa 與牆背法線夾 δ（均為作用在土楔上）</text>
+  <text x="235" y="362" font-size="12" fill="#455a64" text-anchor="middle">土楔往左下滑 → 兩面的摩擦都朝上，方向不是自由選的</text>
+  <line x1="600" y1="80" x2="600" y2="230" stroke="#37474f" stroke-width="3" marker-end="url(#w1)"/>
+  <text x="610" y="160" font-size="13" font-weight="700" fill="#37474f">W</text>
+  <line x1="600" y1="230" x2="539.4" y2="95.7" stroke="#2e7d32" stroke-width="3" marker-end="url(#w3)"/>
+  <text x="552" y="176" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end">R</text>
+  <line x1="539.4" y1="95.7" x2="600" y2="80" stroke="#c62828" stroke-width="3" marker-end="url(#w2)"/>
+  <text x="566" y="80" font-size="13" font-weight="700" fill="#c62828" text-anchor="middle">Pa</text>
+  <text x="690" y="270" font-size="12.5" fill="#455a64" text-anchor="middle">W 已知（楔體面積 × γ）</text>
+  <text x="690" y="292" font-size="12.5" fill="#455a64" text-anchor="middle">R、Pa 方向已知、大小未知 → 閉合即解</text>
+  <text x="690" y="314" font-size="12" fill="#6a1b9a" text-anchor="middle">有 c、ca 時再加 C、Ca → 五邊形（見下框）</text>
+  <text x="690" y="344" font-size="12.5" font-weight="700" fill="#c62828" text-anchor="middle">③ 改變 β 重算，取 Pa 的最大值</text>
+  <text x="690" y="370" font-size="11" fill="#90a4ae" text-anchor="middle">示範：φ = 30°、δ = 20°、α = 10°，力多邊形按比例閉合</text>
 </svg>
-<div class="cap">圖 6-1｜Coulomb 的三步：畫楔、閉合力三角形、對 \(\beta\) 取極大。<b>為什麼取「極大」？</b>因為土會自己找最容易滑的那個面 —— 對牆而言，就是推力最大的那個。<a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a> 考的正是這三步（含張力裂縫使楔體幾何改變）。被動側則相反：取<b>極小值</b>，因為土會選最容易被推開的面。</div>
+<div class="cap">圖 6-1｜Coulomb 的三步：畫楔、閉合力多邊形、對 \(\beta\) 取極大。圖中力的方向是<b>作用在土楔上</b>的：土楔往左下滑，所以 \(R\) 由破壞面下方的土推向左上（偏離法線 \(\phi\)），\(P_a\) 由牆推向土楔（偏離牆背法線 \(\delta\)，摩擦向上）。<b>為什麼取「極大」？</b>因為土會自己找最容易滑的那個面 —— 對牆而言，就是推力最大的那個。<a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a> 考的正是這三步（含張力裂縫使楔體幾何改變）。被動側則相反：取<b>極小值</b>，因為土會選最容易被推開的面。</div>
+</div>
+
+<div class="box">
+<b>有 \(c\) 與 \(c_a\) 時：三角形變五邊形（<a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a> 就是這個版本）</b><br>
+破壞面 AB 上除了 \(R\)，還有凝聚力合力 \(C=c\cdot\overline{AB}\)（沿 AB 向上，阻止土楔下滑）；牆背上除了 \(P_a\)，還有附著力 \(C_a=c_a\cdot\overline{AD}\)（沿牆背向上）。有張力裂縫時，\(\overline{AB}\)、\(\overline{AD}\) 只算裂縫以下的長度，但裂縫區的土重<b>仍要計入</b> \(W\)。<br>
+作法：\(W\)、\(C\)、\(C_a\) 大小與方向都已知 → 先首尾相接畫成折線 → 從折線末端畫 \(R\) 的方向線、從起點畫 \(P_a\) 的方向線 → 兩線交點同時定出 \(R\) 與 \(P_a\)。<b>只畫三力三角形會漏掉 \(C\) 與 \(C_a\)</b>，這正是該題 15 分那一小題的得分點。
 </div>
 
 <h3>6.1　Rankine 與 Coulomb 的分工</h3>
@@ -631,30 +633,33 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <p>懸臂式（L 型／倒 T 型）牆的「牆背」不是混凝土面，而是<b>從牆踵垂直向上畫的那條線</b>。理由：這條線與牆踵之間的土<b>會跟著牆一起動</b>，等於是牆的一部分。</p>
 
 <div class="fig">
-<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <text x="410" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">懸臂式擋土牆：虛擬牆背（從牆踵垂直向上）</text>
-  <line x1="120" y1="272" x2="720" y2="272" stroke="#8d6e63" stroke-width="1.6"/>
-  <path d="M200 272 L200 80 L230 80 L230 250 L480 250 L480 272 Z" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
-  <path d="M230 80 L480 80 L480 250 L230 250 Z" fill="#e8f5e9" stroke="#81c784" stroke-width="1.2"/>
-  <line x1="480" y1="60" x2="480" y2="272" stroke="#c62828" stroke-width="2.6" stroke-dasharray="8,5"/>
-  <line x1="230" y1="60" x2="700" y2="60" stroke="#8d6e63" stroke-width="1.6"/>
-  <text x="600" y="50" font-size="12" fill="#8d6e63" text-anchor="middle">填土面</text>
-  <text x="356" y="168" font-size="12.5" fill="#2e7d32" text-anchor="middle">這塊土跟著牆一起動</text>
-  <text x="356" y="190" font-size="12.5" fill="#2e7d32" text-anchor="middle">→ 算進「牆重 W」裡</text>
-  <text x="504" y="120" font-size="13" font-weight="700" fill="#c62828" text-anchor="start">虛擬牆背</text>
-  <text x="504" y="142" font-size="12" fill="#c62828" text-anchor="start">在這條線上套 Rankine</text>
-  <text x="504" y="164" font-size="12" fill="#c62828" text-anchor="start">（此面 δ = 0 成立：土對土）</text>
-  <polygon points="480,60 480,272 560,272" fill="#ffcdd2" stroke="#c62828" stroke-width="1.6" opacity="0.8"/>
-  <text x="600" y="240" font-size="12.5" fill="#b71c1c" text-anchor="start">Pa 作用在虛擬牆背上</text>
-  <text x="600" y="262" font-size="12.5" fill="#b71c1c" text-anchor="start">高度 H′ 從填土面量到基礎底</text>
-  <line x1="740" y1="60" x2="740" y2="272" stroke="#455a64" stroke-width="1.2"/>
-  <line x1="734" y1="60" x2="746" y2="60" stroke="#455a64" stroke-width="1.2"/>
-  <line x1="734" y1="272" x2="746" y2="272" stroke="#455a64" stroke-width="1.2"/>
-  <text x="756" y="170" font-size="12.5" fill="#455a64">H′</text>
-  <text x="410" y="310" font-size="12.5" fill="#455a64" text-anchor="middle">關鍵：H′ 要量到<tspan font-weight="700">基礎版底</tspan>，不是量到莖部頂；牆踵上方的土重要計入 W</text>
-  <text x="410" y="332" font-size="12.5" fill="#607d8b" text-anchor="middle">漏掉這塊土 → W 低估、Pa 低估 → 安全係數虛高</text>
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+  <text x="450" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">懸臂式擋土牆：虛擬牆背（從牆踵垂直向上）</text>
+  <line x1="100" y1="222" x2="330" y2="222" stroke="#8d6e63" stroke-width="1.6"/>
+  <text x="170" y="214" font-size="11.5" fill="#8d6e63" text-anchor="middle">前方地面</text>
+  <line x1="100" y1="272" x2="760" y2="272" stroke="#8d6e63" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M360 60 L360 250 L600 250 L600 60 Z" fill="#e8f5e9" stroke="#81c784" stroke-width="1.2"/>
+  <path d="M330 60 L360 60 L360 250 L600 250 L600 272 L240 272 L240 250 L330 250 Z" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
+  <line x1="360" y1="60" x2="820" y2="60" stroke="#8d6e63" stroke-width="1.6"/>
+  <text x="720" y="50" font-size="12" fill="#8d6e63" text-anchor="middle">填土面</text>
+  <text x="285" y="266" font-size="11" fill="#455a64" text-anchor="middle">趾</text>
+  <text x="560" y="266" font-size="11" fill="#455a64" text-anchor="middle">踵</text>
+  <text x="480" y="148" font-size="12.5" fill="#2e7d32" text-anchor="middle">這塊土跟著牆一起動</text>
+  <text x="480" y="170" font-size="12.5" fill="#2e7d32" text-anchor="middle">→ 算進「牆重 W」裡</text>
+  <polygon points="600,60 600,272 680,272" fill="#ffcdd2" stroke="#c62828" stroke-width="1.6" opacity="0.8"/>
+  <line x1="600" y1="50" x2="600" y2="272" stroke="#c62828" stroke-width="2.6" stroke-dasharray="8,5"/>
+  <text x="624" y="104" font-size="13" font-weight="700" fill="#c62828">虛擬牆背</text>
+  <text x="624" y="126" font-size="12" fill="#c62828">在這條線上套 Rankine</text>
+  <text x="624" y="148" font-size="12" fill="#c62828">（土體內部的面，不涉及牆土摩擦）</text>
+  <text x="700" y="240" font-size="12.5" fill="#b71c1c">Pa 作用在虛擬牆背上</text>
+  <line x1="850" y1="60" x2="850" y2="272" stroke="#455a64" stroke-width="1.2"/>
+  <line x1="844" y1="60" x2="856" y2="60" stroke="#455a64" stroke-width="1.2"/>
+  <line x1="844" y1="272" x2="856" y2="272" stroke="#455a64" stroke-width="1.2"/>
+  <text x="862" y="170" font-size="12.5" fill="#455a64">H′</text>
+  <text x="450" y="306" font-size="12.5" fill="#455a64" text-anchor="middle">關鍵：H′ 從填土面量到<tspan font-weight="700">基礎版底</tspan>（不是只量莖部高度）；傾斜填土還要加踵部上方的坡度增量</text>
+  <text x="450" y="330" font-size="12.5" fill="#607d8b" text-anchor="middle">H′ 量太短 → Pa 低估 → 安全係數虛高（危險）；漏算踵上土重 → W 低估 → 安全係數偏低（保守但不經濟）</text>
 </svg>
-<div class="cap">圖 7-1｜虛擬牆背最大的價值是<b>讓 Rankine 的 \(\delta=0\) 假設變成真的</b> —— 這個面是「土對土」，本來就沒有牆土摩擦問題。代價是你必須記得把牆踵上方那塊土算進牆重。<a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a>（\(H=7.5\) m、\(\alpha=12^\circ\)、踵部伸出 3.5 m）就是標準題。</div>
+<div class="cap">圖 7-1｜虛擬牆背最大的價值是<b>讓 Rankine 的應力狀態變成真的</b> —— 這個面在土體內部，不再牽涉牆土摩擦 \(\delta\)。填土水平時它是主平面（相當於 \(\delta=0\)）；填土傾斜 \(\alpha\) 時 \(P_a\) 平行填土面（相當於 \(\delta=\alpha\)）。代價是你必須記得把牆踵上方那塊土算進牆重。<a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a>（\(H=7.5\) m、\(\alpha=12^\circ\)、踵部伸出 3.5 m）就是標準題。</div>
 </div>
 
 <h3>7.3　地震土壓力：Mononobe–Okabe（帶過）</h3>
@@ -685,12 +690,15 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
     <line x1="480" y1="152" x2="480" y2="196"/>
     <line x1="370" y1="232" x2="230" y2="232"/><line x1="230" y1="232" x2="230" y2="272"/>
     <line x1="590" y1="232" x2="730" y2="232"/><line x1="730" y1="232" x2="730" y2="272"/>
-    <line x1="480" y1="342" x2="480" y2="386"/>
+    <line x1="480" y1="360" x2="480" y2="386"/>
     <line x1="370" y1="422" x2="200" y2="422"/><line x1="200" y1="422" x2="200" y2="458"/>
     <line x1="590" y1="422" x2="760" y2="422"/><line x1="760" y1="422" x2="760" y2="458"/>
-    <line x1="480" y1="556" x2="480" y2="590"/>
+    <line x1="480" y1="566" x2="480" y2="590"/>
   </g>
 
+  <text x="492" y="180" font-size="12" font-weight="700" fill="#2e7d32">牆離開土 → Ka（最常見）</text>
+  <text x="352" y="104" font-size="11" fill="#1565c0" text-anchor="end">不能動</text>
+  <text x="608" y="104" font-size="11" fill="#2e7d32" text-anchor="start">推向土</text>
   <rect x="330" y="30" width="300" height="30" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/>
   <text x="480" y="50" font-size="14" font-weight="700" fill="#0d47a1" text-anchor="middle">第一問：這面牆會不會動？往哪動？</text>
 
@@ -741,11 +749,9 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
     <line x1="200" y1="534" x2="200" y2="566"/><line x1="760" y1="534" x2="760" y2="566"/>
     <line x1="200" y1="566" x2="760" y2="566"/>
   </g>
-  <line x1="480" y1="566" x2="480" y2="586" stroke="#455a64" stroke-width="1.6" marker-end="url(#d1)"/>
   <line x1="230" y1="332" x2="230" y2="360" stroke="#455a64" stroke-width="1.6"/>
   <line x1="730" y1="332" x2="730" y2="360" stroke="#455a64" stroke-width="1.6"/>
   <line x1="230" y1="360" x2="730" y2="360" stroke="#455a64" stroke-width="1.6"/>
-  <line x1="480" y1="360" x2="480" y2="382" stroke="#455a64" stroke-width="1.6" marker-end="url(#d1)"/>
 </svg>
 <div class="cap">圖 8-1｜三個菱形：<b>會不會動</b>（決定 \(K_0/K_a/K_p\)）、<b>Rankine 能不能用</b>（決定理論）、<b>有幾個轉折</b>（決定要切幾塊）。多數失分不在第一個菱形，而在第三個 —— 轉折點漏掉一個，合力與作用點就全錯。</div>
 </div>
@@ -770,7 +776,7 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <thead><tr><th>題號</th><th>年度</th><th>土壓力在該題扮演什麼</th><th>主戰場</th></tr></thead>
 <tbody>
 <tr><td><a class="qlink" href="problems-view/SM-2005-1.html" target="_blank">SM-2005-1</a></td><td>2005</td><td>\(K_a\) 算主動側、黏土淨被動壓力 \(4c-\gamma H\)</td><td>SM-U2-3 開挖</td></tr>
-<tr><td><a class="qlink" href="problems-view/SM-2006-3.html" target="_blank">SM-2006-3</a></td><td>2006</td><td>島式開挖邊坡的主動、被動土壓力與張力裂縫</td><td>SM-U3-4 邊坡</td></tr>
+<tr><td><a class="qlink" href="problems-view/SM-2006-3.html" target="_blank">SM-2006-3</a></td><td>2006</td><td>島式開挖邊坡的主動、被動土壓力與張力裂縫</td><td>SM-U3-3 坡地工程</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2007-4.html" target="_blank">SM-2007-4</a></td><td>2007</td><td>錨定式版樁固定端法的兩側土壓力</td><td>SM-U2-3 開挖</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2008-3.html" target="_blank">SM-2008-3</a></td><td>2008</td><td>連續壁貫入的被動土壓力與地改</td><td>SM-U2-3 開挖</td></tr>
 <tr><td><a class="qlink" href="problems-view/SM-2009-4.html" target="_blank">SM-2009-4</a></td><td>2009</td><td>傾斜背填 \(\alpha=20^\circ\)、偏心距、抗滑抗傾覆</td><td>SM-U3-2 擋土穩定</td></tr>
@@ -800,9 +806,9 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <tr><td>2</td><td>剖面有地下水位</td><td>\(K_a\times\gamma_{sat}\)</td><td>\(K_a\times\gamma'\)，水壓<b>全額</b>另畫（\(K=1\)）</td><td>SM-2010-2、SM-2004-3</td></tr>
 <tr><td>3</td><td>水位以下是黏土、\(\phi_u=0\)</td><td>再加一次水壓</td><td>總應力法的 \(\sigma_v\) 已含水壓，<b>不可重複計入</b></td><td><a class="qlink" href="problems-view/SM-2010-2.html" target="_blank">SM-2010-2</a></td></tr>
 <tr><td>4</td><td>填土有 \(c\)</td><td>用負值抵銷正值</td><td>\(0\sim z_c\) 歸零；合力只算下方三角形</td><td><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a></td></tr>
-<tr><td>5</td><td>有張力裂縫</td><td>作用點照寫 \(H/3\)</td><td>作用點在 \((H-z_c)/3\)（<b>上移</b>）</td><td><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a></td></tr>
-<tr><td>6</td><td>問「裂縫積水」</td><td>覺得裂開比較安全</td><td>積水後加 \(\frac12\gamma_wz_c^2\)，<b>比不裂更危險</b></td><td><a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a></td></tr>
-<tr><td>7</td><td>分層／超載／有水</td><td>反射性寫 \(P=\frac12\gamma H^2K_a\)、作用點 \(H/3\)</td><td>切方塊、對牆底取矩；超載推高作用點、水壓拉低</td><td>SM-2010-2、SM-2015-2</td></tr>
+<tr><td>5</td><td>有張力裂縫</td><td>作用點照寫 \(H/3\)</td><td>作用點在 \((H-z_c)/3\)（<b>下移</b>）</td><td><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a></td></tr>
+<tr><td>6</td><td>問「裂縫積水」</td><td>覺得裂開比較安全</td><td>積水後加 \(\frac12\gamma_wz_c^2\)，<b>比不裂更危險</b></td><td><a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a></td></tr>
+<tr><td>7</td><td>分層／超載／有水</td><td>反射性寫 \(P=\frac12\gamma H^2K_a\)、作用點 \(H/3\)</td><td>切方塊、對牆底取矩；超載推高作用點、水壓與張力裂縫拉低</td><td>SM-2010-2、SM-2015-2</td></tr>
 <tr><td>8</td><td>層界深度</td><td>只算一次</td><td>層界要算<b>兩次</b>（上層底、下層頂），\(K_a\) 與 \(c\) 都變了</td><td><a class="qlink" href="problems-view/SM-2010-2.html" target="_blank">SM-2010-2</a></td></tr>
 <tr><td>9</td><td>牆背傾斜或給 \(\delta\)</td><td>照用 Rankine</td><td>Rankine 三條件（垂直、光滑、水平）任一不成立就要 Coulomb</td><td><a class="qlink" href="problems-view/SM-2016-4.html" target="_blank">SM-2016-4</a></td></tr>
 <tr><td>10</td><td>給 \(\delta\) 的 Coulomb 題</td><td>主動被動 \(\delta\) 同方向</td><td>方向由土相對牆的移動決定：主動向下傾、被動向上傾</td><td><a class="qlink" href="problems-view/SM-2016-4.html" target="_blank">SM-2016-4</a></td></tr>
@@ -833,10 +839,10 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <p>兩個原因：（一）幾何 —— 被動楔的傾角是 \(45^\circ-\phi/2\)，比主動楔緩，要動員的土體體積大好幾倍；（二）方向 —— 主動是土「自己滑下去」（重力幫忙），被動是你「把土往上推」（要對抗重力）。所以規範對 \(K_p\) 折減不是保守，是承認它還沒出力。</p></details>
 
 <details><summary>4. \(2c\sqrt{K_a}\) 的物理意義是什麼？為什麼有平方根？</summary>
-<p>把式子寫成 \(\sigma_a'=K_a(\sigma_v'-2c/\sqrt{K_a})\)，括號裡是土的無圍壓抗壓強度的一般化（\(\phi=0\) 時退化為 \(q_u=2c_u\)）。平方根來自「強度在傾斜破壞面上動員、再投影到水平方向」，兩次投影各出半次方。</p></details>
+<p>把式子寫成 \(\sigma_a'=K_a(\sigma_v'-2c/\sqrt{K_a})\)，括號裡是土的無圍壓抗壓強度的一般化（\(\phi=0\) 時退化為 \(q_u=2c_u\)）。平方根的來源：\(2c/\sqrt{K_a}=2c\tan(45^\circ+\phi/2)\) 就是 \(c\)–\(\phi\) 土的 \(q_u\)，提出 \(K_a\) 後自然剩下 \(2c\sqrt{K_a}\)。</p></details>
 
 <details><summary>5. 為什麼張力裂縫積水比不裂還危險？</summary>
-<p>裂開本身只是把上段土壓力歸零（少了一點推力）；但裂縫一旦積水，會產生 \(\frac12\gamma_wz_c^2\) 的靜水壓，而水壓的「\(K\)」是 1，遠大於 \(K_a\)。以 \(z_c=3.27\) m 計算為 52 kN/m，往往超過原本被歸零那段的好處數倍。</p></details>
+<p>裂開本身就已經讓推力<b>變大</b>：理論上上段的負壓會抵掉一部分推力（SM-2015-2 約 \(\frac12\times28.0\times3.264=45.7\) kN/m），裂開後這份抵銷消失。裂縫若再積水，還要加 \(\frac12\gamma_wz_c^2\) 的靜水壓（水壓的「\(K\)」是 1，遠大於 \(K_a\)），以 \(z_c=3.264\) m 計為 52.3 kN/m。兩者合計，比「不裂」的理論推力多出約 98 kN/m。</p></details>
 
 <details><summary>6. 水位上升時，土壓力那部分明明變小了，為什麼總推力還是增加？</summary>
 <p>因為土壓力少掉的是 \(\frac12K_a\gamma_wx^2\)，水壓多出來的是 \(\frac12\gamma_wx^2\)，淨增 \(\frac12\gamma_w(1-K_a)x^2\)。\(K_a\) 恆小於 1，所以淨增必為正。而且 \(K_a\) 越小（土越好），淨增越多。</p></details>
@@ -851,7 +857,7 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <p>主動時土往下滑，粗糙牆面的摩擦力把土「拉住」一部分自重，需要的水平支撐就減少；被動時土被往上推，摩擦力增加了阻力，抵抗變大。但被動側的實際破壞面是曲面（對數螺線），Coulomb 的平面假設在 \(\delta\) 大時會顯著高估 \(K_p\)。</p></details>
 
 <details><summary>10. 懸臂式擋土牆為什麼要用虛擬牆背？它讓哪一個假設變成真的？</summary>
-<p>因為牆踵上方那塊土會跟著牆一起運動，等於是牆的一部分。從牆踵垂直向上畫的那條線是「土對土」的面，因此 Rankine 的 \(\delta=0\)（光滑）假設在這個面上是真的成立的。代價是必須把該塊土重計入牆重 \(W\)。</p></details>
+<p>因為牆踵上方那塊土會跟著牆一起運動，等於是牆的一部分。從牆踵垂直向上畫的那條線落在土體內部，那裡的應力狀態就是 Rankine 半無限土體的應力狀態：填土水平時鉛直面是主平面、剪應力為零（相當於 \(\delta=0\)）；填土傾斜 \(\alpha\) 時，\(P_a\) 平行填土面（相當於 \(\delta=\alpha\)）。代價是必須把該塊土重計入牆重 \(W\)。</p></details>
 
 <details><summary>11. 為什麼傾斜填土 \(\alpha&gt;\phi\) 時 Rankine 公式無解？</summary>
 <p>因為 \(\sqrt{\cos^2\alpha-\cos^2\phi}\) 變虛數。物理意義是：填土坡角超過土的自然安息角，這個坡在沒有牆的情況下就已經站不住了，「土壓力」這個概念失去前提，必須先做邊坡穩定分析。</p></details>
@@ -867,13 +873,13 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <b>鏈 1（主幹）</b>：牆位移 → 土體伸張或壓縮 → 莫爾圓往左或往右長大 → 碰到破壞包絡線 → \(\sigma_v'\) 成為 \(\sigma_1\) 或 \(\sigma_3\) → \(\sigma_h'/\sigma_v'=K_a\) 或 \(K_p=\dfrac{1\mp\sin\phi}{1\pm\sin\phi}\)。
 </div>
 <div class="box">
-<b>鏈 2（凝聚力）</b>：\(c&gt;0\) → 包絡線往左平移 \(c\cot\phi\) → \(\sigma_a'=\sigma_v'K_a-2c\sqrt{K_a}\) → 上段為負 → 土受不了拉力 → 裂開 \(z_c=2c/(\gamma\sqrt{K_a})\) → 合力只算下段、作用點上移 → <b>但裂縫積水後靜水壓反而更大</b>。
+<b>鏈 2（凝聚力）</b>：\(c&gt;0\) → 包絡線往左平移 \(c\cot\phi\) → \(\sigma_a'=\sigma_v'K_a-2c\sqrt{K_a}\) → 上段為負 → 土受不了拉力 → 裂開 \(z_c=2c/(\gamma\sqrt{K_a})\) → 合力只算下段、作用點下移至 \((H-z_c)/3\) → <b>但裂縫積水後靜水壓反而更大</b>。
 </div>
 <div class="box">
 <b>鏈 3（水）</b>：水位上升 → 有效應力增量由 \(\gamma\) 降為 \(\gamma'\) → 土壓力斜率變緩（\(-\gamma_wK_a\)）→ 但多一個斜率為 \(\gamma_w\) 的水壓三角形 → 淨增 \(\gamma_w(1-K_a)\) 每公尺 → 總推力可達乾燥時的 2–2.5 倍 → <b>所以排水設施是擋土牆的生死線</b>。
 </div>
 <div class="box">
-<b>鏈 4（Coulomb）</b>：假設平面破壞面 \(\beta\) → 土楔受 \(W\)、\(R\)（與法線夾 \(\phi\)）、\(P_a\)（與法線夾 \(\delta\)）三力 → 力多邊形閉合解出 \(P_a(\beta)\) → 對 \(\beta\) 取極大（土會選最容易滑的面）→ 得 \(K_a\)；被動側取極小。
+<b>鏈 4（Coulomb）</b>：假設平面破壞面 \(\beta\) → 土楔受 \(W\)、\(R\)（與法線夾 \(\phi\)）、\(P_a\)（與法線夾 \(\delta\)）三力；若有 \(c\)、\(c_a\)，再加 \(C=c\cdot\overline{AB}\)、\(C_a=c_a\cdot\overline{AD}\) 成為五力 → 力多邊形閉合解出 \(P_a(\beta)\) → 對 \(\beta\) 取極大（土會選最容易滑的面）→ 得 \(K_a\)；被動側取極小。
 </div>
 <div class="box">
 <b>鏈 5（往上游接）</b>：本單元的 \(K_a\) 與 \(K_p\) → 供給 <a class="qlink" href="lecture-SM-U2-3.html">SM-U2-3 開挖</a>（貫入深度、支撐反力）與 SM-U3-2（抗滑、抗傾覆、偏心距、承載力）→ 所以土壓力算錯，那 20 多題全部連帶錯。<b>這是本單元投報率最高的理由。</b>
@@ -896,7 +902,7 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <div class="box">
 <b>為什麼選它：</b>唯一一題把「張力裂縫如何改變合力大小<b>與作用點</b>」考到底的題目，而且第二小題接著用這個合力做抗滑動檢核 —— 你會親眼看到作用點錯了會怎樣。它還內建了牆底揚水壓這個容易漏的項目。<br>
 <b>先讀：</b>§3（範例 A）、§5<br>
-<b>做完要能回答：</b>\(z_c=3.27\) m 佔了黏土層厚度的多少？若把黏土回填改成砂回填，合力會變大還是變小？為什麼抗滑動要先扣掉揚水壓？
+<b>做完要能回答：</b>\(z_c=3.26\) m 佔了黏土層厚度的多少？若把黏土回填改成砂回填，合力會變大還是變小？為什麼抗滑動要先扣掉揚水壓？
 </div>
 
 <h3>③ <a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a>（2019）— 觀念鏈題，計算量近乎零</h3>
@@ -925,7 +931,7 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <li><b>每題先寫兩行</b>：「牆的運動方向：___ → 用 \(K\)：___」與「轉折點：___、___、___」。方法就由這兩行決定。</li>
 <li><b>分布圖一定要畫，而且要標數值。</b>SM 的土壓力題有一半直接要求繪圖，且閱卷對「標了轉折深度與壓力值的圖」給分很大方。</li>
 <li><b>合力與作用點分開寫。</b>建議固定用表格（塊／\(P_i\)／\(y_i\)／\(M_i\)），一來不會漏塊，二來閱卷一眼看得懂。</li>
-<li><b>算完做兩個檢查</b>：① \(K_a&lt;1&lt;K_p\)；② \(\bar y\) 落在 \(0.25H\sim0.40H\) 之間（超出這個範圍多半是漏了一塊或取矩基準換了）。</li>
+<li><b>算完做兩個檢查</b>：① \(K_a&lt;1&lt;K_p\)；② 用直覺驗 \(\bar y\) 的方向：純三角形 \(=H/3\)、超載矩形把它往 \(H/2\) 拉、水壓與張力裂縫把它往下拉（SM-2015-2 只有 \(0.21H\)）。方向和你算出的偏移不一致，多半是漏了一塊或取矩基準換了。</li>
 </ol>
 
 <h3>候補兩題</h3>
