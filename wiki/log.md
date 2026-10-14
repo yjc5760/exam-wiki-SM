@@ -1,4 +1,4 @@
-﻿# Wiki 操作紀錄
+# Wiki 操作紀錄
 
 > append-only，請勿刪除已有紀錄
 
@@ -1868,3 +1868,14 @@ $P \to \infty$ 而溢出 925 處，改為只畫 $P \ge 0.45P_a$ 的視窗後解�
   - `.gitignore`：加入 `解題過程影片/`（約 1.1GB 影片大檔），避免推至遠端超過 GitHub 容量限制。
   - `影片講義/`：新增 5 個單元 HTML 講義（`SM-U1-1.html`、`SM-U1-3.html`、`SM-U1-5-0.html`、`SM-U2-3.html`、`SM-U3-1.html`）、投影片切片截圖目錄 `img/` 及講解影片目錄 `video/`（單檔均在 31MB 以內）。
 - **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
+
+## [2026-10-14] video-lecture | 新增影片講義第二批 (SM-U1-5-2-1, SM-U1-5-2-2, SM-U1-5-3)
+
+- **新增檔案**：
+  - `影片講義/`：新增 3 個單元 HTML 講義（`SM-U1-5-2-1.html`、`SM-U1-5-2-2.html`、`SM-U1-5-3.html`）、投影片切片截圖目錄 `img/`（`SM-U1-5-2-1/`、`SM-U1-5-2-2/`、`SM-U1-5-3/`）及講解影片目錄 `video/`（`SM-U1-5-2-1.mp4`、`SM-U1-5-2-2.mp4`、`SM-U1-5-3.mp4`，單檔均在 22MB 以內）。
+- **完成事項**：
+  - 完成 SM-U1-5 土壤強度特性系列進階影片講義與互動教材切片（含 Skempton 孔壓參數 A/B、CU 超額孔壓正負號、莫爾圓推導 Ka/Kp 與破壞角）。
+- **下一步**：
+  - 接續盤點各單元影片教材涵蓋度與歷屆試題對照。
+- **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
+
