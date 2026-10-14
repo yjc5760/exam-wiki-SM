@@ -1861,3 +1861,10 @@ $P \to \infty$ 而溢出 925 處，改為只畫 $P \ge 0.45P_a$ 的視窗後解�
 **已知缺口**：`解題過程影片/` 4 個單元影片資料夾未被偵測（單元影片 0 支）——`SM-U1-1-Phase`、`SM-U1-5-MC` 的後綴不符 v1.1 規則（子項 id 後須接空白或 `-數字`）；`SM-U1-CU-PWP`、`SM-U1-Skempton` 名稱不含完整子項 id。未改腳本。
 
 **未動**：raw/ 任何檔案、question_index.json。
+
+## [2026-10-14] video-lecture | 新增影片講義 (SM-U1-1, U1-3, U1-5-0, U2-3, U3-1) 與 .gitignore
+
+- **新增檔案**：
+  - `.gitignore`：加入 `解題過程影片/`（約 1.1GB 影片大檔），避免推至遠端超過 GitHub 容量限制。
+  - `影片講義/`：新增 5 個單元 HTML 講義（`SM-U1-1.html`、`SM-U1-3.html`、`SM-U1-5-0.html`、`SM-U2-3.html`、`SM-U3-1.html`）、投影片切片截圖目錄 `img/` 及講解影片目錄 `video/`（單檔均在 31MB 以內）。
+- **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
