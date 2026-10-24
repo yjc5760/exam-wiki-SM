@@ -157,37 +157,75 @@ footer{text-align:center;color:var(--mut);font-size:.83em;padding:26px;border-to
 <p class="lead">這一節在怕什麼：<b>怕你以為 \(K_a\) 與 \(K_p\) 是「兩種土壓力」。</b>它們是同一條「側向壓力 vs 牆位移」曲線的兩個端點，而 \(K_0\)（靜止）是位移為零的那個起點。</p>
 
 <div class="fig">
-<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <text x="410" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">側向土壓力係數 K 隨牆位移的變化（示意，縱軸未按比例）</text>
-  <line x1="100" y1="330" x2="760" y2="330" stroke="#455a64" stroke-width="2"/>
-  <line x1="380" y1="56" x2="380" y2="360" stroke="#455a64" stroke-width="2"/>
-  <text x="390" y="62" font-size="12.5" fill="#455a64">K</text>
-  <text x="410" y="374" font-size="12.5" fill="#455a64" text-anchor="middle">← 牆離開填土　　位移 Δ/H　　牆推向填土 →</text>
-  <path d="M120 282 L300 282 C335 282 362 266 380 232" fill="none" stroke="#2e7d32" stroke-width="3"/>
-  <path d="M380 232 C420 160 500 90 560 82 L740 82" fill="none" stroke="#c62828" stroke-width="3"/>
-  <line x1="100" y1="232" x2="380" y2="232" stroke="#0d47a1" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="100" y1="282" x2="120" y2="282" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="100" y1="82" x2="380" y2="82" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="300" y1="282" x2="300" y2="330" stroke="#2e7d32" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <line x1="560" y1="82" x2="560" y2="330" stroke="#c62828" stroke-width="1.2" stroke-dasharray="4,4"/>
-  <circle cx="380" cy="232" r="5.5" fill="#0d47a1"/>
-  <circle cx="300" cy="282" r="5.5" fill="#2e7d32"/>
-  <circle cx="560" cy="82" r="5.5" fill="#c62828"/>
-  <text x="94" y="236" font-size="13" font-weight="700" fill="#0d47a1" text-anchor="end">K0 ≈ 1 − sinφ</text>
-  <text x="94" y="286" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end">Ka = 1/3</text>
-  <text x="94" y="86" font-size="13" font-weight="700" fill="#c62828" text-anchor="end">Kp = 3</text>
-  <text x="380" y="352" font-size="12" fill="#0d47a1" text-anchor="middle">0</text>
-  <text x="300" y="352" font-size="12" fill="#2e7d32" text-anchor="middle">0.001~0.004</text>
-  <text x="560" y="352" font-size="12" fill="#c62828" text-anchor="middle">0.02~0.05</text>
-  <text x="210" y="272" font-size="12" fill="#2e7d32" text-anchor="middle">達 Ka 後持平（不再下降）</text>
-  <text x="650" y="72" font-size="12" fill="#c62828" text-anchor="middle">達 Kp 後持平</text>
-  <text x="300" y="214" font-size="12.5" fill="#2e7d32" text-anchor="middle">很快就掉到底</text>
-  <text x="520" y="170" font-size="12.5" fill="#c62828" text-anchor="middle">要爬很久才到頂</text>
-  <rect x="430" y="256" width="320" height="62" rx="8" fill="#fff8e1" stroke="#ffa000"/>
-  <text x="590" y="278" font-size="12.5" fill="#e65100" text-anchor="middle">兩條曲線不對稱，是設計哲學的來源：</text>
-  <text x="590" y="300" font-size="12.5" fill="#5d4037" text-anchor="middle">Ka 幾乎必然達成 → 不折減；Kp 通常沒達成 → 折減</text>
+<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="k1k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="k1r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="k1g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="k1b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="k1p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="k1n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="k1o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="k1m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="k1w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="440.0" y="24.0" font-size="15.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >側向土壓力係數 K 隨牆位移的變化（φ = 30° 砂土，兩軸皆按比例）</text>
+  <rect x="197.2" y="65.0" width="24.6" height="300.0" rx="0" fill="#e8f5e9" stroke="none" stroke-width="1.2"/>
+  <rect x="394.0" y="65.0" width="246.0" height="300.0" rx="0" fill="#ffebee" stroke="none" stroke-width="1.2"/>
+  <text x="209.5" y="81.0" font-size="11" fill="#2e7d32" text-anchor="middle" font-weight="700" >0.1–0.4%</text>
+  <text x="517.0" y="81.0" font-size="11.5" fill="#c62828" text-anchor="middle" font-weight="700" >2–5%：Kp 才完全發揮</text>
+  <line x1="107.0" y1="365.0" x2="746.6" y2="365.0" stroke="#37474f" stroke-width="1.6" />
+  <line x1="230.0" y1="365.0" x2="230.0" y2="57.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="365.0" x2="107.0" y2="57.0" stroke="#37474f" stroke-width="1.6" />
+  <line x1="102.0" y1="365.0" x2="107.0" y2="365.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="365.0" x2="746.6" y2="365.0" stroke="#eceff1" stroke-width="1" />
+  <text x="99.0" y="369.0" font-size="11" fill="#607d8b" text-anchor="end" >0.25</text>
+  <line x1="102.0" y1="333.9" x2="107.0" y2="333.9" stroke="#37474f" stroke-width="1.2" />
+  <text x="99.0" y="337.9" font-size="11" fill="#607d8b" text-anchor="end" >1/3</text>
+  <line x1="102.0" y1="290.0" x2="107.0" y2="290.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="290.0" x2="746.6" y2="290.0" stroke="#eceff1" stroke-width="1" />
+  <text x="99.0" y="294.0" font-size="11" fill="#607d8b" text-anchor="end" >0.5</text>
+  <line x1="102.0" y1="215.0" x2="107.0" y2="215.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="215.0" x2="746.6" y2="215.0" stroke="#eceff1" stroke-width="1" />
+  <text x="99.0" y="219.0" font-size="11" fill="#607d8b" text-anchor="end" >1</text>
+  <line x1="102.0" y1="140.0" x2="107.0" y2="140.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="140.0" x2="746.6" y2="140.0" stroke="#eceff1" stroke-width="1" />
+  <text x="99.0" y="144.0" font-size="11" fill="#607d8b" text-anchor="end" >2</text>
+  <line x1="102.0" y1="96.1" x2="107.0" y2="96.1" stroke="#37474f" stroke-width="1.2" />
+  <text x="99.0" y="100.1" font-size="11" fill="#607d8b" text-anchor="end" >3</text>
+  <line x1="102.0" y1="65.0" x2="107.0" y2="65.0" stroke="#37474f" stroke-width="1.2" />
+  <line x1="107.0" y1="65.0" x2="746.6" y2="65.0" stroke="#eceff1" stroke-width="1" />
+  <text x="99.0" y="69.0" font-size="11" fill="#607d8b" text-anchor="end" >4</text>
+  <line x1="148.0" y1="365.0" x2="148.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="148.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >-1%</text>
+  <line x1="230.0" y1="365.0" x2="230.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="230.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >0</text>
+  <line x1="312.0" y1="365.0" x2="312.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="312.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >1%</text>
+  <line x1="394.0" y1="365.0" x2="394.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="394.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >2%</text>
+  <line x1="476.0" y1="365.0" x2="476.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="476.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >3%</text>
+  <line x1="558.0" y1="365.0" x2="558.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="558.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >4%</text>
+  <line x1="640.0" y1="365.0" x2="640.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="640.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >5%</text>
+  <line x1="722.0" y1="365.0" x2="722.0" y2="370.0" stroke="#37474f" stroke-width="1.2" />
+  <text x="722.0" y="384.0" font-size="11" fill="#607d8b" text-anchor="middle" >6%</text>
+  <text x="107.0" y="405.0" font-size="12" fill="#2e7d32" text-anchor="start" >← 牆離開填土（主動）</text>
+  <text x="746.6" y="405.0" font-size="12" fill="#c62828" text-anchor="end" >牆推向填土（被動）→</text>
+  <text x="426.8" y="405.0" font-size="12" fill="#37474f" text-anchor="middle" >牆頂位移 Δ / H</text>
+  <text x="113.0" y="59.0" font-size="11.5" fill="#37474f" text-anchor="start" >K（對數刻度）</text>
+  <path d="M230.0 290.0 L229.2 294.2 L228.4 298.0 L227.5 301.5 L226.7 304.7 L225.9 307.6 L225.1 310.3 L224.3 312.7 L223.4 314.9 L222.6 316.9 L221.8 318.7 L221.0 320.3 L220.2 321.8 L219.3 323.1 L218.5 324.2 L217.7 325.3 L216.9 326.2 L216.1 327.1 L215.2 327.8 L214.4 328.5 L213.6 329.1 L212.8 329.6 L212.0 330.1 L211.1 330.5 L210.3 330.9 L209.5 331.2 L208.7 331.5 L207.9 331.8 L207.0 332.0 L206.2 332.2 L205.4 332.4 L204.6 332.6 L203.8 332.7 L202.9 332.8 L202.1 333.0 L201.3 333.1 L200.5 333.2 L199.7 333.2 L198.8 333.3 L198.0 333.4 L197.2 333.4 L196.4 333.5 L195.6 333.5 L194.7 333.6 L193.9 333.6 L193.1 333.6 L192.3 333.7 L191.5 333.7 L190.6 333.7 L189.8 333.7 L189.0 333.7 L188.2 333.8 L187.4 333.8 L186.5 333.8 L185.7 333.8 L184.9 333.8 L184.1 333.8 L183.3 333.8 L182.4 333.8 L181.6 333.8 L180.8 333.8 L180.0 333.8 L179.2 333.8 L178.3 333.8 L177.5 333.8 L176.7 333.9 L175.9 333.9 L175.1 333.9 L174.2 333.9 L173.4 333.9 L172.6 333.9 L171.8 333.9 L171.0 333.9 L170.1 333.9 L169.3 333.9 L168.5 333.9 L167.7 333.9 L166.9 333.9 L166.0 333.9 L165.2 333.9 L164.4 333.9 L163.6 333.9 L162.8 333.9 L161.9 333.9 L161.1 333.9 L160.3 333.9 L159.5 333.9 L158.7 333.9 L157.8 333.9 L157.0 333.9 L156.2 333.9 L155.4 333.9 L154.6 333.9 L153.7 333.9 L152.9 333.9 L152.1 333.9 L151.3 333.9 L150.5 333.9 L149.6 333.9 L148.8 333.9 L148.0 333.9 L147.2 333.9 L146.4 333.9 L145.5 333.9 L144.7 333.9 L143.9 333.9 L143.1 333.9 L142.3 333.9 L141.4 333.9 L140.6 333.9 L139.8 333.9 L139.0 333.9 L138.2 333.9 L137.3 333.9 L136.5 333.9 L135.7 333.9 L134.9 333.9 L134.1 333.9 L133.2 333.9 L132.4 333.9 L131.6 333.9 L130.8 333.9 L130.0 333.9 L129.1 333.9 L128.3 333.9 L127.5 333.9 L126.7 333.9 L125.9 333.9 L125.0 333.9 L124.2 333.9 L123.4 333.9 L122.6 333.9 L121.8 333.9 L120.9 333.9 L120.1 333.9 L119.3 333.9 L118.5 333.9 L117.7 333.9 L116.8 333.9 L116.0 333.9 L115.2 333.9 L114.4 333.9 L113.6 333.9 L112.7 333.9 L111.9 333.9 L111.1 333.9 L110.3 333.9 L109.5 333.9 L108.6 333.9 L107.8 333.9 L107.0 333.9" fill="none" stroke="#2e7d32" stroke-width="3"/>
+  <path d="M230.0 290.0 L234.1 269.4 L238.2 252.8 L242.3 238.9 L246.4 227.1 L250.5 216.9 L254.6 208.0 L258.7 200.1 L262.8 193.0 L266.9 186.6 L271.0 180.8 L275.1 175.6 L279.2 170.8 L283.3 166.3 L287.4 162.3 L291.5 158.5 L295.6 155.0 L299.7 151.8 L303.8 148.8 L307.9 146.0 L312.0 143.3 L316.1 140.9 L320.2 138.6 L324.3 136.4 L328.4 134.4 L332.5 132.5 L336.6 130.7 L340.7 129.0 L344.8 127.4 L348.9 125.9 L353.0 124.5 L357.1 123.1 L361.2 121.8 L365.3 120.6 L369.4 119.5 L373.5 118.4 L377.6 117.4 L381.7 116.4 L385.8 115.4 L389.9 114.6 L394.0 113.7 L398.1 112.9 L402.2 112.2 L406.3 111.4 L410.4 110.8 L414.5 110.1 L418.6 109.5 L422.7 108.9 L426.8 108.3 L430.9 107.8 L435.0 107.3 L439.1 106.8 L443.2 106.3 L447.3 105.9 L451.4 105.4 L455.5 105.0 L459.6 104.6 L463.7 104.3 L467.8 103.9 L471.9 103.6 L476.0 103.2 L480.1 102.9 L484.2 102.6 L488.3 102.4 L492.4 102.1 L496.5 101.8 L500.6 101.6 L504.7 101.4 L508.8 101.1 L512.9 100.9 L517.0 100.7 L521.1 100.5 L525.2 100.3 L529.3 100.1 L533.4 100.0 L537.5 99.8 L541.6 99.7 L545.7 99.5 L549.8 99.4 L553.9 99.2 L558.0 99.1 L562.1 99.0 L566.2 98.8 L570.3 98.7 L574.4 98.6 L578.5 98.5 L582.6 98.4 L586.7 98.3 L590.8 98.2 L594.9 98.1 L599.0 98.0 L603.1 98.0 L607.2 97.9 L611.3 97.8 L615.4 97.7 L619.5 97.7 L623.6 97.6 L627.7 97.5 L631.8 97.5 L635.9 97.4 L640.0 97.4 L644.1 97.3 L648.2 97.3 L652.3 97.2 L656.4 97.2 L660.5 97.1 L664.6 97.1 L668.7 97.1 L672.8 97.0 L676.9 97.0 L681.0 96.9 L685.1 96.9 L689.2 96.9 L693.3 96.8 L697.4 96.8 L701.5 96.8 L705.6 96.8 L709.7 96.7 L713.8 96.7 L717.9 96.7 L722.0 96.7 L726.1 96.6 L730.2 96.6 L734.3 96.6 L738.4 96.6 L742.5 96.6 L746.6 96.5" fill="none" stroke="#c62828" stroke-width="3"/>
+  <line x1="107.0" y1="290.0" x2="746.6" y2="290.0" stroke="#0d47a1" stroke-width="1" stroke-dasharray="4,4" />
+  <line x1="107.0" y1="333.9" x2="746.6" y2="333.9" stroke="#2e7d32" stroke-width="1" stroke-dasharray="4,4" />
+  <line x1="107.0" y1="96.1" x2="746.6" y2="96.1" stroke="#c62828" stroke-width="1" stroke-dasharray="4,4" />
+  <circle cx="230.0" cy="290.0" r="5.5" fill="#0d47a1" stroke="none"/>
+  <text x="240.0" y="307.0" font-size="12.5" fill="#0d47a1" text-anchor="start" font-weight="700" >K<tspan font-size="72%" dy="0.3em">0</tspan><tspan dy="-0.3em">​</tspan> = 1 − sinφ = 0.50（牆不動）</text>
+  <text x="111.0" y="350.9" font-size="12.5" fill="#2e7d32" text-anchor="start" font-weight="700" >K<tspan font-size="72%" dy="0.3em">a</tspan><tspan dy="-0.3em">​</tspan> = 1/3</text>
+  <text x="746.6" y="88.1" font-size="12.5" fill="#c62828" text-anchor="end" font-weight="700" >K<tspan font-size="72%" dy="0.3em">p</tspan><tspan dy="-0.3em">​</tspan> = 3</text>
+  <line x1="709.7" y1="215.0" x2="709.7" y2="99.1" stroke="#6a1b9a" stroke-width="1.4" marker-end="url(#k1p)" />
+  <line x1="709.7" y1="215.0" x2="709.7" y2="330.9" stroke="#6a1b9a" stroke-width="1.4" marker-end="url(#k1p)" />
+  <line x1="689.2" y1="215.0" x2="730.2" y2="215.0" stroke="#6a1b9a" stroke-width="1.4" />
+  <rect x="562.1" y="193.0" width="128.0" height="44.0" rx="6" fill="#f3e5f5" stroke="#ce93d8" stroke-width="1.2"/>
+  <text x="626.1" y="210.0" font-size="11.5" fill="#6a1b9a" text-anchor="middle" >對數軸上兩者</text>
+  <text x="626.1" y="228.0" font-size="11.5" fill="#6a1b9a" text-anchor="middle" >對稱於 K = 1（互為倒數）</text>
+  <rect x="324.3" y="220.6" width="250.0" height="46.0" rx="6" fill="#fff8e1" stroke="#ffa000" stroke-width="1.2"/>
+  <text x="449.3" y="239.6" font-size="12" fill="#e65100" text-anchor="middle" font-weight="700" >主動：動 0.2% 就到底 → 不折減</text>
+  <text x="449.3" y="257.6" font-size="12" fill="#5d4037" text-anchor="middle" font-weight="700" >被動：動 3% 還沒到頂 → 要折減</text>
 </svg>
-<div class="cap">圖 1-1｜曲線<b>左陡右緩</b>。牆只要動 0.1–0.4% 高度（8 m 牆＝8–32 mm）土壓力就掉到 \(K_a\)；要漲到 \(K_p\) 卻需要 2–5%（160–400 mm，牆早就不能用了）。<b>這就是為什麼規範對被動側折減、對主動側不折減</b> —— 不是保守，是因為被動側根本還沒出力。</div>
+<div class="cap">圖 1-1｜<b>按比例畫出來才看得到「左陡右緩」有多誇張</b>：橫軸是真實的 \(\Delta/H\)，主動側在 0.1–0.4% 的窄帶內就掉到 \(K_a\)（8 m 牆＝8–32 mm），被動側要到 2–5%（160–400 mm，牆早就不能用了）才爬到 \(K_p\)。縱軸取<b>對數</b>，於是 \(K_a=1/3\) 與 \(K_p=3\) 剛好對稱於 \(K=1\) —— 「互為倒數」直接變成幾何上的鏡射。<b>這就是規範對被動側折減、對主動側不折減的原因</b>：不是保守，是被動側根本還沒出力。<br><span style="font-size:.92em">（曲線形狀取指數漸近示意，兩端極限值與位移區間為定量值。）</span></div>
 </div>
 
 <table>
@@ -291,6 +329,66 @@ $$\frac{\sigma_3}{\sigma_1}=\frac{1-\sin\phi}{1+\sin\phi}=\tan^2\!\left(45^\circ
 <p>包絡線改成 \(\tau=c+\sigma'\tan\phi\)，相當於把整條線往左平移 \(c\cot\phi\)。代入相切條件：</p>
 $$\sin\phi=\frac{\sigma_1-\sigma_3}{\sigma_1+\sigma_3+2c\cot\phi}\;\Longrightarrow\;\boxed{\sigma_a'=\sigma_v'K_a-2c\sqrt{K_a}}$$
 <p>被動側同理為 \(\sigma_p'=\sigma_v'K_p+2c\sqrt{K_p}\)。<b>凝聚力在主動側幫你、在被動側也幫你</b>，因為它兩邊都是「抵抗剪動」。</p>
+<div class="fig">
+<svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="m3k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="m3r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="m3g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="m3b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="m3p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="m3n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="m3o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="m3m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="m3w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="440.0" y="24.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >有 c 時：包絡線往左平移 c·cotφ，圓可以「張得更大」才碰線 → σa′ 更小（SM-2015-2，z = 4 m）</text>
+  <line x1="57.6" y1="330.0" x2="827.2" y2="330.0" stroke="#37474f" stroke-width="1.8" marker-end="url(#m3k)" />
+  <text x="827.2" y="322.0" font-size="12" fill="#37474f" text-anchor="end" >σ′ (kPa)</text>
+  <line x1="380.0" y1="345.6" x2="380.0" y2="59.6" stroke="#37474f" stroke-width="1.8" marker-end="url(#m3k)" />
+  <text x="386.0" y="63.6" font-size="13" fill="#37474f" text-anchor="start" >τ</text>
+  <line x1="172.0" y1="330.0" x2="172.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="172.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >-40</text>
+  <line x1="276.0" y1="330.0" x2="276.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="276.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >-20</text>
+  <line x1="484.0" y1="330.0" x2="484.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="484.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >20</text>
+  <line x1="588.0" y1="330.0" x2="588.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="588.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >40</text>
+  <line x1="692.0" y1="330.0" x2="692.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="692.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >60</text>
+  <line x1="796.0" y1="330.0" x2="796.0" y2="334.0" stroke="#37474f" stroke-width="1" />
+  <text x="796.0" y="346.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >80</text>
+  <line x1="94.3" y1="330.0" x2="827.2" y2="63.2" stroke="#c62828" stroke-width="2.4" />
+  <line x1="380.0" y1="330.0" x2="827.2" y2="167.2" stroke="#90a4ae" stroke-width="1.6" stroke-dasharray="6,4" />
+  <text x="723.2" y="91.1" font-size="12.5" fill="#c62828" text-anchor="middle" font-weight="600" transform="rotate(-20.00 723.2 91.1)">τ = c + σ′tanφ（c = 20）</text>
+  <text x="790.8" y="174.5" font-size="11.5" fill="#607d8b" text-anchor="middle" transform="rotate(-20.00 790.8 174.5)">c = 0 時</text>
+  <path d="M140.3 330.0 A46 46 0 0 0 137.5 314.3" fill="none" stroke="#c62828" stroke-width="1.3"/>
+  <text x="144.3" y="325.0" font-size="11.5" fill="#c62828" text-anchor="start" >φ = 20°</text>
+  <circle cx="380.0" cy="226.0" r="3.5" fill="#c62828" stroke="none"/>
+  <text x="374.0" y="230.0" font-size="11.5" fill="#c62828" text-anchor="end" font-weight="700" >c = 20</text>
+  <circle cx="94.3" cy="330.0" r="3.5" fill="#c62828" stroke="none"/>
+  <line x1="94.3" y1="368.0" x2="380.0" y2="368.0" stroke="#c62828" stroke-width="1" />
+  <line x1="94.3" y1="363.0" x2="94.3" y2="373.0" stroke="#c62828" stroke-width="1" />
+  <line x1="380.0" y1="363.0" x2="380.0" y2="373.0" stroke="#c62828" stroke-width="1" />
+  <text x="237.1" y="383.0" font-size="11.5" fill="#c62828" text-anchor="middle" >c·cotφ = 54.9</text>
+  <path d="M412.8 330.0 A165.6 165.6 0 0 1 744.0 330.0 Z" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.4"/>
+  <circle cx="521.8" cy="174.4" r="3.5" fill="#2e7d32" stroke="none"/>
+  <circle cx="412.8" cy="330.0" r="4" fill="#2e7d32" stroke="none"/>
+  <path d="M558.5 330.0 A92.8 92.8 0 0 1 744.0 330.0" fill="none" stroke="#78909c" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <circle cx="619.5" cy="242.8" r="3.5" fill="#78909c" stroke="none"/>
+  <circle cx="558.5" cy="330.0" r="4" fill="#78909c" stroke="none"/>
+  <circle cx="744.0" cy="330.0" r="4.5" fill="#0d47a1" stroke="none"/>
+  <text x="676.4" y="228.6" font-size="11" fill="#546e7a" text-anchor="start" >c = 0 的極限圓</text>
+  <text x="536.0" y="267.6" font-size="11.5" fill="#2e7d32" text-anchor="middle" font-weight="700" >c = 20 的極限圓</text>
+  <line x1="744.0" y1="330.0" x2="744.0" y2="356.0" stroke="#0d47a1" stroke-width="1" />
+  <text x="744.0" y="370.0" font-size="12.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >σv′ = 70.0</text>
+  <line x1="412.8" y1="330.0" x2="412.8" y2="386.0" stroke="#2e7d32" stroke-width="1" />
+  <text x="410.8" y="400.0" font-size="12.5" fill="#2e7d32" text-anchor="middle" font-weight="700" >σa′ = 6.31</text>
+  <line x1="558.5" y1="330.0" x2="558.5" y2="356.0" stroke="#607d8b" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="560.5" y="370.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >34.32</text>
+  <line x1="412.8" y1="318.0" x2="558.5" y2="318.0" stroke="#6a1b9a" stroke-width="1" />
+  <line x1="412.8" y1="313.0" x2="412.8" y2="323.0" stroke="#6a1b9a" stroke-width="1" />
+  <line x1="558.5" y1="313.0" x2="558.5" y2="323.0" stroke="#6a1b9a" stroke-width="1" />
+  <text x="485.6" y="312.0" font-size="11.5" fill="#6a1b9a" text-anchor="middle" >2c√Ka = 28.01</text>
+  <rect x="40.0" y="52.0" width="300.0" height="66.0" rx="6" fill="#fff" stroke="#cfd8dc" stroke-width="1.2"/>
+  <text x="54.0" y="74.0" font-size="12" fill="#37474f" text-anchor="start" >Ka = (1−sin20°)/(1+sin20°) = 0.4903</text>
+  <text x="54.0" y="94.0" font-size="12" fill="#607d8b" text-anchor="start" >c = 0：σa′ = 70.0 × 0.4903 = 34.32</text>
+  <text x="54.0" y="112.0" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >c = 20：再扣 2c√Ka = 28.01 → 6.31</text>
+</svg>
+<div class="cap">圖 3-1｜同一個深度、同一個 \(\sigma_v'=70\) kPa，只差在有沒有 \(c\)。包絡線往上抬 \(c\)（等於往左平移 \(c\cot\phi=54.9\)），圓必須<b>張得更大</b>才碰得到線，於是 \(\sigma_a'\) 從 34.32 掉到 6.31 kPa，差值正好是 \(2c\sqrt{K_a}=28.01\)。<b>凝聚力不是「減掉的修正項」，是讓土體多撐住的那一段直徑。</b>淺層 \(\sigma_v'\) 小到不足以撐起這個圓時，\(\sigma_a'\) 就算成負值 —— 那就是張力裂縫。</div>
+</div>
+
 
 <div class="why">
 <b>為什麼是 \(2c\sqrt{K_a}\) 而不是 \(2cK_a\) 或 \(c\)？</b><br>
@@ -306,45 +404,62 @@ $$\sin\phi=\frac{\sigma_1-\sigma_3}{\sigma_1+\sigma_3+2c\cot\phi}\;\Longrightarr
 $$z_c=\frac{2c}{\gamma\sqrt{K_a}}$$
 
 <div class="fig">
-<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <text x="430" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">c–φ 土的主動土壓力分布：理論 vs 設計</text>
-  <line x1="380" y1="14" x2="380" y2="366" stroke="#cfd8dc" stroke-width="1.5"/>
-
-  <!-- theoretical -->
-  <line x1="180" y1="60" x2="180" y2="300" stroke="#455a64" stroke-width="2"/>
-  <line x1="80" y1="60" x2="300" y2="60" stroke="#8d6e63" stroke-width="1.6"/>
-  <polygon points="180,60 108,60 180,156" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1.8"/>
-  <polygon points="180,156 180,300 288,300" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.8"/>
-  <line x1="80" y1="156" x2="300" y2="156" stroke="#6a1b9a" stroke-width="1.2" stroke-dasharray="4,3"/>
-  <text x="100" y="94" font-size="12" fill="#6a1b9a">負值（張力）</text>
-  <text x="66" y="160" font-size="12" fill="#6a1b9a" text-anchor="start">zc</text>
-  <text x="188" y="284" font-size="12" fill="#2e7d32">正值</text>
-  <text x="180" y="48" font-size="12" fill="#8d6e63" text-anchor="middle">地表</text>
-  <text x="180" y="326" font-size="13.5" font-weight="700" fill="#455a64" text-anchor="middle">理論分布</text>
-  <text x="180" y="348" font-size="12" fill="#607d8b" text-anchor="middle">σa′ = σv′Ka − 2c√Ka</text>
-  <text x="180" y="368" font-size="12" fill="#607d8b" text-anchor="middle">上段為負 → 土「拉住」牆？</text>
-
-  <!-- design -->
-  <line x1="580" y1="60" x2="580" y2="300" stroke="#455a64" stroke-width="2"/>
-  <line x1="480" y1="60" x2="700" y2="60" stroke="#8d6e63" stroke-width="1.6"/>
-  <rect x="574" y="60" width="12" height="96" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="3,2"/>
-  <polygon points="580,156 580,300 688,300" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.8"/>
-  <line x1="480" y1="156" x2="700" y2="156" stroke="#6a1b9a" stroke-width="1.2" stroke-dasharray="4,3"/>
-  <path d="M580 62 L580 154" stroke="#c62828" stroke-width="3.4"/>
-  <text x="596" y="106" font-size="12" fill="#c62828">裂縫</text>
-  <text x="566" y="148" font-size="12" fill="#6a1b9a" text-anchor="end">zc = 2c /(γ√Ka)</text>
-  <text x="580" y="326" font-size="13.5" font-weight="700" fill="#b71c1c" text-anchor="middle">設計分布</text>
-  <text x="580" y="348" font-size="12" fill="#607d8b" text-anchor="middle">0 ~ zc 一律取 0（土會裂開）</text>
-  <text x="580" y="368" font-size="12" fill="#607d8b" text-anchor="middle">合力只算下面那個三角形</text>
-
-  <rect x="716" y="176" width="136" height="112" rx="8" fill="#fff3e0" stroke="#ffb74d"/>
-  <text x="784" y="198" font-size="12.5" font-weight="700" fill="#e65100" text-anchor="middle">更壞的情況</text>
-  <text x="784" y="220" font-size="11.5" fill="#5d4037" text-anchor="middle">裂縫積水後</text>
-  <text x="784" y="240" font-size="11.5" fill="#5d4037" text-anchor="middle">要加靜水壓</text>
-  <text x="784" y="260" font-size="11.5" fill="#5d4037" text-anchor="middle">½γw zc²</text>
-  <text x="784" y="280" font-size="11.5" fill="#c62828" text-anchor="middle">反而比不裂更危險</text>
+<svg viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="c3k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="c3r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="c3g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="c3b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="c3p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="c3n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="c3o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="c3m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="c3w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="450.0" y="24.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >張力裂縫按比例繪製：SM-2015-2 上層黏土（γ = 17.5、φ = 20°、c = 20 kPa，厚 4 m）</text>
+  <text x="205.0" y="54.0" font-size="13.5" fill="#37474f" text-anchor="middle" font-weight="700" >① 理論分布</text>
+  <line x1="95.0" y1="78.0" x2="315.0" y2="78.0" stroke="#8d6e63" stroke-width="1.6" />
+  <line x1="205.0" y1="72.0" x2="205.0" y2="324.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="95.0" y1="273.9" x2="315.0" y2="273.9" stroke="#6a1b9a" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="95.0" y1="318.0" x2="315.0" y2="318.0" stroke="#8d6e63" stroke-width="1" stroke-dasharray="2,3" />
+  <polygon points="205.0,78.0 132.2,78.0 205.0,273.9" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1.6"/>
+  <polygon points="205.0,273.9 205.0,318.0 221.4,318.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="132.2" y="72.0" font-size="12" fill="#6a1b9a" text-anchor="middle" font-weight="700" >-28.0 kPa</text>
+  <text x="215.0" y="150.0" font-size="11.5" fill="#6a1b9a" text-anchor="start" >負值（張力）</text>
+  <text x="215.0" y="166.0" font-size="11.5" fill="#6a1b9a" text-anchor="start" >面積 45.7 kN/m</text>
+  <text x="215.0" y="182.0" font-size="11.5" fill="#c62828" text-anchor="start" font-weight="700" >← 不能拿來抵銷</text>
+  <text x="225.4" y="322.0" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >+6.31</text>
+  <line x1="105.0" y1="78.0" x2="105.0" y2="273.9" stroke="#6a1b9a" stroke-width="1" />
+  <line x1="100.0" y1="78.0" x2="110.0" y2="78.0" stroke="#6a1b9a" stroke-width="1" />
+  <line x1="100.0" y1="273.9" x2="110.0" y2="273.9" stroke="#6a1b9a" stroke-width="1" />
+  <text x="98.0" y="179.9" font-size="11.5" fill="#6a1b9a" text-anchor="end" >zc = 3.264 m</text>
+  <text x="205.0" y="348.0" font-size="12" fill="#607d8b" text-anchor="middle" >σa′ = σv′Ka − 2c√Ka</text>
+  <text x="205.0" y="366.0" font-size="12" fill="#607d8b" text-anchor="middle" >上段為負 → 土要「拉住」牆？</text>
+  <text x="485.0" y="54.0" font-size="13.5" fill="#c62828" text-anchor="middle" font-weight="700" >② 設計分布（0~zc 歸零）</text>
+  <line x1="375.0" y1="78.0" x2="595.0" y2="78.0" stroke="#8d6e63" stroke-width="1.6" />
+  <line x1="485.0" y1="72.0" x2="485.0" y2="324.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="375.0" y1="273.9" x2="595.0" y2="273.9" stroke="#6a1b9a" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="375.0" y1="318.0" x2="595.0" y2="318.0" stroke="#8d6e63" stroke-width="1" stroke-dasharray="2,3" />
+  <path d="M485 80.0 L481 127.0 L488 175.9 L482 224.9 L485 273.9" fill="none" stroke="#c62828" stroke-width="2.6"/>
+  <text x="495.0" y="175.9" font-size="12" fill="#c62828" text-anchor="start" font-weight="700" >裂縫</text>
+  <text x="495.0" y="191.9" font-size="11.5" fill="#c62828" text-anchor="start" >土壓 = 0</text>
+  <polygon points="485.0,273.9 485.0,318.0 501.4,318.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="505.4" y="322.0" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >6.31 kPa</text>
+  <line x1="571.0" y1="303.3" x2="488.0" y2="303.3" stroke="#2e7d32" stroke-width="2.2" marker-end="url(#c3g)" />
+  <text x="575.0" y="307.3" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >P = 2.32 kN/m</text>
+  <line x1="389.0" y1="273.9" x2="389.0" y2="318.0" stroke="#2e7d32" stroke-width="1" />
+  <line x1="384.0" y1="273.9" x2="394.0" y2="273.9" stroke="#2e7d32" stroke-width="1" />
+  <line x1="384.0" y1="318.0" x2="394.0" y2="318.0" stroke="#2e7d32" stroke-width="1" />
+  <text x="396.0" y="299.9" font-size="11" fill="#2e7d32" text-anchor="start" >0.736 m</text>
+  <text x="485.0" y="348.0" font-size="12" fill="#607d8b" text-anchor="middle" >只有最底 0.74 m 在推牆</text>
+  <text x="485.0" y="366.0" font-size="12" fill="#607d8b" text-anchor="middle" >作用點：該三角形的 1/3 高</text>
+  <text x="765.0" y="54.0" font-size="13.5" fill="#0288d1" text-anchor="middle" font-weight="700" >③ 裂縫積水（颱風後）</text>
+  <line x1="655.0" y1="78.0" x2="875.0" y2="78.0" stroke="#8d6e63" stroke-width="1.6" />
+  <line x1="765.0" y1="72.0" x2="765.0" y2="324.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="655.0" y1="273.9" x2="875.0" y2="273.9" stroke="#6a1b9a" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="655.0" y1="318.0" x2="875.0" y2="318.0" stroke="#8d6e63" stroke-width="1" stroke-dasharray="2,3" />
+  <rect x="760.0" y="78.0" width="5.0" height="195.9" rx="0" fill="#b3e5fc" stroke="none" stroke-width="1.2"/>
+  <polygon points="765.0,78.0 765.0,273.9 848.3,273.9" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8"/>
+  <polygon points="765.0,273.9 765.0,318.0 781.4,318.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="852.3" y="277.9" font-size="12" fill="#0288d1" text-anchor="start" font-weight="700" >γw zc = 32.0</text>
+  <line x1="857.0" y1="208.6" x2="768.0" y2="208.6" stroke="#0288d1" stroke-width="2.4" marker-end="url(#c3b)" />
+  <text x="861.0" y="206.6" font-size="12.5" fill="#0288d1" text-anchor="start" font-weight="700" >Pw = 52.3</text>
+  <text x="861.0" y="222.6" font-size="11" fill="#0288d1" text-anchor="start" >kN/m</text>
+  <text x="765.0" y="348.0" font-size="12" fill="#0288d1" text-anchor="middle" font-weight="700" >½γw zc² = 52.3 kN/m</text>
+  <text x="765.0" y="366.0" font-size="12" fill="#c62828" text-anchor="middle" font-weight="700" >= 土壓合力 2.32 的 23 倍</text>
+  <text x="450.0" y="412.0" font-size="11" fill="#90a4ae" text-anchor="middle" >三圖同一比例：深度 1 m = 60 px、壓力 10 kPa = 26 px</text>
 </svg>
-<div class="cap">圖 3-1｜理論分布的上段是負值 —— 那代表「土需要被拉住才能維持平衡」，但<b>土受不了拉力</b>，所以它直接裂開。設計時把 \(0\sim z_c\) 一律歸零（不能拿負值去抵銷下面的正值）。<b>更陰險的是右邊那個註記</b>：裂縫積水後產生的靜水壓，往往比「沒裂縫」時的土壓力還大。</div>
+<div class="cap">圖 3-2｜三張圖<b>同一比例</b>，數值取自 <a class="qlink" href="problems-view/SM-2015-2.html" target="_blank">SM-2015-2</a>。① 理論上段負值高達 −28.0 kPa，張力區面積 45.7 kN/m —— 若拿去抵銷，下面那塊只有 2.32 kN/m 的正值整個被吃掉還倒扣；② 設計上 \(0\sim z_c\) 一律歸零，<b>整層 4 m 只有最底下 0.736 m 在推牆</b>；③ 裂縫積水後的靜水壓 \(\tfrac12\gamma_wz_c^2=52.3\) kN/m，是土壓合力的 <b>23 倍</b> —— 「黏土有凝聚力所以比較好」在下雨天完全不成立。</div>
 </div>
 
 <div class="trap">
@@ -394,37 +509,52 @@ $$z_c=\frac{2c}{\gamma\sqrt{K_a}}=\frac{40}{17.5\times0.7002}=\frac{40}{12.254}=
 <p>淨增量 \(=\gamma_w(1-K_a)\)。以 \(\phi=35^\circ\)（\(K_a=0.271\)）為例，每公尺淨增 \(9.81\times0.729=7.15\) kPa/m —— 而原本乾土的增量才 \(19.2\times0.271=5.20\) kPa/m。<b>水位以下，每公尺總側壓增量為 \(2.55+9.81=12.35\) kPa/m，是乾土的 2.4 倍。</b></p>
 
 <div class="fig">
-<svg viewBox="0 0 920 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <line x1="440" y1="14" x2="440" y2="356" stroke="#b0bec5" stroke-width="2" stroke-dasharray="7,5"/>
-  <text x="215" y="30" font-size="15.5" font-weight="700" fill="#2e7d32" text-anchor="middle">乾燥填土</text>
-  <text x="680" y="30" font-size="15.5" font-weight="700" fill="#c62828" text-anchor="middle">水位上升到牆底以上 x</text>
-  <line x1="60" y1="56" x2="260" y2="56" stroke="#8d6e63" stroke-width="1.6"/>
-  <polygon points="150,56 150,296 258,296" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.8"/>
-  <line x1="150" y1="56" x2="150" y2="296" stroke="#455a64" stroke-width="2.4"/>
-  <text x="262" y="292" font-size="12.5" fill="#2e7d32">Ka γ H</text>
-  <text x="215" y="324" font-size="13" fill="#1b5e20" text-anchor="middle">單一三角形</text>
-  <text x="215" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">Pa = ½ Ka γ H²</text>
-  <line x1="510" y1="56" x2="710" y2="56" stroke="#8d6e63" stroke-width="1.6"/>
-  <line x1="510" y1="176" x2="720" y2="176" stroke="#0288d1" stroke-width="1.6"/>
-  <polygon points="520,176 528,168 512,168" fill="#0288d1"/>
-  <text x="534" y="168" font-size="11.5" fill="#0288d1">水位</text>
-  <polygon points="600,56 600,176 654,176" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
-  <polygon points="600,176 654,176 678,296 600,296" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1.6"/>
-  <polygon points="654,176 786,296 678,296" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8"/>
-  <line x1="600" y1="56" x2="600" y2="296" stroke="#455a64" stroke-width="2.4"/>
-  <text x="630" y="140" font-size="11.5" fill="#2e7d32">Ka γ</text>
-  <line x1="640" y1="236" x2="760" y2="214" stroke="#2e7d32" stroke-width="1"/>
-  <text x="764" y="212" font-size="12" fill="#1b5e20">土：Ka γ′（斜率變緩）</text>
-  <line x1="740" y1="266" x2="790" y2="250" stroke="#0288d1" stroke-width="1"/>
-  <text x="794" y="248" font-size="12" fill="#0288d1">＋水：γw x（很陡）</text>
-  <line x1="586" y1="176" x2="586" y2="296" stroke="#c62828" stroke-width="1"/>
-  <line x1="580" y1="176" x2="592" y2="176" stroke="#c62828" stroke-width="1"/>
-  <line x1="580" y1="296" x2="592" y2="296" stroke="#c62828" stroke-width="1"/>
-  <text x="576" y="240" font-size="12" fill="#c62828" text-anchor="end">x</text>
-  <text x="680" y="324" font-size="13" fill="#b71c1c" text-anchor="middle">水壓疊在土壓上：土壓斜率變緩，但多一個很陡的水壓三角形</text>
-  <text x="680" y="346" font-size="12.5" fill="#455a64" text-anchor="middle">淨效果：總推力增加 ½ γw (1 − Ka) x²（γsat = γt 時）</text>
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="w4k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="w4r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="w4g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="w4b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="w4p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="w4n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="w4o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="w4m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="w4w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="460.0" y="24.0" font-size="15" fill="#0d47a1" text-anchor="middle" font-weight="700" >SM-2004-3 按比例：同一面 6 m 牆，水位升到牆底以上 x = 3.83 m</text>
+  <text x="220.0" y="50.0" font-size="14" fill="#2e7d32" text-anchor="middle" font-weight="700" >乾燥填土</text>
+  <line x1="90.0" y1="62.0" x2="330.0" y2="62.0" stroke="#8d6e63" stroke-width="1.6" />
+  <polygon points="150.0,62.0 150.0,326.0 274.9,326.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.8"/>
+  <line x1="150.0" y1="56.0" x2="150.0" y2="332.0" stroke="#37474f" stroke-width="2.6" />
+  <text x="279.9" y="330.0" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >31.2 kPa</text>
+  <line x1="300.0" y1="238.0" x2="153.0" y2="238.0" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#w4g)" />
+  <text x="304.0" y="234.0" font-size="12.5" fill="#2e7d32" text-anchor="start" font-weight="700" >P = 93.7</text>
+  <text x="304.0" y="250.0" font-size="11" fill="#2e7d32" text-anchor="start" >@ H/3 = 2.00 m</text>
+  <line x1="106.0" y1="62.0" x2="106.0" y2="326.0" stroke="#37474f" stroke-width="1" />
+  <line x1="101.0" y1="62.0" x2="111.0" y2="62.0" stroke="#37474f" stroke-width="1" />
+  <line x1="101.0" y1="326.0" x2="111.0" y2="326.0" stroke="#37474f" stroke-width="1" />
+  <text x="99.0" y="198.0" font-size="11.5" fill="#37474f" text-anchor="end" >H = 6 m</text>
+  <text x="220.0" y="356.0" font-size="12.5" fill="#1b5e20" text-anchor="middle" font-weight="700" >Pa = ½Kaγ H² = 93.7 kN/m</text>
+  <text x="670.0" y="50.0" font-size="14" fill="#c62828" text-anchor="middle" font-weight="700" >水位在牆底以上 x = 3.83 m</text>
+  <line x1="490.0" y1="62.0" x2="810.0" y2="62.0" stroke="#8d6e63" stroke-width="1.6" />
+  <line x1="490.0" y1="157.7" x2="810.0" y2="157.7" stroke="#0288d1" stroke-width="1.5" />
+  <polygon points="506.0,157.7 514.0,148.7 498.0,148.7" fill="#0288d1" stroke="#0288d1" stroke-width="1"/>
+  <text x="520.0" y="152.7" font-size="11.5" fill="#0288d1" text-anchor="start" >水位</text>
+  <polygon points="560.0,62.0 560.0,157.7 605.2,157.7" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.6"/>
+  <polygon points="560.0,157.7 605.2,157.7 644.2,326.0 560.0,326.0" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1.6"/>
+  <polygon points="605.2,157.7 794.3,326.0 644.2,326.0" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.8"/>
+  <line x1="605.2" y1="157.7" x2="684.9" y2="326.0" stroke="#2e7d32" stroke-width="1.4" stroke-dasharray="5,4" />
+  <text x="682.9" y="342.0" font-size="11" fill="#2e7d32" text-anchor="middle" >若乾 31.2</text>
+  <line x1="560.0" y1="56.0" x2="560.0" y2="332.0" stroke="#37474f" stroke-width="2.6" />
+  <text x="610.2" y="152.7" font-size="12" fill="#2e7d32" text-anchor="start" font-weight="700" >11.3</text>
+  <text x="640.2" y="342.0" font-size="11.5" fill="#1b5e20" text-anchor="end" font-weight="700" >土 21.0</text>
+  <text x="799.3" y="330.0" font-size="12" fill="#0288d1" text-anchor="start" font-weight="700" >+水 37.5 = 58.6</text>
+  <line x1="790.0" y1="249.4" x2="563.0" y2="249.4" stroke="#c62828" stroke-width="2.6" marker-end="url(#w4r)" />
+  <text x="794.0" y="245.4" font-size="12.5" fill="#c62828" text-anchor="start" font-weight="700" >Ph = 146</text>
+  <text x="794.0" y="261.4" font-size="11" fill="#c62828" text-anchor="start" >@ 1.74 m</text>
+  <line x1="516.0" y1="157.7" x2="516.0" y2="326.0" stroke="#0288d1" stroke-width="1" />
+  <line x1="511.0" y1="157.7" x2="521.0" y2="157.7" stroke="#0288d1" stroke-width="1" />
+  <line x1="511.0" y1="326.0" x2="521.0" y2="326.0" stroke="#0288d1" stroke-width="1" />
+  <text x="509.0" y="245.8" font-size="11.5" fill="#0288d1" text-anchor="end" >x = 3.83</text>
+  <text x="620.0" y="95.0" font-size="11.5" fill="#1b5e20" text-anchor="start" font-weight="700" >一減：水位下土壓斜率 Kaγ → Kaγ′</text>
+  <text x="620.0" y="111.0" font-size="11" fill="#1b5e20" text-anchor="start" >（虛線 → 實線，少 ½Kaγw x²）</text>
+  <text x="690.0" y="187.7" font-size="11.5" fill="#0288d1" text-anchor="start" font-weight="700" >一加：水壓斜率 γw（多 ½γw x²）</text>
+  <text x="670.0" y="360.0" font-size="12" fill="#455a64" text-anchor="middle" >Pa = 93.66 − 1.329x² = 74.2、Pw = 4.905x² = 71.8</text>
+  <text x="670.0" y="380.0" font-size="12.5" fill="#c62828" text-anchor="middle" font-weight="700" >合計 146.0 kN/m ＝ 牆的極限 146 → 滑動</text>
+  <line x1="460.0" y1="40.0" x2="460.0" y2="410.0" stroke="#cfd8dc" stroke-width="1.5" stroke-dasharray="7,5" />
+  <text x="460.0" y="424.0" font-size="11" fill="#90a4ae" text-anchor="middle" >兩圖同一比例：深度 1 m = 44 px、壓力 10 kPa = 40 px（虛線＝若仍乾燥的土壓線）</text>
 </svg>
-<div class="cap">圖 4-1｜右圖裡的<b>兩個變化互相抵銷不掉</b>：土壓力少掉 \(\frac12K_a\gamma_wx^2\)，水壓多出 \(\frac12\gamma_wx^2\)，淨增 \(\frac12\gamma_w(1-K_a)x^2\)。<b>\(K_a\) 越小（土越好），淨增反而越多</b> —— 因為好土本來推得少，水一來就把優勢抹平。</div>
+<div class="cap">圖 4-1｜兩圖<b>同一比例</b>，數值取自 <a class="qlink" href="problems-view/SM-2004-3.html" target="_blank">SM-2004-3</a>（\(\gamma=19.2\)、\(\phi=35^\circ\)、\(K_a=0.271\)）。綠色虛線是「若仍乾燥」的土壓線，實線斜率變緩＝<b>一減</b>（少 \(\tfrac12K_a\gamma_wx^2\)）；藍色三角形斜率 \(\gamma_w\) 陡得多＝<b>一加</b>（多 \(\tfrac12\gamma_wx^2\)）。牆底總側壓從 31.2 漲到 58.6 kPa（1.9 倍），合力從 93.7 漲到 146，作用點卻從 2.00 m 降到 1.74 m。<b>\(K_a\) 越小（土越好），淨增反而越多</b> —— 因為好土本來推得少，水一來就把優勢抹平。</div>
 </div>
 
 <div class="why">
@@ -468,6 +598,55 @@ $$P_h=P_a+P_w=93.66+3.576x^2$$
 
 <h3>5.1　超載：一個矩形</h3>
 <p>地表均佈超載 \(q\) 使每個深度的 \(\sigma_v'\) 都增加 \(q\)，故側向增加 \(qK_a\)，是一個<b>從頂到底的矩形</b>，作用點在 \(H/2\)。</p>
+<div class="fig">
+<svg viewBox="0 0 920 380" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="y5k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="y5r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="y5g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="y5b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="y5p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="y5n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="y5o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="y5m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="y5w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="460.0" y="24.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >同一面 6 m 牆（γ = 18、φ = 30°、Ka = 1/3），加一個條件，合力作用點往哪移？</text>
+  <text x="140.0" y="52.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >① 均質、無水</text>
+  <line x1="50.0" y1="70.0" x2="220.0" y2="70.0" stroke="#8d6e63" stroke-width="1.4" />
+  <polygon points="70.0,70.0 70.0,286.0 145.6,286.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.4"/>
+  <line x1="70.0" y1="65.0" x2="70.0" y2="291.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="52.0" y1="214.0" x2="220.0" y2="214.0" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="48.0" y="218.0" font-size="10.5" fill="#607d8b" text-anchor="end" >H/3</text>
+  <line x1="210.0" y1="214.0" x2="73.0" y2="214.0" stroke="#2e7d32" stroke-width="2.6" marker-end="url(#y5g)" />
+  <text x="140.0" y="312.0" font-size="12.5" fill="#2e7d32" text-anchor="middle" font-weight="700" >ȳ = 2.00 m = 0.333H</text>
+  <text x="140.0" y="332.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >基準（純三角形）</text>
+  <text x="365.0" y="52.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >② 加超載 q = 30</text>
+  <line x1="275.0" y1="70.0" x2="445.0" y2="70.0" stroke="#8d6e63" stroke-width="1.4" />
+  <polygon points="295.0,70.0 316.0,70.0 316.0,286.0 295.0,286.0" fill="#ffe0b2" stroke="#e65100" stroke-width="1.4"/>
+  <polygon points="316.0,70.0 316.0,286.0 391.6,286.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.4"/>
+  <line x1="295.0" y1="65.0" x2="295.0" y2="291.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="277.0" y1="214.0" x2="445.0" y2="214.0" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="435.0" y1="201.1" x2="298.0" y2="201.1" stroke="#e65100" stroke-width="2.6" marker-end="url(#y5o)" />
+  <text x="365.0" y="312.0" font-size="12.5" fill="#e65100" text-anchor="middle" font-weight="700" >ȳ = 2.36 m = 0.393H</text>
+  <text x="365.0" y="332.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >↑ 上移（矩形形心 H/2）</text>
+  <text x="590.0" y="52.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >③ 水位在 3 m</text>
+  <line x1="500.0" y1="70.0" x2="670.0" y2="70.0" stroke="#8d6e63" stroke-width="1.4" />
+  <polygon points="520.0,70.0 520.0,178.0 557.8,178.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.4"/>
+  <polygon points="520.0,178.0 557.8,178.0 577.1,286.0 520.0,286.0" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1.4"/>
+  <polygon points="557.8,178.0 638.9,286.0 577.1,286.0" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.4"/>
+  <line x1="500.0" y1="178.0" x2="670.0" y2="178.0" stroke="#0288d1" stroke-width="1.2" />
+  <line x1="520.0" y1="65.0" x2="520.0" y2="291.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="502.0" y1="214.0" x2="670.0" y2="214.0" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="660.0" y1="222.0" x2="523.0" y2="222.0" stroke="#0288d1" stroke-width="2.6" marker-end="url(#y5b)" />
+  <text x="590.0" y="312.0" font-size="12.5" fill="#0288d1" text-anchor="middle" font-weight="700" >ȳ = 1.78 m = 0.296H</text>
+  <text x="590.0" y="332.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >↓ 下移（水壓集中在底部）</text>
+  <text x="815.0" y="52.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >④ 填土 c = 10</text>
+  <line x1="725.0" y1="70.0" x2="895.0" y2="70.0" stroke="#8d6e63" stroke-width="1.4" />
+  <path d="M745 70.0 L742 92.9 L748 115.7 L745 139.3" fill="none" stroke="#c62828" stroke-width="2.4"/>
+  <line x1="725.0" y1="139.3" x2="895.0" y2="139.3" stroke="#6a1b9a" stroke-width="1" stroke-dasharray="4,3" />
+  <text x="753.0" y="108.6" font-size="11" fill="#6a1b9a" text-anchor="start" >zc = 1.92</text>
+  <polygon points="745.0,139.3 745.0,286.0 796.4,286.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.4"/>
+  <line x1="745.0" y1="65.0" x2="745.0" y2="291.0" stroke="#37474f" stroke-width="2.4" />
+  <line x1="727.0" y1="214.0" x2="895.0" y2="214.0" stroke="#90a4ae" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="885.0" y1="237.1" x2="748.0" y2="237.1" stroke="#c62828" stroke-width="2.6" marker-end="url(#y5r)" />
+  <text x="815.0" y="312.0" font-size="12.5" fill="#c62828" text-anchor="middle" font-weight="700" >ȳ = 1.36 m = 0.226H</text>
+  <text x="815.0" y="332.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >↓ 下移（上段歸零）</text>
+  <text x="460.0" y="372.0" font-size="11" fill="#90a4ae" text-anchor="middle" >灰色虛線＝H/3（2.00 m）；箭頭＝合力位置，均按比例。只有 ① 可以直接寫 H/3。</text>
+</svg>
+<div class="cap">圖 5-1｜同一面牆只改一個條件，四個合力位置都按比例算出。<b>只有 ① 能寫 \(H/3\)</b>；超載的矩形形心在 \(H/2\)，把合力推高到 2.36 m；水壓三角形集中在底部、張力裂縫讓上段歸零，兩者都把合力拉低（1.78、1.36 m）。算完先用這張圖判斷方向對不對，再相信數字。</div>
+</div>
+
 
 <div class="box">
 <b>切方塊的標準作業</b>
@@ -495,6 +674,80 @@ $$P_h=P_a+P_w=93.66+3.576x^2$$
 </tbody>
 </table>
 <b>注意 4 m 處的跳動</b>：砂底 36.41 → 黏土頂 10.00。不是算錯 —— 是<b>分析方法從有效應力切換到總應力</b>，同時凝聚力把 60 kPa 一次扣掉。<br>
+<div class="fig">
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="s5k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="s5r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="s5g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="s5b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="s5p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="s5n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="s5o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="s5m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="s5w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="460.0" y="24.0" font-size="15" fill="#0d47a1" text-anchor="middle" font-weight="700" >SM-2010-2 按比例：8 m 牆、砂 / 水位 / 黏土三段，切成 6 塊對牆底取矩</text>
+  <rect x="70.0" y="70.0" width="110.0" height="84.0" rx="0" fill="#fff8e1" stroke="#bcaaa4" stroke-width="1.2"/>
+  <rect x="70.0" y="154.0" width="110.0" height="84.0" rx="0" fill="#ffecb3" stroke="#bcaaa4" stroke-width="1.2"/>
+  <rect x="70.0" y="238.0" width="110.0" height="168.0" rx="0" fill="#d7ccc8" stroke="#bcaaa4" stroke-width="1.2"/>
+  <text x="125.0" y="110.0" font-size="12" fill="#5d4037" text-anchor="middle" font-weight="700" >砂（乾）</text>
+  <text x="125.0" y="126.0" font-size="11" fill="#5d4037" text-anchor="middle" >γd = 17</text>
+  <text x="125.0" y="194.0" font-size="12" fill="#5d4037" text-anchor="middle" font-weight="700" >砂（飽和）</text>
+  <text x="125.0" y="210.0" font-size="10.5" fill="#5d4037" text-anchor="middle" >γsat = 18、φ = 30°</text>
+  <text x="125.0" y="312.0" font-size="12" fill="#4e342e" text-anchor="middle" font-weight="700" >黏土</text>
+  <text x="125.0" y="328.0" font-size="11" fill="#4e342e" text-anchor="middle" >γsat = 17.5</text>
+  <text x="125.0" y="344.0" font-size="11" fill="#4e342e" text-anchor="middle" >cu = 30、φu = 0</text>
+  <polygon points="176.0,154.0 184.0,145.0 168.0,145.0" fill="#0288d1" stroke="#0288d1" stroke-width="1"/>
+  <text x="62.0" y="74.0" font-size="11" fill="#607d8b" text-anchor="end" >0 m</text>
+  <text x="62.0" y="158.0" font-size="11" fill="#607d8b" text-anchor="end" >2 m</text>
+  <text x="62.0" y="242.0" font-size="11" fill="#607d8b" text-anchor="end" >4 m</text>
+  <text x="62.0" y="410.0" font-size="11" fill="#607d8b" text-anchor="end" >8 m</text>
+  <rect x="244.0" y="64.0" width="16.0" height="348.0" rx="0" fill="#cfd8dc" stroke="#455a64" stroke-width="1.6"/>
+  <line x1="184.0" y1="154.0" x2="590.0" y2="154.0" stroke="#bcaaa4" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="184.0" y1="238.0" x2="590.0" y2="238.0" stroke="#bcaaa4" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="184.0" y1="154.0" x2="590.0" y2="154.0" stroke="#0288d1" stroke-width="1.2" />
+  <polygon points="260.0,70.0 260.0,154.0 300.8,154.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <polygon points="260.0,154.0 300.8,154.0 300.8,238.0 260.0,238.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <polygon points="300.8,154.0 320.5,238.0 300.8,238.0" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <polygon points="260.0,238.0 296.0,238.0 296.0,406.0 260.0,406.0" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1.5"/>
+  <polygon points="296.0,238.0 548.0,406.0 296.0,406.0" fill="#e1bee7" stroke="#6a1b9a" stroke-width="1.5"/>
+  <polygon points="300.8,154.0 391.1,238.0 320.5,238.0" fill="#b3e5fc" stroke="#0288d1" stroke-width="1.6"/>
+  <text x="272.0" y="130.9" font-size="11" fill="#2e7d32" text-anchor="start" font-weight="700" >P1</text>
+  <text x="272.0" y="202.3" font-size="11" fill="#2e7d32" text-anchor="start" font-weight="700" >P2</text>
+  <text x="303.8" y="227.5" font-size="10.5" fill="#2e7d32" text-anchor="start" font-weight="700" >P3</text>
+  <text x="338.5" y="225.4" font-size="11" fill="#0288d1" text-anchor="start" font-weight="700" >P4 水</text>
+  <text x="272.0" y="330.4" font-size="11.5" fill="#6a1b9a" text-anchor="start" font-weight="700" >P5</text>
+  <text x="356.0" y="359.8" font-size="12" fill="#6a1b9a" text-anchor="start" font-weight="700" >P6</text>
+  <text x="305.8" y="150.0" font-size="11.5" fill="#2e7d32" text-anchor="start" font-weight="700" >11.33</text>
+  <text x="396.1" y="235.0" font-size="11.5" fill="#0288d1" text-anchor="start" font-weight="700" >16.79+19.62 = 36.41</text>
+  <text x="300.0" y="253.0" font-size="11.5" fill="#6a1b9a" text-anchor="start" font-weight="700" >10.00</text>
+  <text x="553.0" y="410.0" font-size="12" fill="#6a1b9a" text-anchor="start" font-weight="700" >80.00 kPa</text>
+  <text x="346.0" y="260.0" font-size="11.5" fill="#c62828" text-anchor="start" font-weight="700" >4 m 處跳動 36.41 → 10.00：</text>
+  <text x="346.0" y="276.0" font-size="11" fill="#c62828" text-anchor="start" >砂（有效應力＋水壓）→ 黏土（總應力 − 2cu）</text>
+  <line x1="620.0" y1="305.4" x2="264.0" y2="305.4" stroke="#c62828" stroke-width="3" marker-end="url(#s5r)" />
+  <text x="624.0" y="301.4" font-size="13" fill="#c62828" text-anchor="start" font-weight="700" >PA = 239.1 kN/m</text>
+  <text x="624.0" y="318.4" font-size="12" fill="#c62828" text-anchor="start" >ȳ = 572.6/239.1 = 2.395 ≈ 2.40 m</text>
+  <line x1="264.0" y1="294.0" x2="560.0" y2="294.0" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4,3" />
+  <text x="240.0" y="298.0" font-size="11" fill="#607d8b" text-anchor="end" >H/3（錯）</text>
+  <rect x="690.0" y="70.0" width="215.0" height="176.0" rx="6" fill="#fff" stroke="#cfd8dc" stroke-width="1.2"/>
+  <text x="700.0" y="90.0" font-size="11.5" fill="#37474f" text-anchor="start" font-weight="700" >塊　 Pi (kN/m)　 yi (m)</text>
+  <text x="702.0" y="112.0" font-size="11.5" fill="#2e7d32" text-anchor="start" font-weight="700" >P1</text>
+  <text x="795.0" y="112.0" font-size="11.5" fill="#37474f" text-anchor="end" >11.33</text>
+  <text x="860.0" y="112.0" font-size="11.5" fill="#37474f" text-anchor="end" >6.667</text>
+  <text x="702.0" y="131.0" font-size="11.5" fill="#2e7d32" text-anchor="start" font-weight="700" >P2</text>
+  <text x="795.0" y="131.0" font-size="11.5" fill="#37474f" text-anchor="end" >22.67</text>
+  <text x="860.0" y="131.0" font-size="11.5" fill="#37474f" text-anchor="end" >5.000</text>
+  <text x="702.0" y="150.0" font-size="11.5" fill="#2e7d32" text-anchor="start" font-weight="700" >P3</text>
+  <text x="795.0" y="150.0" font-size="11.5" fill="#37474f" text-anchor="end" >5.46</text>
+  <text x="860.0" y="150.0" font-size="11.5" fill="#37474f" text-anchor="end" >4.667</text>
+  <text x="702.0" y="169.0" font-size="11.5" fill="#0288d1" text-anchor="start" font-weight="700" >P4</text>
+  <text x="795.0" y="169.0" font-size="11.5" fill="#37474f" text-anchor="end" >19.62</text>
+  <text x="860.0" y="169.0" font-size="11.5" fill="#37474f" text-anchor="end" >4.667</text>
+  <text x="702.0" y="188.0" font-size="11.5" fill="#6a1b9a" text-anchor="start" font-weight="700" >P5</text>
+  <text x="795.0" y="188.0" font-size="11.5" fill="#37474f" text-anchor="end" >40.00</text>
+  <text x="860.0" y="188.0" font-size="11.5" fill="#37474f" text-anchor="end" >2.000</text>
+  <text x="702.0" y="207.0" font-size="11.5" fill="#6a1b9a" text-anchor="start" font-weight="700" >P6</text>
+  <text x="795.0" y="207.0" font-size="11.5" fill="#37474f" text-anchor="end" >140.00</text>
+  <text x="860.0" y="207.0" font-size="11.5" fill="#37474f" text-anchor="end" >1.333</text>
+  <line x1="698.0" y1="220.0" x2="897.0" y2="220.0" stroke="#cfd8dc" stroke-width="1" />
+  <text x="702.0" y="236.0" font-size="12" fill="#c62828" text-anchor="start" font-weight="700" >Σ</text>
+  <text x="795.0" y="236.0" font-size="12" fill="#c62828" text-anchor="end" font-weight="700" >239.1</text>
+  <text x="895.0" y="236.0" font-size="11" fill="#c62828" text-anchor="end" >ΣM = 572.6</text>
+  <text x="460.0" y="462.0" font-size="11" fill="#90a4ae" text-anchor="middle" >比例：深度 1 m = 42 px、壓力 10 kPa = 36 px。4 m 以下水壓不再另畫（黏土用 φu = 0 總應力法，u 已內含）。</text>
+</svg>
+<div class="cap">圖 5-2｜<a class="qlink" href="problems-view/SM-2010-2.html" target="_blank">SM-2010-2</a> 的完整分布圖，<b>按比例</b>繪製並把六塊逐一標出（右上角即 Step 3 的取矩表）。一眼就看得到三件事：① 4 m 處從 36.41 <b>斷崖式掉到</b> 10.00（分析法切換＋一次扣 \(2c_u=60\)）；② 4 m 以下<b>沒有藍色</b>（總應力法已含水壓）；③ \(P_6\) 一塊就佔 59%，把合力拉到 2.395 ≈ 2.40 m，比 \(H/3=2.67\) m 低。</div>
+</div>
 <b>Step 3　切方塊（對牆底取矩）</b>
 <table>
 <thead><tr><th>塊</th><th>內容</th><th>\(P_i\) (kN/m)</th><th>\(y_i\) (m)</th><th>\(M_i\)</th></tr></thead>
@@ -528,44 +781,91 @@ $$P_A=239.1\ \mathrm{kN/m},\qquad \sum M=572.6\ \mathrm{kN\text{-}m/m},\qquad \b
 <p class="lead">這一節在怕什麼：<b>怕你以為 Coulomb 是「另一條公式」。</b>它是一個<b>方法</b>：假設一個平面破壞面 → 畫土楔的力多邊形 → 解出牆的反力 → 對破壞面角度取極大值。Rankine 是它的特例。</p>
 
 <div class="fig">
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <defs><marker id="w1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#37474f"/></marker><marker id="w2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c62828"/></marker><marker id="w3" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2e7d32"/></marker></defs>
-  <line x1="470" y1="14" x2="470" y2="376" stroke="#cfd8dc" stroke-width="1.5"/>
-  <text x="235" y="30" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">① 假設破壞面，取土楔為自由體</text>
-  <text x="690" y="30" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">② 力多邊形閉合</text>
-  <line x1="60" y1="300" x2="430" y2="300" stroke="#8d6e63" stroke-width="1.6"/>
-  <polygon points="100,300 160,300 180,90 140,90" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
-  <line x1="180" y1="90" x2="430" y2="45.9" stroke="#8d6e63" stroke-width="1.6"/>
-  <polygon points="160,300 180,90 330,63.6" fill="#efebe9" stroke="#8d6e63" stroke-width="1.2"/>
-  <line x1="160" y1="300" x2="330" y2="63.6" stroke="#6a1b9a" stroke-width="2.4"/>
-  <text x="152" y="318" font-size="12.5" font-weight="700" fill="#37474f" text-anchor="middle">A</text>
-  <text x="178" y="82" font-size="12.5" font-weight="700" fill="#37474f" text-anchor="middle">D</text>
-  <text x="334" y="55.6" font-size="12.5" font-weight="700" fill="#37474f">B</text>
-  <text x="400" y="76" font-size="12" fill="#8d6e63" text-anchor="middle">填土面（坡角 α）</text>
-  <text x="296" y="236" font-size="12" fill="#6a1b9a" text-anchor="start">破壞面 AB（與水平夾 β）</text>
-  <text x="96" y="200" font-size="12" fill="#455a64" text-anchor="end">牆背 AD</text>
-  <text x="96" y="216" font-size="12" fill="#455a64" text-anchor="end">（傾角 θ）</text>
-  <line x1="240" y1="105" x2="240" y2="165" stroke="#37474f" stroke-width="2.4" marker-end="url(#w1)"/>
-  <text x="247" y="122" font-size="12.5" font-weight="700" fill="#37474f">W</text>
-  <line x1="170.5" y1="200.0" x2="226.6" y2="185.4" stroke="#c62828" stroke-width="2.4" marker-end="url(#w2)"/>
-  <text x="200" y="215" font-size="12.5" font-weight="700" fill="#c62828">Pa</text>
-  <line x1="270.5" y1="238.5" x2="245" y2="182" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#w3)"/>
-  <text x="277.5" y="246.5" font-size="12.5" font-weight="700" fill="#2e7d32">R</text>
-  <text x="235" y="340" font-size="12" fill="#455a64" text-anchor="middle">R 與 AB 法線夾 φ；Pa 與牆背法線夾 δ（均為作用在土楔上）</text>
-  <text x="235" y="362" font-size="12" fill="#455a64" text-anchor="middle">土楔往左下滑 → 兩面的摩擦都朝上，方向不是自由選的</text>
-  <line x1="600" y1="80" x2="600" y2="230" stroke="#37474f" stroke-width="3" marker-end="url(#w1)"/>
-  <text x="610" y="160" font-size="13" font-weight="700" fill="#37474f">W</text>
-  <line x1="600" y1="230" x2="539.4" y2="95.7" stroke="#2e7d32" stroke-width="3" marker-end="url(#w3)"/>
-  <text x="552" y="176" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end">R</text>
-  <line x1="539.4" y1="95.7" x2="600" y2="80" stroke="#c62828" stroke-width="3" marker-end="url(#w2)"/>
-  <text x="566" y="80" font-size="13" font-weight="700" fill="#c62828" text-anchor="middle">Pa</text>
-  <text x="690" y="270" font-size="12.5" fill="#455a64" text-anchor="middle">W 已知（楔體面積 × γ）</text>
-  <text x="690" y="292" font-size="12.5" fill="#455a64" text-anchor="middle">R、Pa 方向已知、大小未知 → 閉合即解</text>
-  <text x="690" y="314" font-size="12" fill="#6a1b9a" text-anchor="middle">有 c、ca 時再加 C、Ca → 五邊形（見下框）</text>
-  <text x="690" y="344" font-size="12.5" font-weight="700" fill="#c62828" text-anchor="middle">③ 改變 β 重算，取 Pa 的最大值</text>
-  <text x="690" y="370" font-size="11" fill="#90a4ae" text-anchor="middle">示範：φ = 30°、δ = 20°、α = 10°，力多邊形按比例閉合</text>
+<svg viewBox="0 0 960 440" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="c6k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="c6r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="c6g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="c6b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="c6p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="c6n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="c6o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="c6m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="c6w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="225.0" y="26.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >① 試驗楔 ADB（β = β<tspan font-size="72%" dy="0.3em">cr</tspan><tspan dy="-0.3em">​</tspan> 時）</text>
+  <line x1="40.0" y1="336.0" x2="420.0" y2="336.0" stroke="#8d6e63" stroke-width="1.4" />
+  <line x1="162.7" y1="120.0" x2="425.1" y2="73.7" stroke="#8d6e63" stroke-width="1.6" />
+  <polygon points="88.0,336.0 140.0,336.0 162.7,120.0 122.7,120.0" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
+  <polygon points="140.0,336.0 162.7,120.0 337.8,89.1" fill="#efebe9" stroke="#8d6e63" stroke-width="1.2"/>
+  <line x1="140.0" y1="336.0" x2="337.8" y2="89.1" stroke="#6a1b9a" stroke-width="2.6" />
+  <text x="136.0" y="353.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >A</text>
+  <text x="158.7" y="112.0" font-size="13" fill="#37474f" text-anchor="middle" font-weight="700" >D</text>
+  <text x="341.8" y="83.1" font-size="13" fill="#37474f" text-anchor="start" font-weight="700" >B</text>
+  <path d="M180.0 336.0 A40 40 0 0 0 165.0 304.8" fill="none" stroke="#6a1b9a" stroke-width="1.3"/>
+  <text x="184.0" y="330.0" font-size="12.5" fill="#6a1b9a" text-anchor="start" font-weight="700" >β</text>
+  <line x1="162.7" y1="120.0" x2="232.7" y2="120.0" stroke="#8d6e63" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M218.7 120.0 A56 56 0 0 0 217.9 110.3" fill="none" stroke="#8d6e63" stroke-width="1.3"/>
+  <text x="222.7" y="119.0" font-size="11.5" fill="#8d6e63" text-anchor="start" >α = 10°</text>
+  <line x1="140.0" y1="336.0" x2="140.0" y2="216.0" stroke="#455a64" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M150.5 236.5 A100 100 0 0 0 140.0 236.0" fill="none" stroke="#455a64" stroke-width="1.3"/>
+  <text x="138.0" y="232.0" font-size="11" fill="#455a64" text-anchor="end" >θ = 6°</text>
+  <line x1="213.5" y1="151.7" x2="213.5" y2="215.7" stroke="#37474f" stroke-width="2.6" marker-end="url(#c6k)" />
+  <circle cx="213.5" cy="181.7" r="3" fill="#37474f" stroke="none"/>
+  <text x="219.5" y="163.7" font-size="13" fill="#37474f" text-anchor="start" font-weight="700" >W</text>
+  <line x1="87.4" y1="279.0" x2="147.6" y2="264.0" stroke="#c62828" stroke-width="2.6" marker-end="url(#c6r)" />
+  <line x1="78.0" y1="256.7" x2="177.4" y2="267.1" stroke="#c62828" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M102.9 275.1 A46 46 0 0 1 101.8 259.2" fill="none" stroke="#c62828" stroke-width="1.3"/>
+  <text x="83.4" y="271.0" font-size="13" fill="#c62828" text-anchor="end" font-weight="700" >Pa</text>
+  <text x="95.6" y="286.0" font-size="11.5" fill="#c62828" text-anchor="end" >δ = 20°</text>
+  <line x1="229.9" y1="315.2" x2="205.9" y2="253.7" stroke="#2e7d32" stroke-width="2.6" marker-end="url(#c6g)" />
+  <line x1="263.7" y1="300.0" x2="185.6" y2="237.5" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M224.8 302.2 A52 52 0 0 0 246.5 286.2" fill="none" stroke="#2e7d32" stroke-width="1.3"/>
+  <text x="207.9" y="288.5" font-size="13" fill="#2e7d32" text-anchor="end" font-weight="700" >R</text>
+  <text x="223.9" y="303.7" font-size="11.5" fill="#2e7d32" text-anchor="start" >φ = 30°</text>
+  <text x="225.0" y="392.0" font-size="11.5" fill="#455a64" text-anchor="middle" >虛線＝面的法線。R 偏離 AB 法線 φ、Pa 偏離牆背法線 δ，</text>
+  <text x="225.0" y="410.0" font-size="11.5" fill="#455a64" text-anchor="middle" >都偏向「阻止土楔往下滑」的那一側（作用在土楔上）</text>
+  <line x1="445.0" y1="40.0" x2="445.0" y2="420.0" stroke="#cfd8dc" stroke-width="1.4" />
+  <text x="560.0" y="26.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >② 力多邊形（按比例）</text>
+  <line x1="585.0" y1="64.0" x2="585.0" y2="294.0" stroke="#37474f" stroke-width="3" marker-end="url(#c6k)" />
+  <line x1="585.0" y1="294.0" x2="503.3" y2="84.4" stroke="#2e7d32" stroke-width="3" marker-end="url(#c6g)" />
+  <line x1="503.3" y1="84.4" x2="585.0" y2="64.0" stroke="#c62828" stroke-width="3" marker-end="url(#c6r)" />
+  <text x="593.0" y="179.0" font-size="12.5" fill="#37474f" text-anchor="start" font-weight="700" >W = 258</text>
+  <text x="536.1" y="199.2" font-size="12.5" fill="#2e7d32" text-anchor="end" font-weight="700" >R = 252</text>
+  <text x="540.1" y="64.2" font-size="12.5" fill="#c62828" text-anchor="middle" font-weight="700" >Pa = 94</text>
+  <text x="560.0" y="334.0" font-size="11.5" fill="#607d8b" text-anchor="middle" >單位 kN/m（H = 6 m、γ = 18）</text>
+  <text x="560.0" y="354.0" font-size="11.5" fill="#455a64" text-anchor="middle" >W 已知；R、Pa 只知方向</text>
+  <text x="560.0" y="372.0" font-size="11.5" fill="#455a64" text-anchor="middle" >→ 三角形閉合即解</text>
+  <text x="560.0" y="394.0" font-size="11.5" fill="#6a1b9a" text-anchor="middle" >有 c、ca 時再加 C、Ca</text>
+  <text x="560.0" y="410.0" font-size="11.5" fill="#6a1b9a" text-anchor="middle" >→ 五邊形（見下框）</text>
+  <line x1="675.0" y1="40.0" x2="675.0" y2="420.0" stroke="#cfd8dc" stroke-width="1.4" />
+  <text x="815.0" y="26.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >③ 改變 β，取 Pa 最大</text>
+  <line x1="710.0" y1="300.0" x2="941.0" y2="300.0" stroke="#37474f" stroke-width="1.4" />
+  <line x1="710.0" y1="300.0" x2="710.0" y2="74.0" stroke="#37474f" stroke-width="1.4" />
+  <line x1="735.0" y1="300.0" x2="735.0" y2="304.0" stroke="#37474f" stroke-width="1" />
+  <text x="735.0" y="316.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >40°</text>
+  <line x1="785.0" y1="300.0" x2="785.0" y2="304.0" stroke="#37474f" stroke-width="1" />
+  <text x="785.0" y="316.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >50°</text>
+  <line x1="835.0" y1="300.0" x2="835.0" y2="304.0" stroke="#37474f" stroke-width="1" />
+  <text x="835.0" y="316.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >60°</text>
+  <line x1="885.0" y1="300.0" x2="885.0" y2="304.0" stroke="#37474f" stroke-width="1" />
+  <text x="885.0" y="316.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >70°</text>
+  <line x1="935.0" y1="300.0" x2="935.0" y2="304.0" stroke="#37474f" stroke-width="1" />
+  <text x="935.0" y="316.0" font-size="10.5" fill="#607d8b" text-anchor="middle" >80°</text>
+  <line x1="706.0" y1="300.0" x2="710.0" y2="300.0" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="304.0" font-size="10" fill="#607d8b" text-anchor="end" >0</text>
+  <line x1="706.0" y1="259.5" x2="710.0" y2="259.5" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="263.5" font-size="10" fill="#607d8b" text-anchor="end" >20</text>
+  <line x1="706.0" y1="218.9" x2="710.0" y2="218.9" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="222.9" font-size="10" fill="#607d8b" text-anchor="end" >40</text>
+  <line x1="706.0" y1="178.4" x2="710.0" y2="178.4" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="182.4" font-size="10" fill="#607d8b" text-anchor="end" >60</text>
+  <line x1="706.0" y1="137.9" x2="710.0" y2="137.9" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="141.9" font-size="10" fill="#607d8b" text-anchor="end" >80</text>
+  <line x1="706.0" y1="97.3" x2="710.0" y2="97.3" stroke="#37474f" stroke-width="1" />
+  <text x="703.0" y="101.3" font-size="10" fill="#607d8b" text-anchor="end" >100</text>
+  <text x="822.5" y="334.0" font-size="11.5" fill="#37474f" text-anchor="middle" >破壞面角度 β</text>
+  <text x="714.0" y="70.0" font-size="11" fill="#37474f" text-anchor="start" >Pa (kN/m)</text>
+  <path d="M710.0 199.4 L710.5 198.0 L711.0 196.6 L711.5 195.2 L712.0 193.8 L712.5 192.4 L713.0 191.1 L713.5 189.7 L714.0 188.4 L714.5 187.1 L715.0 185.8 L715.5 184.5 L716.0 183.3 L716.5 182.0 L717.0 180.8 L717.5 179.6 L718.0 178.4 L718.5 177.2 L719.0 176.1 L719.5 174.9 L720.0 173.8 L720.5 172.6 L721.0 171.5 L721.5 170.4 L722.0 169.4 L722.5 168.3 L723.0 167.2 L723.5 166.2 L724.0 165.2 L724.5 164.2 L725.0 163.2 L725.5 162.2 L726.0 161.2 L726.5 160.2 L727.0 159.3 L727.5 158.3 L728.0 157.4 L728.5 156.5 L729.0 155.6 L729.5 154.7 L730.0 153.8 L730.5 153.0 L731.0 152.1 L731.5 151.3 L732.0 150.4 L732.5 149.6 L733.0 148.8 L733.5 148.0 L734.0 147.2 L734.5 146.4 L735.0 145.7 L735.5 144.9 L736.0 144.2 L736.5 143.4 L737.0 142.7 L737.5 142.0 L738.0 141.3 L738.5 140.6 L739.0 139.9 L739.5 139.2 L740.0 138.5 L740.5 137.9 L741.0 137.2 L741.5 136.6 L742.0 136.0 L742.5 135.3 L743.0 134.7 L743.5 134.1 L744.0 133.5 L744.5 132.9 L745.0 132.4 L745.5 131.8 L746.0 131.2 L746.5 130.7 L747.0 130.1 L747.5 129.6 L748.0 129.1 L748.5 128.6 L749.0 128.0 L749.5 127.5 L750.0 127.0 L750.5 126.6 L751.0 126.1 L751.5 125.6 L752.0 125.1 L752.5 124.7 L753.0 124.2 L753.5 123.8 L754.0 123.4 L754.5 122.9 L755.0 122.5 L755.5 122.1 L756.0 121.7 L756.5 121.3 L757.0 120.9 L757.5 120.6 L758.0 120.2 L758.5 119.8 L759.0 119.4 L759.5 119.1 L760.0 118.7 L760.5 118.4 L761.0 118.1 L761.5 117.7 L762.0 117.4 L762.5 117.1 L763.0 116.8 L763.5 116.5 L764.0 116.2 L764.5 115.9 L765.0 115.6 L765.5 115.4 L766.0 115.1 L766.5 114.8 L767.0 114.6 L767.5 114.3 L768.0 114.1 L768.5 113.8 L769.0 113.6 L769.5 113.4 L770.0 113.2 L770.5 112.9 L771.0 112.7 L771.5 112.5 L772.0 112.3 L772.5 112.1 L773.0 112.0 L773.5 111.8 L774.0 111.6 L774.5 111.4 L775.0 111.3 L775.5 111.1 L776.0 110.9 L776.5 110.8 L777.0 110.7 L777.5 110.5 L778.0 110.4 L778.5 110.3 L779.0 110.1 L779.5 110.0 L780.0 109.9 L780.5 109.8 L781.0 109.7 L781.5 109.6 L782.0 109.5 L782.5 109.4 L783.0 109.3 L783.5 109.3 L784.0 109.2 L784.5 109.1 L785.0 109.1 L785.5 109.0 L786.0 109.0 L786.5 108.9 L787.0 108.9 L787.5 108.8 L788.0 108.8 L788.5 108.8 L789.0 108.7 L789.5 108.7 L790.0 108.7 L790.5 108.7 L791.0 108.7 L791.5 108.7 L792.0 108.7 L792.5 108.7 L793.0 108.7 L793.5 108.7 L794.0 108.8 L794.5 108.8 L795.0 108.8 L795.5 108.8 L796.0 108.9 L796.5 108.9 L797.0 109.0 L797.5 109.0 L798.0 109.1 L798.5 109.1 L799.0 109.2 L799.5 109.3 L800.0 109.3 L800.5 109.4 L801.0 109.5 L801.5 109.6 L802.0 109.7 L802.5 109.8 L803.0 109.9 L803.5 110.0 L804.0 110.1 L804.5 110.2 L805.0 110.3 L805.5 110.4 L806.0 110.5 L806.5 110.6 L807.0 110.8 L807.5 110.9 L808.0 111.0 L808.5 111.2 L809.0 111.3 L809.5 111.5 L810.0 111.6 L810.5 111.8 L811.0 111.9 L811.5 112.1 L812.0 112.3 L812.5 112.4 L813.0 112.6 L813.5 112.8 L814.0 113.0 L814.5 113.2 L815.0 113.3 L815.5 113.5 L816.0 113.7 L816.5 113.9 L817.0 114.1 L817.5 114.3 L818.0 114.5 L818.5 114.8 L819.0 115.0 L819.5 115.2 L820.0 115.4 L820.5 115.6 L821.0 115.9 L821.5 116.1 L822.0 116.4 L822.5 116.6 L823.0 116.8 L823.5 117.1 L824.0 117.3 L824.5 117.6 L825.0 117.9 L825.5 118.1 L826.0 118.4 L826.5 118.7 L827.0 118.9 L827.5 119.2 L828.0 119.5 L828.5 119.8 L829.0 120.1 L829.5 120.3 L830.0 120.6 L830.5 120.9 L831.0 121.2 L831.5 121.5 L832.0 121.8 L832.5 122.2 L833.0 122.5 L833.5 122.8 L834.0 123.1 L834.5 123.4 L835.0 123.8 L835.5 124.1 L836.0 124.4 L836.5 124.7 L837.0 125.1 L837.5 125.4 L838.0 125.8 L838.5 126.1 L839.0 126.5 L839.5 126.8 L840.0 127.2 L840.5 127.6 L841.0 127.9 L841.5 128.3 L842.0 128.7 L842.5 129.0 L843.0 129.4 L843.5 129.8 L844.0 130.2 L844.5 130.6 L845.0 131.0 L845.5 131.4 L846.0 131.8 L846.5 132.2 L847.0 132.6 L847.5 133.0 L848.0 133.4 L848.5 133.8 L849.0 134.2 L849.5 134.6 L850.0 135.0 L850.5 135.5 L851.0 135.9 L851.5 136.3 L852.0 136.8 L852.5 137.2 L853.0 137.7 L853.5 138.1 L854.0 138.5 L854.5 139.0 L855.0 139.4 L855.5 139.9 L856.0 140.4 L856.5 140.8 L857.0 141.3 L857.5 141.8 L858.0 142.2 L858.5 142.7 L859.0 143.2 L859.5 143.7 L860.0 144.2 L860.5 144.7 L861.0 145.1 L861.5 145.6 L862.0 146.1 L862.5 146.6 L863.0 147.1 L863.5 147.7 L864.0 148.2 L864.5 148.7 L865.0 149.2 L865.5 149.7 L866.0 150.2 L866.5 150.8 L867.0 151.3 L867.5 151.8 L868.0 152.4 L868.5 152.9 L869.0 153.5 L869.5 154.0 L870.0 154.5 L870.5 155.1 L871.0 155.7 L871.5 156.2 L872.0 156.8 L872.5 157.3 L873.0 157.9 L873.5 158.5 L874.0 159.1 L874.5 159.6 L875.0 160.2 L875.5 160.8 L876.0 161.4 L876.5 162.0 L877.0 162.6 L877.5 163.2 L878.0 163.8 L878.5 164.4 L879.0 165.0 L879.5 165.6 L880.0 166.2 L880.5 166.8 L881.0 167.4 L881.5 168.1 L882.0 168.7 L882.5 169.3 L883.0 169.9 L883.5 170.6 L884.0 171.2 L884.5 171.9 L885.0 172.5 L885.5 173.2 L886.0 173.8 L886.5 174.5 L887.0 175.1 L887.5 175.8 L888.0 176.4 L888.5 177.1 L889.0 177.8 L889.5 178.5 L890.0 179.1 L890.5 179.8 L891.0 180.5 L891.5 181.2 L892.0 181.9 L892.5 182.6 L893.0 183.3 L893.5 184.0 L894.0 184.7 L894.5 185.4 L895.0 186.1 L895.5 186.8 L896.0 187.6 L896.5 188.3 L897.0 189.0 L897.5 189.7 L898.0 190.5 L898.5 191.2 L899.0 191.9 L899.5 192.7 L900.0 193.4 L900.5 194.2 L901.0 194.9 L901.5 195.7 L902.0 196.5 L902.5 197.2 L903.0 198.0 L903.5 198.8 L904.0 199.5 L904.5 200.3 L905.0 201.1 L905.5 201.9 L906.0 202.7 L906.5 203.5 L907.0 204.3 L907.5 205.1 L908.0 205.9 L908.5 206.7 L909.0 207.5 L909.5 208.3 L910.0 209.1 L910.5 210.0 L911.0 210.8 L911.5 211.6 L912.0 212.4 L912.5 213.3 L913.0 214.1 L913.5 215.0 L914.0 215.8 L914.5 216.7 L915.0 217.5 L915.5 218.4 L916.0 219.3 L916.5 220.1 L917.0 221.0 L917.5 221.9 L918.0 222.8 L918.5 223.6 L919.0 224.5 L919.5 225.4 L920.0 226.3 L920.5 227.2 L921.0 228.1 L921.5 229.0 L922.0 229.9 L922.5 230.9 L923.0 231.8 L923.5 232.7 L924.0 233.6 L924.5 234.6 L925.0 235.5 L925.5 236.4 L926.0 237.4 L926.5 238.3 L927.0 239.3 L927.5 240.3 L928.0 241.2 L928.5 242.2 L929.0 243.2 L929.5 244.1 L930.0 245.1 L930.5 246.1 L931.0 247.1 L931.5 248.1 L932.0 249.1 L932.5 250.1 L933.0 251.1 L933.5 252.1 L934.0 253.1 L934.5 254.1 L935.0 255.1" fill="none" stroke="#c62828" stroke-width="2.6"/>
+  <line x1="791.5" y1="108.7" x2="791.5" y2="300.0" stroke="#c62828" stroke-width="1" stroke-dasharray="4,3" />
+  <circle cx="791.5" cy="108.7" r="5" fill="#c62828" stroke="none"/>
+  <text x="799.5" y="100.7" font-size="12" fill="#c62828" text-anchor="start" font-weight="700" >Pa,max = 94.4</text>
+  <text x="799.5" y="292.0" font-size="11.5" fill="#c62828" text-anchor="start" >β<tspan font-size="72%" dy="0.3em">cr</tspan><tspan dy="-0.3em">​</tspan> = 51.3°</text>
+  <text x="815.0" y="364.0" font-size="11.5" fill="#455a64" text-anchor="middle" >與 Coulomb 公式驗算：</text>
+  <text x="815.0" y="382.0" font-size="11.5" fill="#455a64" text-anchor="middle" font-weight="700" >½γH²Ka = 94.4（Ka = 0.291）</text>
+  <text x="815.0" y="404.0" font-size="10.5" fill="#90a4ae" text-anchor="middle" >φ = 30°、δ = 20°、α = 10°、θ = 6°</text>
 </svg>
-<div class="cap">圖 6-1｜Coulomb 的三步：畫楔、閉合力多邊形、對 \(\beta\) 取極大。圖中力的方向是<b>作用在土楔上</b>的：土楔往左下滑，所以 \(R\) 由破壞面下方的土推向左上（偏離法線 \(\phi\)），\(P_a\) 由牆推向土楔（偏離牆背法線 \(\delta\)，摩擦向上）。<b>為什麼取「極大」？</b>因為土會自己找最容易滑的那個面 —— 對牆而言，就是推力最大的那個。<a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a> 考的正是這三步（含張力裂縫使楔體幾何改變）。被動側則相反：取<b>極小值</b>，因為土會選最容易被推開的面。</div>
+<div class="cap">圖 6-1｜Coulomb 的三步，<b>全部按比例計算繪製</b>（\(H=6\) m、\(\gamma=18\)、\(\phi=30^\circ\)、\(\delta=20^\circ\)、\(\alpha=10^\circ\)、牆背傾 \(\theta=6^\circ\)）。① 圖中力的方向是<b>作用在土楔上</b>的：土楔往左下滑，所以 \(R\) 由破壞面下方的土推向左上（偏離 AB 法線 \(\phi\)），\(P_a\) 由牆推向土楔（偏離牆背法線 \(\delta\)，摩擦向上）；\(W\) 過楔體形心、\(P_a\) 畫在 \(H/3\)。② 以 \(\beta_{cr}\) 的楔體閉合三角形：\(W=258\)、\(R=252\)、\(P_a=94\) kN/m。③ 把 \(\beta\) 從 35° 掃到 80°，\(P_a\) 在 \(\beta_{cr}=51.3^\circ\) 達最大 94.4 kN/m，與 Coulomb 公式 \(\tfrac12\gamma H^2K_a\)（\(K_a=0.291\)）完全吻合 —— <b>公式就是這條曲線的頂點</b>。<b>為什麼取「極大」？</b>因為土會自己找最容易滑的那個面 —— 對牆而言，就是推力最大的那個。<a class="qlink" href="problems-view/SM-2019-4.html" target="_blank">SM-2019-4</a> 考的正是這三步（含張力裂縫使楔體幾何改變）。被動側則相反：取<b>極小值</b>，因為土會選最容易被推開的面。</div>
 </div>
 
 <div class="box">
@@ -633,33 +933,72 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <p>懸臂式（L 型／倒 T 型）牆的「牆背」不是混凝土面，而是<b>從牆踵垂直向上畫的那條線</b>。理由：這條線與牆踵之間的土<b>會跟著牆一起動</b>，等於是牆的一部分。</p>
 
 <div class="fig">
-<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
-  <text x="450" y="24" font-size="15.5" font-weight="700" fill="#0d47a1" text-anchor="middle">懸臂式擋土牆：虛擬牆背（從牆踵垂直向上）</text>
-  <line x1="100" y1="222" x2="330" y2="222" stroke="#8d6e63" stroke-width="1.6"/>
-  <text x="170" y="214" font-size="11.5" fill="#8d6e63" text-anchor="middle">前方地面</text>
-  <line x1="100" y1="272" x2="760" y2="272" stroke="#8d6e63" stroke-width="1" stroke-dasharray="4,3"/>
-  <path d="M360 60 L360 250 L600 250 L600 60 Z" fill="#e8f5e9" stroke="#81c784" stroke-width="1.2"/>
-  <path d="M330 60 L360 60 L360 250 L600 250 L600 272 L240 272 L240 250 L330 250 Z" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
-  <line x1="360" y1="60" x2="820" y2="60" stroke="#8d6e63" stroke-width="1.6"/>
-  <text x="720" y="50" font-size="12" fill="#8d6e63" text-anchor="middle">填土面</text>
-  <text x="285" y="266" font-size="11" fill="#455a64" text-anchor="middle">趾</text>
-  <text x="560" y="266" font-size="11" fill="#455a64" text-anchor="middle">踵</text>
-  <text x="480" y="148" font-size="12.5" fill="#2e7d32" text-anchor="middle">這塊土跟著牆一起動</text>
-  <text x="480" y="170" font-size="12.5" fill="#2e7d32" text-anchor="middle">→ 算進「牆重 W」裡</text>
-  <polygon points="600,60 600,272 680,272" fill="#ffcdd2" stroke="#c62828" stroke-width="1.6" opacity="0.8"/>
-  <line x1="600" y1="50" x2="600" y2="272" stroke="#c62828" stroke-width="2.6" stroke-dasharray="8,5"/>
-  <text x="624" y="104" font-size="13" font-weight="700" fill="#c62828">虛擬牆背</text>
-  <text x="624" y="126" font-size="12" fill="#c62828">在這條線上套 Rankine</text>
-  <text x="624" y="148" font-size="12" fill="#c62828">（土體內部的面，不涉及牆土摩擦）</text>
-  <text x="700" y="240" font-size="12.5" fill="#b71c1c">Pa 作用在虛擬牆背上</text>
-  <line x1="850" y1="60" x2="850" y2="272" stroke="#455a64" stroke-width="1.2"/>
-  <line x1="844" y1="60" x2="856" y2="60" stroke="#455a64" stroke-width="1.2"/>
-  <line x1="844" y1="272" x2="856" y2="272" stroke="#455a64" stroke-width="1.2"/>
-  <text x="862" y="170" font-size="12.5" fill="#455a64">H′</text>
-  <text x="450" y="306" font-size="12.5" fill="#455a64" text-anchor="middle">關鍵：H′ 從填土面量到<tspan font-weight="700">基礎版底</tspan>（不是只量莖部高度）；傾斜填土還要加踵部上方的坡度增量</text>
-  <text x="450" y="330" font-size="12.5" fill="#607d8b" text-anchor="middle">H′ 量太短 → Pa 低估 → 安全係數虛高（危險）；漏算踵上土重 → W 低估 → 安全係數偏低（保守但不經濟）</text>
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="v7k" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="v7r" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="v7g" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="v7b" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="v7p" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="v7n" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="v7o" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="v7m" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="v7w" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="450.0" y="24.0" font-size="14.5" fill="#0d47a1" text-anchor="middle" font-weight="700" >SM-2018-4 按比例：懸臂式擋土牆的虛擬牆背（H = 7.5 m、α = 12°、踵長 3.5 m）</text>
+  <polygon points="239.3,360.3 354.8,360.3 354.8,88.3 239.3,112.8" fill="#e8f5e9" stroke="#81c784" stroke-width="1.2"/>
+  <text x="297.1" y="228.6" font-size="12" fill="#2e7d32" text-anchor="middle" font-weight="700" >踵上土 W4+W5</text>
+  <text x="297.1" y="246.6" font-size="11.5" fill="#2e7d32" text-anchor="middle" >跟著牆一起動</text>
+  <text x="297.1" y="262.6" font-size="11.5" fill="#2e7d32" text-anchor="middle" >→ 算進 W</text>
+  <polygon points="170.0,360.3 219.5,360.3 219.5,334.2 130.4,334.2 130.4,360.3" fill="#fff8e1" stroke="#bcaaa4" stroke-width="1"/>
+  <line x1="117.2" y1="334.2" x2="221.2" y2="334.2" stroke="#8d6e63" stroke-width="1.6" />
+  <polygon points="170.0,392.0 354.8,392.0 354.8,360.3 239.3,360.3 239.3,112.8 226.1,112.8 219.5,360.3 170.0,360.3" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
+  <line x1="239.3" y1="112.8" x2="526.4" y2="51.8" stroke="#8d6e63" stroke-width="1.8" />
+  <line x1="354.8" y1="88.3" x2="427.4" y2="88.3" stroke="#8d6e63" stroke-width="1" stroke-dasharray="3,3" />
+  <path d="M414.8 88.3 A60 60 0 0 0 413.5 75.8" fill="none" stroke="#8d6e63" stroke-width="1.3"/>
+  <text x="418.8" y="86.3" font-size="11.5" fill="#8d6e63" text-anchor="start" >α = 12°</text>
+  <line x1="354.8" y1="78.3" x2="354.8" y2="392.0" stroke="#c62828" stroke-width="2.6" stroke-dasharray="8,5" />
+  <text x="348.8" y="72.3" font-size="13" fill="#c62828" text-anchor="end" font-weight="700" >虛擬牆背</text>
+  <polygon points="354.8,88.3 354.8,392.0 462.1,392.0" fill="#ffcdd2" stroke="#c62828" stroke-width="1.4" fill-opacity="0.75"/>
+  <line x1="392.4" y1="202.6" x2="358.8" y2="195.4" stroke="#c62828" stroke-width="1.1" marker-end="url(#v7r)" />
+  <line x1="419.2" y1="284.2" x2="358.8" y2="271.4" stroke="#c62828" stroke-width="1.1" marker-end="url(#v7r)" />
+  <line x1="446.0" y1="365.8" x2="358.8" y2="347.3" stroke="#c62828" stroke-width="1.1" marker-end="url(#v7r)" />
+  <text x="466.1" y="388.0" font-size="11.5" fill="#c62828" text-anchor="start" font-weight="700" >53.7 kPa</text>
+  <line x1="501.5" y1="259.6" x2="354.8" y2="290.8" stroke="#c62828" stroke-width="3.2" marker-end="url(#v7r)" />
+  <text x="507.5" y="255.6" font-size="13" fill="#c62828" text-anchor="start" font-weight="700" >Pa = 246.9 kN/m</text>
+  <text x="507.5" y="272.6" font-size="11.5" fill="#c62828" text-anchor="start" >平行填土面（∥α），</text>
+  <text x="507.5" y="288.6" font-size="11.5" fill="#c62828" text-anchor="start" >Pax = 241.5、Pay = 51.3</text>
+  <text x="362.8" y="310.8" font-size="11.5" fill="#c62828" text-anchor="start" >H′/3 = 3.068 m</text>
+  <line x1="689.8" y1="392.0" x2="689.8" y2="88.3" stroke="#37474f" stroke-width="1" />
+  <line x1="684.8" y1="392.0" x2="694.8" y2="392.0" stroke="#37474f" stroke-width="1" />
+  <line x1="684.8" y1="88.3" x2="694.8" y2="88.3" stroke="#37474f" stroke-width="1" />
+  <text x="696.8" y="244.1" font-size="12.5" fill="#37474f" text-anchor="start" >H′ = 9.204 m</text>
+  <line x1="354.8" y1="88.3" x2="694.8" y2="88.3" stroke="#90a4ae" stroke-width="0.8" stroke-dasharray="2,3" />
+  <line x1="462.1" y1="392.0" x2="694.8" y2="392.0" stroke="#90a4ae" stroke-width="0.8" stroke-dasharray="2,3" />
+  <line x1="221.3" y1="360.3" x2="221.3" y2="112.8" stroke="#455a64" stroke-width="1" />
+  <line x1="216.3" y1="360.3" x2="226.3" y2="360.3" stroke="#455a64" stroke-width="1" />
+  <line x1="216.3" y1="112.8" x2="226.3" y2="112.8" stroke="#455a64" stroke-width="1" />
+  <text x="214.3" y="240.6" font-size="11.5" fill="#455a64" text-anchor="end" >H = 7.5</text>
+  <line x1="338.8" y1="392.0" x2="338.8" y2="360.3" stroke="#455a64" stroke-width="1" />
+  <line x1="333.8" y1="392.0" x2="343.8" y2="392.0" stroke="#455a64" stroke-width="1" />
+  <line x1="333.8" y1="360.3" x2="343.8" y2="360.3" stroke="#455a64" stroke-width="1" />
+  <text x="331.8" y="380.2" font-size="10.5" fill="#455a64" text-anchor="end" >0.96</text>
+  <line x1="338.8" y1="112.8" x2="338.8" y2="88.3" stroke="#8d6e63" stroke-width="1" />
+  <line x1="333.8" y1="112.8" x2="343.8" y2="112.8" stroke="#8d6e63" stroke-width="1" />
+  <line x1="333.8" y1="88.3" x2="343.8" y2="88.3" stroke="#8d6e63" stroke-width="1" />
+  <text x="331.8" y="104.5" font-size="10.5" fill="#8d6e63" text-anchor="end" >0.744</text>
+  <line x1="170.0" y1="412.0" x2="219.5" y2="412.0" stroke="#455a64" stroke-width="1" />
+  <line x1="170.0" y1="407.0" x2="170.0" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <line x1="219.5" y1="407.0" x2="219.5" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <text x="194.8" y="427.0" font-size="11" fill="#455a64" text-anchor="middle" >1.5</text>
+  <line x1="219.5" y1="412.0" x2="239.3" y2="412.0" stroke="#455a64" stroke-width="1" />
+  <line x1="219.5" y1="407.0" x2="219.5" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <line x1="239.3" y1="407.0" x2="239.3" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <text x="229.4" y="427.0" font-size="11" fill="#455a64" text-anchor="middle" >0.6</text>
+  <line x1="239.3" y1="412.0" x2="354.8" y2="412.0" stroke="#455a64" stroke-width="1" />
+  <line x1="239.3" y1="407.0" x2="239.3" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <line x1="354.8" y1="407.0" x2="354.8" y2="417.0" stroke="#455a64" stroke-width="1" />
+  <text x="297.0" y="427.0" font-size="11" fill="#455a64" text-anchor="middle" >3.5</text>
+  <text x="166.0" y="396.0" font-size="11.5" fill="#37474f" text-anchor="end" font-weight="700" >趾 O</text>
+  <text x="137.0" y="328.2" font-size="11" fill="#8d6e63" text-anchor="start" >前方地面</text>
+  <rect x="14.0" y="52.0" width="206.0" height="112.0" rx="6" fill="#fff" stroke="#cfd8dc" stroke-width="1.2"/>
+  <text x="24.0" y="72.0" font-size="12" fill="#37474f" text-anchor="start" font-weight="700" >H′ = 7.5 + 0.96 + 3.5·tan12°</text>
+  <text x="24.0" y="91.0" font-size="12" fill="#37474f" text-anchor="start" >　 = 8.46 + 0.744 = 9.204 m</text>
+  <text x="24.0" y="110.0" font-size="12" fill="#37474f" text-anchor="start" >Ka（傾斜式）= 0.3275</text>
+  <text x="24.0" y="132.0" font-size="11.5" fill="#c62828" text-anchor="start" font-weight="700" >漏算 0.96 或 0.744</text>
+  <text x="24.0" y="150.0" font-size="11.5" fill="#c62828" text-anchor="start" font-weight="700" >→ Pa 低估 → FS 虛高（危險）</text>
 </svg>
-<div class="cap">圖 7-1｜虛擬牆背最大的價值是<b>讓 Rankine 的應力狀態變成真的</b> —— 這個面在土體內部，不再牽涉牆土摩擦 \(\delta\)。填土水平時它是主平面（相當於 \(\delta=0\)）；填土傾斜 \(\alpha\) 時 \(P_a\) 平行填土面（相當於 \(\delta=\alpha\)）。代價是你必須記得把牆踵上方那塊土算進牆重。<a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a>（\(H=7.5\) m、\(\alpha=12^\circ\)、踵部伸出 3.5 m）就是標準題。</div>
+<div class="cap">圖 7-1｜<b>按 <a class="qlink" href="problems-view/SM-2018-4.html" target="_blank">SM-2018-4</a> 的尺寸比例繪製</b>（趾 1.5、莖底 0.6、踵 3.5、底版 0.96 m）。虛擬牆背最大的價值是<b>讓 Rankine 的應力狀態變成真的</b> —— 這個面在土體內部，不再牽涉牆土摩擦 \(\delta\)；填土傾斜 \(\alpha\) 時 \(P_a\) 平行填土面（相當於 \(\delta=\alpha\)），所以 \(P_a=246.9\) 要拆成水平 241.5（推牆）與垂直 51.3（往下壓、<b>幫忙抗滑抗傾覆</b>）。\(H'\) 必須從填土面量到<b>底版底</b>，並加上踵部上方的坡度增量 0.744 m：只量莖部 7.5 m 會讓 \(P_a\) 少算 34%。代價是你必須記得把踵上那塊土（矩形＋三角形）算進牆重。</div>
 </div>
 
 <h3>7.3　地震土壓力：Mononobe–Okabe（帶過）</h3>
@@ -669,6 +1008,41 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 <li><b>作用點不同</b>：靜態 \(P_a\) 在 \(H/3\)，動態增量 \(\Delta P_{ae}\) 一般取在 \(0.6H\)（因為地震慣性力在上部較大）。</li>
 <li>合成作用點介於兩者之間，需加權平均。</li>
 </ul>
+<div class="fig">
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+  <defs><marker id="mok" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#37474f"/></marker><marker id="mor" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#c62828"/></marker><marker id="mog" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker><marker id="mob" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0288d1"/></marker><marker id="mop" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#6a1b9a"/></marker><marker id="mon" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#0d47a1"/></marker><marker id="moo" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker><marker id="mom" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#607d8b"/></marker><marker id="mow" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 z" fill="#8d6e63"/></marker></defs>
+  <text x="440.0" y="24.0" font-size="15" fill="#0d47a1" text-anchor="middle" font-weight="700" >SM-2016-4：M–O 地震土壓力 = 靜態 Pa（H/3）＋ 動態增量 ΔPae（0.6H）</text>
+  <polygon points="150.0,345.0 330.0,345.0 258.0,57.0 150.0,57.0" fill="#cfd8dc" stroke="#455a64" stroke-width="1.8"/>
+  <line x1="114.0" y1="345.0" x2="492.0" y2="345.0" stroke="#8d6e63" stroke-width="1.6" />
+  <line x1="258.0" y1="57.0" x2="492.0" y2="57.0" stroke="#8d6e63" stroke-width="1.6" />
+  <text x="207.6" y="201.0" font-size="12.5" fill="#455a64" text-anchor="middle" >重力式牆</text>
+  <line x1="435.5" y1="177.1" x2="306.0" y2="249.0" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#mog)" />
+  <circle cx="306.0" cy="249.0" r="3" fill="#2e7d32" stroke="none"/>
+  <line x1="306.0" y1="249.0" x2="639.6" y2="249.0" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="2,3" />
+  <text x="643.2" y="253.0" font-size="12.5" fill="#2e7d32" text-anchor="start" font-weight="700" >Pa = 238.9 @ H/3 = 2.67 m</text>
+  <line x1="317.9" y1="154.9" x2="286.8" y2="172.2" stroke="#e65100" stroke-width="2.4" marker-end="url(#moo)" />
+  <circle cx="286.8" cy="172.2" r="3" fill="#e65100" stroke="none"/>
+  <line x1="286.8" y1="172.2" x2="639.6" y2="172.2" stroke="#e65100" stroke-width="0.8" stroke-dasharray="2,3" />
+  <text x="643.2" y="176.2" font-size="12.5" fill="#e65100" text-anchor="start" font-weight="700" >ΔPae = 57.3 @ 0.6H = 4.80 m</text>
+  <line x1="462.9" y1="145.0" x2="302.3" y2="234.1" stroke="#c62828" stroke-width="3.2" marker-end="url(#mor)" />
+  <circle cx="302.3" cy="234.1" r="3" fill="#c62828" stroke="none"/>
+  <line x1="302.3" y1="234.1" x2="639.6" y2="234.1" stroke="#c62828" stroke-width="0.8" stroke-dasharray="2,3" />
+  <text x="643.2" y="238.1" font-size="12.5" fill="#c62828" text-anchor="start" font-weight="700" >Pae = 296.3 @ z̄ = 3.08 m</text>
+  <line x1="128.4" y1="345.0" x2="128.4" y2="57.0" stroke="#37474f" stroke-width="1" />
+  <line x1="123.4" y1="345.0" x2="133.4" y2="345.0" stroke="#37474f" stroke-width="1" />
+  <line x1="123.4" y1="57.0" x2="133.4" y2="57.0" stroke="#37474f" stroke-width="1" />
+  <text x="121.4" y="205.0" font-size="11.5" fill="#37474f" text-anchor="end" >H = 8 m</text>
+  <path d="M356.3 234.1 A54 54 0 0 0 349.5 207.9" fill="none" stroke="#c62828" stroke-width="1.3"/>
+  <text x="360.3" y="226.1" font-size="11" fill="#c62828" text-anchor="start" >29.04°</text>
+  <rect x="560.0" y="270.0" width="300.0" height="70.0" rx="6" fill="#fff3e0" stroke="#ffb74d" stroke-width="1.2"/>
+  <text x="574.0" y="292.0" font-size="11.5" fill="#5d4037" text-anchor="start" >z̄ = (238.92×2.667 + 57.34×4.8) / 296.26</text>
+  <text x="574.0" y="312.0" font-size="12" fill="#c62828" text-anchor="start" font-weight="700" >　= 3.08 m　（> H/3 = 2.67）</text>
+  <text x="574.0" y="330.0" font-size="11.5" fill="#5d4037" text-anchor="start" >整個 Pae 放 H/3 → 傾覆力矩少算</text>
+  <text x="440.0" y="390.0" font-size="11" fill="#90a4ae" text-anchor="middle" >力按比例（1 kN/m = 0.62 px），方向與水平夾 29.04°（牆背傾角 14.04° ＋ δB 15°）</text>
+</svg>
+<div class="cap">圖 7-2｜<a class="qlink" href="problems-view/SM-2016-4.html" target="_blank">SM-2016-4</a> 的 M–O 結果，三支力<b>按大小比例</b>畫在傾斜牆背上。動態增量只有 57.3 kN/m（不到兩成），但它作用在 0.6H＝4.8 m，力臂是靜態的 1.8 倍，於是合力作用點由 2.67 m 上移到 <b>3.08 m</b>。若整個 \(P_{ae}\) 放在 \(H/3\)，傾覆力矩會少算約 13%。</div>
+</div>
+
 <div class="trap">
 <b>陷阱｜M–O 的作用點</b><br>
 <b>觸發信號：</b>題目問 \(P_{ae}\) 的「大小、方向<b>與位置</b>」（<a class="qlink" href="problems-view/SM-2016-4.html" target="_blank">SM-2016-4</a> 原文）。<br>
@@ -698,7 +1072,7 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
 
   <text x="492" y="180" font-size="12" font-weight="700" fill="#2e7d32">牆離開土 → Ka（最常見）</text>
   <text x="352" y="104" font-size="11" fill="#1565c0" text-anchor="end">不能動</text>
-  <text x="608" y="104" font-size="11" fill="#2e7d32" text-anchor="start">推向土</text>
+  <text x="608" y="104" font-size="11" fill="#c62828" text-anchor="start">推向土</text>
   <rect x="330" y="30" width="300" height="30" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/>
   <text x="480" y="50" font-size="14" font-weight="700" fill="#0d47a1" text-anchor="middle">第一問：這面牆會不會動？往哪動？</text>
 
@@ -710,9 +1084,9 @@ $$K_a=\cos\alpha\cdot\frac{\cos\alpha-\sqrt{\cos^2\alpha-\cos^2\phi}}{\cos\alpha
   <text x="180" y="174" font-size="12.5" font-weight="700" fill="#0d47a1" text-anchor="middle">不能動 → K0 = 1 − sinφ′</text>
   <text x="180" y="194" font-size="11.5" fill="#0d47a1" text-anchor="middle">地下室外牆、箱涵、剛性支撐</text>
 
-  <rect x="670" y="152" width="240" height="54" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="790" y="174" font-size="12.5" font-weight="700" fill="#1b5e20" text-anchor="middle">牆推向土 → Kp（並折減）</text>
-  <text x="790" y="194" font-size="11.5" fill="#1b5e20" text-anchor="middle">板樁貫入段、牆前趾</text>
+  <rect x="670" y="152" width="240" height="54" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="790" y="174" font-size="12.5" font-weight="700" fill="#b71c1c" text-anchor="middle">牆推向土 → Kp（並折減）</text>
+  <text x="790" y="194" font-size="11.5" fill="#b71c1c" text-anchor="middle">板樁貫入段、牆前趾</text>
 
   <polygon points="480,196 600,232 480,268 360,232" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/>
   <text x="480" y="228" font-size="12.5" fill="#e65100" text-anchor="middle">Rankine 三條件成立嗎？</text>

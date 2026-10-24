@@ -1892,3 +1892,18 @@ $P \to \infty$ 而溢出 925 處，改為只畫 $P \ge 0.45P_a$ 的視窗後解�
 - **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
 
 
+
+
+## [2026-10-24] study-lecture | 更新單元講義圖表、列印排版與重編 PDF
+
+- **變更檔案**：
+  - `study/`：更新 5 份單元講義 HTML（`lecture-SM-U1-1.html`、`lecture-SM-U1-3.html`、`lecture-SM-U1-5.html`、`lecture-SM-U2-3.html`、`lecture-SM-U3-1.html`），優化列印 CSS 樣式並引入精確計算之向量 SVG 插圖。
+  - `study/`：同步更新重新編譯之 5 份講義 PDF（`lecture-SM-U1-1.pdf`、`lecture-SM-U1-3.pdf`、`lecture-SM-U1-5.pdf`、`lecture-SM-U2-3.pdf`、`lecture-SM-U3-1.pdf`）。
+  - `scripts/lecture-figs/U1-1/`（`gen_figs.py`、`svglib.py`）與 `study/gen_lecture-SM-U1-5_figs.py`：新增精確數值繪圖腳本。
+- **完成事項**：
+  - 完成 U1-1、U1-3、U1-5、U2-3、U3-1 單元講義的圖表精確化與列印跨頁排版優化。
+- **踩坑 / 注意事項**：
+  - 檢查無敏感資料；PDF 單檔皆在 6MB 以內，符合 GitHub 限制。
+- **下一步**：
+  - 持續檢視其餘單元講義之排版與圖表精確度。
+- **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
