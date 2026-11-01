@@ -25,7 +25,6 @@
         "時間因素"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -47,7 +46,6 @@
         "孔隙水壓"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -71,7 +69,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -92,7 +89,6 @@
         "Newmark影響圖"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -114,7 +110,6 @@
         "摩擦角"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -137,7 +132,6 @@
         "淺層滑動"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -162,7 +156,6 @@
         "e-log p'曲線"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -187,7 +180,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -211,7 +203,6 @@
         "壓縮指數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -233,7 +224,6 @@
         "雨水入滲"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -256,7 +246,6 @@
         "有效應力原理"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -282,7 +271,6 @@
         "深層攪拌法"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -303,7 +291,6 @@
         "夯實曲線"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -325,7 +312,6 @@
         "拔出破壞"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -347,7 +333,6 @@
         "層狀土壤滲流"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -371,7 +356,6 @@
         "淨壓力法"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -395,7 +379,6 @@
         "湧泉壓力"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -417,7 +400,6 @@
         "雙面排水"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -439,7 +421,6 @@
         "抗拔力"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -461,7 +442,6 @@
         "有效應力原理"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -485,7 +465,6 @@
         "飽和度"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -512,7 +491,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -533,7 +511,6 @@
         "含水量"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -555,7 +532,6 @@
         "淨承載力"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -581,7 +557,6 @@
         "液性指數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -606,7 +581,6 @@
         "正常壓密"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -630,7 +604,6 @@
         "體積變化"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -653,7 +626,6 @@
         "臨界破壞面"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -674,7 +646,6 @@
         "壓密沉陷"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -697,7 +668,6 @@
         "破壞面傾角"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -720,7 +690,6 @@
         "Darcy定律"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -745,7 +714,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -767,7 +735,6 @@
         "相對夯實度"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -789,7 +756,6 @@
         "內插法"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -811,7 +777,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -838,7 +803,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -864,7 +828,6 @@
         "單面排水"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -889,7 +852,6 @@
         "最佳含水量"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -915,7 +877,6 @@
         "超載重"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -941,7 +902,6 @@
         "地震土壓力作用點"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -966,7 +926,6 @@
         "正常壓密"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -990,7 +949,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1013,7 +971,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1039,7 +996,6 @@
         "壓縮指數Cc"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1063,7 +1019,6 @@
         "Mohr-Coulomb破壞準則"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1085,7 +1040,6 @@
         "摩擦應力分布"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1110,7 +1064,6 @@
         "不排水剪力強度"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1135,7 +1088,6 @@
         "孔隙比"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1163,7 +1115,6 @@
         "殘餘強度"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1186,7 +1137,6 @@
         "最佳含水量"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1209,7 +1159,6 @@
         "破壞面角度"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1236,7 +1185,6 @@
         "擠壓砂樁"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1262,7 +1210,6 @@
         "孔隙水壓"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1285,7 +1232,6 @@
         "次壓縮"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1307,7 +1253,6 @@
         "不排水剪力強度"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1330,7 +1275,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1358,7 +1302,6 @@
         "臨界水力坡降"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1383,7 +1326,6 @@
         "圍堰開挖"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1410,7 +1352,6 @@
         "飽和度"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1435,7 +1376,6 @@
         "截面模數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1459,7 +1399,6 @@
         "正常壓密"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1483,7 +1422,6 @@
         "張力裂縫"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1508,7 +1446,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1531,7 +1468,6 @@
         "長短期承載力"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1555,7 +1491,6 @@
         "絮狀與分散結構"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1579,7 +1514,6 @@
         "不排水剪力強度"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1604,7 +1538,6 @@
         "飽和單位重"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1629,7 +1562,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1654,7 +1586,6 @@
         "夯實"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1678,7 +1609,6 @@
         "靜止土壓力"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1705,7 +1635,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1727,7 +1656,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1749,7 +1677,6 @@
         "一維壓縮"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1775,7 +1702,6 @@
         "三軸試驗"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1797,7 +1723,6 @@
         "容許承載力"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1823,7 +1748,6 @@
         "地錨有效距離"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1847,7 +1771,6 @@
         "過壓密"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1869,7 +1792,6 @@
         "半無限長樁"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1895,7 +1817,6 @@
         "安全係數"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1919,7 +1840,6 @@
         "USCS分類"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1945,7 +1865,6 @@
         "地錨預力"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1969,7 +1888,6 @@
         "含水量"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -1990,7 +1908,6 @@
         "有效應力原理"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2013,7 +1930,6 @@
         "變形相容"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2035,7 +1951,6 @@
         "比重"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2057,7 +1972,6 @@
         "最大剪應力面"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2081,7 +1995,6 @@
         "重力式擋土牆"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2108,7 +2021,6 @@
         "承載力檢核"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2134,7 +2046,6 @@
         "壓密試驗"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2159,7 +2070,6 @@
         "回脹指數"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2183,7 +2093,6 @@
         "孔隙水壓"
       ],
       "hasSolution": true,
-      "hasViz": true,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2205,7 +2114,6 @@
         "有效應力原理"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2227,7 +2135,6 @@
         "預壓密應力"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2252,7 +2159,6 @@
         "施工品管"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2274,7 +2180,6 @@
         "分層夯實"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     },
@@ -2296,7 +2201,6 @@
         "SHANSEP正規化強度法"
       ],
       "hasSolution": true,
-      "hasViz": false,
       "hasHandwritten": false,
       "verificationStatus": "unverified"
     }

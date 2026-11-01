@@ -1907,3 +1907,18 @@ $P \to \infty$ 而溢出 925 處，改為只畫 $P \ge 0.45P_a$ 的視窗後解�
 - **下一步**：
   - 持續檢視其餘單元講義之排版與圖表精確度。
 - **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/problems/`。
+
+## [2026-11-01] ARCHIVE-WIKI | wiki 封存（只保留 wiki/queries/）
+
+- **搬移（mv，未刪檔）**：`wiki/` 下 code-ref、concepts、diagnosis、failure-modes、materials、methods、philosophy、problems、traps 與 `index.md`、`by-year.md` → `archive/wiki/`；`wiki/log.md` → `wiki/queries/log.md`（本檔）。新增 `archive/README.md`。
+- **未動**：`raw/solutions/methods/`、`raw/json/concepts.json`、`raw/` 其他檔案、`question_index.json`。
+- **同步修改**：`index.html`（導覽區改「知識庫導覽」，卡片換成稽核與分析報告／變更紀錄；ingest／compile all／lint wiki／add concept 標示已停用）、`wiki/queries/index.md`（列出現有報告）、`study/lecture-SM-U1-3.html`（3 處 wiki/ → archive/wiki/，重出 PDF）、`xcheck.py`（衍生層目錄不存在時改掃 archive/）、CLAUDE.md（規則 3、4、5、7 與規則 1 methods 同步條件；新增紀錄列）、CLAUDE-CODE.md、CLAUDE-SPEC.md、CLAUDE-SOLVE.md、README.md、知識庫使用說明書.md、檔案架構索引表.md、.gitattributes（加 archive/**）。
+- **原因**：比照 exam-wiki-SS 同日封存；wiki 衍生層與 raw 正本勘誤脫節，學習改用 study/ 教材與正本。
+- **備份**：改前檔案備份於本機 `~/backup-archive-2026-11-01/SM/`（Cowork VM 內）。
+
+## 2026-11-01｜REMOVE-VIZ／DASHBOARD／FIX-KATEX（比照 exam-wiki-SS）
+
+- **題解互動圖廢止**：刪除 `raw/solutions/` 下 26 份 `*-viz.html`（pressure 9、slope 6、seepage 5、bearing 4、stress 1、liquidity 1）；移除 `SM-2020-1.md` 與 `study/problems-view/SM-2020-1.html` 的「📊 應力分布圖」連結（經使用者核准之 raw/ 例外修改）；`study/study-SM-*.html`（8 份）題目列不再顯示 📊 圖示；`question_index.json` 移除 96 個 `hasViz`；規則文件（CLAUDE／CLAUDE-SOLVE／CLAUDE-SPEC／CLAUDE-CODE／README／檔案架構索引表）改為不再產生互動圖，圖解改用 `figs/*.svg`，lint 第 5、6 項改為 svg 引用與殘留 viz 檢查。
+- **補充筆記 PDF 移除**：本科原無題目補充 PDF；`index.html` 按鈕／篩選與規則文件說明一併移除。`dashboard-data.js` 改為 5 欄 `[id, 主分類, 副分類, designMethod, tags]`。
+- **index.html**：「📄 完整解析」改連 `study/problems-view/<題號>.html`；`#md=raw/solutions/...` 深層連結與 `[[題號]]` 自動導向 problems-view；刪「指令速查」分頁，導覽加「⌨️ 指令清單」（CLAUDE-CODE.md）與 `study/frequency-SM.html` 熱圖卡、單元教材區（命題分析／觀念講義／公式給背，只列實際存在者）；設計法篩選改為本科分析法（有效應力法／總應力法／混合／概念題）並改統計卡；修正「全部 verified」誤標（索引 96 題皆 unverified）；資料夾授權 IndexedDB 改用本科專屬 `smwiki-fs`（原 `rcwiki-fs` 在 file:// 下與 RC 儀表板共用，可能讀到 RC 資料夾）並驗證所選資料夾；搜尋 debounce＋多關鍵字＋副考點名稱、結果筆數＋清除篩選、進度切換不重繪、`/` 聚焦搜尋、記住分頁、手機版版面、閱讀器鎖背景捲動等。STUDY 指令規範改為題號連 `problems-view/`。
+- **公式渲染**：`\text{ kN·m}` 等「`\text{}` 內含中點」改寫為 `\text{ kN}\cdot\text{m}`（KaTeX 0.16.11 文字模式不支援 `\cdotp`），SM-2025-3 .md／problems-view 與 `study/lecture-SM-U2-2.html` 共 5 處；SM-2005-2 `\text{通過 #4 篩…}` 改 `\#4`。驗證：以 study/assets/katex 0.16.11 依 auto-render 規則逐頁重算 96 頁 10,734 個數學式，錯誤 0；正本 10,734 個數學式均原樣出現在 problems-view（無舊渲染器吞字問題）。

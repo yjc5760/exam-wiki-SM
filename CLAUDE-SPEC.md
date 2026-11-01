@@ -16,7 +16,7 @@
    - 4.3 圖片引用規範（雙重保險）
    - 4.4 [變數層次分析（Variable Hierarchy Analysis）](#4-4-vha)
 5. [PNG 靜態截圖規範](#5-png)
-6. [viz HTML 互動圖規範](#6-viz-html)
+6. [viz HTML 互動圖規範（已廢止）](#6-viz-html)
 7. [Wiki 頁面格式模板](#7-wiki-templates)
 8. [標籤分類系統](#8-tags)
 9. [question_index.json 欄位規範](#9-json)
@@ -90,10 +90,7 @@ raw/solutions/SM-YYYY-N/
 | 設計圖表 | `SM-YYYY-N-chart-N.png` | 承載力包絡圖、邊坡滑動面圖等 | 使用者 |
 | 參考公式 | `SM-YYYY-N-eqn-N.png` | 題目給的公式截圖 | 使用者 |
 | 手寫補充 | `SM-YYYY-N-hand-N.png` | 手寫推導截圖 | 使用者 |
-| 互動圖 | `SM-YYYY-N-[內容碼]-viz.html` | 互動計算圖 | Cowork |
-| 補充筆記 | `*.pdf`（任意檔名） | 補充講義、手寫筆記掃描等 | 使用者 |
 
-> **補充筆記 PDF：** 使用者可將任意 `.pdf` 放入此資料夾，命名無強制規範。Cowork 執行 `更新儀表板資料`（REFRESH-DASHBOARD）時會掃描並將檔名寫入 `dashboard-data.js`（q.pdf 欄位）；`index.html` 題庫瀏覽頁依此資料直接顯示「📎 補充筆記 PDF」按鈕。線上環境點擊將直接開啟 PDF；本機環境下則會要求資料夾讀取授權。新增或移除 PDF 後須重新執行 `更新儀表板資料` 才會反映。
 
 方法論另建：
 
@@ -243,38 +240,17 @@ SM-YYYY-N-[類型碼]-[序號].png
 ---
 
 <a id="6-viz-html"></a>
-## 6　viz HTML 互動圖規範
+## 6　viz HTML 互動圖規範——已廢止
 
-### 格式
-
-```
-SM-YYYY-N-[內容碼]-viz.html
-```
-
-### 內容碼對照表
-
-| 內容碼 | 說明 | 觸發條件 | 範例 |
-|--------|------|---------|------|
-| `bearing` | 承載力破壞包絡圖 / Nc-Nq-Nγ 對照 | 淺基礎承載力題目（SM-U2-1） | `SM-2015-1-bearing-viz.html` |
-| `pressure` | 側向土壓力分布圖 | 土壓力/擋土結構題目（SM-U3-1, SM-U3-2） | `SM-2015-2-pressure-viz.html` |
-| `slope` | 邊坡滑動面與安全係數圖 | 坡地工程題目（SM-U3-3） | `SM-2015-3-slope-viz.html` |
-| `consolidation` | e-log p′ 曲線 / 沉陷-時間曲線 | 壓密沉陷題目（SM-U1-3） | `SM-2020-1-consolidation-viz.html` |
-| `seepage` | 滲流網圖 | 滲透/開挖穩定題目（SM-U1-2, SM-U2-3） | `SM-2018-2-seepage-viz.html` |
-| `pile` | 樁基承載力沿深度分布圖 | 深基礎題目（SM-U2-2） | `SM-2019-1-pile-viz.html` |
-
-### HTML 規格要求
-
-| 項目 | 規格 |
-|------|------|
-| 寬度 | 580px |
-| 繪圖技術 | Canvas 或 SVG，不依賴外部函式庫 |
-| 必須標注 | 關鍵數值、座標軸單位、控制點名稱 |
-| 執行方式 | 直接瀏覽器開啟，無需伺服器 |
+- 2026-11-01 起不再產生 `*-viz.html`，既有 26 份已全數刪除。
+- 需要圖解時，改用 struct-diagram 產生 `figs/*.svg` 向量圖（附 `gen_*.py` 可重跑），並以 `![...](figs/xxx.svg)` 插回 .md。
 
 ---
 
 <a id="7-wiki-templates"></a>
 ## 7　Wiki 頁面格式模板
+
+> ⛔ **已停用（2026-11-01 wiki 封存）**：除 `wiki/queries/` 外，本節模板對應的目錄已移至 `archive/wiki/`（凍結）；僅保留作歷史參考。
 
 ### 7.1 題目頁：`wiki/problems/SM-YYYY-N.md`
 
@@ -415,14 +391,14 @@ SM-YYYY-N-[內容碼]-viz.html
 | `question_index.json` 中 `hasSolution: true` | JSON 確認 |
 | `tags` ≥ 3 個 | JSON 確認 |
 
-### 一道題「ingest 完成」的標準
+### 一道題「ingest 完成」的標準（已停用（2026-11-01 wiki 封存））
 
 | 項目 | 檢查方式 |
 |------|---------|
 | `wiki/problems/SM-YYYY-N.md` 存在且有完整標籤 | 檔案系統確認 |
 | `wiki/index.md` 在對應分類下有此題連結 | grep moduleId |
 | `wiki/by-year.md` 在對應年份有此題 | grep moduleId |
-| `wiki/log.md` 有 ingest 紀錄 | grep moduleId |
+| `wiki/log.md`（現為 `wiki/queries/log.md`）有 ingest 紀錄 | grep moduleId |
 
 ---
 
@@ -437,7 +413,6 @@ SM-YYYY-N-[內容碼]-viz.html
 | 考卷 PDF | `SM-2015土壤力學與基礎設計.pdf` | `SM-2015_土壤力學與基礎設計.pdf` | 年份後缺底線 |
 | PNG | `SM-2015-1-fig1.png` | `SM-2015-1-fig-1.png` | 類型碼與序號間缺連字號 |
 | PNG | `SM-2015-1-eqn.png` | `SM-2015-1-eqn-1.png` | 缺序號（單張也要寫 `-1`） |
-| viz HTML | `SM-2015-1-bearing.html` | `SM-2015-1-bearing-viz.html` | 缺 `-viz` 後綴 |
 | designMethod | `usd` | `總應力法` | 分析法值需用中文標準詞彙，非借用 RC 科目的 USD/WSD |
 | tags | `土壓` | `側向土壓力` | 標籤應含完整中文說明 |
 | 公式 | `qu=cNc+qNq+0.5rBNr` | `$q_u = c N_c + q N_q + 0.5\gamma B N_\gamma$` | 禁止純文字公式 |

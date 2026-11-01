@@ -8,17 +8,17 @@
 
 ## 指令索引
 
-### 📦 wiki 編譯與維護
+### 📦 知識庫維護
 
 | 指令 | 觸發語句 | 用途 |
 |------|---------|------|
-| [INGEST](#ingest) | `ingest SM-XXXX-N` | 將一道已驗證題目寫入 wiki |
-| [COMPILE-ALL](#compile-all) | `compile all` | 從零初始化整個 wiki |
-| [LINT](#lint) | `lint wiki` | 健檢 wiki 完整性（16 項） |
+| ~~[INGEST](#ingest)~~ | ~~`ingest SM-XXXX-N`~~ | 已停用（2026-11-01 wiki 封存） |
+| ~~[COMPILE-ALL](#compile-all)~~ | ~~`compile all`~~ | 已停用（2026-11-01 wiki 封存） |
+| ~~[LINT](#lint)~~ | ~~`lint wiki`~~ | 已停用（2026-11-01 wiki 封存） |
 | [STATUS](#status) | `status` | 查看驗證進度與統計 |
 | [REINDEX](#reindex) | `reindex` | 掃描 solutions/，修正 hasSolution 不一致 |
-| [ADD-CONCEPT](#add-concept) | `add concept [概念名]` | 新增概念到 concepts.json |
-| [ADD-METHOD](#add-method) | `add method [方法名]` | 新增解題方法論頁面 |
+| ~~[ADD-CONCEPT](#add-concept)~~ | ~~`add concept [概念名]`~~ | 已停用（2026-11-01 wiki 封存） |
+| [ADD-METHOD](#add-method) | `add method [方法名]` | 新增解題方法論（只寫 raw/solutions/methods/） |
 | [REFRESH-DASHBOARD](#refresh-dashboard) | `更新儀表板資料` | 從 question_index.json 重新生成 dashboard-data.js |
 
 ### 📊 備考分析類
@@ -43,6 +43,8 @@
 
 ## INGEST
 
+> ⛔ **已停用（2026-11-01 wiki 封存）**：`wiki/` 除 `queries/` 外已移至 `archive/wiki/`（凍結）。以下步驟僅保留作歷史參考，請勿執行。
+
 **觸發語句：** `ingest SM-2018-1`（Cowork 直接執行）
 
 **前置檢查（強制）：**
@@ -59,11 +61,11 @@
 ```
 1. 讀取 raw/solutions/SM-XXXX-N/SM-XXXX-N.md
 2. 讀取 raw/json/question_index.json 中該題的完整條目
-   → 取得 primaryTopicId、secondaryTopicIds、designMethod、tags、hasViz
+   → 取得 primaryTopicId、secondaryTopicIds、designMethod、tags
 3. 掃描 raw/solutions/SM-XXXX-N/ 下的所有附屬檔案：
    → *-fig-*.png、*-chart-*.png、*-eqn-*.png（靜態截圖）
    → *-hand-*.png（手寫補充）
-   → *-bearing-viz.html、*-slope-viz.html 等（互動圖）
+   → figs/*.svg（程式產生之向量圖解）
 4. 建立或更新 wiki/problems/SM-XXXX-N.md
 5. 從 .md 萃取涉及的概念 → 更新 wiki/concepts/ 相關頁面的「出現題目」表格
 6. 從 .md 萃取涉及的陷阱 → 更新 wiki/traps/ 相關頁面的「出現題目」表格
@@ -83,6 +85,8 @@
 ---
 
 ## COMPILE-ALL
+
+> ⛔ **已停用（2026-11-01 wiki 封存）**：`wiki/` 除 `queries/` 外已移至 `archive/wiki/`（凍結）。以下步驟僅保留作歷史參考，請勿執行。
 
 **觸發語句：** `compile all`（Cowork 直接執行）
 
@@ -105,6 +109,8 @@
 
 ## LINT
 
+> ⛔ **已停用（2026-11-01 wiki 封存）**：`wiki/` 除 `queries/` 外已移至 `archive/wiki/`（凍結）。以下步驟僅保留作歷史參考，請勿執行。
+
 **觸發語句：** `lint wiki`（Cowork 直接執行）
 
 **檢查項目：**
@@ -113,8 +119,8 @@
 2.  斷開連結（[[id]] 但對應頁面不存在）
 3.  概念缺口（concepts.json 有 related_concept_ids 但頁面未建立）
 4.  手寫補充未登錄（raw/solutions/ 有 hand-*.png 但 problems/ 頁面未標注）
-5.  圖形未登錄（raw/solutions/ 有 *-viz.html 但 problems/ 頁面無圖形區塊）
-6.  邊坡/承載力圖缺口（SM-U2-1/SM-U3-3 承載力或邊坡穩定題目但無對應 -viz.html）
+5.  圖形未登錄（raw/solutions/SM-XXXX-N/figs/ 有 *.svg 但解析 .md 未引用）
+6.  殘留互動圖（raw/solutions/ 出現 *-viz.html，或 .md 仍引用 -viz.html）——互動圖已於 2026-11-01 廢止
 7.  方法論缺口（raw/solutions/methods/ 有資料夾但 wiki/methods/ 無對應頁面）
 8.  圖片圖說缺漏（.md 中有 ![...](*.png) 但下方無 *圖說：* 的題目）
 9.  eqn.png 圖說未文字化（有 *-eqn.png 但圖說未包含公式 LaTeX）
@@ -172,6 +178,8 @@ solutions/ 已有解析但未驗證：[列出題號]
 
 ## ADD-CONCEPT
 
+> ⛔ **已停用（2026-11-01 wiki 封存）**：`wiki/` 除 `queries/` 外已移至 `archive/wiki/`（凍結）。以下步驟僅保留作歷史參考，請勿執行。
+
 **觸發語句：** `add concept [概念名]`（例：`add concept 有效應力原理`）
 
 **用途：** 在 `raw/json/concepts.json` 新增一個概念條目，並建立對應的 `wiki/concepts/[id].md`。
@@ -195,7 +203,7 @@ solutions/ 已有解析但未驗證：[列出題號]
 
 **觸發語句：** `add method [方法名]`（例：`add method Bishop簡化法`）
 
-**用途：** 在 `raw/solutions/methods/` 新增一個解題方法論文件，並建立 `wiki/methods/[id].md`。
+**用途：** 在 `raw/solutions/methods/` 新增一個解題方法論文件（舊 `wiki/methods/` 已封存，不再建立 wiki 頁）。
 
 **執行步驟：**
 ```
@@ -204,8 +212,7 @@ solutions/ 已有解析但未驗證：[列出題號]
    - 適用題型、適用規範條文
    - 核心公式、步驟摘要
 2. 建立 raw/solutions/methods/[method_id]/[method_id].md
-3. 建立 wiki/methods/[method_id].md
-4. 在 wiki/log.md 追加紀錄
+3. 在 wiki/queries/log.md 追加紀錄
 ```
 
 ---
@@ -218,9 +225,8 @@ solutions/ 已有解析但未驗證：[列出題號]
 1. 驗算：邊界代入、量綱檢查、與 verified 題目解答交叉比對
    （只憑印象或單一參考書就改 = 不合格）
 2. 改 raw/solutions/methods/[id]/[id].md
-3. cp 覆蓋 wiki/methods/[id].md（不可只改 wiki，compile-all 會蓋回）
-4. 全庫 grep 同一個錯誤係數，其他頁面一併修正
-5. wiki/log.md 追加紀錄：改了什麼、為什麼、怎麼驗證的
+3. 全庫 grep 同一個錯誤係數，其他頁面一併修正（archive/wiki/ 凍結，不改）
+4. wiki/queries/log.md 追加紀錄：改了什麼、為什麼、怎麼驗證的
 ```
 
 > **單位是最常見的錯誤來源**。同一條規範式在不同單位制下係數完全不同，
@@ -239,22 +245,14 @@ solutions/ 已有解析但未驗證：[列出題號]
 ```
 1. 讀取 raw/json/question_index.json 全部條目
 2. 轉換為精簡陣列格式寫入 dashboard-data.js：
-   [moduleId, primaryTopicId縮寫(去SM-前綴), secondaryTopicIds縮寫, designMethod, viz檔名前綴陣列, tags, pdf補充筆記檔名陣列]
-   - viz 前綴：掃描 raw/solutions/SM-XXXX-N/ 下 *-viz.html，
-     取檔名中 moduleId 與 -viz.html 之間的字段（如 bearing、slope）
-   - pdf 補充筆記：掃描 raw/solutions/SM-XXXX-N/ 下所有 *.pdf，取原始檔名（含副檔名）存入陣列；
-     無 PDF 的題目寫入空陣列 []
+   [moduleId, primaryTopicId縮寫(去SM-前綴), secondaryTopicIds縮寫, designMethod, tags]
+   - （2026-11-01 起移除 viz 與 pdf 補充筆記欄位；index.html 依此 5 欄格式讀取）
 3. 讀取 `raw/json/syllabus_taxonomy.json`，提取出 `subject.id === "SM"` 的分類樹，並自動轉換成 `window.SM_TOPICS` 與 `window.SM_UNITS` 寫入 `dashboard-data.js` 中。
-4. 在 wiki/log.md 追加紀錄
+4. 在 wiki/queries/log.md 追加紀錄
 注意：index.html 本身不需改動；僅當需求變更時才修改 UI。
 ```
 
-**補充說明：補充筆記 PDF**
-- 使用者可將任意 `.pdf` 檔案放入 `raw/solutions/SM-YYYY-N/` 資料夾，命名無強制規範
-- PDF 檔名清單由 REFRESH-DASHBOARD 指令掃描並寫入 dashboard-data.js（q.pdf 欄位），不再於前端即時掃描資料夾
-- index.html 題庫瀏覽頁會依 dashboard-data.js 資料，對有 PDF 的題目卡片直接顯示「📎 補充筆記 PDF」按鈕（多筆時顯示筆數，點擊可選取要開啟的檔案）；無 PDF 者不顯示
-- 開啟行為雙軌機制：線上環境（GitHub Pages）會直接開新分頁載入；本機環境（`file:///`）則需透過 File System Access API 授權讀取知識庫資料夾（與「📄 完整解析」共用同一次授權）。
-- 使用者新增或移除 PDF 後，需對 Cowork 說「更新儀表板資料」才會反映在按鈕上
+**補充說明：** 補充筆記 PDF 功能已於 2026-11-01 移除（按鈕與篩選一併刪除）。
 
 ---
 
@@ -346,8 +344,8 @@ SM-U3（擋土與坡地工程）：XX%
 
 ③ 考題清單（互動篩選）
   - 篩選按鈕（全部 + 各子項）
-  - 每題顯示：題號/年度、題型摘要、關鍵 tags（前5個）、解析/互動圖/驗證狀態 icon
-  - 【重要】點擊題號或標題時，必須以 `<a href="../index.html#md=raw/solutions/SM-XXXX-N/SM-XXXX-N.md&t=SM-XXXX-N" target="_blank">` 格式連結至 markdown 渲染器，確保公式能透過 KaTeX 呈現，且相對路徑的附圖（png）與補充檔（pdf）皆可正常載入。
+  - 每題顯示：題號/年度、題型摘要、關鍵 tags（前5個）、解析/驗證狀態 icon
+  - 【重要】點擊題號或標題時，必須以 `<a href="problems-view/SM-XXXX-N.html" target="_blank">` 格式連結至該題 HTML 解析頁（公式以 KaTeX 渲染、附圖路徑已處理）。舊式 `../index.html#md=raw/solutions/...` 連結仍會由儀表板自動導向 problems-view。
 
 ④ 核心公式速查（KaTeX 渲染）
   - 每個子項一張公式卡，含主要計算公式與注意事項
@@ -451,3 +449,4 @@ SM-2018-4：樁基摩擦力設計
 | 日期 | 變更 | 原因 |
 |------|------|------|
 | 2026-07-11 | 從 exam-wiki-RC 克隆，全面改寫為 SM 科目（土壤力學與基礎設計） | 沿用 RC 版本已驗證的兩層架構與 16 個指令；調整 lint/failure-modes/materials 檢查項目為 SM 領域內容 |
+| 2026-11-01 | **wiki 封存**：INGEST／COMPILE-ALL／LINT／ADD-CONCEPT 標示已停用；ADD-METHOD／FIX-METHOD 不再同步 wiki/methods；紀錄改寫 `wiki/queries/log.md` | wiki 除 queries 外移至 archive/wiki/ |

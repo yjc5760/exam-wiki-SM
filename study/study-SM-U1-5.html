@@ -207,7 +207,7 @@ function renderQ(cat){
     <span class="meta" style="background:${MC[q[5]]||'#90a4ae'}">${q[5]}</span>
     ${q[6]?'':`<span class="meta" style="background:#90a4ae">副・${q[7]}</span>`}
     <span class="sum">${q[2]}</span><span class="tags">${q[3].join('・')}</span>
-    <span class="ico" title="${VT[q[8]]||q[8]}">📄${q[4]?' 📊':''} ${VI[q[8]]||'❓'}</span>`;
+    <span class="ico" title="${VT[q[8]]||q[8]}">📄 ${VI[q[8]]||'❓'}</span>`;
     box.appendChild(d);});
 }
 function filterQ(cat,btn){renderQ(cat);
