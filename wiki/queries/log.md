@@ -1922,3 +1922,16 @@ $P \to \infty$ 而溢出 925 處，改為只畫 $P \ge 0.45P_a$ 的視窗後解�
 - **補充筆記 PDF 移除**：本科原無題目補充 PDF；`index.html` 按鈕／篩選與規則文件說明一併移除。`dashboard-data.js` 改為 5 欄 `[id, 主分類, 副分類, designMethod, tags]`。
 - **index.html**：「📄 完整解析」改連 `study/problems-view/<題號>.html`；`#md=raw/solutions/...` 深層連結與 `[[題號]]` 自動導向 problems-view；刪「指令速查」分頁，導覽加「⌨️ 指令清單」（CLAUDE-CODE.md）與 `study/frequency-SM.html` 熱圖卡、單元教材區（命題分析／觀念講義／公式給背，只列實際存在者）；設計法篩選改為本科分析法（有效應力法／總應力法／混合／概念題）並改統計卡；修正「全部 verified」誤標（索引 96 題皆 unverified）；資料夾授權 IndexedDB 改用本科專屬 `smwiki-fs`（原 `rcwiki-fs` 在 file:// 下與 RC 儀表板共用，可能讀到 RC 資料夾）並驗證所選資料夾；搜尋 debounce＋多關鍵字＋副考點名稱、結果筆數＋清除篩選、進度切換不重繪、`/` 聚焦搜尋、記住分頁、手機版版面、閱讀器鎖背景捲動等。STUDY 指令規範改為題號連 `problems-view/`。
 - **公式渲染**：`\text{ kN·m}` 等「`\text{}` 內含中點」改寫為 `\text{ kN}\cdot\text{m}`（KaTeX 0.16.11 文字模式不支援 `\cdotp`），SM-2025-3 .md／problems-view 與 `study/lecture-SM-U2-2.html` 共 5 處；SM-2005-2 `\text{通過 #4 篩…}` 改 `\#4`。驗證：以 study/assets/katex 0.16.11 依 auto-render 規則逐頁重算 96 頁 10,734 個數學式，錯誤 0；正本 10,734 個數學式均原樣出現在 problems-view（無舊渲染器吞字問題）。
+
+## [2026-11-06] study-cleanup | 清理 study/ 舊版投影片生成源檔與歷史講義資源
+
+- **變更檔案**：
+  - `study/`：移除 15 個主題之舊版投影片生成腳本、SVG/PNG 圖檔及歷史 PPTX/PDF 講義（共 474 個檔案），教材已全面由新版單元講義（`lecture-SM-*.html/pdf`）與 `影片講義/` 接手。
+- **完成事項**：
+  - 清理 `study/` 內多餘的歷史生成資源，統一架構至新版講義與影片教材。
+- **踩坑 / 注意事項**：
+  - 經檢查無敏感資料（無 API key、token、個人資訊）；確認刪除範圍皆為已取代之舊投影片源檔。
+- **下一步**：
+  - 檢視 `影片講義/` 與新版 `study/lecture-SM-*.html` 之後續擴充與整合。
+- **未動**：`raw/` 任何檔案、`question_index.json`、`wiki/`（除 queries/log.md 外）。
+
